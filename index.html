@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌦️ PROYECTO CLIMA PACHUCA ABRIL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --bg:      #080d1a;
+      --bg2:     #0e1525;
+      --card:    #111b2e;
+      --card2:   #182038;
+      --border:  rgba(255,255,255,0.07);
+      --sky:     #38bdf8;
+      --emerald: #34d399;
+      --amber:   #fbbf24;
+      --rose:    #fb7185;
+      --violet:  #a78bfa;
+      --teal:    #2dd4bf;
+      --text:    #f1f5f9;
+      --muted:   #64748b;
+      --muted2:  #94a3b8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 48px;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      backdrop-filter: blur(24px) saturate(160%);
+      background: rgba(8,13,26,0.82);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none;
+    }
+    .nav-brand-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px; font-weight: 700;
+      letter-spacing: .3px;
+      color: var(--text);
+      line-height: 1.2;
+    }
+    .nav-brand-text span { color: var(--sky); }
+    .nav-brand-sub { font-size: 10px; color: var(--muted); font-weight: 400; letter-spacing: .5px; }
+    .nav-links { display: flex; gap: 6px; list-style: none; }
+    .nav-links a {
+      color: var(--muted2); text-decoration: none; font-size: 13px;
+      font-weight: 500; padding: 6px 12px; border-radius: 8px;
+      transition: background .2s, color .2s;
+    }
+    .nav-links a:hover { color: var(--text); background: rgba(255,255,255,.06); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 120px 40px 80px; position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=1800&q=85');
+      background-size: cover; background-position: center 40%;
+    }
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(8,13,26,.72) 0%, rgba(8,13,26,.55) 40%, rgba(8,13,26,.88) 100%),
+        radial-gradient(ellipse 70% 55% at 50% -5%,  rgba(56,189,248,.18) 0%, transparent 70%),
+        radial-gradient(ellipse 45% 35% at 85% 80%,  rgba(52,211,153,.10) 0%, transparent 60%);
+    }
+    .particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .particle {
+      position: absolute; border-radius: 50%; opacity: 0;
+      animation: floatUp linear infinite;
+    }
+    @keyframes floatUp {
+      0%   { transform: translateY(100vh) translateX(0) scale(.5); opacity: 0; }
+      10%  { opacity: .7; }
+      90%  { opacity: .2; }
+      100% { transform: translateY(-8vh)  translateX(30px) scale(1);  opacity: 0; }
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(56,189,248,.08); border: 1px solid rgba(56,189,248,.22);
+      color: var(--sky); border-radius: 100px; padding: 7px 18px;
+      font-size: 12px; font-weight: 600; letter-spacing: .8px; text-transform: uppercase;
+      margin-bottom: 30px; animation: fadeUp .6s ease both;
+    }
+    .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sky); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(3rem, 7.5vw, 6rem);
+      font-weight: 700; line-height: 1.04; letter-spacing: -2px;
+      animation: fadeUp .7s .1s ease both;
+    }
+    h1 .c1 { color: var(--sky); }
+    h1 .c2 { color: var(--emerald); }
+    .hero-sub {
+      margin-top: 22px; color: var(--muted2); font-size: 16px;
+      max-width: 520px; line-height: 1.75; animation: fadeUp .7s .2s ease both;
+    }
+    .hero-meta {
+      margin-top: 44px; display: flex; gap: 48px; flex-wrap: wrap; justify-content: center;
+      animation: fadeUp .7s .3s ease both;
+    }
+    .meta-item { text-align: center; }
+    .meta-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.2rem; font-weight: 700; color: var(--sky); display: block;
+    }
+    .meta-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; margin-top: 2px; }
+    .scroll-cue {
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: var(--muted); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+      animation: fadeUp 1s .7s ease both;
+    }
+    .scroll-cue::after {
+      content: ''; width: 1px; height: 44px;
+      background: linear-gradient(to bottom, var(--muted), transparent);
+      animation: cueAnim 2.2s ease infinite;
+    }
+    @keyframes cueAnim { 0%,100%{opacity:.4;transform:scaleY(.6)} 50%{opacity:1;transform:scaleY(1)} }
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(28px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ── LAYOUT ── */
+    .page-section { padding: 100px 48px; max-width: 1240px; margin: 0 auto; }
+    .h-divider { width: 100%; height: 1px; background: var(--border); }
+    .section-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--sky); margin-bottom: 12px;
+    }
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      font-weight: 700; letter-spacing: -1px; line-height: 1.13;
+    }
+    .section-intro { color: var(--muted2); max-width: 580px; margin-top: 12px; line-height: 1.75; font-size: 15px; }
+
+    /* ── CLIMATE STATS ── */
+    .stat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 48px; }
+    .stat-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px 20px;
+      text-align: center; transition: transform .3s, border-color .3s;
+    }
+    .stat-card:hover { transform: translateY(-5px); border-color: rgba(56,189,248,.25); }
+    .stat-icon { font-size: 28px; margin-bottom: 12px; }
+    .stat-value { font-family: 'Space Grotesk', sans-serif; font-size: 1.9rem; font-weight: 700; line-height: 1; }
+    .stat-unit { font-size: 13px; color: var(--muted); margin-left: 2px; }
+    .stat-name { font-size: 11px; color: var(--muted); margin-top: 6px; text-transform: uppercase; letter-spacing: .5px; }
+    .stat-diff { font-size: 11px; margin-top: 4px; }
+    .stat-diff.bad { color: var(--rose); }
+
+    /* ── CHARTS ── */
+    .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 32px; }
+    .chart-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px;
+      position: relative; overflow: hidden;
+    }
+    .chart-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; }
+    .chart-card.sky::before    { background: linear-gradient(90deg, var(--sky),    transparent); }
+    .chart-card.green::before  { background: linear-gradient(90deg, var(--emerald),transparent); }
+    .chart-card.amber::before  { background: linear-gradient(90deg, var(--amber),  transparent); }
+    .chart-title { font-size: 12px; color: var(--muted2); font-weight: 500; margin-bottom: 20px; }
+
+    /* ── POI ── */
+    .poi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 48px; }
+    .poi-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+      overflow: hidden; transition: transform .3s, box-shadow .3s;
+    }
+    .poi-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+    .poi-img {
+      height: 190px; position: relative; overflow: hidden;
+      background-size: cover; background-position: center;
+      transition: transform .4s ease;
+    }
+    .poi-card:hover .poi-img { transform: scale(1.04); }
+    .poi-img::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(8,13,26,.85) 100%); }
+    .poi-body { padding: 18px 20px 22px; }
+    .poi-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+    .poi-desc  { font-size: 13px; color: var(--muted2); line-height: 1.6; }
+    .poi-tag   { display: inline-block; margin-top: 12px; font-size: 11px; color: var(--sky); background: rgba(56,189,248,.1); border-radius: 100px; padding: 3px 10px; }
+
+    /* ── PROPEDÉUTICO HEADER ── */
+    .prope-header {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 32px; padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .prope-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+    .prope-icon.common  { background: rgba(255,255,255,.07); }
+    .prope-icon.exactas { background: rgba(56,189,248,.12); }
+    .prope-icon.social  { background: rgba(251,191,36,.12); }
+    .prope-icon.salud   { background: rgba(251,113,133,.12); }
+    .prope-info { flex: 1; }
+    .prope-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .prope-label.common  { color: var(--muted2); }
+    .prope-label.exactas { color: var(--sky); }
+    .prope-label.social  { color: var(--amber); }
+    .prope-label.salud   { color: var(--rose); }
+    .prope-name { font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; font-weight: 700; }
+    .prope-count { font-size: 12px; color: var(--muted); margin-left: auto; }
+
+    .prope-block { margin-bottom: 72px; }
+
+    /* ── MATERIA CARD ── */
+    .materia-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+      overflow: hidden; display: grid; grid-template-columns: 260px 1fr;
+      transition: box-shadow .3s; margin-bottom: 24px;
+    }
+    .materia-card:hover { box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+    .mat-sidebar {
+      padding: 36px 28px; display: flex; flex-direction: column;
+      justify-content: space-between; position: relative; overflow: hidden;
+      background-size: cover; background-position: center;
+    }
+    .mat-sidebar::before {
+      content:''; position:absolute; inset:0;
+      background: inherit;
+      filter: brightness(.25) saturate(.8);
+      z-index: 0;
+    }
+    .mat-sidebar > * { position: relative; z-index: 1; }
+    .mat-sidebar::after {
+      content:''; position:absolute; bottom:-50px; right:-50px;
+      width:180px; height:180px; border-radius:50%; opacity:.12; z-index:0;
+    }
+    /* sidebar themes — imagen + overlay de color */
+    .m-eco  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=500&q=80'); }
+    .m-eco  .mat-sidebar::before { background: linear-gradient(150deg,rgba(8,42,26,.92),rgba(13,61,34,.88)); filter:none; }
+    .m-eco  .mat-sidebar::after  { background: var(--emerald); }
+
+    .m-filo .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80'); }
+    .m-filo .mat-sidebar::before { background: linear-gradient(150deg,rgba(26,18,40,.93),rgba(40,25,63,.88)); filter:none; }
+    .m-filo .mat-sidebar::after  { background: var(--violet); }
+
+    .m-mat  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=500&q=80'); }
+    .m-mat  .mat-sidebar::before { background: linear-gradient(150deg,rgba(12,31,56,.93),rgba(19,45,82,.88)); filter:none; }
+    .m-mat  .mat-sidebar::after  { background: var(--sky); }
+
+    .m-uni  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=500&q=80'); }
+    .m-uni  .mat-sidebar::before { background: linear-gradient(150deg,rgba(26,13,40,.93),rgba(42,21,66,.88)); filter:none; }
+    .m-uni  .mat-sidebar::after  { background: var(--violet); }
+
+    .m-bio  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1564349683136-77e08dba1ef3?w=500&q=80'); }
+    .m-bio  .mat-sidebar::before { background: linear-gradient(150deg,rgba(13,31,61,.93),rgba(26,48,96,.88)); filter:none; }
+    .m-bio  .mat-sidebar::after  { background: var(--sky); }
+
+    .m-web  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&q=80'); }
+    .m-web  .mat-sidebar::before { background: linear-gradient(150deg,rgba(0,31,26,.93),rgba(0,51,40,.88)); filter:none; }
+    .m-web  .mat-sidebar::after  { background: var(--teal); }
+
+    .m-elec .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&q=80'); }
+    .m-elec .mat-sidebar::before { background: linear-gradient(150deg,rgba(42,24,0,.93),rgba(61,36,0,.88)); filter:none; }
+    .m-elec .mat-sidebar::after  { background: var(--amber); }
+
+    .m-quim .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=500&q=80'); }
+    .m-quim .mat-sidebar::before { background: linear-gradient(150deg,rgba(26,10,10,.93),rgba(46,16,16,.88)); filter:none; }
+    .m-quim .mat-sidebar::after  { background: var(--rose); }
+
+    .m-soc  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500&q=80'); }
+    .m-soc  .mat-sidebar::before { background: linear-gradient(150deg,rgba(26,18,0,.93),rgba(46,32,0,.88)); filter:none; }
+    .m-soc  .mat-sidebar::after  { background: var(--amber); }
+
+    .m-sal  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1576671081837-49000212a370?w=500&q=80'); }
+    .m-sal  .mat-sidebar::before { background: linear-gradient(150deg,rgba(26,10,16,.93),rgba(46,16,32,.88)); filter:none; }
+    .m-sal  .mat-sidebar::after  { background: var(--rose); }
+
+    .mat-num  { font-family:'Space Grotesk',sans-serif; font-size:3.5rem; font-weight:700; line-height:1; opacity:.12; }
+    .mat-tag  {
+      display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 5px 12px; border-radius: 100px; margin-bottom: 14px;
+    }
+    .tag-eco  { background:rgba(52,211,153,.15);  color:var(--emerald); }
+    .tag-filo { background:rgba(167,139,250,.15); color:var(--violet); }
+    .tag-mat  { background:rgba(56,189,248,.15);  color:var(--sky); }
+    .tag-uni  { background:rgba(167,139,250,.15); color:var(--violet); }
+    .tag-bio  { background:rgba(56,189,248,.15);  color:var(--sky); }
+    .tag-web  { background:rgba(45,212,191,.15);  color:var(--teal); }
+    .tag-elec { background:rgba(251,191,36,.15);  color:var(--amber); }
+    .tag-quim { background:rgba(251,113,133,.15); color:var(--rose); }
+    .tag-soc  { background:rgba(251,191,36,.15);  color:var(--amber); }
+    .tag-sal  { background:rgba(251,113,133,.15); color:var(--rose); }
+
+    .mat-title { font-family:'Space Grotesk',sans-serif; font-size:1.05rem; font-weight:700; line-height:1.3; margin-bottom:8px; }
+    .mat-sub   { font-size:12px; color:var(--muted2); line-height:1.55; }
+    .mat-teacher { margin-top:18px; font-size:12px; color:var(--muted); }
+    .mat-teacher strong { color:var(--muted2); }
+
+    .mat-content { padding: 36px 36px; }
+    .mat-content-title { font-family:'Space Grotesk',sans-serif; font-size:1.35rem; font-weight:700; margin-bottom:8px; }
+    .mat-content-intro { font-size:14px; color:var(--muted2); line-height:1.75; margin-bottom:26px; }
+
+    /* tabs */
+    .tabs  { display:flex; gap:4px; margin-bottom:22px; flex-wrap:wrap; }
+    .tab   {
+      padding:7px 15px; border-radius:8px; font-size:12px; font-weight:600;
+      cursor:pointer; border:none; background:transparent; color:var(--muted); transition:all .2s;
+    }
+    .tab:hover  { color:var(--text); background:var(--card2); }
+    .tab.active { color:var(--text); background:var(--card2); }
+    .tab-panel        { display:none; }
+    .tab-panel.active { display:block; }
+
+    /* data table */
+    .data-table { width:100%; border-collapse:collapse; font-size:13px; }
+    .data-table th { text-align:left; padding:10px 14px; color:var(--muted); font-weight:500; font-size:11px; text-transform:uppercase; letter-spacing:.6px; border-bottom:1px solid var(--border); }
+    .data-table td { padding:11px 14px; border-bottom:1px solid var(--border); color:var(--muted2); line-height:1.5; }
+    .data-table tr:last-child td { border-bottom:none; }
+    .data-table td:first-child { color:var(--text); font-weight:500; }
+    .data-table tr:hover td { background:rgba(255,255,255,.02); }
+
+    /* species chips */
+    .chip         { display:inline-block; font-size:11px; padding:3px 10px; border-radius:100px; background:var(--card2); color:var(--muted2); margin:3px 2px; }
+    .chip.plant   { background:rgba(52,211,153,.1);  color:var(--emerald); }
+    .chip.animal  { background:rgba(56,189,248,.1);  color:var(--sky); }
+    .chip.insect  { background:rgba(251,191,36,.1);  color:var(--amber); }
+
+    /* risk bars */
+    .risk-item { margin-bottom:15px; }
+    .risk-label { display:flex; justify-content:space-between; margin-bottom:6px; }
+    .risk-label span:first-child { font-size:13px; }
+    .risk-label span:last-child  { font-size:11px; font-weight:700; }
+    .risk-bar  { height:6px; border-radius:100px; background:var(--card2); overflow:hidden; }
+    .risk-fill { height:100%; border-radius:100px; transition:width 1.2s cubic-bezier(.2,1,.3,1); width:0; }
+    .risk-fill.r4 { background:linear-gradient(90deg,var(--rose),#f44); }
+    .risk-fill.r3 { background:linear-gradient(90deg,var(--amber),#e08000); }
+    .risk-fill.r2 { background:linear-gradient(90deg,var(--sky),#3498db); }
+    .risk-fill.r1 { background:linear-gradient(90deg,var(--emerald),#27ae60); }
+
+    /* sensors */
+    .sensor-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .sensor-card {
+      background:var(--bg2); border:1px solid var(--border); border-radius:12px; padding:18px;
+      transition:border-color .2s;
+    }
+    .sensor-card:hover { border-color:rgba(251,191,36,.3); }
+    .sensor-name { font-size:15px; font-weight:700; color:var(--amber); margin-bottom:3px; }
+    .sensor-var  { font-size:12px; color:var(--muted); margin-bottom:10px; }
+    .sensor-spec { font-size:12px; color:var(--muted2); line-height:1.75; }
+    .sensor-spec strong { color:var(--text); }
+
+    /* ── PLACEHOLDER CARD ── */
+    .materia-card.placeholder {
+      border-style: dashed; border-color: rgba(255,255,255,.1);
+      opacity: .7; transition: opacity .3s;
+    }
+    .materia-card.placeholder:hover { opacity: 1; box-shadow: none; }
+    .placeholder-content {
+      padding: 36px; display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 14px; text-align: center; min-height: 160px;
+    }
+    .placeholder-icon { font-size: 2rem; opacity: .4; }
+    .placeholder-title { font-size: 14px; font-weight: 600; color: var(--muted2); }
+    .placeholder-sub   { font-size: 12px; color: var(--muted); }
+    .placeholder-badge {
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 100px; background: rgba(255,255,255,.05);
+      color: var(--muted); border: 1px solid rgba(255,255,255,.08);
+    }
+
+    /* alert box */
+    .alert-box {
+      padding:14px 18px; border-radius:10px; font-size:13px; line-height:1.6;
+      margin-top:16px;
+    }
+    .alert-box.warning { background:rgba(251,191,36,.06); border:1px solid rgba(251,191,36,.18); color:var(--amber); }
+    .alert-box.info    { background:rgba(56,189,248,.06);  border:1px solid rgba(56,189,248,.18);  color:var(--sky); }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .d1 { transition-delay:.1s; }
+    .d2 { transition-delay:.2s; }
+    .d3 { transition-delay:.3s; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align:center; padding:60px 40px;
+      border-top:1px solid var(--border); color:var(--muted); font-size:13px; line-height:2;
+    }
+    footer strong { color:var(--muted2); }
+    footer .f-accent { color:var(--sky); font-weight:600; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width:960px) {
+      nav { padding: 0 20px; }
+      .nav-links { display:none; }
+      .page-section { padding:70px 20px; }
+      .chart-grid { grid-template-columns:1fr; }
+      .stat-grid  { grid-template-columns:repeat(2,1fr); }
+      .poi-grid   { grid-template-columns:repeat(2,1fr); }
+      .materia-card { grid-template-columns:1fr; }
+      .sensor-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width:560px) {
+      .poi-grid { grid-template-columns:1fr; }
+      h1 { letter-spacing:-1px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav>
+  <a class="nav-brand" href="#hero">
+    <!-- LOGO SVG -->
+    <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#38bdf8"/>
+          <stop offset="100%" stop-color="#34d399"/>
+        </linearGradient>
+        <linearGradient id="lg2" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#0c2235"/>
+          <stop offset="100%" stop-color="#0a2a1e"/>
+        </linearGradient>
+        <clipPath id="hex-clip">
+          <path d="M19 2 L34 10.5 L34 27.5 L19 36 L4 27.5 L4 10.5 Z"/>
+        </clipPath>
+      </defs>
+      <!-- Hexagon background -->
+      <path d="M19 2 L34 10.5 L34 27.5 L19 36 L4 27.5 L4 10.5 Z" fill="url(#lg2)"/>
+      <!-- Hexagon border -->
+      <path d="M19 2 L34 10.5 L34 27.5 L19 36 L4 27.5 L4 10.5 Z" stroke="url(#lg1)" stroke-width="1.4" fill="none"/>
+      <!-- Mountain silhouette -->
+      <path d="M7 28 L14 17 L19 22.5 L24 15 L31 28 Z" fill="rgba(255,255,255,0.1)" clip-path="url(#hex-clip)"/>
+      <!-- Mountain outline -->
+      <path d="M7 28 L14 17 L19 22.5 L24 15 L31 28" stroke="url(#lg1)" stroke-width="1.5" fill="none" stroke-linejoin="round" stroke-linecap="round" opacity=".7"/>
+      <!-- Sun -->
+      <circle cx="10" cy="12" r="2.5" fill="#38bdf8" opacity=".9"/>
+      <!-- Wind lines -->
+      <path d="M14 11 Q17 9.5 20 11" stroke="#34d399" stroke-width="1.2" fill="none" stroke-linecap="round" opacity=".8"/>
+      <path d="M14 14 Q18 12.5 22 14" stroke="#34d399" stroke-width="1.2" fill="none" stroke-linecap="round" opacity=".6"/>
+    </svg>
+    <div>
+      <div class="nav-brand-text"><span>Clima</span> Pachuca</div>
+      <div class="nav-brand-sub">Abril 2026 · Proyectos Escolares</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#clima">Clima</a></li>
+    <li><a href="#puntos">Ciudad</a></li>
+    <li><a href="#comunes">Materias Comunes</a></li>
+    <li><a href="#exactas">Propedéutico Exactas</a></li>
+    <li><a href="#social">Ciencias Sociales</a></li>
+    <li><a href="#salud">Ciencias de la Salud</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════ PARTICLES ═══════════════ -->
+<div class="particles" id="particles"></div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<div id="hero">
+  <div class="hero-bg"></div>
+  <div class="badge"><div class="badge-dot"></div>Preparatoria Colegio Pedro de Gante · UAEH · Grupo 601</div>
+  <h1>
+    🌦️ PROYECTO<br>
+    <span class="c1">CLIMA</span><br>
+    <span class="c2">PACHUCA</span><br>
+    ABRIL
+  </h1>
+  <p class="hero-sub">
+    Análisis interdisciplinario del clima de Pachuca de Soto, Hidalgo.
+    Proyectos integrados de ocho materias — ciclo escolar Enero–Junio 2026.
+  </p>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-val" data-count="2426">0</span>
+      <span class="meta-label">m s.n.m.</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-val" data-count="8">0</span>
+      <span class="meta-label">Materias</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-val" data-count="14" data-suffix=".5°C">0</span>
+      <span class="meta-label">Temp. media anual</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-val" data-count="10" data-suffix=" h/día">0</span>
+      <span class="meta-label">Sol en abril</span>
+    </div>
+  </div>
+  <div class="scroll-cue">desplaza</div>
+</div>
+
+<div class="h-divider"></div>
+
+<!-- ═══════════════ CLIMA ═══════════════ -->
+<section class="page-section" id="clima">
+  <p class="section-label reveal">Datos Climáticos</p>
+  <h2 class="reveal d1">Abril 2026 — <span style="color:var(--sky)">Anomalías registradas</span></h2>
+  <p class="section-intro reveal d2">
+    Datos reales del 1–11 de abril de 2026 en Pachuca de Soto.
+    Temperaturas hasta 9°C sobre el promedio histórico, humedad en mínimos históricos.
+  </p>
+
+  <div class="stat-grid">
+    <div class="stat-card reveal d1">
+      <div class="stat-icon">🌡️</div>
+      <div class="stat-value" style="color:var(--rose)">26<span class="stat-unit">°C</span></div>
+      <div class="stat-name">Temp. máx. registrada</div>
+      <div class="stat-diff bad">+9°C sobre histórico (17°C)</div>
+    </div>
+    <div class="stat-card reveal d2">
+      <div class="stat-icon">💧</div>
+      <div class="stat-value" style="color:var(--sky)">35<span class="stat-unit">%</span></div>
+      <div class="stat-name">Humedad mínima</div>
+      <div class="stat-diff bad">−16 pts del promedio (51%)</div>
+    </div>
+    <div class="stat-card reveal d3">
+      <div class="stat-icon">🌧️</div>
+      <div class="stat-value" style="color:var(--violet)">18<span class="stat-unit">mm</span></div>
+      <div class="stat-name">Lluvia en evento único</div>
+      <div class="stat-diff bad">×6 del promedio mensual</div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-icon">💨</div>
+      <div class="stat-value" style="color:var(--amber)">40<span class="stat-unit">km/h</span></div>
+      <div class="stat-name">Viento ráfaga NE</div>
+      <div class="stat-diff bad">Interrumpe vuelo de polinizadores</div>
+    </div>
+  </div>
+
+  <div class="chart-grid">
+    <div class="chart-card sky reveal">
+      <div class="chart-title">Temperatura diaria (°C) — Real vs Histórico</div>
+      <canvas id="chartTemp" height="200"></canvas>
+    </div>
+    <div class="chart-card green reveal d1">
+      <div class="chart-title">Humedad relativa (%) — Real vs Histórico</div>
+      <canvas id="chartHum" height="200"></canvas>
+    </div>
+    <div class="chart-card amber reveal d2" style="grid-column:1/-1;">
+      <div class="chart-title">Precipitación mensual (mm) y Temperatura media (°C) — Promedio anual histórico · Clasificación Köppen: BSk (Árido de altura)</div>
+      <canvas id="chartAnual" height="110"></canvas>
+    </div>
+  </div>
+</section>
+
+<div class="h-divider"></div>
+
+<!-- ═══════════════ PUNTOS DE INTERÉS ═══════════════ -->
+<section class="page-section" id="puntos">
+  <p class="section-label reveal">Ciudad</p>
+  <h2 class="reveal d1">Puntos de interés<br><span style="color:var(--emerald)">Pachuca de Soto, Hidalgo</span></h2>
+  <p class="section-intro reveal d2">La Bella Airosa · Capital del estado a 2,426 m s.n.m. · Ecosistemas únicos y rica historia minera.</p>
+
+  <div class="poi-grid">
+    <div class="poi-card reveal d1">
+      <div class="poi-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80')"></div>
+      <div class="poi-body">
+        <div class="poi-title">Parque Ecológico Cubitos</div>
+        <div class="poi-desc">Zona de matorral xerófilo en transición urbano-natural. Sitio de muestreo para bioindicadores: nopal, maguey y lagartija endémica.</div>
+        <span class="poi-tag">Ecosistema · Muestreo</span>
+      </div>
+    </div>
+    <div class="poi-card reveal d2">
+      <div class="poi-img" style="background-image:url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80')"></div>
+      <div class="poi-body">
+        <div class="poi-title">Sierra de Pachuca</div>
+        <div class="poi-desc">Bosque de pino-encino donde habita el Ajolote del Altiplano (Ambystoma velasci) y el Águila Real. Alta biodiversidad endémica.</div>
+        <span class="poi-tag">Bosque · Biodiversidad</span>
+      </div>
+    </div>
+    <div class="poi-card reveal d3">
+      <div class="poi-img" style="background-image:url('https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?w=600&q=80')"></div>
+      <div class="poi-body">
+        <div class="poi-title">Centro Histórico</div>
+        <div class="poi-desc">El Reloj Monumental (1904) es símbolo de la ciudad. Plaza de la Independencia rodeada de arquitectura porfiriana.</div>
+        <span class="poi-tag">Patrimonio · Historia</span>
+      </div>
+    </div>
+    <div class="poi-card reveal d1">
+      <div class="poi-img" style="background-image:url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&q=80')"></div>
+      <div class="poi-body">
+        <div class="poi-title">Real del Monte</div>
+        <div class="poi-desc">Pueblo Mágico a 15 min. de Pachuca. Sitio histórico de minería de plata. Influencia en la geología regional y tradición cultural.</div>
+        <span class="poi-tag">Minería · Turismo</span>
+      </div>
+    </div>
+    <div class="poi-card reveal d2">
+      <div class="poi-img" style="background-image:url('https://images.unsplash.com/photo-1561484930-974b10b5c067?w=600&q=80')"></div>
+      <div class="poi-body">
+        <div class="poi-title">La Bella Airosa</div>
+        <div class="poi-desc">Apodo de Pachuca por sus vientos del NE hasta 40 km/h en ráfaga en abril. Clave en la dispersión de contaminantes y polinizadores.</div>
+        <span class="poi-tag">Clima · Fenómeno</span>
+      </div>
+    </div>
+    <div class="poi-card reveal d3">
+      <div class="poi-img" style="background-image:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80')"></div>
+      <div class="poi-body">
+        <div class="poi-title">Mineral del Chico</div>
+        <div class="poi-desc">Pueblo Mágico y área natural protegida a 17 km. Bosque templado y arroyos donde se preservan especies anfibias en peligro.</div>
+        <span class="poi-tag">Naturaleza · Reserva</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-divider"></div>
+
+<!-- ═══════════════ MATERIAS ═══════════════ -->
+<section class="page-section" id="comunes" style="padding-bottom:24px;">
+  <p class="section-label reveal">Proyectos Escolares</p>
+  <h2 class="reveal d1">Ocho materias.<br><span style="color:var(--amber)">Un mismo territorio.</span></h2>
+  <p class="section-intro reveal d2">
+    Ciclo Enero–Junio 2026 · Grupo 601 · Preparatoria Colegio Pedro de Gante A.C. incorporada a la UAEH.
+    Cada proyecto analiza el clima de Pachuca durante abril desde su disciplina.
+  </p>
+</section>
+
+<!-- ─── BLOQUE: MATERIAS COMUNES ─── -->
+<section class="page-section" style="padding-top:40px; padding-bottom:20px;">
+  <div class="prope-block">
+    <div class="prope-header reveal">
+      <div class="prope-icon common">📚</div>
+      <div class="prope-info">
+        <div class="prope-label common">Todas las áreas propedéuticas</div>
+        <div class="prope-name">Materias Comunes</div>
+      </div>
+      <div class="prope-count">4 materias</div>
+    </div>
+
+    <!-- 1. Ecología -->
+    <div class="materia-card m-eco reveal">
+      <div class="mat-sidebar">
+        <div class="mat-num">01</div>
+        <div>
+          <span class="mat-tag tag-eco">Ecología</span>
+          <div class="mat-title">Ecología y Desarrollo Sustentable</div>
+          <div class="mat-sub">Bitácora de Interpretación de Bioindicadores · Matorral Xerófilo, Pachuca</div>
+          <div class="mat-teacher">Catedrático: <strong>M.V.Z. Carlos Daniel Hernández López</strong></div>
+        </div>
+      </div>
+      <div class="mat-content">
+        <div class="mat-content-title">Bioindicadores del Matorral Xerófilo</div>
+        <p class="mat-content-intro">Registro y análisis de 10 especies bioindicadoras en la zona de transición matorral–urbana de Pachuca. Se documentaron anomalías climáticas del 1 al 11 de abril de 2026 y su impacto en la cadena trófica.</p>
+        <div class="tabs" id="eco-tabs">
+          <button class="tab active" onclick="switchTab('eco',0)">Datos climáticos</button>
+          <button class="tab" onclick="switchTab('eco',1)">Bioindicadores</button>
+          <button class="tab" onclick="switchTab('eco',2)">Cadena trófica</button>
+        </div>
+        <div class="tab-panel active" id="eco-0">
+          <table class="data-table">
+            <thead><tr><th>Fecha</th><th>Temp. real</th><th>Humedad</th><th>Efecto observado</th></tr></thead>
+            <tbody>
+              <tr><td>1 Abr</td><td>24°C (+7°C)</td><td>38%</td><td>Arrugamiento de cladodios de nopal; cierre de estomas en maguey</td></tr>
+              <tr><td>3 Abr</td><td>26°C (+9°C)</td><td>35%</td><td>Floración retrasada en huizache; hojas secas en palo dulce</td></tr>
+              <tr><td>5 Abr</td><td>22°C</td><td>82% + 18 mm lluvia</td><td>Vuelo imposible para abejas; falla en polinización del nopal</td></tr>
+              <tr><td>7 Abr</td><td>5°C mín (helada)</td><td>72%</td><td>Canto reducido en cardenal y sinsontle; riesgo en puesta</td></tr>
+              <tr><td>9 Abr</td><td>25°C</td><td>40%</td><td>Reducción de actividad diurna en lagartija (Sceloporus grammicus)</td></tr>
+              <tr><td>11 Abr</td><td>17°C</td><td>91%</td><td>Activación de rana de árbol (Hyla arenicolor) tras aumento de humedad</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="eco-1">
+          <div style="margin-bottom:16px;">
+            <p style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Plantas</p>
+            <span class="chip plant">Nopal cardón (Opuntia streptacantha)</span>
+            <span class="chip plant">Maguey pulquero (Agave salmiana)</span>
+            <span class="chip plant">Huizache (Acacia schaffneri)</span>
+            <span class="chip plant">Palo dulce (Eysenhardtia polystachya)</span>
+          </div>
+          <div>
+            <p style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Fauna</p>
+            <span class="chip insect">Abeja nativa (Xylocopa mexicanorum)</span>
+            <span class="chip insect">Escarabajo estercolero (Scarabaeus sp.)</span>
+            <span class="chip animal">Cardenal norteño (Cardinalis cardinalis)</span>
+            <span class="chip animal">Sinsontle norteño (Mimus polyglottos)</span>
+            <span class="chip animal">Rana de árbol (Hyla arenicolor)</span>
+            <span class="chip animal">Lagartija de matorral (Sceloporus grammicus)</span>
+          </div>
+          <div class="alert-box warning" style="margin-top:18px;">
+            <strong>⚠ Eslabón crítico:</strong> Los polinizadores nativos (Xylocopa mexicanorum) presentan abundancia baja, amenazando la reproducción de todos los productores del matorral.
+          </div>
+        </div>
+        <div class="tab-panel" id="eco-2">
+          <table class="data-table">
+            <thead><tr><th>Nivel trófico</th><th>Organismos</th><th>Estado actual</th></tr></thead>
+            <tbody>
+              <tr><td>Productores (1°)</td><td>Nopal, maguey, huizache, palo dulce</td><td>Fotosíntesis inhibida por calor extremo y baja humedad</td></tr>
+              <tr><td>Consumidores primarios (2°)</td><td>Abeja nativa, conejo serrano, lagartija</td><td>Polinizadores con actividad muy baja — eslabón crítico</td></tr>
+              <tr><td>Consumidores secundarios (3°)</td><td>Cardenal, sinsontle, serpiente de cascabel</td><td>Canto reducido; anidación interrumpida por frío tardío</td></tr>
+              <tr><td>Consumidores terciarios (4°)</td><td>Coyote, halcón mexicano, águila real</td><td>Depredadores ápex; regulan equilibrio del ecosistema</td></tr>
+              <tr><td>Descomponedores</td><td>Hongos, bacterias nitrificantes, escarabajos</td><td>Baja humedad reduce actividad de microorganismos del suelo</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Pensamiento Filosófico -->
+    <div class="materia-card m-filo reveal">
+      <div class="mat-sidebar">
+        <div class="mat-num">02</div>
+        <div>
+          <span class="mat-tag tag-filo">Filosofía</span>
+          <div class="mat-title">Pensamiento Filosófico</div>
+          <div class="mat-sub">Proyecto integrador · Clima y Ética Ambiental</div>
+        </div>
+      </div>
+      <div class="mat-content" style="display:flex;align-items:center;">
+        <div class="placeholder-content">
+          <div class="placeholder-icon">🧠</div>
+          <div class="placeholder-title">Proyecto en desarrollo</div>
+          <div class="placeholder-sub">El contenido de esta materia se agregará próximamente.</div>
+          <span class="placeholder-badge">Próximamente</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Matemáticas -->
+    <div class="materia-card m-mat reveal">
+      <div class="mat-sidebar">
+        <div class="mat-num">03</div>
+        <div>
+          <span class="mat-tag tag-mat">Matemáticas</span>
+          <div class="mat-title">Manejo de la Información y Fenómenos Aleatorios</div>
+          <div class="mat-sub">Estadística y probabilidad aplicada al análisis climático de Pachuca</div>
+        </div>
+      </div>
+      <div class="mat-content" style="display:flex;align-items:center;">
+        <div class="placeholder-content">
+          <div class="placeholder-icon">📊</div>
+          <div class="placeholder-title">Proyecto en desarrollo</div>
+          <div class="placeholder-sub">El contenido de esta materia se agregará próximamente.</div>
+          <span class="placeholder-badge">Próximamente</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. El Universo y sus Fenómenos -->
+    <div class="materia-card m-uni reveal">
+      <div class="mat-sidebar">
+        <div class="mat-num">04</div>
+        <div>
+          <span class="mat-tag tag-uni">Física</span>
+          <div class="mat-title">El Universo y sus Fenómenos</div>
+          <div class="mat-sub">Análisis de fenómenos atmosféricos y radiación solar en Pachuca, abril 2026</div>
+        </div>
+      </div>
+      <div class="mat-content" style="display:flex;align-items:center;">
+        <div class="placeholder-content">
+          <div class="placeholder-icon">🔭</div>
+          <div class="placeholder-title">Proyecto en desarrollo</div>
+          <div class="placeholder-sub">El contenido de esta materia se agregará próximamente.</div>
+          <span class="placeholder-badge">Próximamente</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-divider"></div>
+
+<!-- ─── BLOQUE: PROPEDÉUTICO EXACTAS ─── -->
+<section class="page-section" id="exactas" style="padding-bottom:20px;">
+  <div class="prope-block">
+    <div class="prope-header reveal">
+      <div class="prope-icon exactas">⚗️</div>
+      <div class="prope-info">
+        <div class="prope-label exactas">Área propedéutica</div>
+        <div class="prope-name">Ciencias Exactas e Ingeniería</div>
+      </div>
+      <div class="prope-count">4 materias</div>
+    </div>
+
+    <!-- 5. Biodiversidad -->
+    <div class="materia-card m-bio reveal">
+      <div class="mat-sidebar">
+        <div class="mat-num">05</div>
+        <div>
+          <span class="mat-tag tag-bio">Biodiversidad</span>
+          <div class="mat-title">Uso de la Biodiversidad y Prácticas Productivas</div>
+          <div class="mat-sub">EIMA — Ecotoxicología: Ajolote del Altiplano (Ambystoma velasci)</div>
+          <div class="mat-teacher">Catedrático: <strong>M.V.Z. Carlos Daniel Hernández López</strong></div>
+        </div>
+      </div>
+      <div class="mat-content">
+        <div class="mat-content-title">Estación Interdisciplinaria de Monitoreo Ambiental</div>
+        <p class="mat-content-intro">Vulnerabilidad del Ajolote del Altiplano frente a xenobióticos derivados de prácticas productivas en la región de Pachuca. Especie bajo Protección Especial (NOM-059-SEMARNAT-2010).</p>
+        <div class="tabs" id="bio-tabs">
+          <button class="tab active" onclick="switchTab('bio',0)">Ficha de especie</button>
+          <button class="tab" onclick="switchTab('bio',1)">Mapa de riesgo</button>
+          <button class="tab" onclick="switchTab('bio',2)">Xenobióticos</button>
+        </div>
+        <div class="tab-panel active" id="bio-0">
+          <table class="data-table">
+            <thead><tr><th>Parámetro</th><th>Dato</th></tr></thead>
+            <tbody>
+              <tr><td>Nombre científico</td><td>Ambystoma velasci (Dugès, 1888)</td></tr>
+              <tr><td>Familia</td><td>Ambystomatidae / Caudata (salamandras)</td></tr>
+              <tr><td>Estatus NOM-059</td><td>Sujeta a Protección Especial (Pr)</td></tr>
+              <tr><td>Estatus IUCN</td><td>Grave riesgo — poblaciones en declive severo</td></tr>
+              <tr><td>Distribución en Hidalgo</td><td>Bosque pino-encino y pastizales de alta montaña</td></tr>
+              <tr><td>Longitud adulto</td><td>50–121 mm · coloración café oscuro con manchas amarillas</td></tr>
+              <tr><td>Tendencia</td><td>Decreciente — contaminación, deforestación, especies invasoras</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="bio-1">
+          <p style="font-size:13px;color:var(--muted2);margin-bottom:18px;">Nivel de riesgo ecotoxicológico por zona geográfica para Ambystoma velasci:</p>
+          <div class="risk-item"><div class="risk-label"><span>Cuenca del Río Tula (zona industrial)</span><span style="color:var(--rose)">MUY ALTO</span></div><div class="risk-bar"><div class="risk-fill r4" data-w="95"></div></div></div>
+          <div class="risk-item"><div class="risk-label"><span>Valle del Mezquital (zona agrícola)</span><span style="color:var(--amber)">ALTO</span></div><div class="risk-bar"><div class="risk-fill r3" data-w="75"></div></div></div>
+          <div class="risk-item"><div class="risk-label"><span>Zona urbana Pachuca de Soto</span><span style="color:var(--sky)">MODERADO</span></div><div class="risk-bar"><div class="risk-fill r2" data-w="50"></div></div></div>
+          <div class="risk-item"><div class="risk-label"><span>Sierra de Pachuca (zona preservada)</span><span style="color:var(--emerald)">BAJO</span></div><div class="risk-bar"><div class="risk-fill r1" data-w="22"></div></div></div>
+        </div>
+        <div class="tab-panel" id="bio-2">
+          <table class="data-table">
+            <thead><tr><th>Xenobiótico</th><th>Fuente</th><th>Efecto en ajolote</th></tr></thead>
+            <tbody>
+              <tr><td>Glifosato</td><td>Cultivos Valle del Mezquital (0.1–1.2 mg/L)</td><td>Disruptor endocrino; altera metamorfosis y fertilidad</td></tr>
+              <tr><td>Pb, Cd, Zn</td><td>Refinería y termoeléctrica de Tula</td><td>Bioacumulación; daño renal, hepático y reproductivo</td></tr>
+              <tr><td>NH₃ amoniacal</td><td>Escurrimiento agrícola (&gt;0.5 mg/L)</td><td>Tóxico directo: daño en branquias y sistema nervioso</td></tr>
+              <tr><td>Microplásticos</td><td>Arroyos de Pachuca (mayor generador en Hidalgo)</td><td>Ingestión accidental; ftalatos y BPA con efecto endocrino</td></tr>
+              <tr><td>PM2.5 (&gt;25 µg/m³)</td><td>Termoeléctrica Francisco Pérez Ríos</td><td>Acidifica la lluvia; degrada el hábitat acuático</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Web y Móviles -->
+    <div class="materia-card m-web reveal">
+      <div class="mat-sidebar">
+        <div class="mat-num">06</div>
+        <div>
+          <span class="mat-tag tag-web">Computación</span>
+          <div class="mat-title">Aplicaciones Computacionales Web y Móviles</div>
+          <div class="mat-sub">Página web interactiva sobre el clima en Pachuca — este mismo sitio</div>
+        </div>
+      </div>
+      <div class="mat-content" style="display:flex;align-items:center;">
+        <div class="placeholder-content">
+          <div class="placeholder-icon">💻</div>
+          <div class="placeholder-title">Proyecto en desarrollo</div>
+          <div class="placeholder-sub">Esta página forma parte del proyecto. Se agregará documentación técnica próximamente.</div>
+          <span class="placeholder-badge">En progreso</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Electrónica -->
+    <div class="materia-card m-elec reveal">
+      <div class="mat-sidebar">
+        <div class="mat-num">07</div>
+        <div>
+          <span class="mat-tag tag-elec">Electrónica</span>
+          <div class="mat-title">Electrónica y Comunicaciones Aplicadas</div>
+          <div class="mat-sub">Estación Meteorológica Electrónica Básica — Diseño, Simulación e Integración de Sensores</div>
+        </div>
+      </div>
+      <div class="mat-content">
+        <div class="mat-content-title">Estación Meteorológica Electrónica</div>
+        <p class="mat-content-intro">Diseño y simulación de una estación meteorológica para monitorear variables climáticas de Pachuca. Clasificación de sensores: analógicos vs digitales, activos vs pasivos.</p>
+        <div class="tabs" id="elec-tabs">
+          <button class="tab active" onclick="switchTab('elec',0)">Sensores</button>
+          <button class="tab" onclick="switchTab('elec',1)">Variables</button>
+          <button class="tab" onclick="switchTab('elec',2)">Clasificación</button>
+        </div>
+        <div class="tab-panel active" id="elec-0">
+          <div class="sensor-grid">
+            <div class="sensor-card">
+              <div class="sensor-name">LM35</div>
+              <div class="sensor-var">Temperatura</div>
+              <div class="sensor-spec"><strong>Fabricante:</strong> Texas Instruments<br><strong>Rango:</strong> −55°C a +150°C<br><strong>Precisión:</strong> ±0.5°C<br><strong>Salida:</strong> 10 mV/°C (analógico)<br><strong>Costo:</strong> ~$20–30 MXN</div>
+            </div>
+            <div class="sensor-card">
+              <div class="sensor-name">DHT11</div>
+              <div class="sensor-var">Temperatura + Humedad</div>
+              <div class="sensor-spec"><strong>Fabricante:</strong> Aosong Electronics<br><strong>Temp:</strong> 0°C a 50°C (±2°C)<br><strong>Humedad:</strong> 20–80% (±5%)<br><strong>Salida:</strong> Digital 40 bits<br><strong>Costo:</strong> ~$30–50 MXN</div>
+            </div>
+            <div class="sensor-card">
+              <div class="sensor-name">BMP180</div>
+              <div class="sensor-var">Presión Atmosférica</div>
+              <div class="sensor-spec"><strong>Fabricante:</strong> Bosch Sensortec<br><strong>Rango:</strong> 300–1100 hPa<br><strong>Precisión:</strong> ±1 hPa<br><strong>Protocolo:</strong> I²C digital<br><strong>Altitud:</strong> −500 a +9,000 m</div>
+            </div>
+          </div>
+          <div class="alert-box info" style="margin-top:16px;">
+            <strong>⚡ Dato de Pachuca:</strong> Presión atmosférica ~770 mmHg. El BMP180 debe configurarse con corrección altimétrica para lecturas correctas a 2,426 m s.n.m.
+          </div>
+        </div>
+        <div class="tab-panel" id="elec-1">
+          <table class="data-table">
+            <thead><tr><th>Variable</th><th>Unidad</th><th>Rango</th><th>Sensor candidato</th></tr></thead>
+            <tbody>
+              <tr><td>Temperatura</td><td>°C</td><td>−40 a +80</td><td>LM35, DHT11, DS18B20</td></tr>
+              <tr><td>Humedad relativa</td><td>% HR</td><td>0 a 100</td><td>DHT11, DHT22, HIH-4030</td></tr>
+              <tr><td>Presión atmosférica</td><td>hPa</td><td>300–1100</td><td>BMP180, BMP280</td></tr>
+              <tr><td>Velocidad del viento</td><td>m/s</td><td>0 a 50+</td><td>Anemómetro de copelas</td></tr>
+              <tr><td>Dirección del viento</td><td>°</td><td>0 a 360</td><td>Veleta con potenciómetro</td></tr>
+              <tr><td>Precipitación</td><td>mm</td><td>0 a 500+</td><td>Pluviómetro de báscula</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="elec-2">
+          <table class="data-table">
+            <thead><tr><th>Tipo</th><th>Salida</th><th>Ventaja</th><th>Ejemplo</th></tr></thead>
+            <tbody>
+              <tr><td>Analógico</td><td>Voltaje continuo 0–5V</td><td>Información continua, bajo costo</td><td>LM35</td></tr>
+              <tr><td>Digital</td><td>Protocolo UART, SPI, I²C</td><td>Sin necesidad de ADC externo</td><td>DHT11, BMP180</td></tr>
+              <tr><td>Activo</td><td>Genera su propia señal</td><td>Requiere solo alimentación</td><td>LM35, DS18B20</td></tr>
+              <tr><td>Pasivo</td><td>Varía impedancia/resistencia</td><td>Simples y robustos</td><td>Termistor, fotoresistor</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Química -->
+    <div class="materia-card m-quim reveal">
+      <div class="mat-sidebar">
+        <div class="mat-num">08</div>
+        <div>
+          <span class="mat-tag tag-quim">Química</span>
+          <div class="mat-title">Análisis de Macromoléculas y Equilibrios Ácido-Base</div>
+          <div class="mat-sub">Impacto de contaminantes químicos en el ecosistema de Pachuca durante abril 2026</div>
+        </div>
+      </div>
+      <div class="mat-content" style="display:flex;align-items:center;">
+        <div class="placeholder-content">
+          <div class="placeholder-icon">🧪</div>
+          <div class="placeholder-title">Proyecto en desarrollo</div>
+          <div class="placeholder-sub">El contenido de esta materia se agregará próximamente.</div>
+          <span class="placeholder-badge">Próximamente</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-divider"></div>
+
+<!-- ─── BLOQUE: CIENCIAS SOCIALES ─── -->
+<section class="page-section" id="social" style="padding-bottom:20px;">
+  <div class="prope-block">
+    <div class="prope-header reveal">
+      <div class="prope-icon social">🏛️</div>
+      <div class="prope-info">
+        <div class="prope-label social">Área propedéutica</div>
+        <div class="prope-name">Ciencias Sociales y Humanidades</div>
+      </div>
+      <div class="prope-count">En construcción</div>
+    </div>
+
+    <div class="materia-card m-soc reveal" style="border-style:dashed;">
+      <div class="mat-sidebar">
+        <div class="mat-num">—</div>
+        <div>
+          <span class="mat-tag tag-soc">Ciencias Sociales</span>
+          <div class="mat-title">Materias propedéuticas</div>
+          <div class="mat-sub">Proyectos específicos del área de Ciencias Sociales y Humanidades</div>
+        </div>
+      </div>
+      <div class="mat-content" style="display:flex;align-items:center;">
+        <div class="placeholder-content">
+          <div class="placeholder-icon">📜</div>
+          <div class="placeholder-title">Proyectos en desarrollo</div>
+          <div class="placeholder-sub">Los proyectos de esta área propedéutica se agregarán próximamente cuando estén disponibles en Drive.</div>
+          <span class="placeholder-badge">Pendiente</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-divider"></div>
+
+<!-- ─── BLOQUE: CIENCIAS DE LA SALUD ─── -->
+<section class="page-section" id="salud">
+  <div class="prope-block">
+    <div class="prope-header reveal">
+      <div class="prope-icon salud">🏥</div>
+      <div class="prope-info">
+        <div class="prope-label salud">Área propedéutica</div>
+        <div class="prope-name">Ciencias de la Salud</div>
+      </div>
+      <div class="prope-count">En construcción</div>
+    </div>
+
+    <div class="materia-card m-sal reveal" style="border-style:dashed;">
+      <div class="mat-sidebar">
+        <div class="mat-num">—</div>
+        <div>
+          <span class="mat-tag tag-sal">Ciencias de la Salud</span>
+          <div class="mat-title">Materias propedéuticas</div>
+          <div class="mat-sub">Proyectos específicos del área de Ciencias de la Salud</div>
+        </div>
+      </div>
+      <div class="mat-content" style="display:flex;align-items:center;">
+        <div class="placeholder-content">
+          <div class="placeholder-icon">💊</div>
+          <div class="placeholder-title">Proyectos en desarrollo</div>
+          <div class="placeholder-sub">Los proyectos de esta área propedéutica se agregarán próximamente cuando estén disponibles en Drive.</div>
+          <span class="placeholder-badge">Pendiente</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-divider"></div>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <!-- Logo footer -->
+  <svg width="44" height="44" viewBox="0 0 38 38" fill="none" style="margin-bottom:16px;opacity:.6">
+    <defs>
+      <linearGradient id="flg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#38bdf8"/>
+        <stop offset="100%" stop-color="#34d399"/>
+      </linearGradient>
+    </defs>
+    <path d="M19 2 L34 10.5 L34 27.5 L19 36 L4 27.5 L4 10.5 Z" stroke="url(#flg1)" stroke-width="1.4" fill="rgba(56,189,248,0.05)"/>
+    <path d="M7 28 L14 17 L19 22.5 L24 15 L31 28" stroke="url(#flg1)" stroke-width="1.5" fill="none" stroke-linejoin="round" stroke-linecap="round" opacity=".7"/>
+    <circle cx="10" cy="12" r="2.5" fill="#38bdf8" opacity=".7"/>
+    <path d="M14 11 Q17 9.5 20 11" stroke="#34d399" stroke-width="1.2" fill="none" stroke-linecap="round" opacity=".7"/>
+    <path d="M14 14 Q18 12.5 22 14" stroke="#34d399" stroke-width="1.2" fill="none" stroke-linecap="round" opacity=".5"/>
+  </svg>
+  <p><strong>Preparatoria Colegio Pedro de Gante A.C.</strong> · Incorporada a la UAEH</p>
+  <p>Grupo 601 · Ciclo Escolar Enero–Junio 2026</p>
+  <p style="margin-top:12px;">Catedrático: <strong>M.V.Z. Carlos Daniel Hernández López</strong></p>
+  <p><span class="f-accent">Pachuca de Soto, Hidalgo — Abril 2026</span></p>
+</footer>
+
+<!-- ═══════════════ SCRIPTS ═══════════════ -->
+<script>
+/* ── PARTICLES ── */
+const pc = document.getElementById('particles');
+const colors = ['#38bdf8','#34d399','#a78bfa','#fbbf24'];
+for (let i = 0; i < 28; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  const size = 1.5 + Math.random() * 2;
+  p.style.cssText = `left:${Math.random()*100}%;width:${size}px;height:${size}px;background:${colors[i%4]};animation-duration:${9+Math.random()*14}s;animation-delay:${Math.random()*20}s;`;
+  pc.appendChild(p);
+}
+
+/* ── COUNTERS ── */
+function animateCount(el) {
+  const target = parseFloat(el.dataset.count);
+  const suffix = el.dataset.suffix || '';
+  const dur = 2200;
+  const t0 = performance.now();
+  (function step(t) {
+    const p = Math.min((t - t0) / dur, 1);
+    const e = 1 - Math.pow(1 - p, 3);
+    const v = target * e;
+    el.textContent = (String(target).includes('.') ? v.toFixed(1) : Math.round(v).toLocaleString()) + suffix;
+    if (p < 1) requestAnimationFrame(step);
+  })(t0);
+}
+const countObs = new IntersectionObserver(entries => entries.forEach(e => {
+  if (e.isIntersecting) { animateCount(e.target); countObs.unobserve(e.target); }
+}), { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
+
+/* ── SCROLL REVEAL ── */
+const revObs = new IntersectionObserver(entries => entries.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); }
+}), { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+/* ── RISK BARS ── */
+const riskObs = new IntersectionObserver(entries => entries.forEach(e => {
+  if (e.isIntersecting) {
+    e.target.querySelectorAll('.risk-fill').forEach(f => f.style.width = f.dataset.w + '%');
+    riskObs.unobserve(e.target);
+  }
+}), { threshold: 0.3 });
+document.querySelectorAll('.m-bio').forEach(el => riskObs.observe(el));
+
+/* ── TABS ── */
+function switchTab(g, idx) {
+  document.querySelectorAll(`#${g}-tabs .tab`).forEach((b, i) => {
+    b.classList.toggle('active', i === idx);
+    document.getElementById(`${g}-${i}`).classList.toggle('active', i === idx);
+  });
+}
+
+/* ── CHARTS ── */
+const cOpts = {
+  responsive: true,
+  plugins: { legend: { labels: { color: '#94a3b8', font: { size: 11 }, boxWidth: 14 } } },
+  scales: {
+    x: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: 'rgba(255,255,255,0.04)' } },
+    y: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: 'rgba(255,255,255,0.04)' } }
+  }
+};
+const labels6 = ['1 Abr','3 Abr','5 Abr','7 Abr','9 Abr','11 Abr'];
+
+new Chart(document.getElementById('chartTemp'), {
+  type: 'line',
+  data: {
+    labels: labels6,
+    datasets: [
+      { label:'Temp. real (°C)', data:[24,26,22,5,25,17], borderColor:'#fb7185', backgroundColor:'rgba(251,113,133,0.1)', tension:.4, fill:true, pointBackgroundColor:'#fb7185', pointRadius:5 },
+      { label:'Histórico ~15°C', data:[15,15,15,15,15,15], borderColor:'#475569', borderDash:[6,4], tension:0, fill:false, pointRadius:0 }
+    ]
+  },
+  options: cOpts
+});
+
+new Chart(document.getElementById('chartHum'), {
+  type: 'line',
+  data: {
+    labels: labels6,
+    datasets: [
+      { label:'Humedad real (%)', data:[38,35,82,72,40,91], borderColor:'#38bdf8', backgroundColor:'rgba(56,189,248,0.1)', tension:.4, fill:true, pointBackgroundColor:'#38bdf8', pointRadius:5 },
+      { label:'Histórico ~51%', data:[51,51,51,51,51,51], borderColor:'#475569', borderDash:[6,4], tension:0, fill:false, pointRadius:0 }
+    ]
+  },
+  options: cOpts
+});
+
+new Chart(document.getElementById('chartAnual'), {
+  type: 'bar',
+  data: {
+    labels: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+    datasets: [
+      { label:'Precipitación (mm)', data:[8,10,12,18,30,55,130,110,90,40,15,8], backgroundColor:'rgba(56,189,248,0.45)', borderColor:'#38bdf8', borderWidth:1, yAxisID:'y' },
+      { type:'line', label:'Temp. media (°C)', data:[8,10,13,17,18,17,15,15,14,13,11,8], borderColor:'#fbbf24', backgroundColor:'transparent', tension:.4, pointRadius:4, pointBackgroundColor:'#fbbf24', yAxisID:'y1' }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { labels: { color:'#94a3b8', font:{ size:11 }, boxWidth:14 } } },
+    scales: {
+      x:  { ticks:{ color:'#64748b', font:{ size:10 } }, grid:{ color:'rgba(255,255,255,0.04)' } },
+      y:  { ticks:{ color:'#64748b' }, grid:{ color:'rgba(255,255,255,0.04)' }, position:'left',  title:{ display:true, text:'mm', color:'#64748b', font:{ size:10 } } },
+      y1: { ticks:{ color:'#64748b' }, grid:{ drawOnChartArea:false }, position:'right', title:{ display:true, text:'°C', color:'#64748b', font:{ size:10 } } }
+    }
+  }
+});
+</script>
+</body>
+</html>
