@@ -1657,47 +1657,289 @@ const DETAILS = {
     hero: `https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=85`,
     content: `
       <div class="detail-facts">
-        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">6</div><div class="detail-fact-lbl">Variables medidas</div></div>
-        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">3</div><div class="detail-fact-lbl">Sensores principales</div></div>
-        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">770</div><div class="detail-fact-lbl">mmHg presión Pachuca</div></div>
-        <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">4</div><div class="detail-fact-lbl">Sesiones de trabajo</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">4</div><div class="detail-fact-lbl">Sesiones de trabajo</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">6</div><div class="detail-fact-lbl">Variables medidas</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">7</div><div class="detail-fact-lbl">Sensores analizados</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">$980</div><div class="detail-fact-lbl">Presupuesto máx MXN</div></div>
       </div>
+
+      <!-- SESIÓN 1 -->
       <div class="detail-sec">
-        <div class="detail-sec-head">Sensores Principales</div>
-        <div class="detail-3col">
-          <div class="detail-card"><h4 style="color:#fbbf24">LM35</h4><p><strong>Variable:</strong> Temperatura<br><strong>Fabricante:</strong> Texas Instruments<br><strong>Rango:</strong> −55°C a +150°C<br><strong>Precisión:</strong> ±0.5°C<br><strong>Salida:</strong> 10 mV/°C analógico<br><strong>Costo:</strong> ~$20–30 MXN</p></div>
-          <div class="detail-card"><h4 style="color:#fbbf24">DHT11</h4><p><strong>Variable:</strong> Temperatura + Humedad<br><strong>Fabricante:</strong> Aosong Electronics<br><strong>Temp:</strong> 0–50°C (±2°C)<br><strong>Humedad:</strong> 20–80% (±5%)<br><strong>Salida:</strong> Digital 40 bits<br><strong>Costo:</strong> ~$30–50 MXN</p></div>
-          <div class="detail-card"><h4 style="color:#fbbf24">BMP180</h4><p><strong>Variable:</strong> Presión Atmosférica<br><strong>Fabricante:</strong> Bosch Sensortec<br><strong>Rango:</strong> 300–1,100 hPa<br><strong>Precisión:</strong> ±1 hPa<br><strong>Protocolo:</strong> I²C digital<br><strong>Altitud:</strong> −500 a +9,000 m</p></div>
+        <div class="detail-sec-head">Sesión 1 · Teoría y Clasificación (22 abril)</div>
+        <div class="detail-sec-sub">Una estación meteorológica es un conjunto de instrumentos interconectados que miden, registran y transmiten datos de variables atmosféricas en tiempo real. Funciona como un sistema de monitoreo continuo del clima local.</div>
+
+        <div class="detail-gallery g2" style="margin-bottom:28px">
+          <div class="detail-gimg" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80')"><div class="detail-gimg-cap">Circuito PCB — electrónica de sensores</div></div>
+          <div class="detail-gimg" style="background-image:url('https://images.unsplash.com/photo-1581092160607-ee22731c9c36?w=800&q=80')"><div class="detail-gimg-cap">Arduino Uno — microcontrolador del proyecto</div></div>
         </div>
-      </div>
-      <div class="detail-sec">
-        <div class="detail-sec-head">Variables Medidas</div>
-        <table class="data-table"><thead><tr><th>Variable</th><th>Unidad</th><th>Rango</th><th>Sensor</th><th>Valor en Pachuca (Abr 2026)</th></tr></thead><tbody>
-          <tr><td>Temperatura</td><td>°C</td><td>−40 a +80</td><td>LM35, DHT11</td><td>5–26°C (anomalía: +9°C)</td></tr>
-          <tr><td>Humedad relativa</td><td>% HR</td><td>0 a 100</td><td>DHT11, DHT22</td><td>35–91% (mín histórico)</td></tr>
-          <tr><td>Presión atmosférica</td><td>hPa</td><td>300–1,100</td><td>BMP180</td><td>~770 mmHg (altitud)</td></tr>
-          <tr><td>Velocidad del viento</td><td>m/s</td><td>0 a 50+</td><td>Anemómetro copelas</td><td>Ráfagas 40 km/h</td></tr>
-          <tr><td>Dirección del viento</td><td>°</td><td>0 a 360</td><td>Veleta potenciómetro</td><td>NE predominante</td></tr>
-          <tr><td>Precipitación</td><td>mm</td><td>0 a 500+</td><td>Pluviómetro báscula</td><td>18 mm evento anómalo</td></tr>
+
+        <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px">Clasificación por Uso</p>
+        <table class="data-table"><thead><tr><th>Tipo</th><th>Uso</th><th>Precisión</th><th>Costo</th><th>Aplicaciones</th></tr></thead><tbody>
+          <tr><td>Doméstica</td><td>Hogares, jardines</td><td>±2–3%</td><td>$200–500 MXN</td><td>Clima interior, riego automático</td></tr>
+          <tr><td>Agrícola</td><td>Fincas, cultivos</td><td>±1–2%</td><td>$1,500–5,000 MXN</td><td>Riego, pesticidas, plagas</td></tr>
+          <tr><td>Educativa</td><td>Escuelas, laboratorios</td><td>±2–4%</td><td>$300–1,000 MXN</td><td>Enseñanza, proyectos</td></tr>
+          <tr><td>Profesional</td><td>Meteorología, investigación</td><td>±0.5–1%</td><td>$10,000+ MXN</td><td>Pronósticos, estudios</td></tr>
+        </tbody></table>
+
+        <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin:24px 0 12px">Variables Medidas y Especificaciones Técnicas</p>
+        <table class="data-table"><thead><tr><th>Variable</th><th>Unidad</th><th>Rango</th><th>Precisión</th><th>Sensor Candidato</th></tr></thead><tbody>
+          <tr><td>Temperatura</td><td>°C</td><td>−40 a +80</td><td>±0.5°C</td><td>LM35, DHT11, DS18B20</td></tr>
+          <tr><td>Humedad Relativa</td><td>% HR</td><td>0 a 100</td><td>±5%</td><td>DHT11, DHT22, HIH-4030</td></tr>
+          <tr><td>Presión Atmosférica</td><td>hPa</td><td>300–1100</td><td>±1 hPa</td><td>BMP180, BMP280, MPL3115A2</td></tr>
+          <tr><td>Velocidad del Viento</td><td>m/s</td><td>0 a 50+</td><td>±3%</td><td>Anemómetro de copelas</td></tr>
+          <tr><td>Dirección del Viento</td><td>°</td><td>0 a 360</td><td>±11.25°</td><td>Veleta con potenciómetro</td></tr>
+          <tr><td>Precipitación</td><td>mm</td><td>0 a 500+</td><td>±5%</td><td>Pluviómetro de báscula</td></tr>
+        </tbody></table>
+
+        <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin:24px 0 12px">Selección de Sensores del Equipo</p>
+        <table class="data-table"><thead><tr><th>Variable</th><th>Sensor Candidato</th><th>Justificación</th></tr></thead><tbody>
+          <tr><td>Temperatura</td><td>DS18B20 o PT1000</td><td>Alta precisión (±0.1–0.5°C), resistente a condiciones exteriores</td></tr>
+          <tr><td>Humedad Relativa</td><td>DHT22 (capacitivo)</td><td>Rango 0–100% con precisión ≈±2%, ampliamente usado en meteorología</td></tr>
+          <tr><td>Presión Atmosférica</td><td>BMP280 (piezorresistivo)</td><td>Sensor estándar para análisis climático y pronóstico</td></tr>
+          <tr><td>Velocidad del Viento</td><td>Anemómetro de cazoletas</td><td>Instrumento básico, mide hasta ~50 m/s</td></tr>
+          <tr><td>Dirección del Viento</td><td>Veleta electrónica</td><td>Convierte dirección del viento en señal eléctrica 0–360°</td></tr>
+          <tr><td>Precipitación</td><td>Pluviómetro de cubeta basculante</td><td>Método estándar, buena precisión en mm acumulados</td></tr>
         </tbody></table>
       </div>
+
+      <!-- SESIÓN 2 -->
       <div class="detail-sec">
-        <div class="detail-sec-head">Clasificación de Sensores</div>
-        <div class="detail-2col">
-          <div class="detail-card"><h4>Analógicos vs Digitales</h4>
-            <table class="data-table"><thead><tr><th>Tipo</th><th>Salida</th><th>Ventaja</th><th>Ejemplo</th></tr></thead><tbody>
-              <tr><td>Analógico</td><td>Voltaje 0–5V</td><td>Info continua, barato</td><td>LM35</td></tr>
-              <tr><td>Digital</td><td>UART/SPI/I²C</td><td>Sin ADC externo</td><td>DHT11, BMP180</td></tr>
-            </tbody></table>
+        <div class="detail-sec-head">Sesión 2 · Clasificación y Principios de Funcionamiento (23 abril)</div>
+
+        <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px">Analógicos vs Digitales</p>
+        <table class="data-table"><thead><tr><th>Aspecto</th><th>Analógicos</th><th>Digitales</th></tr></thead><tbody>
+          <tr><td>Salida</td><td>Voltaje continuo proporcional</td><td>Datos binarios (0/1)</td></tr>
+          <tr><td>Rango voltaje</td><td>0–5V (típico) o 4–20mA</td><td>Protocolo (UART, SPI, I²C)</td></tr>
+          <tr><td>Ventaja</td><td>Información continua, barato</td><td>No requiere acondicionamiento</td></tr>
+          <tr><td>Desventaja</td><td>Necesita ADC, ruido eléctrico</td><td>Más complejo, más caro</td></tr>
+          <tr><td>Ejemplo</td><td>LM35 (temperatura)</td><td>DHT11 (temperatura + HR)</td></tr>
+        </tbody></table>
+
+        <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin:24px 0 12px">Activos vs Pasivos</p>
+        <table class="data-table"><thead><tr><th>Tipo</th><th>Definición</th><th>Ejemplo</th><th>Alimentación</th></tr></thead><tbody>
+          <tr><td>Activos</td><td>Generan su propia señal</td><td>LM35, DS18B20</td><td>Requieren alimentación</td></tr>
+          <tr><td>Pasivos</td><td>Varían su impedancia/resistencia</td><td>Termistor, fotoresistor</td><td>Necesitan excitación externa</td></tr>
+        </tbody></table>
+
+        <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin:24px 0 12px">Sensores Principales — Especificaciones Técnicas</p>
+        <div class="detail-3col">
+          <div class="detail-card">
+            <h4 style="color:#fbbf24;margin-bottom:10px">LM35 — Temperatura Analógica</h4>
+            <p style="font-size:12px;line-height:1.8"><strong>Fabricante:</strong> Texas Instruments<br><strong>Rango:</strong> −55°C a +150°C<br><strong>Precisión:</strong> ±0.5°C<br><strong>Salida:</strong> 10 mV/°C (analógico)<br><strong>Alimentación:</strong> 4V a 30V DC<br><strong>Consumo:</strong> ~60 µA<br><strong>Costo:</strong> ~$20–30 MXN</p>
+            <div class="alert-box info" style="margin-top:12px;font-size:11px">T(°C) = Vout(V) × 100<br>Ejemplo: 0.35V → 35°C</div>
           </div>
-          <div class="detail-card"><h4>Activos vs Pasivos</h4>
-            <table class="data-table"><thead><tr><th>Tipo</th><th>Definición</th><th>Ejemplo</th></tr></thead><tbody>
-              <tr><td>Activo</td><td>Genera su propia señal</td><td>LM35, DS18B20</td></tr>
-              <tr><td>Pasivo</td><td>Varía impedancia</td><td>Termistor, fotoresistor</td></tr>
-            </tbody></table>
+          <div class="detail-card">
+            <h4 style="color:#fbbf24;margin-bottom:10px">DHT11 — Temp + Humedad Digital</h4>
+            <p style="font-size:12px;line-height:1.8"><strong>Fabricante:</strong> Aosong Electronics<br><strong>Temperatura:</strong> 0°C a 50°C (±2°C)<br><strong>Humedad:</strong> 20% a 80% (±5% HR)<br><strong>Salida:</strong> Protocolo digital 40 bits<br><strong>Respuesta:</strong> ~2 segundos<br><strong>Consumo:</strong> ~2.5 mA máx<br><strong>Costo:</strong> ~$30–50 MXN</p>
+            <div class="alert-box info" style="margin-top:12px;font-size:11px">40 bits: Byte1 HR-entera · Byte2 HR-decimal · Byte3 T-entera · Byte4 T-decimal · Byte5 Checksum</div>
+          </div>
+          <div class="detail-card">
+            <h4 style="color:#fbbf24;margin-bottom:10px">BMP180 — Presión I²C</h4>
+            <p style="font-size:12px;line-height:1.8"><strong>Fabricante:</strong> Bosch Sensortec<br><strong>Presión:</strong> 300–1100 hPa<br><strong>Precisión:</strong> ±1 hPa<br><strong>Interfaz:</strong> I²C (dirección 0x77)<br><strong>Voltaje:</strong> 1.8V a 3.6V<br><strong>Consumo:</strong> ~5 µA reposo<br><strong>Costo:</strong> ~$80–120 MXN</p>
+            <div class="alert-box info" style="margin-top:12px;font-size:11px">h(m) = 44330 × [1 − (P/P₀)^(1/5.255)]<br>P₀ = 1013.25 hPa (nivel del mar)</div>
           </div>
         </div>
-        <div class="alert-box info" style="margin-top:16px">⚡ <strong>Dato de Pachuca:</strong> A 2,426 m s.n.m. la presión es ~770 mmHg (inferior a los 1,013 hPa del nivel del mar). El BMP180 debe configurarse con corrección altimétrica para lecturas correctas.</div>
+
+        <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin:24px 0 12px">Tabla Comparativa de Sensores</p>
+        <table class="data-table"><thead><tr><th>Característica</th><th>LM35</th><th>DHT11</th><th>BMP180</th></tr></thead><tbody>
+          <tr><td>Tipo</td><td>Analógico</td><td>Digital</td><td>Digital (I²C)</td></tr>
+          <tr><td>Activo/Pasivo</td><td>Activo</td><td>Activo</td><td>Activo</td></tr>
+          <tr><td>Variables</td><td>1 (Temperatura)</td><td>2 (Temp + HR)</td><td>2 (Presión + Temp)</td></tr>
+          <tr><td>Precisión Temp</td><td>±0.5°C</td><td>±2°C</td><td>±1°C</td></tr>
+          <tr><td>Rango Temperatura</td><td>−55 a +150°C</td><td>0 a 50°C</td><td>−40 a +85°C</td></tr>
+          <tr><td>Interfaz</td><td>Analógica (ADC)</td><td>One-Wire</td><td>I²C</td></tr>
+          <tr><td>Costo (MXN)</td><td>$20–30</td><td>$30–50</td><td>$80–120</td></tr>
+          <tr><td>Consumo (mA)</td><td>0.06</td><td>2.5</td><td>0.005</td></tr>
+          <tr><td>Tiempo respuesta</td><td>&lt;100ms</td><td>~2s</td><td>~3–5ms</td></tr>
+        </tbody></table>
+      </div>
+
+      <!-- SESIÓN 3 -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Sesión 3 · Diagrama a Bloques y Cadena de Medición (29 abril)</div>
+        <div class="detail-sec-sub">La cadena de medición conecta cada sensor con el microcontrolador mediante etapas de acondicionamiento, conversión y procesamiento hasta llegar a la salida de datos.</div>
+
+        <div class="detail-card" style="margin-bottom:20px">
+          <p style="font-size:12px;font-weight:700;color:var(--amber);margin-bottom:14px;letter-spacing:1px;text-transform:uppercase">Cadena de Medición Completa</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+            <span style="background:rgba(251,191,36,.15);color:#fbbf24;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:600">SENSOR</span>
+            <span style="color:var(--muted)">→</span>
+            <span style="background:rgba(56,189,248,.1);color:#38bdf8;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:600">ACONDICIONAMIENTO</span>
+            <span style="color:var(--muted)">→</span>
+            <span style="background:rgba(167,139,250,.1);color:#a78bfa;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:600">ADC / I²C</span>
+            <span style="color:var(--muted)">→</span>
+            <span style="background:rgba(52,211,153,.1);color:#34d399;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:600">MICROCONTROLADOR</span>
+            <span style="color:var(--muted)">→</span>
+            <span style="background:rgba(251,113,133,.1);color:#fb7185;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:600">PROCESAMIENTO</span>
+            <span style="color:var(--muted)">→</span>
+            <span style="background:rgba(45,212,191,.1);color:#2dd4bf;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:600">SALIDA</span>
+          </div>
+        </div>
+
+        <div class="detail-card" style="margin-bottom:20px">
+          <p style="font-size:12px;font-weight:700;color:var(--amber);margin-bottom:14px;letter-spacing:1px;text-transform:uppercase">Diagrama Funcional por Capas</p>
+          <div style="display:grid;gap:10px">
+            <div style="border:1px solid rgba(251,191,36,.2);border-radius:10px;padding:12px 16px">
+              <span style="font-size:11px;font-weight:700;color:#fbbf24;text-transform:uppercase;letter-spacing:1px">CAPA 1 — Sensores</span>
+              <p style="font-size:12px;color:var(--muted2);margin-top:6px">LM35 (Temperatura Analógica) · DHT11 (Temp+HR Digital) · BMP180 (Presión I²C) · Anemómetro</p>
+            </div>
+            <div style="border:1px solid rgba(56,189,248,.2);border-radius:10px;padding:12px 16px">
+              <span style="font-size:11px;font-weight:700;color:#38bdf8;text-transform:uppercase;letter-spacing:1px">CAPA 2 — Acondicionamiento y Conversión</span>
+              <p style="font-size:12px;color:var(--muted2);margin-top:6px">Amplificador (Seguidor) · Conversor ADC 10-bit · Protección ESD · Capacitores 100nF</p>
+            </div>
+            <div style="border:1px solid rgba(52,211,153,.2);border-radius:10px;padding:12px 16px">
+              <span style="font-size:11px;font-weight:700;color:#34d399;text-transform:uppercase;letter-spacing:1px">CAPA 3 — Procesamiento (Microcontrolador)</span>
+              <p style="font-size:12px;color:var(--muted2);margin-top:6px">Arduino Uno · Lectura de sensores · Cálculos y calibración · Almacenamiento temporal</p>
+            </div>
+            <div style="border:1px solid rgba(167,139,250,.2);border-radius:10px;padding:12px 16px">
+              <span style="font-size:11px;font-weight:700;color:#a78bfa;text-transform:uppercase;letter-spacing:1px">CAPA 4 — Almacenamiento y Comunicación</span>
+              <p style="font-size:12px;color:var(--muted2);margin-top:6px">EEPROM 24LC08 · Módulo SD Card · Módulo WiFi/GSM</p>
+            </div>
+            <div style="border:1px solid rgba(45,212,191,.2);border-radius:10px;padding:12px 16px">
+              <span style="font-size:11px;font-weight:700;color:#2dd4bf;text-transform:uppercase;letter-spacing:1px">CAPA 5 — Salida y Visualización</span>
+              <p style="font-size:12px;color:var(--muted2);margin-top:6px">Display LCD 16x2 · Monitor Serial (Puerto USB) · Cloud (ThingSpeak)</p>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin:24px 0 12px">Selección de Microcontrolador</p>
+        <table class="data-table"><thead><tr><th>Característica</th><th>Arduino Uno</th><th>Arduino Nano</th><th>NodeMCU ESP8266</th><th>Arduino MKR WiFi</th></tr></thead><tbody>
+          <tr><td>Microcontrolador</td><td>ATmega328P</td><td>ATmega328P</td><td>ESP8266</td><td>SAMD21</td></tr>
+          <tr><td>Voltaje</td><td>5V</td><td>5V</td><td>3.3V</td><td>3.3V</td></tr>
+          <tr><td>Entradas ADC</td><td>6 (10-bit)</td><td>6 (10-bit)</td><td>1 (10-bit)</td><td>7 (12-bit)</td></tr>
+          <tr><td>Velocidad (MHz)</td><td>16</td><td>16</td><td>80/160</td><td>48</td></tr>
+          <tr><td>RAM</td><td>2 KB</td><td>2 KB</td><td>160 KB</td><td>32 KB</td></tr>
+          <tr><td>WiFi Integrado</td><td>No</td><td>No</td><td>Sí</td><td>Sí</td></tr>
+          <tr><td>Costo (MXN)</td><td>$180–250</td><td>$120–180</td><td>$80–120</td><td>$400–600</td></tr>
+        </tbody></table>
+
+        <div class="detail-card" style="margin-top:20px">
+          <p style="font-size:12px;font-weight:700;color:#34d399;margin-bottom:14px;letter-spacing:1px;text-transform:uppercase">Justificación Técnica — Arduino Uno (Seleccionado)</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div style="background:var(--bg2);border-radius:8px;padding:12px"><p style="font-size:12px;color:var(--muted2)"><strong style="color:#34d399">✓ Pines ADC:</strong> Necesitamos 1 entrada (LM35). Disponibles: 6. Cumple.</p></div>
+            <div style="background:var(--bg2);border-radius:8px;padding:12px"><p style="font-size:12px;color:var(--muted2)"><strong style="color:#34d399">✓ I²C para BMP180:</strong> A4 (SDA) y A5 (SCL) nativos. Compatible.</p></div>
+            <div style="background:var(--bg2);border-radius:8px;padding:12px"><p style="font-size:12px;color:var(--muted2)"><strong style="color:#34d399">✓ Voltaje:</strong> Sensores 3.3–5V. Arduino provee ambos regulados.</p></div>
+            <div style="background:var(--bg2);border-radius:8px;padding:12px"><p style="font-size:12px;color:var(--muted2)"><strong style="color:#34d399">✓ Memoria:</strong> Firmware ~1.5KB + buffer ~300B. Disponible: 32KB Flash.</p></div>
+          </div>
+        </div>
+
+        <div class="alert-box info" style="margin-top:16px">⚡ <strong>Dato de Pachuca:</strong> A 2,426 m s.n.m. la presión es ~770 mmHg. El BMP180 usa la ecuación barométrica h = 44330 × [1−(P/P₀)^(1/5.255)] con P₀ = 1013.25 hPa para corrección altimétrica.</div>
+      </div>
+
+      <!-- SESIÓN 4 -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Sesión 4 · Integración y Presentación Final (30 abril)</div>
+
+        <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px">Tabla Completa de Sensores del Proyecto</p>
+        <table class="data-table"><thead><tr><th>Sensor</th><th>Tipo</th><th>Variable</th><th>Rango</th><th>Precisión</th><th>Interfaz</th><th>Costo MXN</th></tr></thead><tbody>
+          <tr><td>LM35</td><td>Analógico/Activo</td><td>Temperatura</td><td>−55 a +150°C</td><td>±0.5°C</td><td>ADC</td><td>$20–30</td></tr>
+          <tr><td>DHT11</td><td>Digital/Activo</td><td>Temp + HR</td><td>0–50°C, 20–80%</td><td>±2°C, ±5%</td><td>One-Wire</td><td>$30–50</td></tr>
+          <tr><td>BMP180</td><td>Digital/I²C</td><td>Presión</td><td>300–1100 hPa</td><td>±1 hPa</td><td>I²C</td><td>$80–120</td></tr>
+          <tr><td>DS18B20</td><td>Digital/Activo</td><td>Temperatura</td><td>−55 a +125°C</td><td>±0.5°C</td><td>One-Wire</td><td>$15–25</td></tr>
+          <tr><td>Anemómetro</td><td>Mecánico/Activo</td><td>Viento</td><td>0–50+ m/s</td><td>±3%</td><td>Digital/Analógica</td><td>$200–500</td></tr>
+          <tr><td>Veleta</td><td>Mecánico/Pasivo</td><td>Dirección Viento</td><td>0–360°</td><td>±11.25°</td><td>Potenciómetro</td><td>$100–300</td></tr>
+          <tr><td>Pluviómetro</td><td>Mecánico/Pasivo</td><td>Precipitación</td><td>0–500+ mm</td><td>±5%</td><td>Contactos</td><td>$150–400</td></tr>
+        </tbody></table>
+
+        <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin:28px 0 12px">Lista de Materiales</p>
+        <table class="data-table"><thead><tr><th>Componente</th><th>Cant.</th><th>Costo Unit. (MXN)</th><th>Costo Total</th><th>Proveedor</th></tr></thead><tbody>
+          <tr><td>Arduino Uno R3</td><td>1</td><td>$180–200</td><td>$200</td><td>Aliexpress, MercadoLibre</td></tr>
+          <tr><td>Sensor LM35</td><td>1</td><td>$20–30</td><td>$30</td><td>ElectrónicaStore, eBay</td></tr>
+          <tr><td>Sensor DHT11</td><td>1</td><td>$30–50</td><td>$50</td><td>Tienda Online</td></tr>
+          <tr><td>Sensor BMP180</td><td>1</td><td>$80–120</td><td>$120</td><td>Amazon México</td></tr>
+          <tr><td>Cable USB-A a USB-B</td><td>1</td><td>$15–25</td><td>$25</td><td>Cualquier tienda</td></tr>
+          <tr><td>Resistencias (100Ω, 10kΩ, 220Ω)</td><td>10</td><td>$1–2 c/u</td><td>$20</td><td>Ferreterías</td></tr>
+          <tr><td>Capacitores (100nF, 10µF)</td><td>5</td><td>$2–3 c/u</td><td>$15</td><td>Ferreterías</td></tr>
+          <tr><td>Display LCD 16x2 I²C</td><td>1</td><td>$120–150</td><td>$150</td><td>Electrónica online</td></tr>
+          <tr><td>Protoboard 830 puntos</td><td>1</td><td>$40–60</td><td>$60</td><td>Librerías</td></tr>
+          <tr><td>Cables y conectores</td><td>1 lote</td><td>$50–100</td><td>$100</td><td>Varios</td></tr>
+          <tr><td>Fuente 5V/2A</td><td>1</td><td>$60–100</td><td>$100</td><td>Almacenes</td></tr>
+          <tr><td>Regulador 3.3V (AMS1117)</td><td>1</td><td>$5–10</td><td>$10</td><td>eBay</td></tr>
+          <tr><td>Op-amp LM358</td><td>1</td><td>$15–20</td><td>$20</td><td>Tienda Electrónica</td></tr>
+          <tr><td colspan="3" style="text-align:right;font-weight:700;color:var(--text)">TOTAL ESTIMADO</td><td style="color:#34d399;font-weight:700">$635–$980</td><td></td></tr>
+        </tbody></table>
+
+        <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin:28px 0 12px">Código de Ejemplo — Arduino (LM35 + DHT11)</p>
+        <div class="detail-card">
+          <pre style="font-family:monospace;font-size:12px;color:#34d399;line-height:1.8;overflow-x:auto;white-space:pre-wrap"><code>#include &lt;DHT.h&gt;
+DHT dht(2, DHT11);   // pin D2
+int tempLM35 = A0;   // pin A0
+
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+}
+
+void loop() {
+  // Lectura LM35 (analógico)
+  float voltaje = analogRead(tempLM35) * (5.0 / 1023.0);
+  float tempC   = voltaje * 100;
+
+  // Lectura DHT11 (digital)
+  float humedad = dht.readHumidity();
+  float tempDHT = dht.readTemperature();
+
+  Serial.print("Temp LM35: "); Serial.println(tempC);
+  Serial.print("Temp DHT:  "); Serial.println(tempDHT);
+  Serial.print("Humedad:   "); Serial.println(humedad);
+  delay(2000);
+}</code></pre>
+        </div>
+
+        <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin:28px 0 12px">Rúbrica de Evaluación</p>
+        <table class="data-table"><thead><tr><th>Concepto</th><th>%</th><th>Criterios</th></tr></thead><tbody>
+          <tr><td>Tabla de variables y sensores (S1)</td><td style="color:#fbbf24;font-weight:700">15%</td><td>Clasificación correcta, rango típico, sensor justificado</td></tr>
+          <tr><td>Simulación funcional (S2)</td><td style="color:#fbbf24;font-weight:700">25%</td><td>Circuito correcto en Tinkercad, lecturas coherentes, datos capturados</td></tr>
+          <tr><td>Diagrama a bloques completo (S3)</td><td style="color:#fbbf24;font-weight:700">30%</td><td>Flujo claro, componentes identificados, interfases correctas</td></tr>
+          <tr><td>Presentación final y justificaciones (S4)</td><td style="color:#fbbf24;font-weight:700">30%</td><td>Claridad técnica, selección justificada, entrega a tiempo</td></tr>
+        </tbody></table>
+      </div>
+
+      <!-- ANEXOS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Anexos Técnicos</div>
+        <div class="detail-2col">
+          <div class="detail-card">
+            <h4 style="color:#fbbf24;margin-bottom:10px">Anexo A — Pinout Arduino Uno</h4>
+            <p style="font-size:12px;line-height:1.9;color:var(--muted2)">
+              <strong style="color:var(--text)">Pines Digitales:</strong> 0–13<br>
+              <strong style="color:var(--text)">Pines ADC:</strong> A0–A5 (10-bit)<br>
+              <strong style="color:var(--text)">I²C:</strong> A4 (SDA), A5 (SCL)<br>
+              <strong style="color:var(--text)">SPI:</strong> Pin 10 (SS), 11 (MOSI), 12 (MISO), 13 (SCK)<br>
+              <strong style="color:var(--text)">Voltaje:</strong> VCC 5V y GND
+            </p>
+          </div>
+          <div class="detail-card">
+            <h4 style="color:#fbbf24;margin-bottom:10px">Anexo B — Protocolo I²C</h4>
+            <p style="font-size:12px;line-height:1.9;color:var(--muted2)">
+              <strong style="color:var(--text)">Líneas:</strong> SDA (datos), SCL (reloj)<br>
+              <strong style="color:var(--text)">Velocidad estándar:</strong> 100 kHz<br>
+              <strong style="color:var(--text)">Velocidad rápida:</strong> 400 kHz<br>
+              <strong style="color:var(--text)">Direcciones:</strong> 7 bits (0–127)<br>
+              <strong style="color:var(--text)">Pull-up:</strong> 4.7 kΩ típico
+            </p>
+          </div>
+          <div class="detail-card">
+            <h4 style="color:#fbbf24;margin-bottom:10px">Anexo C — Valores de Referencia México</h4>
+            <table class="data-table" style="margin-top:8px"><thead><tr><th>Variable</th><th>Rango típico</th></tr></thead><tbody>
+              <tr><td>Temperatura</td><td>5°C a 35°C</td></tr>
+              <tr><td>Humedad Relativa</td><td>30% a 80%</td></tr>
+              <tr><td>Presión Atmosférica</td><td>1000–1020 hPa</td></tr>
+              <tr><td>Altitud Pachuca</td><td>2,426 m s.n.m.</td></tr>
+              <tr><td>Presión nivel del mar</td><td>1013.25 hPa</td></tr>
+            </tbody></table>
+          </div>
+          <div class="detail-card">
+            <h4 style="color:#fbbf24;margin-bottom:10px">Anexo D — Proveedores en México</h4>
+            <p style="font-size:12px;line-height:1.9;color:var(--muted2)">
+              <strong style="color:var(--text)">Aliexpress:</strong> Componentes y sensores (envío a México)<br>
+              <strong style="color:var(--text)">MercadoLibre:</strong> Componentes, envío rápido nacional<br>
+              <strong style="color:var(--text)">Amazon México:</strong> Con garantía y envío prime<br>
+              <strong style="color:var(--text)">ElectrónicaStore:</strong> Tienda en línea mexicana<br>
+              <strong style="color:var(--text)">Ferreterías locales:</strong> Resistencias, capacitores, cables
+            </p>
+          </div>
+        </div>
       </div>`
   },
 
