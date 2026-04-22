@@ -67,7 +67,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0; pointer-events: none;
-      background-image: url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=1800&q=85');
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg');
       background-size: cover; background-position: center 40%;
     }
     .hero-bg::after {
@@ -181,14 +181,16 @@
     .poi-card {
       background: var(--card); border: 1px solid var(--border); border-radius: 16px;
       overflow: hidden; transition: transform .3s, box-shadow .3s;
+      cursor: pointer;
     }
-    .poi-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+    .poi-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,.45); border-color: rgba(56,189,248,.35); }
     .poi-img {
       height: 190px; position: relative; overflow: hidden;
       background-size: cover; background-position: center;
       transition: transform .4s ease;
+      cursor: pointer;
     }
-    .poi-card:hover .poi-img { transform: scale(1.04); }
+    .poi-card:hover .poi-img { transform: scale(1.08); }
     .poi-img::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(8,13,26,.85) 100%); }
     .poi-body { padding: 18px 20px 22px; }
     .poi-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
@@ -228,14 +230,18 @@
     .materia-card {
       background: var(--card); border: 1px solid var(--border); border-radius: 20px;
       overflow: hidden; display: grid; grid-template-columns: 260px 1fr;
-      transition: box-shadow .3s; margin-bottom: 24px;
+      transition: box-shadow .3s, border-color .3s; margin-bottom: 24px;
+      cursor: pointer;
     }
-    .materia-card:hover { box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+    .materia-card:hover { box-shadow: 0 20px 60px rgba(0,0,0,.5); border-color: rgba(56,189,248,.35); }
     .mat-sidebar {
       padding: 36px 28px; display: flex; flex-direction: column;
       justify-content: space-between; position: relative; overflow: hidden;
       background-size: cover; background-position: center;
+      transition: transform .4s ease;
+      cursor: pointer;
     }
+    .materia-card:hover .mat-sidebar { transform: scale(1.03); }
     .mat-sidebar::before {
       content:''; position:absolute; inset:0;
       background: inherit;
@@ -248,42 +254,52 @@
       width:180px; height:180px; border-radius:50%; opacity:.12; z-index:0;
     }
     /* sidebar themes — imagen + overlay de color */
-    .m-eco  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=500&q=80'); }
+    /* Ecología → Parque Ecológico Cubitos real */
+    .m-eco  .mat-sidebar { background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Parque_Ecol%C3%B3gico_Cubitos._01.jpg'); }
     .m-eco  .mat-sidebar::before { background: linear-gradient(150deg,rgba(8,42,26,.92),rgba(13,61,34,.88)); filter:none; }
     .m-eco  .mat-sidebar::after  { background: var(--emerald); }
 
-    .m-filo .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80'); }
+    /* Filosofía → libro antiguo/pensamiento */
+    .m-filo .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=500&q=80'); }
     .m-filo .mat-sidebar::before { background: linear-gradient(150deg,rgba(26,18,40,.93),rgba(40,25,63,.88)); filter:none; }
     .m-filo .mat-sidebar::after  { background: var(--violet); }
 
+    /* Matemáticas → pizarrón con fórmulas/estadísticas */
     .m-mat  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=500&q=80'); }
     .m-mat  .mat-sidebar::before { background: linear-gradient(150deg,rgba(12,31,56,.93),rgba(19,45,82,.88)); filter:none; }
     .m-mat  .mat-sidebar::after  { background: var(--sky); }
 
+    /* El Universo → espacio/galaxia/estrellas */
     .m-uni  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=500&q=80'); }
     .m-uni  .mat-sidebar::before { background: linear-gradient(150deg,rgba(26,13,40,.93),rgba(42,21,66,.88)); filter:none; }
     .m-uni  .mat-sidebar::after  { background: var(--violet); }
 
-    .m-bio  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1564349683136-77e08dba1ef3?w=500&q=80'); }
+    /* Biodiversidad → ajolote Ambystoma real */
+    .m-bio  .mat-sidebar { background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e9/Ajolote_%28Ambystoma_mexicanum%29.jpg'); }
     .m-bio  .mat-sidebar::before { background: linear-gradient(150deg,rgba(13,31,61,.93),rgba(26,48,96,.88)); filter:none; }
     .m-bio  .mat-sidebar::after  { background: var(--sky); }
 
+    /* Web → código en pantalla */
     .m-web  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&q=80'); }
     .m-web  .mat-sidebar::before { background: linear-gradient(150deg,rgba(0,31,26,.93),rgba(0,51,40,.88)); filter:none; }
     .m-web  .mat-sidebar::after  { background: var(--teal); }
 
+    /* Electrónica → placa de circuitos PCB */
     .m-elec .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&q=80'); }
     .m-elec .mat-sidebar::before { background: linear-gradient(150deg,rgba(42,24,0,.93),rgba(61,36,0,.88)); filter:none; }
     .m-elec .mat-sidebar::after  { background: var(--amber); }
 
+    /* Química → laboratorio tubos de ensayo */
     .m-quim .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=500&q=80'); }
     .m-quim .mat-sidebar::before { background: linear-gradient(150deg,rgba(26,10,10,.93),rgba(46,16,16,.88)); filter:none; }
     .m-quim .mat-sidebar::after  { background: var(--rose); }
 
-    .m-soc  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500&q=80'); }
+    /* Ciencias Sociales → comunidad/plaza mexicana */
+    .m-soc  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?w=500&q=80'); }
     .m-soc  .mat-sidebar::before { background: linear-gradient(150deg,rgba(26,18,0,.93),rgba(46,32,0,.88)); filter:none; }
     .m-soc  .mat-sidebar::after  { background: var(--amber); }
 
+    /* Ciencias de la Salud → medicina/salud */
     .m-sal  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1576671081837-49000212a370?w=500&q=80'); }
     .m-sal  .mat-sidebar::before { background: linear-gradient(150deg,rgba(26,10,16,.93),rgba(46,16,32,.88)); filter:none; }
     .m-sal  .mat-sidebar::after  { background: var(--rose); }
@@ -418,6 +434,152 @@
     @media (max-width:560px) {
       .poi-grid { grid-template-columns:1fr; }
       h1 { letter-spacing:-1px; }
+    }
+
+    /* ══════════════════════════════════════
+       DETAIL PAGE OVERLAY
+    ══════════════════════════════════════ */
+    .detail-page {
+      position: fixed; inset: 0; z-index: 600;
+      background: var(--bg);
+      overflow-y: auto; overflow-x: hidden;
+      transform: translateY(100%);
+      transition: transform .45s cubic-bezier(.2,1,.3,1);
+      visibility: hidden;
+    }
+    .detail-page.open {
+      transform: translateY(0);
+      visibility: visible;
+    }
+    .detail-topbar {
+      position: sticky; top: 0; z-index: 10;
+      height: 60px; padding: 0 40px;
+      display: flex; align-items: center; gap: 16px;
+      background: rgba(8,13,26,.9);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+    }
+    .detail-back-btn {
+      display: flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.07); border: 1px solid var(--border);
+      color: var(--text); border-radius: 10px; padding: 7px 16px;
+      font-size: 13px; font-weight: 600; cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background .2s, border-color .2s;
+      flex-shrink: 0;
+    }
+    .detail-back-btn:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.15); }
+    .detail-topbar-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px; font-weight: 700; color: var(--muted2);
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .detail-hero {
+      width: 100%; height: 480px;
+      background-size: cover; background-position: center;
+      position: relative; overflow: hidden;
+    }
+    .detail-hero::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(8,13,26,.3) 0%,
+        rgba(8,13,26,.0) 30%,
+        rgba(8,13,26,.0) 55%,
+        rgba(8,13,26,1)  100%);
+    }
+    .detail-hero-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 40px 56px; z-index: 2;
+    }
+    .detail-hero-tag {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      letter-spacing: 1.8px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 100px; margin-bottom: 14px;
+    }
+    .detail-hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 700; letter-spacing: -1.5px; line-height: 1.05;
+    }
+    .detail-hero-sub { font-size: 15px; color: var(--muted2); margin-top: 10px; max-width: 600px; line-height: 1.65; }
+
+    .detail-body { max-width: 1140px; margin: 0 auto; padding: 56px 56px 100px; }
+
+    .detail-sec { margin-bottom: 64px; }
+    .detail-sec-head {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem; font-weight: 700; margin-bottom: 8px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .detail-sec-head::after { content:''; flex:1; height:1px; background:var(--border); }
+    .detail-sec-sub { font-size: 14px; color: var(--muted2); margin-bottom: 28px; line-height: 1.75; max-width: 700px; }
+
+    .detail-facts { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 36px; }
+    .detail-fact {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 20px 16px; text-align: center;
+      transition: transform .3s, border-color .3s;
+    }
+    .detail-fact:hover { transform: translateY(-3px); border-color: rgba(56,189,248,.25); }
+    .detail-fact-val { font-family:'Space Grotesk',sans-serif; font-size: 1.6rem; font-weight: 700; }
+    .detail-fact-lbl { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: .5px; }
+
+    .detail-gallery { display: grid; gap: 14px; }
+    .detail-gallery.g2 { grid-template-columns: 1fr 1fr; }
+    .detail-gallery.g3 { grid-template-columns: repeat(3,1fr); }
+    .detail-gallery.g-main { grid-template-columns: 2fr 1fr; grid-template-rows: 260px; }
+    .detail-gimg {
+      border-radius: 14px; overflow: hidden; position: relative;
+      background-size: cover; background-position: center;
+      transition: transform .4s;
+      min-height: 220px;
+    }
+    .detail-gimg:hover { transform: scale(1.02); }
+    .detail-gimg.tall { grid-row: span 2; }
+    .detail-gimg::after {
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(to bottom, transparent 55%, rgba(8,13,26,.65) 100%);
+    }
+    .detail-gimg-cap {
+      position: absolute; bottom: 12px; left: 14px; right: 14px; z-index: 1;
+      font-size: 11px; color: rgba(255,255,255,.75); line-height: 1.4;
+    }
+
+    .detail-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 28px;
+      margin-bottom: 16px;
+    }
+    .detail-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+    .detail-card p  { font-size: 14px; color: var(--muted2); line-height: 1.75; }
+    .detail-card ul { padding-left: 20px; }
+    .detail-card li { font-size: 14px; color: var(--muted2); margin-bottom: 6px; line-height: 1.65; }
+
+    .detail-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .detail-3col { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+
+    /* clickable cards */
+    .poi-card, .materia-card:not(.placeholder) { cursor: pointer; }
+    .poi-card::before, .materia-card:not(.placeholder)::before {
+      content: 'Ver más →';
+      position: absolute; top: 10px; right: 12px; z-index: 5;
+      font-size: 11px; font-weight: 700; letter-spacing: .5px;
+      background: rgba(8,13,26,.7); color: var(--sky);
+      padding: 4px 10px; border-radius: 100px;
+      opacity: 0; transition: opacity .25s;
+      backdrop-filter: blur(8px);
+    }
+    .poi-card { position: relative; }
+    .materia-card:not(.placeholder) { position: relative; }
+    .poi-card:hover::before, .materia-card:not(.placeholder):hover::before { opacity: 1; }
+
+    @media (max-width: 900px) {
+      .detail-topbar { padding: 0 20px; }
+      .detail-hero { height: 300px; }
+      .detail-hero-overlay { padding: 24px 20px; }
+      .detail-body { padding: 28px 20px 60px; }
+      .detail-facts { grid-template-columns: repeat(2,1fr); }
+      .detail-gallery.g2, .detail-gallery.g3, .detail-gallery.g-main { grid-template-columns: 1fr; }
+      .detail-2col, .detail-3col { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -571,48 +733,48 @@
   <p class="section-intro reveal d2">La Bella Airosa · Capital del estado a 2,426 m s.n.m. · Ecosistemas únicos y rica historia minera.</p>
 
   <div class="poi-grid">
-    <div class="poi-card reveal d1">
-      <div class="poi-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80')"></div>
+    <div class="poi-card reveal d1" onclick="openDetail('cubitos')">
+      <div class="poi-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/5/53/Parque_Ecol%C3%B3gico_Cubitos._01.jpg')"></div>
       <div class="poi-body">
         <div class="poi-title">Parque Ecológico Cubitos</div>
         <div class="poi-desc">Zona de matorral xerófilo en transición urbano-natural. Sitio de muestreo para bioindicadores: nopal, maguey y lagartija endémica.</div>
         <span class="poi-tag">Ecosistema · Muestreo</span>
       </div>
     </div>
-    <div class="poi-card reveal d2">
-      <div class="poi-img" style="background-image:url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80')"></div>
+    <div class="poi-card reveal d2" onclick="openDetail('sierra')">
+      <div class="poi-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/a/aa/Abies_religiosa%2C_Parque_Nacional_El_Chico%2C_Hidalgo%2C_Mexico_1.jpg')"></div>
       <div class="poi-body">
         <div class="poi-title">Sierra de Pachuca</div>
         <div class="poi-desc">Bosque de pino-encino donde habita el Ajolote del Altiplano (Ambystoma velasci) y el Águila Real. Alta biodiversidad endémica.</div>
         <span class="poi-tag">Bosque · Biodiversidad</span>
       </div>
     </div>
-    <div class="poi-card reveal d3">
-      <div class="poi-img" style="background-image:url('https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?w=600&q=80')"></div>
+    <div class="poi-card reveal d3" onclick="openDetail('centro')">
+      <div class="poi-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/8/8e/Reloj_Monumental%2C_Pachuca%2C_Hidalgo%2C_M%C3%A9xico%2C_2013-10-10%2C_DD_02.JPG')"></div>
       <div class="poi-body">
         <div class="poi-title">Centro Histórico</div>
         <div class="poi-desc">El Reloj Monumental (1904) es símbolo de la ciudad. Plaza de la Independencia rodeada de arquitectura porfiriana.</div>
         <span class="poi-tag">Patrimonio · Historia</span>
       </div>
     </div>
-    <div class="poi-card reveal d1">
-      <div class="poi-img" style="background-image:url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&q=80')"></div>
+    <div class="poi-card reveal d1" onclick="openDetail('realdemonte')">
+      <div class="poi-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/7/7a/Plaza_Principal%2C_Real_del_Monte%2C_Hidalgo%2C_M%C3%A9xico%2C_2013-10-10%2C_DD_01.JPG')"></div>
       <div class="poi-body">
         <div class="poi-title">Real del Monte</div>
         <div class="poi-desc">Pueblo Mágico a 15 min. de Pachuca. Sitio histórico de minería de plata. Influencia en la geología regional y tradición cultural.</div>
         <span class="poi-tag">Minería · Turismo</span>
       </div>
     </div>
-    <div class="poi-card reveal d2">
-      <div class="poi-img" style="background-image:url('https://images.unsplash.com/photo-1561484930-974b10b5c067?w=600&q=80')"></div>
+    <div class="poi-card reveal d2" onclick="openDetail('airosa')">
+      <div class="poi-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg')"></div>
       <div class="poi-body">
         <div class="poi-title">La Bella Airosa</div>
         <div class="poi-desc">Apodo de Pachuca por sus vientos del NE hasta 40 km/h en ráfaga en abril. Clave en la dispersión de contaminantes y polinizadores.</div>
         <span class="poi-tag">Clima · Fenómeno</span>
       </div>
     </div>
-    <div class="poi-card reveal d3">
-      <div class="poi-img" style="background-image:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80')"></div>
+    <div class="poi-card reveal d3" onclick="openDetail('chico')">
+      <div class="poi-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/a/aa/Abies_religiosa%2C_Parque_Nacional_El_Chico%2C_Hidalgo%2C_Mexico_1.jpg'); background-position: center top;"></div>
       <div class="poi-body">
         <div class="poi-title">Mineral del Chico</div>
         <div class="poi-desc">Pueblo Mágico y área natural protegida a 17 km. Bosque templado y arroyos donde se preservan especies anfibias en peligro.</div>
@@ -647,7 +809,7 @@
     </div>
 
     <!-- 1. Ecología -->
-    <div class="materia-card m-eco reveal">
+    <div class="materia-card m-eco reveal" onclick="openDetail('eco')">
       <div class="mat-sidebar">
         <div class="mat-num">01</div>
         <div>
@@ -715,7 +877,7 @@
     </div>
 
     <!-- 2. Pensamiento Filosófico -->
-    <div class="materia-card m-filo reveal">
+    <div class="materia-card m-filo reveal" onclick="openDetail('filo')">
       <div class="mat-sidebar">
         <div class="mat-num">02</div>
         <div>
@@ -735,7 +897,7 @@
     </div>
 
     <!-- 3. Matemáticas -->
-    <div class="materia-card m-mat reveal">
+    <div class="materia-card m-mat reveal" onclick="openDetail('mat')">
       <div class="mat-sidebar">
         <div class="mat-num">03</div>
         <div>
@@ -755,7 +917,7 @@
     </div>
 
     <!-- 4. El Universo y sus Fenómenos -->
-    <div class="materia-card m-uni reveal">
+    <div class="materia-card m-uni reveal" onclick="openDetail('uni')">
       <div class="mat-sidebar">
         <div class="mat-num">04</div>
         <div>
@@ -791,7 +953,7 @@
     </div>
 
     <!-- 5. Biodiversidad -->
-    <div class="materia-card m-bio reveal">
+    <div class="materia-card m-bio reveal" onclick="openDetail('bio')">
       <div class="mat-sidebar">
         <div class="mat-num">05</div>
         <div>
@@ -846,7 +1008,7 @@
     </div>
 
     <!-- 6. Web y Móviles -->
-    <div class="materia-card m-web reveal">
+    <div class="materia-card m-web reveal" onclick="openDetail('web')">
       <div class="mat-sidebar">
         <div class="mat-num">06</div>
         <div>
@@ -866,7 +1028,7 @@
     </div>
 
     <!-- 7. Electrónica -->
-    <div class="materia-card m-elec reveal">
+    <div class="materia-card m-elec reveal" onclick="openDetail('elec')">
       <div class="mat-sidebar">
         <div class="mat-num">07</div>
         <div>
@@ -933,7 +1095,7 @@
     </div>
 
     <!-- 8. Química -->
-    <div class="materia-card m-quim reveal">
+    <div class="materia-card m-quim reveal" onclick="openDetail('quim')">
       <div class="mat-sidebar">
         <div class="mat-num">08</div>
         <div>
@@ -1025,6 +1187,17 @@
 </section>
 
 <div class="h-divider"></div>
+
+<!-- ═══════════════════════════════════════════════
+     DETAIL OVERLAY — se llena dinámicamente con JS
+═══════════════════════════════════════════════ -->
+<div class="detail-page" id="detailPage">
+  <div class="detail-topbar">
+    <button class="detail-back-btn" onclick="closeDetail()">← Regresar</button>
+    <div class="detail-topbar-title" id="detailTopTitle"></div>
+  </div>
+  <div id="detailContent"></div>
+</div>
 
 <!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
@@ -1157,6 +1330,415 @@ new Chart(document.getElementById('chartAnual'), {
     }
   }
 });
+
+/* ══════════════════════════════════════════════════
+   DETAIL SYSTEM
+══════════════════════════════════════════════════ */
+const W = 'https://upload.wikimedia.org/wikipedia/commons';
+
+const DETAILS = {
+
+  /* ── PUNTOS DE INTERÉS ── */
+  cubitos: {
+    tag: 'Punto de Interés · Pachuca',
+    tagColor: 'rgba(52,211,153,.15)', tagTextColor: '#34d399',
+    title: 'Parque Ecológico Cubitos',
+    sub: 'Área Natural Protegida · 90.4 hectáreas · Pachuca de Soto, Hidalgo',
+    hero: `${W}/5/53/Parque_Ecol%C3%B3gico_Cubitos._01.jpg`,
+    content: `
+      <div class="detail-facts">
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">90.4</div><div class="detail-fact-lbl">Hectáreas protegidas</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">133</div><div class="detail-fact-lbl">Especies vegetales</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">2002</div><div class="detail-fact-lbl">Año de protección</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">Gratis</div><div class="detail-fact-lbl">Entrada</div></div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Descripción</div>
+        <div class="detail-sec-sub">El Parque Ecológico de Cubitos es el área verde más importante de Pachuca, declarada Área Natural Protegida el 30 de diciembre de 2002. Funciona como pulmón verde del estado de Hidalgo y alberga un ecosistema de matorral xerófilo único.</div>
+        <div class="detail-gallery g2">
+          <div class="detail-gimg" style="background-image:url('${W}/5/53/Parque_Ecol%C3%B3gico_Cubitos._01.jpg')"><div class="detail-gimg-cap">Entrada principal del parque</div></div>
+          <div class="detail-gimg" style="background-image:url('${W}/f/f3/Parque_Ecol%C3%B3gico_Cubitos._Entrada._01.jpg')"><div class="detail-gimg-cap">Vista desde la ciclopista</div></div>
+        </div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Flora representativa</div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4>🌵 Nopal Cardón</h4><p><em>Opuntia streptacantha</em> — Planta dominante del matorral. Bioindicadora de sequía. En abril 2026 mostró cladodios con leve arrugamiento por calor extremo (+9°C sobre lo normal) y humedad de solo 35%.</p></div>
+          <div class="detail-card"><h4>🌿 Maguey Pulquero</h4><p><em>Agave salmiana</em> — Sensible a cambios de humedad. En abril 2026 presentó hojas con puntas secas por déficit hídrico acumulado. Cierra estomas inhibiendo fotosíntesis.</p></div>
+          <div class="detail-card"><h4>🌱 Huizache</h4><p><em>Acacia schaffneri</em> — Indicadora del estado del suelo. Floración retrasada en abril 2026 por temperaturas 7-9°C sobre lo normal. Sin flores, los polinizadores no encuentran recursos.</p></div>
+          <div class="detail-card"><h4>🌾 Palo Dulce</h4><p><em>Eysenhardtia polystachya</em> — Sensible a la xericidad extrema. Bordes de hojas secos observados por baja humedad crónica (35-38%) durante el muestreo de abril.</p></div>
+        </div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Fauna bioindicadora</div>
+        <div class="detail-3col">
+          <div class="detail-card"><h4>🐝 Abeja Nativa</h4><p><em>Xylocopa mexicanorum</em> — Eslabón crítico. Vuelo imposible los días de lluvia anómala (18mm el 5 de abril). Su baja actividad amenaza toda la cadena trófica.</p></div>
+          <div class="detail-card"><h4>🦎 Lagartija de Matorral</h4><p><em>Sceloporus grammicus</em> — Endémica de la zona árida hidalguense. Reducción de actividad diurna por estrés térmico &gt;24°C + humedad &lt;40%.</p></div>
+          <div class="detail-card"><h4>🐸 Rana de Árbol</h4><p><em>Hyla arenicolor</em> — Activa solo tras lluvia anómala (11 abril, humedad 91%). Indica calidad hídrica positiva. Requiere mínimo 35% de humedad.</p></div>
+        </div>
+      </div>`
+  },
+
+  sierra: {
+    tag: 'Punto de Interés · Hidalgo',
+    tagColor: 'rgba(52,211,153,.15)', tagTextColor: '#34d399',
+    title: 'Sierra de Pachuca',
+    sub: 'Bosque de Pino-Encino · Parque Nacional El Chico · Hidalgo',
+    hero: `${W}/a/aa/Abies_religiosa%2C_Parque_Nacional_El_Chico%2C_Hidalgo%2C_Mexico_1.jpg`,
+    content: `
+      <div class="detail-facts">
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">2,700</div><div class="detail-fact-lbl">m s.n.m. promedio</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">2,739</div><div class="detail-fact-lbl">ha Parque Nacional</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">1898</div><div class="detail-fact-lbl">Año de declaración</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">1ra</div><div class="detail-fact-lbl">ANP de México</div></div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">El Bosque</div>
+        <div class="detail-sec-sub">La Sierra de Pachuca alberga el Parque Nacional El Chico, primera área natural protegida de México (1898). El bosque de Abies religiosa (oyamel) y pino-encino es hábitat de especies endémicas únicas del altiplano hidalguense.</div>
+        <div class="detail-gallery g2">
+          <div class="detail-gimg" style="background-image:url('${W}/a/aa/Abies_religiosa%2C_Parque_Nacional_El_Chico%2C_Hidalgo%2C_Mexico_1.jpg')"><div class="detail-gimg-cap">Abies religiosa (Oyamel) · Parque Nacional El Chico</div></div>
+          <div class="detail-gimg" style="background-image:url('${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg')"><div class="detail-gimg-cap">Vista de la Sierra desde Pachuca</div></div>
+        </div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Biodiversidad</div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4>🦎 Ajolote del Altiplano</h4><p><em>Ambystoma velasci</em> — Única especie de Ambystoma silvestre en Hidalgo. Habita arroyos de bosque pino-encino de alta montaña. Bajo Protección Especial NOM-059. Población en declive severo por contaminación del agua, glifosato y microplásticos.</p></div>
+          <div class="detail-card"><h4>🦅 Águila Real</h4><p><em>Aquila chrysaetos</em> — Depredador ápex de la cadena trófica de la sierra. Regula equilibrio de aves y mamíferos medianos. Su presencia indica ecosistema en buen estado. Símbolo nacional de México.</p></div>
+          <div class="detail-card"><h4>🌲 Oyamel</h4><p><em>Abies religiosa</em> — Especie dominante del bosque. Captura CO₂ y regula el ciclo hídrico de la cuenca. Sensible a cambios de temperatura. El calentamiento de +9°C registrado en abril 2026 representa una amenaza directa.</p></div>
+          <div class="detail-card"><h4>🐦 Cardenal Norteño</h4><p><em>Cardinalis cardinalis</em> — Bioindicador de calidad del hábitat boscoso-urbano. En abril 2026 redujo su canto por frío nocturno tardío (5°C el 7 de abril). Sensible a perturbaciones climáticas.</p></div>
+        </div>
+      </div>`
+  },
+
+  centro: {
+    tag: 'Punto de Interés · Centro Histórico',
+    tagColor: 'rgba(167,139,250,.15)', tagTextColor: '#a78bfa',
+    title: 'Centro Histórico de Pachuca',
+    sub: 'Reloj Monumental · Plaza de la Independencia · Patrimonio Arquitectónico',
+    hero: `${W}/8/8e/Reloj_Monumental%2C_Pachuca%2C_Hidalgo%2C_M%C3%A9xico%2C_2013-10-10%2C_DD_02.JPG`,
+    content: `
+      <div class="detail-facts">
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">1904</div><div class="detail-fact-lbl">Año de construcción</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">40m</div><div class="detail-fact-lbl">Altura del reloj</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">2,426</div><div class="detail-fact-lbl">m s.n.m.</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">320K</div><div class="detail-fact-lbl">Habitantes</div></div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">El Reloj Monumental</div>
+        <div class="detail-sec-sub">Construido en 1904 durante el gobierno de Manuel Gutiérrez Zamora, el Reloj Monumental de Pachuca es el símbolo más reconocible de la capital hidalguense. Con influencia francesa de estilo neoclásico, sus cuatro esferas de reloj y carillón lo hacen único en México.</div>
+        <div class="detail-gallery g2">
+          <div class="detail-gimg" style="background-image:url('${W}/8/8e/Reloj_Monumental%2C_Pachuca%2C_Hidalgo%2C_M%C3%A9xico%2C_2013-10-10%2C_DD_02.JPG')"><div class="detail-gimg-cap">Reloj Monumental de Pachuca · 1904</div></div>
+          <div class="detail-gimg" style="background-image:url('${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg')"><div class="detail-gimg-cap">Vista panorámica de Pachuca desde la Sierra</div></div>
+        </div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Datos históricos</div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4>⛏️ Ciudad Minera</h4><p>Pachuca de Soto fue fundada como ciudad minera de plata en el siglo XVI. Su riqueza minera financió gran parte de la arquitectura porfiriana del centro histórico, incluyendo el Reloj Monumental y el Archivo Histórico.</p></div>
+          <div class="detail-card"><h4>🏛️ Arquitectura Porfiriana</h4><p>El centro histórico preserva edificios del período 1876-1911, con influencia francesa y neoclásica. La Plaza de la Independencia, rodeada de portales y el Palacio Municipal, es el corazón cívico de la ciudad.</p></div>
+          <div class="detail-card"><h4>🌬️ La Bella Airosa</h4><p>El apodo de Pachuca proviene de los fuertes vientos del NE que caracterizan la ciudad durante todo el año, pero especialmente en primavera. En abril 2026 se registraron ráfagas de hasta 40 km/h, afectando la dispersión de contaminantes.</p></div>
+          <div class="detail-card"><h4>🌡️ Clima Abril 2026</h4><p>El centro urbano de Pachuca registró temperaturas de hasta 26°C (9°C sobre el histórico) durante la primera quincena de abril 2026. La isla de calor urbano amplifica el efecto del calentamiento en el área metropolitana.</p></div>
+        </div>
+      </div>`
+  },
+
+  realdemonte: {
+    tag: 'Pueblo Mágico · Hidalgo',
+    tagColor: 'rgba(251,191,36,.15)', tagTextColor: '#fbbf24',
+    title: 'Real del Monte',
+    sub: 'Pueblo Mágico · Minería de Plata · Influencia Inglesa · Hidalgo',
+    hero: `${W}/7/7a/Plaza_Principal%2C_Real_del_Monte%2C_Hidalgo%2C_M%C3%A9xico%2C_2013-10-10%2C_DD_01.JPG`,
+    content: `
+      <div class="detail-facts">
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">2,672</div><div class="detail-fact-lbl">m s.n.m.</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">15 min</div><div class="detail-fact-lbl">De Pachuca</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">1982</div><div class="detail-fact-lbl">Patrimonio UNESCO</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">S. XVI</div><div class="detail-fact-lbl">Fundación</div></div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">El Pueblo Mágico</div>
+        <div class="detail-sec-sub">Real del Monte es el pueblo mágico más alto de México, donde convergen la historia minera, la influencia inglesa del siglo XIX y las tradiciones mexicanas. Sus calles empedradas, arquitectura colonial y el aroma del paste lo hacen único en América.</div>
+        <div class="detail-gallery g2">
+          <div class="detail-gimg" style="background-image:url('${W}/7/7a/Plaza_Principal%2C_Real_del_Monte%2C_Hidalgo%2C_M%C3%A9xico%2C_2013-10-10%2C_DD_01.JPG')"><div class="detail-gimg-cap">Plaza Principal de Real del Monte</div></div>
+          <div class="detail-gimg" style="background-image:url('${W}/1/19/Mina_de_Acosta%2C_Real_del_Monte%2C_Hidalgo%2C_M%C3%A9xico%2C_2013-10-10%2C_DD_07.JPG')"><div class="detail-gimg-cap">Mina de Acosta — patrimonio minero</div></div>
+        </div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Historia y Cultura</div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4>⛏️ Minería de Plata</h4><p>Desde el siglo XVI, Real del Monte fue uno de los centros mineros más importantes de la Nueva España. Las minas de plata como la Mina de Acosta y la Mina La Dificultad generaron riqueza que transformó la historia colonial mexicana.</p></div>
+          <div class="detail-card"><h4>🇬🇧 Influencia Inglesa</h4><p>En 1824 llegaron mineros de Cornwall, Inglaterra, trayendo consigo el paste (empanada cornish) y tradiciones que se fusionaron con la cultura local. El Panteón Inglés y el Portal del Comercio son testigos de esta herencia cultural única.</p></div>
+          <div class="detail-card"><h4>🥟 El Paste</h4><p>Plato emblemático de Real del Monte, derivado del pasty cornish inglés. Se elabora con masa rellena de carne, papa, vegetales o mermeladas. Hoy existen versiones de mole, rajas, tinga y fresa. El Museo del Paste documenta su historia.</p></div>
+          <div class="detail-card"><h4>🌿 Entorno Natural</h4><p>Rodeado por el bosque de pino-encino de la Sierra de Pachuca. El Bosque del Hiloche y las Peñas Cargadas ofrecen senderos ecológicos donde habitan especies como la salamandra Chiropterotriton sp., extremadamente sensible a la contaminación.</p></div>
+        </div>
+      </div>`
+  },
+
+  airosa: {
+    tag: 'Fenómeno Climático · Pachuca',
+    tagColor: 'rgba(56,189,248,.15)', tagTextColor: '#38bdf8',
+    title: 'La Bella Airosa',
+    sub: 'El fenómeno del viento en Pachuca · Análisis Climático Abril 2026',
+    hero: `${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
+    content: `
+      <div class="detail-facts">
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">40</div><div class="detail-fact-lbl">km/h ráfaga máx.</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">NE</div><div class="detail-fact-lbl">Dirección predominante</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">2,426</div><div class="detail-fact-lbl">m s.n.m.</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">BSk</div><div class="detail-fact-lbl">Clasificación Köppen</div></div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">El Viento de Pachuca</div>
+        <div class="detail-sec-sub">El apodo "La Bella Airosa" refleja el fenómeno más característico del clima de Pachuca: sus fuertes vientos del NE que soplan casi todo el año, pero son especialmente intensos en primavera. En abril 2026 se registraron ráfagas de hasta 40 km/h que interrumpieron el vuelo de polinizadores nativos.</div>
+        <div class="detail-gallery g2">
+          <div class="detail-gimg" style="background-image:url('${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg')"><div class="detail-gimg-cap">Vista panorámica de la Sierra desde Pachuca</div></div>
+          <div class="detail-gimg" style="background-image:url('${W}/5/53/Parque_Ecol%C3%B3gico_Cubitos._01.jpg')"><div class="detail-gimg-cap">Matorral xerófilo afectado por el viento</div></div>
+        </div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Datos Climáticos Abril 2026</div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4>🌡️ Anomalía de Temperatura</h4><p>Durante la primera quincena de abril 2026, Pachuca registró temperaturas de hasta 26°C, superando en 9°C el promedio histórico de 17°C. El día 3 de abril se alcanzó el máximo: 26°C con humedad de solo 35%.</p></div>
+          <div class="detail-card"><h4>💧 Humedad Histórica Baja</h4><p>La humedad relativa mínima registrada fue 35%, cuando el mínimo histórico de abril es 51%. Una caída de 16 puntos porcentuales que causó deshidratación en anfibios y redujo la actividad de microorganismos del suelo.</p></div>
+          <div class="detail-card"><h4>🌧️ Lluvia Anómala</h4><p>El 5 de abril se registraron 18 mm de precipitación en un solo evento, equivalente a 6 veces el promedio mensual (2-5 mm). Este evento fue seguido de vientos de 40 km/h que imposibilitaron el vuelo de abejas nativas.</p></div>
+          <div class="detail-card"><h4>❄️ Helada Tardía</h4><p>El 7 de abril se registró temperatura mínima de 5°C, considerada helada leve para abril. Este frío tardío interrumpió la puesta de huevos del cardenal norteño y redujo la actividad de reptiles como Sceloporus grammicus.</p></div>
+        </div>
+      </div>`
+  },
+
+  chico: {
+    tag: 'Pueblo Mágico · Área Natural Protegida',
+    tagColor: 'rgba(52,211,153,.15)', tagTextColor: '#34d399',
+    title: 'Mineral del Chico',
+    sub: 'Pueblo Mágico · Parque Nacional El Chico · Reserva de Biosfera · Hidalgo',
+    hero: `${W}/a/aa/Abies_religiosa%2C_Parque_Nacional_El_Chico%2C_Hidalgo%2C_Mexico_1.jpg`,
+    content: `
+      <div class="detail-facts">
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">2,739</div><div class="detail-fact-lbl">ha protegidas</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">17 km</div><div class="detail-fact-lbl">De Pachuca</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">1898</div><div class="detail-fact-lbl">1ra ANP de México</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">2,800</div><div class="detail-fact-lbl">m s.n.m.</div></div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">El Parque Nacional</div>
+        <div class="detail-sec-sub">El Parque Nacional El Chico, declarado en 1898, fue la primera área natural protegida de México. Rodea el Pueblo Mágico de Mineral del Chico con 2,739 hectáreas de bosque templado húmedo donde habitan especies anfibias extremadamente sensibles al cambio climático.</div>
+        <div class="detail-gallery g2">
+          <div class="detail-gimg" style="background-image:url('${W}/a/aa/Abies_religiosa%2C_Parque_Nacional_El_Chico%2C_Hidalgo%2C_Mexico_1.jpg')"><div class="detail-gimg-cap">Bosque de Abies religiosa · Parque Nacional El Chico</div></div>
+          <div class="detail-gimg" style="background-image:url('${W}/e/e9/Ajolote_%28Ambystoma_mexicanum%29.jpg')"><div class="detail-gimg-cap">Ajolote — especie protegida del ecosistema</div></div>
+        </div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Especies y Conservación</div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4>🦎 Chiropterotriton sp.</h4><p>Salamandras del género Chiropterotriton registradas en la Sierra de Pachuca. Extremadamente sensibles a la desecación, requieren humedad mínima de 35%. En abril 2026, la humedad cayó al 35-38%, representando el límite crítico de supervivencia.</p></div>
+          <div class="detail-card"><h4>🌲 Oyamel y Pino</h4><p>El bosque mixto de Abies religiosa (oyamel) y pinos es el ecosistema dominante. Regula el ciclo hídrico de la cuenca del Valle de Pachuca. Sensible al aumento de temperatura: el calentamiento de +9°C de abril 2026 genera estrés hídrico en los árboles.</p></div>
+          <div class="detail-card"><h4>💧 Arroyos y Cuencas</h4><p>Los arroyos del parque alimentan las cuencas de Pachuca. La calidad del agua se ve amenazada por microplásticos, nitrógeno amoniacal de escurrimientos agrícolas y lluvia ácida (pH &lt;6.0) derivada de emisiones industriales de la zona de Tula.</p></div>
+          <div class="detail-card"><h4>🏘️ El Pueblo Mágico</h4><p>Mineral del Chico conserva arquitectura colonial y calles empedradas. Su parroquia del siglo XVIII y la plaza principal son el corazón de una comunidad que vive del turismo ecológico y la conservación del bosque templado.</p></div>
+        </div>
+      </div>`
+  },
+
+  /* ── MATERIAS ── */
+  eco: {
+    tag: 'Materia 01 · Común',
+    tagColor: 'rgba(52,211,153,.15)', tagTextColor: '#34d399',
+    title: 'Ecología y Desarrollo Sustentable',
+    sub: 'Bitácora de Interpretación de Bioindicadores · Matorral Xerófilo · Pachuca de Soto, Hidalgo · Abril 2026',
+    hero: `${W}/5/53/Parque_Ecol%C3%B3gico_Cubitos._01.jpg`,
+    content: `
+      <div class="detail-facts">
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">10</div><div class="detail-fact-lbl">Bioindicadores</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">11</div><div class="detail-fact-lbl">Días de muestreo</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">+9°C</div><div class="detail-fact-lbl">Anomalía térmica</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fb7185">Bajo</div><div class="detail-fact-lbl">Eslabón crítico</div></div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Datos Meteorológicos Reales</div>
+        <div class="detail-sec-sub">Registros del 1 al 11 de abril de 2026 en la zona de transición matorral xerófilo–área urbana de Pachuca. Altitud: 2,426 m s.n.m. Tipo de clima: BSk (Köppen), árido de altura.</div>
+        <div class="detail-gallery g2">
+          <div class="detail-gimg" style="background-image:url('${W}/5/53/Parque_Ecol%C3%B3gico_Cubitos._01.jpg')"><div class="detail-gimg-cap">Zona de muestreo — Parque Ecológico Cubitos</div></div>
+          <div class="detail-gimg" style="background-image:url('${W}/f/f3/Parque_Ecol%C3%B3gico_Cubitos._Entrada._01.jpg')"><div class="detail-gimg-cap">Matorral xerófilo — hábitat de bioindicadores</div></div>
+        </div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Registro de Anomalías Climáticas</div>
+        <table class="data-table"><thead><tr><th>Fecha</th><th>Temp. real</th><th>Humedad</th><th>Efecto observado</th></tr></thead><tbody>
+          <tr><td>1 Abr</td><td>24°C (+7°C)</td><td>38%</td><td>Arrugamiento de cladodios de nopal; cierre de estomas en maguey</td></tr>
+          <tr><td>3 Abr</td><td>26°C (+9°C)</td><td>35%</td><td>Floración retrasada en huizache; hojas secas en palo dulce</td></tr>
+          <tr><td>5 Abr</td><td>22°C + lluvia 18mm</td><td>82%</td><td>Vuelo imposible para abejas; falla en polinización del nopal</td></tr>
+          <tr><td>7 Abr</td><td>5°C mín (helada)</td><td>72%</td><td>Canto reducido en cardenal y sinsontle; riesgo en puesta</td></tr>
+          <tr><td>9 Abr</td><td>25°C</td><td>40%</td><td>Reducción actividad diurna en lagartija (S. grammicus)</td></tr>
+          <tr><td>11 Abr</td><td>17°C</td><td>91%</td><td>Activación de rana de árbol (H. arenicolor) tras humedad</td></tr>
+        </tbody></table>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Bioindicadores Identificados</div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4>🌵 Plantas Bioindicadoras</h4><ul>
+            <li><strong>Nopal cardón</strong> (Opuntia streptacantha) — Indica sequía y perturbación del suelo</li>
+            <li><strong>Maguey pulquero</strong> (Agave salmiana) — Sensible a cambios de humedad y temperatura</li>
+            <li><strong>Huizache</strong> (Acacia schaffneri) — Indicadora del estado del suelo; florece según temp. y humedad</li>
+            <li><strong>Palo dulce</strong> (Eysenhardtia polystachya) — Sensible a la xericidad extrema</li>
+          </ul></div>
+          <div class="detail-card"><h4>🦎 Fauna Bioindicadora</h4><ul>
+            <li><strong>Abeja nativa</strong> (Xylocopa mexicanorum) — Calidad del ecosistema; eslabón crítico</li>
+            <li><strong>Escarabajo estercolero</strong> (Scarabaeus sp.) — Calidad del suelo</li>
+            <li><strong>Cardenal norteño</strong> (Cardinalis cardinalis) — Calidad del hábitat boscoso-urbano</li>
+            <li><strong>Rana de árbol</strong> (Hyla arenicolor) — Calidad hídrica y humedad</li>
+            <li><strong>Lagartija de matorral</strong> (Sceloporus grammicus) — Estrés térmico endémico</li>
+          </ul></div>
+        </div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Cadena Trófica del Matorral Xerófilo</div>
+        <table class="data-table"><thead><tr><th>Nivel</th><th>Organismos</th><th>Estado Abril 2026</th></tr></thead><tbody>
+          <tr><td>Productores (1°)</td><td>Nopal, maguey, huizache, palo dulce</td><td>Fotosíntesis inhibida por calor extremo y baja humedad</td></tr>
+          <tr><td>Consumidores primarios (2°)</td><td>Abeja nativa, conejo serrano, lagartija</td><td>⚠ Eslabón crítico: polinizadores con actividad muy baja</td></tr>
+          <tr><td>Consumidores secundarios (3°)</td><td>Cardenal, sinsontle, serpiente de cascabel</td><td>Canto reducido; anidación interrumpida por frío tardío</td></tr>
+          <tr><td>Consumidores terciarios (4°)</td><td>Coyote, halcón mexicano, águila real</td><td>Depredadores ápex regulando el equilibrio</td></tr>
+          <tr><td>Descomponedores</td><td>Hongos, bacterias nitrificantes, escarabajos</td><td>Baja humedad reduce actividad de microorganismos</td></tr>
+        </tbody></table>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Conclusión</div>
+        <div class="detail-card"><p>Las condiciones físicas actuales del matorral xerófilo de Pachuca presentan signos de estrés moderado-alto: temperaturas 7-9°C por encima del promedio histórico de abril, humedad relativa 13 puntos porcentuales por debajo del mínimo mensual regular (38% vs 51% histórico). El eslabón de polinizadores nativos (Xylocopa mexicanorum) representa el vínculo más vulnerado de la cadena trófica. El calentamiento observado es coherente con las tendencias de cambio climático documentadas para el Altiplano Central Mexicano.</p></div>
+      </div>`
+  },
+
+  bio: {
+    tag: 'Materia 05 · Exactas',
+    tagColor: 'rgba(56,189,248,.15)', tagTextColor: '#38bdf8',
+    title: 'Biodiversidad y Prácticas Productivas',
+    sub: 'EIMA — Ecotoxicología · Ajolote del Altiplano (Ambystoma velasci) · Pachuca, Hidalgo · Abril 2026',
+    hero: `${W}/e/e9/Ajolote_%28Ambystoma_mexicanum%29.jpg`,
+    content: `
+      <div class="detail-facts">
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">Pr</div><div class="detail-fact-lbl">NOM-059 Estatus</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fb7185">Alto</div><div class="detail-fact-lbl">Riesgo IUCN</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">7</div><div class="detail-fact-lbl">Xenobióticos</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">50-121</div><div class="detail-fact-lbl">mm longitud</div></div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">El Ajolote del Altiplano</div>
+        <div class="detail-sec-sub">Ambystoma velasci es la única especie de Ambystoma en estado silvestre en Hidalgo. Habita arroyos y lagos de bosque pino-encino de alta montaña. Su población está en declive severo por contaminación del agua, deforestación y especies invasoras.</div>
+        <div class="detail-gallery g2">
+          <div class="detail-gimg" style="background-image:url('${W}/e/e9/Ajolote_%28Ambystoma_mexicanum%29.jpg')"><div class="detail-gimg-cap">Ajolote (Ambystoma mexicanum) — especie afín</div></div>
+          <div class="detail-gimg" style="background-image:url('${W}/a/aa/Abies_religiosa%2C_Parque_Nacional_El_Chico%2C_Hidalgo%2C_Mexico_1.jpg')"><div class="detail-gimg-cap">Hábitat natural — Bosque pino-encino, Sierra de Pachuca</div></div>
+        </div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Parámetros Fisicoquímicos del Agua</div>
+        <table class="data-table"><thead><tr><th>Parámetro</th><th>Valor óptimo</th><th>Valor alterado</th><th>Efecto en ajolote</th></tr></thead><tbody>
+          <tr><td>pH del agua</td><td>6.5 – 8.0</td><td>&lt;6.0 (lluvia ácida)</td><td>Disuelve tejidos branquiales; reduce eclosión de huevos</td></tr>
+          <tr><td>Oxígeno disuelto</td><td>&gt;6 mg/L</td><td>&lt;3 mg/L (eutrofización)</td><td>Hipoxia: asfixia larvaria y adulta</td></tr>
+          <tr><td>NH₃ amoniacal</td><td>&lt;0.02 mg/L</td><td>&gt;0.5 mg/L</td><td>Daño en branquias y sistema nervioso</td></tr>
+          <tr><td>Glifosato</td><td>No detectable</td><td>0.1–1.2 mg/L</td><td>Disruptor endocrino; altera metamorfosis</td></tr>
+          <tr><td>Pb, Cd, Zn</td><td>Trazas &lt;0.01 mg/L</td><td>Pb: 0.08 mg/L</td><td>Bioacumulación; daño renal y hepático</td></tr>
+          <tr><td>Microplásticos</td><td>Ausentes</td><td>Detectados en arroyos</td><td>Ingestión accidental; aditivos tóxicos BPA</td></tr>
+        </tbody></table>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Mapa de Riesgo Ecotoxicológico</div>
+        <div class="detail-card">
+          <div class="risk-item"><div class="risk-label"><span>Cuenca del Río Tula — SO₂, NOx, Pb, Cd (refinería + termoeléctrica)</span><span style="color:#fb7185">MUY ALTO</span></div><div class="risk-bar"><div class="risk-fill r4" style="width:95%"></div></div></div>
+          <div class="risk-item" style="margin-top:14px"><div class="risk-label"><span>Valle del Mezquital — Glifosato, NH₄⁺, aguas residuales CDMX</span><span style="color:#fbbf24">ALTO</span></div><div class="risk-bar"><div class="risk-fill r3" style="width:75%"></div></div></div>
+          <div class="risk-item" style="margin-top:14px"><div class="risk-label"><span>Zona urbana Pachuca — Microplásticos, hidrocarburos</span><span style="color:#38bdf8">MODERADO</span></div><div class="risk-bar"><div class="risk-fill r2" style="width:50%"></div></div></div>
+          <div class="risk-item" style="margin-top:14px"><div class="risk-label"><span>Sierra de Pachuca (zona preservada)</span><span style="color:#34d399">BAJO</span></div><div class="risk-bar"><div class="risk-fill r1" style="width:22%"></div></div></div>
+        </div>
+      </div>`
+  },
+
+  elec: {
+    tag: 'Materia 07 · Exactas',
+    tagColor: 'rgba(251,191,36,.15)', tagTextColor: '#fbbf24',
+    title: 'Electrónica y Comunicaciones Aplicadas',
+    sub: 'Estación Meteorológica Electrónica Básica — Diseño, Simulación e Integración de Sensores · Abril 2026',
+    hero: `https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=85`,
+    content: `
+      <div class="detail-facts">
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">6</div><div class="detail-fact-lbl">Variables medidas</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">3</div><div class="detail-fact-lbl">Sensores principales</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">770</div><div class="detail-fact-lbl">mmHg presión Pachuca</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">4</div><div class="detail-fact-lbl">Sesiones de trabajo</div></div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Sensores Principales</div>
+        <div class="detail-3col">
+          <div class="detail-card"><h4 style="color:#fbbf24">LM35</h4><p><strong>Variable:</strong> Temperatura<br><strong>Fabricante:</strong> Texas Instruments<br><strong>Rango:</strong> −55°C a +150°C<br><strong>Precisión:</strong> ±0.5°C<br><strong>Salida:</strong> 10 mV/°C analógico<br><strong>Costo:</strong> ~$20–30 MXN</p></div>
+          <div class="detail-card"><h4 style="color:#fbbf24">DHT11</h4><p><strong>Variable:</strong> Temperatura + Humedad<br><strong>Fabricante:</strong> Aosong Electronics<br><strong>Temp:</strong> 0–50°C (±2°C)<br><strong>Humedad:</strong> 20–80% (±5%)<br><strong>Salida:</strong> Digital 40 bits<br><strong>Costo:</strong> ~$30–50 MXN</p></div>
+          <div class="detail-card"><h4 style="color:#fbbf24">BMP180</h4><p><strong>Variable:</strong> Presión Atmosférica<br><strong>Fabricante:</strong> Bosch Sensortec<br><strong>Rango:</strong> 300–1,100 hPa<br><strong>Precisión:</strong> ±1 hPa<br><strong>Protocolo:</strong> I²C digital<br><strong>Altitud:</strong> −500 a +9,000 m</p></div>
+        </div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Variables Medidas</div>
+        <table class="data-table"><thead><tr><th>Variable</th><th>Unidad</th><th>Rango</th><th>Sensor</th><th>Valor en Pachuca (Abr 2026)</th></tr></thead><tbody>
+          <tr><td>Temperatura</td><td>°C</td><td>−40 a +80</td><td>LM35, DHT11</td><td>5–26°C (anomalía: +9°C)</td></tr>
+          <tr><td>Humedad relativa</td><td>% HR</td><td>0 a 100</td><td>DHT11, DHT22</td><td>35–91% (mín histórico)</td></tr>
+          <tr><td>Presión atmosférica</td><td>hPa</td><td>300–1,100</td><td>BMP180</td><td>~770 mmHg (altitud)</td></tr>
+          <tr><td>Velocidad del viento</td><td>m/s</td><td>0 a 50+</td><td>Anemómetro copelas</td><td>Ráfagas 40 km/h</td></tr>
+          <tr><td>Dirección del viento</td><td>°</td><td>0 a 360</td><td>Veleta potenciómetro</td><td>NE predominante</td></tr>
+          <tr><td>Precipitación</td><td>mm</td><td>0 a 500+</td><td>Pluviómetro báscula</td><td>18 mm evento anómalo</td></tr>
+        </tbody></table>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Clasificación de Sensores</div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4>Analógicos vs Digitales</h4>
+            <table class="data-table"><thead><tr><th>Tipo</th><th>Salida</th><th>Ventaja</th><th>Ejemplo</th></tr></thead><tbody>
+              <tr><td>Analógico</td><td>Voltaje 0–5V</td><td>Info continua, barato</td><td>LM35</td></tr>
+              <tr><td>Digital</td><td>UART/SPI/I²C</td><td>Sin ADC externo</td><td>DHT11, BMP180</td></tr>
+            </tbody></table>
+          </div>
+          <div class="detail-card"><h4>Activos vs Pasivos</h4>
+            <table class="data-table"><thead><tr><th>Tipo</th><th>Definición</th><th>Ejemplo</th></tr></thead><tbody>
+              <tr><td>Activo</td><td>Genera su propia señal</td><td>LM35, DS18B20</td></tr>
+              <tr><td>Pasivo</td><td>Varía impedancia</td><td>Termistor, fotoresistor</td></tr>
+            </tbody></table>
+          </div>
+        </div>
+        <div class="alert-box info" style="margin-top:16px">⚡ <strong>Dato de Pachuca:</strong> A 2,426 m s.n.m. la presión es ~770 mmHg (inferior a los 1,013 hPa del nivel del mar). El BMP180 debe configurarse con corrección altimétrica para lecturas correctas.</div>
+      </div>`
+  },
+
+  /* placeholders para materias sin contenido aún */
+  filo: { tag:'Materia 02 · Común', tagColor:'rgba(167,139,250,.15)', tagTextColor:'#a78bfa', title:'Pensamiento Filosófico', sub:'Proyecto integrador en desarrollo — próximamente', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
+    content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">🧠</div><h4>Proyecto en desarrollo</h4><p>El contenido de esta materia se agregará próximamente cuando esté disponible en Drive.</p></div></div>` },
+  mat:  { tag:'Materia 03 · Común', tagColor:'rgba(56,189,248,.15)', tagTextColor:'#38bdf8', title:'Manejo de la Información y Fenómenos Aleatorios', sub:'Estadística y probabilidad aplicada al clima · Proyecto en desarrollo', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
+    content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">📊</div><h4>Proyecto en desarrollo</h4><p>El contenido de esta materia se agregará próximamente cuando esté disponible en Drive.</p></div></div>` },
+  uni:  { tag:'Materia 04 · Común', tagColor:'rgba(167,139,250,.15)', tagTextColor:'#a78bfa', title:'El Universo y sus Fenómenos', sub:'Fenómenos atmosféricos y radiación solar · Proyecto en desarrollo', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
+    content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">🔭</div><h4>Proyecto en desarrollo</h4><p>El contenido de esta materia se agregará próximamente cuando esté disponible en Drive.</p></div></div>` },
+  web:  { tag:'Materia 06 · Exactas', tagColor:'rgba(45,212,191,.15)', tagTextColor:'#2dd4bf', title:'Aplicaciones Computacionales Web y Móviles', sub:'Este sitio web es el proyecto · Documentación técnica próximamente', hero:`https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1400&q=85`,
+    content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">💻</div><h4>¡Estás viendo el proyecto!</h4><p>Esta página web interactiva es el proyecto de la materia. Se agregará documentación técnica próximamente.</p></div></div>` },
+  quim: { tag:'Materia 08 · Exactas', tagColor:'rgba(251,113,133,.15)', tagTextColor:'#fb7185', title:'Análisis de Macromoléculas y Equilibrios Ácido-Base', sub:'Impacto de contaminantes químicos · Proyecto en desarrollo', hero:`https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1400&q=85`,
+    content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">🧪</div><h4>Proyecto en desarrollo</h4><p>El contenido de esta materia se agregará próximamente cuando esté disponible en Drive.</p></div></div>` },
+};
+
+function openDetail(id) {
+  const d = DETAILS[id];
+  if (!d) return;
+  document.getElementById('detailTopTitle').textContent = d.title;
+  document.getElementById('detailContent').innerHTML = `
+    <div class="detail-hero" style="background-image:url('${d.hero}')">
+      <div class="detail-hero-overlay">
+        <span class="detail-hero-tag" style="background:${d.tagColor};color:${d.tagTextColor}">${d.tag}</span>
+        <div class="detail-hero-title">${d.title}</div>
+        <div class="detail-hero-sub">${d.sub}</div>
+      </div>
+    </div>
+    <div class="detail-body">${d.content}</div>`;
+  const page = document.getElementById('detailPage');
+  page.classList.add('open');
+  page.scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDetail() {
+  document.getElementById('detailPage').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
 </script>
 </body>
 </html>
