@@ -1725,8 +1725,8 @@ const DETAILS = {
         <div class="detail-sec-sub">Una estación meteorológica es un conjunto de instrumentos interconectados que miden, registran y transmiten datos de variables atmosféricas en tiempo real. Funciona como un sistema de monitoreo continuo del clima local.</div>
 
         <div class="detail-gallery g2" style="margin-bottom:28px">
-          <div class="detail-gimg" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80')"><div class="detail-gimg-cap">Circuito PCB — electrónica de sensores</div></div>
-          <div class="detail-gimg" style="background-image:url('https://images.unsplash.com/photo-1581092160607-ee22731c9c36?w=800&q=80')"><div class="detail-gimg-cap">Arduino Uno — microcontrolador del proyecto</div></div>
+          <div class="detail-gimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/c/ce/Arduino_Uno_R3.JPG');background-size:contain;background-color:#1a1a1a;background-repeat:no-repeat"><div class="detail-gimg-cap">Arduino Uno R3 — microcontrolador del proyecto</div></div>
+          <div class="detail-gimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/5/52/Breadboard.JPG');background-size:contain;background-color:#1a1a1a;background-repeat:no-repeat"><div class="detail-gimg-cap">Protoboard 830 puntos — para armar el circuito</div></div>
         </div>
 
         <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px">Clasificación por Uso</p>
@@ -1780,16 +1780,19 @@ const DETAILS = {
         <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin:24px 0 12px">Sensores Principales — Especificaciones Técnicas</p>
         <div class="detail-3col">
           <div class="detail-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/LM35_temperature_sensor_semiconductor_thermometer_1480374_5_6_HDR_enhancer.jpg" alt="Sensor LM35" style="width:100%;height:140px;object-fit:contain;background:#1a1a1a;border-radius:8px;margin-bottom:12px" />
             <h4 style="color:#fbbf24;margin-bottom:10px">LM35 — Temperatura Analógica</h4>
             <p style="font-size:12px;line-height:1.8"><strong>Fabricante:</strong> Texas Instruments<br><strong>Rango:</strong> −55°C a +150°C<br><strong>Precisión:</strong> ±0.5°C<br><strong>Salida:</strong> 10 mV/°C (analógico)<br><strong>Alimentación:</strong> 4V a 30V DC<br><strong>Consumo:</strong> ~60 µA<br><strong>Costo:</strong> ~$20–30 MXN</p>
             <div class="alert-box info" style="margin-top:12px;font-size:11px">T(°C) = Vout(V) × 100<br>Ejemplo: 0.35V → 35°C</div>
           </div>
           <div class="detail-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/DHT11.png" alt="Sensor DHT11" style="width:100%;height:140px;object-fit:contain;background:#1a1a1a;border-radius:8px;margin-bottom:12px" />
             <h4 style="color:#fbbf24;margin-bottom:10px">DHT11 — Temp + Humedad Digital</h4>
             <p style="font-size:12px;line-height:1.8"><strong>Fabricante:</strong> Aosong Electronics<br><strong>Temperatura:</strong> 0°C a 50°C (±2°C)<br><strong>Humedad:</strong> 20% a 80% (±5% HR)<br><strong>Salida:</strong> Protocolo digital 40 bits<br><strong>Respuesta:</strong> ~2 segundos<br><strong>Consumo:</strong> ~2.5 mA máx<br><strong>Costo:</strong> ~$30–50 MXN</p>
             <div class="alert-box info" style="margin-top:12px;font-size:11px">40 bits: Byte1 HR-entera · Byte2 HR-decimal · Byte3 T-entera · Byte4 T-decimal · Byte5 Checksum</div>
           </div>
           <div class="detail-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Pressure_sensor_chip.jpg" alt="Sensor de presión BMP180" style="width:100%;height:140px;object-fit:contain;background:#1a1a1a;border-radius:8px;margin-bottom:12px" />
             <h4 style="color:#fbbf24;margin-bottom:10px">BMP180 — Presión I²C</h4>
             <p style="font-size:12px;line-height:1.8"><strong>Fabricante:</strong> Bosch Sensortec<br><strong>Presión:</strong> 300–1100 hPa<br><strong>Precisión:</strong> ±1 hPa<br><strong>Interfaz:</strong> I²C (dirección 0x77)<br><strong>Voltaje:</strong> 1.8V a 3.6V<br><strong>Consumo:</strong> ~5 µA reposo<br><strong>Costo:</strong> ~$80–120 MXN</p>
             <div class="alert-box info" style="margin-top:12px;font-size:11px">h(m) = 44330 × [1 − (P/P₀)^(1/5.255)]<br>P₀ = 1013.25 hPa (nivel del mar)</div>
@@ -1885,6 +1888,11 @@ const DETAILS = {
       <!-- SESIÓN 4 -->
       <div class="detail-sec">
         <div class="detail-sec-head">Sesión 4 · Integración y Presentación Final (30 abril)</div>
+
+        <div class="detail-gallery g2" style="margin-bottom:28px">
+          <div class="detail-gimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/1/11/Anemometer_2745.JPG');background-size:contain;background-color:#1a1a1a;background-repeat:no-repeat"><div class="detail-gimg-cap">Anemómetro de copelas — mide velocidad del viento</div></div>
+          <div class="detail-gimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/1/12/16x2_Character_LCD_Display.jpg');background-size:contain;background-color:#1a1a1a;background-repeat:no-repeat"><div class="detail-gimg-cap">Display LCD 16x2 — salida de datos de la estación</div></div>
+        </div>
 
         <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px">Tabla Completa de Sensores del Proyecto</p>
         <table class="data-table"><thead><tr><th>Sensor</th><th>Tipo</th><th>Variable</th><th>Rango</th><th>Precisión</th><th>Interfaz</th><th>Costo MXN</th></tr></thead><tbody>
