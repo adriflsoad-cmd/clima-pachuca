@@ -26,7 +26,19 @@
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+    html  { background: #020818; }
+    body { background: transparent; color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+    /* ── SCROLL BACKGROUND ── */
+    #scroll-bg {
+      position: fixed; inset: 0; z-index: -1;
+      will-change: background;
+      pointer-events: none;
+    }
+    #scroll-bg canvas {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      opacity: .35;
+    }
 
     /* ── NAV ── */
     nav {
@@ -584,6 +596,9 @@
   </style>
 </head>
 <body>
+
+<!-- ═══════════════ SCROLL BG ═══════════════ -->
+<div id="scroll-bg"><canvas id="star-canvas"></canvas></div>
 
 <!-- ═══════════════ NAV ═══════════════ -->
 <nav>
@@ -2045,6 +2060,150 @@ function closeDetail() {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+
+/* ═══════════════════════════════════════════════
+   SCROLL-DRIVEN BACKGROUND — ciclo día completo
+═══════════════════════════════════════════════ */
+(function(){
+  // Scenes: cada una corresponde a una sección de la página
+  // Orden: hero → clima → puntos → comunes → exactas → social → salud
+  const SCENES = [
+    { name:'Noche estelar',         // HERO
+      base: [[2,8,24],[8,13,26]],
+      g1:[56,189,248],  g1p:[50,-5],  g1r:[70,55], g1a:.18,
+      g2:[52,211,153],  g2p:[85,80],  g2r:[45,35], g2a:.10 },
+    { name:'Madrugada',             // CLIMA
+      base: [[5,2,15],[12,5,22]],
+      g1:[139,92,246],  g1p:[20,95],  g1r:[60,40], g1a:.22,
+      g2:[251,113,133], g2p:[75,92],  g2r:[40,28], g2a:.15 },
+    { name:'Amanecer',              // PUNTOS
+      base: [[6,3,10],[20,8,4]],
+      g1:[251,146,60],  g1p:[50,100], g1r:[85,50], g1a:.28,
+      g2:[251,191,36],  g2p:[72,96],  g2r:[50,30], g2a:.20 },
+    { name:'Mañana clara',          // COMUNES
+      base: [[2,8,18],[5,14,25]],
+      g1:[45,212,191],  g1p:[25,70],  g1r:[65,45], g1a:.18,
+      g2:[56,189,248],  g2p:[70,15],  g2r:[50,35], g2a:.16 },
+    { name:'Tarde azul',            // EXACTAS
+      base: [[2,6,18],[4,10,24]],
+      g1:[56,189,248],  g1p:[50,5],   g1r:[75,55], g1a:.22,
+      g2:[167,139,250], g2p:[90,85],  g2r:[45,35], g2a:.14 },
+    { name:'Atardecer',             // SOCIAL
+      base: [[8,4,2],[20,8,3]],
+      g1:[251,146,60],  g1p:[55,100], g1r:[85,52], g1a:.30,
+      g2:[167,139,250], g2p:[15,82],  g2r:[55,40], g2a:.20 },
+    { name:'Noche cerrada',         // SALUD
+      base: [[2,6,18],[5,10,22]],
+      g1:[52,211,153],  g1p:[70,92],  g1r:[55,38], g1a:.14,
+      g2:[56,189,248],  g2p:[20,12],  g2r:[45,30], g2a:.12 },
+  ];
+
+  const SECTION_IDS = ['hero','clima','puntos','comunes','exactas','social','salud'];
+  const bg = document.getElementById('scroll-bg');
+
+  // ── helpers
+  const lerp = (a,b,t) => a + (b-a)*t;
+  const lerpV = (a,b,t) => a.map((v,i) => Math.round(v+(b[i]-v)*t));
+
+  function getSceneT() {
+    const sy = window.scrollY + window.innerHeight * .38;
+    const tops = SECTION_IDS.map(id => {
+      const el = document.getElementById(id);
+      return el ? el.offsetTop : Infinity;
+    }).filter(t => t !== Infinity);
+
+    for (let i = tops.length - 1; i >= 0; i--) {
+      if (sy >= tops[i]) {
+        if (i === tops.length - 1) return i;
+        const frac = (sy - tops[i]) / (tops[i+1] - tops[i]);
+        return i + Math.min(1, Math.max(0, frac));
+      }
+    }
+    return 0;
+  }
+
+  function renderBg(t) {
+    const maxI = SCENES.length - 1;
+    const i = Math.min(Math.floor(t), maxI - 1);
+    const f = Math.max(0, Math.min(1, t - i));
+    const A = SCENES[i], B = SCENES[Math.min(i+1, maxI)];
+
+    const b0 = lerpV(A.base[0], B.base[0], f);
+    const b1 = lerpV(A.base[1], B.base[1], f);
+    const g1c = lerpV(A.g1, B.g1, f);
+    const g2c = lerpV(A.g2, B.g2, f);
+    const g1px = lerp(A.g1p[0], B.g1p[0], f).toFixed(1);
+    const g1py = lerp(A.g1p[1], B.g1p[1], f).toFixed(1);
+    const g2px = lerp(A.g2p[0], B.g2p[0], f).toFixed(1);
+    const g2py = lerp(A.g2p[1], B.g2p[1], f).toFixed(1);
+    const g1rx = lerp(A.g1r[0], B.g1r[0], f).toFixed(1);
+    const g1ry = lerp(A.g1r[1], B.g1r[1], f).toFixed(1);
+    const g2rx = lerp(A.g2r[0], B.g2r[0], f).toFixed(1);
+    const g2ry = lerp(A.g2r[1], B.g2r[1], f).toFixed(1);
+    const g1a  = lerp(A.g1a,  B.g1a,  f).toFixed(3);
+    const g2a  = lerp(A.g2a,  B.g2a,  f).toFixed(3);
+
+    bg.style.background = [
+      `radial-gradient(ellipse ${g1rx}% ${g1ry}% at ${g1px}% ${g1py}%, rgba(${g1c},${g1a}) 0%, transparent 70%)`,
+      `radial-gradient(ellipse ${g2rx}% ${g2ry}% at ${g2px}% ${g2py}%, rgba(${g2c},${g2a}) 0%, transparent 62%)`,
+      `linear-gradient(to bottom, rgb(${b0}) 0%, rgb(${b1}) 100%)`
+    ].join(',');
+  }
+
+  // ── star field canvas
+  const canvas = document.getElementById('star-canvas');
+  const ctx = canvas.getContext('2d');
+  const STARS = [];
+  function initStars() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+    STARS.length = 0;
+    for (let s = 0; s < 180; s++) {
+      STARS.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.2 + .2,
+        o: Math.random() * .7 + .1,
+        speed: Math.random() * .004 + .002,
+        phase: Math.random() * Math.PI * 2,
+      });
+    }
+  }
+  function drawStars(sceneT) {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    // stars fade out as day brightens (scenes 2-5 = day)
+    const warmth = Math.max(0, Math.min(1, (sceneT-1.5)/2));     // 0=night, 1=day
+    const starAlpha = 1 - warmth * .85;
+    if (starAlpha < .02) return;
+    const now = performance.now() / 1000;
+    STARS.forEach(s => {
+      const twinkle = s.o * (.7 + .3 * Math.sin(now * s.speed * 60 + s.phase));
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(200,220,255,${(twinkle * starAlpha).toFixed(3)})`;
+      ctx.fill();
+    });
+  }
+
+  // ── main loop
+  let lastT = -1, rafId;
+  function tick() {
+    const t = getSceneT();
+    if (Math.abs(t - lastT) > .001) {
+      renderBg(t);
+      drawStars(t);
+      lastT = t;
+    }
+    rafId = requestAnimationFrame(tick);
+  }
+
+  initStars();
+  window.addEventListener('resize', () => {
+    initStars();
+    renderBg(lastT < 0 ? 0 : lastT);
+  });
+  tick();
+})();
 </script>
 </body>
 </html>
