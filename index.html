@@ -1610,42 +1610,98 @@ const DETAILS = {
     tag: 'Materia 05 · Exactas',
     tagColor: 'rgba(56,189,248,.15)', tagTextColor: '#38bdf8',
     title: 'Biodiversidad y Prácticas Productivas',
-    sub: 'EIMA — Ecotoxicología · Ajolote del Altiplano (Ambystoma velasci) · Pachuca, Hidalgo · Abril 2026',
+    sub: 'Mapa de Riesgo Ecotoxicológico del Ajolote · Ambystoma velasci · Pachuca, Hidalgo · Abril 2026',
     hero: `${W}/e/e9/Ajolote_%28Ambystoma_mexicanum%29.jpg`,
     content: `
       <div class="detail-facts">
         <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">Pr</div><div class="detail-fact-lbl">NOM-059 Estatus</div></div>
         <div class="detail-fact"><div class="detail-fact-val" style="color:#fb7185">Alto</div><div class="detail-fact-lbl">Riesgo IUCN</div></div>
-        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">7</div><div class="detail-fact-lbl">Xenobióticos</div></div>
-        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">50-121</div><div class="detail-fact-lbl">mm longitud</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">3</div><div class="detail-fact-lbl">Zonas de riesgo</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">4</div><div class="detail-fact-lbl">Fuentes de estrés</div></div>
       </div>
+
+      <!-- INTRODUCCIÓN -->
       <div class="detail-sec">
-        <div class="detail-sec-head">El Ajolote del Altiplano</div>
-        <div class="detail-sec-sub">Ambystoma velasci es la única especie de Ambystoma en estado silvestre en Hidalgo. Habita arroyos y lagos de bosque pino-encino de alta montaña. Su población está en declive severo por contaminación del agua, deforestación y especies invasoras.</div>
+        <div class="detail-sec-head">Introducción</div>
+        <div class="detail-sec-sub">El presente trabajo analiza las condiciones ambientales del municipio de Pachuca de Soto, Hidalgo, a través de la elaboración de un mapa de riesgo ecotoxicológico tomando como bioindicador al ajolote (Ambystoma velasci). Esta especie resulta particularmente útil debido a su alta sensibilidad a contaminantes presentes en el agua y el ambiente.</div>
         <div class="detail-gallery g2">
-          <div class="detail-gimg" style="background-image:url('${W}/e/e9/Ajolote_%28Ambystoma_mexicanum%29.jpg')"><div class="detail-gimg-cap">Ajolote (Ambystoma mexicanum) — especie afín</div></div>
+          <div class="detail-gimg" style="background-image:url('${W}/e/e9/Ajolote_%28Ambystoma_mexicanum%29.jpg')"><div class="detail-gimg-cap">Ajolote (Ambystoma mexicanum) — especie bioindicadora</div></div>
           <div class="detail-gimg" style="background-image:url('${W}/a/aa/Abies_religiosa%2C_Parque_Nacional_El_Chico%2C_Hidalgo%2C_Mexico_1.jpg')"><div class="detail-gimg-cap">Hábitat natural — Bosque pino-encino, Sierra de Pachuca</div></div>
         </div>
       </div>
+
+      <!-- BIOINDICADOR -->
       <div class="detail-sec">
-        <div class="detail-sec-head">Parámetros Fisicoquímicos del Agua</div>
+        <div class="detail-sec-head">1. Selección del Bioindicador</div>
+        <div class="detail-sec-sub">El ajolote (Ambystoma velasci) es un anfibio que habita en cuerpos de agua dulce. Se eligió como bioindicador debido a su piel altamente permeable, lo que le permite absorber sustancias directamente del entorno.</div>
+        <div class="detail-3col">
+          <div class="detail-card"><h4 style="color:#38bdf8">🧬 Piel Permeable</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Su piel absorbe sustancias directamente del entorno, haciendo al ajolote un sensor vivo de la calidad del agua y del aire a su alrededor.</p></div>
+          <div class="detail-card"><h4 style="color:#38bdf8">💧 Dependencia del Agua</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Su ciclo de vida depende completamente del agua, haciéndolo especialmente vulnerable a cambios en la calidad de este recurso.</p></div>
+          <div class="detail-card"><h4 style="color:#38bdf8">🥚 Fase Larvaria Crítica</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">La etapa más crítica es la fase larvaria: cualquier alteración en el ambiente puede afectar su crecimiento, desarrollo y supervivencia.</p></div>
+        </div>
+      </div>
+
+      <!-- FUENTES DE ESTRÉS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">2. Mapeo de Fuentes de Estrés</div>
+        <div class="detail-sec-sub">En el área de Pachuca se identificaron diversas fuentes de contaminación que representan un riesgo directo para el ajolote:</div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4 style="color:#fb7185">⛏️ Descargas Fabriles — Los Jales</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Zonas cercanas a Los Jales donde históricamente se han acumulado residuos mineros con presencia de metales pesados (Pb, Cd, Zn). Representan el mayor riesgo ecotoxicológico de la región.</p></div>
+          <div class="detail-card"><h4 style="color:#fbbf24">🏙️ Zonas Urbanas</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">La alta densidad poblacional genera residuos sólidos, especialmente plásticos que se degradan en microplásticos que afectan el sistema digestivo y endocrino del ajolote.</p></div>
+          <div class="detail-card"><h4 style="color:#fbbf24">🌾 Actividades Agrícolas — San José Palma Gorda</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">El uso de pesticidas puede filtrarse hacia los cuerpos de agua, actuando como disruptores endocrinos que alteran el comportamiento y desarrollo del ajolote.</p></div>
+          <div class="detail-card"><h4 style="color:#38bdf8">🌊 Cuerpos de Agua</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Ríos y escurrimientos que reciben contaminantes de múltiples fuentes, transportando metales pesados, pesticidas y microplásticos hacia las zonas de hábitat del ajolote.</p></div>
+        </div>
+      </div>
+
+      <!-- PARÁMETROS ABIÓTICOS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">3. Correlación de Parámetros Abióticos</div>
         <table class="data-table"><thead><tr><th>Parámetro</th><th>Valor óptimo</th><th>Valor alterado</th><th>Efecto en ajolote</th></tr></thead><tbody>
-          <tr><td>pH del agua</td><td>6.5 – 8.0</td><td>&lt;6.0 (lluvia ácida)</td><td>Disuelve tejidos branquiales; reduce eclosión de huevos</td></tr>
+          <tr><td>pH del agua</td><td>6.5 – 8.0</td><td>&lt;6.0 (lluvia ácida)</td><td>Facilita disolución de metales; daña tejidos branquiales</td></tr>
           <tr><td>Oxígeno disuelto</td><td>&gt;6 mg/L</td><td>&lt;3 mg/L (eutrofización)</td><td>Hipoxia: asfixia larvaria y adulta</td></tr>
           <tr><td>NH₃ amoniacal</td><td>&lt;0.02 mg/L</td><td>&gt;0.5 mg/L</td><td>Daño en branquias y sistema nervioso</td></tr>
           <tr><td>Glifosato</td><td>No detectable</td><td>0.1–1.2 mg/L</td><td>Disruptor endocrino; altera metamorfosis</td></tr>
           <tr><td>Pb, Cd, Zn</td><td>Trazas &lt;0.01 mg/L</td><td>Pb: 0.08 mg/L</td><td>Bioacumulación; daño renal y hepático</td></tr>
           <tr><td>Microplásticos</td><td>Ausentes</td><td>Detectados en arroyos</td><td>Ingestión accidental; aditivos tóxicos BPA</td></tr>
+          <tr><td>Partículas suspendidas (aire)</td><td>Mínimas</td><td>Elevadas por industria</td><td>Transportan contaminantes hacia el agua</td></tr>
         </tbody></table>
+        <div class="alert-box warning" style="margin-top:16px">⚠️ <strong>Efecto combinado:</strong> Cuando el pH baja, los metales pesados se disuelven más fácilmente, multiplicando su toxicidad. La combinación de bajo pH + metales pesados + pesticidas incrementa significativamente el riesgo para el ajolote.</div>
       </div>
+
+      <!-- ZONIFICACIÓN -->
       <div class="detail-sec">
-        <div class="detail-sec-head">Mapa de Riesgo Ecotoxicológico</div>
-        <div class="detail-card">
-          <div class="risk-item"><div class="risk-label"><span>Cuenca del Río Tula — SO₂, NOx, Pb, Cd (refinería + termoeléctrica)</span><span style="color:#fb7185">MUY ALTO</span></div><div class="risk-bar"><div class="risk-fill r4" style="width:95%"></div></div></div>
-          <div class="risk-item" style="margin-top:14px"><div class="risk-label"><span>Valle del Mezquital — Glifosato, NH₄⁺, aguas residuales CDMX</span><span style="color:#fbbf24">ALTO</span></div><div class="risk-bar"><div class="risk-fill r3" style="width:75%"></div></div></div>
-          <div class="risk-item" style="margin-top:14px"><div class="risk-label"><span>Zona urbana Pachuca — Microplásticos, hidrocarburos</span><span style="color:#38bdf8">MODERADO</span></div><div class="risk-bar"><div class="risk-fill r2" style="width:50%"></div></div></div>
-          <div class="risk-item" style="margin-top:14px"><div class="risk-label"><span>Sierra de Pachuca (zona preservada)</span><span style="color:#34d399">BAJO</span></div><div class="risk-bar"><div class="risk-fill r1" style="width:22%"></div></div></div>
+        <div class="detail-sec-head">4. Zonificación de Riesgo</div>
+        <div class="detail-sec-sub">Se establecieron tres niveles de riesgo según la proximidad a fuentes de contaminación y la calidad ambiental de cada zona:</div>
+        <div class="detail-card" style="margin-bottom:20px">
+          <div class="risk-item"><div class="risk-label"><span>Riesgo Alto — Descargas industriales y mineras (Los Jales)</span><span style="color:#fb7185">ALTO</span></div><div class="risk-bar"><div class="risk-fill r4" data-w="90" style="width:90%"></div></div></div>
+          <div class="risk-item" style="margin-top:16px"><div class="risk-label"><span>Riesgo Medio — Áreas urbanas y agrícolas (contaminación indirecta)</span><span style="color:#fbbf24">MEDIO</span></div><div class="risk-bar"><div class="risk-fill r3" data-w="58" style="width:58%"></div></div></div>
+          <div class="risk-item" style="margin-top:16px"><div class="risk-label"><span>Riesgo Bajo — Zonas alejadas de actividad humana</span><span style="color:#34d399">BAJO</span></div><div class="risk-bar"><div class="risk-fill r1" data-w="22" style="width:22%"></div></div></div>
         </div>
+      </div>
+
+      <!-- DISRUPCIÓN -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">5. Análisis de Disrupción</div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4 style="color:#fb7185">☠️ Metales Pesados</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Los metales pesados presentes (Pb, Cd, Zn) pueden afectar el sistema endocrino del ajolote, provocando malformaciones, problemas reproductivos e incluso la muerte por bioacumulación en tejidos renales y hepáticos.</p></div>
+          <div class="detail-card"><h4 style="color:#fbbf24">🧪 Pesticidas y Glifosato</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Los pesticidas agrícolas actúan como disruptores endocrinos que alteran el comportamiento y desarrollo del ajolote, reduciendo sus probabilidades de supervivencia y reproducción exitosa.</p></div>
+        </div>
+      </div>
+
+      <!-- MAPA DEL PROYECTO -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Mapa de Riesgo Ecotoxicológico — Proyecto EIMA</div>
+        <div class="detail-sec-sub">Mapa elaborado por el equipo como parte del proyecto de Biodiversidad y Prácticas Productivas. Identifica las zonas de mayor amenaza para el ajolote (Ambystoma velasci) en el municipio de Pachuca de Soto, Hidalgo.</div>
+        <div style="border-radius:16px;overflow:hidden;border:2px solid rgba(56,189,248,.3);box-shadow:0 20px 60px rgba(0,0,0,.5)">
+          <img src="mapa_ajolote.jpeg" alt="Mapa de Riesgo Ecotoxicológico del Ajolote en Pachuca" style="width:100%;display:block;border-radius:14px" />
+        </div>
+        <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:10px;letter-spacing:.5px">Mapa de Riesgo Ecotoxicológico · Ambystoma velasci · Pachuca de Soto, Hidalgo · Abril 2026</p>
+      </div>
+
+      <!-- CONCLUSIÓN -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">6. Conclusión</div>
+        <div class="detail-card"><p style="font-size:14px;line-height:1.8;color:var(--muted2)">El análisis realizado demuestra que el ajolote enfrenta múltiples amenazas en el municipio de Pachuca. Las actividades humanas —especialmente la industria minera, la urbanización y la agricultura— generan condiciones adversas para su desarrollo. <strong style="color:var(--text)">Es fundamental implementar estrategias de conservación y control de contaminantes para proteger esta especie y preservar el equilibrio ecológico del Altiplano Hidalguense.</strong></p></div>
       </div>`
   },
 
