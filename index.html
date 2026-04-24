@@ -244,37 +244,42 @@
 
     .prope-block { margin-bottom: 72px; }
 
-    /* ── MATERIA SLIDER ── */
+    /* ── CARRUSEL 3D ── */
     .materia-slider {
-      display: flex; gap: 20px;
-      overflow-x: auto; scroll-snap-type: x mandatory;
-      scrollbar-width: none; -ms-overflow-style: none;
-      padding-bottom: 8px;
+      position: relative;
+      min-height: 400px;
+      overflow: visible;
+      margin-bottom: 8px;
     }
-    .materia-slider::-webkit-scrollbar { display: none; }
     .materia-slider .materia-card {
-      min-width: clamp(480px, 70vw, 720px);
-      flex-shrink: 0; scroll-snap-align: start;
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      width: min(700px, 90vw);
+      margin: 0 auto;
+      transition: transform .75s cubic-bezier(.22,.61,.36,1),
+                  opacity .65s ease;
+      will-change: transform;
       margin-bottom: 0;
     }
     .slider-controls {
-      display: flex; align-items: center; justify-content: flex-end;
-      gap: 10px; margin-top: 16px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 14px; margin-top: 16px; position: relative; z-index: 20;
     }
     .slider-btn {
-      width: 42px; height: 42px; border-radius: 50%;
-      border: 1px solid var(--border); background: var(--card);
-      color: var(--muted2); font-size: 18px; line-height: 1;
+      width: 46px; height: 46px; border-radius: 50%;
+      border: 1px solid var(--border); background: rgba(17,27,46,.85);
+      color: var(--muted2); font-size: 20px; line-height: 1;
       cursor: pointer; display: flex; align-items: center; justify-content: center;
       transition: all .2s; flex-shrink: 0;
+      backdrop-filter: blur(12px);
     }
-    .slider-btn:hover { background: var(--card2); border-color: var(--sky); color: var(--sky); transform: scale(1.08); }
-    .slider-dots { display: flex; gap: 6px; }
+    .slider-btn:hover { background: var(--card2); border-color: var(--sky); color: var(--sky); transform: scale(1.1); }
+    .slider-dots { display: flex; gap: 6px; align-items: center; }
     .slider-dot {
       width: 6px; height: 6px; border-radius: 50%;
       background: var(--border); transition: all .3s; cursor: pointer;
     }
-    .slider-dot.active { background: var(--sky); width: 20px; border-radius: 3px; }
+    .slider-dot.active { background: var(--sky); width: 22px; border-radius: 3px; }
 
     /* ── MATERIA CARD ── */
     .materia-card {
@@ -2158,20 +2163,21 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(
 })();
 
 /* ══════════════════════════════════════
-   3. SLIDER HORIZONTAL — materias
+   3. CARRUSEL 3D — materias (coverflow)
 ══════════════════════════════════════ */
 (function(){
-  const SLIDERS = ['comunes','exactas','social','salud'];
+  const KEYS = ['comunes','exactas','social','salud'];
   const state = {};
 
-  SLIDERS.forEach(key => {
-    const wrap = document.getElementById('slider-' + key);
+  function setup(key) {
+    const wrap   = document.getElementById('slider-' + key);
     const dotsEl = document.getElementById('dots-' + key);
     if (!wrap || !dotsEl) return;
     const cards = Array.from(wrap.querySelectorAll('.materia-card'));
     if (!cards.length) return;
-    state[key] = { wrap, dotsEl, cards };
 
+    // Build dots
+    dotsEl.innerHTML = '';
     cards.forEach((_, i) => {
       const d = document.createElement('div');
       d.className = 'slider-dot' + (i === 0 ? ' active' : '');
@@ -2179,25 +2185,59 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(
       dotsEl.appendChild(d);
     });
 
-    wrap.addEventListener('scroll', () => {
-      const cardW = cards[0].offsetWidth + 20;
-      const idx = Math.round(wrap.scrollLeft / cardW);
-      dotsEl.querySelectorAll('.slider-dot').forEach((d,i) =>
-        d.classList.toggle('active', i === idx));
-    }, {passive:true});
-  });
+    state[key] = { wrap, dotsEl, cards, cur: 0 };
+
+    // Set wrapper height after layout
+    const setH = () => {
+      let maxH = 0;
+      cards.forEach(c => { c.style.transform = ''; maxH = Math.max(maxH, c.offsetHeight); });
+      wrap.style.height = (maxH + 20) + 'px';
+      render(key);
+    };
+    requestAnimationFrame(setH);
+    window.addEventListener('resize', setH, {passive:true});
+
+    // Click side cards to navigate
+    cards.forEach((card, i) => {
+      card.addEventListener('click', e => {
+        const s = state[key];
+        if (i !== s.cur) { e.stopImmediatePropagation(); goTo(key, i); }
+      }, true);
+    });
+  }
+
+  function render(key) {
+    const s = state[key]; if (!s) return;
+    const { cards, cur, dotsEl } = s;
+    cards.forEach((card, i) => {
+      const off   = i - cur;
+      const abs   = Math.abs(off);
+      const rotY  = off * 40;
+      const transX = off * 55;
+      const transZ = -abs * 170;
+      const scale  = Math.max(0.62, 1 - abs * 0.15);
+      const opacity = Math.max(0.07, 1 - abs * 0.40);
+      card.style.transform =
+        `perspective(1100px) translateX(${transX}px) rotateY(${rotY}deg) translateZ(${transZ}px) scale(${scale})`;
+      card.style.opacity = opacity;
+      card.style.zIndex  = 10 - abs;
+      card.style.pointerEvents = abs > 1 ? 'none' : 'auto';
+    });
+    dotsEl.querySelectorAll('.slider-dot').forEach((d, i) =>
+      d.classList.toggle('active', i === cur));
+  }
 
   function goTo(key, i) {
     const s = state[key]; if (!s) return;
-    const cardW = s.cards[0].offsetWidth + 20;
-    s.wrap.scrollTo({ left: i * cardW, behavior: 'smooth' });
+    s.cur = Math.max(0, Math.min(i, s.cards.length - 1));
+    render(key);
   }
+
+  KEYS.forEach(setup);
 
   window.slideMove = function(key, dir) {
     const s = state[key]; if (!s) return;
-    const cardW = s.cards[0].offsetWidth + 20;
-    const idx = Math.round(s.wrap.scrollLeft / cardW);
-    goTo(key, Math.max(0, Math.min(idx + dir, s.cards.length - 1)));
+    goTo(key, s.cur + dir);
   };
 })();
 
