@@ -46,8 +46,13 @@
       padding: 0 48px;
       height: 64px;
       display: flex; align-items: center; justify-content: space-between;
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      transition: background .45s ease, border-color .45s ease, backdrop-filter .45s ease;
+    }
+    nav.scrolled {
       backdrop-filter: blur(24px) saturate(160%);
-      background: rgba(8,13,26,0.82);
+      background: rgba(8,13,26,0.92);
       border-bottom: 1px solid var(--border);
     }
     .nav-brand {
@@ -111,8 +116,9 @@
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
     h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(3rem, 7.5vw, 6rem);
-      font-weight: 700; line-height: 1.04; letter-spacing: -2px;
+      font-size: clamp(3.8rem, 10.5vw, 9.5rem);
+      font-weight: 700; line-height: .92; letter-spacing: -4px;
+      text-transform: uppercase;
       animation: fadeUp .7s .1s ease both;
     }
     h1 .c1 { color: var(--sky); }
@@ -237,6 +243,38 @@
     .prope-count { font-size: 12px; color: var(--muted); margin-left: auto; }
 
     .prope-block { margin-bottom: 72px; }
+
+    /* ── MATERIA SLIDER ── */
+    .materia-slider {
+      display: flex; gap: 20px;
+      overflow-x: auto; scroll-snap-type: x mandatory;
+      scrollbar-width: none; -ms-overflow-style: none;
+      padding-bottom: 8px;
+    }
+    .materia-slider::-webkit-scrollbar { display: none; }
+    .materia-slider .materia-card {
+      min-width: clamp(480px, 70vw, 720px);
+      flex-shrink: 0; scroll-snap-align: start;
+      margin-bottom: 0;
+    }
+    .slider-controls {
+      display: flex; align-items: center; justify-content: flex-end;
+      gap: 10px; margin-top: 16px;
+    }
+    .slider-btn {
+      width: 42px; height: 42px; border-radius: 50%;
+      border: 1px solid var(--border); background: var(--card);
+      color: var(--muted2); font-size: 18px; line-height: 1;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: all .2s; flex-shrink: 0;
+    }
+    .slider-btn:hover { background: var(--card2); border-color: var(--sky); color: var(--sky); transform: scale(1.08); }
+    .slider-dots { display: flex; gap: 6px; }
+    .slider-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--border); transition: all .3s; cursor: pointer;
+    }
+    .slider-dot.active { background: var(--sky); width: 20px; border-radius: 3px; }
 
     /* ── MATERIA CARD ── */
     .materia-card {
@@ -699,25 +737,25 @@
   <div class="stat-grid">
     <div class="stat-card reveal d1">
       <div class="stat-icon">🌡️</div>
-      <div class="stat-value" style="color:var(--rose)">26<span class="stat-unit">°C</span></div>
+      <div class="stat-value" style="color:var(--rose)" data-counter="26"><span class="stat-num">0</span><span class="stat-unit">°C</span></div>
       <div class="stat-name">Temp. máx. registrada</div>
       <div class="stat-diff bad">+9°C sobre histórico (17°C)</div>
     </div>
     <div class="stat-card reveal d2">
       <div class="stat-icon">💧</div>
-      <div class="stat-value" style="color:var(--sky)">35<span class="stat-unit">%</span></div>
+      <div class="stat-value" style="color:var(--sky)" data-counter="35"><span class="stat-num">0</span><span class="stat-unit">%</span></div>
       <div class="stat-name">Humedad mínima</div>
       <div class="stat-diff bad">−16 pts del promedio (51%)</div>
     </div>
     <div class="stat-card reveal d3">
       <div class="stat-icon">🌧️</div>
-      <div class="stat-value" style="color:var(--violet)">18<span class="stat-unit">mm</span></div>
+      <div class="stat-value" style="color:var(--violet)" data-counter="18"><span class="stat-num">0</span><span class="stat-unit">mm</span></div>
       <div class="stat-name">Lluvia en evento único</div>
       <div class="stat-diff bad">×6 del promedio mensual</div>
     </div>
     <div class="stat-card reveal">
       <div class="stat-icon">💨</div>
-      <div class="stat-value" style="color:var(--amber)">40<span class="stat-unit">km/h</span></div>
+      <div class="stat-value" style="color:var(--amber)" data-counter="40"><span class="stat-num">0</span><span class="stat-unit">km/h</span></div>
       <div class="stat-name">Viento ráfaga NE</div>
       <div class="stat-diff bad">Interrumpe vuelo de polinizadores</div>
     </div>
@@ -823,6 +861,7 @@
       <div class="prope-count">4 materias</div>
     </div>
 
+    <div class="materia-slider" id="slider-comunes">
     <!-- 1. Ecología -->
     <div class="materia-card m-eco reveal" onclick="openDetail('eco')">
       <div class="mat-sidebar">
@@ -950,6 +989,12 @@
         </div>
       </div>
     </div>
+    </div><!-- /slider-comunes -->
+    <div class="slider-controls">
+      <div class="slider-dots" id="dots-comunes"></div>
+      <button class="slider-btn" onclick="slideMove('comunes',-1)">&#8592;</button>
+      <button class="slider-btn" onclick="slideMove('comunes',1)">&#8594;</button>
+    </div>
   </div>
 </section>
 
@@ -967,6 +1012,7 @@
       <div class="prope-count">4 materias</div>
     </div>
 
+    <div class="materia-slider" id="slider-exactas">
     <!-- 5. Biodiversidad -->
     <div class="materia-card m-bio reveal" onclick="openDetail('bio')">
       <div class="mat-sidebar">
@@ -1128,6 +1174,12 @@
         </div>
       </div>
     </div>
+    </div><!-- /slider-exactas -->
+    <div class="slider-controls">
+      <div class="slider-dots" id="dots-exactas"></div>
+      <button class="slider-btn" onclick="slideMove('exactas',-1)">&#8592;</button>
+      <button class="slider-btn" onclick="slideMove('exactas',1)">&#8594;</button>
+    </div>
   </div>
 </section>
 
@@ -1145,6 +1197,7 @@
       <div class="prope-count">En construcción</div>
     </div>
 
+    <div class="materia-slider" id="slider-social">
     <div class="materia-card m-soc reveal" style="border-style:dashed;">
       <div class="mat-sidebar">
         <div class="mat-num">—</div>
@@ -1163,6 +1216,12 @@
         </div>
       </div>
     </div>
+    </div><!-- /slider-social -->
+    <div class="slider-controls">
+      <div class="slider-dots" id="dots-social"></div>
+      <button class="slider-btn" onclick="slideMove('social',-1)">&#8592;</button>
+      <button class="slider-btn" onclick="slideMove('social',1)">&#8594;</button>
+    </div>
   </div>
 </section>
 
@@ -1180,6 +1239,7 @@
       <div class="prope-count">En construcción</div>
     </div>
 
+    <div class="materia-slider" id="slider-salud">
     <div class="materia-card m-sal reveal" style="border-style:dashed;">
       <div class="mat-sidebar">
         <div class="mat-num">—</div>
@@ -2060,6 +2120,86 @@ function closeDetail() {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+
+/* ══════════════════════════════════════
+   1. NAV — transparente → sólida al scroll
+══════════════════════════════════════ */
+(function(){
+  const nav = document.querySelector('nav');
+  const update = () => nav.classList.toggle('scrolled', window.scrollY > 60);
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+
+/* ══════════════════════════════════════
+   2. CONTADORES ANIMADOS — stats de clima
+══════════════════════════════════════ */
+(function(){
+  const counters = document.querySelectorAll('[data-counter]');
+  const ease = t => t < .5 ? 2*t*t : -1+(4-2*t)*t;
+  const run = el => {
+    const target = +el.dataset.counter;
+    const num = el.querySelector('.stat-num');
+    if (!num || el.dataset.counted) return;
+    el.dataset.counted = '1';
+    const dur = 1400, start = performance.now();
+    const tick = now => {
+      const p = Math.min((now - start) / dur, 1);
+      num.textContent = Math.round(ease(p) * target);
+      if (p < 1) requestAnimationFrame(tick);
+      else num.textContent = target;
+    };
+    requestAnimationFrame(tick);
+  };
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) run(e.target); });
+  }, { threshold: .4 });
+  counters.forEach(c => io.observe(c));
+})();
+
+/* ══════════════════════════════════════
+   3. SLIDER HORIZONTAL — materias
+══════════════════════════════════════ */
+(function(){
+  const SLIDERS = ['comunes','exactas','social','salud'];
+  const state = {};
+
+  SLIDERS.forEach(key => {
+    const wrap = document.getElementById('slider-' + key);
+    const dotsEl = document.getElementById('dots-' + key);
+    if (!wrap || !dotsEl) return;
+    const cards = Array.from(wrap.querySelectorAll('.materia-card'));
+    if (!cards.length) return;
+    state[key] = { wrap, dotsEl, cards };
+
+    cards.forEach((_, i) => {
+      const d = document.createElement('div');
+      d.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      d.onclick = () => goTo(key, i);
+      dotsEl.appendChild(d);
+    });
+
+    wrap.addEventListener('scroll', () => {
+      const cardW = cards[0].offsetWidth + 20;
+      const idx = Math.round(wrap.scrollLeft / cardW);
+      dotsEl.querySelectorAll('.slider-dot').forEach((d,i) =>
+        d.classList.toggle('active', i === idx));
+    }, {passive:true});
+  });
+
+  function goTo(key, i) {
+    const s = state[key]; if (!s) return;
+    const cardW = s.cards[0].offsetWidth + 20;
+    s.wrap.scrollTo({ left: i * cardW, behavior: 'smooth' });
+  }
+
+  window.slideMove = function(key, dir) {
+    const s = state[key]; if (!s) return;
+    const cardW = s.cards[0].offsetWidth + 20;
+    const idx = Math.round(s.wrap.scrollLeft / cardW);
+    goTo(key, Math.max(0, Math.min(idx + dir, s.cards.length - 1)));
+  };
+})();
 
 /* ═══════════════════════════════════════════════
    SCROLL-DRIVEN BACKGROUND — ciclo día completo
