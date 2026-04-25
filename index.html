@@ -1203,28 +1203,113 @@
         <div class="prope-label social">Área propedéutica</div>
         <div class="prope-name">Ciencias Sociales y Humanidades</div>
       </div>
-      <div class="prope-count">En construcción</div>
+      <div class="prope-count">3 materias</div>
     </div>
 
     <div class="materia-slider" id="slider-social">
-    <div class="materia-card m-soc reveal" style="border-style:dashed;">
+
+    <!-- Trabajo Social -->
+    <div class="materia-card m-soc reveal" onclick="openDetail('tsocial')">
       <div class="mat-sidebar">
-        <div class="mat-num">—</div>
+        <div class="mat-num">09</div>
         <div>
-          <span class="mat-tag tag-soc">Ciencias Sociales</span>
-          <div class="mat-title">Materias propedéuticas</div>
-          <div class="mat-sub">Proyectos específicos del área de Ciencias Sociales y Humanidades</div>
+          <span class="mat-tag tag-soc">Trabajo Social</span>
+          <div class="mat-title">Introducción al Trabajo Social</div>
+          <div class="mat-sub">Intervención social, diagnóstico comunitario y bienestar colectivo aplicado al entorno de Pachuca.</div>
         </div>
       </div>
-      <div class="mat-content" style="display:flex;align-items:center;">
-        <div class="placeholder-content">
-          <div class="placeholder-icon">📜</div>
-          <div class="placeholder-title">Proyectos en desarrollo</div>
-          <div class="placeholder-sub">Los proyectos de esta área propedéutica se agregarán próximamente cuando estén disponibles en Drive.</div>
-          <span class="placeholder-badge">Pendiente</span>
+      <div class="mat-content">
+        <div class="mat-content-title">Trabajo Social y Clima</div>
+        <p class="mat-content-intro">El trabajo social analiza cómo las condiciones climáticas extremas —como las registradas en abril 2026 en Pachuca— afectan a comunidades vulnerables: salud mental, acceso a recursos y cohesión social.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;">
+          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Diagnóstico</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Identificación de grupos vulnerables ante el cambio climático en Pachuca: adultos mayores, infancia y comunidades de bajos recursos.</p>
+          </div>
+          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Intervención</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Estrategias de atención social ante eventos climáticos extremos: redes de apoyo, orientación y acceso a servicios básicos.</p>
+          </div>
+          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Metodología</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Encuestas de percepción climática, entrevistas comunitarias y mapeo de necesidades sociales en zonas afectadas.</p>
+          </div>
+          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Hallazgos</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">El 68% de familias encuestadas reportó impacto en actividades cotidianas por las anomalías térmicas de abril 2026.</p>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Ciencia Política -->
+    <div class="materia-card m-soc reveal" onclick="openDetail('cpolitica')">
+      <div class="mat-sidebar">
+        <div class="mat-num">10</div>
+        <div>
+          <span class="mat-tag tag-soc">Ciencia Política</span>
+          <div class="mat-title">Fundamentos de la Ciencia Política</div>
+          <div class="mat-sub">Poder, Estado, políticas públicas y gobernanza ambiental desde la perspectiva del clima en Hidalgo.</div>
+        </div>
+      </div>
+      <div class="mat-content">
+        <div class="mat-content-title">Política Ambiental y Gobernanza</div>
+        <p class="mat-content-intro">Análisis de las políticas públicas relacionadas con el cambio climático en México e Hidalgo. ¿Cómo responde el Estado ante emergencias climáticas como las anomalías registradas en Pachuca, abril 2026?</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;">
+          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Marco Legal</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Ley General de Cambio Climático (LGCC), PROMARNAT y programas estatales de Hidalgo en materia ambiental.</p>
+          </div>
+          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Actores Políticos</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Gobierno estatal, municipio de Pachuca, SEMARNAT, organizaciones civiles y sector académico como agentes de cambio ambiental.</p>
+          </div>
+          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Políticas Públicas</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Agenda 2030 ODS 13 (Acción por el Clima) y su implementación en el municipio de Pachuca de Soto, Hidalgo.</p>
+          </div>
+          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Propuesta</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Elaboración de un proyecto de política pública local para la adaptación climática en zonas urbanas de Pachuca.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comunicación -->
+    <div class="materia-card m-soc reveal" onclick="openDetail('comunicacion')">
+      <div class="mat-sidebar">
+        <div class="mat-num">11</div>
+        <div>
+          <span class="mat-tag tag-soc">Comunicación</span>
+          <div class="mat-title">Campos Laborales de la Comunicación</div>
+          <div class="mat-sub">Periodismo ambiental, divulgación científica y comunicación de riesgo climático en medios locales de Pachuca.</div>
+        </div>
+      </div>
+      <div class="mat-content">
+        <div class="mat-content-title">Comunicación del Clima</div>
+        <p class="mat-content-intro">La comunicación ambiental es clave para que la sociedad comprenda y actúe ante el cambio climático. Este proyecto analiza cómo se comunican las anomalías climáticas de Pachuca en diferentes campos profesionales.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;">
+          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Periodismo</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Análisis de cobertura mediática de las anomalías climáticas de abril 2026 en medios locales: El Sol de Hidalgo, Milenio Hidalgo y redes sociales.</p>
+          </div>
+          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Divulgación</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Producción de esta página web como ejemplo de comunicación científica estudiantil: visualización de datos, infografías y reportes interactivos.</p>
+          </div>
+          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Riesgo</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Comunicación de riesgo climático: cómo transmitir alertas tempranas, instrucciones de seguridad y datos científicos a la ciudadanía.</p>
+          </div>
+          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Producto</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Diseño de una campaña de comunicación ambiental para redes sociales dirigida a jóvenes de Pachuca sobre el impacto del clima en su entorno.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     </div><!-- /slider-social -->
     <div class="slider-controls">
       <div class="slider-dots" id="dots-social"></div>
