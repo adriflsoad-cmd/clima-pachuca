@@ -247,19 +247,23 @@
     /* ── CARRUSEL 3D ── */
     .materia-slider {
       position: relative;
-      min-height: 400px;
       overflow: visible;
       margin-bottom: 8px;
     }
+    .materia-slider.ready {
+      overflow: visible;
+    }
     .materia-slider .materia-card {
-      position: absolute;
-      top: 0; left: 0; right: 0;
       width: min(700px, 90vw);
       margin: 0 auto;
       transition: transform .75s cubic-bezier(.22,.61,.36,1),
                   opacity .65s ease;
       will-change: transform;
       margin-bottom: 0;
+    }
+    .materia-slider.ready .materia-card {
+      position: absolute;
+      top: 0; left: 0; right: 0;
     }
     .slider-controls {
       display: flex; align-items: center; justify-content: center;
@@ -2193,15 +2197,26 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(
 
     state[key] = { wrap, dotsEl, cards, cur: 0 };
 
-    // Set wrapper height after layout
-    const setH = () => {
+    // Measure natural height BEFORE activating 3D (cards still in flow)
+    const activate = () => {
       let maxH = 0;
-      cards.forEach(c => { c.style.transform = ''; maxH = Math.max(maxH, c.offsetHeight); });
+      cards.forEach(c => { maxH = Math.max(maxH, c.offsetHeight); });
       wrap.style.height = (maxH + 20) + 'px';
+      wrap.classList.add('ready'); // NOW switch to position:absolute
       render(key);
     };
-    requestAnimationFrame(setH);
-    window.addEventListener('resize', setH, {passive:true});
+    requestAnimationFrame(activate);
+
+    window.addEventListener('resize', () => {
+      wrap.classList.remove('ready');
+      requestAnimationFrame(() => {
+        let maxH = 0;
+        cards.forEach(c => { c.style.transform = ''; maxH = Math.max(maxH, c.offsetHeight); });
+        wrap.style.height = (maxH + 20) + 'px';
+        wrap.classList.add('ready');
+        render(key);
+      });
+    }, {passive:true});
 
     // Click side cards to navigate
     cards.forEach((card, i) => {
