@@ -2185,8 +2185,283 @@ void loop() {
   /* placeholders para materias sin contenido aún */
   filo: { tag:'Materia 02 · Común', tagColor:'rgba(167,139,250,.15)', tagTextColor:'#a78bfa', title:'Pensamiento Filosófico', sub:'Proyecto integrador en desarrollo — próximamente', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
     content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">🧠</div><h4>Proyecto en desarrollo</h4><p>El contenido de esta materia se agregará próximamente cuando esté disponible en Drive.</p></div></div>` },
-  mat:  { tag:'Materia 03 · Común', tagColor:'rgba(56,189,248,.15)', tagTextColor:'#38bdf8', title:'Manejo de la Información y Fenómenos Aleatorios', sub:'Estadística y probabilidad aplicada al clima · Proyecto en desarrollo', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
-    content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">📊</div><h4>Proyecto en desarrollo</h4><p>El contenido de esta materia se agregará próximamente cuando esté disponible en Drive.</p></div></div>` },
+  mat:  { tag:'Materia 03 · Común', tagColor:'rgba(56,189,248,.15)', tagTextColor:'#38bdf8', title:'Manejo de la Información y Fenómenos Aleatorios', sub:'Tablas de Frecuencias Climáticas · 26 observaciones · Pachuca, Hidalgo · Abril 2026', hero:`https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=85`,
+    content:`
+<div class="detail-sec">
+  <div class="detail-sec-head">📊 Análisis Estadístico de Variables Climáticas</div>
+  <div class="detail-sec-sub">Se recopilaron <strong>26 observaciones diarias</strong> durante abril 2026 en Pachuca de Soto, Hidalgo (2,390 m s.n.m.). Cada tabla muestra la frecuencia absoluta (número de días), frecuencia relativa (fracción) y porcentaje, junto con las medidas de tendencia central: <strong style="color:#38bdf8">media</strong>, <strong style="color:#34d399">mediana</strong> y <strong style="color:#fbbf24">moda</strong>.</div>
+  <div class="detail-facts">
+    <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">26</div><div class="detail-fact-lbl">Días registrados</div></div>
+    <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">9</div><div class="detail-fact-lbl">Variables</div></div>
+    <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">2,390m</div><div class="detail-fact-lbl">Altitud fija</div></div>
+    <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">Abr 2026</div><div class="detail-fact-lbl">Período</div></div>
+  </div>
+  <div class="alert-box" style="background:rgba(56,189,248,.07);border-color:rgba(56,189,248,.2);margin-top:16px">
+    <strong style="color:#38bdf8">Leyenda:</strong> ★ indica la moda (valor más frecuente). Las barras muestran el porcentaje visualmente. <strong style="color:#38bdf8">Media</strong> = promedio · <strong style="color:#34d399">Mediana</strong> = valor central · <strong style="color:#fbbf24">Moda</strong> = dato más repetido.
+  </div>
+</div>
+
+<div class="detail-sec">
+  <div class="detail-sec-head">🌡️ 1. Temperatura (°C)</div>
+  <div class="detail-gallery g2" style="margin-bottom:16px">
+    <div class="detail-gimg" style="background-image:url('https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=700&q=80')"><div class="detail-gimg-cap">Temperatura ambiente — Pachuca, Hidalgo</div></div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.2);border-radius:12px;padding:16px">
+        <div style="font-size:10px;letter-spacing:1.2px;color:#38bdf8;margin-bottom:12px;font-weight:600">TENDENCIA CENTRAL</div>
+        <div style="display:flex;gap:24px;flex-wrap:wrap">
+          <div><div style="font-size:1.6rem;font-weight:700;color:#38bdf8">23.9°C</div><div style="font-size:11px;color:#64748b;margin-top:2px">Media</div></div>
+          <div><div style="font-size:1.6rem;font-weight:700;color:#34d399">23°C</div><div style="font-size:11px;color:#64748b;margin-top:2px">Mediana</div></div>
+          <div><div style="font-size:1.6rem;font-weight:700;color:#fbbf24">23°C</div><div style="font-size:11px;color:#64748b;margin-top:2px">Moda</div></div>
+        </div>
+      </div>
+      <div class="detail-card" style="padding:14px 16px"><p style="font-size:13px;line-height:1.75;color:var(--muted2)">La temperatura más frecuente fue <strong style="color:var(--text)">23°C</strong> con 10 de 26 días (38.46%). Que media, mediana y moda coincidan indica distribución casi simétrica. Pachuca mantiene clima fresco en abril por su altitud de 2,390 m.</p></div>
+    </div>
+  </div>
+  <table class="data-table">
+    <thead><tr><th>Temperatura</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
+    <tbody>
+      <tr><td>22°C</td><td>1</td><td>1/26</td><td>3.85%</td><td><div style="background:rgba(56,189,248,.3);height:8px;border-radius:4px;width:4%"></div></td></tr>
+      <tr style="background:rgba(56,189,248,.07)"><td><strong style="color:#fbbf24">23°C ★</strong></td><td><strong>10</strong></td><td>10/26</td><td><strong>38.46%</strong></td><td><div style="background:#38bdf8;height:8px;border-radius:4px;width:39%"></div></td></tr>
+      <tr><td>24°C</td><td>9</td><td>9/26</td><td>34.62%</td><td><div style="background:rgba(56,189,248,.65);height:8px;border-radius:4px;width:35%"></div></td></tr>
+      <tr><td>25°C</td><td>3</td><td>3/26</td><td>11.54%</td><td><div style="background:rgba(56,189,248,.4);height:8px;border-radius:4px;width:12%"></div></td></tr>
+      <tr><td>26°C+</td><td>3</td><td>3/26</td><td>11.54%</td><td><div style="background:rgba(56,189,248,.4);height:8px;border-radius:4px;width:12%"></div></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="detail-sec">
+  <div class="detail-sec-head">💨 2. Velocidad del Viento (km/h)</div>
+  <div class="detail-gallery g2" style="margin-bottom:16px">
+    <div class="detail-gimg" style="background-image:url('https://images.unsplash.com/photo-1527482937786-6608f6e14c15?w=700&q=80')"><div class="detail-gimg-cap">Viento en el altiplano hidalguense</div></div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2);border-radius:12px;padding:16px">
+        <div style="font-size:10px;letter-spacing:1.2px;color:#34d399;margin-bottom:12px;font-weight:600">TENDENCIA CENTRAL</div>
+        <div style="display:flex;gap:24px;flex-wrap:wrap">
+          <div><div style="font-size:1.6rem;font-weight:700;color:#38bdf8">13.9</div><div style="font-size:11px;color:#64748b;margin-top:2px">Media km/h</div></div>
+          <div><div style="font-size:1.6rem;font-weight:700;color:#34d399">14-15</div><div style="font-size:11px;color:#64748b;margin-top:2px">Mediana km/h</div></div>
+          <div><div style="font-size:1.6rem;font-weight:700;color:#fbbf24">14-15</div><div style="font-size:11px;color:#64748b;margin-top:2px">Moda km/h</div></div>
+        </div>
+      </div>
+      <div class="detail-card" style="padding:14px 16px"><p style="font-size:13px;line-height:1.75;color:var(--muted2)">El rango <strong style="color:var(--text)">14-15 km/h</strong> fue el más frecuente (50% de los días). Vientos moderados típicos del altiplano en primavera, favoreciendo la dispersión de contaminantes pero también de polen.</p></div>
+    </div>
+  </div>
+  <table class="data-table">
+    <thead><tr><th>Viento (km/h)</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
+    <tbody>
+      <tr><td>10–13 km/h</td><td>8</td><td>8/26</td><td>30.77%</td><td><div style="background:rgba(52,211,153,.4);height:8px;border-radius:4px;width:31%"></div></td></tr>
+      <tr style="background:rgba(52,211,153,.07)"><td><strong style="color:#fbbf24">14–15 km/h ★</strong></td><td><strong>13</strong></td><td>13/26</td><td><strong>50.00%</strong></td><td><div style="background:#34d399;height:8px;border-radius:4px;width:50%"></div></td></tr>
+      <tr><td>16–17 km/h</td><td>5</td><td>5/26</td><td>19.23%</td><td><div style="background:rgba(52,211,153,.45);height:8px;border-radius:4px;width:19%"></div></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="detail-sec">
+  <div class="detail-sec-head">💧 3. Humedad Relativa (%)</div>
+  <div class="detail-gallery g2" style="margin-bottom:16px">
+    <div class="detail-gimg" style="background-image:url('https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=700&q=80')"><div class="detail-gimg-cap">Humedad relativa del ambiente</div></div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:rgba(96,165,250,.08);border:1px solid rgba(96,165,250,.2);border-radius:12px;padding:16px">
+        <div style="font-size:10px;letter-spacing:1.2px;color:#60a5fa;margin-bottom:12px;font-weight:600">TENDENCIA CENTRAL</div>
+        <div style="display:flex;gap:24px;flex-wrap:wrap">
+          <div><div style="font-size:1.6rem;font-weight:700;color:#38bdf8">49.8%</div><div style="font-size:11px;color:#64748b;margin-top:2px">Media</div></div>
+          <div><div style="font-size:1.6rem;font-weight:700;color:#34d399">48–51</div><div style="font-size:11px;color:#64748b;margin-top:2px">Mediana</div></div>
+          <div><div style="font-size:1.6rem;font-weight:700;color:#fbbf24">48–51</div><div style="font-size:11px;color:#64748b;margin-top:2px">Moda</div></div>
+        </div>
+      </div>
+      <div class="detail-card" style="padding:14px 16px"><p style="font-size:13px;line-height:1.75;color:var(--muted2)">El 57.69% de los días la humedad estuvo en el rango <strong style="color:var(--text)">48-51%</strong>. Una humedad cercana al 50% es confortable pero suficiente para favorecer el transporte de esporas y alérgenos en el ambiente.</p></div>
+    </div>
+  </div>
+  <table class="data-table">
+    <thead><tr><th>Humedad (%)</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
+    <tbody>
+      <tr><td>44–47%</td><td>4</td><td>4/26</td><td>15.38%</td><td><div style="background:rgba(96,165,250,.35);height:8px;border-radius:4px;width:15%"></div></td></tr>
+      <tr style="background:rgba(96,165,250,.07)"><td><strong style="color:#fbbf24">48–51% ★</strong></td><td><strong>15</strong></td><td>15/26</td><td><strong>57.69%</strong></td><td><div style="background:#60a5fa;height:8px;border-radius:4px;width:58%"></div></td></tr>
+      <tr><td>52–55%</td><td>5</td><td>5/26</td><td>19.23%</td><td><div style="background:rgba(96,165,250,.45);height:8px;border-radius:4px;width:19%"></div></td></tr>
+      <tr><td>55%+</td><td>2</td><td>2/26</td><td>7.69%</td><td><div style="background:rgba(96,165,250,.3);height:8px;border-radius:4px;width:8%"></div></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="detail-sec">
+  <div class="detail-sec-head">🌧️ 4. Precipitación Atmosférica (mm)</div>
+  <div class="detail-gallery g2" style="margin-bottom:16px">
+    <div class="detail-gimg" style="background-image:url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=700&q=80')"><div class="detail-gimg-cap">Precipitación en el altiplano — Pachuca</div></div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:rgba(129,140,248,.08);border:1px solid rgba(129,140,248,.2);border-radius:12px;padding:16px">
+        <div style="font-size:10px;letter-spacing:1.2px;color:#818cf8;margin-bottom:12px;font-weight:600">TENDENCIA CENTRAL</div>
+        <div style="display:flex;gap:24px;flex-wrap:wrap">
+          <div><div style="font-size:1.6rem;font-weight:700;color:#38bdf8">0.58mm</div><div style="font-size:11px;color:#64748b;margin-top:2px">Media</div></div>
+          <div><div style="font-size:1.6rem;font-weight:700;color:#34d399">0.5–0.7</div><div style="font-size:11px;color:#64748b;margin-top:2px">Mediana</div></div>
+          <div><div style="font-size:1.6rem;font-weight:700;color:#fbbf24">0.5–0.7</div><div style="font-size:11px;color:#64748b;margin-top:2px">Moda</div></div>
+        </div>
+      </div>
+      <div class="detail-card" style="padding:14px 16px"><p style="font-size:13px;line-height:1.75;color:var(--muted2)">Abril es inicio de la temporada de lluvias en Hidalgo. El 34.62% de días registraron <strong style="color:var(--text)">0.5-0.7 mm</strong>. Precipitaciones ligeras que no mitigan la sequedad pero sí generan condiciones para el crecimiento de hongos y esporas.</p></div>
+    </div>
+  </div>
+  <table class="data-table">
+    <thead><tr><th>Precipitación (mm)</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
+    <tbody>
+      <tr><td>0.1–0.4 mm</td><td>8</td><td>8/26</td><td>30.77%</td><td><div style="background:rgba(129,140,248,.4);height:8px;border-radius:4px;width:31%"></div></td></tr>
+      <tr style="background:rgba(129,140,248,.07)"><td><strong style="color:#fbbf24">0.5–0.7 mm ★</strong></td><td><strong>9</strong></td><td>9/26</td><td><strong>34.62%</strong></td><td><div style="background:#818cf8;height:8px;border-radius:4px;width:35%"></div></td></tr>
+      <tr><td>0.8–1.0 mm</td><td>6</td><td>6/26</td><td>23.08%</td><td><div style="background:rgba(129,140,248,.5);height:8px;border-radius:4px;width:23%"></div></td></tr>
+      <tr><td>1.0+ mm</td><td>3</td><td>3/26</td><td>11.54%</td><td><div style="background:rgba(129,140,248,.35);height:8px;border-radius:4px;width:12%"></div></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="detail-sec">
+  <div class="detail-sec-head">⛰️ 5. Altitud (m s.n.m.)</div>
+  <div class="detail-gallery g2" style="margin-bottom:16px">
+    <div class="detail-gimg" style="background-image:url('${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg')"><div class="detail-gimg-cap">Sierra de Pachuca — 2,390 m s.n.m.</div></div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.2);border-radius:12px;padding:20px">
+        <div style="font-size:10px;letter-spacing:1.2px;color:#a78bfa;margin-bottom:12px;font-weight:600">DATO CONSTANTE</div>
+        <div style="font-size:3rem;font-weight:700;color:#a78bfa;line-height:1">2,390</div>
+        <div style="font-size:14px;color:#64748b;margin-top:4px">metros sobre el nivel del mar</div>
+        <div style="margin-top:10px;font-size:12px;color:#94a3b8">Frecuencia: 26/26 días · 100%</div>
+      </div>
+      <div class="detail-card" style="padding:14px 16px"><p style="font-size:13px;line-height:1.75;color:var(--muted2)">La altitud de Pachuca es una variable <strong style="color:var(--text)">constante</strong>. Su valor de 2,390 m explica las bajas temperaturas, menor presión atmosférica y mayor intensidad de radiación UV respecto a ciudades de menor elevación.</p></div>
+    </div>
+  </div>
+  <table class="data-table">
+    <thead><tr><th>Altitud (m)</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th></tr></thead>
+    <tbody>
+      <tr style="background:rgba(167,139,250,.07)"><td><strong style="color:#a78bfa">2,390 m ★</strong></td><td><strong>26</strong></td><td>26/26</td><td><strong>100.00%</strong></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="detail-sec">
+  <div class="detail-sec-head">🔵 6. Presión Atmosférica (hPa)</div>
+  <div class="detail-gallery g2" style="margin-bottom:16px">
+    <div class="detail-gimg" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80')"><div class="detail-gimg-cap">Presión atmosférica — barómetro</div></div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.2);border-radius:12px;padding:16px">
+        <div style="font-size:10px;letter-spacing:1.2px;color:#c084fc;margin-bottom:12px;font-weight:600">TENDENCIA CENTRAL</div>
+        <div style="display:flex;gap:24px;flex-wrap:wrap">
+          <div><div style="font-size:1.6rem;font-weight:700;color:#38bdf8">1011.5</div><div style="font-size:11px;color:#64748b;margin-top:2px">Media hPa</div></div>
+          <div><div style="font-size:1.6rem;font-weight:700;color:#34d399">1012</div><div style="font-size:11px;color:#64748b;margin-top:2px">Mediana hPa</div></div>
+          <div><div style="font-size:1.6rem;font-weight:700;color:#fbbf24">1012</div><div style="font-size:11px;color:#64748b;margin-top:2px">Moda hPa</div></div>
+        </div>
+      </div>
+      <div class="detail-card" style="padding:14px 16px"><p style="font-size:13px;line-height:1.75;color:var(--muted2)">La presión estándar a nivel del mar es 1013.25 hPa. En Pachuca a 2,390 m, la presión reducida de <strong style="color:var(--text)">~1012 hPa</strong> es consistente con la altitud y afecta la concentración de oxígeno disponible.</p></div>
+    </div>
+  </div>
+  <table class="data-table">
+    <thead><tr><th>Presión (hPa)</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
+    <tbody>
+      <tr><td>1000–1010 hPa</td><td>8</td><td>8/26</td><td>30.77%</td><td><div style="background:rgba(192,132,252,.35);height:8px;border-radius:4px;width:31%"></div></td></tr>
+      <tr><td>1011 hPa</td><td>5</td><td>5/26</td><td>19.23%</td><td><div style="background:rgba(192,132,252,.45);height:8px;border-radius:4px;width:19%"></div></td></tr>
+      <tr style="background:rgba(192,132,252,.07)"><td><strong style="color:#fbbf24">1012 hPa ★</strong></td><td><strong>10</strong></td><td>10/26</td><td><strong>38.46%</strong></td><td><div style="background:#c084fc;height:8px;border-radius:4px;width:38%"></div></td></tr>
+      <tr><td>1013 hPa</td><td>3</td><td>3/26</td><td>11.54%</td><td><div style="background:rgba(192,132,252,.3);height:8px;border-radius:4px;width:12%"></div></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="detail-sec">
+  <div class="detail-sec-head">☀️ 7. Índice UV</div>
+  <div class="detail-gallery g2" style="margin-bottom:16px">
+    <div class="detail-gimg" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80')"><div class="detail-gimg-cap">Radiación UV — riesgo alto en altiplano</div></div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.2);border-radius:12px;padding:16px">
+        <div style="font-size:10px;letter-spacing:1.2px;color:#fbbf24;margin-bottom:12px;font-weight:600">TENDENCIA CENTRAL</div>
+        <div style="display:flex;gap:24px;flex-wrap:wrap">
+          <div><div style="font-size:1.6rem;font-weight:700;color:#38bdf8">8.27</div><div style="font-size:11px;color:#64748b;margin-top:2px">Media</div></div>
+          <div><div style="font-size:1.6rem;font-weight:700;color:#34d399">8</div><div style="font-size:11px;color:#64748b;margin-top:2px">Mediana</div></div>
+          <div><div style="font-size:1.6rem;font-weight:700;color:#fbbf24">9</div><div style="font-size:11px;color:#64748b;margin-top:2px">Moda</div></div>
+        </div>
+      </div>
+      <div class="alert-box warning" style="margin-top:0"><strong>⚠️ Riesgo Muy Alto:</strong> Un índice UV de 8-9 se clasifica como <strong>muy alto</strong> (escala OMS). A 2,390 m la atmósfera filtra menos radiación. Se recomienda protección solar obligatoria entre 11am y 3pm.</div>
+    </div>
+  </div>
+  <table class="data-table">
+    <thead><tr><th>Índice UV</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
+    <tbody>
+      <tr><td>UV 7 — Alto</td><td>5</td><td>5/26</td><td>19.23%</td><td><div style="background:rgba(251,191,36,.4);height:8px;border-radius:4px;width:19%"></div></td></tr>
+      <tr><td>UV 8 — Muy Alto</td><td>9</td><td>9/26</td><td>34.62%</td><td><div style="background:rgba(251,191,36,.65);height:8px;border-radius:4px;width:35%"></div></td></tr>
+      <tr style="background:rgba(251,191,36,.07)"><td><strong style="color:#fbbf24">UV 9 ★ — Muy Alto</strong></td><td><strong>12</strong></td><td>12/26</td><td><strong>46.15%</strong></td><td><div style="background:#fbbf24;height:8px;border-radius:4px;width:46%"></div></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="detail-sec">
+  <div class="detail-sec-head">👁️ 8. Visibilidad (km)</div>
+  <div class="detail-gallery g2" style="margin-bottom:16px">
+    <div class="detail-gimg" style="background-image:url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=700&q=80')"><div class="detail-gimg-cap">Visibilidad en el horizonte — altiplano</div></div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.2);border-radius:12px;padding:16px">
+        <div style="font-size:10px;letter-spacing:1.2px;color:#2dd4bf;margin-bottom:12px;font-weight:600">TENDENCIA CENTRAL</div>
+        <div style="display:flex;gap:24px;flex-wrap:wrap">
+          <div><div style="font-size:1.6rem;font-weight:700;color:#38bdf8">9.77 km</div><div style="font-size:11px;color:#64748b;margin-top:2px">Media</div></div>
+          <div><div style="font-size:1.6rem;font-weight:700;color:#34d399">10 km</div><div style="font-size:11px;color:#64748b;margin-top:2px">Mediana</div></div>
+          <div><div style="font-size:1.6rem;font-weight:700;color:#fbbf24">10 km</div><div style="font-size:11px;color:#64748b;margin-top:2px">Moda</div></div>
+        </div>
+      </div>
+      <div class="detail-card" style="padding:14px 16px"><p style="font-size:13px;line-height:1.75;color:var(--muted2)">El 76.92% de los días la visibilidad fue de <strong style="color:var(--text)">10 km</strong>, indicando cielos mayormente despejados. Pachuca tiene buena calidad visual del aire en comparación con zonas industriales del Valle de México cercano.</p></div>
+    </div>
+  </div>
+  <table class="data-table">
+    <thead><tr><th>Visibilidad (km)</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
+    <tbody>
+      <tr><td>9 km</td><td>6</td><td>6/26</td><td>23.08%</td><td><div style="background:rgba(45,212,191,.4);height:8px;border-radius:4px;width:23%"></div></td></tr>
+      <tr style="background:rgba(45,212,191,.07)"><td><strong style="color:#fbbf24">10 km ★</strong></td><td><strong>20</strong></td><td>20/26</td><td><strong>76.92%</strong></td><td><div style="background:#2dd4bf;height:8px;border-radius:4px;width:77%"></div></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="detail-sec">
+  <div class="detail-sec-head">🌫️ 9. Índice de Calidad del Aire (AQI)</div>
+  <div class="detail-gallery g2" style="margin-bottom:16px">
+    <div class="detail-gimg" style="background-image:url('https://images.unsplash.com/photo-1605125950083-cc0a7bdba241?w=700&q=80')"><div class="detail-gimg-cap">Calidad del aire urbano — monitoreo ambiental</div></div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:rgba(251,113,133,.08);border:1px solid rgba(251,113,133,.2);border-radius:12px;padding:16px">
+        <div style="font-size:10px;letter-spacing:1.2px;color:#fb7185;margin-bottom:12px;font-weight:600">TENDENCIA CENTRAL</div>
+        <div style="display:flex;gap:24px;flex-wrap:wrap">
+          <div><div style="font-size:1.6rem;font-weight:700;color:#38bdf8">60.8</div><div style="font-size:11px;color:#64748b;margin-top:2px">Media AQI</div></div>
+          <div><div style="font-size:1.6rem;font-weight:700;color:#34d399">59–62</div><div style="font-size:11px;color:#64748b;margin-top:2px">Mediana</div></div>
+          <div><div style="font-size:1.6rem;font-weight:700;color:#fbbf24">59–62</div><div style="font-size:11px;color:#64748b;margin-top:2px">Moda</div></div>
+        </div>
+      </div>
+      <div class="alert-box" style="background:rgba(251,191,36,.07);border-color:rgba(251,191,36,.2);margin-top:0"><strong style="color:#fbbf24">⚠️ Categoría Moderada:</strong> AQI 59-62 cae en la categoría <strong>Moderada</strong> (51-100). Personas sensibles (asma, alergias) pueden experimentar síntomas. La moda en este rango coincide con el alto seguimiento de alergias.</div>
+    </div>
+  </div>
+  <table class="data-table">
+    <thead><tr><th>AQI</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
+    <tbody>
+      <tr><td>55–58</td><td>7</td><td>7/26</td><td>26.92%</td><td><div style="background:rgba(251,113,133,.35);height:8px;border-radius:4px;width:27%"></div></td></tr>
+      <tr style="background:rgba(251,113,133,.07)"><td><strong style="color:#fbbf24">59–62 ★</strong></td><td><strong>9</strong></td><td>7/26</td><td><strong>34.62%</strong></td><td><div style="background:#fb7185;height:8px;border-radius:4px;width:35%"></div></td></tr>
+      <tr><td>63–65</td><td>6</td><td>6/26</td><td>23.08%</td><td><div style="background:rgba(251,113,133,.45);height:8px;border-radius:4px;width:23%"></div></td></tr>
+      <tr><td>65+</td><td>4</td><td>4/26</td><td>15.38%</td><td><div style="background:rgba(251,113,133,.3);height:8px;border-radius:4px;width:15%"></div></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="detail-sec">
+  <div class="detail-sec-head">🤧 10. Seguimiento de Alergias</div>
+  <div class="detail-gallery g2" style="margin-bottom:16px">
+    <div class="detail-gimg" style="background-image:url('https://images.unsplash.com/photo-1490750967868-88df5691cc64?w=700&q=80')"><div class="detail-gimg-cap">Polen y alérgenos ambientales — Pachuca</div></div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2);border-radius:12px;padding:16px">
+        <div style="font-size:10px;letter-spacing:1.2px;color:#f97316;margin-bottom:12px;font-weight:600">DISTRIBUCIÓN</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:12px"><div style="background:#fb7185;height:10px;border-radius:5px;width:58%"></div><div style="font-size:13px;color:var(--text);font-weight:600">Alta 57.69%</div></div>
+          <div style="display:flex;align-items:center;gap:12px"><div style="background:#fbbf24;height:10px;border-radius:5px;width:42%"></div><div style="font-size:13px;color:var(--text);font-weight:600">Media 42.31%</div></div>
+          <div style="display:flex;align-items:center;gap:12px"><div style="background:rgba(100,116,139,.3);height:10px;border-radius:5px;width:1%"></div><div style="font-size:13px;color:#64748b">Baja 0.00%</div></div>
+        </div>
+      </div>
+      <div class="alert-box warning"><strong>🚨 Alerta:</strong> El 100% de los días de abril 2026 registraron algún nivel de alergias (ALTA o MEDIA). <strong>Ningún día</strong> tuvo alergias bajas. Esto coincide con la temporada de floración y vientos del altiplano.</div>
+    </div>
+  </div>
+  <table class="data-table">
+    <thead><tr><th>Nivel de Alergias</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
+    <tbody>
+      <tr style="background:rgba(251,113,133,.07)"><td><strong style="color:#fb7185">Alta ★</strong></td><td><strong>15</strong></td><td>15/26</td><td><strong>57.69%</strong></td><td><div style="background:#fb7185;height:8px;border-radius:4px;width:58%"></div></td></tr>
+      <tr><td>Media</td><td>11</td><td>11/26</td><td>42.31%</td><td><div style="background:#fbbf24;height:8px;border-radius:4px;width:42%"></div></td></tr>
+      <tr><td>Baja</td><td>0</td><td>0/26</td><td>0.00%</td><td><div style="background:rgba(100,116,139,.2);height:8px;border-radius:4px;width:1%"></div></td></tr>
+    </tbody>
+  </table>
+  <div class="detail-card" style="margin-top:16px"><p style="font-size:13px;line-height:1.8;color:var(--muted2)">La combinación de vientos moderados (14-15 km/h), humedad media (48-51%), temperatura fresca (23°C) y AQI moderado crea condiciones ideales para la <strong style="color:var(--text)">proliferación y dispersión de alérgenos</strong>. El municipio de Pachuca presenta alta carga polínica en primavera por la vegetación de la Sierra de Pachuca y los cultivos del Altiplano Hidalguense.</p></div>
+</div>` },
   uni:  { tag:'Materia 04 · Común', tagColor:'rgba(167,139,250,.15)', tagTextColor:'#a78bfa', title:'El Universo y sus Fenómenos', sub:'Fenómenos atmosféricos y radiación solar · Proyecto en desarrollo', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
     content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">🔭</div><h4>Proyecto en desarrollo</h4><p>El contenido de esta materia se agregará próximamente cuando esté disponible en Drive.</p></div></div>` },
   web:  { tag:'Materia 06 · Exactas', tagColor:'rgba(45,212,191,.15)', tagTextColor:'#2dd4bf', title:'Aplicaciones Computacionales Web y Móviles', sub:'Este sitio web es el proyecto · Documentación técnica próximamente', hero:`https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1400&q=85`,
