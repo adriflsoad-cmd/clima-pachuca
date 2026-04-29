@@ -1279,15 +1279,63 @@
         <div>
           <span class="mat-tag tag-quim">Química</span>
           <div class="mat-title">Análisis de Macromoléculas y Equilibrios Ácido-Base</div>
-          <div class="mat-sub">Impacto de contaminantes químicos en el ecosistema de Pachuca durante abril 2026</div>
+          <div class="mat-sub">La Química del Cuerpo Humano y el Clima de Pachuca · Actividad 3 · Abril 2026</div>
+          <div class="mat-teacher">Catedrático: <strong>Química · Grupo 601</strong></div>
         </div>
       </div>
-      <div class="mat-content" style="display:flex;align-items:center;">
-        <div class="placeholder-content">
-          <div class="placeholder-icon">🧪</div>
-          <div class="placeholder-title">Proyecto en desarrollo</div>
-          <div class="placeholder-sub">El contenido de esta materia se agregará próximamente.</div>
-          <span class="placeholder-badge">Próximamente</span>
+      <div class="mat-content">
+        <div class="mat-content-title">Química del Cuerpo y la Atmósfera en Pachuca</div>
+        <p class="mat-content-intro">Análisis de los <strong>60+ elementos químicos</strong> que componen el cuerpo humano y su conexión directa con los cambios atmosféricos registrados en Pachuca durante abril 2026. Los contaminantes del aire afectan el equilibrio ácido-base sanguíneo y el funcionamiento de macromoléculas.</p>
+        <div class="tabs" id="quim-tabs">
+          <button class="tab active" onclick="switchTab('quim',0)">Composición corporal</button>
+          <button class="tab" onclick="switchTab('quim',1)">Atmósfera</button>
+          <button class="tab" onclick="switchTab('quim',2)">Conexión Pachuca</button>
+        </div>
+        <div class="tab-panel active" id="quim-0">
+          <table class="data-table">
+            <thead><tr><th>Elemento</th><th>Símbolo</th><th>% Masa corporal</th><th>Función principal</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Oxígeno</strong></td><td>O</td><td>65%</td><td>Respiración celular, agua (H₂O), metabolismo energético</td></tr>
+              <tr><td><strong>Carbono</strong></td><td>C</td><td>18%</td><td>Base estructural de todas las biomoléculas</td></tr>
+              <tr><td><strong>Hidrógeno</strong></td><td>H</td><td>10%</td><td>Componente del agua, ácidos y bases; gradiente de protones en ATP</td></tr>
+              <tr><td><strong>Nitrógeno</strong></td><td>N</td><td>3%</td><td>Aminoácidos, proteínas, ácidos nucleicos (ADN/ARN)</td></tr>
+              <tr><td><strong>Calcio</strong></td><td>Ca</td><td>1.5%</td><td>Estructura ósea y dental, contracción muscular</td></tr>
+              <tr><td><strong>Fósforo</strong></td><td>P</td><td>1%</td><td>ATP (energía), fosfolípidos de membrana, ADN/ARN</td></tr>
+              <tr><td><strong>Oligoelementos</strong></td><td>Zn, Fe, I, Se…</td><td>trazas</td><td>Enzimas, inmunidad, hormonas tiroideas, antioxidantes</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="quim-1">
+          <table class="data-table">
+            <thead><tr><th>Proceso atmosférico</th><th>Dato real</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Efecto invernadero</strong></td><td>CO₂: 424 ppm (aumenta cada año)</td></tr>
+              <tr><td><strong>Agujero de ozono</strong></td><td>26 millones de km² en la Antártida</td></tr>
+              <tr><td><strong>Smog fotoquímico</strong></td><td>O₃ troposférico: 150–200 puntos IMECA</td></tr>
+              <tr><td><strong>Lluvia ácida</strong></td><td>pH &lt; 5.6 (lluvia normal: 5.6)</td></tr>
+              <tr><td><strong>Acidificación de océanos</strong></td><td>30% más ácidos desde la era preindustrial</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="quim-2">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border)">
+              <div style="font-size:11px;color:#fb7185;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Altitud</div>
+              <p style="font-size:13px;color:var(--muted2);line-height:1.6;margin:0">2,400 m s.n.m. → menos O₂ disponible → saturación sanguínea comprometida</p>
+            </div>
+            <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border)">
+              <div style="font-size:11px;color:#fb7185;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Ozono (O₃)</div>
+              <p style="font-size:13px;color:var(--muted2);line-height:1.6;margin:0">Irrita pulmones → reduce captura de O₂ → baja saturación (normal: 95–100%)</p>
+            </div>
+            <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border)">
+              <div style="font-size:11px;color:#fb7185;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Metales pesados</div>
+              <p style="font-size:13px;color:var(--muted2);line-height:1.6;margin:0">Consumen Zn y Se → deprime sistema inmune y función antioxidante</p>
+            </div>
+            <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border)">
+              <div style="font-size:11px;color:#fb7185;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Ácidos en el aire</div>
+              <p style="font-size:13px;color:var(--muted2);line-height:1.6;margin:0">Sistema amortiguador sanguíneo (pH 7.35–7.45) trabaja extra → fatiga metabólica</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -2854,8 +2902,132 @@ void loop() {
     content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">🔭</div><h4>Proyecto en desarrollo</h4><p>El contenido de esta materia se agregará próximamente cuando esté disponible en Drive.</p></div></div>` },
   web:  { tag:'Materia 06 · Exactas', tagColor:'rgba(45,212,191,.15)', tagTextColor:'#2dd4bf', title:'Aplicaciones Computacionales Web y Móviles', sub:'Este sitio web es el proyecto · Documentación técnica próximamente', hero:`https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1400&q=85`,
     content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">💻</div><h4>¡Estás viendo el proyecto!</h4><p>Esta página web interactiva es el proyecto de la materia. Se agregará documentación técnica próximamente.</p></div></div>` },
-  quim: { tag:'Materia 08 · Exactas', tagColor:'rgba(251,113,133,.15)', tagTextColor:'#fb7185', title:'Análisis de Macromoléculas y Equilibrios Ácido-Base', sub:'Impacto de contaminantes químicos · Proyecto en desarrollo', hero:`https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1400&q=85`,
-    content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">🧪</div><h4>Proyecto en desarrollo</h4><p>El contenido de esta materia se agregará próximamente cuando esté disponible en Drive.</p></div></div>` },
+  quim: { tag:'Materia 08 · Exactas', tagColor:'rgba(251,113,133,.15)', tagTextColor:'#fb7185', title:'Análisis de Macromoléculas y Equilibrios Ácido-Base', sub:'La Química del Cuerpo Humano y el Clima de Pachuca · Actividad 3 · Abril 2026', hero:`https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1400&q=85`,
+    content:`
+      <div class="detail-facts">
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fb7185">60+</div><div class="detail-fact-lbl">Elementos químicos</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">4</div><div class="detail-fact-lbl">Biomoléculas</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">7.35–7.45</div><div class="detail-fact-lbl">pH sanguíneo normal</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">424 ppm</div><div class="detail-fact-lbl">CO₂ atmosférico</div></div>
+      </div>
+
+      <!-- INTRODUCCIÓN -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Introducción: La Química del Cuerpo Humano y el Clima de Pachuca</div>
+        <div class="detail-sec-sub">El cuerpo humano está compuesto por más de 60 elementos químicos, aunque solo 25–30 son esenciales para la vida. Se clasifican en macroelementos (&gt; 0.01% del peso corporal) y oligoelementos o trazas. Todos ellos forman parte de las cuatro biomoléculas fundamentales: proteínas, lípidos, carbohidratos y ácidos nucleicos.</div>
+        <div class="detail-gallery g2">
+          <div class="detail-gimg" style="background-image:url('/images/quim/image10.jpg');background-color:#fff"><div class="detail-gimg-cap">Composición elemental del cuerpo humano por porcentaje</div></div>
+          <div class="detail-gimg" style="background-image:url('/images/quim/image9.png');background-color:#fff"><div class="detail-gimg-cap">Efecto invernadero — radiación solar y atmósfera terrestre</div></div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 1: COMPOSICIÓN DEL CUERPO -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">1. ¿De qué está hecho nuestro cuerpo?</div>
+        <div class="detail-sec-sub">El cuerpo humano está compuesto por más de 60 elementos químicos. Algunos son abundantes; otros son oligoelementos (trazas), pero igualmente vitales: zinc, selenio, manganeso, hierro, yodo, flúor, cobre. Cada uno tiene un rango normal de referencia. Cuando estos elementos se salen de rango, el cuerpo se enferma.</div>
+        <table class="data-table"><thead><tr><th>Elemento</th><th>Símbolo</th><th>% Masa corporal</th><th>Función principal en el organismo</th><th>Nivel normal de referencia</th></tr></thead><tbody>
+          <tr><td><strong>Oxígeno</strong></td><td>O</td><td>65%</td><td>Respiración celular, agua (H₂O), metabolismo energético</td><td>Sat. O₂: 95–100% (pulsioximetría)</td></tr>
+          <tr><td><strong>Carbono</strong></td><td>C</td><td>18%</td><td>Base estructural de todas las biomoléculas (proteínas, lípidos, glúcidos, ácidos nucleicos)</td><td>No medible directamente (omnipresente)</td></tr>
+          <tr><td><strong>Hidrógeno</strong></td><td>H</td><td>10%</td><td>Componente del agua, ácidos y bases; gradiente de protones en síntesis de ATP</td><td>pH sanguíneo: 7.35–7.45</td></tr>
+          <tr><td><strong>Nitrógeno</strong></td><td>N</td><td>3%</td><td>Aminoácidos, proteínas, ácidos nucleicos (ADN/ARN), nucleótidos</td><td>BUN (urea): 7–20 mg/dL</td></tr>
+          <tr><td><strong>Calcio</strong></td><td>Ca</td><td>1.5%</td><td>Estructura ósea y dental, contracción muscular, coagulación, señalización celular</td><td>Calcio sérico: 8.5–10.2 mg/dL</td></tr>
+          <tr><td><strong>Fósforo</strong></td><td>P</td><td>1%</td><td>ATP (energía), fosfolípidos de membrana, ADN/ARN, hueso (hidroxiapatita)</td><td>Fósforo sérico: 2.5–4.5 mg/dL</td></tr>
+          <tr><td><strong>Potasio</strong></td><td>K</td><td>0.35%</td><td>Potencial de membrana, contracción muscular, equilibrio hídrico intracelular</td><td>Potasio sérico: 3.5–5.0 mEq/L</td></tr>
+          <tr><td><strong>Azufre</strong></td><td>S</td><td>0.25%</td><td>Aminoácidos (metionina, cisteína), vitaminas (tiamina, biotina), enzimas</td><td>No medible directamente en sangre</td></tr>
+          <tr><td><strong>Sodio</strong></td><td>Na</td><td>0.15%</td><td>Equilibrio osmótico, potencial de acción nervioso, volumen plasmático</td><td>Sodio sérico: 136–145 mEq/L</td></tr>
+          <tr><td><strong>Cloro</strong></td><td>Cl</td><td>0.15%</td><td>Equilibrio ácido-base, producción de HCl gástrico, transporte de CO₂</td><td>Cloruro sérico: 98–106 mEq/L</td></tr>
+          <tr><td><strong>Magnesio</strong></td><td>Mg</td><td>0.05%</td><td>Cofactor enzimático (&gt;300 reacciones), síntesis de ATP y ADN</td><td>Magnesio sérico: 1.7–2.2 mg/dL</td></tr>
+          <tr><td><strong>Hierro</strong></td><td>Fe</td><td>0.006%</td><td>Transporte de O₂ (hemoglobina), cadena respiratoria, mioglobina</td><td>Hierro sérico: 60–170 µg/dL</td></tr>
+          <tr><td><strong>Yodo</strong></td><td>I</td><td>0.0002%</td><td>Síntesis de hormonas tiroideas (T3 y T4)</td><td>T4 libre: 0.8–1.8 ng/dL; T3: 2.3–4.1 pg/mL</td></tr>
+          <tr><td><strong>Zinc</strong></td><td>Zn</td><td>0.003%</td><td>Cofactor enzimático (ADN polimerasas), sistema inmune, cicatrización</td><td>Zinc sérico: 70–120 µg/dL</td></tr>
+          <tr><td><strong>Cobre</strong></td><td>Cu</td><td>0.0002%</td><td>Cofactor de citocromo c oxidasa, síntesis de colágeno, metabolismo del hierro</td><td>Cobre sérico: 70–140 µg/dL</td></tr>
+          <tr><td><strong>Cobalto</strong></td><td>Co</td><td>trazas</td><td>Componente de la vitamina B12 (cobalamina)</td><td>Vitamina B12: 200–900 pg/mL</td></tr>
+          <tr><td><strong>Flúor</strong></td><td>F</td><td>trazas</td><td>Resistencia del esmalte dental (fluoroapatita)</td><td>Flúor plasmático: 0.01–0.05 mg/L</td></tr>
+          <tr><td><strong>Manganeso</strong></td><td>Mn</td><td>trazas</td><td>Cofactor de SOD mitocondrial (antioxidante), síntesis de colágeno</td><td>Manganeso sérico: 0.4–0.85 µg/L</td></tr>
+          <tr><td><strong>Selenio</strong></td><td>Se</td><td>trazas</td><td>Antioxidante (glutatión peroxidasa), función tiroidea</td><td>Selenio sérico: 70–150 µg/L</td></tr>
+          <tr><td><strong>Molibdeno</strong></td><td>Mo</td><td>trazas</td><td>Cofactor de xantina oxidasa (metabolismo de purinas)</td><td>Molibdeno sérico: 0.5–2.0 µg/L</td></tr>
+        </tbody></table>
+      </div>
+
+      <!-- SECCIÓN 2: ATMÓSFERA -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">2. ¿Qué está pasando en la atmósfera?</div>
+        <div class="detail-sec-sub">Mientras tanto, la atmósfera terrestre está experimentando cambios químicos profundos que afectan directamente la composición del aire que respiramos.</div>
+        <div class="detail-gallery g2" style="margin-bottom:16px">
+          <div class="detail-gimg" style="background-image:url('/images/quim/image6.png');background-color:#fff"><div class="detail-gimg-cap">Ciclo del ozono — interconversión O₂ / O₃ por radiación UV solar</div></div>
+          <div class="detail-gimg" style="background-image:url('/images/quim/image7.jpg')"><div class="detail-gimg-cap">Smog fotoquímico sobre una ciudad — acumulación de O₃ troposférico</div></div>
+        </div>
+        <table class="data-table"><thead><tr><th>Proceso atmosférico</th><th>Dato real</th></tr></thead><tbody>
+          <tr><td><strong>Efecto invernadero</strong></td><td>CO₂: 424 ppm (aumenta cada año) — fuente: NOAA 2024</td></tr>
+          <tr><td><strong>Agujero de ozono</strong></td><td>26 millones de km² en la Antártida — fuente: NASA Ozone Watch 2023</td></tr>
+          <tr><td><strong>Smog fotoquímico</strong></td><td>O₃ troposférico: 150–200 puntos IMECA</td></tr>
+          <tr><td><strong>Lluvia ácida</strong></td><td>pH &lt; 5.6 (lluvia normal: 5.6)</td></tr>
+          <tr><td><strong>Acidificación de océanos</strong></td><td>30% más ácidos desde la era preindustrial — fuente: IPCC AR6 2021</td></tr>
+        </tbody></table>
+        <div class="detail-gallery g2" style="margin-top:16px">
+          <div class="detail-gimg" style="background-image:url('/images/quim/image8.jpg');background-color:#fff"><div class="detail-gimg-cap">Escala de pH — efectos en el medio ambiente y en el cuerpo humano</div></div>
+          <div class="detail-gimg" style="background-image:url('/images/quim/image5.jpg')"><div class="detail-gimg-cap">Acidificación oceánica visible desde satélite — arrastres y sedimentos</div></div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 3: PACHUCA -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">3. ¿Qué tiene que ver Pachuca con esto?</div>
+        <div class="detail-sec-sub">Pachuca, Hidalgo, está en el punto de convergencia de todos estos factores. Su altitud y las condiciones de abril hacen de la ciudad un laboratorio natural donde estos efectos se intensifican.</div>
+        <div class="detail-gallery g2" style="margin-bottom:16px">
+          <div class="detail-gimg" style="background-image:url('/images/quim/image1.jpg');background-color:#6b5e3e"><div class="detail-gimg-cap">Mapa altitudinal de la región de Pachuca — 2,400 m s.n.m.</div></div>
+          <div class="detail-gimg" style="background-image:url('/images/quim/image3.jpg')"><div class="detail-gimg-cap">Fuentes de contaminación atmosférica — industrias, ciudades y erosión</div></div>
+        </div>
+        <div class="detail-3col">
+          <div class="detail-card"><h4 style="color:#fb7185">Altitud: 2,400 m s.n.m.</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">A mayor altitud hay menos oxígeno disponible en el aire. Esto reduce la saturación de O₂ en sangre y obliga al organismo a compensar con mayor frecuencia respiratoria.</p></div>
+          <div class="detail-card"><h4 style="color:#fbbf24">Abril: Mes crítico</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Alta radiación solar, baja humedad relativa (&lt;30%), vientos intensos y sin precipitación significativa. Las reacciones fotoquímicas ocurren intensamente. El ozono y las PM2.5 se acumulan en la cuenca local.</p></div>
+          <div class="detail-card"><h4 style="color:#a78bfa">Resultado</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Las reacciones fotoquímicas que describimos en la sección anterior ocurren intensamente en Pachuca durante abril. El ozono troposférico y las partículas PM2.5 se acumulan en la cuenca local y afectan a los habitantes directamente.</p></div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 4: CONEXIÓN -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">4. La conexión: Atmósfera → Cuerpo</div>
+        <div class="detail-sec-sub">Cuando respiras el aire de Pachuca en abril, los cambios químicos en la atmósfera entran directamente en tu cuerpo. El equilibrio químico interno que mantiene la vida se ve directamente afectado por el entorno químico exterior.</div>
+        <div class="detail-gallery g2" style="margin-bottom:16px">
+          <div class="detail-gimg" style="background-image:url('/images/quim/image2.jpg')"><div class="detail-gimg-cap">Perturbación atmosférica — los sistemas climáticos alteran la química del aire</div></div>
+          <div class="detail-gimg" style="background-image:url('/images/quim/image4.jpg')"><div class="detail-gimg-cap">Vegetación en imagen de falso color — estrés en ecosistemas por contaminación</div></div>
+        </div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4 style="color:#fb7185">Ozono (O₃)</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Irrita pulmones y vías respiratorias → reduce eficiencia de captura de oxígeno → baja tu saturación de O₂ (normal: 95–100%). A 2,400 m ya hay menos O₂; el ozono agrava el déficit.</p></div>
+          <div class="detail-card"><h4 style="color:#fb7185">Contaminantes y metales pesados</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Consumen antioxidantes como zinc (Zn) y selenio (Se) → deprime tu sistema inmune → aumenta vulnerabilidad a infecciones y enfermedades crónicas.</p></div>
+          <div class="detail-card"><h4 style="color:#fb7185">Ácidos en el aire</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Tu sistema amortiguador sanguíneo (pH 7.35–7.45) debe trabajar más para compensar → fatiga metabólica. La lluvia ácida (pH &lt;5.6) también daña suelos y vegetación del matorral.</p></div>
+          <div class="detail-card"><h4 style="color:#fb7185">PM2.5 y partículas finas</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Penetran hasta los alvéolos pulmonares → inflamación sistémica → afectan el transporte de O₂ por la hemoglobina (hierro sérico: 60–170 µg/dL en rango normal).</p></div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 5: OBJETIVO -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">5. Objetivo de este análisis</div>
+        <div class="detail-card">
+          <p style="line-height:1.85;color:var(--muted2);margin-bottom:14px">Este documento demuestra que la química no es abstracta: está presente en cada célula de tu cuerpo y en cada molécula del aire que respiras. Pachuca en abril es un laboratorio natural donde puedes medir este efecto.</p>
+          <ul style="padding-left:20px;line-height:2.1;color:var(--muted2)">
+            <li><strong style="color:var(--text)">Entender tu cuerpo sin entender el clima es incompleto.</strong> Los 60+ elementos que te forman interactúan constantemente con el entorno químico exterior.</li>
+            <li><strong style="color:var(--text)">Los números reales importan.</strong> Los datos de NOAA, IPCC y los rangos clínicos de laboratorio son la misma ciencia aplicada a escalas distintas.</li>
+            <li><strong style="color:var(--text)">Pachuca en abril es un caso de estudio real.</strong> Los cambios atmosféricos no son metáforas abstractas: son transformaciones químicas concretas que alteran tu fisiología, medibles y documentables.</li>
+            <li><strong style="color:var(--text)">El equilibrio ácido-base es el eslabón central.</strong> El pH sanguíneo (7.35–7.45) conecta la atmósfera contaminada con el metabolismo celular de cada habitante de Pachuca.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- REFERENCIAS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Referencias</div>
+        <ol style="padding-left:20px;line-height:2;color:var(--muted2);font-size:13px">
+          <li>Nelson, D. L. &amp; Cox, M. M. (2017). <em>Lehninger Principles of Biochemistry</em> (7ª ed.). W. H. Freeman.</li>
+          <li>Merck Manual — Professional Version (2024). <em>Reference Ranges and Laboratory Values.</em> Merck &amp; Co.</li>
+          <li>IPCC (2021). <em>Sixth Assessment Report (AR6).</em> Intergovernmental Panel on Climate Change.</li>
+          <li>NOAA Global Monitoring Laboratory (2024). <em>Trends in Atmospheric Carbon Dioxide.</em> gml.noaa.gov</li>
+          <li>NASA Ozone Watch (2023). <em>Antarctic Ozone Hole.</em> ozonewatch.gsfc.nasa.gov</li>
+          <li>Organización Mundial de la Salud / WHO (2021). <em>Air Quality Guidelines. Global Update.</em></li>
+          <li>National Institute of Standards and Technology / NIST (2024). <em>Chemistry WebBook.</em> nist.gov</li>
+        </ol>
+      </div>` },
 };
 
 function openDetail(id) {
