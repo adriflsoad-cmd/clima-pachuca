@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ESTACION INTERDICIPLINARIA DE MONITOREO AMBIENTAL</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     :root {
@@ -2340,9 +2340,323 @@ const DETAILS = {
         <div class="alert-box warning" style="margin-top:20px">🌡️ <strong>Isla de Calor Urbana 2036:</strong> Las temperaturas podrán subir <strong>2–4°C</strong> adicionales. El calor disuelve el oxígeno del agua, causando la muerte de los ajolotes u obligándolos a una <strong>metamorfosis forzada</strong> — se convierten en salamandras terrestres. Además, se proyectan sequías más frecuentes que eliminarán los pocos cuerpos de agua restantes.</div>
       </div>
 
+      <!-- PROPUESTA DE CAMBIO -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">7. Propuesta de Cambio — Jardín Fitorremediador</div>
+        <div class="detail-sec-sub">Con base en la investigación y el análisis de riesgo ecotoxicológico, se propone implementar un jardín fitorremediador urbano usando plantas nativas para restaurar el agua, el suelo y la biodiversidad de Pachuca.</div>
+
+        <!-- Jardín SVG -->
+        <div style="display:flex;justify-content:center;margin-bottom:10px">
+          <svg viewBox="0 0 700 310" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;border-radius:20px;box-shadow:0 10px 40px rgba(26,74,46,0.3)">
+            <defs>
+              <linearGradient id="pfsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b8e8ff"/><stop offset="65%" stop-color="#d8f5e8"/></linearGradient>
+              <linearGradient id="pfriv" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4eb8d4" stop-opacity=".95"/><stop offset="100%" stop-color="#1a6a8a"/></linearGradient>
+              <linearGradient id="pfsol" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffe060"/><stop offset="100%" stop-color="#f9a020"/></linearGradient>
+              <linearGradient id="pfdirt" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7a5030"/><stop offset="100%" stop-color="#4a2e10"/></linearGradient>
+            </defs>
+            <rect width="700" height="310" fill="url(#pfsky)" rx="20"/>
+            <circle cx="630" cy="52" r="30" fill="url(#pfsol)" opacity=".92"/>
+            <g stroke="#f9d030" stroke-width="2.5" opacity=".6">
+              <line x1="630" y1="12" x2="630" y2="4"/><line x1="630" y1="92" x2="630" y2="100"/>
+              <line x1="590" y1="52" x2="582" y2="52"/><line x1="670" y1="52" x2="678" y2="52"/>
+              <line x1="602" y1="24" x2="596" y2="18"/><line x1="658" y1="80" x2="664" y2="86"/>
+              <line x1="658" y1="24" x2="664" y2="18"/><line x1="602" y1="80" x2="596" y2="86"/>
+            </g>
+            <ellipse cx="90" cy="38" rx="42" ry="16" fill="white" opacity=".8"/>
+            <ellipse cx="120" cy="30" rx="30" ry="14" fill="white" opacity=".8"/>
+            <ellipse cx="62" cy="36" rx="26" ry="13" fill="white" opacity=".7"/>
+            <ellipse cx="300" cy="28" rx="36" ry="13" fill="white" opacity=".65"/>
+            <ellipse cx="326" cy="22" rx="26" ry="12" fill="white" opacity=".65"/>
+            <rect x="0" y="205" width="700" height="58" fill="url(#pfriv)"/>
+            <path d="M0,215 Q35,208 70,215 Q105,222 140,215 Q175,208 210,215 Q245,222 280,215 Q315,208 350,215 Q385,222 420,215 Q455,208 490,215 Q525,222 560,215 Q595,208 630,215 L700,215" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
+            <path d="M0,232 Q50,225 100,232 Q150,239 200,232 Q250,225 300,232 Q350,239 400,232 Q450,225 500,232 Q550,239 600,232 L700,232" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/>
+            <text x="350" y="252" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.7)" font-family="Inter,sans-serif" letter-spacing="1">RÍO DE LAS AVENIDAS · FILTRO VIVO</text>
+            <ellipse cx="250" cy="232" rx="30" ry="12" fill="#c090d8" opacity=".95"/>
+            <ellipse cx="228" cy="230" rx="15" ry="11" fill="#d0a0e0"/>
+            <circle cx="224" cy="227" r="3" fill="#2d1a4a"/><circle cx="225" cy="226" r="1" fill="white"/>
+            <path d="M215,228 Q210,221 208,227" fill="none" stroke="#e07070" stroke-width="2.2"/>
+            <path d="M213,229 Q207,223 205,229" fill="none" stroke="#e07070" stroke-width="2.2"/>
+            <path d="M211,230 Q205,225 203,231" fill="none" stroke="#e07070" stroke-width="2.2"/>
+            <path d="M280,232 Q295,225 302,234 Q295,241 280,238 Z" fill="#a880c0"/>
+            <ellipse cx="460" cy="234" rx="26" ry="10" fill="#b888cc" opacity=".9"/>
+            <ellipse cx="440" cy="232" rx="13" ry="10" fill="#c898d8"/>
+            <circle cx="436" cy="229" r="2.5" fill="#2d1a4a"/><circle cx="437" cy="228" r="1" fill="white"/>
+            <path d="M428,230 Q424,224 422,230" fill="none" stroke="#e07070" stroke-width="2"/>
+            <path d="M426,231 Q421,225 419,231" fill="none" stroke="#e07070" stroke-width="2"/>
+            <path d="M486,234 Q498,228 503,236 Q498,242 486,239 Z" fill="#a070b8"/>
+            <rect x="0" y="263" width="700" height="47" fill="url(#pfdirt)" rx="0"/>
+            <path d="M175,263 Q170,278 165,288 M175,263 Q180,278 185,288" fill="none" stroke="#5c3010" stroke-width="1.5" opacity=".55"/>
+            <path d="M350,263 Q345,276 338,285 M350,263 Q355,276 362,285" fill="none" stroke="#5c3010" stroke-width="1.5" opacity=".55"/>
+            <path d="M525,263 Q520,277 514,286 M525,263 Q530,277 536,286" fill="none" stroke="#5c3010" stroke-width="1.5" opacity=".55"/>
+            <rect x="72" y="140" width="7" height="68" fill="#3d7030" rx="3"/>
+            <ellipse cx="75" cy="150" rx="6" ry="22" fill="#2d6020" opacity=".9"/>
+            <rect x="94" y="148" width="6" height="60" fill="#3d7030" rx="3"/>
+            <ellipse cx="97" cy="158" rx="5" ry="18" fill="#2d6020" opacity=".85"/>
+            <rect x="56" y="155" width="5" height="53" fill="#3d7030" rx="3"/>
+            <ellipse cx="58" cy="164" rx="5" ry="15" fill="#2d6020" opacity=".8"/>
+            <path d="M75,172 Q55,160 45,148" fill="none" stroke="#4a8a40" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M75,183 Q95,170 104,160" fill="none" stroke="#4a8a40" stroke-width="3.5" stroke-linecap="round"/>
+            <rect x="172" y="92" width="8" height="115" fill="#3d7030" rx="4"/>
+            <g transform="translate(176,104)">
+              <ellipse rx="11" ry="20" fill="#f9d030" transform="rotate(0)"/>
+              <ellipse rx="11" ry="20" fill="#f0c020" transform="rotate(45)"/>
+              <ellipse rx="11" ry="20" fill="#f9d030" transform="rotate(90)"/>
+              <ellipse rx="11" ry="20" fill="#f0c020" transform="rotate(135)"/>
+              <circle r="16" fill="#7a4e28"/>
+              <circle r="10" fill="#5a3a18"/>
+            </g>
+            <path d="M176,148 Q150,133 143,120" fill="none" stroke="#3d8c3a" stroke-width="5" stroke-linecap="round"/>
+            <ellipse cx="143" cy="120" rx="12" ry="7" fill="#4aaa4a" transform="rotate(-30,143,120)"/>
+            <path d="M176,160 Q198,146 207,133" fill="none" stroke="#3d8c3a" stroke-width="5" stroke-linecap="round"/>
+            <ellipse cx="207" cy="133" rx="12" ry="7" fill="#4aaa4a" transform="rotate(30,207,133)"/>
+            <path d="M168,205 Q160,218 156,225" fill="none" stroke="#d05020" stroke-width="1.8" stroke-dasharray="4,3"/>
+            <polygon points="153,228 160,218 163,226" fill="#d05020"/>
+            <text x="135" y="215" font-size="7.5" fill="#d05020" font-family="Inter,sans-serif" font-weight="700">Pb·Cd·As</text>
+            <rect x="342" y="148" width="16" height="60" fill="#7a4e28" rx="4"/>
+            <circle cx="350" cy="112" r="52" fill="#267840" opacity=".88"/>
+            <circle cx="323" cy="125" r="37" fill="#30944e" opacity=".85"/>
+            <circle cx="377" cy="125" r="37" fill="#30944e" opacity=".85"/>
+            <circle cx="350" cy="88" r="34" fill="#42c060" opacity=".78"/>
+            <circle cx="338" cy="100" r="4" fill="#e03030" opacity=".85"/>
+            <circle cx="362" cy="97" r="4" fill="#e03030" opacity=".85"/>
+            <circle cx="350" cy="115" r="3.5" fill="#e03030" opacity=".8"/>
+            <circle cx="330" cy="112" r="3" fill="#ff8800" opacity=".8"/>
+            <circle cx="370" cy="110" r="3" fill="#ff8800" opacity=".8"/>
+            <rect x="296" y="58" width="108" height="18" rx="9" fill="rgba(26,74,46,.8)"/>
+            <text x="350" y="71" text-anchor="middle" font-size="8.5" font-family="Inter,sans-serif" fill="white" font-weight="700">🌳 Corredor Verde -1°C</text>
+            <rect x="490" y="152" width="7" height="56" fill="#3d7030" rx="3"/>
+            <path d="M493,172 Q467,153 456,138" fill="none" stroke="#52a040" stroke-width="4.5" stroke-linecap="round"/>
+            <path d="M493,185 Q516,164 526,150" fill="none" stroke="#52a040" stroke-width="4.5" stroke-linecap="round"/>
+            <path d="M493,160 Q470,144 460,130" fill="none" stroke="#46943a" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M493,195 Q520,177 532,162" fill="none" stroke="#46943a" stroke-width="3.5" stroke-linecap="round"/>
+            <ellipse cx="460" cy="145" rx="9" ry="5" fill="#52a040" transform="rotate(-30,460,145)"/>
+            <ellipse cx="452" cy="135" rx="8" ry="5" fill="#52a040" transform="rotate(-35,452,135)"/>
+            <ellipse cx="518" cy="160" rx="9" ry="5" fill="#52a040" transform="rotate(30,518,160)"/>
+            <ellipse cx="526" cy="150" rx="8" ry="5" fill="#52a040" transform="rotate(35,526,150)"/>
+            <rect x="586" y="138" width="7" height="70" fill="#3d7030" rx="3"/>
+            <ellipse cx="589" cy="148" rx="5" ry="20" fill="#2d6020" opacity=".9"/>
+            <rect x="605" y="145" width="6" height="63" fill="#3d7030" rx="3"/>
+            <ellipse cx="608" cy="155" rx="5" ry="18" fill="#2d6020" opacity=".85"/>
+            <path d="M589,180 Q568,168 558,156" fill="none" stroke="#4a8a40" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M589,190 Q608,175 617,165" fill="none" stroke="#4a8a40" stroke-width="3.5" stroke-linecap="round"/>
+            <g transform="translate(138,80)" opacity=".9">
+              <path d="M0,0 Q-13,-11 -9,8 Q-4,4 0,0" fill="#f080c0"/>
+              <path d="M0,0 Q13,-11 9,8 Q4,4 0,0" fill="#f080c0"/>
+              <path d="M0,0 Q-11,9 -7,18 Q-2,10 0,0" fill="#d060a0"/>
+              <path d="M0,0 Q11,9 7,18 Q2,10 0,0" fill="#d060a0"/>
+            </g>
+            <g transform="translate(450,80)" opacity=".9">
+              <path d="M0,0 Q-11,-9 -8,7 Q-3,3 0,0" fill="#80c8f0"/>
+              <path d="M0,0 Q11,-9 8,7 Q3,3 0,0" fill="#80c8f0"/>
+              <path d="M0,0 Q-9,8 -5,16 Q-2,9 0,0" fill="#5090d0"/>
+              <path d="M0,0 Q9,8 5,16 Q2,9 0,0" fill="#5090d0"/>
+            </g>
+            <g transform="translate(268,70)">
+              <ellipse rx="7" ry="5" fill="#f9d030"/>
+              <line x1="-7" y1="0" x2="7" y2="0" stroke="#3a1a00" stroke-width="1.5"/>
+              <line x1="-2" y1="0" x2="-2" y2="6" stroke="#3a1a00" stroke-width="1.5"/>
+              <line x1="3" y1="0" x2="3" y2="6" stroke="#3a1a00" stroke-width="1.5"/>
+              <path d="M-4,-5 Q0,-12 4,-5" fill="rgba(200,240,255,.65)"/>
+              <path d="M-4,-3 Q0,-10 4,-3" fill="rgba(200,240,255,.65)"/>
+            </g>
+            <rect x="38" y="82" width="86" height="20" rx="10" fill="rgba(255,255,255,.88)"/>
+            <text x="81" y="96" text-anchor="middle" font-size="8.5" font-family="Inter,sans-serif" fill="#1a4a2e" font-weight="700">🌿 Tule / Espadaña</text>
+            <rect x="132" y="56" width="102" height="20" rx="10" fill="rgba(255,255,255,.88)"/>
+            <text x="183" y="70" text-anchor="middle" font-size="8.5" font-family="Inter,sans-serif" fill="#1a4a2e" font-weight="700">🌻 Hiperacumuladora</text>
+            <rect x="438" y="105" width="98" height="20" rx="10" fill="rgba(255,255,255,.88)"/>
+            <text x="487" y="119" text-anchor="middle" font-size="8.5" font-family="Inter,sans-serif" fill="#1a4a2e" font-weight="700">🌿 Descontaminante</text>
+            <rect x="554" y="86" width="104" height="20" rx="10" fill="rgba(255,255,255,.88)"/>
+            <text x="606" y="100" text-anchor="middle" font-size="8.5" font-family="Inter,sans-serif" fill="#1a4a2e" font-weight="700">🌾 Humedal Artificial</text>
+            <rect x="258" y="222" width="76" height="17" rx="8.5" fill="rgba(255,255,255,.9)"/>
+            <text x="296" y="234" text-anchor="middle" font-size="8" font-family="Inter,sans-serif" fill="#4a1a7a" font-weight="700">🦎 Ajolote seguro</text>
+            <rect x="462" y="224" width="76" height="17" rx="8.5" fill="rgba(255,255,255,.9)"/>
+            <text x="500" y="236" text-anchor="middle" font-size="8" font-family="Inter,sans-serif" fill="#4a1a7a" font-weight="700">🦎 Ajolote seguro</text>
+            <path d="M310,205 Q308,196 306,205 Q304,213 308,213 Q312,213 310,205Z" fill="rgba(80,200,240,.75)"/>
+            <path d="M390,205 Q388,196 386,205 Q384,213 388,213 Q392,213 390,205Z" fill="rgba(80,200,240,.75)"/>
+            <rect x="170" y="5" width="360" height="30" rx="12" fill="rgba(13,46,26,.85)"/>
+            <text x="350" y="25" text-anchor="middle" font-size="13.5" font-family="Playfair Display,Georgia,serif" fill="white" font-weight="700">🌱 Jardín Fitorremediador Urbano</text>
+          </svg>
+        </div>
+        <p style="text-align:center;font-size:12px;color:var(--muted);margin:0 0 24px;letter-spacing:.5px">Restaurar el ecosistema con plantas nativas que limpian, enfrían y protegen al ajolote</p>
+
+        <!-- Comparativa Sin vs Con -->
+        <div style="display:grid;grid-template-columns:1fr 48px 1fr;align-items:center;gap:0;margin-bottom:28px">
+          <div style="border-radius:16px;padding:18px 15px;background:linear-gradient(135deg,#fff4f4,#ffe8e8);border:1.5px solid #f0b0b0">
+            <h3 style="font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:10px;color:#c0392b">❌ Sin propuesta</h3>
+            <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:9px"><span style="font-size:16px;flex-shrink:0">💧</span><div style="font-size:11.5px;line-height:1.45;color:#333"><b style="display:block;font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.5px">Calidad del agua</b>Tóxica con metales y microplásticos</div></div>
+            <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:9px"><span style="font-size:16px;flex-shrink:0">🌡️</span><div style="font-size:11.5px;line-height:1.45;color:#333"><b style="display:block;font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.5px">Temperatura urbana</b>Aumenta hasta +4°C</div></div>
+            <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:9px"><span style="font-size:16px;flex-shrink:0">🦎</span><div style="font-size:11.5px;line-height:1.45;color:#333"><b style="display:block;font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.5px">Ajolote</b>Extinto sin hábitat silvestre</div></div>
+            <div style="display:flex;gap:8px;align-items:flex-start"><span style="font-size:16px;flex-shrink:0">🏗️</span><div style="font-size:11.5px;line-height:1.45;color:#333"><b style="display:block;font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.5px">Suelo</b>Impermeable, sin recarga de acuíferos</div></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center;font-size:26px;color:#2d7a4f">→</div>
+          <div style="border-radius:16px;padding:18px 15px;background:linear-gradient(135deg,#edfbf3,#d0f5e0);border:1.5px solid #7ad4a0">
+            <h3 style="font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:10px;color:#2d7a4f">✅ Con propuesta</h3>
+            <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:9px"><span style="font-size:16px;flex-shrink:0">💧</span><div style="font-size:11.5px;line-height:1.45;color:#333"><b style="display:block;font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.5px">Calidad del agua</b>Filtración con tratamiento biológico</div></div>
+            <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:9px"><span style="font-size:16px;flex-shrink:0">🌡️</span><div style="font-size:11.5px;line-height:1.45;color:#333"><b style="display:block;font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.5px">Temperatura urbana</b>Disminuye -1°C con corredores verdes</div></div>
+            <div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:9px"><span style="font-size:16px;flex-shrink:0">🦎</span><div style="font-size:11.5px;line-height:1.45;color:#333"><b style="display:block;font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.5px">Ajolote</b>Poblaciones estables con hábitat correcto</div></div>
+            <div style="display:flex;gap:8px;align-items:flex-start"><span style="font-size:16px;flex-shrink:0">🌱</span><div style="font-size:11.5px;line-height:1.45;color:#333"><b style="display:block;font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.5px">Suelo</b>Permeable con recarga de acuíferos</div></div>
+          </div>
+        </div>
+
+        <!-- Las 4 acciones -->
+        <p style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(17px,3vw,22px);color:var(--text);text-align:center;margin-bottom:16px"><span style="display:block;font-family:Inter,sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#5cb87a;margin-bottom:4px">Las 4 acciones propuestas</span>Soluciones de Cambio</p>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:28px">
+
+          <!-- Acción 1 -->
+          <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(26,74,46,.1);border:1.5px solid rgba(93,184,122,.2)">
+            <div style="height:115px;position:relative;overflow:hidden;background:linear-gradient(135deg,#fff8dc,#ffe890)">
+              <div style="position:absolute;top:10px;left:12px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;color:#1a4a2e;z-index:2">1</div>
+              <svg viewBox="0 0 200 115" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+                <rect x="0" y="72" width="200" height="43" fill="#7a4e28"/>
+                <text x="100" y="100" text-anchor="middle" font-size="8" fill="#f0a060" font-family="Inter,sans-serif">Pb · Cd · As · Metales pesados</text>
+                <rect x="36" y="26" width="5" height="47" fill="#3d7030" rx="2"/>
+                <circle cx="38" cy="20" r="13" fill="#52aa42"/>
+                <circle cx="31" cy="25" r="9" fill="#429a32"/>
+                <circle cx="45" cy="25" r="9" fill="#429a32"/>
+                <rect x="96" y="18" width="6" height="55" fill="#3d7030" rx="2"/>
+                <g transform="translate(99,12)"><ellipse rx="9" ry="16" fill="#f9d030" transform="rotate(0)"/><ellipse rx="9" ry="16" fill="#f0c020" transform="rotate(60)"/><ellipse rx="9" ry="16" fill="#f9d030" transform="rotate(120)"/><circle r="12" fill="#7a4e28"/><circle r="7" fill="#5a3818"/></g>
+                <rect x="153" y="30" width="5" height="43" fill="#3d7030" rx="2"/>
+                <circle cx="155" cy="24" r="12" fill="#52aa42"/>
+                <circle cx="148" cy="29" r="8" fill="#429a32"/>
+                <circle cx="162" cy="29" r="8" fill="#429a32"/>
+                <path d="M38,72 L38,58" stroke="#d04020" stroke-width="2" stroke-dasharray="3,2"/>
+                <path d="M99,72 L99,52" stroke="#d04020" stroke-width="2" stroke-dasharray="3,2"/>
+                <path d="M155,72 L155,60" stroke="#d04020" stroke-width="2" stroke-dasharray="3,2"/>
+                <text x="100" y="8" text-anchor="middle" font-size="8" fill="#1a4a2e" font-family="Inter,sans-serif" font-weight="700">Raíces absorben metales</text>
+              </svg>
+            </div>
+            <div style="padding:14px 16px 16px">
+              <h4 style="font-family:'Playfair Display',Georgia,serif;font-size:14px;color:#1a4a2e;margin-bottom:6px;line-height:1.3">Plantas que limpian el suelo de metales tóxicos</h4>
+              <p style="font-size:11.5px;color:#555;line-height:1.55">Plantas nativas hiperacumuladoras que succionan metales tóxicos del suelo antes de que lleguen al agua.</p>
+            </div>
+          </div>
+
+          <!-- Acción 2 -->
+          <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(26,74,46,.1);border:1.5px solid rgba(93,184,122,.2)">
+            <div style="height:115px;position:relative;overflow:hidden;background:linear-gradient(135deg,#dcf0ff,#a8e0f8)">
+              <div style="position:absolute;top:10px;left:12px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;color:#1a4a2e;z-index:2">2</div>
+              <svg viewBox="0 0 200 115" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+                <rect x="0" y="58" width="82" height="57" fill="#5a7040" opacity=".7"/>
+                <text x="41" y="93" text-anchor="middle" font-size="8" fill="#1a2a1a" font-family="Inter,sans-serif">Canal aguas negras</text>
+                <text x="41" y="104" text-anchor="middle" font-size="7.5" fill="#1a2a1a" font-family="Inter,sans-serif">⚠ tóxico</text>
+                <rect x="82" y="82" width="18" height="4" fill="#1a4a2e"/>
+                <polygon points="100,78 112,84 100,90" fill="#1a4a2e"/>
+                <rect x="100" y="58" width="100" height="57" fill="#3ab0cc" opacity=".85"/>
+                <rect x="112" y="28" width="5" height="33" fill="#3d7030" rx="2"/>
+                <ellipse cx="114" cy="34" rx="4" ry="13" fill="#2d6020" opacity=".9"/>
+                <rect x="130" y="22" width="5" height="39" fill="#3d7030" rx="2"/>
+                <ellipse cx="132" cy="28" rx="4" ry="15" fill="#2d6020" opacity=".9"/>
+                <rect x="148" y="26" width="5" height="35" fill="#3d7030" rx="2"/>
+                <ellipse cx="150" cy="32" rx="4" ry="13" fill="#2d6020" opacity=".85"/>
+                <rect x="166" y="20" width="5" height="41" fill="#3d7030" rx="2"/>
+                <ellipse cx="168" cy="26" rx="4" ry="16" fill="#2d6020" opacity=".9"/>
+                <rect x="184" y="24" width="5" height="37" fill="#3d7030" rx="2"/>
+                <ellipse cx="186" cy="30" rx="4" ry="14" fill="#2d6020" opacity=".85"/>
+                <path d="M104,70 Q120,64 140,70 Q160,76 180,70 L200,70" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.5"/>
+                <path d="M104,82 Q125,76 150,82 Q170,88 200,82" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+                <text x="152" y="100" text-anchor="middle" font-size="8" fill="white" font-family="Inter,sans-serif" font-weight="700">Filtro Vivo</text>
+                <ellipse cx="152" cy="108" rx="16" ry="6" fill="#c090d8" opacity=".9"/>
+                <ellipse cx="140" cy="107" rx="9" ry="6" fill="#d0a0e0"/>
+                <circle cx="137" cy="105" r="2" fill="#2d1a4a"/>
+                <text x="100" y="12" text-anchor="middle" font-size="8.5" fill="#1a4a2e" font-family="Inter,sans-serif" font-weight="700">Río rediseñado como humedal</text>
+              </svg>
+            </div>
+            <div style="padding:14px 16px 16px">
+              <h4 style="font-family:'Playfair Display',Georgia,serif;font-size:14px;color:#1a4a2e;margin-bottom:6px;line-height:1.3">Un río convertido en filtro natural viviente</h4>
+              <p style="font-size:11.5px;color:#555;line-height:1.55">Rediseñar el canal de aguas negras del Río de las Avenidas como humedal natural de bio-filtración.</p>
+            </div>
+          </div>
+
+          <!-- Acción 3 -->
+          <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(26,74,46,.1);border:1.5px solid rgba(93,184,122,.2)">
+            <div style="height:115px;position:relative;overflow:hidden;background:linear-gradient(135deg,#eeffdc,#c0f090)">
+              <div style="position:absolute;top:10px;left:12px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;color:#1a4a2e;z-index:2">3</div>
+              <svg viewBox="0 0 200 115" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+                <rect x="0" y="80" width="200" height="35" fill="#4a7c30"/>
+                <rect x="4" y="50" width="76" height="32" fill="#c8c840" opacity=".65"/>
+                <rect x="10" y="32" width="4" height="20" fill="#888820" rx="1"/>
+                <rect x="20" y="28" width="4" height="24" fill="#888820" rx="1"/>
+                <rect x="30" y="30" width="4" height="22" fill="#888820" rx="1"/>
+                <rect x="40" y="26" width="4" height="26" fill="#888820" rx="1"/>
+                <rect x="50" y="30" width="4" height="22" fill="#888820" rx="1"/>
+                <rect x="60" y="28" width="4" height="24" fill="#888820" rx="1"/>
+                <rect x="70" y="31" width="4" height="21" fill="#888820" rx="1"/>
+                <circle cx="42" cy="18" r="7" fill="#e03030" opacity=".85"/>
+                <text x="42" y="21.5" text-anchor="middle" font-size="9" fill="white" font-weight="900">✕</text>
+                <text x="42" y="62" text-anchor="middle" font-size="7.5" fill="#3a3a00" font-family="Inter,sans-serif">Monocultivo + pesticidas</text>
+                <rect x="82" y="63" width="16" height="4" fill="#1a4a2e"/>
+                <polygon points="98,59 110,65 98,71" fill="#1a4a2e"/>
+                <rect x="110" y="46" width="86" height="36" fill="#70c040" opacity=".55"/>
+                <circle cx="130" cy="36" r="13" fill="#30943a"/>
+                <circle cx="150" cy="30" r="11" fill="#3caa48"/>
+                <circle cx="170" cy="34" r="13" fill="#30943a"/>
+                <circle cx="188" cy="28" r="10" fill="#3caa48"/>
+                <rect x="128" y="48" width="5" height="34" fill="#3d7030" rx="2"/>
+                <rect x="148" y="42" width="5" height="40" fill="#3d7030" rx="2"/>
+                <rect x="168" y="47" width="5" height="35" fill="#3d7030" rx="2"/>
+                <rect x="186" y="40" width="5" height="42" fill="#3d7030" rx="2"/>
+                <text x="160" y="62" text-anchor="middle" font-size="7.5" fill="#0d2e1a" font-family="Inter,sans-serif" font-weight="700">Agroecológico ✓</text>
+                <text x="100" y="10" text-anchor="middle" font-size="8.5" fill="#1a4a2e" font-family="Inter,sans-serif" font-weight="700">Agricultura de Conservación</text>
+              </svg>
+            </div>
+            <div style="padding:14px 16px 16px">
+              <h4 style="font-family:'Playfair Display',Georgia,serif;font-size:14px;color:#1a4a2e;margin-bottom:6px;line-height:1.3">Cultivos que protegen en lugar de contaminar</h4>
+              <p style="font-size:11.5px;color:#555;line-height:1.55">Transformar cultivos industriales en zonas agroecológicas sin pesticidas que no afecten los canales de agua.</p>
+            </div>
+          </div>
+
+          <!-- Acción 4 -->
+          <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(26,74,46,.1);border:1.5px solid rgba(93,184,122,.2)">
+            <div style="height:115px;position:relative;overflow:hidden;background:linear-gradient(135deg,#ede8ff,#c8b8f8)">
+              <div style="position:absolute;top:10px;left:12px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;color:#1a4a2e;z-index:2">4</div>
+              <svg viewBox="0 0 200 115" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+                <ellipse cx="100" cy="82" rx="80" ry="28" fill="#3ab0cc" opacity=".8"/>
+                <ellipse cx="100" cy="76" rx="64" ry="20" fill="#5ac8e0" opacity=".7"/>
+                <path d="M36,76 Q58,70 80,76 Q102,82 124,76 Q146,70 164,76" fill="none" stroke="white" stroke-width="1.5" opacity=".6"/>
+                <ellipse cx="100" cy="82" rx="80" ry="28" fill="none" stroke="#2d6a8a" stroke-width="2" stroke-dasharray="6,3"/>
+                <rect x="20" y="56" width="5" height="30" fill="#3d7030" rx="2"/>
+                <ellipse cx="22" cy="62" rx="4" ry="12" fill="#2d6020" opacity=".9"/>
+                <rect x="174" y="54" width="5" height="32" fill="#3d7030" rx="2"/>
+                <ellipse cx="176" cy="60" rx="4" ry="13" fill="#2d6020" opacity=".9"/>
+                <ellipse cx="78" cy="77" rx="20" ry="9" fill="#c090d8" opacity=".95"/>
+                <ellipse cx="64" cy="75" rx="13" ry="9" fill="#d0a0e0"/>
+                <circle cx="60" cy="72" r="2.5" fill="#2d1a4a"/>
+                <path d="M53,72 Q49,66 47,72" fill="none" stroke="#e07070" stroke-width="2"/>
+                <path d="M51,73 Q46,67 44,73" fill="none" stroke="#e07070" stroke-width="2"/>
+                <ellipse cx="128" cy="79" rx="18" ry="8" fill="#b888cc" opacity=".9"/>
+                <ellipse cx="115" cy="77" rx="12" ry="8" fill="#c898d8"/>
+                <circle cx="111" cy="74" r="2.5" fill="#2d1a4a"/>
+                <path d="M104,74 Q100,68 98,74" fill="none" stroke="#e07070" stroke-width="2"/>
+                <path d="M102,75 Q97,69 95,75" fill="none" stroke="#e07070" stroke-width="2"/>
+                <rect x="148" y="14" width="38" height="28" rx="5" fill="#e8eeff" stroke="#6080c0" stroke-width="1.5"/>
+                <rect x="153" y="19" width="28" height="16" rx="2" fill="#3060d0"/>
+                <circle cx="162" cy="27" r="3" fill="#60e060"/>
+                <circle cx="170" cy="27" r="3" fill="#e06060"/>
+                <text x="167" y="35" text-anchor="middle" font-size="7" fill="white" font-family="Inter,sans-serif">Monitor</text>
+                <line x1="167" y1="42" x2="167" y2="54" stroke="#6080c0" stroke-width="1.5" stroke-dasharray="2,2"/>
+                <rect x="20" y="4" width="160" height="20" rx="10" fill="rgba(26,46,74,.82)"/>
+                <text x="100" y="17.5" text-anchor="middle" font-size="9" fill="white" font-family="Inter,sans-serif" font-weight="700">Santuario Urbano de Ajolotes</text>
+              </svg>
+            </div>
+            <div style="padding:14px 16px 16px">
+              <h4 style="font-family:'Playfair Display',Georgia,serif;font-size:14px;color:#1a4a2e;margin-bottom:6px;line-height:1.3">Refugios urbanos para salvar al ajolote</h4>
+              <p style="font-size:11.5px;color:#555;line-height:1.55">Crear refugios de agua cerrada monitoreados y corredores ecológicos para que el ajolote sobreviva en la ciudad.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer infografía -->
+        <div style="background:linear-gradient(135deg,#0d2e1a,#1a4a2e);border-radius:18px;padding:26px 20px;text-align:center;color:#fff">
+          <div style="font-size:28px;letter-spacing:8px;margin-bottom:10px">🌿 💧 🦎 🌳</div>
+          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:20px;color:#a8e6c0;margin-bottom:8px">El cambio comienza con la naturaleza</h3>
+          <p style="font-size:12px;color:rgba(255,255,255,.65);max-width:480px;margin:0 auto;line-height:1.65">Las plantas fitorremediadoras son ingeniería biológica: limpian el agua, absorben metales, regulan la temperatura y restauran el hábitat del ajolote, todo al mismo tiempo.</p>
+        </div>
+      </div>
+
       <!-- CONCLUSIÓN -->
       <div class="detail-sec">
-        <div class="detail-sec-head">7. Conclusión</div>
+        <div class="detail-sec-head">8. Conclusión</div>
         <div class="detail-card"><p style="font-size:14px;line-height:1.8;color:var(--muted2)">El análisis realizado demuestra que el ajolote enfrenta múltiples amenazas en el municipio de Pachuca. Las actividades humanas —especialmente la industria minera, la urbanización y la agricultura— generan condiciones adversas para su desarrollo. <strong style="color:var(--text)">Es fundamental implementar estrategias de conservación y control de contaminantes para proteger esta especie y preservar el equilibrio ecológico del Altiplano Hidalguense.</strong></p></div>
       </div>`
   },
