@@ -338,11 +338,6 @@
     .m-bio  .mat-sidebar::before { background: linear-gradient(150deg,rgba(13,31,61,.93),rgba(26,48,96,.88)); filter:none; }
     .m-bio  .mat-sidebar::after  { background: var(--sky); }
 
-    /* Web → código en pantalla */
-    .m-web  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&q=80'); }
-    .m-web  .mat-sidebar::before { background: linear-gradient(150deg,rgba(0,31,26,.93),rgba(0,51,40,.88)); filter:none; }
-    .m-web  .mat-sidebar::after  { background: var(--teal); }
-
     /* Electrónica → placa de circuitos PCB */
     .m-elec .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&q=80'); }
     .m-elec .mat-sidebar::before { background: linear-gradient(150deg,rgba(42,24,0,.93),rgba(61,36,0,.88)); filter:none; }
@@ -373,7 +368,6 @@
     .tag-mat  { background:rgba(56,189,248,.15);  color:var(--sky); }
     .tag-uni  { background:rgba(167,139,250,.15); color:var(--violet); }
     .tag-bio  { background:rgba(56,189,248,.15);  color:var(--sky); }
-    .tag-web  { background:rgba(45,212,191,.15);  color:var(--teal); }
     .tag-elec { background:rgba(251,191,36,.15);  color:var(--amber); }
     .tag-quim { background:rgba(251,113,133,.15); color:var(--rose); }
     .tag-soc  { background:rgba(251,191,36,.15);  color:var(--amber); }
@@ -710,7 +704,7 @@
   </h1>
   <p class="hero-sub">
     Análisis estadístico e interdisciplinario del clima de <strong style="color:#f1f5f9">Pachuca de Soto, Hidalgo</strong>.<br>
-    11 materias integradas · 26 observaciones diarias · Abril 2026.
+    10 materias integradas · 26 observaciones diarias · Abril 2026.
   </p>
   <div class="hero-meta">
     <div class="meta-item">
@@ -1177,30 +1171,10 @@
       </div>
     </div>
 
-    <!-- 6. Web y Móviles -->
-    <div class="materia-card m-web reveal" onclick="openDetail('web')">
-      <div class="mat-sidebar">
-        <div class="mat-num">06</div>
-        <div>
-          <span class="mat-tag tag-web">Computación</span>
-          <div class="mat-title">Aplicaciones Computacionales Web y Móviles</div>
-          <div class="mat-sub">Página web interactiva sobre el clima en Pachuca — este mismo sitio</div>
-        </div>
-      </div>
-      <div class="mat-content" style="display:flex;align-items:center;">
-        <div class="placeholder-content">
-          <div class="placeholder-icon">💻</div>
-          <div class="placeholder-title">Proyecto en desarrollo</div>
-          <div class="placeholder-sub">Esta página forma parte del proyecto. Se agregará documentación técnica próximamente.</div>
-          <span class="placeholder-badge">En progreso</span>
-        </div>
-      </div>
-    </div>
-
     <!-- 7. Electrónica -->
     <div class="materia-card m-elec reveal" onclick="openDetail('elec')">
       <div class="mat-sidebar">
-        <div class="mat-num">07</div>
+        <div class="mat-num">06</div>
         <div>
           <span class="mat-tag tag-elec">Electrónica</span>
           <div class="mat-title">Electrónica y Comunicaciones Aplicadas</div>
@@ -1267,7 +1241,7 @@
     <!-- 8. Química -->
     <div class="materia-card m-quim reveal" onclick="openDetail('quim')">
       <div class="mat-sidebar">
-        <div class="mat-num">08</div>
+        <div class="mat-num">07</div>
         <div>
           <span class="mat-tag tag-quim">Química</span>
           <div class="mat-title">Análisis de Macromoléculas y Equilibrios Ácido-Base</div>
@@ -1358,7 +1332,7 @@
     <!-- Trabajo Social -->
     <div class="materia-card m-soc reveal" onclick="openDetail('tsocial')">
       <div class="mat-sidebar">
-        <div class="mat-num">09</div>
+        <div class="mat-num">08</div>
         <div>
           <span class="mat-tag tag-soc">Trabajo Social</span>
           <div class="mat-title">Introducción al Trabajo Social</div>
@@ -1392,7 +1366,7 @@
     <!-- Ciencia Política -->
     <div class="materia-card m-soc reveal" onclick="openDetail('cpolitica')">
       <div class="mat-sidebar">
-        <div class="mat-num">10</div>
+        <div class="mat-num">09</div>
         <div>
           <span class="mat-tag tag-soc">Ciencia Política</span>
           <div class="mat-title">Fundamentos de la Ciencia Política</div>
@@ -1426,7 +1400,7 @@
     <!-- Comunicación -->
     <div class="materia-card m-soc reveal" onclick="openDetail('comunicacion')">
       <div class="mat-sidebar">
-        <div class="mat-num">11</div>
+        <div class="mat-num">10</div>
         <div>
           <span class="mat-tag tag-soc">Comunicación</span>
           <div class="mat-title">Campos Laborales de la Comunicación</div>
@@ -2591,7 +2565,7 @@ const DETAILS = {
   },
 
   elec: {
-    tag: 'Materia 07 · Exactas',
+    tag: 'Materia 06 · Exactas',
     tagColor: 'rgba(251,191,36,.15)', tagTextColor: '#fbbf24',
     title: 'Electrónica y Comunicaciones Aplicadas',
     sub: 'Estación Meteorológica Electrónica Básica — Diseño, Simulación e Integración de Sensores · Abril 2026',
@@ -3252,9 +3226,7 @@ void loop() {
 </div>` },
   uni:  { tag:'Materia 04 · Común', tagColor:'rgba(167,139,250,.15)', tagTextColor:'#a78bfa', title:'El Universo y sus Fenómenos', sub:'Fenómenos atmosféricos y radiación solar · Proyecto en desarrollo', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
     content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">🔭</div><h4>Proyecto en desarrollo</h4><p>El contenido de esta materia se agregará próximamente cuando esté disponible en Drive.</p></div></div>` },
-  web:  { tag:'Materia 06 · Exactas', tagColor:'rgba(45,212,191,.15)', tagTextColor:'#2dd4bf', title:'Aplicaciones Computacionales Web y Móviles', sub:'Este sitio web es el proyecto · Documentación técnica próximamente', hero:`https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1400&q=85`,
-    content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">💻</div><h4>¡Estás viendo el proyecto!</h4><p>Esta página web interactiva es el proyecto de la materia. Se agregará documentación técnica próximamente.</p></div></div>` },
-  quim: { tag:'Materia 08 · Exactas', tagColor:'rgba(251,113,133,.15)', tagTextColor:'#fb7185', title:'Análisis de Macromoléculas y Equilibrios Ácido-Base', sub:'La Química del Cuerpo Humano y el Clima de Pachuca · Actividad 3 · Abril 2026', hero:`https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1400&q=85`,
+  quim: { tag:'Materia 07 · Exactas', tagColor:'rgba(251,113,133,.15)', tagTextColor:'#fb7185', title:'Análisis de Macromoléculas y Equilibrios Ácido-Base', sub:'La Química del Cuerpo Humano y el Clima de Pachuca · Actividad 3 · Abril 2026', hero:`https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1400&q=85`,
     content:`
       <div class="detail-facts">
         <div class="detail-fact"><div class="detail-fact-val" style="color:#fb7185">60+</div><div class="detail-fact-lbl">Elementos químicos</div></div>
