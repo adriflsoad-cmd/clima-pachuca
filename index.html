@@ -746,7 +746,7 @@
   <p class="section-label reveal">Datos Climáticos</p>
   <h2 class="reveal d1">Abril 2026 — <span style="color:var(--sky)">Anomalías registradas</span></h2>
   <p class="section-intro reveal d2">
-    Datos reales del 1–11 de abril de 2026 en Pachuca de Soto.
+    Datos reales del 1–30 de abril de 2026 en Pachuca de Soto.
     Temperaturas hasta 9°C sobre el promedio histórico, humedad en mínimos históricos.
   </p>
 
@@ -1606,15 +1606,15 @@ const cOpts = {
     y: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { color: 'rgba(255,255,255,0.04)' } }
   }
 };
-const labels6 = ['1 Abr','3 Abr','5 Abr','7 Abr','9 Abr','11 Abr'];
+const labels6 = ['1 Abr','3 Abr','5 Abr','7 Abr','9 Abr','11 Abr','13 Abr','15 Abr','17 Abr','19 Abr','21 Abr','23 Abr','27 Abr','30 Abr'];
 
 new Chart(document.getElementById('chartTemp'), {
   type: 'line',
   data: {
     labels: labels6,
     datasets: [
-      { label:'Temp. real (°C)', data:[24,26,22,5,25,17], borderColor:'#fb7185', backgroundColor:'rgba(251,113,133,0.1)', tension:.4, fill:true, pointBackgroundColor:'#fb7185', pointRadius:5 },
-      { label:'Histórico ~15°C', data:[15,15,15,15,15,15], borderColor:'#475569', borderDash:[6,4], tension:0, fill:false, pointRadius:0 }
+      { label:'Temp. real (°C)', data:[24,26,22,5,25,17,22,25,26,20,23,26,24,23.5], borderColor:'#fb7185', backgroundColor:'rgba(251,113,133,0.1)', tension:.4, fill:true, pointBackgroundColor:'#fb7185', pointRadius:5 },
+      { label:'Histórico ~15°C', data:[15,15,15,15,15,15,15,15,15,15,15,15,15,15], borderColor:'#475569', borderDash:[6,4], tension:0, fill:false, pointRadius:0 }
     ]
   },
   options: cOpts
@@ -1625,8 +1625,8 @@ new Chart(document.getElementById('chartHum'), {
   data: {
     labels: labels6,
     datasets: [
-      { label:'Humedad real (%)', data:[38,35,82,72,40,91], borderColor:'#38bdf8', backgroundColor:'rgba(56,189,248,0.1)', tension:.4, fill:true, pointBackgroundColor:'#38bdf8', pointRadius:5 },
-      { label:'Histórico ~51%', data:[51,51,51,51,51,51], borderColor:'#475569', borderDash:[6,4], tension:0, fill:false, pointRadius:0 }
+      { label:'Humedad real (%)', data:[38,35,82,72,40,91,55,38,33,62,82,45,55,56], borderColor:'#38bdf8', backgroundColor:'rgba(56,189,248,0.1)', tension:.4, fill:true, pointBackgroundColor:'#38bdf8', pointRadius:5 },
+      { label:'Histórico ~51%', data:[51,51,51,51,51,51,51,51,51,51,51,51,51,51], borderColor:'#475569', borderDash:[6,4], tension:0, fill:false, pointRadius:0 }
     ]
   },
   options: cOpts
