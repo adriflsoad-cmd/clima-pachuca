@@ -1410,7 +1410,19 @@
       <div class="mat-content">
         <div class="mat-content-title">Comunicación del Clima</div>
         <p class="mat-content-intro">La comunicación ambiental es clave para que la sociedad comprenda y actúe ante el cambio climático. Este proyecto analiza cómo se comunican las anomalías climáticas de Pachuca en diferentes campos profesionales.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;">
+        <!-- Video del proyecto -->
+        <div style="margin:18px 0 4px;background:var(--bg2);border-radius:14px;overflow:hidden;border:1px solid var(--border)">
+          <div style="padding:14px 16px 10px;border-bottom:1px solid var(--border)">
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">Video del proyecto</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.5;margin:0">Documental estudiantil que explora los distintos campos laborales donde un comunicador puede incidir en la divulgación del cambio climático: desde el periodismo de datos hasta la comunicación de riesgo para comunidades vulnerables.</p>
+          </div>
+          <video controls playsinline preload="metadata"
+            style="width:100%;display:block;max-height:260px;object-fit:cover;background:#000"
+            onclick="event.stopPropagation()">
+            <source src="/videos/comunicacion.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;">
           <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
             <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Periodismo</div>
             <p style="font-size:13px;color:var(--muted2);line-height:1.6">Análisis de cobertura mediática de las anomalías climáticas de abril 2026 en medios locales: El Sol de Hidalgo, Milenio Hidalgo y redes sociales.</p>
