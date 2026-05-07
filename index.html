@@ -2623,6 +2623,15 @@ const DETAILS = {
         <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">$980</div><div class="detail-fact-lbl">Presupuesto máx MXN</div></div>
       </div>
 
+      <!-- Botón a documento técnico extendido -->
+      <div style="margin:20px 0 28px;display:flex;justify-content:center">
+        <button onclick="openDetail('estacion')" style="background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#1a1407;border:none;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:700;letter-spacing:.5px;cursor:pointer;box-shadow:0 6px 20px rgba(251,191,36,.35);display:inline-flex;align-items:center;gap:10px">
+          <span style="font-size:18px">📡</span>
+          Ver documento técnico completo de la Estación Meteorológica
+          <span style="font-size:18px">→</span>
+        </button>
+      </div>
+
       <!-- SESIÓN 1 -->
       <div class="detail-sec">
         <div class="detail-sec-head">Sesión 1 · Teoría y Clasificación (22 abril)</div>
@@ -3591,6 +3600,229 @@ void loop() {
           <div class="detail-card"><strong>Periodismo ambiental</strong><br>Análisis de la cobertura mediática de las anomalías climáticas de abril 2026 en medios locales: El Sol de Hidalgo, Milenio Hidalgo y redes sociales.</div>
           <div class="detail-card"><strong>Divulgación científica</strong><br>Producción de esta página web como ejemplo de comunicación científica estudiantil: visualización de datos, infografías y reportes interactivos.</div>
           <div class="detail-card"><strong>Comunicación de riesgo</strong><br>Estrategias para transmitir alertas tempranas, instrucciones de seguridad y datos científicos de manera comprensible a la ciudadanía.</div>
+        </div>
+      </div>` },
+
+  estacion: {
+    tag: 'Documento técnico · Electrónica',
+    tagColor: 'rgba(251,191,36,.15)', tagTextColor: '#fbbf24',
+    title: 'Estación Meteorológica — Documento Técnico Completo',
+    sub: 'Diseño, sensores, cadena de medición y especificaciones profesionales · Pachuca, abril 2026',
+    hero: `https://images.unsplash.com/photo-1561553873-e8491a564fd0?w=1400&q=85`,
+    content: `
+      <div class="detail-facts">
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">8</div><div class="detail-fact-lbl">Bloques temáticos</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">7</div><div class="detail-fact-lbl">Sensores documentados</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">5</div><div class="detail-fact-lbl">Capas funcionales</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">10-15</div><div class="detail-fact-lbl">Años vida útil</div></div>
+      </div>
+
+      <!-- 1. Definición -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">1 · ¿Qué es una Estación Meteorológica?</div>
+        <p style="color:var(--muted2);line-height:1.8;font-size:14px">Una estación meteorológica es un conjunto integrado de sensores e instrumentos que captura, procesa y almacena datos climáticos en tiempo real. Constituye la base de la recopilación de datos ambientales a escala local.</p>
+        <div class="detail-card" style="margin-top:14px">
+          <strong style="color:#fbbf24">Definición técnica WMO 2018</strong>
+          <ul style="margin-top:8px;padding-left:20px;line-height:1.9;color:var(--muted2);font-size:13.5px">
+            <li>Sistema automático o manual que registra variables atmosféricas</li>
+            <li>Resolución temporal: desde 1 segundo hasta datos diarios</li>
+            <li>Precisión calibrada según normas internacionales ISO 19115</li>
+          </ul>
+        </div>
+        <div class="detail-sec-sub" style="margin-top:18px;font-weight:700;color:var(--text)">Campos de aplicación</div>
+        <div class="detail-3col" style="margin-top:10px">
+          <div class="detail-card"><strong>Meteorología</strong><br>Predicción del tiempo (CONAGUA, SMN)</div>
+          <div class="detail-card"><strong>Agricultura</strong><br>Riego óptimo y predicción de plagas (SAGARPA)</div>
+          <div class="detail-card"><strong>Energía renovable</strong><br>Radiación solar y velocidad del viento (CFE)</div>
+          <div class="detail-card"><strong>Hidrología</strong><br>Precipitación acumulada y escorrentía</div>
+          <div class="detail-card"><strong>Cambio climático</strong><br>Monitoreo de tendencias (IPCC, IPGH)</div>
+          <div class="detail-card"><strong>Salud pública</strong><br>Índice UV y alertas de contaminación</div>
+        </div>
+      </div>
+
+      <!-- 2. Componentes -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">2 · Componentes Principales</div>
+
+        <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-top:8px">a) Datalogger — Campbell Scientific CR10X</div>
+        <table class="data-table" style="margin-top:10px">
+          <tr><th>Parámetro</th><th>Valor</th></tr>
+          <tr><td>Capacidad de memoria</td><td>Hasta 104,000 registros</td></tr>
+          <tr><td>Canales de entrada</td><td>16 analógicos + 4 digitales</td></tr>
+          <tr><td>Rango de operación</td><td>-55°C a +85°C</td></tr>
+          <tr><td>Precisión interna</td><td>±0.1°C</td></tr>
+          <tr><td>Consumo en reposo</td><td>50 µA</td></tr>
+          <tr><td>Consumo en lectura</td><td>150 mA</td></tr>
+          <tr><td>Consumo en transmisión</td><td>500 mA</td></tr>
+          <tr><td>Tiempo de respuesta</td><td>&lt;100 ms</td></tr>
+          <tr><td>Almacenamiento</td><td>NAND 32 GB expandible</td></tr>
+          <tr><td>Interfaz</td><td>USB · RS-232 · Ethernet · Inalámbrico</td></tr>
+        </table>
+
+        <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-top:22px">b) Sensores — especificaciones reales</div>
+        <table class="data-table" style="margin-top:10px">
+          <tr><th>Sensor</th><th>Parámetro</th><th>Rango</th><th>Precisión</th><th>Tiempo Respuesta</th><th>Estándar</th></tr>
+          <tr><td>LM35</td><td>Temperatura aire</td><td>-55 a +150°C</td><td>±0.5°C</td><td>100 ms</td><td>IEC 60751</td></tr>
+          <tr><td>DHT11</td><td>Humedad relativa</td><td>20-95% HR</td><td>±5%</td><td>1-2 s</td><td>ASTM E2586</td></tr>
+          <tr><td>BMP180</td><td>Presión barométrica</td><td>300-1100 hPa</td><td>±1 hPa</td><td>5-7 ms</td><td>WMO Guide</td></tr>
+          <tr><td>Anemómetro</td><td>Velocidad viento</td><td>0-50 m/s</td><td>±0.3 m/s</td><td>&lt;1 s</td><td>ISO 2919</td></tr>
+          <tr><td>Veleta</td><td>Dirección viento</td><td>0-360°</td><td>±5°</td><td>&lt;2 s</td><td>WMO No. 8</td></tr>
+          <tr><td>Piranómetro</td><td>Radiación solar</td><td>0-1400 W/m²</td><td>±5%</td><td>&lt;60 ms</td><td>ISO 9060</td></tr>
+          <tr><td>Pluviómetro</td><td>Precipitación</td><td>0-400 mm/h</td><td>±2%</td><td>100 ms</td><td>ISO 10498</td></tr>
+        </table>
+
+        <div class="detail-card" style="margin-top:14px">
+          <strong style="color:#fbbf24">Especificaciones WMO de instalación</strong>
+          <ul style="margin-top:8px;padding-left:20px;line-height:1.9;color:var(--muted2);font-size:13.5px">
+            <li>Altura estándar para temperatura y humedad: 2 m</li>
+            <li>Altura para velocidad del viento: 10 m</li>
+            <li>Orientación: norte magnético</li>
+            <li>Distancia mínima de obstáculos: 10 m</li>
+          </ul>
+        </div>
+
+        <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-top:22px">c) Panel solar y alimentación</div>
+        <div class="detail-3col" style="margin-top:10px">
+          <div class="detail-card"><strong>Panel solar</strong><br>10-20 W silicio cristalino · eficiencia 16-19%</div>
+          <div class="detail-card"><strong>Batería</strong><br>Litio 12V · 7-10 Ah · 2000-3000 ciclos</div>
+          <div class="detail-card"><strong>Autonomía</strong><br>5-7 días sin sol · regulador MPPT</div>
+        </div>
+        <div class="detail-card" style="margin-top:14px;background:rgba(251,191,36,.08);border-color:rgba(251,191,36,.3)">
+          <strong style="color:#fbbf24">Para Pachuca (1,901 m altitud)</strong><br>
+          <span style="color:var(--muted2);font-size:13.5px">Radiación solar media anual: 5.2 kWh/m²/día · Horas de luz: 6-6.5 h/día · Temperatura promedio: 13.7°C (variación 2°C-23°C)</span>
+        </div>
+
+        <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-top:22px">d) Caja protectora y estructura</div>
+        <div class="detail-2col" style="margin-top:10px">
+          <div class="detail-card"><strong>Material</strong><br>Acero inoxidable 304 o aluminio anodizado · IP65 · ventilación pasiva</div>
+          <div class="detail-card"><strong>Estructura</strong><br>Trípode 1.5-3.0 m · base de concreto 40 cm · cables blindados anti EMI</div>
+        </div>
+      </div>
+
+      <!-- 3. Características técnicas -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">3 · Características Técnicas Generales</div>
+        <table class="data-table">
+          <tr><th>Característica</th><th>Especificación</th></tr>
+          <tr><td>Precisión general</td><td>±0.5 a ±2% según sensor</td></tr>
+          <tr><td>Resolución de datos</td><td>Configurable: 1 s a 24 h</td></tr>
+          <tr><td>Rango temperatura operativa</td><td>-55°C a +85°C</td></tr>
+          <tr><td>Rango humedad relativa</td><td>0-100%</td></tr>
+          <tr><td>Presión barométrica</td><td>300-1100 hPa</td></tr>
+          <tr><td>Velocidad del viento</td><td>0-60 m/s</td></tr>
+          <tr><td>Radiación solar máxima</td><td>0-1400 W/m²</td></tr>
+          <tr><td>Precipitación máxima</td><td>0-400 mm/h</td></tr>
+          <tr><td>Consumo en reposo</td><td>30-50 mW</td></tr>
+          <tr><td>Consumo en transmisión</td><td>500-2000 mW</td></tr>
+          <tr><td>Intervalo de calibración</td><td>Cada 12-24 meses (ISO 9001)</td></tr>
+        </table>
+      </div>
+
+      <!-- 4. Funcionamiento -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">4 · Funcionamiento — Flujo de Datos</div>
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:18px;margin-top:8px;font-family:ui-monospace,monospace;font-size:13px;color:var(--muted2);text-align:center;line-height:2">
+          SENSORES → ACONDICIONAMIENTO → DATALOGGER → ALMACENAMIENTO → TRANSMISIÓN → VISUALIZACIÓN
+        </div>
+        <div class="detail-3col" style="margin-top:14px">
+          <div class="detail-card"><strong>Lectura de sensores</strong><br>Cada 1-5 segundos</div>
+          <div class="detail-card"><strong>Promedio horario</strong><br>Cada 60 minutos</div>
+          <div class="detail-card"><strong>Backup local</strong><br>Cada 15 minutos</div>
+          <div class="detail-card"><strong>Transmisión remota</strong><br>Cada 1-6 horas (configurable)</div>
+          <div class="detail-card"><strong>Filtrado</strong><br>Eliminación de ruido y picos atípicos</div>
+          <div class="detail-card"><strong>Sincronización</strong><br>Reloj NTP para alineación temporal</div>
+        </div>
+      </div>
+
+      <!-- 5. Aplicaciones -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">5 · Aplicaciones Específicas</div>
+        <div class="detail-2col">
+          <div class="detail-card"><strong style="color:#fbbf24">Meteorología y cambio climático</strong><br><span style="font-size:13px;color:var(--muted2)">Tendencias 10-50 años. Pachuca: +0.8°C en los últimos 30 años (CONABIO)</span></div>
+          <div class="detail-card"><strong style="color:#34d399">Agricultura de precisión</strong><br><span style="font-size:13px;color:var(--muted2)">Riego automático (-20-30% consumo) · predicción de plagas · cosecha óptima por GDD</span></div>
+          <div class="detail-card"><strong style="color:#38bdf8">Energías renovables</strong><br><span style="font-size:13px;color:var(--muted2)">Solar y eólica. Pachuca: 5.2 kWh/m²/día — viable para fotovoltaica</span></div>
+          <div class="detail-card"><strong style="color:#a78bfa">Hidrología</strong><br><span style="font-size:13px;color:var(--muted2)">Balance hídrico. Pachuca: precipitación anual ≈ 530 mm (zona semiárida)</span></div>
+          <div class="detail-card"><strong style="color:#fb7185">Salud pública</strong><br><span style="font-size:13px;color:var(--muted2)">Índice UV · contaminación · predicción de polinización</span></div>
+        </div>
+      </div>
+
+      <!-- 6. Ventajas y limitaciones -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">6 · Ventajas y Limitaciones</div>
+        <div class="detail-2col">
+          <div class="detail-card" style="background:rgba(52,211,153,.08);border-color:rgba(52,211,153,.3)">
+            <strong style="color:#34d399">Ventajas</strong>
+            <ul style="margin-top:8px;padding-left:20px;line-height:1.8;color:var(--muted2);font-size:13px">
+              <li>Robustez en condiciones extremas (-55°C a +85°C)</li>
+              <li>Vida útil de 10-15 años</li>
+              <li>Autonomía energética (panel solar + batería)</li>
+              <li>Configuración flexible vía software</li>
+              <li>Integración con IoT y dashboards</li>
+              <li>Bajo mantenimiento (calibración anual)</li>
+              <li>Trazabilidad ISO 9001</li>
+            </ul>
+          </div>
+          <div class="detail-card" style="background:rgba(251,113,133,.08);border-color:rgba(251,113,133,.3)">
+            <strong style="color:#fb7185">Limitaciones</strong>
+            <ul style="margin-top:8px;padding-left:20px;line-height:1.8;color:var(--muted2);font-size:13px">
+              <li>Costo inicial $800-5,000 USD</li>
+              <li>Calibración periódica obligatoria</li>
+              <li>Sensibilidad a interferencias electromagnéticas</li>
+              <li>Requiere sitio sin obstrucciones</li>
+              <li>Mantenimiento de registros (limpieza)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Software -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">7 · Software — LoggerNet y RTDM</div>
+        <div class="detail-2col">
+          <div class="detail-card">
+            <strong style="color:#fbbf24">LoggerNet (Campbell Scientific)</strong>
+            <ul style="margin-top:8px;padding-left:20px;line-height:1.8;color:var(--muted2);font-size:13px">
+              <li>Programación remota de dataloggers</li>
+              <li>Descarga en tiempo real y sincronización NTP</li>
+              <li>Alertas automáticas si un sensor falla</li>
+              <li>Filtrado de datos anómalos</li>
+              <li>Exportación a Excel, CSV, NetCDF</li>
+              <li>Hasta 100 estaciones simultáneas</li>
+              <li>SQL Server, MySQL, PostgreSQL</li>
+            </ul>
+          </div>
+          <div class="detail-card">
+            <strong style="color:#38bdf8">RTDM — Real Time Data Manager</strong>
+            <ul style="margin-top:8px;padding-left:20px;line-height:1.8;color:var(--muted2);font-size:13px">
+              <li>Visualización en vivo: actualización cada 5-10 s</li>
+              <li>Dashboard personalizado (drag &amp; drop)</li>
+              <li>Alertas si T &gt; 35°C o lluvia &gt; 50 mm</li>
+              <li>Comparativa histórica anual</li>
+              <li>Caché de 7 días · latencia &lt;5 min</li>
+              <li>Compatible con Windows, Mac, Linux</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Datos Pachuca -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">8 · Integración con Pachuca — Datos Reales</div>
+        <table class="data-table">
+          <tr><th>Parámetro</th><th>Valor</th><th>Fuente</th></tr>
+          <tr><td>Latitud / Longitud</td><td>20.1178°N · -98.7307°O</td><td>INEGI</td></tr>
+          <tr><td>Altitud</td><td>1,901 m</td><td>CONABIO</td></tr>
+          <tr><td>Temp. promedio anual</td><td>13.7°C</td><td>CONAGUA / SMN</td></tr>
+          <tr><td>Temp. máx. promedio (abril)</td><td>23.4°C</td><td>Históricos 1991-2020</td></tr>
+          <tr><td>Temp. mín. promedio (enero)</td><td>2.1°C</td><td>Históricos 1991-2020</td></tr>
+          <tr><td>Precipitación anual</td><td>530 mm</td><td>CONABIO</td></tr>
+          <tr><td>Meses lluviosos</td><td>Junio-Septiembre</td><td>CONAGUA</td></tr>
+          <tr><td>Velocidad viento promedio</td><td>2.5-3.2 m/s</td><td>climate-data.org</td></tr>
+          <tr><td>Radiación solar</td><td>5.2 kWh/m²/día</td><td>PVGIS (NASA)</td></tr>
+          <tr><td>Humedad relativa</td><td>65-75%</td><td>CONAGUA</td></tr>
+        </table>
+        <div style="margin-top:18px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#fff;text-align:center">
+          <img src="/images/elec/estacion.jpg" alt="Diagrama de la estación meteorológica" style="max-width:100%;height:auto;display:block;margin:0 auto">
         </div>
       </div>` },
 };
