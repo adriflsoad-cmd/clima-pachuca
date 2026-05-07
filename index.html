@@ -1451,25 +1451,66 @@
         <div class="prope-label salud">Área propedéutica</div>
         <div class="prope-name">Ciencias de la Salud</div>
       </div>
-      <div class="prope-count">En construcción</div>
+      <div class="prope-count">1 proyecto</div>
     </div>
 
     <div class="materia-slider" id="slider-salud">
-    <div class="materia-card m-sal reveal" style="border-style:dashed;">
+    <div class="materia-card m-sal reveal" onclick="openDetail('med')">
       <div class="mat-sidebar">
-        <div class="mat-num">—</div>
+        <div class="mat-num">01</div>
         <div>
-          <span class="mat-tag tag-sal">Ciencias de la Salud</span>
-          <div class="mat-title">Materias propedéuticas</div>
-          <div class="mat-sub">Proyectos específicos del área de Ciencias de la Salud</div>
+          <span class="mat-tag tag-sal">Propedéutico Salud</span>
+          <div class="mat-title">Impacto Ambiental en la Salud Humana</div>
+          <div class="mat-sub">Contaminación, enfermedades y salud mental · Pachuca, Abril 2026</div>
         </div>
       </div>
-      <div class="mat-content" style="display:flex;align-items:center;">
-        <div class="placeholder-content">
-          <div class="placeholder-icon">💊</div>
-          <div class="placeholder-title">Proyectos en desarrollo</div>
-          <div class="placeholder-sub">Los proyectos de esta área propedéutica se agregarán próximamente cuando estén disponibles en Drive.</div>
-          <span class="placeholder-badge">Pendiente</span>
+      <div class="mat-content">
+        <div class="mat-content-title">Cuando el ambiente enferma al cuerpo</div>
+        <p class="mat-content-intro">Análisis de las consecuencias de la <strong>contaminación del aire, agua y suelo</strong> sobre la salud humana, incluyendo enfermedades respiratorias, cardiovasculares, gastrointestinales y los efectos del cambio climático en la salud mental. Registro local: <strong>+10.8% de IRAS en Pachuca</strong> respecto al periodo anterior.</p>
+        <div class="tabs" id="med-tabs">
+          <button class="tab active" onclick="switchTab('med',0)">Tipos de contaminación</button>
+          <button class="tab" onclick="switchTab('med',1)">Salud mental</button>
+          <button class="tab" onclick="switchTab('med',2)">Pachuca</button>
+        </div>
+        <div class="tab-panel active" id="med-0">
+          <table class="data-table">
+            <thead><tr><th>Tipo</th><th>Origen</th><th>Enfermedades asociadas</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:#fb7185">Aire</strong></td><td>Vehículos, fábricas, combustibles fósiles</td><td>Asma, bronquitis, hipertensión, infarto, arritmias</td></tr>
+              <tr><td><strong style="color:#38bdf8">Agua</strong></td><td>Desechos industriales, basura, químicos</td><td>Gastroenteritis, colitis, salmonelosis, hepatitis A</td></tr>
+              <tr><td><strong style="color:#fbbf24">Suelo</strong></td><td>Pesticidas, basura, residuos tóxicos</td><td>Indigestión, reflujo, gastritis, daño nervioso</td></tr>
+              <tr><td><strong style="color:#a78bfa">Cambio climático</strong></td><td>Aumento de temperatura global</td><td>Golpes de calor, deshidratación, propagación viral</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="med-1">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+            <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border)">
+              <div style="font-size:11px;color:#fb7185;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Estrés</div>
+              <p style="font-size:13px;color:var(--muted2);line-height:1.6;margin:0">Reacción del cuerpo ante presión. Cansancio, irritabilidad, dolor de cabeza.</p>
+            </div>
+            <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border)">
+              <div style="font-size:11px;color:#fbbf24;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Ansiedad</div>
+              <p style="font-size:13px;color:var(--muted2);line-height:1.6;margin:0">Preocupación o miedo excesivo. Nerviosismo, sudoración, taquicardia.</p>
+            </div>
+            <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border)">
+              <div style="font-size:11px;color:#a78bfa;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Depresión</div>
+              <p style="font-size:13px;color:var(--muted2);line-height:1.6;margin:0">Tristeza profunda, pérdida de interés, falta de energía.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" id="med-2">
+          <div class="alert-box warning" style="margin-bottom:12px"><strong>+10.8% IRAS en Pachuca</strong> vs. mismo periodo del año anterior (Secretaría de Salud de Hidalgo).</div>
+          <table class="data-table">
+            <thead><tr><th>Enfermedad</th><th>Sistema afectado</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Influenza</strong></td><td>Nariz, garganta, bronquios y pulmones</td></tr>
+              <tr><td><strong>Neumonía</strong></td><td>Pulmones (infección)</td></tr>
+              <tr><td><strong>Asma</strong></td><td>Vías respiratorias (dificultad para respirar)</td></tr>
+              <tr><td><strong>Tos persistente</strong></td><td>Vías respiratorias altas</td></tr>
+              <tr><td><strong>Covid-19</strong></td><td>Sistema respiratorio (post-pandemia)</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -3226,6 +3267,176 @@ void loop() {
 </div>` },
   uni:  { tag:'Materia 04 · Común', tagColor:'rgba(167,139,250,.15)', tagTextColor:'#a78bfa', title:'El Universo y sus Fenómenos', sub:'Fenómenos atmosféricos y radiación solar · Proyecto en desarrollo', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
     content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">🔭</div><h4>Proyecto en desarrollo</h4><p>El contenido de esta materia se agregará próximamente cuando esté disponible en Drive.</p></div></div>` },
+
+  med: {
+    tag: 'Propedéutico · Ciencias de la Salud',
+    tagColor: 'rgba(251,113,133,.15)', tagTextColor: '#fb7185',
+    title: 'Impacto Ambiental en la Salud Humana',
+    sub: 'Contaminación, enfermedades y salud mental · Pachuca, Hidalgo · Abril 2026',
+    hero: `https://images.unsplash.com/photo-1576671081837-49000212a370?w=1400&q=85`,
+    content: `
+      <div class="detail-facts">
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fb7185">4</div><div class="detail-fact-lbl">Tipos de contaminación</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">+10.8%</div><div class="detail-fact-lbl">IRAS en Pachuca</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">3</div><div class="detail-fact-lbl">Trastornos mentales</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">9</div><div class="detail-fact-lbl">Recomendaciones</div></div>
+      </div>
+
+      <!-- INTRODUCCIÓN -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Introducción</div>
+        <div class="detail-sec-sub">El impacto ambiental se refiere a las alteraciones que las actividades humanas provocan en el medio ambiente. La contaminación del aire, agua y suelo afecta directamente la salud del ser humano y deteriora la calidad de vida.</div>
+        <div class="detail-gallery g2">
+          <div class="detail-gimg" style="background-image:url('/images/medicina/image1.jpeg')"><div class="detail-gimg-cap">Contaminación urbana — fuente principal de afectaciones a la salud</div></div>
+          <div class="detail-gimg" style="background-image:url('/images/medicina/image5.jpeg')"><div class="detail-gimg-cap">Contaminación visible en zonas industriales y urbanas</div></div>
+        </div>
+        <div class="detail-card" style="margin-top:14px"><h4 style="color:#fb7185">🎯 Planteamiento del problema</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Analizar las principales consecuencias del impacto ambiental en la salud humana y generar conciencia sobre la importancia de cuidar el entorno para prevenir enfermedades y mejorar la calidad de vida.</p></div>
+      </div>
+
+      <!-- 1. CONTAMINACIÓN DEL AIRE -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">1. Contaminación del Aire</div>
+        <div class="detail-sec-sub">Causada principalmente por emisiones de vehículos, fábricas y la quema de combustibles fósiles.</div>
+        <div class="detail-gallery g2" style="margin-bottom:16px">
+          <div class="detail-gimg" style="background-image:url('/images/medicina/image2.jpeg')"><div class="detail-gimg-cap">Emisiones contaminantes</div></div>
+          <div class="detail-gimg" style="background-image:url('/images/medicina/image3.jpeg')"><div class="detail-gimg-cap">Smog en zonas urbanas</div></div>
+        </div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4 style="color:#fb7185">🫁 Enfermedades respiratorias</h4>
+            <p style="font-size:13px;line-height:1.7;color:var(--muted2)"><strong style="color:var(--text)">Asma:</strong> inflamación de vías respiratorias, dificultad para respirar, tos y silbidos en el pecho.</p>
+            <p style="font-size:13px;line-height:1.7;color:var(--muted2);margin-top:8px"><strong style="color:var(--text)">Bronquitis:</strong> inflamación de los bronquios con tos constante, mucosidad y dificultad respiratoria.</p>
+          </div>
+          <div class="detail-card"><h4 style="color:#fb7185">❤️ Problemas cardiovasculares</h4>
+            <ul style="margin:6px 0 0 16px;padding:0;font-size:13px;line-height:1.8;color:var(--muted2)">
+              <li><strong style="color:var(--text)">Hipertensión arterial:</strong> presión alta en la sangre</li>
+              <li><strong style="color:var(--text)">Infarto:</strong> bloqueo del flujo sanguíneo al corazón</li>
+              <li><strong style="color:var(--text)">Aterosclerosis:</strong> acumulación de grasa en arterias</li>
+              <li><strong style="color:var(--text)">Arritmias:</strong> alteraciones del ritmo cardiaco</li>
+            </ul>
+          </div>
+        </div>
+        <div class="alert-box warning" style="margin-top:14px">⚠️ <strong>Síntoma frecuente:</strong> irritación en ojos y garganta por exposición prolongada a contaminantes atmosféricos.</div>
+      </div>
+
+      <!-- 2. CONTAMINACIÓN DEL AGUA -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">2. Contaminación del Agua</div>
+        <div class="detail-sec-sub">Producida por desechos industriales, basura y sustancias químicas vertidas en ríos y mares.</div>
+        <div class="detail-gallery g2" style="margin-bottom:16px">
+          <div class="detail-gimg" style="background-image:url('/images/medicina/image4.jpeg')"><div class="detail-gimg-cap">Cuerpos de agua contaminados</div></div>
+          <div class="detail-gimg" style="background-image:url('/images/medicina/image6.jpeg')"><div class="detail-gimg-cap">Residuos en ecosistemas acuáticos</div></div>
+        </div>
+        <div class="detail-sec-sub">Enfermedades gastrointestinales asociadas:</div>
+        <table class="data-table">
+          <thead><tr><th>Enfermedad</th><th>Causa</th><th>Síntomas principales</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Gastroenteritis</strong></td><td>Inflamación del estómago e intestinos</td><td>Diarrea y vómito</td></tr>
+            <tr><td><strong>Colitis</strong></td><td>Inflamación del colon</td><td>Dolor abdominal</td></tr>
+            <tr><td><strong>Salmonelosis</strong></td><td>Bacterias en alimentos contaminados</td><td>Fiebre, diarrea, calambres</td></tr>
+            <tr><td><strong>Hepatitis A</strong></td><td>Infección hepática por agua/alimentos</td><td>Fatiga, ictericia, pérdida de apetito</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:13px;color:var(--muted2);margin-top:12px;line-height:1.7">Otras consecuencias frecuentes: <strong style="color:var(--text)">infecciones</strong> e <strong style="color:var(--text)">intoxicaciones</strong> por consumo de agua no potable.</p>
+      </div>
+
+      <!-- 3. CONTAMINACIÓN DEL SUELO -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">3. Contaminación del Suelo</div>
+        <div class="detail-sec-sub">Causada por pesticidas, basura acumulada y residuos tóxicos. Sus efectos llegan al ser humano a través de los alimentos.</div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4 style="color:#fbbf24">🍽️ Alimentos contaminados</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Cultivos que absorben pesticidas y metales pesados se incorporan a la cadena alimentaria humana, llegando al organismo.</p></div>
+          <div class="detail-card"><h4 style="color:#fbbf24">🧠 Daño al sistema nervioso</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Los químicos persistentes en el suelo (pesticidas organofosforados, metales) pueden causar daño neurológico acumulativo.</p></div>
+        </div>
+        <div class="detail-sec-sub" style="margin-top:18px">Problemas digestivos comunes:</div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4 style="color:#fbbf24">Indigestión</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Dificultad para digerir alimentos contaminados.</p></div>
+          <div class="detail-card"><h4 style="color:#fbbf24">Reflujo</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">El ácido del estómago sube al esófago.</p></div>
+          <div class="detail-card"><h4 style="color:#fbbf24">Gastritis</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Inflamación del estómago.</p></div>
+          <div class="detail-card"><h4 style="color:#fbbf24">Estreñimiento</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Dificultad para evacuar.</p></div>
+        </div>
+      </div>
+
+      <!-- 4. CAMBIO CLIMÁTICO -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">4. Cambio Climático</div>
+        <div class="detail-sec-sub">El aumento de la temperatura global afecta directamente a los seres humanos.</div>
+        <div class="detail-gallery g2" style="margin-bottom:14px">
+          <div class="detail-gimg" style="background-image:url('/images/medicina/image7.jpeg')"><div class="detail-gimg-cap">Efectos del calor extremo</div></div>
+          <div class="detail-gimg" style="background-image:url('/images/medicina/image8.jpeg')"><div class="detail-gimg-cap">Impacto del cambio climático en la salud</div></div>
+        </div>
+        <div class="detail-3col">
+          <div class="detail-card"><h4 style="color:#a78bfa">🌡️ Golpes de calor</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Aumento crítico de la temperatura corporal por exposición prolongada al calor extremo.</p></div>
+          <div class="detail-card"><h4 style="color:#a78bfa">💧 Deshidratación</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Pérdida excesiva de líquidos corporales sin reposición adecuada.</p></div>
+          <div class="detail-card"><h4 style="color:#a78bfa">🦟 Propagación viral</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Las temperaturas más cálidas amplían el rango geográfico de vectores de enfermedades.</p></div>
+        </div>
+      </div>
+
+      <!-- 5. SALUD MENTAL -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">5. Efectos en la Salud Mental</div>
+        <div class="detail-sec-sub">El deterioro ambiental también impacta emocionalmente, generando trastornos cada vez más frecuentes en zonas urbanas contaminadas.</div>
+        <div class="detail-3col">
+          <div class="detail-card"><h4 style="color:#fb7185">😰 Estrés</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Reacción del cuerpo ante situaciones difíciles o de presión. Cuando es constante puede causar <strong style="color:var(--text)">cansancio, irritabilidad y dolores de cabeza</strong>, afectando la salud general.</p></div>
+          <div class="detail-card"><h4 style="color:#fbbf24">😟 Ansiedad</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Estado de preocupación o miedo excesivo. Se manifiesta con <strong style="color:var(--text)">nerviosismo, sudoración, dificultad para concentrarse y aceleración del corazón</strong>.</p></div>
+          <div class="detail-card"><h4 style="color:#a78bfa">😔 Depresión</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Trastorno emocional con <strong style="color:var(--text)">tristeza profunda, pérdida de interés en actividades y falta de energía</strong>, afectando la vida diaria.</p></div>
+        </div>
+      </div>
+
+      <!-- 6. RECOMENDACIONES -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">6. Recomendaciones para Disminuir Riesgos</div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4 style="color:#34d399">🌬️ Aire</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Evitar la exposición a aire contaminado y zonas con alto tráfico vehicular.</p></div>
+          <div class="detail-card"><h4 style="color:#34d399">💧 Agua</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Consumir agua potable y de fuentes verificadas.</p></div>
+          <div class="detail-card"><h4 style="color:#34d399">🥬 Alimentos</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Lavar bien frutas y verduras antes de su consumo.</p></div>
+          <div class="detail-card"><h4 style="color:#34d399">♻️ Plásticos</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Reducir el uso de plásticos y químicos domésticos.</p></div>
+          <div class="detail-card"><h4 style="color:#34d399">🏃 Ejercicio</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Hacer actividad física regular en espacios limpios.</p></div>
+          <div class="detail-card"><h4 style="color:#34d399">🥗 Nutrición</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Mantener una alimentación balanceada y variada.</p></div>
+          <div class="detail-card"><h4 style="color:#34d399">🚭 Tabaco</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Evitar fumar y la exposición al humo de segunda mano.</p></div>
+          <div class="detail-card"><h4 style="color:#34d399">🧘 Estrés</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Reducirlo con descanso y actividades recreativas.</p></div>
+          <div class="detail-card" style="grid-column:1/-1"><h4 style="color:#34d399">🌳 Medio ambiente</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">No tirar basura, reciclar y participar en acciones comunitarias para cuidar el entorno.</p></div>
+        </div>
+      </div>
+
+      <!-- 7. ENFERMEDADES EN PACHUCA -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">7. Registro de Enfermedades más Comunes en Pachuca</div>
+        <div class="alert-box warning" style="margin-bottom:14px">📊 Las <strong>infecciones respiratorias agudas (IRAS)</strong> aumentaron <strong>+10.8%</strong> en Pachuca durante la temporada invernal, en comparación con el mismo periodo de 2023 (Secretaría de Salud de Hidalgo).</div>
+        <table class="data-table">
+          <thead><tr><th>Enfermedad</th><th>Sistema afectado</th><th>Notas</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Influenza</strong></td><td>Nariz, garganta, bronquios y pulmones</td><td>Estacional, contagiosa</td></tr>
+            <tr><td><strong>Neumonía</strong></td><td>Pulmones</td><td>Infección que requiere atención médica</td></tr>
+            <tr><td><strong>Asma</strong></td><td>Vías respiratorias</td><td>Crónica; agravada por contaminación</td></tr>
+            <tr><td><strong>Tos persistente</strong></td><td>Vías respiratorias</td><td>Múltiples causas posibles</td></tr>
+            <tr><td><strong>Covid-19</strong></td><td>Sistema respiratorio</td><td>Aún se registran casos en personas no vacunadas o sin esquema completo</td></tr>
+          </tbody>
+        </table>
+        <div class="detail-card" style="margin-top:14px"><h4 style="color:#fb7185">📋 Recomendaciones de la SSH</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">La Secretaría de Salud de Hidalgo (SSH) recomienda el <strong style="color:var(--text)">uso de agua limpia y potable</strong> para consumo y la <strong style="color:var(--text)">aplicación de vacunas</strong> en grupos de riesgo para prevenir enfermedades respiratorias.</p></div>
+      </div>
+
+      <!-- 8. CONCLUSIÓN -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">8. Conclusión</div>
+        <div class="detail-card">
+          <p style="line-height:1.85;color:var(--muted2)">El impacto ambiental representa una <strong style="color:var(--text)">amenaza real para la salud del ser humano</strong>. La contaminación en sus diferentes formas provoca enfermedades que afectan la calidad de vida y la salud mental de las comunidades.</p>
+          <p style="line-height:1.85;color:var(--muted2);margin-top:10px">Es fundamental tomar conciencia y adoptar acciones responsables: <strong style="color:var(--text)">reducir la contaminación, cuidar los recursos naturales y promover hábitos sustentables</strong>. Solo así se puede proteger tanto el medio ambiente como la salud de las futuras generaciones.</p>
+        </div>
+      </div>
+
+      <!-- REFERENCIAS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Referencias</div>
+        <ol style="padding-left:20px;line-height:2;color:var(--muted2);font-size:13px">
+          <li>Organización Mundial de la Salud (2023). <em>Contaminación del aire y salud.</em></li>
+          <li>Organización Mundial de la Salud (2022). <em>Agua, saneamiento e higiene (WASH).</em></li>
+          <li>Secretaría de Medio Ambiente y Recursos Naturales — SEMARNAT (2022). <em>Impacto ambiental en México.</em></li>
+          <li>Programa de las Naciones Unidas para el Medio Ambiente — PNUMA (2021). <em>Cambio climático y salud.</em></li>
+          <li>Instituto Nacional de Salud Pública — INSP (2020). <em>Efectos de la contaminación ambiental en la salud.</em></li>
+          <li>Secretaría de Salud de Hidalgo — SSH (2024). <em>Reporte de enfermedades respiratorias agudas.</em></li>
+        </ol>
+      </div>`
+  },
   quim: { tag:'Materia 07 · Exactas', tagColor:'rgba(251,113,133,.15)', tagTextColor:'#fb7185', title:'Análisis de Macromoléculas y Equilibrios Ácido-Base', sub:'La Química del Cuerpo Humano y el Clima de Pachuca · Actividad 3 · Abril 2026', hero:`https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1400&q=85`,
     content:`
       <div class="detail-facts">
