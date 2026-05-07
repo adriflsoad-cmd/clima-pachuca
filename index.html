@@ -1409,36 +1409,19 @@
       </div>
       <div class="mat-content">
         <div class="mat-content-title">Comunicación del Clima</div>
-        <p class="mat-content-intro">La comunicación ambiental es clave para que la sociedad comprenda y actúe ante el cambio climático. Este proyecto analiza cómo se comunican las anomalías climáticas de Pachuca en diferentes campos profesionales.</p>
-        <!-- Video del proyecto -->
-        <div style="margin:18px 0 4px;background:var(--bg2);border-radius:14px;overflow:hidden;border:1px solid var(--border)">
-          <div style="padding:14px 16px 10px;border-bottom:1px solid var(--border)">
-            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">Video del proyecto</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.5;margin:0">Documental estudiantil que explora los distintos campos laborales donde un comunicador puede incidir en la divulgación del cambio climático: desde el periodismo de datos hasta la comunicación de riesgo para comunidades vulnerables.</p>
-          </div>
-          <video controls playsinline preload="metadata"
-            style="width:100%;display:block;max-height:260px;object-fit:cover;background:#000"
-            onclick="event.stopPropagation()">
-            <source src="/videos/comunicacion.mp4" type="video/mp4">
+        <p class="mat-content-intro">Documental estudiantil que explora los campos laborales donde un comunicador puede incidir en la divulgación del cambio climático: periodismo de datos, comunicación de riesgo y divulgación científica para comunidades vulnerables de Pachuca.</p>
+        <!-- Video preview (sin controles) -->
+        <div style="margin-top:16px;border-radius:14px;overflow:hidden;border:1px solid var(--border);position:relative;cursor:pointer" title="Ver proyecto completo">
+          <video playsinline preload="metadata"
+            style="width:100%;display:block;max-height:220px;object-fit:cover;pointer-events:none">
+            <source src="/videos/comunicacion.mp4#t=3" type="video/mp4">
           </video>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;">
-          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
-            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Periodismo</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Análisis de cobertura mediática de las anomalías climáticas de abril 2026 en medios locales: El Sol de Hidalgo, Milenio Hidalgo y redes sociales.</p>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25)">
+            <div style="width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(4px);border:2px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center">
+              <div style="width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:18px solid #fff;margin-left:4px"></div>
+            </div>
           </div>
-          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
-            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Divulgación</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Producción de esta página web como ejemplo de comunicación científica estudiantil: visualización de datos, infografías y reportes interactivos.</p>
-          </div>
-          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
-            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Riesgo</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Comunicación de riesgo climático: cómo transmitir alertas tempranas, instrucciones de seguridad y datos científicos a la ciudadanía.</p>
-          </div>
-          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
-            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Producto</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Diseño de una campaña de comunicación ambiental para redes sociales dirigida a jóvenes de Pachuca sobre el impacto del clima en su entorno.</p>
-          </div>
+          <div style="position:absolute;bottom:10px;left:12px;font-size:11px;color:#fff;font-weight:600;letter-spacing:.5px;text-shadow:0 1px 4px rgba(0,0,0,.6)">Ver proyecto completo →</div>
         </div>
       </div>
     </div>
@@ -3574,6 +3557,26 @@ void loop() {
           <li>Organización Mundial de la Salud / WHO (2021). <em>Air Quality Guidelines. Global Update.</em></li>
           <li>National Institute of Standards and Technology / NIST (2024). <em>Chemistry WebBook.</em> nist.gov</li>
         </ol>
+      </div>` },
+
+  comunicacion: { title: 'Campos Laborales de la Comunicación', color: '#f59e0b', tag: 'Comunicación · Área Social', body: `
+      <div class="detail-sec">
+        <div class="detail-sec-head">Video del proyecto</div>
+        <p style="color:var(--muted2);font-size:14px;line-height:1.7;margin-bottom:16px">Documental estudiantil que recorre los principales campos laborales donde un comunicador incide en la divulgación del cambio climático. Se analizan el periodismo de datos, la comunicación de riesgo y la producción de contenido científico para comunidades de Pachuca.</p>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#000">
+          <video controls playsinline preload="metadata"
+            style="width:100%;display:block;max-height:480px;object-fit:contain">
+            <source src="/videos/comunicacion.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="detail-sec">
+        <div class="detail-sec-head">Campos explorados</div>
+        <div class="detail-3col">
+          <div class="detail-card"><strong>Periodismo ambiental</strong><br>Análisis de la cobertura mediática de las anomalías climáticas de abril 2026 en medios locales: El Sol de Hidalgo, Milenio Hidalgo y redes sociales.</div>
+          <div class="detail-card"><strong>Divulgación científica</strong><br>Producción de esta página web como ejemplo de comunicación científica estudiantil: visualización de datos, infografías y reportes interactivos.</div>
+          <div class="detail-card"><strong>Comunicación de riesgo</strong><br>Estrategias para transmitir alertas tempranas, instrucciones de seguridad y datos científicos de manera comprensible a la ciudadanía.</div>
+        </div>
       </div>` },
 };
 
