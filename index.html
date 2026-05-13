@@ -1365,33 +1365,121 @@
 
     <!-- Ciencia Política -->
     <div class="materia-card m-soc reveal" onclick="openDetail('cpolitica')">
-      <div class="mat-sidebar">
+      <div class="mat-sidebar" style="background-image:url('/images/cpolitica/image1.jpeg')">
         <div class="mat-num">09</div>
         <div>
           <span class="mat-tag tag-soc">Ciencia Política</span>
-          <div class="mat-title">Fundamentos de la Ciencia Política</div>
-          <div class="mat-sub">Poder, Estado, políticas públicas y gobernanza ambiental desde la perspectiva del clima en Hidalgo.</div>
+          <div class="mat-title">Contaminación del Aire en Pachuca</div>
+          <div class="mat-sub">Análisis de Políticas Públicas Ambientales · 2025–2026</div>
         </div>
       </div>
       <div class="mat-content">
-        <div class="mat-content-title">Política Ambiental y Gobernanza</div>
-        <p class="mat-content-intro">Análisis de las políticas públicas relacionadas con el cambio climático en México e Hidalgo. ¿Cómo responde el Estado ante emergencias climáticas como las anomalías registradas en Pachuca, abril 2026?</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;">
-          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
-            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Marco Legal</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Ley General de Cambio Climático (LGCC), PROMARNAT y programas estatales de Hidalgo en materia ambiental.</p>
+        <div class="mat-content-title">¿La Bella Airosa… o la ciudad asfixiada?</div>
+        <p class="mat-content-intro">Pachuca, conocida por sus vientos constantes, vive una paradoja: ya no bastan para limpiar el aire. <strong>PM2.5 de 65 μg/m³ en el Tuzobús</strong> (2.6× el límite OMS) y <strong>picos de 1,200 μg/m³</strong> de PM10 en 2024. Diagnóstico, voces críticas y propuestas desde la ciencia política.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px">
+          <div style="background:rgba(251,113,133,.08);border:1px solid rgba(251,113,133,.22);border-radius:10px;padding:10px 8px;text-align:center">
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:#fb7185;line-height:1">1,200</div>
+            <div style="font-size:9px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin-top:4px">μg/m³ PM10 pico</div>
           </div>
-          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
-            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Actores Políticos</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Gobierno estatal, municipio de Pachuca, SEMARNAT, organizaciones civiles y sector académico como agentes de cambio ambiental.</p>
+          <div style="background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.22);border-radius:10px;padding:10px 8px;text-align:center">
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:#fbbf24;line-height:1">29</div>
+            <div style="font-size:9px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin-top:4px">Incendios feb-mar 26</div>
           </div>
-          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
-            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Políticas Públicas</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Agenda 2030 ODS 13 (Acción por el Clima) y su implementación en el municipio de Pachuca de Soto, Hidalgo.</p>
+          <div style="background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.22);border-radius:10px;padding:10px 8px;text-align:center">
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:#38bdf8;line-height:1">4</div>
+            <div style="font-size:9px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin-top:4px">Estaciones SIMAEH</div>
           </div>
-          <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
-            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Propuesta</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Elaboración de un proyecto de política pública local para la adaptación climática en zonas urbanas de Pachuca.</p>
+          <div style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.22);border-radius:10px;padding:10px 8px;text-align:center">
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:#a78bfa;line-height:1">4.2M</div>
+            <div style="font-size:9px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin-top:4px">Muertes/año OMS</div>
+          </div>
+        </div>
+
+        <div class="tabs" id="cpolitica-tabs">
+          <button class="tab active" onclick="switchTab('cpolitica',0)">Problema</button>
+          <button class="tab" onclick="switchTab('cpolitica',1)">Políticas</button>
+          <button class="tab" onclick="switchTab('cpolitica',2)">Voces críticas</button>
+          <button class="tab" onclick="switchTab('cpolitica',3)">Propuestas</button>
+        </div>
+
+        <div class="tab-panel active" id="cpolitica-0">
+          <table class="data-table">
+            <thead><tr><th>Evento</th><th>Indicador</th><th>Fuente</th></tr></thead>
+            <tbody>
+              <tr><td><strong>2019 · Tuzobús</strong></td><td>PM2.5: <strong style="color:#fb7185">65 μg/m³</strong> (2.6× OMS)</td><td>Greenpeace México</td></tr>
+              <tr><td><strong>Ene-Feb 2024</strong></td><td><strong>22/44 días</strong> fuera de norma</td><td>UAEH (Lucho Constantino)</td></tr>
+              <tr><td><strong>13 Feb 2024</strong></td><td>PM10: <strong style="color:#fb7185">1,200 μg/m³</strong> (20× norma)</td><td>UAEH</td></tr>
+              <tr><td><strong>Mar 2025</strong></td><td>PM10: <strong style="color:#fb7185">316 μg/m³</strong> en Huichapan</td><td>El Universal</td></tr>
+              <tr><td><strong>Feb 2026</strong></td><td>Calidad <strong>mala/muy mala</strong> toda la semana</td><td>Criterio Hidalgo</td></tr>
+              <tr style="background:rgba(251,113,133,.05)"><td><strong>4 Mar 2026</strong></td><td><strong style="color:#fb7185">ALERTA ROJA</strong> (5°/6 niveles)</td><td>La Silla Rota</td></tr>
+            </tbody>
+          </table>
+          <div class="alert-box warning" style="margin-top:14px">
+            <strong>⚠ Paradoja de La Bella Airosa:</strong> los vientos ya no bastan para limpiar el aire. La OMS endureció el límite anual de PM2.5 de 10 a <strong>5 μg/m³</strong> (2021), umbral que Pachuca supera incluso en días "normales".
+          </div>
+        </div>
+
+        <div class="tab-panel" id="cpolitica-1">
+          <table class="data-table">
+            <thead><tr><th>Política</th><th>Cobertura</th><th>Limitación clave</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong style="color:#fbbf24">PCAA</strong><br><span style="font-size:11px;color:var(--muted)">Programa de Contingencias Atmosféricas</span></td>
+                <td>Pachuca, Mineral de la Reforma, San Agustín Tlaxiaca, Zempoala</td>
+                <td><strong>Solo 4 estaciones</strong> para toda la ZM</td>
+              </tr>
+              <tr>
+                <td><strong style="color:#fbbf24">ProAire Hidalgo</strong><br><span style="font-size:11px;color:var(--muted)">2020–2030</span></td>
+                <td>6 estrategias · 20 medidas · 113 acciones</td>
+                <td>Sin reporte público de avance</td>
+              </tr>
+              <tr>
+                <td><strong style="color:#fbbf24">ProAire ZMVM</strong><br><span style="font-size:11px;color:var(--muted)">2021–2030 (CDMX-EdoMex-Hgo)</span></td>
+                <td>Meta: −25% emisiones 2030</td>
+                <td>Coordinación intermunicipal débil</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="alert-box info" style="margin-top:14px">
+            <strong>📊 Falla de política (policy failure):</strong> los niveles de PM en 2025–2026 son <strong>peores</strong> que los de 2019. Cuando una política genera resultados contrarios a sus objetivos declarados, la ciencia política la clasifica como fracaso de implementación.
+          </div>
+        </div>
+
+        <div class="tab-panel" id="cpolitica-2">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border);border-left:3px solid #38bdf8">
+              <div style="font-size:10px;color:#38bdf8;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">Academia</div>
+              <p style="font-size:12px;color:var(--muted2);line-height:1.55;margin:0"><strong>UAEH · Lucho Constantino:</strong> picos de 1,000–1,200 μg/m³ entre 13:00 y 15:00 h. "Es necesario reforzar las medidas".</p>
+            </div>
+            <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border);border-left:3px solid #34d399">
+              <div style="font-size:10px;color:#34d399;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">ONGs</div>
+              <p style="font-size:12px;color:var(--muted2);line-height:1.55;margin:0"><strong>Greenpeace · IQAir:</strong> "El monitoreo echa por tierra el mito de que los vientos impiden la formación de contaminantes".</p>
+            </div>
+            <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border);border-left:3px solid #fbbf24">
+              <div style="font-size:10px;color:#fbbf24;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">Medios</div>
+              <p style="font-size:12px;color:var(--muted2);line-height:1.55;margin:0"><strong>Criterio · La Silla Rota · El Universal:</strong> SEMARNATH sólo emite recomendaciones, sin protocolos preventivos activos.</p>
+            </div>
+            <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border);border-left:3px solid #fb7185">
+              <div style="font-size:10px;color:#fb7185;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">Evidencia</div>
+              <p style="font-size:12px;color:var(--muted2);line-height:1.55;margin:0"><strong>Estadística objetiva:</strong> 2025–2026 peor que 2019. <em>Policy failure</em> documentado por SEDEMA-SEMARNAT.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="cpolitica-3">
+          <table class="data-table">
+            <thead><tr><th>Propuesta</th><th>Mecanismo</th></tr></thead>
+            <tbody>
+              <tr><td><strong>5.1 Reforma normativa local</strong></td><td>Ordenanza municipal con sanciones a fuentes fijas + incentivos a vehículos eléctricos</td></tr>
+              <tr><td><strong>5.2 Consejo Ciudadano</strong></td><td>Vecinos + UAEH + ONGs con acceso al SIMAEH y poder de exigir cuentas</td></tr>
+              <tr><td><strong>5.3 PMUS</strong></td><td>Ciclovías, "Hoy No Circula" local, renovación eléctrica del Tuzobús</td></tr>
+              <tr><td><strong>5.4 Red de monitoreo</strong></td><td>Ampliar SIMAEH de <strong>4 → 8 estaciones</strong></td></tr>
+              <tr style="background:rgba(52,211,153,.06)"><td><strong style="color:#34d399">★ 5.5 Infraestructura Verde</strong></td><td><strong>Techos verdes + muros vegetales</strong> en edificios públicos (Palacio, hospitales, Tuzobús)</td></tr>
+            </tbody>
+          </table>
+          <div class="alert-box info" style="margin-top:14px">
+            <strong>🌍 Referentes que funcionan:</strong> Singapur (−3°C), Medellín (−10°C superficial con USD 6.50/hab), Rotterdam (220,000 m² techos verdes), CDMX (muros en Metro). <em>Ver detalle completo →</em>
           </div>
         </div>
       </div>
@@ -3824,6 +3912,316 @@ void loop() {
         <div style="margin-top:18px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#fff;text-align:center">
           <img src="/images/elec/estacion.jpg" alt="Diagrama de la estación meteorológica" style="max-width:100%;height:auto;display:block;margin:0 auto">
         </div>
+      </div>` },
+
+  cpolitica: {
+    tag: 'Materia 09 · Sociales',
+    tagColor: 'rgba(251,191,36,.15)', tagTextColor: '#fbbf24',
+    title: 'Contaminación del Aire en Pachuca — Análisis de Políticas Públicas',
+    sub: 'Proyecto de Ciencia Política · Ciclo 2025–2026 · Preparatoria Colegio Pedro de Gante · UAEH',
+    hero: `/images/cpolitica/image1.jpeg`,
+    content: `
+      <div class="detail-facts">
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fb7185">1,200</div><div class="detail-fact-lbl">μg/m³ pico PM10 (2024)</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">29</div><div class="detail-fact-lbl">Incendios feb-mar 2026</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">4 / 8</div><div class="detail-fact-lbl">Estaciones actuales / propuestas</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">4.2M</div><div class="detail-fact-lbl">Muertes anuales OMS</div></div>
+      </div>
+
+      <!-- SECCIÓN 1: PROBLEMA -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Sección 1 · Identificación del problema ambiental</div>
+        <div class="detail-sec-sub">Pachuca de Soto, conocida históricamente como <strong>"La Bella Airosa"</strong> por sus vientos constantes, vive hoy una profunda paradoja: esos mismos vientos ya no bastan para limpiar el aire que respiran sus habitantes. La falta de lluvias, las escasas áreas verdes, la época de estiaje y las obras de la Zona Metropolitana han disparado los niveles de contaminantes suspendidos en la atmósfera.</div>
+
+        <div class="detail-gallery g2" style="margin-bottom:24px">
+          <div class="detail-gimg" style="background-image:url('/images/cpolitica/image1.jpeg')"><div class="detail-gimg-cap">Obras viales y polvo en la zona metropolitana de Pachuca</div></div>
+          <div class="detail-gimg" style="background-image:url('/images/cpolitica/image5.jpeg')"><div class="detail-gimg-cap">Vista urbana de Pachuca al atardecer</div></div>
+        </div>
+
+        <div class="detail-card" style="border-left:3px solid #fb7185;margin-bottom:18px">
+          <h4 style="color:#fb7185">📊 Dato contundente — Greenpeace México 2019</h4>
+          <p>Un monitoreo detectó <strong>PM2.5 de 65 μg/m³ en el Tuzobús</strong> — más del doble del límite recomendado por la OMS (25 μg/m³) y por encima de la NOM-025-SSA1-2014 (45 μg/m³). El transporte público y el automóvil particular resultaron los medios de mayor exposición contaminante.</p>
+        </div>
+
+        <div class="detail-sec-head" style="font-size:1.15rem;margin-top:24px">Cronología de la crisis 2024–2026</div>
+        <table class="data-table">
+          <thead><tr><th>Fecha</th><th>Evento</th><th>Indicador clave</th><th>Fuente</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Ene–Feb 2024</strong></td><td>22 de 44 días monitoreados fuera de norma</td><td style="color:#fb7185">PM picos 1,000–1,200 μg/m³</td><td>UAEH (Lucho Constantino)</td></tr>
+            <tr><td><strong>13 Feb 2024</strong></td><td>Pico entre 13:00 y 15:00 h</td><td style="color:#fb7185">1,200 μg/m³ (20× norma)</td><td>UAEH</td></tr>
+            <tr><td><strong>Mar 2025</strong></td><td>Huichapan, Pachuca, Tula, Atitalaquia, Tizayuca</td><td style="color:#fb7185">PM10 hasta 316 μg/m³</td><td>El Universal</td></tr>
+            <tr style="background:rgba(251,113,133,.04)"><td><strong>Feb 2026</strong></td><td>Semana completa con calidad "mala" y "muy mala"</td><td style="color:#fbbf24">29 incendios acumulados</td><td>Criterio Hidalgo</td></tr>
+            <tr style="background:rgba(251,113,133,.04)"><td><strong>4 Mar 2026</strong></td><td>3 incendios consecutivos del Cinturón de Seguridad</td><td style="color:#fb7185"><strong>ALERTA ROJA</strong> (5/6)</td><td>La Silla Rota</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- SECCIÓN 1.1: GRUPOS VULNERABLES -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Sección 1.1 · Grupos vulnerables y efectos a la salud</div>
+        <div class="detail-sec-sub">La contaminación del aire provoca <strong>4.2 millones de muertes prematuras anuales</strong> en el mundo. Las PM2.5 penetran los pulmones e ingresan al torrente sanguíneo, causando enfermedades cardiovasculares y respiratorias (OMS, 2024).</div>
+        <div class="detail-3col">
+          <div class="detail-card" style="border-top:3px solid #38bdf8">
+            <h4>👶 Niños y niñas</h4>
+            <p>Reducción del crecimiento pulmonar, infecciones respiratorias recurrentes y agravamiento del asma.</p>
+          </div>
+          <div class="detail-card" style="border-top:3px solid #fb7185">
+            <h4>🧓 Adultos mayores · EPOC · asma</h4>
+            <p>Mayor riesgo de muerte prematura por agravamiento de cardiopatías, insuficiencia respiratoria y reagudización de patologías crónicas.</p>
+          </div>
+          <div class="detail-card" style="border-top:3px solid #fbbf24">
+            <h4>👥 Población general</h4>
+            <p>Cardiopatías isquémicas, accidentes cerebrovasculares, diabetes y enfermedades neurodegenerativas.</p>
+          </div>
+        </div>
+        <div class="alert-box warning" style="margin-top:16px">
+          <strong>⚠ OMS 2021:</strong> el límite anual recomendado de PM2.5 bajó de 10 μg/m³ a solo <strong>5 μg/m³</strong> — un estándar que Pachuca supera sistemáticamente incluso en días "normales".
+        </div>
+      </div>
+
+      <!-- SECCIÓN 2: POLÍTICAS EXISTENTES -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Sección 2 · Políticas públicas existentes</div>
+        <div class="detail-sec-sub">El Estado mexicano dispone de instrumentos formales para enfrentar la contaminación. El problema no es su inexistencia, sino su implementación y alcance.</div>
+        <div class="detail-2col">
+          <div class="detail-card" style="border-left:3px solid #fbbf24">
+            <h4>🏛️ 2.1 · PCAA — Programa de Contingencias Ambientales Atmosféricas</h4>
+            <p>Operado por la <strong>SEMARNATH</strong>, cubre Pachuca, Mineral de la Reforma, San Agustín Tlaxiaca y Zempoala. Su objetivo es activar fases de contingencia cuando los contaminantes superan los límites. Sin embargo, cuenta con <strong style="color:#fb7185">solo 4 estaciones de monitoreo</strong> para toda la zona metropolitana en expansión — cifra insuficiente para decisiones eficaces de política pública.</p>
+          </div>
+          <div class="detail-card" style="border-left:3px solid #fbbf24">
+            <h4>🌎 2.2 · ProAire Hidalgo 2020–2030</h4>
+            <p>Programa con <strong>6 estrategias, 20 medidas y 113 acciones</strong> para reducir emisiones: regula fuentes fijas, implementa el Programa de Verificación Vehicular y promueve ecotecnologías. El <strong>ProAire ZMVM 2021-2030</strong> (CDMX + EdoMex + Hidalgo) busca <strong>−25% emisiones al 2030</strong>, evitando ~6,000 muertes prematuras ese año.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 3: ¿POR QUÉ FALLAN? -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Sección 3 · ¿Por qué no se cumplen estas políticas?</div>
+        <div class="detail-sec-sub">A pesar de existir ambos programas, la evidencia de 2025–2026 demuestra que la crisis se agrava. Los factores estructurales del fracaso:</div>
+        <div class="risk-item"><div class="risk-label"><span>Monitoreo insuficiente — solo 4 estaciones para toda la ZM</span><span style="color:var(--rose)">CRÍTICO</span></div><div class="risk-bar"><div class="risk-fill r4" data-w="92"></div></div></div>
+        <div class="risk-item"><div class="risk-label"><span>Enfoque reactivo — "falla de implementación"</span><span style="color:var(--rose)">CRÍTICO</span></div><div class="risk-bar"><div class="risk-fill r4" data-w="88"></div></div></div>
+        <div class="risk-item"><div class="risk-label"><span>Incendios forestales sin control efectivo (29 en pocas semanas)</span><span style="color:var(--amber)">ALTO</span></div><div class="risk-bar"><div class="risk-fill r3" data-w="80"></div></div></div>
+        <div class="risk-item"><div class="risk-label"><span>Movilidad no sostenible — automóvil = principal fuente PM2.5/O₃</span><span style="color:var(--amber)">ALTO</span></div><div class="risk-bar"><div class="risk-fill r3" data-w="75"></div></div></div>
+        <div class="risk-item"><div class="risk-label"><span>Poca participación ciudadana en el diseño de políticas</span><span style="color:var(--sky)">MODERADO</span></div><div class="risk-bar"><div class="risk-fill r2" data-w="60"></div></div></div>
+        <div class="risk-item"><div class="risk-label"><span>Falta de transparencia y rendición de cuentas del ProAire</span><span style="color:var(--sky)">MODERADO</span></div><div class="risk-bar"><div class="risk-fill r2" data-w="58"></div></div></div>
+      </div>
+
+      <!-- SECCIÓN 3A: VOCES CRÍTICAS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Sección 3A · Voces críticas</div>
+        <div class="detail-sec-sub">¿Quién dice que lo que hace el gobierno no funciona? La crítica no proviene solo del análisis académico: investigadores, organizaciones civiles, medios y la propia evidencia científica coinciden en señalar fallas estructurales.</div>
+
+        <div class="detail-card" style="border-left:3px solid #38bdf8;margin-bottom:14px">
+          <h4 style="color:#38bdf8">🎓 3A.1 · Academia e investigación científica</h4>
+          <p><strong>Carlos Alexander Lucho Constantino</strong>, profesor investigador del ICBI-UAEH, documentó que entre el 1 de enero y el 13 de febrero de 2024, <strong>22 de 44 días</strong> presentaron calidad del aire fuera de norma. El 13 de febrero se registraron picos de hasta <strong>1,200 μg/m³</strong> entre 13:00 y 15:00 horas — veinte veces el máximo permitido (60 μg/m³).</p>
+          <p style="margin-top:10px;padding:10px 14px;background:rgba(56,189,248,.06);border-radius:8px;font-style:italic;border-left:2px solid #38bdf8">"Tan solo el pasado 13 de febrero fue un día de terrible contaminación... la contaminación tuvo dos picos enormes de concentración de material particulado que llegaron a estar entre los mil y mil 200 microgramos por metro cúbico. La norma actualmente permite 60. Es necesario reforzar las medidas para evitar problemas de salud." <br><span style="font-style:normal;font-size:11px;color:var(--muted)">— Lucho Constantino, UAEH (2024)</span></p>
+        </div>
+
+        <div class="detail-card" style="border-left:3px solid #34d399;margin-bottom:14px">
+          <h4 style="color:#34d399">🌱 3A.2 · Organizaciones civiles y ambientalistas</h4>
+          <p><strong>Greenpeace México</strong> realizó un monitoreo ciudadano el 17 de julio de 2019 en Pachuca midiendo CO, O₃ y PM2.5 en transporte público, automóvil y bicicleta. Sus resultados concluyeron:</p>
+          <p style="margin-top:10px;padding:10px 14px;background:rgba(52,211,153,.06);border-radius:8px;font-style:italic;border-left:2px solid #34d399">"El monitoreo realizado en Pachuca echa por tierra el mito de que la presencia constante de vientos en la Bella Airosa impide la formación de contaminantes dañinos a la salud, pues éstos se encuentran en el ambiente y afectan a toda la población, pese a no resultar evidentes como en otras ciudades." <br><span style="font-style:normal;font-size:11px;color:var(--muted)">— Greenpeace México (2019)</span></p>
+          <p style="margin-top:10px"><strong>IQAir</strong> ha ubicado sistemáticamente a varias ciudades mexicanas en rangos "No saludables" e incluso "Muy no saludables", evidenciando que los programas oficiales no han logrado acercar los niveles a las recomendaciones internacionales.</p>
+        </div>
+
+        <div class="detail-card" style="border-left:3px solid #fbbf24;margin-bottom:14px">
+          <h4 style="color:#fbbf24">📰 3A.3 · Medios de comunicación</h4>
+          <ul>
+            <li><strong>Criterio Hidalgo</strong> (feb 2026): documentó una semana de calidad "mala/muy mala" sin que la SEMARNATH activara medidas preventivas suficientes, solo recomendando cubrebocas. Crítica a la pasividad institucional frente a 29 incendios.</li>
+            <li><strong>La Silla Rota</strong> (mar 2026): reportó el escalamiento a alerta ROJA como resultado del fracaso preventivo. No existió protocolo activo a pesar de condiciones meteorológicas adversas previstas.</li>
+            <li><strong>El Universal</strong> (mar 2025): alertó sobre PM10 de 316 μg/m³ en Huichapan y >90 μg/m³ en cuatro municipios simultáneamente, cuestionando la efectividad del ProAire Hidalgo.</li>
+          </ul>
+        </div>
+
+        <div class="detail-card" style="border-left:3px solid #fb7185">
+          <h4 style="color:#fb7185">📈 3A.4 · La evidencia estadística como crítica objetiva</h4>
+          <p>El ProAire Hidalgo 2020–2030 fue diseñado para mejorar la calidad del aire de forma progresiva. Sin embargo, los niveles de PM en <strong>2025–2026 son peores que los registrados en 2019</strong>. Esto indica que no solo no se ha avanzado: <strong style="color:#fb7185">la situación ha retrocedido</strong>. En ciencia política, cuando una política pública genera resultados contrarios a sus objetivos declarados, se denomina <em>policy failure</em> (falla de política).</p>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 4: CONDICIONES METEOROLÓGICAS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Sección 4 · Condiciones meteorológicas agravantes</div>
+        <div class="detail-sec-sub">El clima de Pachuca crea ciclos de deterioro que las políticas existentes no han logrado interrumpir.</div>
+        <div class="detail-2col">
+          <div class="detail-card" style="border-top:3px solid #fbbf24">
+            <h4>☀️ Temperatura y ozono fotoquímico (O₃)</h4>
+            <p>La intensa radiación solar a ~2,400 msnm acelera las reacciones que forman ozono en temporada de calor.</p>
+          </div>
+          <div class="detail-card" style="border-top:3px solid #fb7185">
+            <h4>🏜️ Temporada de estiaje</h4>
+            <p>Sin lluvias, los contaminantes se concentran durante semanas. La lluvia es el mecanismo natural de limpieza más eficaz.</p>
+          </div>
+          <div class="detail-card" style="border-top:3px solid #38bdf8">
+            <h4>🌫️ Inversiones térmicas en invierno</h4>
+            <p>Atrapan contaminantes en las capas bajas. El SIMAEH ha registrado <strong>+230 μg/m³ de PM10</strong> durante estos episodios — más del doble del límite NOM.</p>
+          </div>
+          <div class="detail-card" style="border-top:3px solid #a78bfa">
+            <h4>💨 Vientos e incendios</h4>
+            <p>Los fuertes vientos de primavera dispersan partículas de incendios forestales hacia zonas más amplias de la ZM, como ocurrió en marzo 2026.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 5: PROPUESTAS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Sección 5 · Propuestas de solución desde la ciencia política</div>
+        <div class="detail-card" style="background:rgba(251,191,36,.04);border-left:3px solid #fbbf24;margin-bottom:24px">
+          <p style="font-style:italic;line-height:1.75">"Toda persona tiene derecho a un medio ambiente sano para su desarrollo y bienestar. El Estado garantizará el respeto a este derecho. El daño y deterioro ambiental generará responsabilidad para quien lo provoque en términos de lo dispuesto por la ley."</p>
+          <p style="font-size:11px;color:var(--muted);margin-top:8px">— Constitución Política de los EUM, Artículo 4°, párrafo quinto (2012)</p>
+        </div>
+
+        <div class="detail-2col">
+          <div class="detail-card" style="border-left:3px solid #38bdf8">
+            <h4>5.1 · Reforma del marco normativo local</h4>
+            <p>Ordenanza municipal de calidad del aire con sanciones estrictas para fuentes fijas e incentivos fiscales para vehículos eléctricos o de bajas emisiones.</p>
+          </div>
+          <div class="detail-card" style="border-left:3px solid #38bdf8">
+            <h4>5.2 · Consejo Ciudadano de Vigilancia</h4>
+            <p>Órgano integrado por vecinos, UAEH, ONGs y medios, con acceso en tiempo real al SIMAEH y capacidad legal de exigir cuentas a la SEMARNATH.</p>
+          </div>
+          <div class="detail-card" style="border-left:3px solid #38bdf8">
+            <h4>5.3 · Plan de Movilidad Urbana Sustentable</h4>
+            <ul>
+              <li>Expansión de ciclovías e infraestructura peatonal segura</li>
+              <li>Subsidio al transporte público + mayor frecuencia</li>
+              <li>"Hoy No Circula" local para días de alerta naranja/roja</li>
+              <li>Renovación del Tuzobús hacia unidades eléctricas o gas natural</li>
+            </ul>
+          </div>
+          <div class="detail-card" style="border-left:3px solid #38bdf8">
+            <h4>5.4 · Ampliación de la red de monitoreo</h4>
+            <p>Gestionar ante SEMARNAT e INECC la ampliación del SIMAEH de <strong>4 a al menos 8 estaciones</strong>, priorizando zonas de mayor tráfico, densidad y riesgo de incendio. En 2026 ya existe licitación activa para nuevas ubicaciones en Hidalgo.</p>
+          </div>
+        </div>
+
+        <!-- Propuesta estrella -->
+        <div class="detail-card" style="margin-top:20px;border:2px solid rgba(52,211,153,.4);background:linear-gradient(135deg,rgba(52,211,153,.06),rgba(56,189,248,.06));position:relative">
+          <div style="position:absolute;top:14px;right:14px;background:rgba(52,211,153,.18);color:#34d399;font-size:10px;font-weight:700;letter-spacing:1.5px;padding:4px 10px;border-radius:100px;text-transform:uppercase">★ Propuesta principal</div>
+          <h4 style="color:#34d399;font-size:18px;margin-bottom:10px">5.5 · Infraestructura Verde Urbana</h4>
+          <p>Implementar <strong>jardines en azoteas (techos verdes)</strong> y <strong>muros vegetales</strong> en edificios públicos de Pachuca — escuelas, hospitales, oficinas gubernamentales y estaciones del Tuzobús —, complementado con <strong>corredores arbolados</strong> en avenidas de alto tráfico.</p>
+
+          <div class="detail-gallery g2" style="margin-top:18px">
+            <div class="detail-gimg" style="background-image:url('/images/cpolitica/image4.jpeg')"><div class="detail-gimg-cap">Macromural Pachuca — color y vegetación pueden transformar la ciudad</div></div>
+            <div class="detail-gimg" style="background-image:url('/images/cpolitica/image6.jpeg')"><div class="detail-gimg-cap">Espacios públicos verdes — referencia para infraestructura urbana</div></div>
+          </div>
+
+          <h4 style="margin-top:18px;color:var(--text)">¿Cómo contribuye al medio ambiente en Pachuca?</h4>
+          <div class="detail-3col" style="margin-top:10px">
+            <div style="background:rgba(52,211,153,.06);border-radius:10px;padding:12px;border:1px solid rgba(52,211,153,.18)"><strong style="color:#34d399;font-size:12px">🍃 Captura de partículas</strong><p style="font-size:12px;color:var(--muted2);margin-top:5px;line-height:1.5">Filtro natural que retiene PM2.5 y PM10 directamente en la fuente urbana.</p></div>
+            <div style="background:rgba(52,211,153,.06);border-radius:10px;padding:12px;border:1px solid rgba(52,211,153,.18)"><strong style="color:#34d399;font-size:12px">❄️ Isla de calor</strong><p style="font-size:12px;color:var(--muted2);margin-top:5px;line-height:1.5">Disminuye temperatura superficial, reduciendo formación de O₃.</p></div>
+            <div style="background:rgba(52,211,153,.06);border-radius:10px;padding:12px;border:1px solid rgba(52,211,153,.18)"><strong style="color:#34d399;font-size:12px">🌬️ Absorción de CO₂</strong><p style="font-size:12px;color:var(--muted2);margin-top:5px;line-height:1.5">Produce oxígeno en zonas de alta densidad poblacional.</p></div>
+            <div style="background:rgba(52,211,153,.06);border-radius:10px;padding:12px;border:1px solid rgba(52,211,153,.18)"><strong style="color:#34d399;font-size:12px">💧 Agua pluvial</strong><p style="font-size:12px;color:var(--muted2);margin-top:5px;line-height:1.5">Los techos verdes retienen lluvia, reduciendo escurrimientos.</p></div>
+            <div style="background:rgba(52,211,153,.06);border-radius:10px;padding:12px;border:1px solid rgba(52,211,153,.18)"><strong style="color:#34d399;font-size:12px">🌳 Rompe-vientos</strong><p style="font-size:12px;color:var(--muted2);margin-top:5px;line-height:1.5">Reducen dispersión de polvo y PM durante vientos de primavera.</p></div>
+            <div style="background:rgba(52,211,153,.06);border-radius:10px;padding:12px;border:1px solid rgba(52,211,153,.18)"><strong style="color:#34d399;font-size:12px">🦋 Biodiversidad</strong><p style="font-size:12px;color:var(--muted2);margin-top:5px;line-height:1.5">Hábitats para polinizadores y equilibrio ecosistémico.</p></div>
+          </div>
+
+          <div class="alert-box info" style="margin-top:16px;background:rgba(56,189,248,.06);border-color:rgba(56,189,248,.22)">
+            <strong>📍 Viabilidad en Pachuca 2026:</strong> ~2,400 msnm, alta radiación solar y temporadas de lluvia bien definidas — condiciones ideales para pastos ornamentales, suculentas y plantas xerófilas nativas. <strong>Piloto:</strong> Palacio Municipal, Hospital General y 3 estaciones del Tuzobús, con financiamiento del Fondo Verde SEMARNAT y alianza con la UAEH.
+          </div>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 5A: REFERENTES INTERNACIONALES -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Sección 5A · Referentes internacionales</div>
+        <div class="detail-sec-sub">La infraestructura verde urbana no es experimental: existe evidencia sólida de su efectividad en ciudades con condiciones similares a Pachuca.</div>
+
+        <div class="detail-2col">
+          <div class="detail-card" style="border-top:3px solid #fbbf24">
+            <h4>🇸🇬 Singapur — "Ciudad en un Jardín" (2009)</h4>
+            <ul>
+              <li><strong>−3°C</strong> de temperatura superficial en zonas con alta densidad de techos verdes</li>
+              <li>Disminución del efecto isla de calor → menos ozono fotoquímico</li>
+              <li><strong>70%</strong> del agua de lluvia retenida en techos verdes</li>
+            </ul>
+            <p style="margin-top:10px;font-size:12px;color:var(--muted)"><strong>Aplicación en Pachuca:</strong> Singapur obligó a edificios públicos a liderar el cambio — Palacio Municipal, hospitales y Tuzobús.</p>
+          </div>
+
+          <div class="detail-card" style="border-top:3px solid #34d399">
+            <h4>🇨🇴 Medellín — Corredores Verdes (2016–2019)</h4>
+            <ul>
+              <li><strong>30 calles</strong> transformadas · 880,000 árboles · 2.5M plantas</li>
+              <li><strong>−2°C</strong> ambiente · <strong>−10.3°C</strong> superficial (40.5°C → 30.2°C)</li>
+              <li>Inversión: solo <strong>USD 6.50 por habitante</strong></li>
+              <li>Premio Ashden 2019 "Cooling by Nature"</li>
+            </ul>
+            <p style="margin-top:10px;font-size:12px;color:var(--muted)"><strong>Aplicación en Pachuca:</strong> Blvd. Luis Colosio, Blvd. Valle de San Javier y Av. Juárez son candidatas directas.</p>
+          </div>
+
+          <div class="detail-card" style="border-top:3px solid #38bdf8">
+            <h4>🇳🇱 Rotterdam — Tejados Verdes (2008)</h4>
+            <ul>
+              <li>Primera ciudad europea con techos verdes como política pública obligatoria</li>
+              <li><strong>+220,000 m²</strong> de techos verdes al 2022</li>
+              <li>Reducción de partículas finas en zonas industriales</li>
+            </ul>
+            <p style="margin-top:10px;font-size:12px;color:var(--muted)"><strong>Aplicación en Pachuca:</strong> Subsidio gubernamental + obligatoriedad en edificios públicos — replicable con Fondo Verde SEMARNAT y la UAEH como supervisora técnica.</p>
+          </div>
+
+          <div class="detail-card" style="border-top:3px solid #a78bfa">
+            <h4>🇲🇽 CDMX — SEDEMA Infraestructura Verde (2019–2024)</h4>
+            <ul>
+              <li>Comparte con Pachuca: altiplano, inversión térmica, PM2.5 y O₃</li>
+              <li>Techos verdes en edificios de gobierno y corredor Chapultepec-Polanco</li>
+              <li>Muros vegetales en estaciones del Metro → reducción PM2.5 local</li>
+            </ul>
+            <p style="margin-top:10px;font-size:12px;color:var(--muted)"><strong>Aplicación en Pachuca:</strong> Modelo SEDEMA–UNAM replicable como SEMARNATH–UAEH para evaluación científica del impacto.</p>
+          </div>
+        </div>
+
+        <div class="detail-card" style="margin-top:20px;background:rgba(167,139,250,.06);border:1px solid rgba(167,139,250,.22)">
+          <h4 style="color:#a78bfa">🔁 5A.5 · Policy transfer — ¿Por qué pueden funcionar aquí?</h4>
+          <p>La <em>transferencia de políticas públicas</em> (policy transfer) es un mecanismo legítimo de la ciencia política comparada. Requiere tres condiciones:</p>
+          <ul style="margin-top:8px">
+            <li><strong>Compatibilidad del problema:</strong> Pachuca y los referentes comparten contaminantes (PM2.5, PM10, O₃), origen (transporte y fuentes urbanas) y agravantes climatológicos.</li>
+            <li><strong>Capacidad institucional mínima:</strong> UAEH (aliado científico), SIMAEH (monitoreo), Fondo Verde SEMARNAT (financiamiento).</li>
+            <li><strong>Adaptación al contexto:</strong> a diferencia de Singapur o Rotterdam, Pachuca puede usar suculentas, magueyes, nopales y pastos del altiplano hidalguense — más baratos, resistentes a la sequía y de menor mantenimiento.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 6: CONCLUSIÓN -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Sección 6 · Conclusión crítica</div>
+        <div class="detail-gallery g2" style="margin-bottom:18px">
+          <div class="detail-gimg" style="background-image:url('/images/cpolitica/image3.jpeg')"><div class="detail-gimg-cap">Reloj Monumental — símbolo de Pachuca al atardecer</div></div>
+          <div class="detail-gimg" style="background-image:url('/images/cpolitica/image2.jpeg')"><div class="detail-gimg-cap">Estadio Hidalgo — espacios de concentración masiva expuestos al aire urbano</div></div>
+        </div>
+        <div class="detail-card">
+          <p style="line-height:1.85">La contaminación del aire en Pachuca <strong>no es un fenómeno natural inevitable</strong>: es el resultado de omisiones del Estado y de la debilidad estructural en la implementación de políticas públicas. Los datos de 2025–2026 confirman que, a pesar del ProAire y el PCAA, la situación ha empeorado — con semanas enteras en alerta roja, 29 incendios sin prevención efectiva y picos de PM superiores a 1,000 μg/m³.</p>
+          <p style="line-height:1.85;margin-top:14px">El cumplimiento de las políticas ambientales no es optativo: el <strong>artículo 4° constitucional</strong> establece la obligación del Estado de garantizar el derecho a un medio ambiente sano.</p>
+          <p style="margin-top:18px;font-weight:700;color:var(--text)">La solución exige tres fuerzas convergentes:</p>
+          <div class="detail-3col" style="margin-top:10px">
+            <div style="background:rgba(251,191,36,.06);border-radius:10px;padding:14px;border:1px solid rgba(251,191,36,.22)"><strong style="color:#fbbf24">🏛️ Voluntad política</strong><p style="font-size:12px;color:var(--muted2);margin-top:5px;line-height:1.55">Recursos públicos adecuados y rendición de cuentas transparente.</p></div>
+            <div style="background:rgba(52,211,153,.06);border-radius:10px;padding:14px;border:1px solid rgba(52,211,153,.22)"><strong style="color:#34d399">👥 Ciudadanía activa</strong><p style="font-size:12px;color:var(--muted2);margin-top:5px;line-height:1.55">Organizada como co-gestora de las políticas ambientales.</p></div>
+            <div style="background:rgba(56,189,248,.06);border-radius:10px;padding:14px;border:1px solid rgba(56,189,248,.22)"><strong style="color:#38bdf8">🌱 Innovación verde</strong><p style="font-size:12px;color:var(--muted2);margin-top:5px;line-height:1.55">Convertir la ciudad misma en filtro ambiental.</p></div>
+          </div>
+          <p style="line-height:1.85;margin-top:14px;font-style:italic;color:var(--muted2)">Solo combinando reforma normativa, participación ciudadana, movilidad sostenible e infraestructura verde — y aprendiendo de los referentes internacionales que ya lo lograron — se puede transformar a Pachuca en la ciudad de aire limpio que su nombre histórico promete.</p>
+        </div>
+      </div>
+
+      <!-- REFERENCIAS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Referencias bibliográficas</div>
+        <ol style="padding-left:20px;line-height:2;color:var(--muted2);font-size:13px">
+          <li>Constitución Política de los Estados Unidos Mexicanos. Artículo 4°, párrafo quinto. DOF, 8 de febrero de 2012.</li>
+          <li>Criterio Hidalgo (12 feb 2026). <em>Mala calidad del aire se mantiene toda la semana en Pachuca y Mineral de la Reforma.</em></li>
+          <li>El Universal (20 mar 2025). <em>Hidalgo emite alerta por mala calidad del aire; hay riesgo extremadamente alto para la salud.</em></li>
+          <li>Foro Económico Mundial (2024). <em>Cómo las ciudades recurren a la naturaleza para bajar las temperaturas hasta en 2°C.</em></li>
+          <li>Greenpeace México (22 jul 2019). <em>Con todo y ser la bella airosa, Pachuca altamente contaminada.</em></li>
+          <li>IQAir / OMS (2021). <em>Las nuevas pautas de calidad del aire de la OMS salvarán vidas.</em></li>
+          <li>La Silla Rota (4 mar 2026). <em>Calidad del aire en Pachuca pasa de mala a muy mala.</em></li>
+          <li>Lucho Constantino, C.A. (22 feb 2024). <em>Impacto y respuestas ante la mala calidad del aire en Hidalgo.</em> Boletín UAEH No. 89.</li>
+          <li>Milenio (24 feb 2024). <em>Se agrava la calidad de aire en Pachuca y la zona metropolitana.</em></li>
+          <li>National University of Singapore (2018). <em>Green Roof Performance Study: Thermal and Air Quality Benefits in Tropical Urban Environments.</em></li>
+          <li>OMS (2024). <em>Calidad del aire ambiente (exterior) y salud.</em></li>
+          <li>Periódico Oficial del Estado de Hidalgo (2019). <em>PCAA para Pachuca de Soto y ZM.</em></li>
+          <li>Rotterdam Climate Initiative (2022). <em>Green Roofs Programme: Impact Report 2008–2022.</em></li>
+          <li>SEDEMA / SEMARNAT (2021). <em>ProAire ZMVM 2021–2030.</em></li>
+          <li>SEDEMA CDMX (2023). <em>Evaluación del Programa de Infraestructura Verde 2019–2023.</em></li>
+        </ol>
       </div>` },
 };
 
