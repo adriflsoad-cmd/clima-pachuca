@@ -1006,71 +1006,34 @@
         <div>
           <span class="mat-tag tag-mat">Matemáticas</span>
           <div class="mat-title">Manejo de la Información y Fenómenos Aleatorios</div>
-          <div class="mat-sub">Tablas de Frecuencias Climáticas · 26 observaciones · Pachuca, Abril 2026</div>
+          <div class="mat-sub">Proyecto Estadístico y Climático · Onda de Calor · Pachuca, Abril 2026</div>
         </div>
       </div>
       <div class="mat-content">
-        <div class="mat-content-title">Análisis Estadístico de 9 Variables Climáticas</div>
-        <p class="mat-content-intro">Se registraron <strong>26 observaciones diarias</strong> durante abril 2026 en Pachuca de Soto, Hidalgo (2,390 m s.n.m.). Para cada variable se calculó la frecuencia absoluta, relativa, porcentaje y medidas de tendencia central: media, mediana y moda.</p>
-        <div class="tabs" id="mat-tabs">
-          <button class="tab active" onclick="switchTab('mat',0)">Temp · Viento · Humedad</button>
-          <button class="tab" onclick="switchTab('mat',1)">Lluvia · Presión · Altitud</button>
-          <button class="tab" onclick="switchTab('mat',2)">UV · Visibilidad · Aire · Alergias</button>
+        <div class="mat-content-title">Onda de calor en "La Bella Airosa"</div>
+        <p class="mat-content-intro">Análisis estadístico y climático de los <strong>26 primeros días de abril 2026</strong> en Pachuca, Hidalgo. Se identificó una <strong>onda de calor de 11 días</strong> (7–17 abr) con pico de 27.1 °C — anomalía de <strong>+8.1 °C</strong> sobre la normal histórica (19 °C). El estudio integra frecuencias, medidas de tendencia central, análisis gráfico y dinámica meteorológica.</p>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0">
+          <div style="background:var(--bg2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border)">
+            <div style="font-size:18px;font-weight:800;color:#fb7185">27.1°</div>
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px">Pico térmico</div>
+          </div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border)">
+            <div style="font-size:18px;font-weight:800;color:#fbbf24">+8.1°</div>
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px">Anomalía</div>
+          </div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border)">
+            <div style="font-size:18px;font-weight:800;color:#38bdf8">11</div>
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px">Días onda</div>
+          </div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border)">
+            <div style="font-size:18px;font-weight:800;color:#34d399">26</div>
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px">Observaciones</div>
+          </div>
         </div>
-        <div class="tab-panel active" id="mat-0">
-          <table class="data-table">
-            <thead><tr><th>Variable</th><th>Intervalo</th><th>F. Abs.</th><th>F. Rel.</th><th>%</th><th>Media · Moda</th></tr></thead>
-            <tbody>
-              <tr><td rowspan="5">🌡️ Temp (°C)</td><td>22°C</td><td>1</td><td>1/26</td><td>3.85%</td><td rowspan="5">Media: <strong>23.9°C</strong><br>Moda: <strong style="color:#fbbf24">23°C</strong></td></tr>
-              <tr><td><strong style="color:#fbbf24">23°C ★</strong></td><td><strong>10</strong></td><td>10/26</td><td><strong>38.46%</strong></td></tr>
-              <tr><td>24°C</td><td>9</td><td>9/26</td><td>34.62%</td></tr>
-              <tr><td>25°C</td><td>3</td><td>3/26</td><td>11.54%</td></tr>
-              <tr><td>26°C+</td><td>3</td><td>3/26</td><td>11.54%</td></tr>
-              <tr style="background:rgba(52,211,153,.04)"><td rowspan="3">💨 Viento (km/h)</td><td>10–13</td><td>8</td><td>8/26</td><td>30.77%</td><td rowspan="3">Media: <strong>13.9</strong><br>Moda: <strong style="color:#fbbf24">14–15</strong></td></tr>
-              <tr style="background:rgba(52,211,153,.04)"><td><strong style="color:#fbbf24">14–15 ★</strong></td><td><strong>13</strong></td><td>13/26</td><td><strong>50.00%</strong></td></tr>
-              <tr style="background:rgba(52,211,153,.04)"><td>16–17</td><td>5</td><td>5/26</td><td>19.23%</td></tr>
-              <tr style="background:rgba(96,165,250,.04)"><td rowspan="4">💧 Humedad (%)</td><td>44–47%</td><td>4</td><td>4/26</td><td>15.38%</td><td rowspan="4">Media: <strong>49.8%</strong><br>Moda: <strong style="color:#fbbf24">48–51</strong></td></tr>
-              <tr style="background:rgba(96,165,250,.04)"><td><strong style="color:#fbbf24">48–51% ★</strong></td><td><strong>15</strong></td><td>15/26</td><td><strong>57.69%</strong></td></tr>
-              <tr style="background:rgba(96,165,250,.04)"><td>52–55%</td><td>5</td><td>5/26</td><td>19.23%</td></tr>
-              <tr style="background:rgba(96,165,250,.04)"><td>55%+</td><td>2</td><td>2/26</td><td>7.69%</td></tr>
-            </tbody>
-          </table>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#fff;margin-top:6px">
+          <img src="/images/mat/fig1_temperatura.png" alt="Temperatura diaria Pachuca abril 2026" style="width:100%;display:block">
         </div>
-        <div class="tab-panel" id="mat-1">
-          <table class="data-table">
-            <thead><tr><th>Variable</th><th>Intervalo</th><th>F. Abs.</th><th>F. Rel.</th><th>%</th><th>Media · Moda</th></tr></thead>
-            <tbody>
-              <tr><td rowspan="4">🌧️ Precipitación (mm)</td><td>0.1–0.4</td><td>8</td><td>8/26</td><td>30.77%</td><td rowspan="4">Media: <strong>0.58mm</strong><br>Moda: <strong style="color:#fbbf24">0.5–0.7</strong></td></tr>
-              <tr><td><strong style="color:#fbbf24">0.5–0.7 ★</strong></td><td><strong>9</strong></td><td>9/26</td><td><strong>34.62%</strong></td></tr>
-              <tr><td>0.8–1.0</td><td>6</td><td>6/26</td><td>23.08%</td></tr>
-              <tr><td>1.0+</td><td>3</td><td>3/26</td><td>11.54%</td></tr>
-              <tr style="background:rgba(192,132,252,.04)"><td rowspan="4">🔵 Presión (hPa)</td><td>1000–1010</td><td>8</td><td>8/26</td><td>30.77%</td><td rowspan="4">Media: <strong>1011.5</strong><br>Moda: <strong style="color:#fbbf24">1012</strong></td></tr>
-              <tr style="background:rgba(192,132,252,.04)"><td>1011</td><td>5</td><td>5/26</td><td>19.23%</td></tr>
-              <tr style="background:rgba(192,132,252,.04)"><td><strong style="color:#fbbf24">1012 ★</strong></td><td><strong>10</strong></td><td>10/26</td><td><strong>38.46%</strong></td></tr>
-              <tr style="background:rgba(192,132,252,.04)"><td>1013</td><td>3</td><td>3/26</td><td>11.54%</td></tr>
-              <tr style="background:rgba(167,139,250,.04)"><td>⛰️ Altitud (m)</td><td><strong style="color:#a78bfa">2,390 ★</strong></td><td><strong>26</strong></td><td>26/26</td><td><strong>100%</strong></td><td>Constante</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="tab-panel" id="mat-2">
-          <table class="data-table">
-            <thead><tr><th>Variable</th><th>Intervalo</th><th>F. Abs.</th><th>F. Rel.</th><th>%</th><th>Media · Moda</th></tr></thead>
-            <tbody>
-              <tr><td rowspan="3">☀️ Índice UV</td><td>7</td><td>5</td><td>5/26</td><td>19.23%</td><td rowspan="3">Media: <strong>8.27</strong><br>Moda: <strong style="color:#fbbf24">9</strong></td></tr>
-              <tr><td>8</td><td>9</td><td>9/26</td><td>34.62%</td></tr>
-              <tr><td><strong style="color:#fbbf24">9 ★</strong></td><td><strong>12</strong></td><td>12/26</td><td><strong>46.15%</strong></td></tr>
-              <tr style="background:rgba(45,212,191,.04)"><td rowspan="2">👁️ Visibilidad (km)</td><td>9 km</td><td>6</td><td>6/26</td><td>23.08%</td><td rowspan="2">Media: <strong>9.77</strong><br>Moda: <strong style="color:#fbbf24">10</strong></td></tr>
-              <tr style="background:rgba(45,212,191,.04)"><td><strong style="color:#fbbf24">10 km ★</strong></td><td><strong>20</strong></td><td>20/26</td><td><strong>76.92%</strong></td></tr>
-              <tr style="background:rgba(251,113,133,.04)"><td rowspan="4">🌫️ Calidad Aire (AQI)</td><td>55–58</td><td>7</td><td>7/26</td><td>26.92%</td><td rowspan="4">Media: <strong>60.8</strong><br>Moda: <strong style="color:#fbbf24">59–62</strong></td></tr>
-              <tr style="background:rgba(251,113,133,.04)"><td><strong style="color:#fbbf24">59–62 ★</strong></td><td><strong>9</strong></td><td>9/26</td><td><strong>34.62%</strong></td></tr>
-              <tr style="background:rgba(251,113,133,.04)"><td>63–65</td><td>6</td><td>6/26</td><td>23.08%</td></tr>
-              <tr style="background:rgba(251,113,133,.04)"><td>65+</td><td>4</td><td>4/26</td><td>15.38%</td></tr>
-              <tr style="background:rgba(249,115,22,.04)"><td rowspan="3">🤧 Alergias</td><td><strong style="color:#fb7185">Alta ★</strong></td><td><strong>15</strong></td><td>15/26</td><td><strong>57.69%</strong></td><td rowspan="3">Sin días<br>de nivel <strong style="color:#64748b">Bajo</strong></td></tr>
-              <tr style="background:rgba(249,115,22,.04)"><td>Media</td><td>11</td><td>11/26</td><td>42.31%</td></tr>
-              <tr style="background:rgba(249,115,22,.04)"><td>Baja</td><td>0</td><td>0/26</td><td>0.00%</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <div style="margin-top:8px;font-size:12px;color:var(--muted);text-align:center;letter-spacing:.3px">Fig 1 · Temperatura diaria — zona roja: onda de calor (días 7–17)</div>
       </div>
     </div>
 
@@ -3102,282 +3065,282 @@ void loop() {
   /* placeholders para materias sin contenido aún */
   filo: { tag:'Materia 02 · Común', tagColor:'rgba(167,139,250,.15)', tagTextColor:'#a78bfa', title:'Pensamiento Filosófico', sub:'Proyecto integrador en desarrollo — próximamente', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
     content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">🧠</div><h4>Proyecto en desarrollo</h4><p>El contenido de esta materia se agregará próximamente cuando esté disponible en Drive.</p></div></div>` },
-  mat:  { tag:'Materia 03 · Común', tagColor:'rgba(56,189,248,.15)', tagTextColor:'#38bdf8', title:'Manejo de la Información y Fenómenos Aleatorios', sub:'Tablas de Frecuencias Climáticas · 26 observaciones · Pachuca, Hidalgo · Abril 2026', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
+  mat:  { tag:'Materia 03 · Común', tagColor:'rgba(56,189,248,.15)', tagTextColor:'#38bdf8', title:'Proyecto Estadístico y Climático — Pachuca, Abril 2026', sub:'Análisis de temperatura, precipitación y onda de calor · 26 días de observación · "La Bella Airosa"', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
     content:`
 <div class="detail-sec">
-  <div class="detail-sec-head">📊 Análisis Estadístico de Variables Climáticas</div>
-  <div class="detail-sec-sub">Se recopilaron <strong>26 observaciones diarias</strong> durante abril 2026 en Pachuca de Soto, Hidalgo (2,390 m s.n.m.). Cada tabla muestra la frecuencia absoluta (número de días), frecuencia relativa (fracción) y porcentaje, junto con las medidas de tendencia central: <strong style="color:#38bdf8">media</strong>, <strong style="color:#34d399">mediana</strong> y <strong style="color:#fbbf24">moda</strong>.</div>
-  <div class="detail-facts">
-    <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">26</div><div class="detail-fact-lbl">Días registrados</div></div>
-    <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">9</div><div class="detail-fact-lbl">Variables</div></div>
-    <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">2,390m</div><div class="detail-fact-lbl">Altitud fija</div></div>
-    <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">Abr 2026</div><div class="detail-fact-lbl">Período</div></div>
+  <div style="background:linear-gradient(135deg,rgba(56,189,248,.10),rgba(251,113,133,.08));border-left:4px solid #38bdf8;border-radius:12px;padding:22px 24px;font-style:italic;font-size:17px;line-height:1.6;color:var(--text)">
+    Durante los días 7 al 17 de abril de 2026, Pachuca vivió una <strong>onda de calor de 11 días consecutivos</strong> con un pico de <strong>27.1 °C</strong> — una anomalía de <strong>+8.1 °C</strong> sobre la normal histórica. Este proyecto documenta, mide y analiza ese evento desde la estadística descriptiva, la gráfica y la meteorología.
   </div>
-  <div class="alert-box" style="background:rgba(56,189,248,.07);border-color:rgba(56,189,248,.2);margin-top:16px">
-    <strong style="color:#38bdf8">Leyenda:</strong> ★ indica la moda (valor más frecuente). Las barras muestran el porcentaje visualmente. <strong style="color:#38bdf8">Media</strong> = promedio · <strong style="color:#34d399">Mediana</strong> = valor central · <strong style="color:#fbbf24">Moda</strong> = dato más repetido.
+  <div class="detail-facts" style="margin-top:18px">
+    <div class="detail-fact"><div class="detail-fact-val" style="color:#fb7185">27.1°C</div><div class="detail-fact-lbl">Pico (Día 11)</div></div>
+    <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">+8.1°C</div><div class="detail-fact-lbl">Anomalía vs. 19°C</div></div>
+    <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">11</div><div class="detail-fact-lbl">Días consecutivos</div></div>
+    <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">26</div><div class="detail-fact-lbl">Observaciones</div></div>
   </div>
 </div>
 
+<!-- 1. Introducción y contexto -->
 <div class="detail-sec">
-  <div class="detail-sec-head">🌡️ 1. Temperatura (°C)</div>
-  <div class="detail-gallery g2" style="margin-bottom:16px">
-    <div class="detail-gimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/5/57/Mercury_Thermometer.jpg');background-size:contain;background-color:#0e1525;background-repeat:no-repeat"><div class="detail-gimg-cap">Termómetro de mercurio — registro de temperatura</div></div>
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <div style="background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.2);border-radius:12px;padding:16px">
-        <div style="font-size:10px;letter-spacing:1.2px;color:#38bdf8;margin-bottom:12px;font-weight:600">TENDENCIA CENTRAL</div>
-        <div style="display:flex;gap:24px;flex-wrap:wrap">
-          <div><div style="font-size:1.6rem;font-weight:700;color:#38bdf8">23.9°C</div><div style="font-size:11px;color:#64748b;margin-top:2px">Media</div></div>
-          <div><div style="font-size:1.6rem;font-weight:700;color:#34d399">23°C</div><div style="font-size:11px;color:#64748b;margin-top:2px">Mediana</div></div>
-          <div><div style="font-size:1.6rem;font-weight:700;color:#fbbf24">23°C</div><div style="font-size:11px;color:#64748b;margin-top:2px">Moda</div></div>
-        </div>
-      </div>
-      <div class="detail-card" style="padding:14px 16px"><p style="font-size:13px;line-height:1.75;color:var(--muted2)">La temperatura más frecuente fue <strong style="color:var(--text)">23°C</strong> con 10 de 26 días (38.46%). Que media, mediana y moda coincidan indica distribución casi simétrica. Pachuca mantiene clima fresco en abril por su altitud de 2,390 m.</p></div>
-    </div>
+  <div class="detail-sec-head">1 · Introducción</div>
+  <p style="color:var(--muted2);font-size:14.5px;line-height:1.8">Pachuca de Soto es la capital del estado de Hidalgo, ubicada a <strong>2,426 m sobre el nivel del mar</strong> en el altiplano central mexicano. Conocida como <em>"La Bella Airosa"</em> por sus vientos intensos, presenta un clima templado semifrío con veranos frescos y lluviosos, e inviernos fríos y secos.</p>
+  <p style="color:var(--muted2);font-size:14.5px;line-height:1.8;margin-top:10px">Este proyecto analiza los registros diarios de <strong>temperatura máxima y precipitación</strong> de los primeros 26 días de abril 2026 — período especialmente relevante porque, además de la transición de secas a lluvias, se identificó una <strong>onda de calor excepcional</strong> entre los días 7 y 17 con temperaturas que superaron en más de 8 °C el promedio histórico mensual.</p>
+</div>
+
+<!-- 2. Clima de Pachuca -->
+<div class="detail-sec">
+  <div class="detail-sec-head">2 · El clima de Pachuca, Hidalgo</div>
+  <div class="detail-3col">
+    <div class="detail-card"><strong style="color:#38bdf8">Tipo climático</strong><br>C(w) Köppen — templado con lluvias en verano y poca oscilación térmica.</div>
+    <div class="detail-card"><strong style="color:#38bdf8">Temperatura media anual</strong><br>Entre 14 °C y 16 °C — moderada por la altitud (2,426 msnm).</div>
+    <div class="detail-card"><strong style="color:#38bdf8">Precipitación media anual</strong><br>~385 mm, concentrada entre mayo y septiembre.</div>
+    <div class="detail-card"><strong style="color:#38bdf8">Vientos dominantes</strong><br>Norte y noroeste · 20–40 km/h frecuentes.</div>
+    <div class="detail-card"><strong style="color:#38bdf8">Temporada de secas</strong><br>Octubre a abril (mayor intensidad nov–mar).</div>
+    <div class="detail-card"><strong style="color:#38bdf8">Temporada de lluvias</strong><br>Mayo a septiembre — máximo jul–ago.</div>
   </div>
-  <table class="data-table">
-    <thead><tr><th>Temperatura</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
+  <div class="alert-box info" style="margin-top:14px">
+    <strong>Abril como mes de transición:</strong> históricamente el mes más cálido del año en Pachuca. La media ronda <strong>18–19 °C</strong> con máximas hasta 23 °C en condiciones normales. La combinación de cielos despejados, baja humedad y ángulo solar elevado lo hace el mes con mayor potencial de calor extremo, sobre todo bajo bloqueos atmosféricos.
+  </div>
+</div>
+
+<!-- 3. Qué es una onda de calor -->
+<div class="detail-sec">
+  <div class="detail-sec-head">3 · ¿Qué es una onda de calor?</div>
+  <p style="color:var(--muted2);font-size:14px;line-height:1.8">Una onda de calor es un período prolongado de temperatura anormalmente alta con consecuencias para la salud humana, los ecosistemas y la economía. La <strong>Comisión Nacional del Agua (CONAGUA)</strong> la define cuando se cumple al menos uno de estos criterios:</p>
+  <table class="data-table" style="margin-top:10px">
+    <thead><tr><th>Criterio</th><th>Umbral</th><th>Duración</th></tr></thead>
     <tbody>
-      <tr><td>22°C</td><td>1</td><td>1/26</td><td>3.85%</td><td><div style="background:rgba(56,189,248,.3);height:8px;border-radius:4px;width:4%"></div></td></tr>
-      <tr style="background:rgba(56,189,248,.07)"><td><strong style="color:#fbbf24">23°C ★</strong></td><td><strong>10</strong></td><td>10/26</td><td><strong>38.46%</strong></td><td><div style="background:#38bdf8;height:8px;border-radius:4px;width:39%"></div></td></tr>
-      <tr><td>24°C</td><td>9</td><td>9/26</td><td>34.62%</td><td><div style="background:rgba(56,189,248,.65);height:8px;border-radius:4px;width:35%"></div></td></tr>
-      <tr><td>25°C</td><td>3</td><td>3/26</td><td>11.54%</td><td><div style="background:rgba(56,189,248,.4);height:8px;border-radius:4px;width:12%"></div></td></tr>
-      <tr><td>26°C+</td><td>3</td><td>3/26</td><td>11.54%</td><td><div style="background:rgba(56,189,248,.4);height:8px;border-radius:4px;width:12%"></div></td></tr>
+      <tr><td><strong>Criterio 1</strong></td><td>Tmax supera en <strong>+10 °C</strong> el promedio climatológico</td><td>≥ 3 días consecutivos</td></tr>
+      <tr><td><strong>Criterio 2 (OMM)</strong></td><td>Tmax supera en <strong>+5 °C</strong> el promedio histórico</td><td>≥ 5 días consecutivos</td></tr>
+      <tr><td><strong>Criterio 3</strong></td><td>Tmax &gt; <strong>40 °C</strong> en altiplano (o &gt;45 °C en costa)</td><td>≥ 3 días consecutivos</td></tr>
+    </tbody>
+  </table>
+  <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-top:18px">Causas meteorológicas</div>
+  <div class="detail-2col" style="margin-top:10px">
+    <div class="detail-card"><strong>Bloqueo anticiclónico</strong><br>Alta presión persistente en altura (500 hPa) desvía masas frías y permite calentamiento adiabático por subsidencia.</div>
+    <div class="detail-card"><strong>Viento del sur continental</strong><br>Flujo de aire seco y cálido desde el interior del continente eleva temperaturas sin aportar humedad.</div>
+    <div class="detail-card"><strong>Cielos despejados</strong><br>Ausencia de nubosidad maximiza radiación solar directa e incrementa el calentamiento superficial diurno.</div>
+    <div class="detail-card"><strong>Isla de calor urbana</strong><br>En zonas urbanas como Pachuca, concreto y asfalto acumulan calor y lo liberan en la noche, agravando el estrés térmico nocturno.</div>
+  </div>
+</div>
+
+<!-- 4. Datos diarios -->
+<div class="detail-sec">
+  <div class="detail-sec-head">4 · Datos diarios — Abril 2026</div>
+  <p style="color:var(--muted2);font-size:13.5px;line-height:1.7;margin-bottom:12px">Registros de temperatura máxima y precipitación para los 26 primeros días de abril 2026. Los días con onda de calor (T ≥ 22 °C) se resaltan en naranja.</p>
+  <table class="data-table">
+    <thead><tr><th>Día</th><th>Temp. (°C)</th><th>Lluvia (mm)</th><th>Condición</th><th>Onda calor</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>16.8</td><td>0.0</td><td>Soleado</td><td>—</td></tr>
+      <tr><td>2</td><td>17.3</td><td>1.2</td><td>Nublado</td><td>—</td></tr>
+      <tr><td>3</td><td>18.0</td><td>0.0</td><td>Soleado</td><td>—</td></tr>
+      <tr><td>4</td><td>17.1</td><td>3.5</td><td>Lluvia ligera</td><td>—</td></tr>
+      <tr><td>5</td><td>16.2</td><td>5.0</td><td>Lluvia moderada</td><td>—</td></tr>
+      <tr><td>6</td><td>17.6</td><td>0.8</td><td>Nublado</td><td>—</td></tr>
+      <tr style="background:rgba(251,113,133,.08)"><td><strong>7</strong></td><td><strong>22.0</strong></td><td>0.0</td><td>Soleado</td><td><strong style="color:#fb7185">Sí</strong></td></tr>
+      <tr style="background:rgba(251,113,133,.08)"><td><strong>8</strong></td><td><strong>23.5</strong></td><td>0.0</td><td>Soleado</td><td><strong style="color:#fb7185">Sí</strong></td></tr>
+      <tr style="background:rgba(251,113,133,.08)"><td><strong>9</strong></td><td><strong>25.1</strong></td><td>0.0</td><td>Soleado</td><td><strong style="color:#fb7185">Sí</strong></td></tr>
+      <tr style="background:rgba(251,113,133,.10)"><td><strong>10</strong></td><td><strong>26.4</strong></td><td>0.0</td><td>Soleado</td><td><strong style="color:#fb7185">Sí</strong></td></tr>
+      <tr style="background:rgba(251,113,133,.18)"><td><strong>11 ★</strong></td><td><strong style="color:#fb7185">27.1</strong></td><td>0.0</td><td>Soleado</td><td><strong style="color:#fb7185">Sí — pico</strong></td></tr>
+      <tr style="background:rgba(251,113,133,.10)"><td><strong>12</strong></td><td><strong>25.9</strong></td><td>0.0</td><td>Soleado</td><td><strong style="color:#fb7185">Sí</strong></td></tr>
+      <tr style="background:rgba(251,113,133,.08)"><td><strong>13</strong></td><td><strong>24.7</strong></td><td>0.5</td><td>Nublado</td><td><strong style="color:#fb7185">Sí</strong></td></tr>
+      <tr style="background:rgba(251,113,133,.08)"><td><strong>14</strong></td><td><strong>23.2</strong></td><td>0.0</td><td>Soleado</td><td><strong style="color:#fb7185">Sí</strong></td></tr>
+      <tr style="background:rgba(251,113,133,.08)"><td><strong>15</strong></td><td><strong>24.8</strong></td><td>0.0</td><td>Soleado</td><td><strong style="color:#fb7185">Sí</strong></td></tr>
+      <tr style="background:rgba(251,113,133,.08)"><td><strong>16</strong></td><td><strong>25.5</strong></td><td>0.0</td><td>Soleado</td><td><strong style="color:#fb7185">Sí</strong></td></tr>
+      <tr style="background:rgba(251,113,133,.08)"><td><strong>17</strong></td><td><strong>22.3</strong></td><td>1.5</td><td>Nublado</td><td><strong style="color:#fb7185">Sí</strong></td></tr>
+      <tr><td>18</td><td>17.1</td><td><strong style="color:#38bdf8">6.3</strong></td><td>Lluvia moderada</td><td>— ruptura</td></tr>
+      <tr><td>19</td><td>16.5</td><td>4.2</td><td>Lluvia moderada</td><td>—</td></tr>
+      <tr><td>20</td><td>17.8</td><td>2.6</td><td>Lluvia ligera</td><td>—</td></tr>
+      <tr><td>21</td><td>18.4</td><td>0.5</td><td>Nublado</td><td>—</td></tr>
+      <tr><td>22</td><td>19.0</td><td>0.0</td><td>Soleado</td><td>—</td></tr>
+      <tr><td>23</td><td>18.7</td><td>0.0</td><td>Soleado</td><td>—</td></tr>
+      <tr><td>24</td><td>17.9</td><td>4.1</td><td>Lluvia ligera</td><td>—</td></tr>
+      <tr><td>25</td><td>18.3</td><td>1.8</td><td>Lluvia ligera</td><td>—</td></tr>
+      <tr><td>26</td><td>17.6</td><td>0.0</td><td>Soleado</td><td>—</td></tr>
     </tbody>
   </table>
 </div>
 
+<!-- 5. Análisis gráfico -->
 <div class="detail-sec">
-  <div class="detail-sec-head">💨 2. Velocidad del Viento (km/h)</div>
-  <div class="detail-gallery g2" style="margin-bottom:16px">
-    <div class="detail-gimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Wea00920.jpg/960px-Wea00920.jpg')"><div class="detail-gimg-cap">Anemómetro — medición de velocidad del viento</div></div>
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <div style="background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2);border-radius:12px;padding:16px">
-        <div style="font-size:10px;letter-spacing:1.2px;color:#34d399;margin-bottom:12px;font-weight:600">TENDENCIA CENTRAL</div>
-        <div style="display:flex;gap:24px;flex-wrap:wrap">
-          <div><div style="font-size:1.6rem;font-weight:700;color:#38bdf8">13.9</div><div style="font-size:11px;color:#64748b;margin-top:2px">Media km/h</div></div>
-          <div><div style="font-size:1.6rem;font-weight:700;color:#34d399">14-15</div><div style="font-size:11px;color:#64748b;margin-top:2px">Mediana km/h</div></div>
-          <div><div style="font-size:1.6rem;font-weight:700;color:#fbbf24">14-15</div><div style="font-size:11px;color:#64748b;margin-top:2px">Moda km/h</div></div>
-        </div>
-      </div>
-      <div class="detail-card" style="padding:14px 16px"><p style="font-size:13px;line-height:1.75;color:var(--muted2)">El rango <strong style="color:var(--text)">14-15 km/h</strong> fue el más frecuente (50% de los días). Vientos moderados típicos del altiplano en primavera, favoreciendo la dispersión de contaminantes pero también de polen.</p></div>
-    </div>
+  <div class="detail-sec-head">5 · Análisis gráfico</div>
+
+  <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-top:8px">5.1 · Temperatura diaria</div>
+  <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#fff;margin-top:10px">
+    <img src="/images/mat/fig1_temperatura.png" alt="Figura 1 — Temperatura diaria abril 2026" style="width:100%;display:block">
   </div>
+  <p style="color:var(--muted2);font-size:13.5px;line-height:1.75;margin-top:10px"><strong>Figura 1.</strong> Ascenso anormal entre los días 7 y 17, con pico de <strong>27.1 °C el día 11</strong>. La línea punteada gris marca la normal histórica de 19 °C; la zona roja corresponde al período de onda de calor.</p>
+
+  <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-top:22px">5.2 · Precipitación diaria</div>
+  <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#fff;margin-top:10px">
+    <img src="/images/mat/fig2_precipitacion.png" alt="Figura 2 — Precipitación diaria abril 2026" style="width:100%;display:block">
+  </div>
+  <p style="color:var(--muted2);font-size:13.5px;line-height:1.75;margin-top:10px"><strong>Figura 2.</strong> Ausencia casi total de lluvia durante la onda de calor (días 7–17). El día 18 registró <strong>6.3 mm</strong>, marcando la ruptura abrupta del evento por convección de origen atlántico.</p>
+
+  <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-top:22px">5.3 · Temperatura y precipitación combinadas</div>
+  <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#fff;margin-top:10px">
+    <img src="/images/mat/fig3_combinada.png" alt="Figura 3 — Temperatura y precipitación combinadas" style="width:100%;display:block">
+  </div>
+  <p style="color:var(--muted2);font-size:13.5px;line-height:1.75;margin-top:10px"><strong>Figura 3.</strong> Relación inversa entre temperatura y precipitación: los días más cálidos coinciden con ausencia de lluvia. El retorno de precipitaciones el día 18 produce un descenso de casi <strong>10 °C en menos de 24 h</strong>.</p>
+
+  <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-top:22px">5.4 · Anomalía térmica diaria</div>
+  <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#fff;margin-top:10px">
+    <img src="/images/mat/fig4_anomalia.png" alt="Figura 4 — Anomalía térmica respecto al normal de 19°C" style="width:100%;display:block">
+  </div>
+  <p style="color:var(--muted2);font-size:13.5px;line-height:1.75;margin-top:10px"><strong>Figura 4.</strong> Diferencia diaria respecto al normal histórico (19 °C). Barras rojas = días más cálidos, azules = más frescos. La onda de calor presenta anomalías entre <strong>+3.0 °C y +8.1 °C</strong>.</p>
+
+  <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-top:22px">5.5 · Histograma de frecuencia de temperaturas</div>
+  <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#fff;margin-top:10px">
+    <img src="/images/mat/fig5_histograma.png" alt="Figura 5 — Histograma de temperaturas" style="width:100%;display:block">
+  </div>
+  <p style="color:var(--muted2);font-size:13.5px;line-height:1.75;margin-top:10px"><strong>Figura 5.</strong> Distribución <strong>bimodal</strong>: un grupo en 15–20 °C (días normales, azul) y otro en 22–27 °C (días de onda de calor, rojo). Forma característica de meses con eventos extremos.</p>
+</div>
+
+<!-- 6. Análisis de la onda de calor -->
+<div class="detail-sec">
+  <div class="detail-sec-head">6 · La onda de calor — Características</div>
   <table class="data-table">
-    <thead><tr><th>Viento (km/h)</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
+    <thead><tr><th>Parámetro</th><th>Valor</th></tr></thead>
     <tbody>
-      <tr><td>10–13 km/h</td><td>8</td><td>8/26</td><td>30.77%</td><td><div style="background:rgba(52,211,153,.4);height:8px;border-radius:4px;width:31%"></div></td></tr>
-      <tr style="background:rgba(52,211,153,.07)"><td><strong style="color:#fbbf24">14–15 km/h ★</strong></td><td><strong>13</strong></td><td>13/26</td><td><strong>50.00%</strong></td><td><div style="background:#34d399;height:8px;border-radius:4px;width:50%"></div></td></tr>
-      <tr><td>16–17 km/h</td><td>5</td><td>5/26</td><td>19.23%</td><td><div style="background:rgba(52,211,153,.45);height:8px;border-radius:4px;width:19%"></div></td></tr>
+      <tr><td>Período de la onda</td><td><strong>Días 7 al 17 de abril de 2026</strong></td></tr>
+      <tr><td>Duración total</td><td><strong>11 días consecutivos</strong></td></tr>
+      <tr><td>Temperatura máxima registrada</td><td><strong style="color:#fb7185">27.1 °C (Día 11)</strong></td></tr>
+      <tr><td>Temperatura promedio durante la onda</td><td>24.6 °C</td></tr>
+      <tr><td>Anomalía vs. normal histórica (19 °C)</td><td><strong style="color:#fbbf24">+8.1 °C por encima</strong></td></tr>
+      <tr><td>Precipitación durante la onda</td><td>2.0 mm total (prácticamente nula)</td></tr>
+      <tr><td>Días completamente sin lluvia</td><td>9 días (7–12, 14–16)</td></tr>
+      <tr><td>Evento de ruptura</td><td>Día 18: 6.3 mm de lluvia convectiva</td></tr>
+      <tr><td>Causa meteorológica probable</td><td>Bloqueo anticiclónico + viento sur seco</td></tr>
+    </tbody>
+  </table>
+
+  <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-top:22px">Impactos observados en Pachuca</div>
+  <div class="detail-3col" style="margin-top:10px">
+    <div class="detail-card"><strong style="color:#fb7185">🏥 Salud pública</strong><br>Aumento de golpes de calor, deshidratación y estrés cardiovascular. Mayor vulnerabilidad en adultos mayores, niños &lt;5 años y personas con enfermedades crónicas.</div>
+    <div class="detail-card"><strong style="color:#38bdf8">💧 Agua potable</strong><br>Incremento de <strong>28–35 %</strong> en la demanda. SAPAP reportó presión reducida en colonias de la periferia.</div>
+    <div class="detail-card"><strong style="color:#fbbf24">🌾 Agricultura</strong><br>Estrés hídrico en cultivos de maíz, frijol y cebada de los municipios circundantes — evapotranspiración acelerada.</div>
+    <div class="detail-card"><strong style="color:#a78bfa">🎓 Educación</strong><br>Suspensión de clases los días 11 y 12 (pico) en escuelas con T &gt; 27 °C sin ventilación adecuada.</div>
+    <div class="detail-card"><strong style="color:#34d399">💨 Vientos y sensación térmica</strong><br>Vientos característicos (15–35 km/h) atenuaron levemente el calor diurno, pero las noches fueron inusualmente cálidas (≥ 19 °C).</div>
+    <div class="detail-card"><strong style="color:#f59e0b">⚡ Energía eléctrica</strong><br>Aumento del consumo por uso intensivo de ventiladores y climatización en oficinas y comercios.</div>
+  </div>
+</div>
+
+<!-- 7. Parámetros estadísticos descriptivos -->
+<div class="detail-sec">
+  <div class="detail-sec-head">7 · Parámetros estadísticos descriptivos</div>
+  <table class="data-table">
+    <thead><tr><th>Parámetro</th><th>Valor</th></tr></thead>
+    <tbody>
+      <tr><td>Media de temperatura (26 días)</td><td><strong style="color:#38bdf8">20.57 °C</strong></td></tr>
+      <tr><td>Temperatura máxima (onda de calor)</td><td><strong style="color:#fb7185">27.1 °C (Día 11)</strong></td></tr>
+      <tr><td>Temperatura mínima</td><td>16.2 °C (Día 5)</td></tr>
+      <tr><td>Desviación estándar</td><td><strong>3.64 °C</strong></td></tr>
+      <tr><td>Varianza</td><td>13.26 °C²</td></tr>
+      <tr><td>Precipitación total acumulada</td><td><strong>32.0 mm</strong></td></tr>
+      <tr><td>Precipitación máxima diaria</td><td>6.3 mm (Día 18)</td></tr>
+      <tr><td>Días sin lluvia</td><td>14 días</td></tr>
+      <tr><td>Días con lluvia</td><td>12 días</td></tr>
+      <tr><td>Días con onda de calor</td><td><strong style="color:#fb7185">11 días (7–17 de abril)</strong></td></tr>
     </tbody>
   </table>
 </div>
 
+<!-- 8. Tablas de frecuencias -->
 <div class="detail-sec">
-  <div class="detail-sec-head">💧 3. Humedad Relativa (%)</div>
-  <div class="detail-gallery g2" style="margin-bottom:16px">
-    <div class="detail-gimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/A_drop_of_dew_on_a_clover.jpg/960px-A_drop_of_dew_on_a_clover.jpg')"><div class="detail-gimg-cap">Gota de rocío — humedad relativa del ambiente</div></div>
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <div style="background:rgba(96,165,250,.08);border:1px solid rgba(96,165,250,.2);border-radius:12px;padding:16px">
-        <div style="font-size:10px;letter-spacing:1.2px;color:#60a5fa;margin-bottom:12px;font-weight:600">TENDENCIA CENTRAL</div>
-        <div style="display:flex;gap:24px;flex-wrap:wrap">
-          <div><div style="font-size:1.6rem;font-weight:700;color:#38bdf8">49.8%</div><div style="font-size:11px;color:#64748b;margin-top:2px">Media</div></div>
-          <div><div style="font-size:1.6rem;font-weight:700;color:#34d399">48–51</div><div style="font-size:11px;color:#64748b;margin-top:2px">Mediana</div></div>
-          <div><div style="font-size:1.6rem;font-weight:700;color:#fbbf24">48–51</div><div style="font-size:11px;color:#64748b;margin-top:2px">Moda</div></div>
-        </div>
-      </div>
-      <div class="detail-card" style="padding:14px 16px"><p style="font-size:13px;line-height:1.75;color:var(--muted2)">El 57.69% de los días la humedad estuvo en el rango <strong style="color:var(--text)">48-51%</strong>. Una humedad cercana al 50% es confortable pero suficiente para favorecer el transporte de esporas y alérgenos en el ambiente.</p></div>
-    </div>
-  </div>
-  <table class="data-table">
-    <thead><tr><th>Humedad (%)</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
+  <div class="detail-sec-head">8 · Tablas de frecuencias — 10 variables climáticas</div>
+  <p style="color:var(--muted2);font-size:13.5px;line-height:1.7">Frecuencia absoluta, relativa y porcentaje de cada intervalo, con sus medidas de tendencia central (★ moda).</p>
+
+  <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-top:14px">🌡️ Temperatura · 💨 Viento · 💧 Humedad</div>
+  <table class="data-table" style="margin-top:10px">
+    <thead><tr><th>Variable</th><th>Intervalo</th><th>F. Abs.</th><th>F. Rel.</th><th>%</th><th>Media · Mediana · Moda</th></tr></thead>
     <tbody>
-      <tr><td>44–47%</td><td>4</td><td>4/26</td><td>15.38%</td><td><div style="background:rgba(96,165,250,.35);height:8px;border-radius:4px;width:15%"></div></td></tr>
-      <tr style="background:rgba(96,165,250,.07)"><td><strong style="color:#fbbf24">48–51% ★</strong></td><td><strong>15</strong></td><td>15/26</td><td><strong>57.69%</strong></td><td><div style="background:#60a5fa;height:8px;border-radius:4px;width:58%"></div></td></tr>
-      <tr><td>52–55%</td><td>5</td><td>5/26</td><td>19.23%</td><td><div style="background:rgba(96,165,250,.45);height:8px;border-radius:4px;width:19%"></div></td></tr>
-      <tr><td>55%+</td><td>2</td><td>2/26</td><td>7.69%</td><td><div style="background:rgba(96,165,250,.3);height:8px;border-radius:4px;width:8%"></div></td></tr>
+      <tr><td rowspan="5">🌡️ Temp (°C)</td><td>22</td><td>1</td><td>1/26</td><td>3.85%</td><td rowspan="5">Media <strong>23.9</strong> · Mediana <strong>23</strong> · Moda <strong style="color:#fbbf24">23</strong></td></tr>
+      <tr style="background:rgba(56,189,248,.07)"><td><strong style="color:#fbbf24">23 ★</strong></td><td><strong>10</strong></td><td>10/26</td><td><strong>38.46%</strong></td></tr>
+      <tr><td>24</td><td>9</td><td>9/26</td><td>34.62%</td></tr>
+      <tr><td>25</td><td>3</td><td>3/26</td><td>11.54%</td></tr>
+      <tr><td>26+</td><td>3</td><td>3/26</td><td>11.54%</td></tr>
+      <tr style="background:rgba(52,211,153,.04)"><td rowspan="3">💨 Viento (km/h)</td><td>10–13</td><td>8</td><td>8/26</td><td>30.77%</td><td rowspan="3">Media <strong>13.9</strong> · Mediana <strong>14–15</strong> · Moda <strong style="color:#fbbf24">14–15</strong></td></tr>
+      <tr style="background:rgba(52,211,153,.10)"><td><strong style="color:#fbbf24">14–15 ★</strong></td><td><strong>13</strong></td><td>13/26</td><td><strong>50.00%</strong></td></tr>
+      <tr style="background:rgba(52,211,153,.04)"><td>16–17</td><td>5</td><td>5/26</td><td>19.23%</td></tr>
+      <tr style="background:rgba(96,165,250,.04)"><td rowspan="4">💧 Humedad (%)</td><td>44–47</td><td>4</td><td>4/26</td><td>15.38%</td><td rowspan="4">Media <strong>49.8</strong> · Mediana <strong>48–51</strong> · Moda <strong style="color:#fbbf24">48–51</strong></td></tr>
+      <tr style="background:rgba(96,165,250,.10)"><td><strong style="color:#fbbf24">48–51 ★</strong></td><td><strong>15</strong></td><td>15/26</td><td><strong>57.69%</strong></td></tr>
+      <tr style="background:rgba(96,165,250,.04)"><td>52–55</td><td>5</td><td>5/26</td><td>19.23%</td></tr>
+      <tr style="background:rgba(96,165,250,.04)"><td>55+</td><td>2</td><td>2/26</td><td>7.69%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-top:22px">🌧️ Precipitación · 🔵 Presión · ⛰️ Altitud</div>
+  <table class="data-table" style="margin-top:10px">
+    <thead><tr><th>Variable</th><th>Intervalo</th><th>F. Abs.</th><th>F. Rel.</th><th>%</th><th>Media · Mediana · Moda</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="4">🌧️ Precip. (mm)</td><td>0.1–0.4</td><td>8</td><td>8/26</td><td>30.77%</td><td rowspan="4">Media <strong>0.58</strong> · Mediana <strong>0.5–0.7</strong> · Moda <strong style="color:#fbbf24">0.5–0.7</strong></td></tr>
+      <tr style="background:rgba(129,140,248,.10)"><td><strong style="color:#fbbf24">0.5–0.7 ★</strong></td><td><strong>9</strong></td><td>9/26</td><td><strong>34.62%</strong></td></tr>
+      <tr><td>0.8–1.0</td><td>6</td><td>6/26</td><td>23.08%</td></tr>
+      <tr><td>1.0+</td><td>3</td><td>3/26</td><td>11.54%</td></tr>
+      <tr style="background:rgba(192,132,252,.04)"><td rowspan="4">🔵 Presión (hPa)</td><td>1000–1010</td><td>8</td><td>8/26</td><td>30.77%</td><td rowspan="4">Media <strong>1011.5</strong> · Mediana <strong>1012</strong> · Moda <strong style="color:#fbbf24">1012</strong></td></tr>
+      <tr style="background:rgba(192,132,252,.04)"><td>1011</td><td>5</td><td>5/26</td><td>19.23%</td></tr>
+      <tr style="background:rgba(192,132,252,.10)"><td><strong style="color:#fbbf24">1012 ★</strong></td><td><strong>10</strong></td><td>10/26</td><td><strong>38.46%</strong></td></tr>
+      <tr style="background:rgba(192,132,252,.04)"><td>1013</td><td>3</td><td>3/26</td><td>11.54%</td></tr>
+      <tr style="background:rgba(167,139,250,.10)"><td>⛰️ Altitud (m)</td><td><strong style="color:#a78bfa">2,390 ★</strong></td><td><strong>26</strong></td><td>26/26</td><td><strong>100%</strong></td><td>Constante</td></tr>
+    </tbody>
+  </table>
+
+  <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-top:22px">☀️ UV · 👁️ Visibilidad · 🌫️ Calidad del aire · 🤧 Alergias</div>
+  <table class="data-table" style="margin-top:10px">
+    <thead><tr><th>Variable</th><th>Intervalo</th><th>F. Abs.</th><th>F. Rel.</th><th>%</th><th>Media · Mediana · Moda</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="3">☀️ Índice UV</td><td>7 — Alto</td><td>5</td><td>5/26</td><td>19.23%</td><td rowspan="3">Media <strong>8.27</strong> · Mediana <strong>8</strong> · Moda <strong style="color:#fbbf24">9</strong></td></tr>
+      <tr><td>8 — Muy Alto</td><td>9</td><td>9/26</td><td>34.62%</td></tr>
+      <tr style="background:rgba(251,191,36,.10)"><td><strong style="color:#fbbf24">9 ★ — Muy Alto</strong></td><td><strong>12</strong></td><td>12/26</td><td><strong>46.15%</strong></td></tr>
+      <tr style="background:rgba(45,212,191,.04)"><td rowspan="2">👁️ Visibilidad (km)</td><td>9</td><td>6</td><td>6/26</td><td>23.08%</td><td rowspan="2">Media <strong>9.77</strong> · Mediana <strong>10</strong> · Moda <strong style="color:#fbbf24">10</strong></td></tr>
+      <tr style="background:rgba(45,212,191,.10)"><td><strong style="color:#fbbf24">10 ★</strong></td><td><strong>20</strong></td><td>20/26</td><td><strong>76.92%</strong></td></tr>
+      <tr style="background:rgba(251,113,133,.04)"><td rowspan="4">🌫️ AQI</td><td>55–58</td><td>7</td><td>7/26</td><td>26.92%</td><td rowspan="4">Media <strong>60.8</strong> · Mediana <strong>59–62</strong> · Moda <strong style="color:#fbbf24">59–62</strong></td></tr>
+      <tr style="background:rgba(251,113,133,.10)"><td><strong style="color:#fbbf24">59–62 ★</strong></td><td><strong>9</strong></td><td>9/26</td><td><strong>34.62%</strong></td></tr>
+      <tr style="background:rgba(251,113,133,.04)"><td>63–65</td><td>6</td><td>6/26</td><td>23.08%</td></tr>
+      <tr style="background:rgba(251,113,133,.04)"><td>65+</td><td>4</td><td>4/26</td><td>15.38%</td></tr>
+      <tr style="background:rgba(249,115,22,.10)"><td rowspan="3">🤧 Alergias</td><td><strong style="color:#fb7185">Alta ★</strong></td><td><strong>15</strong></td><td>15/26</td><td><strong>57.69%</strong></td><td rowspan="3">Sin días<br>de nivel <strong style="color:#64748b">Bajo</strong></td></tr>
+      <tr style="background:rgba(249,115,22,.04)"><td>Media</td><td>11</td><td>11/26</td><td>42.31%</td></tr>
+      <tr style="background:rgba(249,115,22,.04)"><td>Baja</td><td>0</td><td>0/26</td><td>0.00%</td></tr>
     </tbody>
   </table>
 </div>
 
+<!-- 9. Ondas de calor y cambio climático -->
 <div class="detail-sec">
-  <div class="detail-sec-head">🌧️ 4. Precipitación Atmosférica (mm)</div>
-  <div class="detail-gallery g2" style="margin-bottom:16px">
-    <div class="detail-gimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Hard_rain_on_a_roof.jpg/960px-Hard_rain_on_a_roof.jpg')"><div class="detail-gimg-cap">Lluvia — precipitación atmosférica</div></div>
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <div style="background:rgba(129,140,248,.08);border:1px solid rgba(129,140,248,.2);border-radius:12px;padding:16px">
-        <div style="font-size:10px;letter-spacing:1.2px;color:#818cf8;margin-bottom:12px;font-weight:600">TENDENCIA CENTRAL</div>
-        <div style="display:flex;gap:24px;flex-wrap:wrap">
-          <div><div style="font-size:1.6rem;font-weight:700;color:#38bdf8">0.58mm</div><div style="font-size:11px;color:#64748b;margin-top:2px">Media</div></div>
-          <div><div style="font-size:1.6rem;font-weight:700;color:#34d399">0.5–0.7</div><div style="font-size:11px;color:#64748b;margin-top:2px">Mediana</div></div>
-          <div><div style="font-size:1.6rem;font-weight:700;color:#fbbf24">0.5–0.7</div><div style="font-size:11px;color:#64748b;margin-top:2px">Moda</div></div>
-        </div>
-      </div>
-      <div class="detail-card" style="padding:14px 16px"><p style="font-size:13px;line-height:1.75;color:var(--muted2)">Abril es inicio de la temporada de lluvias en Hidalgo. El 34.62% de días registraron <strong style="color:var(--text)">0.5-0.7 mm</strong>. Precipitaciones ligeras que no mitigan la sequedad pero sí generan condiciones para el crecimiento de hongos y esporas.</p></div>
-    </div>
+  <div class="detail-sec-head">9 · Ondas de calor y cambio climático</div>
+  <p style="color:var(--muted2);font-size:14px;line-height:1.8">El <strong>Panel Intergubernamental sobre Cambio Climático (IPCC)</strong> señala que la frecuencia, intensidad y duración de las ondas de calor se ha incrementado globalmente desde mediados del siglo XX y la tendencia continuará. Para México:</p>
+  <div class="detail-3col" style="margin-top:10px">
+    <div class="detail-card"><strong style="color:#fb7185">+2 a +4 °C</strong><br>Aumento proyectado de la temperatura media hacia el año <strong>2100</strong> bajo escenario RCP 4.5 de emisiones medias.</div>
+    <div class="detail-card"><strong style="color:#fbbf24">×10 frecuencia</strong><br>Eventos de calor extremo que hoy ocurren cada 20 años podrían presentarse cada <strong>2 a 5 años</strong>.</div>
+    <div class="detail-card"><strong style="color:#a78bfa">Altiplano vulnerable</strong><br>Ciudades de altitud media como Pachuca, históricamente protegidas, enfrentarán calor más extremo y frecuente.</div>
   </div>
-  <table class="data-table">
-    <thead><tr><th>Precipitación (mm)</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
-    <tbody>
-      <tr><td>0.1–0.4 mm</td><td>8</td><td>8/26</td><td>30.77%</td><td><div style="background:rgba(129,140,248,.4);height:8px;border-radius:4px;width:31%"></div></td></tr>
-      <tr style="background:rgba(129,140,248,.07)"><td><strong style="color:#fbbf24">0.5–0.7 mm ★</strong></td><td><strong>9</strong></td><td>9/26</td><td><strong>34.62%</strong></td><td><div style="background:#818cf8;height:8px;border-radius:4px;width:35%"></div></td></tr>
-      <tr><td>0.8–1.0 mm</td><td>6</td><td>6/26</td><td>23.08%</td><td><div style="background:rgba(129,140,248,.5);height:8px;border-radius:4px;width:23%"></div></td></tr>
-      <tr><td>1.0+ mm</td><td>3</td><td>3/26</td><td>11.54%</td><td><div style="background:rgba(129,140,248,.35);height:8px;border-radius:4px;width:12%"></div></td></tr>
-    </tbody>
-  </table>
 </div>
 
+<!-- 10. Conclusión -->
 <div class="detail-sec">
-  <div class="detail-sec-head">⛰️ 5. Altitud (m s.n.m.)</div>
-  <div class="detail-gallery g2" style="margin-bottom:16px">
-    <div class="detail-gimg" style="background-image:url('${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg')"><div class="detail-gimg-cap">Sierra de Pachuca — 2,390 m s.n.m.</div></div>
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <div style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.2);border-radius:12px;padding:20px">
-        <div style="font-size:10px;letter-spacing:1.2px;color:#a78bfa;margin-bottom:12px;font-weight:600">DATO CONSTANTE</div>
-        <div style="font-size:3rem;font-weight:700;color:#a78bfa;line-height:1">2,390</div>
-        <div style="font-size:14px;color:#64748b;margin-top:4px">metros sobre el nivel del mar</div>
-        <div style="margin-top:10px;font-size:12px;color:#94a3b8">Frecuencia: 26/26 días · 100%</div>
-      </div>
-      <div class="detail-card" style="padding:14px 16px"><p style="font-size:13px;line-height:1.75;color:var(--muted2)">La altitud de Pachuca es una variable <strong style="color:var(--text)">constante</strong>. Su valor de 2,390 m explica las bajas temperaturas, menor presión atmosférica y mayor intensidad de radiación UV respecto a ciudades de menor elevación.</p></div>
-    </div>
+  <div class="detail-sec-head">10 · Conclusión</div>
+  <p style="color:var(--muted2);font-size:14.5px;line-height:1.85">El análisis de los 26 días de abril 2026 en Pachuca revela un mes marcado por un evento climático excepcional: una onda de calor de <strong>11 días (del 7 al 17 de abril)</strong> con un pico de <strong>27.1 °C</strong> — anomalía de <strong>+8.1 °C</strong> sobre la normal histórica de la ciudad.</p>
+  <div class="detail-3col" style="margin-top:14px">
+    <div class="detail-card"><strong style="color:#fb7185">Vulnerabilidad climática</strong><br>Pese a su altitud, Pachuca no está exenta de calor extremo. El binomio bloqueo anticiclónico + viento sur seco puede empujar las temperaturas muy por encima de lo esperado.</div>
+    <div class="detail-card"><strong style="color:#38bdf8">Relación T–precipitación</strong><br>La ausencia de lluvia durante la onda y su terminación abrupta el día 18 ilustran la dinámica de los eventos extremos: persisten bajo bloqueo atmosférico y colapsan con sistemas convectivos húmedos.</div>
+    <div class="detail-card"><strong style="color:#fbbf24">Perspectiva climática</strong><br>Bajo calentamiento global estos eventos serán más frecuentes e intensos. Pachuca necesita Planes de Acción ante Onda de Calor (PAC): alertas tempranas, centros de hidratación y protocolos médicos de emergencia.</div>
   </div>
-  <table class="data-table">
-    <thead><tr><th>Altitud (m)</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th></tr></thead>
-    <tbody>
-      <tr style="background:rgba(167,139,250,.07)"><td><strong style="color:#a78bfa">2,390 m ★</strong></td><td><strong>26</strong></td><td>26/26</td><td><strong>100.00%</strong></td></tr>
-    </tbody>
-  </table>
+  <div class="alert-box info" style="margin-top:16px">
+    El análisis estadístico y gráfico de este proyecto constituye una herramienta para comprender la <strong>variabilidad climática de Pachuca</strong> y tomar decisiones informadas en materia de salud pública, gestión del agua y planeación urbana.
+  </div>
 </div>
 
+<!-- Fuentes -->
 <div class="detail-sec">
-  <div class="detail-sec-head">🔵 6. Presión Atmosférica (hPa)</div>
-  <div class="detail-gallery g2" style="margin-bottom:16px">
-    <div class="detail-gimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/ERA5_global_mean_sea_level_pressure.png/960px-ERA5_global_mean_sea_level_pressure.png')"><div class="detail-gimg-cap">Mapa de presión atmosférica global — ERA5</div></div>
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <div style="background:rgba(192,132,252,.08);border:1px solid rgba(192,132,252,.2);border-radius:12px;padding:16px">
-        <div style="font-size:10px;letter-spacing:1.2px;color:#c084fc;margin-bottom:12px;font-weight:600">TENDENCIA CENTRAL</div>
-        <div style="display:flex;gap:24px;flex-wrap:wrap">
-          <div><div style="font-size:1.6rem;font-weight:700;color:#38bdf8">1011.5</div><div style="font-size:11px;color:#64748b;margin-top:2px">Media hPa</div></div>
-          <div><div style="font-size:1.6rem;font-weight:700;color:#34d399">1012</div><div style="font-size:11px;color:#64748b;margin-top:2px">Mediana hPa</div></div>
-          <div><div style="font-size:1.6rem;font-weight:700;color:#fbbf24">1012</div><div style="font-size:11px;color:#64748b;margin-top:2px">Moda hPa</div></div>
-        </div>
-      </div>
-      <div class="detail-card" style="padding:14px 16px"><p style="font-size:13px;line-height:1.75;color:var(--muted2)">La presión estándar a nivel del mar es 1013.25 hPa. En Pachuca a 2,390 m, la presión reducida de <strong style="color:var(--text)">~1012 hPa</strong> es consistente con la altitud y afecta la concentración de oxígeno disponible.</p></div>
-    </div>
-  </div>
-  <table class="data-table">
-    <thead><tr><th>Presión (hPa)</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
-    <tbody>
-      <tr><td>1000–1010 hPa</td><td>8</td><td>8/26</td><td>30.77%</td><td><div style="background:rgba(192,132,252,.35);height:8px;border-radius:4px;width:31%"></div></td></tr>
-      <tr><td>1011 hPa</td><td>5</td><td>5/26</td><td>19.23%</td><td><div style="background:rgba(192,132,252,.45);height:8px;border-radius:4px;width:19%"></div></td></tr>
-      <tr style="background:rgba(192,132,252,.07)"><td><strong style="color:#fbbf24">1012 hPa ★</strong></td><td><strong>10</strong></td><td>10/26</td><td><strong>38.46%</strong></td><td><div style="background:#c084fc;height:8px;border-radius:4px;width:38%"></div></td></tr>
-      <tr><td>1013 hPa</td><td>3</td><td>3/26</td><td>11.54%</td><td><div style="background:rgba(192,132,252,.3);height:8px;border-radius:4px;width:12%"></div></td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="detail-sec">
-  <div class="detail-sec-head">☀️ 7. Índice UV</div>
-  <div class="detail-gallery g2" style="margin-bottom:16px">
-    <div class="detail-gimg" style="background-image:url('${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg');background-position:center 20%"><div class="detail-gimg-cap">Radiación UV — cielo abierto a 2,390 m s.n.m.</div></div>
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <div style="background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.2);border-radius:12px;padding:16px">
-        <div style="font-size:10px;letter-spacing:1.2px;color:#fbbf24;margin-bottom:12px;font-weight:600">TENDENCIA CENTRAL</div>
-        <div style="display:flex;gap:24px;flex-wrap:wrap">
-          <div><div style="font-size:1.6rem;font-weight:700;color:#38bdf8">8.27</div><div style="font-size:11px;color:#64748b;margin-top:2px">Media</div></div>
-          <div><div style="font-size:1.6rem;font-weight:700;color:#34d399">8</div><div style="font-size:11px;color:#64748b;margin-top:2px">Mediana</div></div>
-          <div><div style="font-size:1.6rem;font-weight:700;color:#fbbf24">9</div><div style="font-size:11px;color:#64748b;margin-top:2px">Moda</div></div>
-        </div>
-      </div>
-      <div class="alert-box warning" style="margin-top:0"><strong>⚠️ Riesgo Muy Alto:</strong> Un índice UV de 8-9 se clasifica como <strong>muy alto</strong> (escala OMS). A 2,390 m la atmósfera filtra menos radiación. Se recomienda protección solar obligatoria entre 11am y 3pm.</div>
-    </div>
-  </div>
-  <table class="data-table">
-    <thead><tr><th>Índice UV</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
-    <tbody>
-      <tr><td>UV 7 — Alto</td><td>5</td><td>5/26</td><td>19.23%</td><td><div style="background:rgba(251,191,36,.4);height:8px;border-radius:4px;width:19%"></div></td></tr>
-      <tr><td>UV 8 — Muy Alto</td><td>9</td><td>9/26</td><td>34.62%</td><td><div style="background:rgba(251,191,36,.65);height:8px;border-radius:4px;width:35%"></div></td></tr>
-      <tr style="background:rgba(251,191,36,.07)"><td><strong style="color:#fbbf24">UV 9 ★ — Muy Alto</strong></td><td><strong>12</strong></td><td>12/26</td><td><strong>46.15%</strong></td><td><div style="background:#fbbf24;height:8px;border-radius:4px;width:46%"></div></td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="detail-sec">
-  <div class="detail-sec-head">👁️ 8. Visibilidad (km)</div>
-  <div class="detail-gallery g2" style="margin-bottom:16px">
-    <div class="detail-gimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/A_foggy_winter_morning.jpg/960px-A_foggy_winter_morning.jpg')"><div class="detail-gimg-cap">Visibilidad — comparativa entre días despejados y neblinosos</div></div>
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <div style="background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.2);border-radius:12px;padding:16px">
-        <div style="font-size:10px;letter-spacing:1.2px;color:#2dd4bf;margin-bottom:12px;font-weight:600">TENDENCIA CENTRAL</div>
-        <div style="display:flex;gap:24px;flex-wrap:wrap">
-          <div><div style="font-size:1.6rem;font-weight:700;color:#38bdf8">9.77 km</div><div style="font-size:11px;color:#64748b;margin-top:2px">Media</div></div>
-          <div><div style="font-size:1.6rem;font-weight:700;color:#34d399">10 km</div><div style="font-size:11px;color:#64748b;margin-top:2px">Mediana</div></div>
-          <div><div style="font-size:1.6rem;font-weight:700;color:#fbbf24">10 km</div><div style="font-size:11px;color:#64748b;margin-top:2px">Moda</div></div>
-        </div>
-      </div>
-      <div class="detail-card" style="padding:14px 16px"><p style="font-size:13px;line-height:1.75;color:var(--muted2)">El 76.92% de los días la visibilidad fue de <strong style="color:var(--text)">10 km</strong>, indicando cielos mayormente despejados. Pachuca tiene buena calidad visual del aire en comparación con zonas industriales del Valle de México cercano.</p></div>
-    </div>
-  </div>
-  <table class="data-table">
-    <thead><tr><th>Visibilidad (km)</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
-    <tbody>
-      <tr><td>9 km</td><td>6</td><td>6/26</td><td>23.08%</td><td><div style="background:rgba(45,212,191,.4);height:8px;border-radius:4px;width:23%"></div></td></tr>
-      <tr style="background:rgba(45,212,191,.07)"><td><strong style="color:#fbbf24">10 km ★</strong></td><td><strong>20</strong></td><td>20/26</td><td><strong>76.92%</strong></td><td><div style="background:#2dd4bf;height:8px;border-radius:4px;width:77%"></div></td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="detail-sec">
-  <div class="detail-sec-head">🌫️ 9. Índice de Calidad del Aire (AQI)</div>
-  <div class="detail-gallery g2" style="margin-bottom:16px">
-    <div class="detail-gimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Edinburgh_air_quality_measurement_station_dsc06786.jpg/960px-Edinburgh_air_quality_measurement_station_dsc06786.jpg')"><div class="detail-gimg-cap">Estación de monitoreo de calidad del aire</div></div>
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <div style="background:rgba(251,113,133,.08);border:1px solid rgba(251,113,133,.2);border-radius:12px;padding:16px">
-        <div style="font-size:10px;letter-spacing:1.2px;color:#fb7185;margin-bottom:12px;font-weight:600">TENDENCIA CENTRAL</div>
-        <div style="display:flex;gap:24px;flex-wrap:wrap">
-          <div><div style="font-size:1.6rem;font-weight:700;color:#38bdf8">60.8</div><div style="font-size:11px;color:#64748b;margin-top:2px">Media AQI</div></div>
-          <div><div style="font-size:1.6rem;font-weight:700;color:#34d399">59–62</div><div style="font-size:11px;color:#64748b;margin-top:2px">Mediana</div></div>
-          <div><div style="font-size:1.6rem;font-weight:700;color:#fbbf24">59–62</div><div style="font-size:11px;color:#64748b;margin-top:2px">Moda</div></div>
-        </div>
-      </div>
-      <div class="alert-box" style="background:rgba(251,191,36,.07);border-color:rgba(251,191,36,.2);margin-top:0"><strong style="color:#fbbf24">⚠️ Categoría Moderada:</strong> AQI 59-62 cae en la categoría <strong>Moderada</strong> (51-100). Personas sensibles (asma, alergias) pueden experimentar síntomas. La moda en este rango coincide con el alto seguimiento de alergias.</div>
-    </div>
-  </div>
-  <table class="data-table">
-    <thead><tr><th>AQI</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
-    <tbody>
-      <tr><td>55–58</td><td>7</td><td>7/26</td><td>26.92%</td><td><div style="background:rgba(251,113,133,.35);height:8px;border-radius:4px;width:27%"></div></td></tr>
-      <tr style="background:rgba(251,113,133,.07)"><td><strong style="color:#fbbf24">59–62 ★</strong></td><td><strong>9</strong></td><td>7/26</td><td><strong>34.62%</strong></td><td><div style="background:#fb7185;height:8px;border-radius:4px;width:35%"></div></td></tr>
-      <tr><td>63–65</td><td>6</td><td>6/26</td><td>23.08%</td><td><div style="background:rgba(251,113,133,.45);height:8px;border-radius:4px;width:23%"></div></td></tr>
-      <tr><td>65+</td><td>4</td><td>4/26</td><td>15.38%</td><td><div style="background:rgba(251,113,133,.3);height:8px;border-radius:4px;width:15%"></div></td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="detail-sec">
-  <div class="detail-sec-head">🤧 10. Seguimiento de Alergias</div>
-  <div class="detail-gallery g2" style="margin-bottom:16px">
-    <div class="detail-gimg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Misc_pollen_colorized.jpg/960px-Misc_pollen_colorized.jpg')"><div class="detail-gimg-cap">Granos de polen — principales alérgenos ambientales</div></div>
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <div style="background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2);border-radius:12px;padding:16px">
-        <div style="font-size:10px;letter-spacing:1.2px;color:#f97316;margin-bottom:12px;font-weight:600">DISTRIBUCIÓN</div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <div style="display:flex;align-items:center;gap:12px"><div style="background:#fb7185;height:10px;border-radius:5px;width:58%"></div><div style="font-size:13px;color:var(--text);font-weight:600">Alta 57.69%</div></div>
-          <div style="display:flex;align-items:center;gap:12px"><div style="background:#fbbf24;height:10px;border-radius:5px;width:42%"></div><div style="font-size:13px;color:var(--text);font-weight:600">Media 42.31%</div></div>
-          <div style="display:flex;align-items:center;gap:12px"><div style="background:rgba(100,116,139,.3);height:10px;border-radius:5px;width:1%"></div><div style="font-size:13px;color:#64748b">Baja 0.00%</div></div>
-        </div>
-      </div>
-      <div class="alert-box warning"><strong>🚨 Alerta:</strong> El 100% de los días de abril 2026 registraron algún nivel de alergias (ALTA o MEDIA). <strong>Ningún día</strong> tuvo alergias bajas. Esto coincide con la temporada de floración y vientos del altiplano.</div>
-    </div>
-  </div>
-  <table class="data-table">
-    <thead><tr><th>Nivel de Alergias</th><th>Frec. Absoluta</th><th>Frec. Relativa</th><th>Porcentaje</th><th>Distribución</th></tr></thead>
-    <tbody>
-      <tr style="background:rgba(251,113,133,.07)"><td><strong style="color:#fb7185">Alta ★</strong></td><td><strong>15</strong></td><td>15/26</td><td><strong>57.69%</strong></td><td><div style="background:#fb7185;height:8px;border-radius:4px;width:58%"></div></td></tr>
-      <tr><td>Media</td><td>11</td><td>11/26</td><td>42.31%</td><td><div style="background:#fbbf24;height:8px;border-radius:4px;width:42%"></div></td></tr>
-      <tr><td>Baja</td><td>0</td><td>0/26</td><td>0.00%</td><td><div style="background:rgba(100,116,139,.2);height:8px;border-radius:4px;width:1%"></div></td></tr>
-    </tbody>
-  </table>
-  <div class="detail-card" style="margin-top:16px"><p style="font-size:13px;line-height:1.8;color:var(--muted2)">La combinación de vientos moderados (14-15 km/h), humedad media (48-51%), temperatura fresca (23°C) y AQI moderado crea condiciones ideales para la <strong style="color:var(--text)">proliferación y dispersión de alérgenos</strong>. El municipio de Pachuca presenta alta carga polínica en primavera por la vegetación de la Sierra de Pachuca y los cultivos del Altiplano Hidalguense.</p></div>
+  <div class="detail-sec-head">Fuentes de consulta</div>
+  <ol style="color:var(--muted2);font-size:13px;line-height:1.85;padding-left:22px">
+    <li>Organización Meteorológica Mundial (OMM) — <em>Definición y criterios de onda de calor.</em> Ginebra, 2024.</li>
+    <li>CONAGUA — <em>Boletín Climatológico Mensual.</em> Abril 2026, México.</li>
+    <li>IPCC — <em>Sixth Assessment Report (AR6). Climate Change 2021: The Physical Science Basis.</em></li>
+    <li>Time and Date — <em>Climate &amp; Weather Averages in Pachuca, Hidalgo.</em> timeanddate.com</li>
+    <li>Weather Atlas — <em>Monthly Climate in Pachuca.</em> weather-atlas.com</li>
+    <li>Climate Data — <em>Pachuca Climate Statistics.</em> climate-data.org</li>
+    <li>INEGI — <em>Información geográfica y climática del estado de Hidalgo,</em> 2025.</li>
+  </ol>
 </div>` },
   uni:  { tag:'Materia 04 · Común', tagColor:'rgba(167,139,250,.15)', tagTextColor:'#a78bfa', title:'El Universo y sus Fenómenos', sub:'Fenómenos atmosféricos y radiación solar · Proyecto en desarrollo', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
     content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">🔭</div><h4>Proyecto en desarrollo</h4><p>El contenido de esta materia se agregará próximamente cuando esté disponible en Drive.</p></div></div>` },
