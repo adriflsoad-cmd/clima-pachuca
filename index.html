@@ -1487,34 +1487,47 @@
 
     <!-- Comunicación -->
     <div class="materia-card m-soc reveal" onclick="openDetail('comunicacion')">
-      <div class="mat-sidebar">
+      <div class="mat-sidebar" style="background-image:url('/images/eima/foto3.png')">
         <div class="mat-num">10</div>
         <div>
           <span class="mat-tag tag-soc">Comunicación</span>
           <div class="mat-title">Campos Laborales de la Comunicación</div>
-          <div class="mat-sub">Periodismo ambiental, divulgación científica y comunicación de riesgo climático en medios locales de Pachuca.</div>
+          <div class="mat-sub">Documental EIMA · Contaminación del Aire · Pachuca, Abril 2026</div>
         </div>
       </div>
       <div class="mat-content">
-        <!-- Imagen de Pachuca -->
-        <div style="margin:-2px 0 16px;border-radius:14px;overflow:hidden;border:1px solid var(--border);height:160px;background:url('https://upload.wikimedia.org/wikipedia/commons/d/d5/Reloj_Monumental%2C_Pachuca%2C_Hidalgo%2C_M%C3%A9xico%2C_2013-10-10%2C_DD_06.JPG') center/cover;position:relative">
-          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(8,13,26,.85) 0%,rgba(8,13,26,.1) 60%)"></div>
-          <div style="position:absolute;bottom:10px;left:14px;font-size:11px;color:#fff;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-shadow:0 1px 4px rgba(0,0,0,.6)">Pachuca · Reloj Monumental</div>
+        <div class="mat-content-title">"Cuando el ambiente enferma, el territorio habla…"</div>
+        <p class="mat-content-intro">Documental estudiantil sobre la <strong>contaminación del aire en Pachuca</strong> y sus efectos en la salud y el medio ambiente. Producido como entregable de Comunicación dentro del proyecto interdisciplinario <strong>EIMA</strong>, que integra 10 materias y 26 observaciones reales de abril 2026.</p>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0">
+          <div style="background:var(--bg2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border)">
+            <div style="font-size:18px;font-weight:800;color:#fbbf24">27°C</div>
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px">Temp. máx</div>
+          </div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border)">
+            <div style="font-size:18px;font-weight:800;color:#fb7185">+9°C</div>
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px">Anomalía</div>
+          </div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border)">
+            <div style="font-size:18px;font-weight:800;color:#38bdf8">26</div>
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px">Observ.</div>
+          </div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border)">
+            <div style="font-size:18px;font-weight:800;color:#34d399">10</div>
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px">Materias</div>
+          </div>
         </div>
-        <div class="mat-content-title">Comunicación del Clima</div>
-        <p class="mat-content-intro">Documental estudiantil que explora los campos laborales donde un comunicador puede incidir en la divulgación del cambio climático: periodismo de datos, comunicación de riesgo y divulgación científica para comunidades vulnerables de Pachuca.</p>
         <!-- Video preview (sin controles) -->
-        <div style="margin-top:16px;border-radius:14px;overflow:hidden;border:1px solid var(--border);position:relative;cursor:pointer" title="Ver proyecto completo">
-          <video playsinline preload="metadata"
+        <div style="margin-top:6px;border-radius:14px;overflow:hidden;border:1px solid var(--border);position:relative;cursor:pointer" title="Ver proyecto completo">
+          <video playsinline preload="metadata" muted
             style="width:100%;display:block;max-height:220px;object-fit:cover;pointer-events:none">
-            <source src="/videos/comunicacion.mp4#t=3" type="video/mp4">
+            <source src="/videos/comunicacion.mp4#t=2" type="video/mp4">
           </video>
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25)">
             <div style="width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(4px);border:2px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center">
               <div style="width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:18px solid #fff;margin-left:4px"></div>
             </div>
           </div>
-          <div style="position:absolute;bottom:10px;left:12px;font-size:11px;color:#fff;font-weight:600;letter-spacing:.5px;text-shadow:0 1px 4px rgba(0,0,0,.6)">Ver proyecto completo →</div>
+          <div style="position:absolute;bottom:10px;left:12px;font-size:11px;color:#fff;font-weight:600;letter-spacing:.5px;text-shadow:0 1px 4px rgba(0,0,0,.6)">Ver documental + proyecto →</div>
         </div>
       </div>
     </div>
@@ -3669,25 +3682,151 @@ void loop() {
     tag: 'Materia 10 · Social',
     tagColor: 'rgba(245,158,11,.15)', tagTextColor: '#f59e0b',
     title: 'Campos Laborales de la Comunicación',
-    sub: 'Periodismo ambiental · Divulgación científica · Comunicación de riesgo · Pachuca 2026',
-    hero: `${W}/d/d5/Reloj_Monumental%2C_Pachuca%2C_Hidalgo%2C_M%C3%A9xico%2C_2013-10-10%2C_DD_06.JPG`,
+    sub: 'Estación Interdisciplinaria de Monitoreo Ambiental (EIMA) · Documental sobre la contaminación del aire · Pachuca, Abril 2026',
+    hero: `/images/eima/foto3.png`,
     content: `
+      <!-- Frase llamativa -->
       <div class="detail-sec">
-        <div class="detail-sec-head">Video del proyecto</div>
-        <p style="color:var(--muted2);font-size:14px;line-height:1.7;margin-bottom:16px">Documental estudiantil que recorre los principales campos laborales donde un comunicador incide en la divulgación del cambio climático. Se analizan el periodismo de datos, la comunicación de riesgo y la producción de contenido científico para comunidades de Pachuca.</p>
+        <div style="background:linear-gradient(135deg,rgba(245,158,11,.10),rgba(251,113,133,.08));border-left:4px solid #f59e0b;border-radius:12px;padding:22px 24px;font-style:italic;font-size:18px;line-height:1.6;color:var(--text)">
+          &ldquo;Cuando el ambiente enferma, el territorio habla y nosotros aprendimos a escucharlo.&rdquo;
+        </div>
+        <p style="color:var(--muted2);font-size:14.5px;line-height:1.8;margin-top:18px">
+          Análisis estadístico e interdisciplinario del clima de Pachuca de Soto, Hidalgo. Durante <strong>abril de 2026</strong> se registraron <strong>26 observaciones diarias</strong> que revelaron anomalías históricas: temperaturas hasta <strong>9 °C sobre el promedio</strong>, humedad en mínimos récord y un evento de lluvia <strong>6× superior</strong> al promedio mensual. El proyecto integra <strong>10 materias</strong> de todas las áreas propedéuticas de la Preparatoria Colegio Pedro de Gante A.C., incorporada a la UAEH.
+        </p>
+        <div class="detail-facts" style="margin-top:18px">
+          <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">26</div><div class="detail-fact-lbl">Observaciones diarias</div></div>
+          <div class="detail-fact"><div class="detail-fact-val" style="color:#fb7185">+9°C</div><div class="detail-fact-lbl">Sobre promedio</div></div>
+          <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">10</div><div class="detail-fact-lbl">Materias integradas</div></div>
+          <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">4</div><div class="detail-fact-lbl">Áreas propedéuticas</div></div>
+        </div>
+      </div>
+
+      <!-- 02 Reportaje / Video -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">02 · Reportaje — Documental</div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:22px;color:var(--text);margin:4px 0 8px">Contaminación del aire — Documental · EIMA Pachuca 2026</h3>
+        <p style="color:var(--muted2);font-size:14px;line-height:1.75;margin-bottom:16px">
+          Este documental trata sobre la <strong>contaminación del aire</strong> y cómo afecta a las personas y al medio ambiente. El problema que busca resolver es la gran cantidad de contaminación que producen los autos, fábricas y la basura, ya que esto perjudica la salud y provoca daños en la naturaleza. Es importante porque al reducir la contaminación del aire podemos tener un ambiente más limpio, cuidar nuestra salud y vivir mejor.
+        </p>
         <div style="border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#000">
           <video controls playsinline preload="metadata"
-            style="width:100%;display:block;max-height:480px;object-fit:contain">
+            style="width:100%;display:block;max-height:520px;object-fit:contain">
             <source src="/videos/comunicacion.mp4" type="video/mp4">
           </video>
         </div>
       </div>
+
+      <!-- 03 Proceso -->
       <div class="detail-sec">
-        <div class="detail-sec-head">Campos explorados</div>
+        <div class="detail-sec-head">03 · Proceso del proyecto</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px">
+          <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);height:200px;background:url('/images/eima/foto1.png') center/cover"></div>
+          <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);height:200px;background:url('/images/eima/foto2.png') center/cover"></div>
+        </div>
         <div class="detail-3col">
-          <div class="detail-card"><strong>Periodismo ambiental</strong><br>Análisis de la cobertura mediática de las anomalías climáticas de abril 2026 en medios locales: El Sol de Hidalgo, Milenio Hidalgo y redes sociales.</div>
-          <div class="detail-card"><strong>Divulgación científica</strong><br>Producción de esta página web como ejemplo de comunicación científica estudiantil: visualización de datos, infografías y reportes interactivos.</div>
-          <div class="detail-card"><strong>Comunicación de riesgo</strong><br>Estrategias para transmitir alertas tempranas, instrucciones de seguridad y datos científicos de manera comprensible a la ciudadanía.</div>
+          <div class="detail-card"><strong style="color:#fbbf24">Etapa 1 · Diseño</strong><br>Tema central: monitoreo climático de Pachuca, abril 2026. Asignación de 10 materias participantes, cada área propedéutica con su enfoque disciplinar.</div>
+          <div class="detail-card"><strong style="color:#38bdf8">Etapa 2 · Recolección</strong><br>26 observaciones diarias del 1 al 30 de abril: temperatura, humedad, precipitación, presión, UV, viento, visibilidad y calidad del aire.</div>
+          <div class="detail-card"><strong style="color:#34d399">Etapa 3 · Trabajo de campo</strong><br>Investigaciones en Pachuca para documentar el impacto de las anomalías climáticas sobre la cadena trófica del matorral xerófilo.</div>
+          <div class="detail-card"><strong style="color:#a78bfa">Etapa 4 · Análisis</strong><br>Tablas de frecuencias en Matemáticas, ecotoxicología en Biodiversidad, sensores en Electrónica, química atmosférica, gobernanza, comunicación.</div>
+          <div class="detail-card"><strong style="color:#fb7185">Etapa 5 · Entregables</strong><br>Documental de Comunicación, página web interactiva (climaabr.netlify.app) y guion narrativo del proyecto.</div>
+        </div>
+      </div>
+
+      <!-- 04 Resultados -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">04 · Resultados — Anomalías de abril 2026</div>
+        <table class="data-table">
+          <thead><tr><th>Variable</th><th>Dato</th><th>Nota</th></tr></thead>
+          <tbody>
+            <tr><td>🌡️ Temp. máxima registrada</td><td><strong style="color:#fb7185">27 °C</strong></td><td>+9 °C sobre el promedio histórico (17 °C)</td></tr>
+            <tr><td>💧 Humedad mínima</td><td><strong style="color:#fbbf24">35%</strong></td><td>−16 puntos del promedio histórico (51%)</td></tr>
+            <tr><td>🌧️ Lluvia en evento único</td><td><strong style="color:#38bdf8">18 mm</strong></td><td>×6 del promedio mensual (5 abril)</td></tr>
+            <tr><td>💨 Viento ráfaga NE</td><td><strong>40 km/h</strong></td><td>Interrumpió vuelo de polinizadores</td></tr>
+            <tr><td>☀️ UV promedio</td><td><strong style="color:#fbbf24">8.27</strong></td><td>Categoría: Muy Alto</td></tr>
+            <tr><td>🤧 Días con alergias altas</td><td><strong>57.69%</strong></td><td>15 de 26 observaciones</td></tr>
+            <tr><td>👁️ Visibilidad ≥10 km</td><td><strong>76.92%</strong></td><td>de los días observados</td></tr>
+            <tr><td>📊 Observaciones totales</td><td><strong style="color:#34d399">26</strong></td><td>1 al 30 de abril de 2026</td></tr>
+            <tr><td>📚 Materias integradas</td><td><strong style="color:#a78bfa">10</strong></td><td>Todas las áreas propedéuticas</td></tr>
+          </tbody>
+        </table>
+        <div class="alert-box warning" style="margin-top:14px">
+          <strong>Interpretación:</strong> abril 2026 registró anomalías históricas en Pachuca. Temperatura media de <strong>23.9 °C</strong> (moda 23 °C), superando hasta 9 °C el promedio histórico. Humedad crítica (media 49.8%, mínimos 33–35%) afectó polinizadores nativos. El evento único de lluvia (18 mm el 5 de abril) multiplicó por 6 el promedio mensual e impidió el vuelo de la abeja <em>Xylocopa mexicanorum</em>, eslabón crítico del matorral xerófilo. Clasificación Köppen: <strong>BSk</strong> (árido de altura).
+        </div>
+      </div>
+
+      <!-- 05 Interdisciplinariedad -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">05 · Interdisciplinariedad — 10 materias, 4 áreas propedéuticas</div>
+        <div class="detail-3col">
+          <div class="detail-card"><strong>🌿 Ecología</strong><br>Bioindicadores del matorral xerófilo: 14 especies registradas. Eslabón crítico: abeja nativa <em>Xylocopa mexicanorum</em>.</div>
+          <div class="detail-card"><strong>📐 Matemáticas</strong><br>Tablas de frecuencias de 9 variables climáticas con 26 observaciones. Temp. media 23.9 °C, viento moda 14–15 km/h.</div>
+          <div class="detail-card"><strong>💭 Filosofía</strong><br>Ética ambiental: 5 lentes (metafísico, epistemológico, ético, lógico, estético) sobre crisis climática e incendios.</div>
+          <div class="detail-card"><strong>🔭 Física</strong><br>Fluidos (calidad aire/agua), Electromagnetismo (sensores), Óptica (visibilidad), Mecánica (instrumentos).</div>
+          <div class="detail-card"><strong>🦎 Biodiversidad</strong><br>Ecotoxicología del <em>Ambystoma velasci</em> ante glifosato, Pb, Cd, amoniaco y microplásticos. Cuenca Tula: riesgo MUY ALTO.</div>
+          <div class="detail-card"><strong>⚡ Electrónica</strong><br>Estación con LM35, DHT11 y BMP180. A 2,426 m s.n.m., presión ~770 mmHg requiere corrección altimétrica.</div>
+          <div class="detail-card"><strong>⚗️ Química</strong><br>60+ elementos del cuerpo humano vs. contaminantes de Pachuca: O₂ reducido, ozono troposférico, metales pesados.</div>
+          <div class="detail-card"><strong>🏛️ Trabajo Social</strong><br>68% de familias encuestadas reportó impacto en actividades cotidianas. Vulnerables: adultos mayores, infancia, bajos recursos.</div>
+          <div class="detail-card"><strong>🗳️ Ciencia Política</strong><br>LGCC, PROMARNAT y ODS 13 aplicados a Pachuca. Propuesta de política pública local de adaptación climática.</div>
+          <div class="detail-card" style="border-color:rgba(245,158,11,.5);background:rgba(245,158,11,.06)"><strong style="color:#f59e0b">📡 Comunicación ★</strong><br>Documental sobre periodismo de datos, comunicación de riesgo y divulgación científica para comunidades vulnerables.</div>
+          <div class="detail-card"><strong>🏥 Ciencias de la Salud</strong><br>+10.8% de IRAS en Pachuca. Aire–agua–suelo se vinculan con asma, bronquitis, gastroenteritis y cardiovasculares.</div>
+        </div>
+      </div>
+
+      <!-- 06 Datos curiosos -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">06 · Datos curiosos</div>
+        <div class="detail-2col">
+          <div class="detail-card"><strong>💨 La Bella Airosa</strong><br>Pachuca recibe vientos del NE con ráfagas hasta 40 km/h en abril, clave en la dispersión de contaminantes y polinizadores.</div>
+          <div class="detail-card"><strong>🦎 Ajolote del Altiplano</strong><br><em>Ambystoma velasci</em> solo habita en bosques de pino–encino de la Sierra de Pachuca. Protección Especial NOM-059-SEMARNAT.</div>
+          <div class="detail-card"><strong>🌡️ Mes más cálido en la historia</strong><br>Abril 2026 fue el mes más cálido registrado en Pachuca, con temperaturas hasta 9 °C sobre el promedio histórico de 17 °C.</div>
+          <div class="detail-card"><strong>⚠️ Alergias diarias</strong><br>El 57.69% de los días de abril 2026 tuvo niveles ALTOS de alergias. Ni un solo día con nivel bajo en todo el mes.</div>
+          <div class="detail-card"><strong>🔬 Microplásticos</strong><br>Pachuca es el mayor generador de microplásticos de Hidalgo. Llegan a los arroyos de la sierra y afectan al Ajolote del Altiplano.</div>
+          <div class="detail-card"><strong>⛰️ Altitud BSk</strong><br>2,426 m s.n.m. con clasificación climática Köppen BSk (árido de altura) — reduce el O₂ disponible para sus habitantes.</div>
+        </div>
+      </div>
+
+      <!-- 07 Equipo -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">07 · Equipo — Integrantes y roles</div>
+        <table class="data-table">
+          <thead><tr><th>Integrantes</th><th>Materia / Rol</th><th>Responsabilidad</th></tr></thead>
+          <tbody>
+            <tr><td>Adrián y Cristopher</td><td><strong>Ecología</strong></td><td>Bitácora de bioindicadores, cadena trófica</td></tr>
+            <tr><td>Juan y Carlos</td><td><strong>Filosofía</strong></td><td>Ética ambiental y pensamiento crítico</td></tr>
+            <tr><td>Emmanuel y Brayan</td><td><strong>Matemáticas</strong></td><td>Tablas de frecuencias, estadísticas climáticas</td></tr>
+            <tr><td>Mariela y Brenda</td><td><strong>Física</strong></td><td>Fenómenos atmosféricos y radiación solar</td></tr>
+            <tr><td>Mariana y Aurora</td><td><strong>Biodiversidad</strong></td><td>Ecotoxicología, ajolote del altiplano</td></tr>
+            <tr><td>Adrián y Juan</td><td><strong>Electrónica</strong></td><td>Diseño de estación meteorológica</td></tr>
+            <tr><td>Mariela, Brenda y Mariana</td><td><strong>Química</strong></td><td>Análisis del cuerpo y la atmósfera</td></tr>
+            <tr><td>Cristopher y Carlos</td><td><strong>Trabajo Social</strong></td><td>Diagnóstico comunitario, encuestas</td></tr>
+            <tr><td>Cristopher y Carlos</td><td><strong>Ciencia Política</strong></td><td>Políticas públicas ambientales</td></tr>
+            <tr><td>Cristopher y Carlos</td><td><strong style="color:#f59e0b">Comunicación</strong></td><td>Documental y divulgación científica</td></tr>
+            <tr><td>Mariana y Mariela</td><td><strong>Ciencias de la Salud</strong></td><td>Impacto ambiental en salud humana</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 08 Conclusiones -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">08 · Conclusiones</div>
+        <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-bottom:6px">¿Qué aprendimos?</div>
+        <p style="color:var(--muted2);font-size:14px;line-height:1.8;margin-bottom:14px">
+          A través de la <strong>Estación Interdisciplinaria de Monitoreo Ambiental</strong> aprendimos que el clima no es solo un tema científico: es un fenómeno que afecta la biología, la salud, la economía, la política y la comunicación de una comunidad. Registrar 26 observaciones reales nos enseñó a transformar datos en conocimiento y a identificar patrones que el promedio histórico no revela. También desarrollamos habilidades de trabajo colaborativo, pensamiento crítico e investigación de campo.
+        </p>
+        <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-bottom:6px">Importancia del proyecto</div>
+        <p style="color:var(--muted2);font-size:14px;line-height:1.8">
+          Pachuca de Soto vivió en abril 2026 uno de sus meses más extremos. Este proyecto documenta ese momento con evidencia real y lo analiza desde 10 perspectivas disciplinares: demuestra que la escuela puede producir conocimiento útil para la comunidad — desde alertas sobre especies como el Ajolote del Altiplano, hasta propuestas de política pública local de adaptación climática.
+        </p>
+        <div class="alert-box info" style="margin-top:16px">
+          <strong>📦 Entregables finales:</strong> Documental estudiantil de Comunicación · Página web interactiva <em>climaabr.netlify.app</em> · Guion narrativo del proyecto.
+        </div>
+      </div>
+
+      <!-- Pie institucional -->
+      <div class="detail-sec">
+        <div style="text-align:center;padding:18px;border-top:1px solid var(--border);color:var(--muted);font-size:12px;letter-spacing:.5px">
+          PREPARATORIA COLEGIO PEDRO DE GANTE A.C. · INCORPORADA A LA UAEH<br>
+          Pachuca de Soto, Hidalgo · Abril 2026
         </div>
       </div>` },
 
