@@ -291,8 +291,26 @@
       overflow: hidden; display: grid; grid-template-columns: 260px 1fr;
       transition: box-shadow .3s, border-color .3s; margin-bottom: 24px;
       cursor: pointer;
+      height: 440px; /* uniforme medio-corto */
     }
     .materia-card:hover { box-shadow: 0 20px 60px rgba(0,0,0,.5); border-color: rgba(56,189,248,.35); }
+    .materia-card .mat-content {
+      position: relative; overflow: hidden;
+      -webkit-mask-image: linear-gradient(180deg, #000 calc(100% - 70px), transparent);
+              mask-image: linear-gradient(180deg, #000 calc(100% - 70px), transparent);
+    }
+    .materia-card .mat-content::after {
+      content: 'Ver más →'; position: absolute; bottom: 12px; right: 24px;
+      font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--sky); font-weight: 700; pointer-events: none;
+      opacity: .9; transition: opacity .25s, transform .25s;
+    }
+    .materia-card:hover .mat-content::after { opacity: 1; transform: translateX(4px); }
+    @media (max-width: 720px) {
+      .materia-card { height: auto; }
+      .materia-card .mat-content { -webkit-mask-image: none; mask-image: none; }
+      .materia-card .mat-content::after { display: none; }
+    }
     .mat-sidebar {
       padding: 36px 28px; display: flex; flex-direction: column;
       justify-content: space-between; position: relative; overflow: hidden;
@@ -1262,6 +1280,22 @@
     .carousel-btn.prev { left: 6px; }
     .carousel-btn.next { right: 6px; }
     .carousel-btn:hover { background: rgba(0,0,0,.85); }
+
+    /* ── REFERENCIAS COMO LINKS ── */
+    .ref-list { padding-left: 20px; line-height: 2; color: var(--muted2); font-size: 13px; }
+    .ref-list li { margin-bottom: 4px; }
+    .ref-list a {
+      color: var(--muted2); text-decoration: none;
+      border-bottom: 1px dashed transparent;
+      transition: color .2s, border-color .2s;
+    }
+    .ref-list a:hover, .ref-list a:focus {
+      color: var(--sky); border-bottom-color: var(--sky);
+    }
+    .ref-list a::after {
+      content: ' ↗'; font-size: 11px; color: var(--muted); opacity: 0; transition: opacity .2s;
+    }
+    .ref-list a:hover::after { opacity: 1; color: var(--sky); }
 
     /* clickable cards */
     .poi-card, .materia-card:not(.placeholder) { cursor: pointer; }
@@ -3145,15 +3179,15 @@ const DETAILS = {
           </ul>
         </div>
         <div class="detail-sec-head" style="margin-top:20px">Fuentes Citadas</div>
-        <ol style="padding-left:20px;line-height:2;color:var(--muted2);font-size:13px">
-          <li>CONABIO (2020). <em>Fichas de especies bioindicadoras del Altiplano Mexicano.</em> México: CONABIO.</li>
-          <li>García, E. (1988). <em>Modificaciones al sistema de clasificación climática de Köppen.</em> México: UNAM.</li>
-          <li>INEGI (2022). <em>Datos climáticos históricos de Pachuca de Soto, Hidalgo.</em> México: INEGI.</li>
-          <li>INE-SEMARNAT (2021). <em>Atlas de cambio climático en el centro de México.</em> México: SEMARNAT.</li>
-          <li>Flores-Villela, O. &amp; Gerez, P. (1994). <em>Biodiversidad y conservación en México.</em> México: UNAM.</li>
-          <li>Rzedowski, J. (2006). <em>Vegetación de México.</em> México: CONABIO.</li>
-          <li>Navarro-Sigüenza, A.G. &amp; Peterson, A.T. (2007). Avifauna del Altiplano Central. <em>Revista Mexicana de Biodiversidad</em>, 78(1), 21-35.</li>
-          <li>Servicio Meteorológico Nacional (2026). <em>Registros climatológicos abril 2026, Estación Pachuca.</em> México: CONAGUA.</li>
+        <ol class="ref-list">
+          <li><a href="https://www.gob.mx/conabio" target="_blank" rel="noopener">CONABIO (2020). <em>Fichas de especies bioindicadoras del Altiplano Mexicano.</em> México: CONABIO.</a></li>
+          <li><a href="https://www.publicaciones.igg.unam.mx" target="_blank" rel="noopener">García, E. (1988). <em>Modificaciones al sistema de clasificación climática de Köppen.</em> México: UNAM.</a></li>
+          <li><a href="https://www.inegi.org.mx/temas/climatologia/" target="_blank" rel="noopener">INEGI (2022). <em>Datos climáticos históricos de Pachuca de Soto, Hidalgo.</em> México: INEGI.</a></li>
+          <li><a href="https://www.gob.mx/inecc/acciones-y-programas/atlas-nacional-de-vulnerabilidad-al-cambio-climatico" target="_blank" rel="noopener">INE-SEMARNAT (2021). <em>Atlas de cambio climático en el centro de México.</em> México: SEMARNAT.</a></li>
+          <li><a href="https://www.biodiversidad.gob.mx" target="_blank" rel="noopener">Flores-Villela, O. &amp; Gerez, P. (1994). <em>Biodiversidad y conservación en México.</em> México: UNAM.</a></li>
+          <li><a href="https://www.biodiversidad.gob.mx/ecosistemas/vegetacionmx" target="_blank" rel="noopener">Rzedowski, J. (2006). <em>Vegetación de México.</em> México: CONABIO.</a></li>
+          <li><a href="https://revistamexicanadebiodiversidad.unam.mx/" target="_blank" rel="noopener">Navarro-Sigüenza, A.G. &amp; Peterson, A.T. (2007). Avifauna del Altiplano Central. <em>Revista Mexicana de Biodiversidad</em>, 78(1), 21-35.</a></li>
+          <li><a href="https://smn.conagua.gob.mx" target="_blank" rel="noopener">Servicio Meteorológico Nacional (2026). <em>Registros climatológicos abril 2026, Estación Pachuca.</em> México: CONAGUA.</a></li>
         </ol>
       </div>`
   },
@@ -4706,14 +4740,14 @@ void loop() {
 <!-- Fuentes -->
 <div class="detail-sec">
   <div class="detail-sec-head">Fuentes de consulta</div>
-  <ol style="color:var(--muted2);font-size:13px;line-height:1.85;padding-left:22px">
-    <li>Organización Meteorológica Mundial (OMM) — <em>Definición y criterios de onda de calor.</em> Ginebra, 2024.</li>
-    <li>CONAGUA — <em>Boletín Climatológico Mensual.</em> Abril 2026, México.</li>
-    <li>IPCC — <em>Sixth Assessment Report (AR6). Climate Change 2021: The Physical Science Basis.</em></li>
-    <li>Time and Date — <em>Climate &amp; Weather Averages in Pachuca, Hidalgo.</em> timeanddate.com</li>
-    <li>Weather Atlas — <em>Monthly Climate in Pachuca.</em> weather-atlas.com</li>
-    <li>Climate Data — <em>Pachuca Climate Statistics.</em> climate-data.org</li>
-    <li>INEGI — <em>Información geográfica y climática del estado de Hidalgo,</em> 2025.</li>
+  <ol class="ref-list">
+    <li><a href="https://public.wmo.int/" target="_blank" rel="noopener">Organización Meteorológica Mundial (OMM) — <em>Definición y criterios de onda de calor.</em> Ginebra, 2024.</a></li>
+    <li><a href="https://smn.conagua.gob.mx/es/climatologia/pronostico-climatico/boletines" target="_blank" rel="noopener">CONAGUA — <em>Boletín Climatológico Mensual.</em> Abril 2026, México.</a></li>
+    <li><a href="https://www.ipcc.ch/report/ar6/wg1/" target="_blank" rel="noopener">IPCC — <em>Sixth Assessment Report (AR6). Climate Change 2021: The Physical Science Basis.</em></a></li>
+    <li><a href="https://www.timeanddate.com/weather/mexico/pachuca/climate" target="_blank" rel="noopener">Time and Date — <em>Climate &amp; Weather Averages in Pachuca, Hidalgo.</em></a></li>
+    <li><a href="https://www.weather-atlas.com/en/mexico/pachuca-climate" target="_blank" rel="noopener">Weather Atlas — <em>Monthly Climate in Pachuca.</em></a></li>
+    <li><a href="https://en.climate-data.org/north-america/mexico/hidalgo/pachuca-de-soto-3697/" target="_blank" rel="noopener">Climate Data — <em>Pachuca Climate Statistics.</em></a></li>
+    <li><a href="https://www.inegi.org.mx/app/areasgeograficas/?ag=13" target="_blank" rel="noopener">INEGI — <em>Información geográfica y climática del estado de Hidalgo,</em> 2025.</a></li>
   </ol>
 </div>` },
   uni:  { tag:'Materia 04 · Común', tagColor:'rgba(167,139,250,.15)', tagTextColor:'#a78bfa', title:'El Universo y sus Fenómenos', sub:'Cuatro áreas de física aplicada a la Estación Interdisciplinaria de Monitoreo Ambiental · Pachuca, Abril 2026', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
@@ -5186,13 +5220,13 @@ void loop() {
       <!-- REFERENCIAS -->
       <div class="detail-sec">
         <div class="detail-sec-head">Referencias</div>
-        <ol style="padding-left:20px;line-height:2;color:var(--muted2);font-size:13px">
-          <li>Organización Mundial de la Salud (2023). <em>Contaminación del aire y salud.</em></li>
-          <li>Organización Mundial de la Salud (2022). <em>Agua, saneamiento e higiene (WASH).</em></li>
-          <li>Secretaría de Medio Ambiente y Recursos Naturales — SEMARNAT (2022). <em>Impacto ambiental en México.</em></li>
-          <li>Programa de las Naciones Unidas para el Medio Ambiente — PNUMA (2021). <em>Cambio climático y salud.</em></li>
-          <li>Instituto Nacional de Salud Pública — INSP (2020). <em>Efectos de la contaminación ambiental en la salud.</em></li>
-          <li>Secretaría de Salud de Hidalgo — SSH (2024). <em>Reporte de enfermedades respiratorias agudas.</em></li>
+        <ol class="ref-list">
+          <li><a href="https://www.who.int/es/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health" target="_blank" rel="noopener">Organización Mundial de la Salud (2023). <em>Contaminación del aire y salud.</em></a></li>
+          <li><a href="https://www.who.int/es/health-topics/water-sanitation-and-hygiene-wash" target="_blank" rel="noopener">Organización Mundial de la Salud (2022). <em>Agua, saneamiento e higiene (WASH).</em></a></li>
+          <li><a href="https://www.gob.mx/semarnat" target="_blank" rel="noopener">Secretaría de Medio Ambiente y Recursos Naturales — SEMARNAT (2022). <em>Impacto ambiental en México.</em></a></li>
+          <li><a href="https://www.unep.org/es/explore-topics/climate-action" target="_blank" rel="noopener">Programa de las Naciones Unidas para el Medio Ambiente — PNUMA (2021). <em>Cambio climático y salud.</em></a></li>
+          <li><a href="https://www.insp.mx" target="_blank" rel="noopener">Instituto Nacional de Salud Pública — INSP (2020). <em>Efectos de la contaminación ambiental en la salud.</em></a></li>
+          <li><a href="https://salud.hidalgo.gob.mx" target="_blank" rel="noopener">Secretaría de Salud de Hidalgo — SSH (2024). <em>Reporte de enfermedades respiratorias agudas.</em></a></li>
         </ol>
       </div>`
   },
@@ -5415,14 +5449,14 @@ void loop() {
       <!-- REFERENCIAS -->
       <div class="detail-sec">
         <div class="detail-sec-head">Referencias</div>
-        <ol style="padding-left:20px;line-height:2;color:var(--muted2);font-size:13px">
-          <li>Nelson, D. L. &amp; Cox, M. M. (2017). <em>Lehninger Principles of Biochemistry</em> (7ª ed.). W. H. Freeman.</li>
-          <li>Merck Manual — Professional Version (2024). <em>Reference Ranges and Laboratory Values.</em> Merck &amp; Co.</li>
-          <li>IPCC (2021). <em>Sixth Assessment Report (AR6).</em> Intergovernmental Panel on Climate Change.</li>
-          <li>NOAA Global Monitoring Laboratory (2024). <em>Trends in Atmospheric Carbon Dioxide.</em> gml.noaa.gov</li>
-          <li>NASA Ozone Watch (2023). <em>Antarctic Ozone Hole.</em> ozonewatch.gsfc.nasa.gov</li>
-          <li>Organización Mundial de la Salud / WHO (2021). <em>Air Quality Guidelines. Global Update.</em></li>
-          <li>National Institute of Standards and Technology / NIST (2024). <em>Chemistry WebBook.</em> nist.gov</li>
+        <ol class="ref-list">
+          <li><a href="https://www.macmillanlearning.com/college/us/product/Lehninger-Principles-of-Biochemistry/p/1319228003" target="_blank" rel="noopener">Nelson, D. L. &amp; Cox, M. M. (2017). <em>Lehninger Principles of Biochemistry</em> (7ª ed.). W. H. Freeman.</a></li>
+          <li><a href="https://www.merckmanuals.com/professional/resources/normal-laboratory-values" target="_blank" rel="noopener">Merck Manual — Professional Version (2024). <em>Reference Ranges and Laboratory Values.</em></a></li>
+          <li><a href="https://www.ipcc.ch/report/ar6/wg1/" target="_blank" rel="noopener">IPCC (2021). <em>Sixth Assessment Report (AR6).</em></a></li>
+          <li><a href="https://gml.noaa.gov/ccgg/trends/" target="_blank" rel="noopener">NOAA Global Monitoring Laboratory (2024). <em>Trends in Atmospheric Carbon Dioxide.</em></a></li>
+          <li><a href="https://ozonewatch.gsfc.nasa.gov/" target="_blank" rel="noopener">NASA Ozone Watch (2023). <em>Antarctic Ozone Hole.</em></a></li>
+          <li><a href="https://www.who.int/publications/i/item/9789240034228" target="_blank" rel="noopener">Organización Mundial de la Salud / WHO (2021). <em>Air Quality Guidelines. Global Update.</em></a></li>
+          <li><a href="https://webbook.nist.gov/chemistry/" target="_blank" rel="noopener">National Institute of Standards and Technology / NIST (2024). <em>Chemistry WebBook.</em></a></li>
         </ol>
       </div>` },
 
@@ -6476,22 +6510,22 @@ void loop() {
       <!-- REFERENCIAS -->
       <div class="detail-sec">
         <div class="detail-sec-head">Referencias bibliográficas</div>
-        <ol style="padding-left:20px;line-height:2;color:var(--muted2);font-size:13px">
-          <li>Constitución Política de los Estados Unidos Mexicanos. Artículo 4°, párrafo quinto. DOF, 8 de febrero de 2012.</li>
-          <li>Criterio Hidalgo (12 feb 2026). <em>Mala calidad del aire se mantiene toda la semana en Pachuca y Mineral de la Reforma.</em></li>
-          <li>El Universal (20 mar 2025). <em>Hidalgo emite alerta por mala calidad del aire; hay riesgo extremadamente alto para la salud.</em></li>
-          <li>Foro Económico Mundial (2024). <em>Cómo las ciudades recurren a la naturaleza para bajar las temperaturas hasta en 2°C.</em></li>
-          <li>Greenpeace México (22 jul 2019). <em>Con todo y ser la bella airosa, Pachuca altamente contaminada.</em></li>
-          <li>IQAir / OMS (2021). <em>Las nuevas pautas de calidad del aire de la OMS salvarán vidas.</em></li>
-          <li>La Silla Rota (4 mar 2026). <em>Calidad del aire en Pachuca pasa de mala a muy mala.</em></li>
-          <li>Lucho Constantino, C.A. (22 feb 2024). <em>Impacto y respuestas ante la mala calidad del aire en Hidalgo.</em> Boletín UAEH No. 89.</li>
-          <li>Milenio (24 feb 2024). <em>Se agrava la calidad de aire en Pachuca y la zona metropolitana.</em></li>
-          <li>National University of Singapore (2018). <em>Green Roof Performance Study: Thermal and Air Quality Benefits in Tropical Urban Environments.</em></li>
-          <li>OMS (2024). <em>Calidad del aire ambiente (exterior) y salud.</em></li>
-          <li>Periódico Oficial del Estado de Hidalgo (2019). <em>PCAA para Pachuca de Soto y ZM.</em></li>
-          <li>Rotterdam Climate Initiative (2022). <em>Green Roofs Programme: Impact Report 2008–2022.</em></li>
-          <li>SEDEMA / SEMARNAT (2021). <em>ProAire ZMVM 2021–2030.</em></li>
-          <li>SEDEMA CDMX (2023). <em>Evaluación del Programa de Infraestructura Verde 2019–2023.</em></li>
+        <ol class="ref-list">
+          <li><a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf" target="_blank" rel="noopener">Constitución Política de los Estados Unidos Mexicanos. Artículo 4°, párrafo quinto. DOF, 8 de febrero de 2012.</a></li>
+          <li><a href="https://criteriohidalgo.com/" target="_blank" rel="noopener">Criterio Hidalgo (12 feb 2026). <em>Mala calidad del aire se mantiene toda la semana en Pachuca y Mineral de la Reforma.</em></a></li>
+          <li><a href="https://www.eluniversal.com.mx/estados/" target="_blank" rel="noopener">El Universal (20 mar 2025). <em>Hidalgo emite alerta por mala calidad del aire; hay riesgo extremadamente alto para la salud.</em></a></li>
+          <li><a href="https://es.weforum.org/agenda/2024/" target="_blank" rel="noopener">Foro Económico Mundial (2024). <em>Cómo las ciudades recurren a la naturaleza para bajar las temperaturas hasta en 2°C.</em></a></li>
+          <li><a href="https://www.greenpeace.org/mexico/" target="_blank" rel="noopener">Greenpeace México (22 jul 2019). <em>Con todo y ser la bella airosa, Pachuca altamente contaminada.</em></a></li>
+          <li><a href="https://www.iqair.com/world-air-quality-report" target="_blank" rel="noopener">IQAir / OMS (2021). <em>Las nuevas pautas de calidad del aire de la OMS salvarán vidas.</em></a></li>
+          <li><a href="https://lasillarota.com/" target="_blank" rel="noopener">La Silla Rota (4 mar 2026). <em>Calidad del aire en Pachuca pasa de mala a muy mala.</em></a></li>
+          <li><a href="https://www.uaeh.edu.mx/" target="_blank" rel="noopener">Lucho Constantino, C.A. (22 feb 2024). <em>Impacto y respuestas ante la mala calidad del aire en Hidalgo.</em> Boletín UAEH No. 89.</a></li>
+          <li><a href="https://www.milenio.com/estados/hidalgo" target="_blank" rel="noopener">Milenio (24 feb 2024). <em>Se agrava la calidad de aire en Pachuca y la zona metropolitana.</em></a></li>
+          <li><a href="https://www.nus.edu.sg/" target="_blank" rel="noopener">National University of Singapore (2018). <em>Green Roof Performance Study: Thermal and Air Quality Benefits in Tropical Urban Environments.</em></a></li>
+          <li><a href="https://www.who.int/es/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health" target="_blank" rel="noopener">OMS (2024). <em>Calidad del aire ambiente (exterior) y salud.</em></a></li>
+          <li><a href="https://periodico.hidalgo.gob.mx/" target="_blank" rel="noopener">Periódico Oficial del Estado de Hidalgo (2019). <em>PCAA para Pachuca de Soto y ZM.</em></a></li>
+          <li><a href="https://www.rotterdamclimateinitiative.nl/" target="_blank" rel="noopener">Rotterdam Climate Initiative (2022). <em>Green Roofs Programme: Impact Report 2008–2022.</em></a></li>
+          <li><a href="https://www.gob.mx/semarnat/acciones-y-programas/programa-de-gestion-federal-para-mejorar-la-calidad-del-aire-de-la-megalopolis-proaire" target="_blank" rel="noopener">SEDEMA / SEMARNAT (2021). <em>ProAire ZMVM 2021–2030.</em></a></li>
+          <li><a href="https://www.sedema.cdmx.gob.mx/" target="_blank" rel="noopener">SEDEMA CDMX (2023). <em>Evaluación del Programa de Infraestructura Verde 2019–2023.</em></a></li>
         </ol>
       </div>` },
 };
