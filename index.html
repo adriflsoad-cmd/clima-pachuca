@@ -610,6 +610,80 @@
     .detail-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .detail-3col { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
 
+    /* ── FILO · 5 LENTES ACORDEÓN ── */
+    .filo-lenses { display: flex; flex-direction: column; gap: 12px; margin-top: 14px; }
+    .filo-lens {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      overflow: hidden; cursor: pointer; transition: border-color .25s, background .25s, transform .25s;
+      position: relative;
+    }
+    .filo-lens::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+      background: var(--lens-color, #a78bfa); opacity: .35; transition: opacity .25s;
+    }
+    .filo-lens:hover { border-color: var(--lens-color, #a78bfa); transform: translateY(-1px); }
+    .filo-lens:hover::before { opacity: .85; }
+    .filo-lens.open { border-color: var(--lens-color, #a78bfa); background: linear-gradient(135deg, var(--card), rgba(0,0,0,0)); }
+    .filo-lens.open::before { opacity: 1; }
+    .filo-lens-head {
+      display: grid; grid-template-columns: auto 1fr auto; align-items: center;
+      gap: 16px; padding: 18px 22px;
+    }
+    .filo-lens-ico {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: color-mix(in srgb, var(--lens-color, #a78bfa) 18%, transparent);
+      display: flex; align-items: center; justify-content: center; font-size: 24px;
+      flex-shrink: 0;
+    }
+    .filo-lens-titles { min-width: 0; }
+    .filo-lens-name {
+      font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 2px;
+      letter-spacing: .2px;
+    }
+    .filo-lens-sub { font-size: 12px; color: var(--muted2); line-height: 1.5; }
+    .filo-lens-chev {
+      color: var(--lens-color, #a78bfa); font-size: 18px; transition: transform .3s;
+    }
+    .filo-lens.open .filo-lens-chev { transform: rotate(180deg); }
+    .filo-lens-body {
+      max-height: 0; overflow: hidden; transition: max-height .45s ease;
+      padding: 0 22px;
+    }
+    .filo-lens.open .filo-lens-body { max-height: 1200px; padding-bottom: 22px; }
+    .filo-lens-q {
+      font-style: italic; color: var(--lens-color, #a78bfa); font-size: 13px;
+      padding: 14px 16px; border-radius: 10px; margin-bottom: 14px;
+      background: color-mix(in srgb, var(--lens-color, #a78bfa) 10%, transparent);
+      border-left: 3px solid var(--lens-color, #a78bfa);
+    }
+    .filo-lens-body p { font-size: 14px; color: var(--muted2); line-height: 1.85; margin-bottom: 10px; }
+
+    /* Cadena lógica animada */
+    .filo-chain {
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      margin: 18px auto; padding: 18px;
+      background: rgba(52,211,153,.04); border: 1px dashed rgba(52,211,153,.25);
+      border-radius: 14px; max-width: 480px;
+    }
+    .filo-chain-step {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--card); border: 1px solid rgba(52,211,153,.3);
+      border-radius: 10px; padding: 10px 16px; width: 100%;
+      opacity: 0; transform: translateY(8px);
+    }
+    .filo-lens.open .filo-chain-step { animation: filoChainIn .5s ease forwards; animation-delay: var(--d); }
+    .filo-chain-num {
+      width: 26px; height: 26px; border-radius: 50%; background: #34d399; color: #052e1a;
+      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px;
+      flex-shrink: 0;
+    }
+    .filo-chain-txt { font-size: 13px; color: var(--text); }
+    .filo-chain-arrow {
+      color: #34d399; font-size: 20px; opacity: 0;
+    }
+    .filo-lens.open .filo-chain-arrow { animation: filoChainIn .4s ease forwards; animation-delay: var(--d); }
+    @keyframes filoChainIn { to { opacity: 1; transform: translateY(0); } }
+
     /* clickable cards */
     .poi-card, .materia-card:not(.placeholder) { cursor: pointer; }
     .poi-card::before, .materia-card:not(.placeholder)::before {
@@ -1083,16 +1157,34 @@
         <div class="mat-num">02</div>
         <div>
           <span class="mat-tag tag-filo">Filosofía</span>
-          <div class="mat-title">Pensamiento Filosófico</div>
-          <div class="mat-sub">Proyecto integrador · Clima y Ética Ambiental</div>
+          <div class="mat-title">Bitácora del Filósofo</div>
+          <div class="mat-sub">Analizando el clima de Pachuca con las herramientas de la filosofía · 5 lentes de pensamiento</div>
         </div>
       </div>
-      <div class="mat-content" style="display:flex;align-items:center;">
-        <div class="placeholder-content">
-          <div class="placeholder-icon">🧠</div>
-          <div class="placeholder-title">Proyecto en desarrollo</div>
-          <div class="placeholder-sub">El contenido de esta materia se agregará próximamente.</div>
-          <span class="placeholder-badge">Próximamente</span>
+      <div class="mat-content">
+        <div class="mat-content-title">"El ser humano no solo observa el entorno, lo transforma sin medir sus consecuencias"</div>
+        <p class="mat-content-intro">Análisis del <strong>cambio climático en Pachuca</strong> y los <strong>incendios forestales en Hidalgo</strong> a través de <strong>cinco lentes filosóficos</strong>: metafísico, epistemológico, ético, lógico y estético.</p>
+        <div class="tabs" id="filo-tabs">
+          <button class="tab active" onclick="switchTab('filo',0)">🔭 Metafísico</button>
+          <button class="tab" onclick="switchTab('filo',1)">🔍 Epistemológico</button>
+          <button class="tab" onclick="switchTab('filo',2)">⚖️ Ético</button>
+          <button class="tab" onclick="switchTab('filo',3)">🧩 Lógico</button>
+          <button class="tab" onclick="switchTab('filo',4)">🎨 Estético</button>
+        </div>
+        <div class="tab-panel active" id="filo-0">
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#a78bfa">La naturaleza de lo que ES.</strong> El cambio climático muestra cuán profundamente conectadas están la humanidad y la naturaleza. ¿Comprende el ser humano su lugar dentro de ella o se cree superior?</p>
+        </div>
+        <div class="tab-panel" id="filo-1">
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#38bdf8">La base del CONOCIMIENTO.</strong> Muchos conocen el problema solo por redes sociales. Comprenderlo de verdad exige información científica y reflexión crítica.</p>
+        </div>
+        <div class="tab-panel" id="filo-2">
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#fbbf24">El juicio sobre lo que DEBE SER.</strong> Cuidar el ambiente no es solo obligación legal, es un deber moral. Cada decisión afecta a las generaciones futuras.</p>
+        </div>
+        <div class="tab-panel" id="filo-3">
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#34d399">La estructura del RAZONAMIENTO.</strong> Si aumentan los incendios → disminuyen áreas verdes → aumenta la contaminación → cambia el clima. El cambio climático es la consecuencia lógica acumulada.</p>
+        </div>
+        <div class="tab-panel" id="filo-4">
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#fb7185">La cualidad de la EXPERIENCIA.</strong> Bosques quemados, aire contaminado, paisajes alterados: la crisis climática también es una pérdida emocional, cultural y estética.</p>
         </div>
       </div>
     </div>
@@ -3188,8 +3280,192 @@ void loop() {
   },
 
   /* placeholders para materias sin contenido aún */
-  filo: { tag:'Materia 02 · Común', tagColor:'rgba(167,139,250,.15)', tagTextColor:'#a78bfa', title:'Pensamiento Filosófico', sub:'Proyecto integrador en desarrollo — próximamente', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
-    content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">🧠</div><h4>Proyecto en desarrollo</h4><p>El contenido de esta materia se agregará próximamente cuando esté disponible en Drive.</p></div></div>` },
+  filo: { tag:'Materia 02 · Común', tagColor:'rgba(167,139,250,.15)', tagTextColor:'#a78bfa', title:'Bitácora del Filósofo', sub:'Analizando mi día con las herramientas de la filosofía · Clima de Pachuca, Hidalgo · Abril 2026', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
+    content:`
+      <!-- HERO: Collage + cita -->
+      <div class="detail-sec">
+        <div class="detail-2col" style="grid-template-columns:1fr 1.1fr;align-items:stretch">
+          <div style="border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 24px 60px rgba(0,0,0,.45)">
+            <img src="/images/filo/collage.jpeg" alt="Collage filosófico de Pachuca" style="width:100%;height:100%;object-fit:cover;display:block">
+          </div>
+          <div style="display:flex;flex-direction:column;justify-content:center;gap:18px">
+            <div style="background:linear-gradient(135deg,rgba(167,139,250,.12),rgba(56,189,248,.08));border-left:4px solid #a78bfa;border-radius:14px;padding:24px 26px">
+              <div style="font-size:42px;line-height:.6;color:#a78bfa;font-family:Georgia,serif">"</div>
+              <p style="font-family:Georgia,serif;font-style:italic;font-size:18px;line-height:1.55;color:var(--text);margin:0">El ser humano no solo observa el entorno, lo transforma sin medir sus consecuencias.</p>
+              <div style="margin-top:14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">— Bitácora del Filósofo · Pachuca 2026</div>
+            </div>
+            <div class="detail-facts" style="margin:0">
+              <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">5</div><div class="detail-fact-lbl">Lentes filosóficos</div></div>
+              <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">10</div><div class="detail-fact-lbl">Integrantes</div></div>
+              <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">1</div><div class="detail-fact-lbl">Evento analizado</div></div>
+              <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">∞</div><div class="detail-fact-lbl">Preguntas abiertas</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EL EVENTO -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">El Evento Analizado</div>
+        <div class="detail-sec-sub">Situación: <strong>El clima de Pachuca, Hidalgo</strong> — cambios constantes en la temperatura, calor más intenso, disminución de lluvias y mayor contaminación ambiental, agravados por los incendios forestales del estado.</div>
+        <div class="detail-2col" style="margin-top:14px">
+          <div class="detail-card">
+            <p style="line-height:1.85;color:var(--muted2);margin:0">En los últimos años, el clima de Pachuca ha presentado <strong style="color:var(--text)">cambios constantes</strong>: temporadas de calor más intensas, disminución de lluvias y una mayor presencia de contaminación ambiental. Uno de los factores que más afecta esta situación son los <strong style="color:#fb7185">incendios forestales</strong> en distintas zonas de Hidalgo, ya que provocan pérdida de vegetación, aumento de CO₂ y alteraciones en el equilibrio natural del ambiente. Las actividades humanas — la tala de árboles y el uso excesivo de combustibles — han contribuido al deterioro climático.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border)"><img src="/images/filo/reloj_atardecer.jpeg" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+            <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border)"><img src="/images/filo/reloj_niebla.jpeg" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+            <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border)"><img src="/images/filo/pachuca_sierra.jpeg" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+            <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border)"><img src="/images/filo/arbol_seco.jpeg" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOS 5 LENTES (acordeón interactivo) -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Los Cinco Lentes de Análisis</div>
+        <div class="detail-sec-sub">Cada lente revela una dimensión distinta del mismo evento. Haz clic para expandir cada análisis filosófico.</div>
+        <div class="filo-lenses">
+
+          <div class="filo-lens" data-color="#a78bfa" onclick="filoToggle(this)">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">🔭</div>
+              <div class="filo-lens-titles">
+                <div class="filo-lens-name">Lente Metafísico</div>
+                <div class="filo-lens-sub">La naturaleza de lo que ES — realidad, identidad, libertad, cambio</div>
+              </div>
+              <div class="filo-lens-chev">▾</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">¿Qué se revela aquí sobre la realidad, la identidad, la libertad, el cambio?</div>
+              <p>Desde esta perspectiva, el cambio climático en Pachuca muestra cómo la <strong>naturaleza y la humanidad están profundamente conectadas</strong>. Los incendios forestales no solo destruyen árboles, sino que alteran el equilibrio natural del entorno y modifican la forma en que existe la vida en la región.</p>
+              <p>Este enfoque permite reflexionar sobre si el ser humano realmente comprende su lugar dentro de la naturaleza o si actúa <strong>creyéndose superior</strong> a ella. También cuestiona si el clima es solamente un fenómeno natural o una <strong>consecuencia directa de las acciones humanas</strong>.</p>
+            </div>
+          </div>
+
+          <div class="filo-lens" data-color="#38bdf8" onclick="filoToggle(this)">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">🔍</div>
+              <div class="filo-lens-titles">
+                <div class="filo-lens-name">Lente Epistemológico</div>
+                <div class="filo-lens-sub">La base del CONOCIMIENTO — ¿cómo supe lo que creía saber?</div>
+              </div>
+              <div class="filo-lens-chev">▾</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">¿Cómo supe lo que creía saber? ¿Qué evidencias tuve? ¿Podría estar equivocado?</div>
+              <p>La información científica, los reportes ambientales, las temperaturas registradas y la observación de incendios permiten construir conocimiento sobre esta problemática. Pero surgen preguntas: <strong>¿toda la información sobre el cambio climático es confiable?</strong></p>
+              <p>No toda la información es confiable: por eso es importante consultar <strong>fuentes científicas y datos oficiales</strong>. Muchas personas solo conocen el problema por redes sociales, pero comprenderlo de verdad requiere analizar información científica y reflexionar sobre sus consecuencias.</p>
+            </div>
+          </div>
+
+          <div class="filo-lens" data-color="#fbbf24" onclick="filoToggle(this)">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">⚖️</div>
+              <div class="filo-lens-titles">
+                <div class="filo-lens-name">Lente Ético</div>
+                <div class="filo-lens-sub">El juicio sobre lo que DEBE SER — valores y responsabilidad</div>
+              </div>
+              <div class="filo-lens-chev">▾</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">¿Hubo acciones correctas o incorrectas? ¿Qué valores entraron en conflicto? ¿Había una obligación moral?</div>
+              <p>Los incendios forestales y el deterioro climático generan una reflexión sobre la <strong>responsabilidad humana frente al medio ambiente</strong>. Muchas veces las personas realizan acciones que dañan la naturaleza — provocar incendios, tirar basura, desperdiciar recursos — y esto afecta no solo al presente, sino a <strong>futuras generaciones</strong>.</p>
+              <p>El enfoque ético cuestiona si realmente estamos actuando de manera responsable y si nuestras decisiones consideran el <strong>bienestar colectivo</strong>. Cuidar el ambiente no es solo una obligación legal, es un <strong>deber moral</strong>.</p>
+            </div>
+          </div>
+
+          <div class="filo-lens" data-color="#34d399" onclick="filoToggle(this)">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">🧩</div>
+              <div class="filo-lens-titles">
+                <div class="filo-lens-name">Lente Lógico</div>
+                <div class="filo-lens-sub">La estructura del RAZONAMIENTO — causas, consecuencias y falacias</div>
+              </div>
+              <div class="filo-lens-chev">▾</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">¿Los argumentos eran sólidos? ¿Las conclusiones seguían a las premisas? ¿Identifico falacias?</div>
+              <p>El lente lógico analiza la coherencia de las ideas y la relación entre <strong>causas y consecuencias</strong>. Permite identificar cómo ciertas acciones humanas provocan cambios climáticos en una cadena acumulada durante años.</p>
+
+              <div class="filo-chain">
+                <div class="filo-chain-step" style="--d:0s"><span class="filo-chain-num">1</span><span class="filo-chain-txt">Aumentan los <strong>incendios forestales</strong></span></div>
+                <div class="filo-chain-arrow" style="--d:.4s">↓</div>
+                <div class="filo-chain-step" style="--d:.8s"><span class="filo-chain-num">2</span><span class="filo-chain-txt">Disminuyen las <strong>áreas verdes</strong></span></div>
+                <div class="filo-chain-arrow" style="--d:1.2s">↓</div>
+                <div class="filo-chain-step" style="--d:1.6s"><span class="filo-chain-num">3</span><span class="filo-chain-txt">Aumenta la <strong>contaminación</strong></span></div>
+                <div class="filo-chain-arrow" style="--d:2.0s">↓</div>
+                <div class="filo-chain-step" style="--d:2.4s"><span class="filo-chain-num">4</span><span class="filo-chain-txt">Cambia la <strong>temperatura</strong> y se altera el clima</span></div>
+              </div>
+
+              <p style="margin-top:14px">Este enfoque también permite detectar <strong>contradicciones</strong>: personas que dicen preocuparse por el ambiente, pero continúan realizando prácticas que lo dañan.</p>
+            </div>
+          </div>
+
+          <div class="filo-lens" data-color="#fb7185" onclick="filoToggle(this)">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">🎨</div>
+              <div class="filo-lens-titles">
+                <div class="filo-lens-name">Lente Estético</div>
+                <div class="filo-lens-sub">La cualidad de la EXPERIENCIA — emoción, percepción y belleza</div>
+              </div>
+              <div class="filo-lens-chev">▾</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">¿Cómo se sintió esto? ¿Qué emociones, sensaciones o percepciones destacan? ¿Había belleza, fealdad, tensión, armonía?</div>
+              <p>El lente estético analiza la percepción de la belleza y cómo las personas <strong>experimentan emocionalmente</strong> la realidad. El cambio climático y los incendios forestales transforman el paisaje natural de Pachuca y afectan la manera en que las personas se relacionan con su entorno.</p>
+              <p>Los bosques quemados, el aire contaminado y los cambios en el clima generan una <strong>sensación de pérdida y preocupación</strong>. La naturaleza deja de percibirse como espacio de tranquilidad y belleza para convertirse en <strong>evidencia visible del daño ambiental</strong>.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- VIDEO BITÁCORA -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Video — Bitácora del Filósofo</div>
+        <div class="detail-sec-sub">Presentación visual del proyecto: análisis filosófico del clima de Pachuca desde los cinco lentes de pensamiento.</div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#000;margin-top:14px">
+          <video controls playsinline preload="metadata" style="width:100%;display:block;max-height:520px;object-fit:contain">
+            <source src="/videos/filosofia.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- REFLEXIÓN FINAL -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Reflexión Final</div>
+        <div class="detail-sec-sub">Al analizar el mismo evento con cinco enfoques diferentes, ¿qué nueva comprensión o perspectiva descubriste?</div>
+        <div class="detail-card" style="background:linear-gradient(135deg,rgba(167,139,250,.08),rgba(56,189,248,.05));border-left:4px solid #a78bfa">
+          <p style="line-height:1.9;color:var(--muted2);margin:0 0 14px">Analizar el cambio climático y los incendios forestales en Pachuca desde distintos lentes filosóficos permitió comprender que este problema <strong style="color:var(--text)">no solo pertenece al ámbito científico, sino también al humano, social y moral</strong>.</p>
+          <div class="detail-2col" style="gap:10px;margin:14px 0">
+            <div style="background:rgba(167,139,250,.08);border-left:3px solid #a78bfa;border-radius:10px;padding:10px 14px;font-size:13px;color:var(--muted2)">🔭 <strong style="color:#a78bfa">Metafísico:</strong> la relación profunda entre ser humano y naturaleza.</div>
+            <div style="background:rgba(56,189,248,.08);border-left:3px solid #38bdf8;border-radius:10px;padding:10px 14px;font-size:13px;color:var(--muted2)">🔍 <strong style="color:#38bdf8">Epistemológico:</strong> la importancia del conocimiento científico.</div>
+            <div style="background:rgba(251,191,36,.08);border-left:3px solid #fbbf24;border-radius:10px;padding:10px 14px;font-size:13px;color:var(--muted2)">⚖️ <strong style="color:#fbbf24">Ético:</strong> la responsabilidad moral de cuidar el ambiente.</div>
+            <div style="background:rgba(52,211,153,.08);border-left:3px solid #34d399;border-radius:10px;padding:10px 14px;font-size:13px;color:var(--muted2)">🧩 <strong style="color:#34d399">Lógico:</strong> la cadena entre causas y consecuencias.</div>
+            <div style="background:rgba(251,113,133,.08);border-left:3px solid #fb7185;border-radius:10px;padding:10px 14px;font-size:13px;color:var(--muted2)">🎨 <strong style="color:#fb7185">Estético:</strong> el impacto emocional y cultural de la destrucción.</div>
+          </div>
+          <p style="line-height:1.9;color:var(--muted2);margin:0">La nueva perspectiva descubierta es que el cambio climático <strong style="color:var(--text)">no es únicamente un fenómeno natural o una noticia lejana</strong>, sino una realidad que afecta directamente la vida cotidiana, las emociones, las decisiones humanas y la manera en que entendemos el mundo. Cada acción humana, por pequeña que parezca, puede contribuir tanto al deterioro como al cuidado del planeta.</p>
+        </div>
+      </div>
+
+      <!-- EQUIPO -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Equipo Filosófico</div>
+        <div class="detail-sec-sub">Diez voces, cinco lentes, una sola pregunta: ¿cómo pensar el clima de Pachuca?</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-top:14px">
+          <div class="detail-card" style="padding:14px;text-align:center"><div style="font-size:22px;margin-bottom:4px">🧠</div><strong style="font-size:13px">Cristopher Muñoz</strong></div>
+          <div class="detail-card" style="padding:14px;text-align:center"><div style="font-size:22px;margin-bottom:4px">🧠</div><strong style="font-size:13px">Emmanuel Mejía</strong></div>
+          <div class="detail-card" style="padding:14px;text-align:center"><div style="font-size:22px;margin-bottom:4px">🧠</div><strong style="font-size:13px">Carlos Jarillo</strong></div>
+          <div class="detail-card" style="padding:14px;text-align:center"><div style="font-size:22px;margin-bottom:4px">🧠</div><strong style="font-size:13px">Adrián Flores</strong></div>
+          <div class="detail-card" style="padding:14px;text-align:center"><div style="font-size:22px;margin-bottom:4px">🧠</div><strong style="font-size:13px">Juan Manuel</strong></div>
+          <div class="detail-card" style="padding:14px;text-align:center"><div style="font-size:22px;margin-bottom:4px">🧠</div><strong style="font-size:13px">Bryan García</strong></div>
+          <div class="detail-card" style="padding:14px;text-align:center"><div style="font-size:22px;margin-bottom:4px">🧠</div><strong style="font-size:13px">Mariana Arriaga</strong></div>
+          <div class="detail-card" style="padding:14px;text-align:center"><div style="font-size:22px;margin-bottom:4px">🧠</div><strong style="font-size:13px">Brenda Guadalupe</strong></div>
+          <div class="detail-card" style="padding:14px;text-align:center"><div style="font-size:22px;margin-bottom:4px">🧠</div><strong style="font-size:13px">Mariela Guadalupe</strong></div>
+          <div class="detail-card" style="padding:14px;text-align:center"><div style="font-size:22px;margin-bottom:4px">🧠</div><strong style="font-size:13px">Aurora Valentina</strong></div>
+        </div>
+      </div>` },
   mat:  { tag:'Materia 03 · Común', tagColor:'rgba(56,189,248,.15)', tagTextColor:'#38bdf8', title:'Proyecto Estadístico y Climático — Pachuca, Abril 2026', sub:'Análisis de temperatura, precipitación y onda de calor · 26 días de observación · "La Bella Airosa"', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
     content:`
 <div class="detail-sec">
@@ -4486,6 +4762,14 @@ function closeDetail() {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+
+/* ── FILO · acordeón de lentes ── */
+function filoToggle(el) {
+  if (!el.style.getPropertyValue('--lens-color')) {
+    el.style.setProperty('--lens-color', el.dataset.color || '#a78bfa');
+  }
+  el.classList.toggle('open');
+}
 
 /* ══════════════════════════════════════
    #14 · Cursor-light spotlight on cards
