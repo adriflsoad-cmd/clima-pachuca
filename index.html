@@ -1133,6 +1133,136 @@
     }
     .vbar-group.in-view .vbar-fill { width: var(--vbar-w, 50%); }
 
+    /* ── FLIP CARDS (Bio C) ── */
+    .flip-card { perspective: 1000px; cursor: pointer; height: 100%; }
+    .flip-inner {
+      position: relative; width: 100%; height: 100%;
+      transition: transform .7s; transform-style: preserve-3d;
+      min-height: 320px;
+    }
+    .flip-card.flipped .flip-inner { transform: rotateY(180deg); }
+    .flip-face {
+      position: absolute; inset: 0;
+      -webkit-backface-visibility: hidden; backface-visibility: hidden;
+      border-radius: 16px; overflow: hidden;
+      border: 2px solid var(--border);
+      display: flex; flex-direction: column;
+    }
+    .flip-face.back { transform: rotateY(180deg); }
+    .flip-face img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .flip-face .flip-body {
+      padding: 14px 16px; background: var(--card); flex: 1;
+      font-size: 13px; color: var(--muted2); line-height: 1.7;
+    }
+    .flip-hint {
+      position: absolute; top: 12px; right: 12px;
+      background: rgba(0,0,0,.65); color: #fff; padding: 4px 10px;
+      border-radius: 12px; font-size: 10px; letter-spacing: 1px;
+      text-transform: uppercase; z-index: 2;
+    }
+
+    /* ── CONFIGURADOR DE COSTOS (Elec C) ── */
+    .config-list { display: flex; flex-direction: column; gap: 8px; margin: 14px 0; }
+    .config-item {
+      display: grid; grid-template-columns: auto 1fr auto; align-items: center;
+      gap: 14px; padding: 12px 16px; border-radius: 10px;
+      background: var(--bg2); border: 1px solid var(--border);
+      cursor: pointer; transition: all .2s;
+    }
+    .config-item:hover { border-color: var(--amber); }
+    .config-item input { accent-color: #fbbf24; width: 18px; height: 18px; }
+    .config-name { font-size: 13px; color: var(--text); font-weight: 600; }
+    .config-name small { color: var(--muted); font-weight: 400; display: block; margin-top: 2px; }
+    .config-price { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--muted2); }
+    .config-item input:checked ~ .config-price { color: #fbbf24; }
+    .config-item.on { background: rgba(251,191,36,.06); border-color: rgba(251,191,36,.4); }
+    .config-total {
+      display: flex; justify-content: space-between; align-items: center;
+      background: linear-gradient(135deg, rgba(251,191,36,.12), rgba(251,113,133,.06));
+      border: 1px solid rgba(251,191,36,.35);
+      padding: 16px 20px; border-radius: 12px; margin-top: 14px;
+    }
+    .config-total-lbl {
+      font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted);
+    }
+    .config-total-val {
+      font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 800; color: #fbbf24;
+    }
+
+    /* ── TABLA PERIÓDICA DEL CUERPO (Quim A) ── */
+    .periodic {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+      gap: 6px; margin: 18px 0;
+    }
+    .periodic-cell {
+      aspect-ratio: 1; background: var(--card); border: 1px solid var(--border);
+      border-radius: 8px; cursor: pointer; padding: 6px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      transition: all .2s; position: relative;
+    }
+    .periodic-cell:hover { transform: translateY(-2px); border-color: var(--p-color, #fb7185); }
+    .periodic-cell.active {
+      background: color-mix(in srgb, var(--p-color, #fb7185) 15%, var(--card));
+      border-color: var(--p-color, #fb7185); transform: scale(1.08);
+    }
+    .periodic-sym {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px; font-weight: 800; color: var(--text); line-height: 1;
+    }
+    .periodic-name { font-size: 8px; color: var(--muted); margin-top: 2px; letter-spacing: .3px; text-align: center; }
+    .periodic-pct {
+      position: absolute; top: 3px; right: 5px;
+      font-size: 7px; color: var(--muted2); font-weight: 600;
+    }
+    .periodic-info {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 18px 22px; min-height: 100px;
+    }
+    .periodic-info-empty { color: var(--muted); font-style: italic; font-size: 13px; }
+
+    /* ── MIND MAP (Com B) ── */
+    .mindmap { position: relative; padding: 18px 0; }
+    .mindmap svg { width: 100%; height: auto; max-height: 460px; }
+    .mind-node {
+      cursor: pointer; transition: all .25s;
+    }
+    .mind-node:hover .mind-circle, .mind-node.active .mind-circle {
+      stroke-width: 4; filter: drop-shadow(0 0 8px var(--m-color));
+    }
+    .mind-node.active .mind-circle { fill: var(--m-color); }
+
+    /* ── CAROUSEL (Com C) ── */
+    .carousel {
+      position: relative; margin: 18px 0; border-radius: 14px;
+      background: var(--card); border: 1px solid var(--border); padding: 14px;
+    }
+    .carousel-track {
+      display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+      scrollbar-width: thin; scrollbar-color: var(--amber) var(--bg2);
+      padding-bottom: 6px;
+    }
+    .carousel-track::-webkit-scrollbar { height: 6px; }
+    .carousel-track::-webkit-scrollbar-thumb { background: var(--amber); border-radius: 3px; }
+    .carousel-slide {
+      flex: 0 0 60%; min-width: 280px; scroll-snap-align: start;
+      border-radius: 10px; overflow: hidden; border: 1px solid var(--border);
+      background: var(--bg2); position: relative;
+    }
+    .carousel-slide img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .carousel-cap {
+      padding: 10px 14px; font-size: 12px; color: var(--muted2); line-height: 1.5;
+    }
+    .carousel-cap strong { color: var(--text); display: block; margin-bottom: 4px; font-size: 13px; }
+    .carousel-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,.65);
+      color: #fff; border: none; cursor: pointer; font-size: 16px;
+      z-index: 5; backdrop-filter: blur(4px);
+    }
+    .carousel-btn.prev { left: 6px; }
+    .carousel-btn.next { right: 6px; }
+    .carousel-btn:hover { background: rgba(0,0,0,.85); }
+
     /* clickable cards */
     .poi-card, .materia-card:not(.placeholder) { cursor: pointer; }
     .poi-card::before, .materia-card:not(.placeholder)::before {
@@ -3186,18 +3316,41 @@ const DETAILS = {
       <div class="detail-sec">
         <div class="detail-sec-head">6. Proyección 2036 — Mapa Comparativo</div>
         <div class="detail-sec-sub">Comparación entre el estado actual (2026) y la proyección para 2036 si no se implementan acciones de mitigación. El mapa 2036 muestra la expansión de las zonas de riesgo y la desaparición del ajolote de los canales urbanos de Pachuca.</div>
+        <div class="detail-sec-sub" style="margin-bottom:14px">💡 Haz clic en cada mapa para voltearlo y leer la interpretación.</div>
         <div class="detail-2col" style="margin-bottom:24px">
-          <div>
-            <div style="border-radius:16px;overflow:hidden;border:2px solid rgba(56,189,248,.3);box-shadow:0 20px 60px rgba(0,0,0,.5)">
-              <img src="/images/mapa_ajolote.jpeg" alt="Mapa de Riesgo Ecotoxicológico 2026" style="width:100%;display:block" />
+          <div class="flip-card" onclick="flipToggle(this)">
+            <div class="flip-inner">
+              <div class="flip-face front" style="border-color:rgba(56,189,248,.4)">
+                <span class="flip-hint">Clic para voltear</span>
+                <img src="/images/mapa_ajolote.jpeg" alt="Mapa de Riesgo Ecotoxicológico 2026">
+                <div class="flip-body"><strong style="color:#38bdf8;font-size:14px;display:block;margin-bottom:6px">Estado actual — Abril 2026</strong>Población residual del ajolote en pequeñas charcas serranas. Riesgo concentrado en jales mineros, refinería de Tula y zonas agrícolas del sur.</div>
+              </div>
+              <div class="flip-face back" style="border-color:rgba(56,189,248,.4);background:linear-gradient(135deg,rgba(56,189,248,.06),rgba(56,189,248,.01))">
+                <div class="flip-body" style="display:flex;flex-direction:column;justify-content:center;height:100%;padding:24px">
+                  <strong style="color:#38bdf8;font-size:15px;margin-bottom:10px">2026 · ¿qué se observa?</strong>
+                  <p style="line-height:1.75"><strong>3 zonas críticas</strong> alrededor de Pachuca. El sistema hidrológico fluye de norte a sur — todo contaminante llega al sur en horas.</p>
+                  <p style="line-height:1.75">Los ajolotes aún sobreviven en libertad en pequeños cuerpos de agua, pero su población se ha reducido.</p>
+                  <p style="font-size:11px;color:var(--muted);margin-top:8px;letter-spacing:.5px">⤺ Clic para volver</p>
+                </div>
+              </div>
             </div>
-            <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:8px;letter-spacing:.5px">Estado actual — Abril 2026</p>
           </div>
-          <div>
-            <div style="border-radius:16px;overflow:hidden;border:2px solid rgba(251,113,133,.3);box-shadow:0 20px 60px rgba(0,0,0,.5)">
-              <img src="/images/bio/mapa2036.png" alt="Mapa de Riesgo Proyectado 2036" style="width:100%;display:block" />
+          <div class="flip-card" onclick="flipToggle(this)">
+            <div class="flip-inner">
+              <div class="flip-face front" style="border-color:rgba(251,113,133,.4)">
+                <span class="flip-hint">Clic para voltear</span>
+                <img src="/images/bio/mapa2036.png" alt="Mapa de Riesgo Proyectado 2036">
+                <div class="flip-body"><strong style="color:#fb7185;font-size:14px;display:block;margin-bottom:6px">Proyección — 2036</strong>Sin acción de cambio: expansión de zonas críticas. Desaparición del ajolote en libertad.</div>
+              </div>
+              <div class="flip-face back" style="border-color:rgba(251,113,133,.4);background:linear-gradient(135deg,rgba(251,113,133,.06),rgba(251,113,133,.01))">
+                <div class="flip-body" style="display:flex;flex-direction:column;justify-content:center;height:100%;padding:24px">
+                  <strong style="color:#fb7185;font-size:15px;margin-bottom:10px">2036 · ¿qué cambia?</strong>
+                  <p style="line-height:1.75"><strong>+2 a +4 °C</strong> de isla de calor urbana. Mancha urbana consolidada hacia el sur (CDMX).</p>
+                  <p style="line-height:1.75"><strong>El ajolote ya no se encontraría libre</strong> — solo en cautiverio por el nivel de contaminación del agua.</p>
+                  <p style="font-size:11px;color:var(--muted);margin-top:8px;letter-spacing:.5px">⤺ Clic para volver</p>
+                </div>
+              </div>
             </div>
-            <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:8px;letter-spacing:.5px">Proyección — 2036 (sin acción de cambio)</p>
           </div>
         </div>
         <div class="detail-2col">
@@ -3642,6 +3795,107 @@ const DETAILS = {
             <p style="font-size:12px;line-height:1.8"><strong>Fabricante:</strong> Bosch Sensortec<br><strong>Presión:</strong> 300–1100 hPa<br><strong>Precisión:</strong> ±1 hPa<br><strong>Interfaz:</strong> I²C (dirección 0x77)<br><strong>Voltaje:</strong> 1.8V a 3.6V<br><strong>Consumo:</strong> ~5 µA reposo<br><strong>Costo:</strong> ~$80–120 MXN</p>
             <div class="alert-box info" style="margin-top:12px;font-size:11px">h(m) = 44330 × [1 − (P/P₀)^(1/5.255)]<br>P₀ = 1013.25 hPa (nivel del mar)</div>
           </div>
+        </div>
+
+        <!-- DIAGRAMA DE SENSORES CLICKEABLES (Elec A) -->
+        <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin:24px 0 6px">Estación · Sensores Clickeables</p>
+        <p style="color:var(--muted2);font-size:13px;line-height:1.7;margin-bottom:6px">Haz clic en cualquier sensor del esquema para ver sus especificaciones técnicas.</p>
+        <div class="hotspot-wrap">
+          <div class="hotspot-stage" style="background:linear-gradient(180deg,#1a2436,#0d1726);padding:6px">
+            <svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="420" height="300" rx="14" fill="#0a1322" stroke="rgba(251,191,36,.18)"/>
+              <text x="230" y="44" text-anchor="middle" fill="#fbbf24" font-size="11" letter-spacing="2.5" font-family="Inter,sans-serif">ESTACIÓN EIMA · DIAGRAMA</text>
+              <rect x="180" y="200" width="100" height="60" rx="10" fill="#0d1726" stroke="#a78bfa" stroke-width="2"/>
+              <text x="230" y="226" text-anchor="middle" fill="#a78bfa" font-size="13" font-weight="700" font-family="Inter,sans-serif">ESP32</text>
+              <text x="230" y="244" text-anchor="middle" fill="#94a3b8" font-size="9" letter-spacing="1" font-family="Inter,sans-serif">microcontrolador</text>
+              <line x1="100" y1="120" x2="195" y2="200" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3,4" opacity=".6"/>
+              <line x1="230" y1="120" x2="230" y2="200" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3,4" opacity=".6"/>
+              <line x1="360" y1="120" x2="265" y2="200" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3,4" opacity=".6"/>
+              <text x="230" y="290" text-anchor="middle" fill="#64748b" font-size="9" letter-spacing="1.5" font-family="Inter,sans-serif">3 sensores · clic para spec técnica</text>
+            </svg>
+            <button class="hotspot-btn" data-group="elecsens" style="top:35%;left:22%;--hot-color:#fb7185" onclick="hotspotShow('elecsens',1,this)">🌡️</button>
+            <button class="hotspot-btn" data-group="elecsens" style="top:35%;left:50%;--hot-color:#38bdf8" onclick="hotspotShow('elecsens',2,this)">💧</button>
+            <button class="hotspot-btn" data-group="elecsens" style="top:35%;left:78%;--hot-color:#34d399" onclick="hotspotShow('elecsens',3,this)">🌪️</button>
+          </div>
+          <div class="hotspot-panel">
+            <div class="hotspot-info active" data-group="elecsens" data-id="1" style="--hot-color:#fb7185">
+              <span class="hs-meta">Sensor 1 · Analógico</span>
+              <h5><span class="hs-dot"></span>🌡️ LM35 — Temperatura</h5>
+              <p><strong>Fabricante:</strong> Texas Instruments · <strong>Rango:</strong> −55 a +150 °C · <strong>Precisión:</strong> ±0.5 °C</p>
+              <p><strong>Salida:</strong> 10 mV/°C analógico → requiere ADC del ESP32. <strong>Costo:</strong> ~$20–30 MXN.</p>
+              <p style="background:rgba(56,189,248,.06);border-left:3px solid #38bdf8;padding:8px 12px;border-radius:8px;margin-top:8px"><strong>Fórmula:</strong> T(°C) = Vout × 100 — ejemplo: 0.35 V → 35 °C.</p>
+            </div>
+            <div class="hotspot-info" data-group="elecsens" data-id="2" style="--hot-color:#38bdf8">
+              <span class="hs-meta">Sensor 2 · Digital</span>
+              <h5><span class="hs-dot"></span>💧 DHT11 — Temperatura + Humedad</h5>
+              <p><strong>Fabricante:</strong> Aosong · <strong>Rango temp:</strong> 0–50 °C ±2 °C · <strong>HR:</strong> 20–80 % ±5 %</p>
+              <p><strong>Salida:</strong> protocolo digital 40 bits, one-wire. <strong>Costo:</strong> ~$30–50 MXN.</p>
+              <p style="background:rgba(56,189,248,.06);border-left:3px solid #38bdf8;padding:8px 12px;border-radius:8px;margin-top:8px"><strong>Frame:</strong> Byte1 HR-int · Byte2 HR-dec · Byte3 T-int · Byte4 T-dec · Byte5 checksum.</p>
+            </div>
+            <div class="hotspot-info" data-group="elecsens" data-id="3" style="--hot-color:#34d399">
+              <span class="hs-meta">Sensor 3 · I²C</span>
+              <h5><span class="hs-dot"></span>🌪️ BMP180 — Presión Barométrica</h5>
+              <p><strong>Fabricante:</strong> Bosch Sensortec · <strong>Rango:</strong> 300–1100 hPa · <strong>Precisión:</strong> ±1 hPa</p>
+              <p><strong>Interfaz:</strong> I²C (dirección 0x77) · 1.8–3.6 V · 5 µA reposo. <strong>Costo:</strong> ~$80–120 MXN.</p>
+              <p style="background:rgba(56,189,248,.06);border-left:3px solid #38bdf8;padding:8px 12px;border-radius:8px;margin-top:8px"><strong>Altimetría:</strong> h(m) = 44330 × [1 − (P/1013.25)^(1/5.255)].</p>
+            </div>
+          </div>
+        </div>
+        <div class="hotspot-hint">3 sensores → ESP32 → red Wi-Fi → datos en vivo</div>
+
+        <!-- CONFIGURADOR DE COSTOS (Elec C) -->
+        <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin:30px 0 6px">Configurador · Construye tu Estación</p>
+        <p style="color:var(--muted2);font-size:13px;line-height:1.7;margin-bottom:6px">Marca los componentes que quieras incluir. El total se actualiza en vivo.</p>
+        <div class="config-list">
+          <label class="config-item on" data-group="elec" data-price="350" data-bound="1">
+            <input type="checkbox" checked onchange="configUpdate('elec')">
+            <div class="config-name">ESP32 DevKit V1 <small>Microcontrolador con Wi-Fi y BLE — núcleo del sistema</small></div>
+            <div class="config-price">$350</div>
+          </label>
+          <label class="config-item on" data-group="elec" data-price="25">
+            <input type="checkbox" checked onchange="configUpdate('elec')">
+            <div class="config-name">Sensor LM35 <small>Temperatura analógica de precisión</small></div>
+            <div class="config-price">$25</div>
+          </label>
+          <label class="config-item on" data-group="elec" data-price="40">
+            <input type="checkbox" checked onchange="configUpdate('elec')">
+            <div class="config-name">Sensor DHT11 <small>Temperatura + humedad digital</small></div>
+            <div class="config-price">$40</div>
+          </label>
+          <label class="config-item on" data-group="elec" data-price="100">
+            <input type="checkbox" checked onchange="configUpdate('elec')">
+            <div class="config-name">Sensor BMP180 <small>Presión barométrica I²C</small></div>
+            <div class="config-price">$100</div>
+          </label>
+          <label class="config-item" data-group="elec" data-price="180">
+            <input type="checkbox" onchange="configUpdate('elec')">
+            <div class="config-name">Anemómetro de copas <small>Velocidad del viento (opcional)</small></div>
+            <div class="config-price">$180</div>
+          </label>
+          <label class="config-item" data-group="elec" data-price="220">
+            <input type="checkbox" onchange="configUpdate('elec')">
+            <div class="config-name">Pluviómetro de cubeta basculante <small>Precipitación (opcional)</small></div>
+            <div class="config-price">$220</div>
+          </label>
+          <label class="config-item" data-group="elec" data-price="150">
+            <input type="checkbox" onchange="configUpdate('elec')">
+            <div class="config-name">Sensor UV ML8511 <small>Radiación ultravioleta (opcional)</small></div>
+            <div class="config-price">$150</div>
+          </label>
+          <label class="config-item on" data-group="elec" data-price="80">
+            <input type="checkbox" checked onchange="configUpdate('elec')">
+            <div class="config-name">Cables, protoboard y resistencias <small>Conexión y prototipado</small></div>
+            <div class="config-price">$80</div>
+          </label>
+          <label class="config-item" data-group="elec" data-price="240">
+            <input type="checkbox" onchange="configUpdate('elec')">
+            <div class="config-name">Caja IP65 + soporte <small>Para instalación intemperie</small></div>
+            <div class="config-price">$240</div>
+          </label>
+        </div>
+        <div class="config-total">
+          <div><div class="config-total-lbl">Total estimado</div><div style="font-size:11px;color:var(--muted);margin-top:4px">Configuración básica · sin opcionales</div></div>
+          <div class="config-total-val" data-config-total="elec">$595 MXN</div>
         </div>
 
         <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin:24px 0 12px">Tabla Comparativa de Sensores</p>
@@ -4987,6 +5241,34 @@ void loop() {
           <tr><td><strong>Selenio</strong></td><td>Se</td><td>trazas</td><td>Antioxidante (glutatión peroxidasa), función tiroidea</td><td>Selenio sérico: 70–150 µg/L</td></tr>
           <tr><td><strong>Molibdeno</strong></td><td>Mo</td><td>trazas</td><td>Cofactor de xantina oxidasa (metabolismo de purinas)</td><td>Molibdeno sérico: 0.5–2.0 µg/L</td></tr>
         </tbody></table>
+
+        <!-- TABLA PERIÓDICA INTERACTIVA -->
+        <div class="detail-sec-head" style="font-size:14px;color:var(--muted);margin-top:18px">Tabla Periódica del Cuerpo Humano · Interactiva</div>
+        <div class="detail-sec-sub" style="margin-bottom:6px">Haz clic en cualquier elemento para ver su función biológica y cómo lo afecta el aire de Pachuca.</div>
+        <div class="hotspot-wrap">
+          <div>
+            <div class="periodic">
+              <div class="periodic-cell" style="--p-color:#38bdf8" onclick="periodicShow('O','#38bdf8',this)"><div class="periodic-sym">O</div><div class="periodic-name">Oxígeno</div><div class="periodic-pct">65%</div></div>
+              <div class="periodic-cell" style="--p-color:#a78bfa" onclick="periodicShow('C','#a78bfa',this)"><div class="periodic-sym">C</div><div class="periodic-name">Carbono</div><div class="periodic-pct">18%</div></div>
+              <div class="periodic-cell" style="--p-color:#34d399" onclick="periodicShow('H','#34d399',this)"><div class="periodic-sym">H</div><div class="periodic-name">Hidrógeno</div><div class="periodic-pct">10%</div></div>
+              <div class="periodic-cell" style="--p-color:#fbbf24" onclick="periodicShow('N','#fbbf24',this)"><div class="periodic-sym">N</div><div class="periodic-name">Nitrógeno</div><div class="periodic-pct">3%</div></div>
+              <div class="periodic-cell" style="--p-color:#fb7185" onclick="periodicShow('Ca','#fb7185',this)"><div class="periodic-sym">Ca</div><div class="periodic-name">Calcio</div><div class="periodic-pct">1.5%</div></div>
+              <div class="periodic-cell" style="--p-color:#a78bfa" onclick="periodicShow('P','#a78bfa',this)"><div class="periodic-sym">P</div><div class="periodic-name">Fósforo</div><div class="periodic-pct">1%</div></div>
+              <div class="periodic-cell" style="--p-color:#fbbf24" onclick="periodicShow('K','#fbbf24',this)"><div class="periodic-sym">K</div><div class="periodic-name">Potasio</div><div class="periodic-pct">.35%</div></div>
+              <div class="periodic-cell" style="--p-color:#fb7185" onclick="periodicShow('S','#fb7185',this)"><div class="periodic-sym">S</div><div class="periodic-name">Azufre</div><div class="periodic-pct">.25%</div></div>
+              <div class="periodic-cell" style="--p-color:#38bdf8" onclick="periodicShow('Na','#38bdf8',this)"><div class="periodic-sym">Na</div><div class="periodic-name">Sodio</div><div class="periodic-pct">.15%</div></div>
+              <div class="periodic-cell" style="--p-color:#34d399" onclick="periodicShow('Cl','#34d399',this)"><div class="periodic-sym">Cl</div><div class="periodic-name">Cloro</div><div class="periodic-pct">.15%</div></div>
+              <div class="periodic-cell" style="--p-color:#fb7185" onclick="periodicShow('Fe','#fb7185',this)"><div class="periodic-sym">Fe</div><div class="periodic-name">Hierro</div><div class="periodic-pct">tr</div></div>
+              <div class="periodic-cell" style="--p-color:#34d399" onclick="periodicShow('Zn','#34d399',this)"><div class="periodic-sym">Zn</div><div class="periodic-name">Zinc</div><div class="periodic-pct">tr</div></div>
+              <div class="periodic-cell" style="--p-color:#94a3b8;border-style:dashed" onclick="periodicShow('Pb','#94a3b8',this)"><div class="periodic-sym" style="color:#fb7185">Pb</div><div class="periodic-name">Plomo ⚠</div><div class="periodic-pct">tóx</div></div>
+              <div class="periodic-cell" style="--p-color:#94a3b8;border-style:dashed" onclick="periodicShow('As','#94a3b8',this)"><div class="periodic-sym" style="color:#fb7185">As</div><div class="periodic-name">Arsénico ⚠</div><div class="periodic-pct">tóx</div></div>
+            </div>
+          </div>
+          <div class="periodic-info" id="periodic-info">
+            <p class="periodic-info-empty">Selecciona un elemento de la tabla para conocer su función y el impacto del aire de Pachuca.</p>
+          </div>
+        </div>
+        <div class="hotspot-hint">14 elementos · 12 esenciales + 2 tóxicos contaminantes</div>
       </div>
 
       <!-- SECCIÓN 2: ATMÓSFERA -->
@@ -5229,6 +5511,40 @@ void loop() {
             </div>
           </div>
         </div>
+
+        <!-- GALERÍA CAROUSEL (Com C) -->
+        <div class="detail-sec-head" style="font-size:14px;color:var(--muted);margin-top:24px">Galería del Proceso · Carrusel</div>
+        <div class="detail-sec-sub" style="margin-bottom:6px">Recorre las imágenes del trabajo de campo y producción.</div>
+        <div class="carousel">
+          <button class="carousel-btn prev" onclick="carouselMove('comgal',-1)">‹</button>
+          <button class="carousel-btn next" onclick="carouselMove('comgal',1)">›</button>
+          <div class="carousel-track" data-carousel="comgal">
+            <div class="carousel-slide">
+              <img src="/images/filo/reloj_atardecer.jpeg" alt="Reloj Monumental al atardecer">
+              <div class="carousel-cap"><strong>Pachuca · Reloj Monumental</strong>Atardecer durante la onda de calor de abril 2026.</div>
+            </div>
+            <div class="carousel-slide">
+              <img src="/images/filo/pachuca_sierra.jpeg" alt="Sierra de Pachuca">
+              <div class="carousel-cap"><strong>Sierra y mancha urbana</strong>Vista del relieve que rodea la ciudad — fuente de incendios forestales y refugio del ajolote.</div>
+            </div>
+            <div class="carousel-slide">
+              <img src="/images/filo/reloj_niebla.jpeg" alt="Reloj con niebla">
+              <div class="carousel-cap"><strong>Niebla y baja visibilidad</strong>Días con contaminación atmosférica visibles a simple vista.</div>
+            </div>
+            <div class="carousel-slide">
+              <img src="/images/filo/arbol_seco.jpeg" alt="Árbol seco">
+              <div class="carousel-cap"><strong>Árbol seco al pie de la sierra</strong>Estrés hídrico y térmico en la vegetación periurbana.</div>
+            </div>
+            <div class="carousel-slide">
+              <img src="/images/eima/foto3.png" alt="Panorámica de Pachuca">
+              <div class="carousel-cap"><strong>Pachuca panorámica</strong>Fotografía aérea de la zona metropolitana — contexto del estudio.</div>
+            </div>
+            <div class="carousel-slide">
+              <img src="/images/filo/collage.jpeg" alt="Collage del equipo">
+              <div class="carousel-cap"><strong>Collage filosófico</strong>Composición visual del equipo durante la salida de campo.</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- 04 Resultados -->
@@ -5255,6 +5571,91 @@ void loop() {
         <div class="alert-box warning" style="margin-top:14px">
           <strong>Interpretación:</strong> abril 2026 registró anomalías históricas en Pachuca. Temperatura media de <strong>23.9 °C</strong> (moda 23 °C), superando hasta 9 °C el promedio histórico. Humedad crítica (media 49.8%, mínimos 33–35%) afectó polinizadores nativos. El evento único de lluvia (18 mm el 5 de abril) multiplicó por 6 el promedio mensual e impidió el vuelo de la abeja <em>Xylocopa mexicanorum</em>, eslabón crítico del matorral xerófilo. Clasificación Köppen: <strong>BSk</strong> (árido de altura).
         </div>
+      </div>
+
+      <!-- MAPA MENTAL · CAMPOS LABORALES (Com B) -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Campos laborales del Comunicador Ambiental · Mapa mental</div>
+        <div class="detail-sec-sub">Clic en cada rama para conocer el campo profesional. El comunicador ambiental conecta ciencia, política y ciudadanía.</div>
+        <div class="mindmap">
+          <svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="mmCore" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stop-color="#f59e0b" stop-opacity=".5"/>
+                <stop offset="1" stop-color="#f59e0b" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <line x1="300" y1="190" x2="120" y2="80"  stroke="#fb7185" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+            <line x1="300" y1="190" x2="480" y2="80"  stroke="#fbbf24" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+            <line x1="300" y1="190" x2="60"  y2="220" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+            <line x1="300" y1="190" x2="540" y2="220" stroke="#34d399" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+            <line x1="300" y1="190" x2="300" y2="340" stroke="#a78bfa" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+
+            <circle cx="300" cy="190" r="90" fill="url(#mmCore)"/>
+            <circle cx="300" cy="190" r="62" fill="var(--card)" stroke="#f59e0b" stroke-width="2"/>
+            <text x="300" y="186" text-anchor="middle" fill="var(--text)" font-size="13" font-weight="800" font-family="Inter,sans-serif">Comunicador</text>
+            <text x="300" y="202" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="700" font-family="Inter,sans-serif">AMBIENTAL</text>
+
+            <g class="mind-node" data-group="commind" style="--m-color:#fb7185" onclick="hotspotShow('commind',1,this)">
+              <circle class="mind-circle" cx="120" cy="80" r="32" fill="var(--card)" stroke="#fb7185" stroke-width="2"/>
+              <text x="120" y="76" text-anchor="middle" fill="var(--text)" font-size="11" font-weight="700" font-family="Inter,sans-serif">📰</text>
+              <text x="120" y="92" text-anchor="middle" fill="#fb7185" font-size="9" font-weight="600" font-family="Inter,sans-serif">Periodismo</text>
+            </g>
+            <g class="mind-node" data-group="commind" style="--m-color:#fbbf24" onclick="hotspotShow('commind',2,this)">
+              <circle class="mind-circle" cx="480" cy="80" r="32" fill="var(--card)" stroke="#fbbf24" stroke-width="2"/>
+              <text x="480" y="76" text-anchor="middle" fill="var(--text)" font-size="11" font-weight="700" font-family="Inter,sans-serif">📊</text>
+              <text x="480" y="92" text-anchor="middle" fill="#fbbf24" font-size="9" font-weight="600" font-family="Inter,sans-serif">Datos</text>
+            </g>
+            <g class="mind-node" data-group="commind" style="--m-color:#38bdf8" onclick="hotspotShow('commind',3,this)">
+              <circle class="mind-circle" cx="60" cy="220" r="32" fill="var(--card)" stroke="#38bdf8" stroke-width="2"/>
+              <text x="60" y="216" text-anchor="middle" fill="var(--text)" font-size="11" font-weight="700" font-family="Inter,sans-serif">📢</text>
+              <text x="60" y="232" text-anchor="middle" fill="#38bdf8" font-size="9" font-weight="600" font-family="Inter,sans-serif">Riesgo</text>
+            </g>
+            <g class="mind-node" data-group="commind" style="--m-color:#34d399" onclick="hotspotShow('commind',4,this)">
+              <circle class="mind-circle" cx="540" cy="220" r="32" fill="var(--card)" stroke="#34d399" stroke-width="2"/>
+              <text x="540" y="216" text-anchor="middle" fill="var(--text)" font-size="11" font-weight="700" font-family="Inter,sans-serif">🎓</text>
+              <text x="540" y="232" text-anchor="middle" fill="#34d399" font-size="9" font-weight="600" font-family="Inter,sans-serif">Divulgación</text>
+            </g>
+            <g class="mind-node" data-group="commind" style="--m-color:#a78bfa" onclick="hotspotShow('commind',5,this)">
+              <circle class="mind-circle" cx="300" cy="340" r="32" fill="var(--card)" stroke="#a78bfa" stroke-width="2"/>
+              <text x="300" y="336" text-anchor="middle" fill="var(--text)" font-size="11" font-weight="700" font-family="Inter,sans-serif">🎬</text>
+              <text x="300" y="352" text-anchor="middle" fill="#a78bfa" font-size="9" font-weight="600" font-family="Inter,sans-serif">Documental</text>
+            </g>
+          </svg>
+        </div>
+        <div class="hotspot-panel" style="margin-top:6px">
+          <div class="hotspot-info active" data-group="commind" data-id="1" style="--hot-color:#fb7185">
+            <span class="hs-meta">Campo 1</span>
+            <h5><span class="hs-dot"></span>📰 Periodismo Ambiental</h5>
+            <p>Investigación, redacción y publicación de notas y reportajes sobre crisis ambientales. En Pachuca implicaría cubrir incendios, calidad del aire y políticas de SEMARNATH.</p>
+            <p><strong>Salidas:</strong> medios locales, agencias, prensa digital independiente.</p>
+          </div>
+          <div class="hotspot-info" data-group="commind" data-id="2" style="--hot-color:#fbbf24">
+            <span class="hs-meta">Campo 2</span>
+            <h5><span class="hs-dot"></span>📊 Periodismo de datos</h5>
+            <p>Análisis y visualización de bases de datos públicas (SIMAEH, INECC, CONAGUA). Construye historias a partir de números, mapas y tendencias.</p>
+            <p><strong>Salidas:</strong> redacciones de datos, ONGs ambientales, transparencia.</p>
+          </div>
+          <div class="hotspot-info" data-group="commind" data-id="3" style="--hot-color:#38bdf8">
+            <span class="hs-meta">Campo 3</span>
+            <h5><span class="hs-dot"></span>📢 Comunicación de riesgo</h5>
+            <p>Diseñar mensajes claros sobre amenazas climáticas para protección civil, escuelas y comunidades vulnerables — especialmente útil en colonias periféricas de Pachuca.</p>
+            <p><strong>Salidas:</strong> Protección Civil, DIF, dependencias estatales y municipales.</p>
+          </div>
+          <div class="hotspot-info" data-group="commind" data-id="4" style="--hot-color:#34d399">
+            <span class="hs-meta">Campo 4</span>
+            <h5><span class="hs-dot"></span>🎓 Divulgación científica</h5>
+            <p>Traduce investigación académica (IPCC, UAEH) en formatos accesibles: redes, podcasts, talleres. Vincula ciencia con audiencias generales.</p>
+            <p><strong>Salidas:</strong> museos, universidades, divulgadores independientes.</p>
+          </div>
+          <div class="hotspot-info" data-group="commind" data-id="5" style="--hot-color:#a78bfa">
+            <span class="hs-meta">Campo 5</span>
+            <h5><span class="hs-dot"></span>🎬 Producción documental</h5>
+            <p>Narrativa audiovisual de largo formato sobre temas ambientales. Este proyecto EIMA produjo su propio documental como parte del entregable.</p>
+            <p><strong>Salidas:</strong> productoras, festivales, plataformas streaming, ONG.</p>
+          </div>
+        </div>
+        <div class="hotspot-hint">5 campos · clic en cada nodo</div>
       </div>
 
       <!-- 05 Interdisciplinariedad -->
@@ -6207,6 +6608,65 @@ window.SCRUBBER_DATA = {
     {date:'30 abril', meta:'Día 30 · Cierre del muestreo', color:'#34d399', stats:{temp:'23.5 °C', hum:'56 %', species:'Colibrí + Abeja'}, note:'<strong>Cierre de mes:</strong> huizache en antesis máxima. Abundancia de néctar y fructificación post-polinización.'}
   ]
 };
+
+/* ── FLIP CARDS ── */
+function flipToggle(el) { el.classList.toggle('flipped'); }
+
+/* ── CONFIGURADOR DE COSTOS ── */
+function configUpdate(group) {
+  let total = 0;
+  document.querySelectorAll(`.config-item[data-group="${group}"]`).forEach(item => {
+    const input = item.querySelector('input');
+    const price = +item.dataset.price;
+    if (input.checked) { total += price; item.classList.add('on'); }
+    else item.classList.remove('on');
+  });
+  const out = document.querySelector(`[data-config-total="${group}"]`);
+  if (out) out.textContent = '$' + total.toLocaleString('es-MX') + ' MXN';
+}
+
+/* ── TABLA PERIÓDICA ── */
+function periodicShow(sym, color, el) {
+  document.querySelectorAll('.periodic-cell').forEach(c => c.classList.remove('active'));
+  if (el) el.classList.add('active');
+  const data = window.PERIODIC_DATA && window.PERIODIC_DATA[sym];
+  const info = document.getElementById('periodic-info');
+  if (!info || !data) return;
+  info.style.setProperty('--p-color', color);
+  info.innerHTML = `
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px">
+      <div style="width:48px;height:48px;border-radius:10px;background:${color};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;font-family:'Space Grotesk',sans-serif">${sym}</div>
+      <div><div style="font-size:16px;font-weight:700;color:var(--text)">${data.name}</div><div style="font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase">${data.pct} del cuerpo</div></div>
+    </div>
+    <p style="font-size:13px;color:var(--muted2);line-height:1.75;margin:0 0 8px"><strong style="color:var(--text)">Función:</strong> ${data.fn}</p>
+    <p style="font-size:13px;color:var(--muted2);line-height:1.75;margin:0"><strong style="color:${color}">Impacto del aire de Pachuca:</strong> ${data.impact}</p>
+  `;
+}
+window.PERIODIC_DATA = {
+  'O': {name:'Oxígeno', pct:'65 %', fn:'Respiración celular, parte del agua corporal.', impact:'A 2,426 m s.n.m. hay ~22 % menos O₂ disponible. El ozono troposférico irrita pulmones reduciendo la captación.'},
+  'C': {name:'Carbono', pct:'18 %', fn:'Esqueleto de todas las biomoléculas (proteínas, lípidos, carbohidratos, ADN).', impact:'Se respira CO₂ y CO. El CO se une a la hemoglobina con afinidad 240× mayor que el O₂.'},
+  'H': {name:'Hidrógeno', pct:'10 %', fn:'Parte del agua y de todas las moléculas orgánicas. Regula pH.', impact:'La lluvia ácida (pH<5.6) altera el equilibrio H⁺ del manto cutáneo y de mucosas.'},
+  'N': {name:'Nitrógeno', pct:'3 %', fn:'Aminoácidos, proteínas y bases nitrogenadas del ADN.', impact:'NOₓ del tráfico forma compuestos irritantes; precursor de smog fotoquímico.'},
+  'Ca': {name:'Calcio', pct:'1.5 %', fn:'Huesos, dientes, contracción muscular, coagulación.', impact:'El plomo (Pb) desplaza al Ca²⁺ en sinapsis neuronales — neurotóxico crónico.'},
+  'P': {name:'Fósforo', pct:'1 %', fn:'ATP (energía), huesos y dientes, fosfolípidos de membranas.', impact:'Fertilizantes agrícolas (NPK) en escurrimientos generan eutrofización del río Tula.'},
+  'K': {name:'Potasio', pct:'0.35 %', fn:'Potencial de membrana, transmisión nerviosa, balance hídrico.', impact:'El estrés térmico extremo (onda de calor de abril) provoca pérdida de K⁺ por sudoración.'},
+  'S': {name:'Azufre', pct:'0.25 %', fn:'Aminoácidos (cisteína, metionina), estabilidad de proteínas.', impact:'SO₂ industrial reacciona con humedad → ácido sulfúrico (lluvia ácida).'},
+  'Na': {name:'Sodio', pct:'0.15 %', fn:'Balance hídrico, presión arterial, transmisión nerviosa.', impact:'Pérdida por sudoración intensa en olas de calor → calambres y deshidratación.'},
+  'Cl': {name:'Cloro', pct:'0.15 %', fn:'Equilibrio osmótico, jugo gástrico (HCl).', impact:'Cl₂ en agua tratada. Inhalación reacciona con humedad pulmonar → irritación.'},
+  'Fe': {name:'Hierro', pct:'0.006 %', fn:'Hemoglobina (transporte de O₂), mioglobina, citocromos.', impact:'PM2.5 daña alvéolos → menor capacidad para captar O₂. Hierro sérico normal 60–170 µg/dL.'},
+  'Zn': {name:'Zinc', pct:'traza', fn:'Cofactor de 300+ enzimas, sistema inmune.', impact:'Metales pesados (Pb, Cd) consumen Zn y Se — deprimen el sistema inmune.'},
+  'Pb': {name:'Plomo ⚠', pct:'tóxico', fn:'No es esencial; entra al cuerpo por aire y agua contaminada.', impact:'Refinería + jales mineros. Altera desarrollo neurológico infantil. Sin nivel seguro de exposición.'},
+  'As': {name:'Arsénico ⚠', pct:'tóxico', fn:'No es esencial; presente en aguas subterráneas del Valle del Mezquital.', impact:'Cancerígeno comprobado. Daño cutáneo, vascular y renal por bioacumulación.'},
+};
+
+/* ── CAROUSEL ── */
+function carouselMove(group, dir) {
+  const track = document.querySelector(`[data-carousel="${group}"]`);
+  if (!track) return;
+  const slide = track.querySelector('.carousel-slide');
+  const step = slide ? slide.offsetWidth + 12 : 300;
+  track.scrollBy({ left: step * dir, behavior: 'smooth' });
+}
 
 /* ── SIMULADOR FÍSICA · presión y densidad por altitud ── */
 function simPhys() {
