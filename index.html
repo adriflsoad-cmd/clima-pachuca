@@ -716,6 +716,120 @@
       color: var(--chain-color); font-weight: 700; margin-bottom: 6px; text-align: center;
     }
 
+    /* ── HOTSPOTS REUSABLES ── */
+    .hotspot-wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; align-items: start; }
+    @media (max-width: 720px) { .hotspot-wrap { grid-template-columns: 1fr; } }
+    .hotspot-stage {
+      position: relative; border-radius: 14px; overflow: hidden;
+      border: 1px solid var(--border); background: var(--bg2);
+    }
+    .hotspot-stage > img, .hotspot-stage > svg { width: 100%; height: auto; display: block; }
+    .hotspot-btn {
+      position: absolute; width: 34px; height: 34px; border-radius: 50%;
+      background: var(--hot-color, #fb7185); border: 3px solid #fff;
+      box-shadow: 0 4px 14px rgba(0,0,0,.45);
+      cursor: pointer; color: #fff; font-weight: 800; font-size: 13px;
+      transform: translate(-50%, -50%);
+      display: flex; align-items: center; justify-content: center;
+      animation: hot-pulse 2.4s infinite;
+      transition: transform .2s;
+    }
+    @keyframes hot-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--hot-color, #fb7185) 50%, transparent), 0 4px 14px rgba(0,0,0,.45); }
+      60% { box-shadow: 0 0 0 14px transparent, 0 4px 14px rgba(0,0,0,.45); }
+    }
+    .hotspot-btn:hover, .hotspot-btn.active { transform: translate(-50%, -50%) scale(1.18); }
+    .hotspot-btn.active {
+      animation: none; background: #fff; color: var(--hot-color, #fb7185);
+      border-color: var(--hot-color, #fb7185);
+    }
+    .hotspot-panel {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 18px 22px; min-height: 220px; position: relative;
+    }
+    .hotspot-info { display: none; animation: hot-fade .35s ease; }
+    .hotspot-info.active { display: block; }
+    @keyframes hot-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .hotspot-info h5 {
+      font-size: 16px; font-weight: 700; color: var(--text); margin: 0 0 8px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .hotspot-info h5 .hs-dot {
+      width: 12px; height: 12px; border-radius: 50%; background: var(--hot-color, #fb7185);
+      flex-shrink: 0;
+    }
+    .hotspot-info p { font-size: 13px; color: var(--muted2); line-height: 1.75; margin: 0 0 8px; }
+    .hotspot-info .hs-meta {
+      display: inline-block; font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 6px;
+    }
+    .hotspot-hint {
+      text-align: center; font-size: 12px; color: var(--muted);
+      letter-spacing: .5px; margin: 8px 0 0; font-style: italic;
+    }
+
+    /* ── CADENA TRÓFICA INTERACTIVA (eco) ── */
+    .trofic-chain {
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      margin: 18px auto; max-width: 540px;
+    }
+    .trofic-node {
+      width: 100%; max-width: 420px;
+      background: var(--card); border: 2px solid color-mix(in srgb, var(--lv, #34d399) 35%, transparent);
+      border-radius: 14px; padding: 14px 18px; cursor: pointer; text-align: left;
+      display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center;
+      transition: all .25s ease; color: var(--text);
+      position: relative; overflow: hidden;
+    }
+    .trofic-node::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg, color-mix(in srgb, var(--lv) 14%, transparent), transparent 60%);
+      opacity: 0; transition: opacity .25s;
+    }
+    .trofic-node:hover { transform: translateX(4px); border-color: var(--lv); }
+    .trofic-node:hover::before { opacity: 1; }
+    .trofic-node.active {
+      border-color: var(--lv); box-shadow: 0 0 0 3px color-mix(in srgb, var(--lv) 22%, transparent);
+    }
+    .trofic-node.active::before { opacity: 1; }
+    .trofic-emoji {
+      font-size: 28px; grid-row: span 2;
+      width: 52px; height: 52px; border-radius: 12px;
+      background: color-mix(in srgb, var(--lv) 18%, transparent);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .trofic-lv {
+      font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--lv); font-weight: 700;
+    }
+    .trofic-name { font-size: 14px; font-weight: 700; color: var(--text); }
+    .trofic-critical { animation: trofic-warn 2.6s infinite; }
+    @keyframes trofic-warn {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(251,113,133,.4); }
+      50% { box-shadow: 0 0 0 10px transparent; }
+    }
+    .trofic-arrow {
+      color: var(--muted); font-size: 18px; line-height: 1;
+    }
+
+    /* ── CUERPO HUMANO SVG (Quim B, Salud A) ── */
+    .body-stage { position: relative; padding: 20px 0; background: radial-gradient(circle at 50% 50%, rgba(167,139,250,.06), transparent 70%); border-radius: 14px; }
+    .body-svg { display: block; margin: 0 auto; max-width: 280px; width: 100%; height: auto; }
+    .body-svg path, .body-svg ellipse, .body-svg rect { fill: var(--card); stroke: var(--border); stroke-width: 1.5; }
+    .body-zone {
+      fill: color-mix(in srgb, var(--hot-color, #38bdf8) 18%, transparent);
+      stroke: var(--hot-color, #38bdf8); stroke-width: 1.5;
+      cursor: pointer; transition: all .25s;
+    }
+    .body-zone:hover { fill: color-mix(in srgb, var(--hot-color, #38bdf8) 38%, transparent); }
+    .body-zone.active { fill: var(--hot-color, #38bdf8); stroke: #fff; }
+    .body-label {
+      position: absolute; pointer-events: none;
+      font-size: 11px; letter-spacing: .5px; color: var(--muted); font-weight: 600;
+      background: var(--card); padding: 2px 8px; border-radius: 12px; border: 1px solid var(--border);
+      transform: translate(-50%, -50%);
+    }
+
     /* clickable cards */
     .poi-card, .materia-card:not(.placeholder) { cursor: pointer; }
     .poi-card::before, .materia-card:not(.placeholder)::before {
@@ -2317,10 +2431,83 @@ const DETAILS = {
         </tbody></table>
       </div>
 
-      <!-- SECCIÓN 3: CADENAS TRÓFICAS -->
+      <!-- SECCIÓN 3: CADENA TRÓFICA INTERACTIVA -->
       <div class="detail-sec">
-        <div class="detail-sec-head">Sección 3 · Cadenas Tróficas del Matorral Xerófilo</div>
-        <div class="detail-sec-sub">La cadena trófica del matorral xerófilo de Pachuca involucra 5 niveles funcionales. Durante abril 2026 el nivel de consumidores primarios representó el eslabón más crítico por la baja actividad de polinizadores.</div>
+        <div class="detail-sec-head">Sección 3 · Cadena Trófica Interactiva</div>
+        <div class="detail-sec-sub">Clic en cualquier nivel trófico para ver qué ocurre si ese eslabón colapsa. Durante abril 2026, los polinizadores fueron el nivel más crítico.</div>
+
+        <div class="trofic-chain">
+          <button class="trofic-node" style="--lv:#34d399" onclick="hotspotShow('trofic',1,this)" data-group="trofic">
+            <div class="trofic-emoji">🌵</div>
+            <div class="trofic-lv">Nivel 1</div>
+            <div class="trofic-name">Productores</div>
+          </button>
+          <div class="trofic-arrow">↓</div>
+          <button class="trofic-node trofic-critical" style="--lv:#fb7185" onclick="hotspotShow('trofic',2,this)" data-group="trofic">
+            <div class="trofic-emoji">🐝</div>
+            <div class="trofic-lv">Nivel 2 ⚠ Crítico</div>
+            <div class="trofic-name">Consumidores Primarios</div>
+          </button>
+          <div class="trofic-arrow">↓</div>
+          <button class="trofic-node" style="--lv:#fbbf24" onclick="hotspotShow('trofic',3,this)" data-group="trofic">
+            <div class="trofic-emoji">🐦</div>
+            <div class="trofic-lv">Nivel 3</div>
+            <div class="trofic-name">Consumidores Secundarios</div>
+          </button>
+          <div class="trofic-arrow">↓</div>
+          <button class="trofic-node" style="--lv:#a78bfa" onclick="hotspotShow('trofic',4,this)" data-group="trofic">
+            <div class="trofic-emoji">🦅</div>
+            <div class="trofic-lv">Nivel 4</div>
+            <div class="trofic-name">Consumidores Terciarios</div>
+          </button>
+          <div class="trofic-arrow">↺</div>
+          <button class="trofic-node" style="--lv:#94a3b8" onclick="hotspotShow('trofic',5,this)" data-group="trofic">
+            <div class="trofic-emoji">🍄</div>
+            <div class="trofic-lv">Cierre</div>
+            <div class="trofic-name">Descomponedores</div>
+          </button>
+        </div>
+
+        <div class="hotspot-panel" style="margin-top:14px">
+          <div class="hotspot-info active" data-group="trofic" data-id="1" style="--hot-color:#34d399">
+            <span class="hs-meta">Nivel 1 · Productores</span>
+            <h5><span class="hs-dot"></span>🌵 Nopal cardón, Maguey, Huizache, Sotol</h5>
+            <p><strong>Función:</strong> Fotosíntesis CAM; capturan CO₂ y son la base energética del matorral.</p>
+            <p><strong>Estado Abr 2026:</strong> Fotosíntesis inhibida por calor extremo (+9 °C). Cladodios arrugados, floración retrasada.</p>
+            <p><strong>Si colapsan:</strong> Toda la pirámide se desploma. Sin productores no hay polen, no hay alimento, no hay materia para descomponer.</p>
+          </div>
+          <div class="hotspot-info" data-group="trofic" data-id="2" style="--hot-color:#fb7185">
+            <span class="hs-meta">Nivel 2 · ESLABÓN CRÍTICO ⚠</span>
+            <h5><span class="hs-dot"></span>🐝 Abeja nativa (Xylocopa mexicanorum), colibrí</h5>
+            <p><strong>Función:</strong> Polinizadores clave del matorral. Conectan productores con consumidores superiores.</p>
+            <p><strong>Estado Abr 2026:</strong> <strong style="color:#fb7185">Actividad muy baja</strong>. La lluvia anómala del 5 abril (18 mm + viento 40 km/h) impidió el vuelo de la abeja nativa.</p>
+            <p><strong>Si colapsan:</strong> No hay polinización → no hay frutos → no hay alimento para aves ni mamíferos → cascada hasta los depredadores ápice.</p>
+          </div>
+          <div class="hotspot-info" data-group="trofic" data-id="3" style="--hot-color:#fbbf24">
+            <span class="hs-meta">Nivel 3 · Insectívoros y herbívoros pequeños</span>
+            <h5><span class="hs-dot"></span>🐦 Cardenal norteño, Lagartija de matorral, Rana de árbol</h5>
+            <p><strong>Función:</strong> Controlan plagas, regulan poblaciones de insectos y semillas.</p>
+            <p><strong>Estado Abr 2026:</strong> Canto y anidación reducidos por la helada tardía del 7 abr (mínima 5 °C). Reptiles con actividad diurna reducida.</p>
+            <p><strong>Si colapsan:</strong> Plagas se descontrolan, semillas no se dispersan, depredadores superiores quedan sin presa principal.</p>
+          </div>
+          <div class="hotspot-info" data-group="trofic" data-id="4" style="--hot-color:#a78bfa">
+            <span class="hs-meta">Nivel 4 · Depredadores ápice</span>
+            <h5><span class="hs-dot"></span>🦅 Águila real, Aguililla cola roja</h5>
+            <p><strong>Función:</strong> Depredadores ápice. Regulan equilibrio de aves y mamíferos medianos. Indicadores de ecosistema sano.</p>
+            <p><strong>Estado Abr 2026:</strong> Eficiencia de caza reducida — pérdida de corrientes térmicas durante frentes fríos del 11 y 19 abr.</p>
+            <p><strong>Si colapsan:</strong> Sobrepoblación de consumidores secundarios, desequilibrio, presión sobre el ecosistema entero.</p>
+          </div>
+          <div class="hotspot-info" data-group="trofic" data-id="5" style="--hot-color:#94a3b8">
+            <span class="hs-meta">Cierre · Recicladores</span>
+            <h5><span class="hs-dot"></span>🍄 Hongos (Aspergillus sp.) y bacterias</h5>
+            <p><strong>Función:</strong> Cierran el ciclo de nutrientes — descomponen materia orgánica y la devuelven al suelo.</p>
+            <p><strong>Estado Abr 2026:</strong> Baja actividad por suelo seco (humedad &lt; 40%) y temperaturas extremas.</p>
+            <p><strong>Si colapsan:</strong> Materia muerta se acumula, suelos pierden fertilidad, productores no tienen nutrientes para crecer. Ciclo roto.</p>
+          </div>
+        </div>
+        <div class="hotspot-hint">5 niveles · Clic en cualquiera para ver su rol y vulnerabilidad</div>
+
+        <div class="detail-sec-sub" style="margin-top:24px">Tabla completa de niveles tróficos:</div>
         <table class="data-table"><thead><tr><th>Nivel trófico</th><th>Organismos</th><th>Función ecológica</th><th>Estado Abril 2026</th></tr></thead><tbody>
           <tr>
             <td><strong style="color:#34d399">Productores (1°)</strong></td>
@@ -2573,6 +2760,60 @@ const DETAILS = {
           <div class="risk-item" style="margin-top:16px"><div class="risk-label"><span>Riesgo Medio — Áreas urbanas y agrícolas (contaminación indirecta)</span><span style="color:#fbbf24">MEDIO</span></div><div class="risk-bar"><div class="risk-fill r3" data-w="58" style="width:58%"></div></div></div>
           <div class="risk-item" style="margin-top:16px"><div class="risk-label"><span>Riesgo Bajo — Zonas alejadas de actividad humana</span><span style="color:#34d399">BAJO</span></div><div class="risk-bar"><div class="risk-fill r1" data-w="22" style="width:22%"></div></div></div>
         </div>
+      </div>
+
+      <!-- MAPA INTERACTIVO CON HOTSPOTS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Mapa Interactivo de Riesgo · Abril 2026</div>
+        <div class="detail-sec-sub">Clic en cualquier hotspot del mapa para identificar la fuente de contaminación y los xenobióticos presentes.</div>
+        <div class="hotspot-wrap">
+          <div class="hotspot-stage">
+            <img src="/images/mapa_ajolote.jpeg" alt="Mapa de Riesgo Ecotoxicológico 2026">
+            <button class="hotspot-btn" data-group="biomap" style="top:18%;left:42%;--hot-color:#fb7185" onclick="hotspotShow('biomap',1,this)">1</button>
+            <button class="hotspot-btn" data-group="biomap" style="top:48%;left:52%;--hot-color:#a78bfa" onclick="hotspotShow('biomap',2,this)">2</button>
+            <button class="hotspot-btn" data-group="biomap" style="top:55%;left:38%;--hot-color:#fbbf24" onclick="hotspotShow('biomap',3,this)">3</button>
+            <button class="hotspot-btn" data-group="biomap" style="top:78%;left:48%;--hot-color:#38bdf8" onclick="hotspotShow('biomap',4,this)">4</button>
+            <button class="hotspot-btn" data-group="biomap" style="top:35%;left:18%;--hot-color:#34d399" onclick="hotspotShow('biomap',5,this)">5</button>
+          </div>
+          <div class="hotspot-panel">
+            <div class="hotspot-info active" data-group="biomap" data-id="1" style="--hot-color:#fb7185">
+              <span class="hs-meta">Norte · Refinería Tula</span>
+              <h5><span class="hs-dot"></span>🏭 Complejo industrial</h5>
+              <p><strong>Xenobióticos:</strong> Plomo (Pb), cadmio (Cd), amoniaco (NH₃), partículas finas PM2.5.</p>
+              <p><strong>Impacto:</strong> Las emisiones llegan a la cuenca por viento del norte. El amoniaco genera lluvia ácida que disuelve metales pesados hacia los acuíferos.</p>
+              <p><strong>Riesgo en ajolote:</strong> Disruptor endocrino → malformaciones branquiales.</p>
+            </div>
+            <div class="hotspot-info" data-group="biomap" data-id="2" style="--hot-color:#a78bfa">
+              <span class="hs-meta">Centro · Jales mineros</span>
+              <h5><span class="hs-dot"></span>⛏️ Depósitos históricos de minería</h5>
+              <p><strong>Xenobióticos:</strong> Plomo (Pb), zinc (Zn), arsénico (As), microplásticos.</p>
+              <p><strong>Impacto:</strong> La erosión eólica dispersa partículas finas hacia colonias habitacionales y arroyos. Bioacumulación en sedimentos.</p>
+              <p><strong>Riesgo en ajolote:</strong> Daño hepático y renal por bioacumulación crónica.</p>
+            </div>
+            <div class="hotspot-info" data-group="biomap" data-id="3" style="--hot-color:#fbbf24">
+              <span class="hs-meta">Centro · Mancha urbana</span>
+              <h5><span class="hs-dot"></span>🏙️ Pachuca urbano</h5>
+              <p><strong>Xenobióticos:</strong> Microplásticos, hidrocarburos del asfalto, detergentes, fármacos.</p>
+              <p><strong>Impacto:</strong> Pachuca es el mayor generador de microplásticos de Hidalgo. Escurrimientos pluviales arrastran todo hacia los canales.</p>
+              <p><strong>Riesgo en ajolote:</strong> Microplásticos en branquias y tracto digestivo, disrupción reproductiva.</p>
+            </div>
+            <div class="hotspot-info" data-group="biomap" data-id="4" style="--hot-color:#38bdf8">
+              <span class="hs-meta">Sur · Zonas agrícolas</span>
+              <h5><span class="hs-dot"></span>🌾 Cultivos del Valle del Mezquital</h5>
+              <p><strong>Xenobióticos:</strong> Glifosato, pesticidas organofosforados, fertilizantes nitrogenados.</p>
+              <p><strong>Impacto:</strong> Riego agrícola con aguas residuales tratadas parcialmente. Escurrimientos arrastran agroquímicos a canales.</p>
+              <p><strong>Riesgo en ajolote:</strong> Disrupción del eje hormonal — alteración del comportamiento reproductivo.</p>
+            </div>
+            <div class="hotspot-info" data-group="biomap" data-id="5" style="--hot-color:#34d399">
+              <span class="hs-meta">Oeste · Refugio de la Sierra</span>
+              <h5><span class="hs-dot"></span>⭐ Hábitat residual del ajolote</h5>
+              <p><strong>Zona:</strong> Pequeñas charcas y arroyos serranos del Parque Nacional El Chico y sus alrededores.</p>
+              <p><strong>Estado 2026:</strong> Población reducida pero estable. Únicos cuerpos de agua con niveles aceptables de O₂ disuelto.</p>
+              <p><strong>Proyección 2036:</strong> Sin acción, el ajolote sólo sobrevivirá en cautiverio.</p>
+            </div>
+          </div>
+        </div>
+        <div class="hotspot-hint">5 hotspots · refinería · jales · mancha urbana · agrícola · refugio</div>
       </div>
 
       <!-- DISRUPCIÓN -->
@@ -3804,10 +4045,66 @@ void loop() {
         </div>
       </div>
 
+      <!-- DIAGRAMA INTERACTIVO 4 ÁREAS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Diagrama Interactivo · 4 Áreas en Torno a la EIMA</div>
+        <div class="detail-sec-sub">Clic en cualquier área para ver cómo se aplica a la estación de monitoreo.</div>
+        <div class="hotspot-wrap">
+          <div class="hotspot-stage" style="background:radial-gradient(circle at 50% 50%, rgba(167,139,250,.08), transparent 70%)">
+            <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="background:transparent">
+              <defs>
+                <linearGradient id="uniCore" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#38bdf8"/>
+                </linearGradient>
+              </defs>
+              <line x1="300" y1="200" x2="150" y2="100" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+              <line x1="300" y1="200" x2="450" y2="100" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+              <line x1="300" y1="200" x2="150" y2="300" stroke="#34d399" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+              <line x1="300" y1="200" x2="450" y2="300" stroke="#fb7185" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+              <circle cx="300" cy="200" r="56" fill="url(#uniCore)" opacity=".18"/>
+              <circle cx="300" cy="200" r="44" fill="var(--card)" stroke="url(#uniCore)" stroke-width="2"/>
+              <text x="300" y="195" text-anchor="middle" fill="var(--text)" font-size="14" font-weight="800" font-family="Inter,sans-serif">EIMA</text>
+              <text x="300" y="212" text-anchor="middle" fill="#94a3b8" font-size="9" letter-spacing="1" font-family="Inter,sans-serif">PACHUCA 2026</text>
+            </svg>
+            <button class="hotspot-btn" data-group="uni" style="top:25%;left:25%;--hot-color:#38bdf8" onclick="hotspotShow('uni',1,this)">🌊</button>
+            <button class="hotspot-btn" data-group="uni" style="top:25%;left:75%;--hot-color:#fbbf24" onclick="hotspotShow('uni',2,this)">⚡</button>
+            <button class="hotspot-btn" data-group="uni" style="top:75%;left:25%;--hot-color:#34d399" onclick="hotspotShow('uni',3,this)">🔭</button>
+            <button class="hotspot-btn" data-group="uni" style="top:75%;left:75%;--hot-color:#fb7185" onclick="hotspotShow('uni',4,this)">⚙️</button>
+          </div>
+          <div class="hotspot-panel">
+            <div class="hotspot-info active" data-group="uni" data-id="1" style="--hot-color:#38bdf8">
+              <span class="hs-meta">NW · Aplicación 1</span>
+              <h5><span class="hs-dot"></span>🌊 Física de Fluidos</h5>
+              <p>Estudia gases y líquidos en movimiento. En la EIMA permite analizar la <strong>dispersión de contaminantes</strong> en el aire y el flujo de agua en arroyos de la sierra.</p>
+              <p>Bernoulli y la continuidad explican cómo vientos de 15–40 km/h dispersan partículas. A 2,426 m la <strong>viscosidad del aire es menor</strong> que a nivel del mar.</p>
+            </div>
+            <div class="hotspot-info" data-group="uni" data-id="2" style="--hot-color:#fbbf24">
+              <span class="hs-meta">NE · Aplicación 2</span>
+              <h5><span class="hs-dot"></span>⚡ Electromagnetismo</h5>
+              <p>Los sensores <strong>LM35, DHT11 y BMP180</strong> convierten temperatura, humedad y presión en voltajes mediante efectos termoeléctricos, capacitivos y piezorresistivos.</p>
+              <p>El ESP32 digitaliza vía ADC. Sin EM no se podría <strong>cuantificar</strong> el clima.</p>
+            </div>
+            <div class="hotspot-info" data-group="uni" data-id="3" style="--hot-color:#34d399">
+              <span class="hs-meta">SW · Aplicación 3</span>
+              <h5><span class="hs-dot"></span>🔭 Óptica</h5>
+              <p>Dispersión de <strong>Rayleigh</strong> (cielo azul) vs. <strong>Mie</strong> (gris contaminado). 20 de 26 días con visibilidad de 10 km en abril 2026.</p>
+              <p>Índice UV promedio <strong>8.27</strong> (Muy Alto). A más altitud, menor atenuación de UV-B.</p>
+            </div>
+            <div class="hotspot-info" data-group="uni" data-id="4" style="--hot-color:#fb7185">
+              <span class="hs-meta">SE · Aplicación 4</span>
+              <h5><span class="hs-dot"></span>⚙️ Mecánica</h5>
+              <p>Resistencia de materiales para soportar vientos de 40 km/h, leyes de Newton aplicadas a la veleta, momentos de inercia en el pluviómetro de cubeta basculante.</p>
+              <p>Sin diseño mecánico sólido, los datos son ruido.</p>
+            </div>
+          </div>
+        </div>
+        <div class="hotspot-hint">Haz clic en cualquiera de los 4 puntos del diagrama</div>
+      </div>
+
       <!-- LAS 4 ÁREAS (acordeón) -->
       <div class="detail-sec">
-        <div class="detail-sec-head">Las 4 Áreas de Física Aplicada</div>
-        <div class="detail-sec-sub">Cada área aporta principios físicos esenciales para medir y predecir el clima en Pachuca. Clic para expandir.</div>
+        <div class="detail-sec-head">Las 4 Áreas de Física Aplicada · Detalle</div>
+        <div class="detail-sec-sub">Versión extendida con preguntas guía y ejemplos. Clic para expandir.</div>
         <div class="filo-lenses">
 
           <div class="filo-lens" data-color="#38bdf8" onclick="filoToggle(this)">
@@ -3941,6 +4238,74 @@ void loop() {
           </div>
         </div>
         <div class="alert-box warning" style="margin-top:14px">⚠️ <strong>Síntoma frecuente:</strong> irritación en ojos y garganta por exposición prolongada a contaminantes atmosféricos.</div>
+
+        <!-- CUERPO HUMANO INTERACTIVO · SALUD -->
+        <div style="margin-top:28px">
+          <div class="detail-sec-head" style="font-size:14px;color:var(--muted)">Cuerpo Humano Interactivo · Enfermedades por el aire de Pachuca</div>
+          <div class="detail-sec-sub" style="margin-bottom:8px">Clic en cualquier órgano para ver qué enfermedad provoca la contaminación atmosférica.</div>
+          <div class="hotspot-wrap">
+            <div class="hotspot-stage body-stage">
+              <svg viewBox="0 0 240 380" class="body-svg" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="120" cy="40" rx="28" ry="32"/>
+                <rect x="110" y="68" width="20" height="14" rx="4"/>
+                <path d="M 80 90 Q 80 80 100 80 L 140 80 Q 160 80 160 90 L 170 200 Q 170 220 160 230 L 80 230 Q 70 220 70 200 Z"/>
+                <rect x="62" y="100" width="22" height="100" rx="10"/>
+                <rect x="156" y="100" width="22" height="100" rx="10"/>
+                <rect x="95" y="230" width="22" height="120" rx="10"/>
+                <rect x="123" y="230" width="22" height="120" rx="10"/>
+
+                <ellipse class="body-zone" data-group="medbody" cx="120" cy="40" rx="22" ry="26" style="--hot-color:#a78bfa" onclick="hotspotShow('medbody',1,this)"/>
+                <circle class="body-zone" data-group="medbody" cx="108" cy="38" r="5" style="--hot-color:#fbbf24" onclick="hotspotShow('medbody',2,this)"/>
+                <circle class="body-zone" data-group="medbody" cx="132" cy="38" r="5" style="--hot-color:#fbbf24" onclick="hotspotShow('medbody',2,this)"/>
+                <ellipse class="body-zone" data-group="medbody" cx="100" cy="120" rx="14" ry="28" style="--hot-color:#38bdf8" onclick="hotspotShow('medbody',3,this)"/>
+                <ellipse class="body-zone" data-group="medbody" cx="140" cy="120" rx="14" ry="28" style="--hot-color:#38bdf8" onclick="hotspotShow('medbody',3,this)"/>
+                <ellipse class="body-zone" data-group="medbody" cx="120" cy="160" rx="10" ry="14" style="--hot-color:#fb7185" onclick="hotspotShow('medbody',4,this)"/>
+                <ellipse class="body-zone" data-group="medbody" cx="120" cy="200" rx="14" ry="18" style="--hot-color:#34d399" onclick="hotspotShow('medbody',5,this)"/>
+                <rect class="body-zone" data-group="medbody" x="65" y="105" width="10" height="14" rx="3" style="--hot-color:#fbbf24" onclick="hotspotShow('medbody',6,this)"/>
+                <rect class="body-zone" data-group="medbody" x="165" y="105" width="10" height="14" rx="3" style="--hot-color:#fbbf24" onclick="hotspotShow('medbody',6,this)"/>
+              </svg>
+            </div>
+            <div class="hotspot-panel">
+              <div class="hotspot-info active" data-group="medbody" data-id="1" style="--hot-color:#a78bfa">
+                <span class="hs-meta">Cerebro · Salud mental</span>
+                <h5><span class="hs-dot"></span>🧠 Cerebro</h5>
+                <p><strong>Enfermedades:</strong> ansiedad climática, depresión, deterioro cognitivo en niños expuestos a Pb.</p>
+                <p><strong>Mecanismo:</strong> calor extremo + falta de sueño → aumento de cortisol → estrés crónico. Plomo en aire afecta desarrollo neurológico infantil.</p>
+              </div>
+              <div class="hotspot-info" data-group="medbody" data-id="2" style="--hot-color:#fbbf24">
+                <span class="hs-meta">Ojos · Mucosas</span>
+                <h5><span class="hs-dot"></span>👁️ Ojos y vías respiratorias altas</h5>
+                <p><strong>Enfermedades:</strong> conjuntivitis irritativa, rinitis alérgica, sinusitis.</p>
+                <p><strong>Mecanismo:</strong> partículas finas y ozono irritan mucosas. En abril 2026 el <strong>57.69 %</strong> de los días registraron nivel alto de alergias.</p>
+              </div>
+              <div class="hotspot-info" data-group="medbody" data-id="3" style="--hot-color:#38bdf8">
+                <span class="hs-meta">Tórax · Pulmones</span>
+                <h5><span class="hs-dot"></span>🫁 Sistema Respiratorio</h5>
+                <p><strong>Enfermedades:</strong> asma, bronquitis crónica, EPOC, neumonía, cáncer pulmonar.</p>
+                <p><strong>Datos Pachuca:</strong> aumento de <strong>+10.8 %</strong> en infecciones respiratorias agudas (IRAS) respecto al periodo anterior.</p>
+              </div>
+              <div class="hotspot-info" data-group="medbody" data-id="4" style="--hot-color:#fb7185">
+                <span class="hs-meta">Centro · Cardiovascular</span>
+                <h5><span class="hs-dot"></span>❤️ Corazón y arterias</h5>
+                <p><strong>Enfermedades:</strong> hipertensión, infarto, aterosclerosis, arritmias.</p>
+                <p><strong>Mecanismo:</strong> PM2.5 entra a torrente sanguíneo, dispara inflamación crónica → daño endotelial → placas ateroscleróticas.</p>
+              </div>
+              <div class="hotspot-info" data-group="medbody" data-id="5" style="--hot-color:#34d399">
+                <span class="hs-meta">Abdomen · Digestivo</span>
+                <h5><span class="hs-dot"></span>🍽️ Sistema Digestivo</h5>
+                <p><strong>Enfermedades:</strong> gastroenteritis, hepatitis tóxica por metales pesados, intoxicaciones.</p>
+                <p><strong>Mecanismo:</strong> agua contaminada con As, Pb, microplásticos → bioacumulación en hígado y riñón. Trastornos por uso de pesticidas en alimentos.</p>
+              </div>
+              <div class="hotspot-info" data-group="medbody" data-id="6" style="--hot-color:#fbbf24">
+                <span class="hs-meta">Piel · Barrera externa</span>
+                <h5><span class="hs-dot"></span>🩹 Piel</h5>
+                <p><strong>Enfermedades:</strong> quemaduras solares, fotoenvejecimiento, dermatitis irritativa, cáncer de piel.</p>
+                <p><strong>Mecanismo:</strong> índice UV <strong>8.27</strong> (Muy Alto) por altitud. UV-B rompe enlaces de DNA → mutaciones acumulativas.</p>
+              </div>
+            </div>
+          </div>
+          <div class="hotspot-hint">6 sistemas · cerebro · ojos · pulmones · corazón · digestivo · piel</div>
+        </div>
       </div>
 
       <!-- 2. CONTAMINACIÓN DEL AGUA -->
@@ -4173,6 +4538,66 @@ void loop() {
           <div class="detail-card"><h4 style="color:#fb7185">Contaminantes y metales pesados</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Consumen antioxidantes como zinc (Zn) y selenio (Se) → deprime tu sistema inmune → aumenta vulnerabilidad a infecciones y enfermedades crónicas.</p></div>
           <div class="detail-card"><h4 style="color:#fb7185">Ácidos en el aire</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Tu sistema amortiguador sanguíneo (pH 7.35–7.45) debe trabajar más para compensar → fatiga metabólica. La lluvia ácida (pH &lt;5.6) también daña suelos y vegetación del matorral.</p></div>
           <div class="detail-card"><h4 style="color:#fb7185">PM2.5 y partículas finas</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Penetran hasta los alvéolos pulmonares → inflamación sistémica → afectan el transporte de O₂ por la hemoglobina (hierro sérico: 60–170 µg/dL en rango normal).</p></div>
+        </div>
+
+        <!-- CUERPO HUMANO INTERACTIVO · QUÍMICA -->
+        <div style="margin-top:28px">
+          <div class="detail-sec-head" style="font-size:14px;color:var(--muted)">Cuerpo Humano Interactivo · Química del aire de Pachuca</div>
+          <div class="detail-sec-sub" style="margin-bottom:8px">Clic en cualquier órgano para ver qué contaminante lo afecta y qué reacción química produce.</div>
+          <div class="hotspot-wrap">
+            <div class="hotspot-stage body-stage">
+              <svg viewBox="0 0 240 380" class="body-svg" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="120" cy="40" rx="28" ry="32"/>
+                <rect x="110" y="68" width="20" height="14" rx="4"/>
+                <path d="M 80 90 Q 80 80 100 80 L 140 80 Q 160 80 160 90 L 170 200 Q 170 220 160 230 L 80 230 Q 70 220 70 200 Z"/>
+                <rect x="62" y="100" width="22" height="100" rx="10"/>
+                <rect x="156" y="100" width="22" height="100" rx="10"/>
+                <rect x="95" y="230" width="22" height="120" rx="10"/>
+                <rect x="123" y="230" width="22" height="120" rx="10"/>
+
+                <ellipse class="body-zone" data-group="quimbody" cx="120" cy="40" rx="22" ry="26" style="--hot-color:#a78bfa" onclick="hotspotShow('quimbody',1,this)"/>
+                <ellipse class="body-zone" data-group="quimbody" cx="100" cy="120" rx="14" ry="28" style="--hot-color:#38bdf8" onclick="hotspotShow('quimbody',2,this)"/>
+                <ellipse class="body-zone" data-group="quimbody" cx="140" cy="120" rx="14" ry="28" style="--hot-color:#38bdf8" onclick="hotspotShow('quimbody',2,this)"/>
+                <ellipse class="body-zone" data-group="quimbody" cx="120" cy="160" rx="10" ry="14" style="--hot-color:#fb7185" onclick="hotspotShow('quimbody',3,this)"/>
+                <ellipse class="body-zone" data-group="quimbody" cx="120" cy="200" rx="14" ry="18" style="--hot-color:#fbbf24" onclick="hotspotShow('quimbody',4,this)"/>
+                <rect class="body-zone" data-group="quimbody" x="65" y="105" width="10" height="14" rx="3" style="--hot-color:#34d399" onclick="hotspotShow('quimbody',5,this)"/>
+                <rect class="body-zone" data-group="quimbody" x="165" y="105" width="10" height="14" rx="3" style="--hot-color:#34d399" onclick="hotspotShow('quimbody',5,this)"/>
+              </svg>
+            </div>
+            <div class="hotspot-panel">
+              <div class="hotspot-info active" data-group="quimbody" data-id="1" style="--hot-color:#a78bfa">
+                <span class="hs-meta">Cerebro · SNC</span>
+                <h5><span class="hs-dot"></span>🧠 Sistema Nervioso Central</h5>
+                <p><strong>Contaminantes que llegan:</strong> Pb (plomo), Hg (mercurio), partículas ultrafinas vía bulbo olfatorio.</p>
+                <p><strong>Reacción química:</strong> El plomo desplaza al calcio en neurotransmisores, alterando la sinapsis. Reduce mielinización.</p>
+              </div>
+              <div class="hotspot-info" data-group="quimbody" data-id="2" style="--hot-color:#38bdf8">
+                <span class="hs-meta">Tórax · Pulmones</span>
+                <h5><span class="hs-dot"></span>🫁 Sistema Respiratorio</h5>
+                <p><strong>Contaminantes:</strong> O₃, NOₓ, PM2.5, COVs.</p>
+                <p><strong>Reacción química:</strong> O₃ + lípidos del surfactante pulmonar → peróxidos → daño oxidativo en alvéolos. A 2,400 m hay menos O₂ disponible; el ozono agrava el déficit.</p>
+              </div>
+              <div class="hotspot-info" data-group="quimbody" data-id="3" style="--hot-color:#fb7185">
+                <span class="hs-meta">Centro · Corazón y sangre</span>
+                <h5><span class="hs-dot"></span>❤️ Sistema Cardiovascular</h5>
+                <p><strong>Contaminantes:</strong> CO (monóxido), PM2.5, metales pesados.</p>
+                <p><strong>Reacción química:</strong> CO + hemoglobina → carboxihemoglobina (afinidad 240× mayor que O₂). Reduce capacidad de transporte de oxígeno.</p>
+              </div>
+              <div class="hotspot-info" data-group="quimbody" data-id="4" style="--hot-color:#fbbf24">
+                <span class="hs-meta">Abdomen · Digestión</span>
+                <h5><span class="hs-dot"></span>🍽️ Sistema Digestivo</h5>
+                <p><strong>Contaminantes:</strong> Microplásticos ingeridos, metales pesados en agua, pesticidas en alimentos.</p>
+                <p><strong>Reacción química:</strong> Metales se acumulan en hígado y riñón (bioacumulación). Consumen Zn y Se → deprimen el sistema inmune.</p>
+              </div>
+              <div class="hotspot-info" data-group="quimbody" data-id="5" style="--hot-color:#34d399">
+                <span class="hs-meta">Periferia · Piel</span>
+                <h5><span class="hs-dot"></span>🩹 Piel y barrera epitelial</h5>
+                <p><strong>Contaminantes:</strong> Radiación UV (índice 8.27 en Pachuca), ácidos del aire, partículas finas.</p>
+                <p><strong>Reacción química:</strong> UV-B rompe enlaces de timina en DNA → mutaciones. Lluvia ácida (pH&lt;5.6) altera el manto lipídico.</p>
+              </div>
+            </div>
+          </div>
+          <div class="hotspot-hint">5 sistemas · cerebro · pulmones · corazón · digestivo · piel</div>
         </div>
 
         <!-- Cadena lógica del smog fotoquímico -->
@@ -4603,6 +5028,112 @@ void loop() {
         </div>
       </div>` },
 
+  tsocial: {
+    tag: 'Materia 08 · Sociales',
+    tagColor: 'rgba(251,191,36,.15)', tagTextColor: '#fbbf24',
+    title: 'Introducción al Trabajo Social — Diagnóstico Comunitario',
+    sub: 'Vulnerabilidad climática en colonias de Pachuca · Abril 2026',
+    hero: `${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
+    content: `
+      <div class="detail-facts">
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">68%</div><div class="detail-fact-lbl">Familias afectadas</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fb7185">5</div><div class="detail-fact-lbl">Colonias mapeadas</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">3</div><div class="detail-fact-lbl">Grupos vulnerables</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">26</div><div class="detail-fact-lbl">Días de observación</div></div>
+      </div>
+
+      <!-- INTRO -->
+      <div class="detail-sec">
+        <div style="background:linear-gradient(135deg,rgba(251,191,36,.10),rgba(251,113,133,.06));border-left:4px solid #fbbf24;border-radius:14px;padding:22px 24px;font-size:16px;line-height:1.6;color:var(--text)">
+          El trabajo social analiza cómo las <strong>anomalías climáticas de abril 2026</strong> impactaron de manera desigual a las distintas colonias de Pachuca. No todas las comunidades soportan el calor extremo, los incendios y la baja humedad por igual: la <strong>vulnerabilidad social</strong> determina quiénes resisten y quiénes sufren.
+        </div>
+      </div>
+
+      <!-- MAPA INTERACTIVO DE COLONIAS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Mapa Interactivo · Vulnerabilidad por Colonia</div>
+        <div class="detail-sec-sub">Diagnóstico social de 5 zonas de Pachuca durante la onda de calor de abril 2026. Clic en cualquier zona para ver su nivel de vulnerabilidad y los principales hallazgos.</div>
+        <div class="hotspot-wrap">
+          <div class="hotspot-stage" style="background:linear-gradient(180deg, #1a2436 0%, #0d1726 100%); padding:6px">
+            <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="20" width="440" height="320" rx="14" fill="#0a1322" stroke="rgba(251,191,36,.15)"/>
+              <text x="240" y="40" text-anchor="middle" fill="#fbbf24" font-size="11" letter-spacing="3" font-family="Inter,sans-serif">PACHUCA · MAPA SOCIAL</text>
+              <path d="M 20 180 Q 240 110 460 200" stroke="#94a3b8" stroke-width="1.5" fill="none" opacity=".25"/>
+              <path d="M 20 220 Q 240 280 460 240" stroke="#94a3b8" stroke-width="1.5" fill="none" opacity=".25"/>
+              <text x="40" y="60" fill="#64748b" font-size="9" font-family="Inter,sans-serif">N</text>
+              <polygon points="40,75 36,85 44,85" fill="#64748b"/>
+              <text x="100" y="160" fill="#64748b" font-size="10" font-family="Inter,sans-serif" opacity=".7">Sierra</text>
+              <text x="380" y="290" fill="#64748b" font-size="10" font-family="Inter,sans-serif" opacity=".7">Sur · CDMX</text>
+              <text x="60" y="345" fill="#94a3b8" font-size="9" letter-spacing="1.5" font-family="Inter,sans-serif">5 zonas · clic para ver diagnóstico</text>
+            </svg>
+            <button class="hotspot-btn" data-group="socmap" style="top:30%;left:30%;--hot-color:#fb7185" onclick="hotspotShow('socmap',1,this)">1</button>
+            <button class="hotspot-btn" data-group="socmap" style="top:38%;left:55%;--hot-color:#fbbf24" onclick="hotspotShow('socmap',2,this)">2</button>
+            <button class="hotspot-btn" data-group="socmap" style="top:55%;left:42%;--hot-color:#38bdf8" onclick="hotspotShow('socmap',3,this)">3</button>
+            <button class="hotspot-btn" data-group="socmap" style="top:70%;left:72%;--hot-color:#a78bfa" onclick="hotspotShow('socmap',4,this)">4</button>
+            <button class="hotspot-btn" data-group="socmap" style="top:62%;left:22%;--hot-color:#34d399" onclick="hotspotShow('socmap',5,this)">5</button>
+          </div>
+          <div class="hotspot-panel">
+            <div class="hotspot-info active" data-group="socmap" data-id="1" style="--hot-color:#fb7185">
+              <span class="hs-meta">Norte · Periferia alta</span>
+              <h5><span class="hs-dot"></span>🏚️ Plaza Q y Villas de Pachuca</h5>
+              <p><strong>Nivel de vulnerabilidad:</strong> <strong style="color:#fb7185">ALTO</strong>.</p>
+              <p><strong>Hallazgos:</strong> Cercanía a jales mineros y refinería. Calles sin pavimentar generan polvo respirable. 78 % de adultos mayores reportó dolor de cabeza durante la onda de calor.</p>
+              <p><strong>Necesidad prioritaria:</strong> red de hidratación comunitaria y acceso a sombra.</p>
+            </div>
+            <div class="hotspot-info" data-group="socmap" data-id="2" style="--hot-color:#fbbf24">
+              <span class="hs-meta">Noreste · Periferia media</span>
+              <h5><span class="hs-dot"></span>🏘️ Real de la Plata y Colosio</h5>
+              <p><strong>Nivel de vulnerabilidad:</strong> <strong style="color:#fbbf24">MEDIO-ALTO</strong>.</p>
+              <p><strong>Hallazgos:</strong> Infraestructura básica pero presión de agua reducida durante los días pico. 64 % de familias suspendió jornadas laborales por calor.</p>
+              <p><strong>Necesidad prioritaria:</strong> ampliación de redes de agua y campañas de prevención.</p>
+            </div>
+            <div class="hotspot-info" data-group="socmap" data-id="3" style="--hot-color:#38bdf8">
+              <span class="hs-meta">Centro · Histórico</span>
+              <h5><span class="hs-dot"></span>🏛️ Centro Histórico de Pachuca</h5>
+              <p><strong>Nivel de vulnerabilidad:</strong> <strong style="color:#38bdf8">MEDIO</strong>.</p>
+              <p><strong>Hallazgos:</strong> Acceso a servicios pero alta densidad → isla de calor urbana. Comercios con clima reportaron +35 % en consumo eléctrico.</p>
+              <p><strong>Necesidad prioritaria:</strong> arbolado urbano y rediseño de espacio público.</p>
+            </div>
+            <div class="hotspot-info" data-group="socmap" data-id="4" style="--hot-color:#a78bfa">
+              <span class="hs-meta">Sur · Expansión</span>
+              <h5><span class="hs-dot"></span>🏗️ San Antonio y zona industrial sur</h5>
+              <p><strong>Nivel de vulnerabilidad:</strong> <strong style="color:#a78bfa">ALTO</strong>.</p>
+              <p><strong>Hallazgos:</strong> Vivienda popular de bloque sin aislamiento térmico. Niños y adolescentes con mayor reporte de IRAS por humo y polvo industrial.</p>
+              <p><strong>Necesidad prioritaria:</strong> programas escolares de salud respiratoria.</p>
+            </div>
+            <div class="hotspot-info" data-group="socmap" data-id="5" style="--hot-color:#34d399">
+              <span class="hs-meta">Poniente · Pie de monte</span>
+              <h5><span class="hs-dot"></span>🌲 Lomas del Sol y Pueblitos</h5>
+              <p><strong>Nivel de vulnerabilidad:</strong> <strong style="color:#34d399">BAJO-MEDIO</strong>.</p>
+              <p><strong>Hallazgos:</strong> Cercanía a la sierra mejora calidad del aire, pero exposición a humo durante incendios forestales. 41 % reportó algún día de actividad afectada.</p>
+              <p><strong>Necesidad prioritaria:</strong> rutas seguras de evacuación y monitoreo del frente forestal.</p>
+            </div>
+          </div>
+        </div>
+        <div class="hotspot-hint">5 colonias · diagnóstico de vulnerabilidad climática</div>
+      </div>
+
+      <!-- GRUPOS VULNERABLES -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Grupos Vulnerables Identificados</div>
+        <div class="detail-3col">
+          <div class="detail-card"><h4 style="color:#fb7185">👵 Adultos mayores</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Mayor riesgo de golpe de calor, deshidratación y descompensación cardiaca. Movilidad reducida limita el acceso a servicios.</p></div>
+          <div class="detail-card"><h4 style="color:#fbbf24">👶 Infancia y adolescencia</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Sistema respiratorio en desarrollo, mayor exposición al humo y a contaminantes en horarios escolares.</p></div>
+          <div class="detail-card"><h4 style="color:#a78bfa">💰 Bajos recursos</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Vivienda sin aislamiento, falta de ventilación, dificultad para acceder a agua potable durante picos de calor.</p></div>
+        </div>
+      </div>
+
+      <!-- INTERVENCIÓN -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Propuesta de Intervención Social</div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4 style="color:#fbbf24">📋 Encuesta comunitaria</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Aplicación de cuestionarios en las 5 zonas identificadas para cuantificar impactos, identificar redes de apoyo y necesidades urgentes.</p></div>
+          <div class="detail-card"><h4 style="color:#34d399">🤝 Redes vecinales de cuidado</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Mapas vecinales con puntos de hidratación, sombra y atención médica accesibles durante eventos climáticos extremos.</p></div>
+          <div class="detail-card"><h4 style="color:#38bdf8">📢 Campañas informativas</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Talleres en colonias sobre prevención de golpe de calor, identificación de síntomas y respuesta comunitaria.</p></div>
+          <div class="detail-card"><h4 style="color:#a78bfa">🏛️ Vinculación institucional</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Coordinación con DIF, Protección Civil y centros de salud para garantizar acceso a servicios durante emergencias climáticas.</p></div>
+        </div>
+      </div>` },
+
   cpolitica: {
     tag: 'Materia 09 · Sociales',
     tagColor: 'rgba(251,191,36,.15)', tagTextColor: '#fbbf24',
@@ -4946,6 +5477,15 @@ function filoToggle(el) {
     el.style.setProperty('--lens-color', el.dataset.color || '#a78bfa');
   }
   el.classList.toggle('open');
+}
+
+/* ── HOTSPOTS · navegación de paneles ── */
+function hotspotShow(group, id, btn) {
+  document.querySelectorAll(`.hotspot-info[data-group="${group}"]`).forEach(i => i.classList.remove('active'));
+  document.querySelectorAll(`.hotspot-btn[data-group="${group}"]`).forEach(b => b.classList.remove('active'));
+  const info = document.querySelector(`.hotspot-info[data-group="${group}"][data-id="${id}"]`);
+  if (info) info.classList.add('active');
+  if (btn) btn.classList.add('active');
 }
 
 /* ── CADENA CAUSAL · animación al entrar a viewport (incluye contenido dinámico) ── */
