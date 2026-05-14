@@ -684,6 +684,38 @@
     .filo-lens.open .filo-chain-arrow { animation: filoChainIn .4s ease forwards; animation-delay: var(--d); }
     @keyframes filoChainIn { to { opacity: 1; transform: translateY(0); } }
 
+    /* ── CADENA CAUSAL GENÉRICA (fuera del acordeón) ── */
+    .causal-chain {
+      --chain-color: #34d399;
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      margin: 18px auto; padding: 20px;
+      background: color-mix(in srgb, var(--chain-color) 4%, transparent);
+      border: 1px dashed color-mix(in srgb, var(--chain-color) 30%, transparent);
+      border-radius: 14px; max-width: 560px;
+    }
+    .causal-chain-step {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--card); border: 1px solid color-mix(in srgb, var(--chain-color) 30%, transparent);
+      border-radius: 10px; padding: 10px 16px; width: 100%;
+      opacity: 0; transform: translateY(8px);
+    }
+    .causal-chain.in-view .causal-chain-step { animation: filoChainIn .5s ease forwards; animation-delay: var(--d, 0s); }
+    .causal-chain-num {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--chain-color); color: #fff;
+      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px;
+      flex-shrink: 0;
+    }
+    .causal-chain-txt { font-size: 13px; color: var(--text); line-height: 1.45; }
+    .causal-chain-arrow {
+      color: var(--chain-color); font-size: 20px; opacity: 0;
+    }
+    .causal-chain.in-view .causal-chain-arrow { animation: filoChainIn .4s ease forwards; animation-delay: var(--d, 0s); }
+    .causal-chain-title {
+      width: 100%; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--chain-color); font-weight: 700; margin-bottom: 6px; text-align: center;
+    }
+
     /* clickable cards */
     .poi-card, .materia-card:not(.placeholder) { cursor: pointer; }
     .poi-card::before, .materia-card:not(.placeholder)::before {
@@ -1237,12 +1269,26 @@
           <div class="mat-sub">Análisis de fenómenos atmosféricos y radiación solar en Pachuca, abril 2026</div>
         </div>
       </div>
-      <div class="mat-content" style="display:flex;align-items:center;">
-        <div class="placeholder-content">
-          <div class="placeholder-icon">🔭</div>
-          <div class="placeholder-title">Proyecto en desarrollo</div>
-          <div class="placeholder-sub">El contenido de esta materia se agregará próximamente.</div>
-          <span class="placeholder-badge">Próximamente</span>
+      <div class="mat-content">
+        <div class="mat-content-title">4 áreas de física en una sola estación</div>
+        <p class="mat-content-intro">La <strong>Estación Interdisciplinaria de Monitoreo Ambiental (EIMA)</strong> aplica cuatro áreas fundamentales de la física para medir, comprender y predecir el clima de Pachuca a 2,426 m s.n.m.</p>
+        <div class="tabs" id="uni-tabs">
+          <button class="tab active" onclick="switchTab('uni',0)">🌊 Fluidos</button>
+          <button class="tab" onclick="switchTab('uni',1)">⚡ Electromagnetismo</button>
+          <button class="tab" onclick="switchTab('uni',2)">🔭 Óptica</button>
+          <button class="tab" onclick="switchTab('uni',3)">⚙️ Mecánica</button>
+        </div>
+        <div class="tab-panel active" id="uni-0">
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#38bdf8">Calidad del aire y agua.</strong> Bernoulli y la ecuación de continuidad explican cómo el viento dispersa contaminantes en "La Bella Airosa". A 2,426 m la viscosidad del aire es menor que a nivel del mar.</p>
+        </div>
+        <div class="tab-panel" id="uni-1">
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#fbbf24">Sensores atmosféricos.</strong> LM35, DHT11 y BMP180 convierten temperatura, humedad y presión en voltajes. El ESP32 los digitaliza via ADC.</p>
+        </div>
+        <div class="tab-panel" id="uni-2">
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#34d399">Visibilidad y UV.</strong> Dispersión de Rayleigh (cielo azul) vs. Mie (gris contaminado). Índice UV 8.27 — categoría <em>Muy Alto</em>, agravado por la altitud.</p>
+        </div>
+        <div class="tab-panel" id="uni-3">
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#fb7185">Diseño de instrumentos.</strong> Resistencia de materiales para vientos de 40 km/h, leyes de Newton para la veleta, momentos de inercia para el pluviómetro.</p>
         </div>
       </div>
     </div>
@@ -3743,8 +3789,109 @@ void loop() {
     <li>INEGI — <em>Información geográfica y climática del estado de Hidalgo,</em> 2025.</li>
   </ol>
 </div>` },
-  uni:  { tag:'Materia 04 · Común', tagColor:'rgba(167,139,250,.15)', tagTextColor:'#a78bfa', title:'El Universo y sus Fenómenos', sub:'Fenómenos atmosféricos y radiación solar · Proyecto en desarrollo', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
-    content:`<div class="detail-sec"><div class="detail-card" style="text-align:center;padding:60px 40px"><div style="font-size:3rem;margin-bottom:16px">🔭</div><h4>Proyecto en desarrollo</h4><p>El contenido de esta materia se agregará próximamente cuando esté disponible en Drive.</p></div></div>` },
+  uni:  { tag:'Materia 04 · Común', tagColor:'rgba(167,139,250,.15)', tagTextColor:'#a78bfa', title:'El Universo y sus Fenómenos', sub:'Cuatro áreas de física aplicada a la Estación Interdisciplinaria de Monitoreo Ambiental · Pachuca, Abril 2026', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
+    content:`
+      <!-- INTRO -->
+      <div class="detail-sec">
+        <div style="background:linear-gradient(135deg,rgba(167,139,250,.12),rgba(56,189,248,.08));border-left:4px solid #a78bfa;border-radius:14px;padding:22px 24px;font-size:16px;line-height:1.6;color:var(--text)">
+          La física es la columna vertebral de la <strong>Estación Interdisciplinaria de Monitoreo Ambiental (EIMA)</strong>. Cada sensor, cada lectura y cada predicción se sostiene en cuatro áreas fundamentales que permiten <strong>medir, comprender y anticipar</strong> el comportamiento del clima en Pachuca.
+        </div>
+        <div class="detail-facts" style="margin-top:18px">
+          <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">4</div><div class="detail-fact-lbl">Áreas aplicadas</div></div>
+          <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">2,426</div><div class="detail-fact-lbl">m s.n.m.</div></div>
+          <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">770</div><div class="detail-fact-lbl">mmHg presión</div></div>
+          <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">26</div><div class="detail-fact-lbl">Observaciones abr 2026</div></div>
+        </div>
+      </div>
+
+      <!-- LAS 4 ÁREAS (acordeón) -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Las 4 Áreas de Física Aplicada</div>
+        <div class="detail-sec-sub">Cada área aporta principios físicos esenciales para medir y predecir el clima en Pachuca. Clic para expandir.</div>
+        <div class="filo-lenses">
+
+          <div class="filo-lens" data-color="#38bdf8" onclick="filoToggle(this)">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">🌊</div>
+              <div class="filo-lens-titles">
+                <div class="filo-lens-name">Física de Fluidos</div>
+                <div class="filo-lens-sub">Calidad del aire y del agua — viscosidad, presión y flujo</div>
+              </div>
+              <div class="filo-lens-chev">▾</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">¿Cómo se mide la calidad del aire que respiramos y del agua que consumimos?</div>
+              <p>La física de fluidos estudia el comportamiento de gases y líquidos en movimiento. En la EIMA, permite analizar la <strong>dispersión de contaminantes</strong> en el aire de Pachuca, la concentración de partículas PM2.5/PM10 y el flujo de agua en los arroyos de la sierra.</p>
+              <p>Los principios de <strong>Bernoulli</strong> y la <strong>ecuación de continuidad</strong> explican cómo los vientos característicos de "La Bella Airosa" (15–40 km/h) dispersan contaminantes y polen. La viscosidad del aire a 2,426 m s.n.m. es <strong>menor</strong> que a nivel del mar, lo que afecta directamente las lecturas de los sensores.</p>
+            </div>
+          </div>
+
+          <div class="filo-lens" data-color="#fbbf24" onclick="filoToggle(this)">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">⚡</div>
+              <div class="filo-lens-titles">
+                <div class="filo-lens-name">Electromagnetismo</div>
+                <div class="filo-lens-sub">Sensores de variables atmosféricas — corriente, voltaje y señal</div>
+              </div>
+              <div class="filo-lens-chev">▾</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">¿Cómo convertimos temperatura, humedad y presión en datos digitales?</div>
+              <p>Los <strong>sensores LM35, DHT11 y BMP180</strong> de la EIMA funcionan gracias a principios electromagnéticos: el efecto termoeléctrico convierte temperatura en voltaje, los capacitores miden cambios en la humedad y los puentes piezorresistivos detectan presión.</p>
+              <p>El microcontrolador <strong>ESP32</strong> aplica conversión analógica-digital (ADC) usando referencias de voltaje. Sin electromagnetismo, no habría manera de <strong>cuantificar</strong> el clima — solo de observarlo.</p>
+            </div>
+          </div>
+
+          <div class="filo-lens" data-color="#34d399" onclick="filoToggle(this)">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">🔭</div>
+              <div class="filo-lens-titles">
+                <div class="filo-lens-name">Óptica</div>
+                <div class="filo-lens-sub">Visibilidad y fenómenos atmosféricos — luz, refracción y dispersión</div>
+              </div>
+              <div class="filo-lens-chev">▾</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">¿Por qué algunos días en Pachuca el cielo se ve azul intenso y otros gris lechoso?</div>
+              <p>La <strong>dispersión de Rayleigh</strong> explica el azul del cielo; la <strong>dispersión de Mie</strong> explica el gris del aire contaminado. En abril 2026 se registraron 20 de 26 días con visibilidad de 10 km (77%), pero las partículas finas dispersaban la luz solar generando halos.</p>
+              <p>El índice UV promedio de <strong>8.27</strong> (categoría <em>Muy Alto</em>) está directamente relacionado con la altitud: a más altura, menor atenuación atmosférica de los rayos UV-B. La óptica permite cuantificar cuánta radiación llega a la piel de los habitantes.</p>
+            </div>
+          </div>
+
+          <div class="filo-lens" data-color="#fb7185" onclick="filoToggle(this)">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">⚙️</div>
+              <div class="filo-lens-titles">
+                <div class="filo-lens-name">Mecánica</div>
+                <div class="filo-lens-sub">Diseño y funcionamiento de instrumentos — fuerza, torque y materiales</div>
+              </div>
+              <div class="filo-lens-chev">▾</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">¿Cómo construir una estación que resista vientos de 40 km/h y temperaturas de –5 °C a 27 °C?</div>
+              <p>La mecánica clásica gobierna el diseño físico de la EIMA: la <strong>resistencia de materiales</strong> determina qué soporte usar para el anemómetro, las <strong>leyes de Newton</strong> explican el torque sobre la veleta, y los <strong>momentos de inercia</strong> definen la respuesta del pluviómetro de cubeta basculante.</p>
+              <p>Sin un diseño mecánicamente sólido, los datos son ruido. La EIMA aplica principios mecánicos desde la selección de tornillos hasta la calibración del soporte trípode.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CONEXIÓN ENTRE ÁREAS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Cómo se Integran las 4 Áreas</div>
+        <div class="detail-sec-sub">Ninguna área funciona sola. Cada medición en la EIMA combina las cuatro físicas en una sola cadena de datos.</div>
+        <div class="causal-chain" style="--chain-color:#a78bfa">
+          <div class="causal-chain-title">Flujo físico de una medición</div>
+          <div class="causal-chain-step" style="--d:0s"><span class="causal-chain-num">1</span><span class="causal-chain-txt"><strong>Mecánica</strong> — el soporte y la veleta resisten viento y vibración</span></div>
+          <div class="causal-chain-arrow" style="--d:.4s">↓</div>
+          <div class="causal-chain-step" style="--d:.8s"><span class="causal-chain-num">2</span><span class="causal-chain-txt"><strong>Fluidos</strong> — el aire y el agua interactúan con los sensores</span></div>
+          <div class="causal-chain-arrow" style="--d:1.2s">↓</div>
+          <div class="causal-chain-step" style="--d:1.6s"><span class="causal-chain-num">3</span><span class="causal-chain-txt"><strong>Óptica</strong> — luz y UV son captadas por fotodiodos calibrados</span></div>
+          <div class="causal-chain-arrow" style="--d:2.0s">↓</div>
+          <div class="causal-chain-step" style="--d:2.4s"><span class="causal-chain-num">4</span><span class="causal-chain-txt"><strong>Electromagnetismo</strong> — las señales se convierten en datos digitales</span></div>
+        </div>
+      </div>` },
 
   med: {
     tag: 'Propedéutico · Ciencias de la Salud',
@@ -3857,6 +4004,21 @@ void loop() {
           <div class="detail-card"><h4 style="color:#fb7185">😰 Estrés</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Reacción del cuerpo ante situaciones difíciles o de presión. Cuando es constante puede causar <strong style="color:var(--text)">cansancio, irritabilidad y dolores de cabeza</strong>, afectando la salud general.</p></div>
           <div class="detail-card"><h4 style="color:#fbbf24">😟 Ansiedad</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Estado de preocupación o miedo excesivo. Se manifiesta con <strong style="color:var(--text)">nerviosismo, sudoración, dificultad para concentrarse y aceleración del corazón</strong>.</p></div>
           <div class="detail-card"><h4 style="color:#a78bfa">😔 Depresión</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Trastorno emocional con <strong style="color:var(--text)">tristeza profunda, pérdida de interés en actividades y falta de energía</strong>, afectando la vida diaria.</p></div>
+        </div>
+
+        <!-- Cadena causal calor extremo → salud mental -->
+        <div style="margin-top:22px">
+          <div class="detail-sec-head" style="font-size:14px;color:var(--muted)">Cadena causal — calor extremo ↔ salud mental</div>
+          <div class="detail-sec-sub" style="margin-bottom:8px">Cómo la onda de calor de abril 2026 en Pachuca (+8.1 °C sobre lo normal) impacta la psicología de la población.</div>
+          <div class="causal-chain" style="--chain-color:#a78bfa">
+            <div class="causal-chain-step" style="--d:0s"><span class="causal-chain-num">1</span><span class="causal-chain-txt"><strong>Calor extremo sostenido</strong> (11 días &gt; 22 °C, pico 27.1 °C)</span></div>
+            <div class="causal-chain-arrow" style="--d:.4s">↓</div>
+            <div class="causal-chain-step" style="--d:.8s"><span class="causal-chain-num">2</span><span class="causal-chain-txt">Deshidratación + <strong>alteración del sueño</strong> por noches cálidas (≥19 °C)</span></div>
+            <div class="causal-chain-arrow" style="--d:1.2s">↓</div>
+            <div class="causal-chain-step" style="--d:1.6s"><span class="causal-chain-num">3</span><span class="causal-chain-txt">Aumento de <strong>cortisol</strong> (hormona del estrés) e <strong>irritabilidad</strong></span></div>
+            <div class="causal-chain-arrow" style="--d:2.0s">↓</div>
+            <div class="causal-chain-step" style="--d:2.4s"><span class="causal-chain-num">4</span><span class="causal-chain-txt">Mayor incidencia de <strong>ansiedad, agresividad y episodios depresivos</strong></span></div>
+          </div>
         </div>
       </div>
 
@@ -4011,6 +4173,21 @@ void loop() {
           <div class="detail-card"><h4 style="color:#fb7185">Contaminantes y metales pesados</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Consumen antioxidantes como zinc (Zn) y selenio (Se) → deprime tu sistema inmune → aumenta vulnerabilidad a infecciones y enfermedades crónicas.</p></div>
           <div class="detail-card"><h4 style="color:#fb7185">Ácidos en el aire</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Tu sistema amortiguador sanguíneo (pH 7.35–7.45) debe trabajar más para compensar → fatiga metabólica. La lluvia ácida (pH &lt;5.6) también daña suelos y vegetación del matorral.</p></div>
           <div class="detail-card"><h4 style="color:#fb7185">PM2.5 y partículas finas</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Penetran hasta los alvéolos pulmonares → inflamación sistémica → afectan el transporte de O₂ por la hemoglobina (hierro sérico: 60–170 µg/dL en rango normal).</p></div>
+        </div>
+
+        <!-- Cadena lógica del smog fotoquímico -->
+        <div style="margin-top:22px">
+          <div class="detail-sec-head" style="font-size:14px;color:var(--muted)">Cadena química del smog fotoquímico</div>
+          <div class="detail-sec-sub" style="margin-bottom:8px">Cómo el aire urbano de Pachuca se transforma en ozono troposférico bajo la radiación UV intensa de altitud (índice 8.27, Muy Alto).</div>
+          <div class="causal-chain" style="--chain-color:#fb7185">
+            <div class="causal-chain-step" style="--d:0s"><span class="causal-chain-num">1</span><span class="causal-chain-txt">Emisión de <strong>NOₓ</strong> (autos) + <strong>COVs</strong> (combustibles, solventes)</span></div>
+            <div class="causal-chain-arrow" style="--d:.4s">↓</div>
+            <div class="causal-chain-step" style="--d:.8s"><span class="causal-chain-num">2</span><span class="causal-chain-txt"><strong>Radiación UV solar</strong> rompe NO₂ → NO + O atómico</span></div>
+            <div class="causal-chain-arrow" style="--d:1.2s">↓</div>
+            <div class="causal-chain-step" style="--d:1.6s"><span class="causal-chain-num">3</span><span class="causal-chain-txt">O atómico + O₂ → <strong>O₃ (ozono troposférico)</strong></span></div>
+            <div class="causal-chain-arrow" style="--d:2.0s">↓</div>
+            <div class="causal-chain-step" style="--d:2.4s"><span class="causal-chain-num">4</span><span class="causal-chain-txt">Inhalación → <strong>irritación de pulmones</strong> → asma, EPOC, baja saturación O₂</span></div>
+          </div>
         </div>
       </div>
 
@@ -4770,6 +4947,29 @@ function filoToggle(el) {
   }
   el.classList.toggle('open');
 }
+
+/* ── CADENA CAUSAL · animación al entrar a viewport (incluye contenido dinámico) ── */
+const causalChainObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in-view');
+      causalChainObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.25 });
+function bindCausalChains(root) {
+  (root || document).querySelectorAll('.causal-chain:not([data-bound])').forEach(c => {
+    c.setAttribute('data-bound', '1');
+    causalChainObs.observe(c);
+  });
+}
+bindCausalChains();
+// Re-bind when a detail page opens (its content is in template literals, freshly rendered)
+const _origOpenDetail = window.openDetail;
+window.openDetail = function(id) {
+  _origOpenDetail(id);
+  setTimeout(() => bindCausalChains(document.getElementById('detailPage')), 50);
+};
 
 /* ══════════════════════════════════════
    #14 · Cursor-light spotlight on cards
