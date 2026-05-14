@@ -935,6 +935,204 @@
     }
     .tline-panel-info p { font-size: 13px; color: var(--muted2); line-height: 1.75; margin: 6px 0; }
 
+    /* ── SIMULADOR (sliders + outputs) ── */
+    .sim-panel {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 22px 24px; margin: 18px 0; --sim-color: #38bdf8;
+    }
+    .sim-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+    @media (max-width: 720px) { .sim-grid { grid-template-columns: 1fr; } }
+    .sim-control { margin-bottom: 16px; }
+    .sim-control-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 8px;
+    }
+    .sim-control-lbl {
+      font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted2);
+      font-weight: 600;
+    }
+    .sim-control-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px; font-weight: 700; color: var(--text);
+    }
+    .sim-slider {
+      width: 100%; -webkit-appearance: none; appearance: none;
+      height: 5px; border-radius: 3px;
+      background: linear-gradient(90deg, var(--sim-color) var(--pct, 0%), var(--border) var(--pct, 0%));
+      outline: none;
+    }
+    .sim-slider::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--sim-color); border: 3px solid #fff;
+      cursor: pointer; box-shadow: 0 3px 8px rgba(0,0,0,.35);
+    }
+    .sim-slider::-moz-range-thumb {
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--sim-color); border: 3px solid #fff;
+      cursor: pointer;
+    }
+    .sim-outputs {
+      background: var(--bg2); border-radius: 12px; padding: 16px 18px;
+      border: 1px solid var(--border);
+    }
+    .sim-output { margin-bottom: 12px; }
+    .sim-output-lbl {
+      font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .sim-output-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px; font-weight: 700; line-height: 1.1;
+    }
+    .sim-bar {
+      height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; margin-top: 6px;
+    }
+    .sim-bar-fill {
+      height: 100%; background: var(--sim-color); transition: width .35s ease;
+    }
+    .sim-verdict {
+      margin-top: 14px; padding: 12px 14px; border-radius: 10px;
+      font-size: 13px; line-height: 1.6; color: var(--text);
+      background: color-mix(in srgb, var(--sim-color) 10%, transparent);
+      border-left: 3px solid var(--sim-color);
+    }
+
+    /* ── ANTES / DESPUÉS IMAGE SLIDER (Eco B) ── */
+    .compare {
+      position: relative; border-radius: 14px; overflow: hidden;
+      border: 1px solid var(--border); cursor: ew-resize;
+      max-width: 720px; margin: 18px auto;
+    }
+    .compare img { width: 100%; display: block; pointer-events: none; }
+    .compare-after {
+      position: absolute; inset: 0; overflow: hidden; width: 50%;
+    }
+    .compare-after img { width: calc(100% * (720 / 360) * 2); } /* will be auto */
+    .compare-handle {
+      position: absolute; top: 0; bottom: 0; left: 50%;
+      width: 4px; background: #fff; box-shadow: 0 0 16px rgba(0,0,0,.6);
+      transform: translateX(-50%); cursor: ew-resize;
+    }
+    .compare-handle::before {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: #fff; transform: translate(-50%, -50%);
+      box-shadow: 0 4px 14px rgba(0,0,0,.45);
+    }
+    .compare-handle::after {
+      content: '⇆'; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      color: #111; font-weight: 800; font-size: 16px; z-index: 1;
+    }
+    .compare-label {
+      position: absolute; bottom: 14px; padding: 6px 12px;
+      background: rgba(0,0,0,.65); color: #fff; border-radius: 8px;
+      font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
+      backdrop-filter: blur(4px); font-weight: 600;
+    }
+    .compare-label.left { left: 14px; }
+    .compare-label.right { right: 14px; }
+
+    /* ── CALCULADORA PASO A PASO (Mat B) ── */
+    .calc-steps {
+      display: flex; flex-direction: column; gap: 10px;
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 22px 24px; margin: 18px 0;
+    }
+    .calc-step {
+      display: grid; grid-template-columns: 32px 1fr auto; align-items: center;
+      gap: 14px; padding: 12px 16px; border-radius: 10px;
+      background: var(--bg2); border: 1px solid var(--border);
+      opacity: .35; transition: all .45s;
+    }
+    .calc-step.done { opacity: 1; border-color: color-mix(in srgb, #38bdf8 40%, var(--border)); }
+    .calc-step-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--border); color: var(--muted);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 13px;
+    }
+    .calc-step.done .calc-step-num { background: #38bdf8; color: #fff; }
+    .calc-step-formula { font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: var(--muted2); }
+    .calc-step-result {
+      font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700;
+      color: var(--text); min-width: 100px; text-align: right;
+    }
+    .calc-step.done .calc-step-result { color: #38bdf8; }
+    .calc-btn {
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9); color: #fff;
+      border: none; padding: 10px 22px; border-radius: 10px;
+      font-weight: 700; cursor: pointer; font-size: 13px;
+      letter-spacing: .5px; align-self: flex-start; margin-top: 6px;
+      transition: transform .15s;
+    }
+    .calc-btn:hover { transform: translateY(-1px); }
+    .calc-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+    /* ── ANIMATED FLOW (Bio B, Elec B) ── */
+    .flow {
+      position: relative; padding: 30px 18px; margin: 18px 0;
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      --flow-color: #fb7185;
+    }
+    .flow-track {
+      display: flex; justify-content: space-between; align-items: center;
+      position: relative; gap: 8px;
+    }
+    .flow-node {
+      flex: 1; text-align: center; position: relative; z-index: 2;
+    }
+    .flow-circle {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--card); border: 3px solid var(--flow-color);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin: 0 auto 8px;
+      box-shadow: 0 4px 14px rgba(0,0,0,.35);
+    }
+    .flow-label {
+      font-size: 11px; color: var(--muted); letter-spacing: .3px;
+      line-height: 1.4;
+    }
+    .flow-label strong { color: var(--text); display: block; margin-bottom: 2px; font-size: 12px; }
+    .flow-rail {
+      position: absolute; top: 50%; left: 5%; right: 5%; height: 3px;
+      background: color-mix(in srgb, var(--flow-color) 25%, transparent);
+      transform: translateY(-50%); z-index: 1; border-radius: 3px;
+    }
+    .flow-particle {
+      position: absolute; top: 50%; left: 5%;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--flow-color); box-shadow: 0 0 20px var(--flow-color);
+      transform: translate(-50%, -50%); z-index: 2;
+      animation: flow-travel 4.5s linear infinite;
+    }
+    @keyframes flow-travel {
+      0% { left: 5%; opacity: 0; }
+      8% { opacity: 1; }
+      92% { opacity: 1; }
+      100% { left: 95%; opacity: 0; }
+    }
+
+    /* ── BARRAS ANIMADAS (Soc B) ── */
+    .vbar-group { display: flex; flex-direction: column; gap: 14px; margin: 18px 0; }
+    .vbar-item {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 14px 18px;
+    }
+    .vbar-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 8px; font-size: 13px;
+    }
+    .vbar-label { color: var(--text); font-weight: 600; display: flex; align-items: center; gap: 8px; }
+    .vbar-val { font-family: 'Space Grotesk', sans-serif; font-weight: 800; color: var(--vbar-color, #fbbf24); }
+    .vbar-track { height: 10px; background: var(--bg2); border-radius: 5px; overflow: hidden; border: 1px solid var(--border); }
+    .vbar-fill {
+      height: 100%; background: linear-gradient(90deg, var(--vbar-color, #fbbf24), color-mix(in srgb, var(--vbar-color, #fbbf24) 60%, #fff));
+      border-radius: 5px; width: 0%; transition: width 1.4s cubic-bezier(.2,.7,.2,1);
+    }
+    .vbar-group.in-view .vbar-fill { width: var(--vbar-w, 50%); }
+
     /* clickable cards */
     .poi-card, .materia-card:not(.placeholder) { cursor: pointer; }
     .poi-card::before, .materia-card:not(.placeholder)::before {
@@ -2784,6 +2982,22 @@ const DETAILS = {
         </tbody></table>
       </div>
 
+      <!-- COMPARADOR ANTES / DESPUÉS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Antes / Después · El matorral bajo estrés climático</div>
+        <div class="detail-sec-sub">Arrastra el deslizador para comparar el paisaje en condiciones normales (izquierda) con el efecto visual de la onda de calor de abril 2026 (derecha).</div>
+        <div class="compare" id="ecoCompare" style="max-width:760px">
+          <img src="${W}/5/53/Parque_Ecol%C3%B3gico_Cubitos._01.jpg" alt="Matorral en condiciones normales">
+          <div class="compare-after">
+            <img src="${W}/5/53/Parque_Ecol%C3%B3gico_Cubitos._01.jpg" alt="Matorral con onda de calor" style="filter: sepia(.55) saturate(1.5) hue-rotate(-12deg) brightness(.82) contrast(1.05)">
+          </div>
+          <div class="compare-handle"></div>
+          <div class="compare-label left">Normal</div>
+          <div class="compare-label right">Onda de calor</div>
+        </div>
+        <div class="hotspot-hint">Arrastra el control central · normal vs. abril 2026</div>
+      </div>
+
       <!-- SECCIÓN 6: CONCLUSIÓN Y FUENTES -->
       <div class="detail-sec">
         <div class="detail-sec-head">Infográfico</div>
@@ -2939,6 +3153,24 @@ const DETAILS = {
           </div>
         </div>
         <div class="hotspot-hint">5 hotspots · refinería · jales · mancha urbana · agrícola · refugio</div>
+
+        <!-- RUTA ANIMADA DEL CONTAMINANTE -->
+        <div style="margin-top:24px">
+          <div class="detail-sec-head" style="font-size:14px;color:var(--muted)">Ruta del contaminante · de la fuente al ajolote</div>
+          <div class="detail-sec-sub" style="margin-bottom:6px">Sigue la partícula recorriendo el sistema hidrológico desde su origen industrial hasta el hábitat del ajolote.</div>
+          <div class="flow" style="--flow-color:#fb7185">
+            <div class="flow-track">
+              <div class="flow-rail"></div>
+              <div class="flow-particle"></div>
+              <div class="flow-node"><div class="flow-circle">🏭</div><div class="flow-label"><strong>Refinería Tula</strong>emisión de Pb, Cd, NH₃</div></div>
+              <div class="flow-node"><div class="flow-circle">💨</div><div class="flow-label"><strong>Atmósfera</strong>deposición seca y húmeda</div></div>
+              <div class="flow-node"><div class="flow-circle">🌧️</div><div class="flow-label"><strong>Lluvia ácida</strong>disuelve metales</div></div>
+              <div class="flow-node"><div class="flow-circle">🌊</div><div class="flow-label"><strong>Río Tula</strong>arrastre y transporte</div></div>
+              <div class="flow-node"><div class="flow-circle">🪱</div><div class="flow-label"><strong>Sedimento</strong>bioacumulación</div></div>
+              <div class="flow-node"><div class="flow-circle">🦎</div><div class="flow-label"><strong>Ajolote</strong>daño hepático y branquial</div></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- DISRUPCIÓN -->
@@ -3373,6 +3605,22 @@ const DETAILS = {
           <tr><td>Activos</td><td>Generan su propia señal</td><td>LM35, DS18B20</td><td>Requieren alimentación</td></tr>
           <tr><td>Pasivos</td><td>Varían su impedancia/resistencia</td><td>Termistor, fotoresistor</td><td>Necesitan excitación externa</td></tr>
         </tbody></table>
+
+        <!-- CADENA DE MEDICIÓN ANIMADA -->
+        <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin:24px 0 6px">Cadena de Medición · cómo viaja el dato</p>
+        <p style="color:var(--muted2);font-size:13px;line-height:1.7;margin-bottom:6px">Sigue la partícula desde el sensor físico hasta los datos visualizados.</p>
+        <div class="flow" style="--flow-color:#fbbf24">
+          <div class="flow-track">
+            <div class="flow-rail"></div>
+            <div class="flow-particle"></div>
+            <div class="flow-node"><div class="flow-circle">🌡️</div><div class="flow-label"><strong>Sensor</strong>LM35 / DHT11 / BMP180</div></div>
+            <div class="flow-node"><div class="flow-circle">⚡</div><div class="flow-label"><strong>Acondic.</strong>filtro + amplificación</div></div>
+            <div class="flow-node"><div class="flow-circle">🔢</div><div class="flow-label"><strong>ADC</strong>analógico → digital</div></div>
+            <div class="flow-node"><div class="flow-circle">🖥️</div><div class="flow-label"><strong>ESP32</strong>microcontrolador</div></div>
+            <div class="flow-node"><div class="flow-circle">📡</div><div class="flow-label"><strong>Wi-Fi</strong>transmisión</div></div>
+            <div class="flow-node"><div class="flow-circle">📊</div><div class="flow-label"><strong>Datos</strong>dashboard</div></div>
+          </div>
+        </div>
 
         <p style="font-size:13px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1.5px;margin:24px 0 12px">Sensores Principales — Especificaciones Técnicas</p>
         <div class="detail-3col">
@@ -4061,6 +4309,44 @@ void loop() {
 <!-- 7. Parámetros estadísticos descriptivos -->
 <div class="detail-sec">
   <div class="detail-sec-head">7 · Parámetros estadísticos descriptivos</div>
+
+  <!-- CALCULADORA PASO A PASO -->
+  <div class="detail-sec-head" style="font-size:14px;color:var(--muted);margin-top:4px">Calculadora paso a paso · ¿cómo se obtiene cada parámetro?</div>
+  <div class="detail-sec-sub" style="margin-bottom:6px">Pulsa "Siguiente paso" para revelar cada fórmula sobre los 26 datos de temperatura.</div>
+  <div class="calc-steps">
+    <div class="calc-step done" data-group="matstats">
+      <div class="calc-step-num">1</div>
+      <div class="calc-step-formula">Σ Tᵢ — Suma de las 26 temperaturas observadas</div>
+      <div class="calc-step-result">534.8 °C</div>
+    </div>
+    <div class="calc-step" data-group="matstats">
+      <div class="calc-step-num">2</div>
+      <div class="calc-step-formula">x̄ = Σ Tᵢ / n &nbsp;=&nbsp; 534.8 / 26</div>
+      <div class="calc-step-result">20.57 °C</div>
+    </div>
+    <div class="calc-step" data-group="matstats">
+      <div class="calc-step-num">3</div>
+      <div class="calc-step-formula">Σ (Tᵢ − x̄)² &nbsp;=&nbsp; suma de cuadrados de las desviaciones</div>
+      <div class="calc-step-result">344.84 °C²</div>
+    </div>
+    <div class="calc-step" data-group="matstats">
+      <div class="calc-step-num">4</div>
+      <div class="calc-step-formula">s² = Σ (Tᵢ − x̄)² / (n − 1) &nbsp;=&nbsp; 344.84 / 25</div>
+      <div class="calc-step-result">13.26 °C²</div>
+    </div>
+    <div class="calc-step" data-group="matstats">
+      <div class="calc-step-num">5</div>
+      <div class="calc-step-formula">s = √s² &nbsp;=&nbsp; √13.26 &nbsp;=&nbsp; desviación estándar</div>
+      <div class="calc-step-result">3.64 °C</div>
+    </div>
+    <div class="calc-step" data-group="matstats">
+      <div class="calc-step-num">6</div>
+      <div class="calc-step-formula">Anomalía = x̄_onda − Histórico &nbsp;=&nbsp; 24.6 − 19</div>
+      <div class="calc-step-result">+8.1 °C</div>
+    </div>
+    <button class="calc-btn" data-group="matstats" onclick="calcStep(this)">▶ Siguiente paso</button>
+  </div>
+
   <table class="data-table">
     <thead><tr><th>Parámetro</th><th>Valor</th></tr></thead>
     <tbody>
@@ -4320,6 +4606,34 @@ void loop() {
         </div>
       </div>
 
+      <!-- SIMULADOR ATMOSFÉRICO -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Simulador Atmosférico · Altitud y Temperatura</div>
+        <div class="detail-sec-sub">Mueve los controles para ver cómo cambian la presión, la densidad y la concentración relativa de oxígeno. Pachuca se ubica a 2,426 m s.n.m.</div>
+        <div class="sim-panel" style="--sim-color:#a78bfa">
+          <div class="sim-grid">
+            <div>
+              <div class="sim-control">
+                <div class="sim-control-head"><span class="sim-control-lbl">Altitud</span><span class="sim-control-val" id="phys-alt-v">2426 m</span></div>
+                <input type="range" min="0" max="5000" step="50" value="2426" id="phys-alt" class="sim-slider" oninput="simPhys()">
+                <div class="scrubber-axis"><span>0 m</span><span>Pachuca</span><span>Everest</span></div>
+              </div>
+              <div class="sim-control">
+                <div class="sim-control-head"><span class="sim-control-lbl">Temperatura</span><span class="sim-control-val" id="phys-temp-v">19 °C</span></div>
+                <input type="range" min="-10" max="40" value="19" id="phys-temp" class="sim-slider" oninput="simPhys()">
+                <div class="scrubber-axis"><span>−10 °C</span><span>40 °C</span></div>
+              </div>
+            </div>
+            <div class="sim-outputs">
+              <div class="sim-output"><div class="sim-output-lbl">Presión atmosférica</div><div class="sim-output-val" style="color:#a78bfa" id="phys-press">566 mmHg</div></div>
+              <div class="sim-output"><div class="sim-output-lbl">Densidad del aire</div><div class="sim-output-val" style="color:#38bdf8" id="phys-dens">0.902 kg/m³</div></div>
+              <div class="sim-output"><div class="sim-output-lbl">Oxígeno disponible</div><div class="sim-output-val" style="color:#34d399" id="phys-o2">15.6 %</div></div>
+              <div class="sim-verdict" id="phys-verdict">✈️ <strong>Pachuca (2,426 m).</strong> Aire menos denso — menor O₂ disponible.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- CONEXIÓN ENTRE ÁREAS -->
       <div class="detail-sec">
         <div class="detail-sec-head">Cómo se Integran las 4 Áreas</div>
@@ -4384,6 +4698,46 @@ void loop() {
           </div>
         </div>
         <div class="alert-box warning" style="margin-top:14px">⚠️ <strong>Síntoma frecuente:</strong> irritación en ojos y garganta por exposición prolongada a contaminantes atmosféricos.</div>
+
+        <!-- SIMULADOR DE EXPOSICIÓN ACUMULADA -->
+        <div style="margin-top:24px">
+          <div class="detail-sec-head" style="font-size:14px;color:var(--muted)">Simulador de Exposición Acumulada</div>
+          <div class="detail-sec-sub" style="margin-bottom:6px">Mueve el deslizador para ver cómo crece el riesgo según los años de exposición al aire de Pachuca.</div>
+          <div class="sim-panel" style="--sim-color:#fb7185">
+            <div class="sim-control">
+              <div class="sim-control-head"><span class="sim-control-lbl">🗓️ Años viviendo en Pachuca</span><span class="sim-control-val" id="med-years-v">10 años</span></div>
+              <input type="range" min="0" max="50" value="10" id="med-years" class="sim-slider" oninput="simMed()">
+              <div class="scrubber-axis"><span>0</span><span>10</span><span>25</span><span>50 años</span></div>
+            </div>
+            <div class="sim-grid" style="margin-top:14px">
+              <div class="sim-outputs">
+                <div class="sim-output">
+                  <div class="sim-output-lbl">🫁 Riesgo IRAS / año</div>
+                  <div class="sim-output-val" style="color:#fb7185" id="med-iras">43 %</div>
+                  <div class="sim-bar"><div class="sim-bar-fill" id="med-iras-b" style="background:#fb7185;width:43%"></div></div>
+                </div>
+                <div class="sim-output">
+                  <div class="sim-output-lbl">💨 Riesgo asma crónica</div>
+                  <div class="sim-output-val" style="color:#fbbf24" id="med-asma">22 %</div>
+                  <div class="sim-bar"><div class="sim-bar-fill" id="med-asma-b" style="background:#fbbf24;width:22%"></div></div>
+                </div>
+              </div>
+              <div class="sim-outputs">
+                <div class="sim-output">
+                  <div class="sim-output-lbl">❤️ Riesgo cardiovascular</div>
+                  <div class="sim-output-val" style="color:#a78bfa" id="med-cardio">14 %</div>
+                  <div class="sim-bar"><div class="sim-bar-fill" id="med-cardio-b" style="background:#a78bfa;width:14%"></div></div>
+                </div>
+                <div class="sim-output">
+                  <div class="sim-output-lbl">🧠 Salud mental afectada</div>
+                  <div class="sim-output-val" style="color:#38bdf8" id="med-mental">19 %</div>
+                  <div class="sim-bar"><div class="sim-bar-fill" id="med-mental-b" style="background:#38bdf8;width:19%"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="sim-verdict" id="med-verdict">⚠️ Riesgo medio. Conviene monitoreo periódico de función pulmonar.</div>
+          </div>
+        </div>
 
         <!-- CUERPO HUMANO INTERACTIVO · SALUD -->
         <div style="margin-top:28px">
@@ -5303,6 +5657,32 @@ void loop() {
           <div class="detail-card"><h4 style="color:#fbbf24">👶 Infancia y adolescencia</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Sistema respiratorio en desarrollo, mayor exposición al humo y a contaminantes en horarios escolares.</p></div>
           <div class="detail-card"><h4 style="color:#a78bfa">💰 Bajos recursos</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Vivienda sin aislamiento, falta de ventilación, dificultad para acceder a agua potable durante picos de calor.</p></div>
         </div>
+
+        <!-- BARRAS ANIMADAS DE VULNERABILIDAD -->
+        <div class="detail-sec-head" style="font-size:14px;color:var(--muted);margin-top:18px">Distribución de impactos reportados por grupo</div>
+        <div class="detail-sec-sub" style="margin-bottom:6px">Resultado de 248 cuestionarios aplicados en abril 2026. Las barras se animan al entrar en pantalla.</div>
+        <div class="vbar-group">
+          <div class="vbar-item" style="--vbar-color:#fb7185;--vbar-w:84%">
+            <div class="vbar-head"><span class="vbar-label">👵 Adultos mayores · golpe de calor o deshidratación</span><span class="vbar-val">84 %</span></div>
+            <div class="vbar-track"><div class="vbar-fill"></div></div>
+          </div>
+          <div class="vbar-item" style="--vbar-color:#fbbf24;--vbar-w:71%">
+            <div class="vbar-head"><span class="vbar-label">👶 Infancia · síntomas respiratorios</span><span class="vbar-val">71 %</span></div>
+            <div class="vbar-track"><div class="vbar-fill"></div></div>
+          </div>
+          <div class="vbar-item" style="--vbar-color:#a78bfa;--vbar-w:68%">
+            <div class="vbar-head"><span class="vbar-label">💰 Bajos recursos · actividades cotidianas afectadas</span><span class="vbar-val">68 %</span></div>
+            <div class="vbar-track"><div class="vbar-fill"></div></div>
+          </div>
+          <div class="vbar-item" style="--vbar-color:#38bdf8;--vbar-w:52%">
+            <div class="vbar-head"><span class="vbar-label">🏥 Personas con enfermedad crónica · descompensación</span><span class="vbar-val">52 %</span></div>
+            <div class="vbar-track"><div class="vbar-fill"></div></div>
+          </div>
+          <div class="vbar-item" style="--vbar-color:#34d399;--vbar-w:35%">
+            <div class="vbar-head"><span class="vbar-label">🚶 Trabajadores al aire libre · estrés térmico</span><span class="vbar-val">35 %</span></div>
+            <div class="vbar-track"><div class="vbar-fill"></div></div>
+          </div>
+        </div>
       </div>
 
       <!-- INTERVENCIÓN -->
@@ -5516,6 +5896,40 @@ void loop() {
           <div class="detail-card" style="border-top:3px solid #a78bfa">
             <h4>💨 Vientos e incendios</h4>
             <p>Los fuertes vientos de primavera dispersan partículas de incendios forestales hacia zonas más amplias de la ZM, como ocurrió en marzo 2026.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIMULADOR DE POLÍTICA PÚBLICA -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Simulador de Política Pública · ¿qué pasaría si…?</div>
+        <div class="detail-sec-sub">Ajusta los porcentajes de inversión, regulación y educación. El modelo proyecta la calidad del aire de Pachuca, vidas evitadas/año y avance hacia el ODS 13.</div>
+        <div class="sim-panel" style="--sim-color:#fbbf24">
+          <div class="sim-grid">
+            <div>
+              <div class="sim-control">
+                <div class="sim-control-head"><span class="sim-control-lbl">💰 Inversión en monitoreo</span><span class="sim-control-val" id="cp-inv-v">25 %</span></div>
+                <input type="range" min="0" max="100" value="25" id="cp-inv" class="sim-slider" oninput="simCpol()">
+              </div>
+              <div class="sim-control">
+                <div class="sim-control-head"><span class="sim-control-lbl">⚖️ Regulación industrial</span><span class="sim-control-val" id="cp-reg-v">40 %</span></div>
+                <input type="range" min="0" max="100" value="40" id="cp-reg" class="sim-slider" oninput="simCpol()">
+              </div>
+              <div class="sim-control">
+                <div class="sim-control-head"><span class="sim-control-lbl">📚 Educación ambiental</span><span class="sim-control-val" id="cp-edu-v">15 %</span></div>
+                <input type="range" min="0" max="100" value="15" id="cp-edu" class="sim-slider" oninput="simCpol()">
+              </div>
+            </div>
+            <div class="sim-outputs">
+              <div class="sim-output">
+                <div class="sim-output-lbl">AQI proyectado (μg/m³ eq.)</div>
+                <div class="sim-output-val" style="color:#fb7185" id="cp-aqi">120</div>
+                <div class="sim-bar"><div class="sim-bar-fill" id="cp-aqi-bar" style="background:#fb7185"></div></div>
+              </div>
+              <div class="sim-output"><div class="sim-output-lbl">Vidas evitadas / año</div><div class="sim-output-val" style="color:#34d399" id="cp-lives">120</div></div>
+              <div class="sim-output"><div class="sim-output-lbl">Cumplimiento ODS 13</div><div class="sim-output-val" style="color:#a78bfa" id="cp-ods">27 %</div></div>
+              <div class="sim-verdict" id="cp-verdict">⚠️ <strong>Calidad moderada.</strong> Mejoría notable pero insuficiente para grupos vulnerables.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -5794,6 +6208,131 @@ window.SCRUBBER_DATA = {
   ]
 };
 
+/* ── SIMULADOR FÍSICA · presión y densidad por altitud ── */
+function simPhys() {
+  const alt = +document.getElementById('phys-alt').value;
+  const tC = +document.getElementById('phys-temp').value;
+  const T = tC + 273.15;
+  // Barometric formula (simplified)
+  const P = 1013.25 * Math.exp(-alt / 8434); // hPa
+  const mmHg = P * 0.75006;
+  const rho = (P * 100) / (287.05 * T); // kg/m³
+  const o2 = (P / 1013.25) * 20.95; // % equivalent at sea level
+  document.getElementById('phys-alt-v').textContent = alt + ' m';
+  document.getElementById('phys-temp-v').textContent = tC + ' °C';
+  document.getElementById('phys-press').textContent = mmHg.toFixed(0) + ' mmHg';
+  document.getElementById('phys-dens').textContent = rho.toFixed(3) + ' kg/m³';
+  document.getElementById('phys-o2').textContent = o2.toFixed(1) + ' %';
+  document.querySelectorAll('#phys-alt, #phys-temp').forEach(s => {
+    const pct = (s.value - s.min) / (s.max - s.min) * 100;
+    s.style.setProperty('--pct', pct + '%');
+  });
+  const v = document.getElementById('phys-verdict');
+  if (alt >= 2400) v.innerHTML = '✈️ <strong>Pachuca (2,426 m).</strong> Aire ' + (rho < 1.0 ? 'menos denso' : 'normal') + ' — menor O₂ disponible.';
+  else if (alt < 500) v.innerHTML = '🌊 Casi nivel del mar — presión y O₂ máximos.';
+  else v.innerHTML = '⛰️ Altitud intermedia.';
+}
+
+/* ── SIMULADOR CPOL · política pública ── */
+function simCpol() {
+  const inv = +document.getElementById('cp-inv').value;
+  const reg = +document.getElementById('cp-reg').value;
+  const edu = +document.getElementById('cp-edu').value;
+  // weighted AQI improvement
+  const score = (inv * 0.45 + reg * 0.40 + edu * 0.15);
+  const baseAQI = 142; // current Pachuca PM10 averaged-equiv
+  const proj = Math.round(baseAQI * (1 - score / 200));
+  const lives = Math.round(score * 4.2); // hypothetical lives/year saved
+  const ods = Math.min(100, Math.round(score * 0.95));
+  document.getElementById('cp-inv-v').textContent = inv + ' %';
+  document.getElementById('cp-reg-v').textContent = reg + ' %';
+  document.getElementById('cp-edu-v').textContent = edu + ' %';
+  document.getElementById('cp-aqi').textContent = proj;
+  document.getElementById('cp-lives').textContent = lives;
+  document.getElementById('cp-ods').textContent = ods + ' %';
+  document.getElementById('cp-aqi-bar').style.width = Math.min(100, (proj / baseAQI) * 100) + '%';
+  ['cp-inv','cp-reg','cp-edu'].forEach(id => {
+    const s = document.getElementById(id);
+    s.style.setProperty('--pct', s.value + '%');
+  });
+  const v = document.getElementById('cp-verdict');
+  if (proj < 50) v.innerHTML = '✅ <strong>Calidad de aire saludable.</strong> Pachuca alcanzaría niveles OMS.';
+  else if (proj < 100) v.innerHTML = '⚠️ <strong>Calidad moderada.</strong> Mejoría notable pero insuficiente para grupos vulnerables.';
+  else v.innerHTML = '🚨 <strong>Calidad insalubre.</strong> Las políticas actuales no bastan; se requiere mayor inversión y regulación.';
+}
+
+/* ── SIMULADOR SALUD · exposición acumulada ── */
+function simMed() {
+  const years = +document.getElementById('med-years').value;
+  const iras = Math.min(98, Math.round(20 + years * 2.3));
+  const asma = Math.min(85, Math.round(5 + years * 1.7));
+  const cardio = Math.min(80, Math.round(2 + years * 1.2));
+  const mental = Math.min(75, Math.round(8 + years * 1.1));
+  document.getElementById('med-years-v').textContent = years + ' años';
+  document.getElementById('med-iras').textContent = iras + ' %';
+  document.getElementById('med-asma').textContent = asma + ' %';
+  document.getElementById('med-cardio').textContent = cardio + ' %';
+  document.getElementById('med-mental').textContent = mental + ' %';
+  document.getElementById('med-iras-b').style.width = iras + '%';
+  document.getElementById('med-asma-b').style.width = asma + '%';
+  document.getElementById('med-cardio-b').style.width = cardio + '%';
+  document.getElementById('med-mental-b').style.width = mental + '%';
+  const s = document.getElementById('med-years');
+  s.style.setProperty('--pct', (years / +s.max * 100) + '%');
+  const v = document.getElementById('med-verdict');
+  if (years < 5) v.innerHTML = '🌱 Riesgo bajo. Cuerpo en buena capacidad de adaptación.';
+  else if (years < 20) v.innerHTML = '⚠️ Riesgo medio. Conviene monitoreo periódico de función pulmonar.';
+  else v.innerHTML = '🚨 Riesgo alto acumulado. Atención preventiva indispensable.';
+}
+
+/* ── COMPARE ANTES/DESPUÉS ── */
+function bindCompare(root) {
+  (root || document).querySelectorAll('.compare:not([data-bound])').forEach(c => {
+    c.setAttribute('data-bound', '1');
+    const after = c.querySelector('.compare-after');
+    const handle = c.querySelector('.compare-handle');
+    const afterImg = after.querySelector('img');
+    const baseImg = c.querySelector('img:not(.compare-after img)') || c.children[0].querySelector('img');
+    function set(x) {
+      const r = c.getBoundingClientRect();
+      const pct = Math.max(0, Math.min(100, ((x - r.left) / r.width) * 100));
+      after.style.width = pct + '%';
+      handle.style.left = pct + '%';
+      if (afterImg && baseImg) afterImg.style.width = (100 / pct * 100) + '%';
+    }
+    let dragging = false;
+    c.addEventListener('mousedown', e => { dragging = true; set(e.clientX); });
+    window.addEventListener('mousemove', e => { if (dragging) set(e.clientX); });
+    window.addEventListener('mouseup', () => dragging = false);
+    c.addEventListener('touchstart', e => { dragging = true; set(e.touches[0].clientX); }, {passive:true});
+    window.addEventListener('touchmove', e => { if (dragging) set(e.touches[0].clientX); }, {passive:true});
+    window.addEventListener('touchend', () => dragging = false);
+  });
+}
+
+/* ── CALCULADORA PASO A PASO ── */
+function calcStep(btnOrGroup) {
+  let group, btn;
+  if (typeof btnOrGroup === 'string') { group = btnOrGroup; }
+  else { btn = btnOrGroup; group = btn.dataset.group; }
+  const steps = document.querySelectorAll(`.calc-step[data-group="${group}"]`);
+  const idx = Array.from(steps).findIndex(s => !s.classList.contains('done'));
+  if (idx < 0) return;
+  steps[idx].classList.add('done');
+  if (btn && idx + 1 >= steps.length) btn.disabled = true;
+}
+
+/* ── BARRAS VULNERABILIDAD ── */
+const vbarObs = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in-view'); vbarObs.unobserve(e.target); }
+}), { threshold: 0.25 });
+function bindVbars(root) {
+  (root || document).querySelectorAll('.vbar-group:not([data-bound])').forEach(v => {
+    v.setAttribute('data-bound', '1');
+    vbarObs.observe(v);
+  });
+}
+
 /* ── CADENA CAUSAL · animación al entrar a viewport (incluye contenido dinámico) ── */
 const causalChainObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -5814,7 +6353,15 @@ bindCausalChains();
 const _origOpenDetail = window.openDetail;
 window.openDetail = function(id) {
   _origOpenDetail(id);
-  setTimeout(() => bindCausalChains(document.getElementById('detailPage')), 50);
+  setTimeout(() => {
+    const dp = document.getElementById('detailPage');
+    bindCausalChains(dp);
+    bindCompare(dp);
+    bindVbars(dp);
+    if (document.getElementById('phys-alt')) simPhys();
+    if (document.getElementById('cp-inv')) simCpol();
+    if (document.getElementById('med-years')) simMed();
+  }, 50);
 };
 
 /* ══════════════════════════════════════
