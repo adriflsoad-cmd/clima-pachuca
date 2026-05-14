@@ -830,6 +830,111 @@
       transform: translate(-50%, -50%);
     }
 
+    /* ── SCRUBBER (día a día) ── */
+    .scrubber {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 22px 24px; margin: 18px 0; --sc-color: #38bdf8;
+    }
+    .scrubber-header {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 14px; flex-wrap: wrap; gap: 8px;
+    }
+    .scrubber-date {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px; font-weight: 800; color: var(--text); line-height: 1;
+    }
+    .scrubber-meta {
+      font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted);
+    }
+    .scrubber-stats {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 10px; margin-bottom: 16px;
+    }
+    .scrubber-stat {
+      background: var(--bg2); border-radius: 10px; padding: 12px 14px;
+      border: 1px solid var(--border);
+    }
+    .scrubber-stat-lbl {
+      font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .scrubber-stat-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px; font-weight: 700; color: var(--text); line-height: 1.1;
+    }
+    .scrubber-note {
+      font-size: 13px; color: var(--muted2); line-height: 1.7;
+      padding: 12px 14px; background: rgba(255,255,255,.02); border-radius: 10px;
+      border-left: 3px solid var(--sc-color); margin-bottom: 14px;
+    }
+    .scrubber-slider {
+      width: 100%; -webkit-appearance: none; appearance: none;
+      height: 6px; border-radius: 3px;
+      background: linear-gradient(90deg, var(--sc-color) var(--sc-pct,0%), var(--border) var(--sc-pct,0%));
+      outline: none;
+    }
+    .scrubber-slider::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--sc-color); border: 3px solid #fff;
+      cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,.4);
+    }
+    .scrubber-slider::-moz-range-thumb {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--sc-color); border: 3px solid #fff;
+      cursor: pointer;
+    }
+    .scrubber-axis {
+      display: flex; justify-content: space-between; margin-top: 6px;
+      font-size: 10px; color: var(--muted); letter-spacing: 1px;
+    }
+
+    /* ── TIMELINE HORIZONTAL (Com A, CPol C) ── */
+    .tline { margin: 18px 0; --tl-color: #fbbf24; }
+    .tline-track {
+      position: relative; height: 64px; margin: 0 20px;
+    }
+    .tline-line {
+      position: absolute; top: 50%; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, color-mix(in srgb, var(--tl-color) 30%, transparent), color-mix(in srgb, var(--tl-color) 80%, transparent), color-mix(in srgb, var(--tl-color) 30%, transparent));
+      transform: translateY(-50%); border-radius: 3px;
+    }
+    .tline-dot {
+      position: absolute; top: 50%; width: 36px; height: 36px; border-radius: 50%;
+      background: var(--card); border: 3px solid var(--tl-color);
+      transform: translate(-50%, -50%);
+      cursor: pointer; transition: all .25s;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 13px; color: var(--tl-color);
+      box-shadow: 0 4px 12px rgba(0,0,0,.35);
+    }
+    .tline-dot:hover { transform: translate(-50%, -50%) scale(1.12); }
+    .tline-dot.active {
+      background: var(--tl-color); color: #fff;
+      transform: translate(-50%, -50%) scale(1.18);
+    }
+    .tline-label {
+      position: absolute; top: 70%; left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px; color: var(--muted); white-space: nowrap; margin-top: 8px;
+      letter-spacing: .3px;
+    }
+    .tline-panel {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 22px 26px; margin-top: 30px; min-height: 140px;
+    }
+    .tline-panel-info { display: none; animation: hot-fade .35s ease; }
+    .tline-panel-info.active { display: block; }
+    .tline-panel-info h5 {
+      font-size: 17px; font-weight: 700; color: var(--text); margin: 0 0 8px;
+    }
+    .tline-panel-info .tl-tag {
+      display: inline-block; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+      background: color-mix(in srgb, var(--tl-color) 18%, transparent); color: var(--tl-color);
+      padding: 4px 10px; border-radius: 10px; margin-bottom: 10px; font-weight: 700;
+    }
+    .tline-panel-info p { font-size: 13px; color: var(--muted2); line-height: 1.75; margin: 6px 0; }
+
     /* clickable cards */
     .poi-card, .materia-card:not(.placeholder) { cursor: pointer; }
     .poi-card::before, .materia-card:not(.placeholder)::before {
@@ -2566,6 +2671,26 @@ const DETAILS = {
       <div class="detail-sec">
         <div class="detail-sec-head">Sección 4 · Contraste de Datos — Registro de Campo</div>
         <div class="detail-sec-sub">8 fechas clave de abril 2026 que documentan la respuesta de los bioindicadores a las condiciones climáticas anómalas del período.</div>
+
+        <!-- BITÁCORA DÍA A DÍA SCRUBBER -->
+        <div class="scrubber" style="--sc-color:#34d399">
+          <div class="scrubber-header">
+            <div>
+              <div class="scrubber-date"><span data-sc="date">1 abril</span></div>
+              <div class="scrubber-meta"><span data-sc="meta">Día 1 · Calor anómalo</span></div>
+            </div>
+            <div class="scrubber-meta" style="text-align:right">Recorre los 8 días clave de muestreo</div>
+          </div>
+          <div class="scrubber-stats">
+            <div class="scrubber-stat"><div class="scrubber-stat-lbl">Temperatura</div><div class="scrubber-stat-val" data-sc-stat="temp">24 °C</div></div>
+            <div class="scrubber-stat"><div class="scrubber-stat-lbl">Humedad</div><div class="scrubber-stat-val" data-sc-stat="hum">38 %</div></div>
+            <div class="scrubber-stat"><div class="scrubber-stat-lbl">Especie afectada</div><div class="scrubber-stat-val" style="font-size:14px" data-sc-stat="species">Nopal cardón</div></div>
+          </div>
+          <div class="scrubber-note" data-sc="note">Arrugamiento de cladodios por pérdida de agua.</div>
+          <input type="range" min="0" max="7" value="0" class="scrubber-slider" oninput="scrubberUpdate('eco', this)" style="--sc-pct:0%">
+          <div class="scrubber-axis"><span>1 abr</span><span>5 abr</span><span>11 abr</span><span>17 abr</span><span>30 abr</span></div>
+        </div>
+
         <table class="data-table"><thead><tr><th>Fecha</th><th>Condiciones</th><th>Especie afectada</th><th>Resultado</th></tr></thead><tbody>
           <tr>
             <td><strong>1 Abr</strong></td>
@@ -3815,6 +3940,27 @@ void loop() {
 <div class="detail-sec">
   <div class="detail-sec-head">4 · Datos diarios — Abril 2026</div>
   <p style="color:var(--muted2);font-size:13.5px;line-height:1.7;margin-bottom:12px">Registros de temperatura máxima y precipitación para los 26 primeros días de abril 2026. Los días con onda de calor (T ≥ 22 °C) se resaltan en naranja.</p>
+
+  <!-- SCRUBBER DÍA A DÍA -->
+  <div class="scrubber" id="scrub-mat">
+    <div class="scrubber-header">
+      <div>
+        <div class="scrubber-date"><span data-sc="date">1 abril</span></div>
+        <div class="scrubber-meta"><span data-sc="meta">Día 1 de 26 · Abril 2026</span></div>
+      </div>
+      <div class="scrubber-meta" style="text-align:right">Arrastra para recorrer los 26 días</div>
+    </div>
+    <div class="scrubber-stats">
+      <div class="scrubber-stat"><div class="scrubber-stat-lbl">Temperatura</div><div class="scrubber-stat-val" data-sc-stat="temp">16.8 °C</div></div>
+      <div class="scrubber-stat"><div class="scrubber-stat-lbl">Lluvia</div><div class="scrubber-stat-val" data-sc-stat="rain">0.0 mm</div></div>
+      <div class="scrubber-stat"><div class="scrubber-stat-lbl">Anomalía vs 19 °C</div><div class="scrubber-stat-val" data-sc-stat="anom">−2.2 °C</div></div>
+      <div class="scrubber-stat"><div class="scrubber-stat-lbl">Condición</div><div class="scrubber-stat-val" style="font-size:14px" data-sc-stat="cond">Soleado</div></div>
+    </div>
+    <div class="scrubber-note" data-sc="note">Día normal. La temperatura está por debajo de la media abril (19 °C). Aún no inicia la onda de calor.</div>
+    <input type="range" min="0" max="25" value="0" class="scrubber-slider" oninput="scrubberUpdate('mat', this)" style="--sc-pct:0%">
+    <div class="scrubber-axis"><span>1 abr</span><span>7 abr</span><span>13 abr</span><span>20 abr</span><span>26 abr</span></div>
+  </div>
+
   <table class="data-table">
     <thead><tr><th>Día</th><th>Temp. (°C)</th><th>Lluvia (mm)</th><th>Condición</th><th>Onda calor</th></tr></thead>
     <tbody>
@@ -4682,16 +4828,52 @@ void loop() {
         </div>
       </div>
 
-      <!-- 03 Proceso -->
+      <!-- 03 Proceso · Línea de tiempo interactiva -->
       <div class="detail-sec">
-        <div class="detail-sec-head">03 · Proceso del proyecto</div>
-        <p style="color:var(--muted2);font-size:14px;line-height:1.7;margin-bottom:14px">Cinco etapas conectaron el diseño metodológico, el trabajo de campo y la producción de los entregables finales del proyecto interdisciplinario.</p>
-        <div class="detail-3col">
-          <div class="detail-card"><strong style="color:#fbbf24">Etapa 1 · Diseño</strong><br>Tema central: monitoreo climático de Pachuca, abril 2026. Asignación de 10 materias participantes, cada área propedéutica con su enfoque disciplinar.</div>
-          <div class="detail-card"><strong style="color:#38bdf8">Etapa 2 · Recolección</strong><br>26 observaciones diarias del 1 al 30 de abril: temperatura, humedad, precipitación, presión, UV, viento, visibilidad y calidad del aire.</div>
-          <div class="detail-card"><strong style="color:#34d399">Etapa 3 · Trabajo de campo</strong><br>Investigaciones en Pachuca para documentar el impacto de las anomalías climáticas sobre la cadena trófica del matorral xerófilo.</div>
-          <div class="detail-card"><strong style="color:#a78bfa">Etapa 4 · Análisis</strong><br>Tablas de frecuencias en Matemáticas, ecotoxicología en Biodiversidad, sensores en Electrónica, química atmosférica, gobernanza, comunicación.</div>
-          <div class="detail-card"><strong style="color:#fb7185">Etapa 5 · Entregables</strong><br>Documental de Comunicación, página web interactiva (climaabr.netlify.app) y guion narrativo del proyecto.</div>
+        <div class="detail-sec-head">03 · Proceso del proyecto · Línea de tiempo</div>
+        <p style="color:var(--muted2);font-size:14px;line-height:1.7;margin-bottom:14px">Cinco etapas conectaron el diseño metodológico, el trabajo de campo y la producción de los entregables. Haz clic en cualquier etapa para ver su detalle.</p>
+
+        <div class="tline" style="--tl-color:#fbbf24">
+          <div class="tline-track">
+            <div class="tline-line"></div>
+            <div class="tline-dot active" data-group="comproc" style="left:10%" onclick="tlineShow('comproc',1,this)">1<div class="tline-label">Diseño</div></div>
+            <div class="tline-dot" data-group="comproc" style="left:30%" onclick="tlineShow('comproc',2,this)">2<div class="tline-label">Recolección</div></div>
+            <div class="tline-dot" data-group="comproc" style="left:50%" onclick="tlineShow('comproc',3,this)">3<div class="tline-label">Campo</div></div>
+            <div class="tline-dot" data-group="comproc" style="left:70%" onclick="tlineShow('comproc',4,this)">4<div class="tline-label">Análisis</div></div>
+            <div class="tline-dot" data-group="comproc" style="left:90%" onclick="tlineShow('comproc',5,this)">5<div class="tline-label">Entregables</div></div>
+          </div>
+          <div class="tline-panel">
+            <div class="tline-panel-info active" data-group="comproc" data-id="1">
+              <span class="tl-tag">Etapa 1 · Marzo 2026</span>
+              <h5>🧭 Diseño y planificación</h5>
+              <p>Definición del tema central — monitoreo climático de Pachuca durante abril 2026. Asignación de las <strong>10 materias participantes</strong>, una por área propedéutica, con su propio enfoque disciplinar.</p>
+              <p><strong>Resultado:</strong> matriz de objetivos por materia y calendario común de observaciones.</p>
+            </div>
+            <div class="tline-panel-info" data-group="comproc" data-id="2">
+              <span class="tl-tag">Etapa 2 · 1–30 abril 2026</span>
+              <h5>📊 Recolección de datos</h5>
+              <p><strong>26 observaciones diarias</strong>: temperatura, humedad, precipitación, presión, índice UV, velocidad del viento, visibilidad y calidad del aire.</p>
+              <p>Bitácoras paralelas en biodiversidad (especies), salud (síntomas) y trabajo social (testimonios comunitarios).</p>
+            </div>
+            <div class="tline-panel-info" data-group="comproc" data-id="3">
+              <span class="tl-tag">Etapa 3 · 7–25 abril 2026</span>
+              <h5>🌵 Trabajo de campo</h5>
+              <p>Visitas al matorral xerófilo, al Parque Ecológico Cubitos y a colonias de Pachuca para documentar el <strong>impacto de las anomalías sobre la cadena trófica</strong> y la población.</p>
+              <p>Grabaciones audiovisuales para el documental de Comunicación.</p>
+            </div>
+            <div class="tline-panel-info" data-group="comproc" data-id="4">
+              <span class="tl-tag">Etapa 4 · 26–28 abril 2026</span>
+              <h5>🧪 Análisis e integración</h5>
+              <p>Cada materia procesó los datos desde su disciplina: <strong>tablas de frecuencias</strong> en Matemáticas, <strong>ecotoxicología</strong> en Biodiversidad, <strong>diseño de sensores</strong> en Electrónica, <strong>química atmosférica</strong>, gobernanza, intervención social.</p>
+              <p>Integración cruzada entre las 10 materias.</p>
+            </div>
+            <div class="tline-panel-info" data-group="comproc" data-id="5">
+              <span class="tl-tag">Etapa 5 · 29–30 abril 2026</span>
+              <h5>🎬 Desarrollo de entregables</h5>
+              <p>Producción del <strong>documental estudiantil</strong> de Comunicación, construcción de la <strong>página web interactiva</strong> (climaabr.netlify.app) y redacción del guion narrativo.</p>
+              <p>Presentación pública del proyecto en la preparatoria.</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -5203,6 +5385,60 @@ void loop() {
       <div class="detail-sec">
         <div class="detail-sec-head">Sección 2 · Políticas públicas existentes</div>
         <div class="detail-sec-sub">El Estado mexicano dispone de instrumentos formales para enfrentar la contaminación. El problema no es su inexistencia, sino su implementación y alcance.</div>
+
+        <!-- LÍNEA DE TIEMPO LEGISLATIVA -->
+        <div class="detail-sec-head" style="font-size:14px;color:var(--muted);margin-top:14px">Cronología legislativa ambiental · México</div>
+        <div class="detail-sec-sub" style="margin-bottom:14px">Haz clic en cualquier hito para ver el contexto político y ambiental.</div>
+        <div class="tline" style="--tl-color:#fbbf24">
+          <div class="tline-track">
+            <div class="tline-line"></div>
+            <div class="tline-dot active" data-group="cpolaws" style="left:6%" onclick="tlineShow('cpolaws',1,this)">1<div class="tline-label">1988</div></div>
+            <div class="tline-dot" data-group="cpolaws" style="left:24%" onclick="tlineShow('cpolaws',2,this)">2<div class="tline-label">2000</div></div>
+            <div class="tline-dot" data-group="cpolaws" style="left:42%" onclick="tlineShow('cpolaws',3,this)">3<div class="tline-label">2012</div></div>
+            <div class="tline-dot" data-group="cpolaws" style="left:60%" onclick="tlineShow('cpolaws',4,this)">4<div class="tline-label">2015</div></div>
+            <div class="tline-dot" data-group="cpolaws" style="left:78%" onclick="tlineShow('cpolaws',5,this)">5<div class="tline-label">2020</div></div>
+            <div class="tline-dot" data-group="cpolaws" style="left:94%" onclick="tlineShow('cpolaws',6,this)">6<div class="tline-label">2026</div></div>
+          </div>
+          <div class="tline-panel">
+            <div class="tline-panel-info active" data-group="cpolaws" data-id="1">
+              <span class="tl-tag">1988 · Fundación</span>
+              <h5>📜 LGEEPA — Ley General del Equilibrio Ecológico y Protección al Ambiente</h5>
+              <p>Primera ley marco ambiental de México. Estableció el principio de <strong>concurrencia</strong> entre Federación, estados y municipios para proteger el ambiente.</p>
+              <p><strong>Impacto en Pachuca:</strong> Base legal de toda regulación posterior, incluido el control de emisiones de la refinería Tula.</p>
+            </div>
+            <div class="tline-panel-info" data-group="cpolaws" data-id="2">
+              <span class="tl-tag">2000 · NOM-085</span>
+              <h5>🏭 NOM-085-SEMARNAT — Calidad combustibles y emisiones</h5>
+              <p>Norma Oficial Mexicana sobre niveles máximos permisibles de emisiones de fuentes fijas (industrias).</p>
+              <p><strong>Impacto en Pachuca:</strong> Aplicable a la refinería de Tula. En la práctica, su monitoreo se realiza con auto-reporte de las empresas.</p>
+            </div>
+            <div class="tline-panel-info" data-group="cpolaws" data-id="3">
+              <span class="tl-tag">2012 · Acuerdo histórico</span>
+              <h5>🌎 LGCC — Ley General de Cambio Climático</h5>
+              <p>México fue de los primeros países en aprobar una ley marco específica de cambio climático. Establece metas de mitigación (<strong>−30 % de emisiones al 2020</strong>) y adaptación.</p>
+              <p><strong>Impacto en Pachuca:</strong> Crea el INECC y el SNCC, pero la implementación local depende de presupuesto estatal que ha sido recortado.</p>
+            </div>
+            <div class="tline-panel-info" data-group="cpolaws" data-id="4">
+              <span class="tl-tag">2015 · ODS 13</span>
+              <h5>🌐 ODS 13 — Acción por el Clima (ONU)</h5>
+              <p>México adopta la Agenda 2030. El <strong>ODS 13</strong> exige integrar medidas relativas al cambio climático en políticas, estrategias y planes nacionales.</p>
+              <p><strong>Impacto en Pachuca:</strong> Hidalgo lo incorpora en su Plan Estatal de Desarrollo, pero sin presupuesto específico para implementación municipal.</p>
+            </div>
+            <div class="tline-panel-info" data-group="cpolaws" data-id="5">
+              <span class="tl-tag">2020 · Programa estatal</span>
+              <h5>🍃 ProAire Hidalgo 2020–2030</h5>
+              <p>Programa con <strong>6 estrategias, 20 medidas y 113 acciones</strong> para reducir emisiones en la zona metropolitana de Pachuca. Establece monitoreo, verificación vehicular y promoción de ecotecnologías.</p>
+              <p><strong>Impacto en Pachuca:</strong> Diseño ambicioso, pero solo 4 estaciones SIMAEH para toda la ZMP.</p>
+            </div>
+            <div class="tline-panel-info" data-group="cpolaws" data-id="6">
+              <span class="tl-tag">2026 · Crisis actual</span>
+              <h5>⚠️ Brecha entre ley y realidad</h5>
+              <p>Abril 2026 registra el <strong>mes más cálido de la historia de Pachuca</strong> (+9 °C sobre el promedio). 29 incendios entre febrero y marzo. PM10 hasta 1,200 μg/m³.</p>
+              <p>El marco legal existe, pero la <strong>capacidad de monitoreo, sanción y vinculación con municipios</strong> es insuficiente. La crisis exige actualización legislativa local.</p>
+            </div>
+          </div>
+        </div>
+
         <div class="detail-2col">
           <div class="detail-card" style="border-left:3px solid #fbbf24">
             <h4>🏛️ 2.1 · PCAA — Programa de Contingencias Ambientales Atmosféricas</h4>
@@ -5482,11 +5718,81 @@ function filoToggle(el) {
 /* ── HOTSPOTS · navegación de paneles ── */
 function hotspotShow(group, id, btn) {
   document.querySelectorAll(`.hotspot-info[data-group="${group}"]`).forEach(i => i.classList.remove('active'));
-  document.querySelectorAll(`.hotspot-btn[data-group="${group}"]`).forEach(b => b.classList.remove('active'));
+  document.querySelectorAll(`.hotspot-btn[data-group="${group}"], .body-zone[data-group="${group}"], .trofic-node[data-group="${group}"]`).forEach(b => b.classList.remove('active'));
   const info = document.querySelector(`.hotspot-info[data-group="${group}"][data-id="${id}"]`);
   if (info) info.classList.add('active');
   if (btn) btn.classList.add('active');
 }
+
+/* ── TIMELINE · clic en dots ── */
+function tlineShow(group, id, dot) {
+  document.querySelectorAll(`.tline-panel-info[data-group="${group}"]`).forEach(i => i.classList.remove('active'));
+  document.querySelectorAll(`.tline-dot[data-group="${group}"]`).forEach(d => d.classList.remove('active'));
+  const info = document.querySelector(`.tline-panel-info[data-group="${group}"][data-id="${id}"]`);
+  if (info) info.classList.add('active');
+  if (dot) dot.classList.add('active');
+}
+
+/* ── SCRUBBER · update on input ── */
+function scrubberUpdate(group, slider) {
+  const data = window.SCRUBBER_DATA && window.SCRUBBER_DATA[group];
+  if (!data) return;
+  const idx = parseInt(slider.value, 10);
+  const d = data[idx];
+  const pct = (idx / (data.length - 1)) * 100;
+  slider.style.setProperty('--sc-pct', pct + '%');
+  const root = slider.closest('.scrubber');
+  if (!root) return;
+  root.querySelector('[data-sc="date"]').textContent = d.date;
+  root.querySelector('[data-sc="meta"]').textContent = d.meta || '';
+  Object.keys(d.stats || {}).forEach(k => {
+    const el = root.querySelector(`[data-sc-stat="${k}"]`);
+    if (el) el.textContent = d.stats[k];
+  });
+  root.querySelector('[data-sc="note"]').innerHTML = d.note || '';
+  // color theme by tier
+  if (d.color) root.style.setProperty('--sc-color', d.color);
+}
+window.SCRUBBER_DATA = {
+  mat: [
+    {date:'1 abril', meta:'Día 1 de 26', color:'#94a3b8', stats:{temp:'16.8 °C', rain:'0.0 mm', anom:'−2.2 °C', cond:'Soleado'}, note:'Día normal. Temperatura por debajo de la media histórica (19 °C). Aún no inicia la onda de calor.'},
+    {date:'2 abril', meta:'Día 2 de 26', color:'#94a3b8', stats:{temp:'17.3 °C', rain:'1.2 mm', anom:'−1.7 °C', cond:'Nublado'}, note:'Lluvia ligera; ambiente todavía fresco.'},
+    {date:'3 abril', meta:'Día 3 de 26', color:'#94a3b8', stats:{temp:'18.0 °C', rain:'0.0 mm', anom:'−1.0 °C', cond:'Soleado'}, note:'Sin lluvia, temperatura ligeramente por debajo del promedio.'},
+    {date:'4 abril', meta:'Día 4 de 26', color:'#38bdf8', stats:{temp:'17.1 °C', rain:'3.5 mm', anom:'−1.9 °C', cond:'Lluvia ligera'}, note:'Lluvia ligera convectiva. Humedad alta.'},
+    {date:'5 abril', meta:'Día 5 de 26', color:'#38bdf8', stats:{temp:'16.2 °C', rain:'5.0 mm', anom:'−2.8 °C', cond:'Lluvia moderada'}, note:'Día más lluvioso de la primera semana. Temperatura mínima del mes.'},
+    {date:'6 abril', meta:'Día 6 de 26', color:'#94a3b8', stats:{temp:'17.6 °C', rain:'0.8 mm', anom:'−1.4 °C', cond:'Nublado'}, note:'Transición — última jornada fresca antes de la onda de calor.'},
+    {date:'7 abril', meta:'Día 7 · INICIO onda de calor ⚠', color:'#fbbf24', stats:{temp:'22.0 °C', rain:'0.0 mm', anom:'+3.0 °C', cond:'Soleado'}, note:'<strong style="color:#fbbf24">INICIO de la onda de calor.</strong> Bloqueo anticiclónico sobre el altiplano.'},
+    {date:'8 abril', meta:'Día 8 · onda de calor', color:'#fbbf24', stats:{temp:'23.5 °C', rain:'0.0 mm', anom:'+4.5 °C', cond:'Soleado'}, note:'Segundo día consecutivo cálido. Cielo despejado.'},
+    {date:'9 abril', meta:'Día 9 · onda de calor', color:'#fb7185', stats:{temp:'25.1 °C', rain:'0.0 mm', anom:'+6.1 °C', cond:'Soleado'}, note:'Aumento sostenido. Inicia consumo elevado de agua.'},
+    {date:'10 abril', meta:'Día 10 · onda de calor', color:'#fb7185', stats:{temp:'26.4 °C', rain:'0.0 mm', anom:'+7.4 °C', cond:'Soleado'}, note:'Estrés térmico generalizado en la ciudad.'},
+    {date:'11 abril', meta:'Día 11 · PICO MÁXIMO 🔥', color:'#dc2626', stats:{temp:'27.1 °C', rain:'0.0 mm', anom:'+8.1 °C', cond:'Soleado'}, note:'<strong style="color:#fb7185">PICO MÁXIMO del mes.</strong> Anomalía de +8.1 °C sobre la normal. Suspensión de clases en algunas escuelas.'},
+    {date:'12 abril', meta:'Día 12 · onda de calor', color:'#fb7185', stats:{temp:'25.9 °C', rain:'0.0 mm', anom:'+6.9 °C', cond:'Soleado'}, note:'Día post-pico. Continúa la onda con ligera baja.'},
+    {date:'13 abril', meta:'Día 13 · onda de calor', color:'#fbbf24', stats:{temp:'24.7 °C', rain:'0.5 mm', anom:'+5.7 °C', cond:'Nublado'}, note:'Algo de nubosidad pero la onda persiste.'},
+    {date:'14 abril', meta:'Día 14 · onda de calor', color:'#fbbf24', stats:{temp:'23.2 °C', rain:'0.0 mm', anom:'+4.2 °C', cond:'Soleado'}, note:'Onda de calor en curso, 8º día consecutivo.'},
+    {date:'15 abril', meta:'Día 15 · onda de calor', color:'#fb7185', stats:{temp:'24.8 °C', rain:'0.0 mm', anom:'+5.8 °C', cond:'Soleado'}, note:'Segundo pico secundario de la onda.'},
+    {date:'16 abril', meta:'Día 16 · onda de calor', color:'#fb7185', stats:{temp:'25.5 °C', rain:'0.0 mm', anom:'+6.5 °C', cond:'Soleado'}, note:'Penúltimo día de la onda. Aire seco persistente.'},
+    {date:'17 abril', meta:'Día 17 · FIN onda de calor', color:'#fbbf24', stats:{temp:'22.3 °C', rain:'1.5 mm', anom:'+3.3 °C', cond:'Nublado'}, note:'<strong style="color:#fbbf24">Último día de la onda.</strong> Llegan primeras nubes convectivas.'},
+    {date:'18 abril', meta:'Día 18 · RUPTURA del bloqueo', color:'#38bdf8', stats:{temp:'17.1 °C', rain:'6.3 mm', anom:'−1.9 °C', cond:'Lluvia moderada'}, note:'<strong style="color:#38bdf8">Ruptura abrupta:</strong> caída de casi 10 °C en 24 h por lluvias convectivas. Fin del evento.'},
+    {date:'19 abril', meta:'Día 19 · post-onda', color:'#38bdf8', stats:{temp:'16.5 °C', rain:'4.2 mm', anom:'−2.5 °C', cond:'Lluvia moderada'}, note:'Segundo día de lluvias. Ecosistema en recuperación.'},
+    {date:'20 abril', meta:'Día 20 · post-onda', color:'#38bdf8', stats:{temp:'17.8 °C', rain:'2.6 mm', anom:'−1.2 °C', cond:'Lluvia ligera'}, note:'Lluvia ligera. Vegetación reactivándose.'},
+    {date:'21 abril', meta:'Día 21 · estabilización', color:'#94a3b8', stats:{temp:'18.4 °C', rain:'0.5 mm', anom:'−0.6 °C', cond:'Nublado'}, note:'Estabilización climática. Humedad recuperándose.'},
+    {date:'22 abril', meta:'Día 22 · estabilización', color:'#94a3b8', stats:{temp:'19.0 °C', rain:'0.0 mm', anom:'0.0 °C', cond:'Soleado'}, note:'Temperatura exactamente en la media histórica.'},
+    {date:'23 abril', meta:'Día 23 · estabilización', color:'#94a3b8', stats:{temp:'18.7 °C', rain:'0.0 mm', anom:'−0.3 °C', cond:'Soleado'}, note:'Día normal de transición.'},
+    {date:'24 abril', meta:'Día 24 · estabilización', color:'#38bdf8', stats:{temp:'17.9 °C', rain:'4.1 mm', anom:'−1.1 °C', cond:'Lluvia ligera'}, note:'Lluvia ligera, condiciones normales.'},
+    {date:'25 abril', meta:'Día 25 · estabilización', color:'#38bdf8', stats:{temp:'18.3 °C', rain:'1.8 mm', anom:'−0.7 °C', cond:'Lluvia ligera'}, note:'Lluvia ligera. Mes regresando a su patrón normal.'},
+    {date:'26 abril', meta:'Día 26 · cierre del registro', color:'#94a3b8', stats:{temp:'17.6 °C', rain:'0.0 mm', anom:'−1.4 °C', cond:'Soleado'}, note:'Cierre del mes observado. Onda de calor superada.'}
+  ],
+  eco: [
+    {date:'1 abril', meta:'Día 1 · Calor anómalo', color:'#fbbf24', stats:{temp:'24 °C', hum:'38 %', species:'Nopal cardón'}, note:'<strong>Nopal cardón:</strong> arrugamiento de cladodios por pérdida de agua. El calor extremo acelera la evapotranspiración y reduce la turgencia celular.'},
+    {date:'3 abril', meta:'Día 3 · Anomalía sostenida', color:'#fb7185', stats:{temp:'26 °C', hum:'35 %', species:'Huizache'}, note:'<strong>Huizache:</strong> floración retrasada por baja humedad prolongada. Menos flores disponibles para los polinizadores.'},
+    {date:'5 abril', meta:'Día 5 · Evento extremo ⚠', color:'#38bdf8', stats:{temp:'22 °C', hum:'82 %', species:'Abeja nativa'}, note:'<strong>Abeja nativa:</strong> lluvia intensa (18 mm) y viento de 40 km/h hacen <strong>imposible el vuelo</strong>. Falla en la polinización del nopal. Eslabón crítico comprometido.'},
+    {date:'7 abril', meta:'Día 7 · Helada tardía', color:'#a78bfa', stats:{temp:'5 °C mín', hum:'72 %', species:'Cardenal norteño'}, note:'<strong>Cardenal norteño:</strong> canto reducido y anidación interrumpida por descenso brusco nocturno.'},
+    {date:'11 abril', meta:'Día 11 · Humedad alta', color:'#34d399', stats:{temp:'17 °C', hum:'91 %', species:'Rana de árbol'}, note:'<strong>Hyla arenicolor:</strong> aumenta su actividad con humedad alta (91 %). Los anfibios dependen de ambientes húmedos.'},
+    {date:'17 abril', meta:'Día 17 · Pico de calor', color:'#fb7185', stats:{temp:'26 °C', hum:'33 %', species:'Tuza de montaña'}, note:'<strong>Tuza de montaña:</strong> actividad subterránea reducida por compactación del suelo a causa de vientos secos.'},
+    {date:'21 abril', meta:'Día 21 · Lluvia ligera', color:'#34d399', stats:{temp:'23 °C', hum:'82 %', species:'Murciélago magueyero'}, note:'<strong>Murciélago magueyero:</strong> mayor actividad nocturna tras la lluvia. Poliniza flores de maguey abundantes.'},
+    {date:'30 abril', meta:'Día 30 · Cierre del muestreo', color:'#34d399', stats:{temp:'23.5 °C', hum:'56 %', species:'Colibrí + Abeja'}, note:'<strong>Cierre de mes:</strong> huizache en antesis máxima. Abundancia de néctar y fructificación post-polinización.'}
+  ]
+};
 
 /* ── CADENA CAUSAL · animación al entrar a viewport (incluye contenido dinámico) ── */
 const causalChainObs = new IntersectionObserver((entries) => {
