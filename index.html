@@ -2125,33 +2125,33 @@
 
     <!-- Trabajo Social -->
     <div class="materia-card m-soc reveal" onclick="openDetail('tsocial')">
-      <div class="mat-sidebar">
+      <div class="mat-sidebar" style="background-image:url('/images/tsocial/image10.jpeg')">
         <div class="mat-num">08</div>
         <div>
           <span class="mat-tag tag-soc">Trabajo Social</span>
           <div class="mat-title">Introducción al Trabajo Social</div>
-          <div class="mat-sub">Intervención social, diagnóstico comunitario (evaluación de las necesidades de una comunidad) y bienestar colectivo aplicado al entorno de Pachuca.</div>
+          <div class="mat-sub">ProAire Hidalgo · Análisis Comparativo de los Programas de Gestión para Mejorar la Calidad del Aire 2016–2030</div>
         </div>
       </div>
       <div class="mat-content">
-        <div class="mat-content-title">Trabajo Social y Clima</div>
-        <p class="mat-content-intro">El trabajo social analiza cómo las condiciones climáticas extremas —como las registradas en abril 2026 en Pachuca— afectan a comunidades vulnerables: salud mental, acceso a recursos y cohesión social (unión y solidaridad entre miembros de una comunidad).</p>
+        <div class="mat-content-title">ProAire Hidalgo · Calidad del Aire</div>
+        <p class="mat-content-intro">Análisis comparativo de los <strong>2 programas ProAire</strong> del Estado de Hidalgo (2016–2024 y 2021–2030). Evaluación de estrategias, reporte estadístico de contaminantes criterio y evolución del ICA en Pachuca durante 45 días de monitoreo (abr–may 2026).</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;">
           <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
-            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Diagnóstico</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Identificación de grupos vulnerables ante el cambio climático en Pachuca: adultos mayores, infancia y comunidades de bajos recursos.</p>
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">ProAire 2016–2024</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Programa concluido. Estableció el SIMAEH, Inventario de Emisiones y diagnóstico de la Cuenca de Tula (97% del SO₂ estatal).</p>
           </div>
           <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
-            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Intervención</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Estrategias de atención social ante eventos climáticos extremos: redes de apoyo, orientación y acceso a servicios básicos.</p>
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">ProAire 2021–2030</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Programa vigente. Metas cuantitativas: –25% emisiones, –22% PM2.5, evitar ~6,000 muertes prematuras al 2030.</p>
           </div>
           <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
-            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Metodología</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Encuestas de percepción climática (cómo la gente siente y entiende el clima), entrevistas comunitarias y mapeo de necesidades sociales en zonas afectadas.</p>
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Alerta ICA</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">El ICA de Pachuca aumentó <strong>+31%</strong> (45 → 59 AQI) entre 2020 y 2025. Mayo 2024 fue el mes más contaminado en 5 años.</p>
           </div>
           <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
-            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Hallazgos</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.6">El 68% de familias encuestadas reportó impacto en actividades cotidianas por las anomalías térmicas (temperaturas fuera de lo normal) de abril 2026.</p>
+            <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Logros</div>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">SO₂ y NO₂ ya alcanzaron sus metas 2030 en Pachuca. En 2016 fue la única ciudad en México que cumplía PM2.5.</p>
           </div>
         </div>
       </div>
@@ -6581,133 +6581,445 @@ void loop() {
   tsocial: {
     tag: 'Materia 08 · Sociales',
     tagColor: 'rgba(251,191,36,.15)', tagTextColor: '#fbbf24',
-    title: 'Introducción al Trabajo Social — Diagnóstico Comunitario',
-    sub: 'Vulnerabilidad climática en colonias de Pachuca · Abril 2026',
-    hero: `${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
+    title: 'Introducción al Trabajo Social — ProAire Hidalgo',
+    sub: 'Análisis Comparativo de los Programas de Gestión para Mejorar la Calidad del Aire · Hidalgo 2016–2030',
+    hero: '/images/tsocial/image10.jpeg',
     content: `
       <div class="detail-facts">
-        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">68%</div><div class="detail-fact-lbl">Familias afectadas</div></div>
-        <div class="detail-fact"><div class="detail-fact-val" style="color:#fb7185">5</div><div class="detail-fact-lbl">Colonias mapeadas</div></div>
-        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">3</div><div class="detail-fact-lbl">Grupos vulnerables</div></div>
-        <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">26</div><div class="detail-fact-lbl">Días de observación</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">2</div><div class="detail-fact-lbl">ProAire comparados</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fb7185">509,012</div><div class="detail-fact-lbl">Habitantes protegidos</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">+31%</div><div class="detail-fact-lbl">Aumento ICA 2020–26</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">45</div><div class="detail-fact-lbl">Días de monitoreo</div></div>
       </div>
 
       <!-- INTRO -->
       <div class="detail-sec">
         <div style="background:linear-gradient(135deg,rgba(251,191,36,.10),rgba(251,113,133,.06));border-left:4px solid #fbbf24;border-radius:14px;padding:22px 24px;font-size:16px;line-height:1.6;color:var(--text)">
-          El trabajo social analiza cómo las <strong>anomalías climáticas de abril 2026</strong> impactaron de manera desigual a las distintas colonias de Pachuca. No todas las comunidades soportan el calor extremo, los incendios y la baja humedad por igual: la <strong>vulnerabilidad social</strong> determina quiénes resisten y quiénes sufren.
+          El <strong>Programa de Gestión para Mejorar la Calidad del Aire (ProAire)</strong> del Estado de Hidalgo es el instrumento de política pública ambiental más importante para combatir la contaminación atmosférica. Este análisis comparativo examina los dos ciclos del programa — <strong>ProAire 2016–2024</strong> (concluido) y <strong>ProAire 2021–2030</strong> (vigente) — y su impacto en la zona metropolitana de Pachuca durante el período de monitoreo del 15 de abril al 15 de mayo de 2026.
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:18px">
+          <img src="/images/tsocial/image6.jpeg" alt="ProAire Hidalgo 2016–2024 — portada oficial" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+          <img src="/images/tsocial/image7.jpeg" alt="Zona metropolitana de Pachuca — desarrollo urbano" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+          <img src="/images/tsocial/image8.jpeg" alt="Pachuca — panorámica urbana" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
         </div>
       </div>
 
-      <!-- MAPA INTERACTIVO DE COLONIAS -->
+      <!-- FICHA TÉCNICA -->
       <div class="detail-sec">
-        <div class="detail-sec-head">Mapa Interactivo · Vulnerabilidad por Colonia</div>
-        <div class="detail-sec-sub">Diagnóstico social de 5 zonas de Pachuca durante la onda de calor de abril 2026. Clic en cualquier zona para ver su nivel de vulnerabilidad y los principales hallazgos.</div>
+        <div class="detail-sec-head">Ficha Técnica · Los Dos Programas</div>
+        <div class="detail-sec-sub">Datos de identificación oficial de cada programa ProAire.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div style="background:var(--card);border:1px solid rgba(251,191,36,.2);border-radius:12px;padding:20px">
+            <div style="font-size:11px;color:#fbbf24;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">📋 ProAire 2016–2024</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.8">
+              <strong>Status:</strong> CONCLUIDO<br>
+              <strong>Responsable:</strong> SEMARNATH + SEMARNAT<br>
+              <strong>Base legal:</strong> LGEEPA, Ley de Protección Ambiental de Hidalgo, NOM-SSA1<br>
+              <strong>Horizonte:</strong> 8 años<br>
+              <strong>Enfoque:</strong> Diagnóstico y línea base de emisiones
+            </div>
+          </div>
+          <div style="background:var(--card);border:1px solid rgba(56,189,248,.2);border-radius:12px;padding:20px">
+            <div style="font-size:11px;color:#38bdf8;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">📋 ProAire 2021–2030</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.8">
+              <strong>Status:</strong> VIGENTE (10 años)<br>
+              <strong>Responsable:</strong> SEMARNATH + SEMARNAT + CAMe<br>
+              <strong>Base legal:</strong> LGEEPA, Acuerdo de Coordinación SEMARNAT–Hidalgo (dic. 2023)<br>
+              <strong>Horizonte:</strong> 10 años<br>
+              <strong>Enfoque:</strong> Reducción cuantificada y metas de salud pública
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OBJETIVOS COMPARADOS (acordeón) -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Objetivos de los Programas · Análisis Comparativo</div>
+        <div class="detail-sec-sub">Clic para expandir cada programa y ver sus metas específicas.</div>
+        <div class="filo-lenses">
+
+          <div class="filo-lens" data-color="#fbbf24" onclick="filoToggle(this)">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">📊</div>
+              <div class="filo-lens-titles">
+                <div class="filo-lens-name">ProAire 2016–2024 · Objetivos</div>
+                <div class="filo-lens-sub">Primer ciclo — diagnóstico, monitoreo y base institucional</div>
+              </div>
+              <div class="filo-lens-chev">▾</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">¿Qué buscaba lograr el primer programa?</div>
+              <p>Prevenir y revertir el deterioro de la calidad del aire en Hidalgo mediante medidas a corto, mediano y largo plazo:</p>
+              <ul style="margin:10px 0 10px 20px;font-size:14px;line-height:1.8;color:var(--muted2)">
+                <li><strong>Reducir emisiones</strong> de contaminantes criterio (PM10, PM2.5, O₃, SO₂, NOx, CO) en las cuencas de Tula y Pachuca.</li>
+                <li><strong>Proteger la salud</strong> de 509,012 habitantes de Pachuca, Mineral de la Reforma, San Agustín Tlaxiaca y Zempoala.</li>
+                <li><strong>Generar un Inventario de Emisiones</strong> actualizado (año base 2011 → actualización 2016).</li>
+                <li><strong>Establecer el SIMAEH</strong> con 4 estaciones en Pachuca (2 automáticas, 2 manuales).</li>
+                <li><strong>Reducir contingencias</strong> ambientales atmosféricas en la ZM de Pachuca.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="filo-lens" data-color="#38bdf8" onclick="filoToggle(this)">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">🎯</div>
+              <div class="filo-lens-titles">
+                <div class="filo-lens-name">ProAire 2021–2030 · Objetivos</div>
+                <div class="filo-lens-sub">Segundo ciclo — metas cuantitativas y coordinación regional</div>
+              </div>
+              <div class="filo-lens-chev">▾</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">¿Qué busca lograr el programa vigente?</div>
+              <p>Revertir y prevenir las tendencias del deterioro de la calidad del aire, con metas numéricas:</p>
+              <ul style="margin:10px 0 10px 20px;font-size:14px;line-height:1.8;color:var(--muted2)">
+                <li><strong>Reducir 25%</strong> las emisiones comparado con el escenario tendencial al 2030.</li>
+                <li><strong>Mejorar 22%</strong> la concentración de PM2.5 y hasta <strong>7%</strong> la de ozono.</li>
+                <li><strong>Evitar ~6,000</strong> muertes prematuras al año 2030.</li>
+                <li><strong>Articular acciones</strong> con la ZMVM (Tizayuca) bajo el ProAire ZMVM 2021–2030.</li>
+                <li><strong>Coordinar</strong> tres órdenes de gobierno, industria, academia y sociedad civil.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <img src="/images/tsocial/image1.png" alt="Comparativo de objetivos ProAire" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08);margin-top:16px">
+      </div>
+
+      <!-- ESTRATEGIAS (hotspot interactivo) -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Estrategias · ¿Cómo Cumplir los Objetivos?</div>
+        <div class="detail-sec-sub">Clic en cada área estratégica para ver las acciones de ambos programas.</div>
         <div class="hotspot-wrap">
-          <div class="hotspot-stage" style="background:linear-gradient(180deg, #1a2436 0%, #0d1726 100%); padding:6px">
-            <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
-              <rect x="20" y="20" width="440" height="320" rx="14" fill="#0a1322" stroke="rgba(251,191,36,.15)"/>
-              <text x="240" y="40" text-anchor="middle" fill="#fbbf24" font-size="11" letter-spacing="3" font-family="Inter,sans-serif">PACHUCA · MAPA SOCIAL</text>
-              <path d="M 20 180 Q 240 110 460 200" stroke="#94a3b8" stroke-width="1.5" fill="none" opacity=".25"/>
-              <path d="M 20 220 Q 240 280 460 240" stroke="#94a3b8" stroke-width="1.5" fill="none" opacity=".25"/>
-              <text x="40" y="60" fill="#64748b" font-size="9" font-family="Inter,sans-serif">N</text>
-              <polygon points="40,75 36,85 44,85" fill="#64748b"/>
-              <text x="100" y="160" fill="#64748b" font-size="10" font-family="Inter,sans-serif" opacity=".7">Sierra</text>
-              <text x="380" y="290" fill="#64748b" font-size="10" font-family="Inter,sans-serif" opacity=".7">Sur · CDMX</text>
-              <text x="60" y="345" fill="#94a3b8" font-size="9" letter-spacing="1.5" font-family="Inter,sans-serif">5 zonas · clic para ver diagnóstico</text>
+          <div class="hotspot-stage" style="background:radial-gradient(circle at 50% 50%, rgba(251,191,36,.08), transparent 70%)">
+            <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="background:transparent">
+              <defs>
+                <linearGradient id="tsCore" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#fbbf24"/><stop offset="1" stop-color="#fb7185"/>
+                </linearGradient>
+              </defs>
+              <line x1="300" y1="200" x2="120" y2="80" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+              <line x1="300" y1="200" x2="480" y2="80" stroke="#fb7185" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+              <line x1="300" y1="200" x2="120" y2="320" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+              <line x1="300" y1="200" x2="480" y2="320" stroke="#34d399" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+              <circle cx="300" cy="200" r="56" fill="url(#tsCore)" opacity=".18"/>
+              <circle cx="300" cy="200" r="44" fill="var(--card)" stroke="url(#tsCore)" stroke-width="2"/>
+              <text x="300" y="195" text-anchor="middle" fill="var(--text)" font-size="13" font-weight="800" font-family="Inter,sans-serif">ProAire</text>
+              <text x="300" y="212" text-anchor="middle" fill="#94a3b8" font-size="9" letter-spacing="1" font-family="Inter,sans-serif">HIDALGO</text>
             </svg>
-            <button class="hotspot-btn" data-group="socmap" style="top:30%;left:30%;--hot-color:#fb7185" onclick="hotspotShow('socmap',1,this)">1</button>
-            <button class="hotspot-btn" data-group="socmap" style="top:38%;left:55%;--hot-color:#fbbf24" onclick="hotspotShow('socmap',2,this)">2</button>
-            <button class="hotspot-btn" data-group="socmap" style="top:55%;left:42%;--hot-color:#38bdf8" onclick="hotspotShow('socmap',3,this)">3</button>
-            <button class="hotspot-btn" data-group="socmap" style="top:70%;left:72%;--hot-color:#a78bfa" onclick="hotspotShow('socmap',4,this)">4</button>
-            <button class="hotspot-btn" data-group="socmap" style="top:62%;left:22%;--hot-color:#34d399" onclick="hotspotShow('socmap',5,this)">5</button>
+            <button class="hotspot-btn" data-group="tsocial" style="top:20%;left:20%;--hot-color:#fbbf24" onclick="hotspotShow('tsocial',1,this)">🏭</button>
+            <button class="hotspot-btn" data-group="tsocial" style="top:20%;left:80%;--hot-color:#fb7185" onclick="hotspotShow('tsocial',2,this)">🚗</button>
+            <button class="hotspot-btn" data-group="tsocial" style="top:80%;left:20%;--hot-color:#38bdf8" onclick="hotspotShow('tsocial',3,this)">📡</button>
+            <button class="hotspot-btn" data-group="tsocial" style="top:80%;left:80%;--hot-color:#34d399" onclick="hotspotShow('tsocial',4,this)">❤️</button>
           </div>
           <div class="hotspot-panel">
-            <div class="hotspot-info active" data-group="socmap" data-id="1" style="--hot-color:#fb7185">
-              <span class="hs-meta">Norte · Periferia alta</span>
-              <h5><span class="hs-dot"></span>🏚️ Plaza Q y Villas de Pachuca</h5>
-              <p><strong>Nivel de vulnerabilidad:</strong> <strong style="color:#fb7185">ALTO</strong>.</p>
-              <p><strong>Hallazgos:</strong> Cercanía a jales mineros y refinería. Calles sin pavimentar generan polvo respirable. 78 % de adultos mayores reportó dolor de cabeza durante la onda de calor.</p>
-              <p><strong>Necesidad prioritaria:</strong> red de hidratación comunitaria y acceso a sombra.</p>
+            <div class="hotspot-info active" data-group="tsocial" data-id="1" style="--hot-color:#fbbf24">
+              <span class="hs-meta">Estrategia 1</span>
+              <h5><span class="hs-dot"></span>🏭 Fuentes Fijas e Industria</h5>
+              <p><strong>2016–2024:</strong> La Cuenca de Tula concentraba el <strong>97% del SO₂</strong>, 45% del PM2.5 y 43% de los NOx estatales. Fuentes principales: CFE Termoeléctrica (combustóleo con azufre ≥2%) y PEMEX Refinería Miguel Hidalgo (45× más SO₂ que toda la ZMVM).</p>
+              <p><strong>2021–2030:</strong> Transición de combustóleo a gas natural en la Termoeléctrica (gasoducto). Actualizar Inventario de Emisiones (base 2018). Continuar control en Cuenca de Tula.</p>
             </div>
-            <div class="hotspot-info" data-group="socmap" data-id="2" style="--hot-color:#fbbf24">
-              <span class="hs-meta">Noreste · Periferia media</span>
-              <h5><span class="hs-dot"></span>🏘️ Real de la Plata y Colosio</h5>
-              <p><strong>Nivel de vulnerabilidad:</strong> <strong style="color:#fbbf24">MEDIO-ALTO</strong>.</p>
-              <p><strong>Hallazgos:</strong> Infraestructura básica pero presión de agua reducida durante los días pico. 64 % de familias suspendió jornadas laborales por calor.</p>
-              <p><strong>Necesidad prioritaria:</strong> ampliación de redes de agua y campañas de prevención.</p>
+            <div class="hotspot-info" data-group="tsocial" data-id="2" style="--hot-color:#fb7185">
+              <span class="hs-meta">Estrategia 2</span>
+              <h5><span class="hs-dot"></span>🚗 Transporte y Movilidad</h5>
+              <p><strong>2016–2024:</strong> Pachuca aportaba 23% del CO y 20% de los NOx estatales por transporte. Se implementó el Programa de Verificación Vehicular en Pachuca, Mineral de la Reforma y Tizayuca.</p>
+              <p><strong>2021–2030:</strong> Tecnologías limpias, transporte masivo de bajas emisiones, desarrollo urbano sustentable, combustibles más limpios y energías renovables. Reducir viajes individuales.</p>
             </div>
-            <div class="hotspot-info" data-group="socmap" data-id="3" style="--hot-color:#38bdf8">
-              <span class="hs-meta">Centro · Histórico</span>
-              <h5><span class="hs-dot"></span>🏛️ Centro Histórico de Pachuca</h5>
-              <p><strong>Nivel de vulnerabilidad:</strong> <strong style="color:#38bdf8">MEDIO</strong>.</p>
-              <p><strong>Hallazgos:</strong> Acceso a servicios pero alta densidad → isla de calor urbana. Comercios con clima reportaron +35 % en consumo eléctrico.</p>
-              <p><strong>Necesidad prioritaria:</strong> arbolado urbano y rediseño de espacio público.</p>
+            <div class="hotspot-info" data-group="tsocial" data-id="3" style="--hot-color:#38bdf8">
+              <span class="hs-meta">Estrategia 3</span>
+              <h5><span class="hs-dot"></span>📡 Monitoreo e Investigación</h5>
+              <p><strong>2016–2024:</strong> Se instaló y operó el SIMAEH (4 estaciones en Pachuca: 2 automáticas, 2 manuales). Se publicó el ICA para 6 contaminantes criterio y el Programa de Contingencias Atmosféricas.</p>
+              <p><strong>2021–2030:</strong> Fortalecer SIMAEH ampliando cobertura a municipios rurales. Generar investigación científica. Convenio SEMARNAT–Hidalgo vigente (dic. 2023). Articulación con ProAire ZMVM.</p>
             </div>
-            <div class="hotspot-info" data-group="socmap" data-id="4" style="--hot-color:#a78bfa">
-              <span class="hs-meta">Sur · Expansión</span>
-              <h5><span class="hs-dot"></span>🏗️ San Antonio y zona industrial sur</h5>
-              <p><strong>Nivel de vulnerabilidad:</strong> <strong style="color:#a78bfa">ALTO</strong>.</p>
-              <p><strong>Hallazgos:</strong> Vivienda popular de bloque sin aislamiento térmico. Niños y adolescentes con mayor reporte de IRAS por humo y polvo industrial.</p>
-              <p><strong>Necesidad prioritaria:</strong> programas escolares de salud respiratoria.</p>
-            </div>
-            <div class="hotspot-info" data-group="socmap" data-id="5" style="--hot-color:#34d399">
-              <span class="hs-meta">Poniente · Pie de monte</span>
-              <h5><span class="hs-dot"></span>🌲 Lomas del Sol y Pueblitos</h5>
-              <p><strong>Nivel de vulnerabilidad:</strong> <strong style="color:#34d399">BAJO-MEDIO</strong>.</p>
-              <p><strong>Hallazgos:</strong> Cercanía a la sierra mejora calidad del aire, pero exposición a humo durante incendios forestales. 41 % reportó algún día de actividad afectada.</p>
-              <p><strong>Necesidad prioritaria:</strong> rutas seguras de evacuación y monitoreo del frente forestal.</p>
+            <div class="hotspot-info" data-group="tsocial" data-id="4" style="--hot-color:#34d399">
+              <span class="hs-meta">Estrategia 4</span>
+              <h5><span class="hs-dot"></span>❤️ Salud y Participación Social</h5>
+              <p><strong>2016–2024:</strong> Proteger a 509,012 habitantes (17.6% del estado) en la ZM de Pachuca. Campaña de educación ambiental y comunicación de riesgos a la comunidad.</p>
+              <p><strong>2021–2030:</strong> Reducir exposición poblacional con alertas tempranas e ICA en tiempo real. Fomentar educación ambiental y participación ciudadana activa. Gestión de residuos y combate a incendios forestales.</p>
             </div>
           </div>
         </div>
-        <div class="hotspot-hint">5 colonias · diagnóstico de vulnerabilidad climática</div>
+        <div class="hotspot-hint">Haz clic en los 4 puntos del diagrama para explorar las estrategias</div>
       </div>
 
-      <!-- GRUPOS VULNERABLES -->
+      <!-- COBERTURA -->
       <div class="detail-sec">
-        <div class="detail-sec-head">Grupos Vulnerables Identificados</div>
-        <div class="detail-3col">
-          <div class="detail-card"><h4 style="color:#fb7185">👵 Adultos mayores</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Mayor riesgo de golpe de calor, deshidratación y descompensación cardiaca. Movilidad reducida limita el acceso a servicios.</p></div>
-          <div class="detail-card"><h4 style="color:#fbbf24">👶 Infancia y adolescencia</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Sistema respiratorio en desarrollo, mayor exposición al humo y a contaminantes en horarios escolares.</p></div>
-          <div class="detail-card"><h4 style="color:#a78bfa">💰 Bajos recursos</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Vivienda sin aislamiento, falta de ventilación, dificultad para acceder a agua potable durante picos de calor.</p></div>
-        </div>
-
-        <!-- BARRAS ANIMADAS DE VULNERABILIDAD -->
-        <div class="detail-sec-head" style="font-size:14px;color:var(--muted);margin-top:18px">Distribución de impactos reportados por grupo</div>
-        <div class="detail-sec-sub" style="margin-bottom:6px">Resultado de 248 cuestionarios aplicados en abril 2026. Las barras se animan al entrar en pantalla.</div>
-        <div class="vbar-group">
-          <div class="vbar-item" style="--vbar-color:#fb7185;--vbar-w:84%">
-            <div class="vbar-head"><span class="vbar-label">👵 Adultos mayores · golpe de calor o deshidratación</span><span class="vbar-val">84 %</span></div>
-            <div class="vbar-track"><div class="vbar-fill"></div></div>
+        <div class="detail-sec-head">Cobertura Geográfica · ¿Estatal, Regional o Municipal?</div>
+        <div class="detail-sec-sub">Ambos programas operan a nivel estatal pero focalizan acciones en cuencas críticas.</div>
+        <img src="/images/tsocial/image3.png" alt="Cobertura geográfica — niveles estatal, regional y municipal" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08);margin-bottom:16px">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">
+          <div style="background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px">
+            <div style="font-size:1.4rem;margin-bottom:8px">🗺️</div>
+            <div style="font-weight:700;color:#fbbf24;margin-bottom:6px">Cuenca de Tula</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">Epicentro industrial: 97% del SO₂ estatal. Incluye Tula de Allende, Atitalaquia, Atotonilco y Tepeji del Río. Complejo Industrial responsable del 33% de eventos de contaminación en la ZMVM.</div>
           </div>
-          <div class="vbar-item" style="--vbar-color:#fbbf24;--vbar-w:71%">
-            <div class="vbar-head"><span class="vbar-label">👶 Infancia · síntomas respiratorios</span><span class="vbar-val">71 %</span></div>
-            <div class="vbar-track"><div class="vbar-fill"></div></div>
+          <div style="background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px">
+            <div style="font-size:1.4rem;margin-bottom:8px">🏙️</div>
+            <div style="font-weight:700;color:#38bdf8;margin-bottom:6px">Cuenca de Pachuca</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">ZM de Pachuca: 509,012 habitantes en 4 municipios (Pachuca, Mineral de la Reforma, San Agustín Tlaxiaca, Zempoala). Aporta 23% CO y 20% NOx estatales por transporte.</div>
           </div>
-          <div class="vbar-item" style="--vbar-color:#a78bfa;--vbar-w:68%">
-            <div class="vbar-head"><span class="vbar-label">💰 Bajos recursos · actividades cotidianas afectadas</span><span class="vbar-val">68 %</span></div>
-            <div class="vbar-track"><div class="vbar-fill"></div></div>
-          </div>
-          <div class="vbar-item" style="--vbar-color:#38bdf8;--vbar-w:52%">
-            <div class="vbar-head"><span class="vbar-label">🏥 Personas con enfermedad crónica · descompensación</span><span class="vbar-val">52 %</span></div>
-            <div class="vbar-track"><div class="vbar-fill"></div></div>
-          </div>
-          <div class="vbar-item" style="--vbar-color:#34d399;--vbar-w:35%">
-            <div class="vbar-head"><span class="vbar-label">🚶 Trabajadores al aire libre · estrés térmico</span><span class="vbar-val">35 %</span></div>
-            <div class="vbar-track"><div class="vbar-fill"></div></div>
+          <div style="background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px">
+            <div style="font-size:1.4rem;margin-bottom:8px">🔗</div>
+            <div style="font-weight:700;color:#34d399;margin-bottom:6px">Tizayuca → ZMVM</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">El ProAire 2021–2030 integra formalmente a Tizayuca con el ProAire ZMVM, ampliando la coordinación metropolitana con la CAMe y la megalópolis.</div>
           </div>
         </div>
       </div>
 
-      <!-- INTERVENCIÓN -->
+      <!-- REPORTE ESTADÍSTICO -->
       <div class="detail-sec">
-        <div class="detail-sec-head">Propuesta de Intervención Social</div>
-        <div class="detail-2col">
-          <div class="detail-card"><h4 style="color:#fbbf24">📋 Encuesta comunitaria</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Aplicación de cuestionarios en las 5 zonas identificadas para cuantificar impactos, identificar redes de apoyo y necesidades urgentes.</p></div>
-          <div class="detail-card"><h4 style="color:#34d399">🤝 Redes vecinales de cuidado</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Mapas vecinales con puntos de hidratación, sombra y atención médica accesibles durante eventos climáticos extremos.</p></div>
-          <div class="detail-card"><h4 style="color:#38bdf8">📢 Campañas informativas</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Talleres en colonias sobre prevención de golpe de calor, identificación de síntomas y respuesta comunitaria.</p></div>
-          <div class="detail-card"><h4 style="color:#a78bfa">🏛️ Vinculación institucional</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Coordinación con DIF, Protección Civil y centros de salud para garantizar acceso a servicios durante emergencias climáticas.</p></div>
+        <div class="detail-sec-head">Reporte Estadístico · Contaminantes Criterio</div>
+        <div class="detail-sec-sub">Período de análisis: 15 de abril – 15 de mayo de 2026 (45 días). Datos de SEMARNAT-INECC y ambos ProAire.</div>
+        <img src="/images/tsocial/image4.png" alt="Tabla estadística integrada — contaminantes criterio" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08);margin-bottom:16px">
+        <div style="overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.6">
+            <thead>
+              <tr style="border-bottom:2px solid #fbbf24">
+                <th style="text-align:left;padding:10px 12px;color:#fbbf24;font-weight:700">Contaminante</th>
+                <th style="text-align:center;padding:10px 12px;color:#fbbf24;font-weight:700">Base 2016</th>
+                <th style="text-align:center;padding:10px 12px;color:#fbbf24;font-weight:700">Abr–May 2026</th>
+                <th style="text-align:center;padding:10px 12px;color:#fbbf24;font-weight:700">Meta 2030</th>
+                <th style="text-align:center;padding:10px 12px;color:#fbbf24;font-weight:700">Variación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06)">
+                <td style="padding:10px 12px;font-weight:600">PM2.5 (µg/m³)</td>
+                <td style="padding:10px 12px;text-align:center">~15–18</td>
+                <td style="padding:10px 12px;text-align:center;color:#fb7185;font-weight:700">20</td>
+                <td style="padding:10px 12px;text-align:center">≤15</td>
+                <td style="padding:10px 12px;text-align:center;color:#fb7185">▲ +11–33%</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06)">
+                <td style="padding:10px 12px;font-weight:600">PM10 (µg/m³)</td>
+                <td style="padding:10px 12px;text-align:center">~40–50</td>
+                <td style="padding:10px 12px;text-align:center;color:#fb7185;font-weight:700">56</td>
+                <td style="padding:10px 12px;text-align:center">≤40</td>
+                <td style="padding:10px 12px;text-align:center;color:#fb7185">▲ +12–40%</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06)">
+                <td style="padding:10px 12px;font-weight:600">O₃ (ppb)</td>
+                <td style="padding:10px 12px;text-align:center">~25–30</td>
+                <td style="padding:10px 12px;text-align:center;color:#fbbf24;font-weight:700">26</td>
+                <td style="padding:10px 12px;text-align:center">≤20</td>
+                <td style="padding:10px 12px;text-align:center;color:#fbbf24">◆ Sin mejora</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06)">
+                <td style="padding:10px 12px;font-weight:600">SO₂ (ppb)</td>
+                <td style="padding:10px 12px;text-align:center">97% estatal</td>
+                <td style="padding:10px 12px;text-align:center;color:#34d399;font-weight:700">2</td>
+                <td style="padding:10px 12px;text-align:center">≤2</td>
+                <td style="padding:10px 12px;text-align:center;color:#34d399">✓ META ALCANZADA</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06)">
+                <td style="padding:10px 12px;font-weight:600">NO₂ (ppb)</td>
+                <td style="padding:10px 12px;text-align:center">13–16</td>
+                <td style="padding:10px 12px;text-align:center;color:#34d399;font-weight:700">12</td>
+                <td style="padding:10px 12px;text-align:center">≤12</td>
+                <td style="padding:10px 12px;text-align:center;color:#34d399">✓ META ALCANZADA</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 12px;font-weight:600">CO (ppb)</td>
+                <td style="padding:10px 12px;text-align:center">650–750</td>
+                <td style="padding:10px 12px;text-align:center">642</td>
+                <td style="padding:10px 12px;text-align:center">≤600</td>
+                <td style="padding:10px 12px;text-align:center;color:#38bdf8">▼ –4% (leve)</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
+
+      <!-- EVOLUCIÓN ICA (scrubber) -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Evolución del ICA en Pachuca · 2020–2026</div>
+        <div class="detail-sec-sub">Desliza para ver cómo el Índice de Calidad del Aire ha cambiado año con año. Meta 2030: ≤40.</div>
+        <img src="/images/tsocial/image5.png" alt="Evolución ICA Pachuca 2020–2026" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08);margin-bottom:16px">
+        <div class="sim-panel" style="--sim-color:#fbbf24">
+          <div class="sim-control">
+            <div class="sim-control-head"><span class="sim-control-lbl">Año</span><span class="sim-control-val" id="ts-year-v">2020 · AQI 45</span></div>
+            <input type="range" min="0" max="6" step="1" value="0" id="ts-year" class="sim-slider" oninput="simTsYear()">
+            <div class="scrubber-axis"><span>2020</span><span>2022</span><span>2024</span><span>2026</span></div>
+          </div>
+          <div id="ts-year-out" style="margin-top:18px;background:var(--card);border-radius:12px;padding:20px;font-size:14px;line-height:1.7;color:var(--text);border:1px solid rgba(251,191,36,.2);min-height:80px">
+            <strong style="color:#34d399">2020 — AQI 45 (Base).</strong> Año de referencia. Pachuca tenía calidad del aire "Buena" según el ICA. En 2016 fue la única ciudad de México que cumplía la norma anual de PM2.5 (12 µg/m³).
+          </div>
+        </div>
+      </div>
+
+      <!-- ANÁLISIS DE TENDENCIAS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Análisis de Tendencias · 2016–2026</div>
+        <div class="detail-sec-sub">Cambios acumulados desde el primer ProAire hasta el período de monitoreo actual.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div style="background:linear-gradient(135deg,rgba(251,113,133,.08),transparent);border:1px solid rgba(251,113,133,.15);border-radius:12px;padding:20px">
+            <div style="font-size:11px;color:#fb7185;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">⚠️ Deterioro</div>
+            <ul style="margin:0;padding-left:18px;font-size:13px;color:var(--muted2);line-height:1.8">
+              <li>ICA subió <strong>31%</strong> (45 → 59 AQI, 2020–2025)</li>
+              <li>Mayo 2024: mes más contaminado en 5 años (AQI 88)</li>
+              <li>PM2.5 no cumple norma en ninguna ciudad de Hidalgo al 2024</li>
+              <li>PM10 tendencia al alza en CA-Tula</li>
+              <li>2024: repunte de SO₂ y NO₂ por reactivación de la Refinería</li>
+            </ul>
+          </div>
+          <div style="background:linear-gradient(135deg,rgba(52,211,153,.08),transparent);border:1px solid rgba(52,211,153,.15);border-radius:12px;padding:20px">
+            <div style="font-size:11px;color:#34d399;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">✓ Mejora</div>
+            <ul style="margin:0;padding-left:18px;font-size:13px;color:var(--muted2);line-height:1.8">
+              <li>SO₂: logro histórico — de 97% del total estatal a <strong>2 ppb</strong> en Pachuca (meta 2030 cumplida)</li>
+              <li>NO₂: reducción ~15% (meta 2030 alcanzada)</li>
+              <li>2022–2023: Tula redujo SO₂ y NOx con gas natural</li>
+              <li>Red SIMAEH fortalecida (4 estaciones operativas)</li>
+              <li>Verificación vehicular activa en ZM Pachuca</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CADENA CAUSAL -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Ciclo de la Política Pública Ambiental</div>
+        <div class="detail-sec-sub">Cómo funciona el ProAire como instrumento de gestión — del diagnóstico a la evaluación.</div>
+        <div class="causal-chain" style="--chain-color:#fbbf24">
+          <div class="causal-chain-title">ProAire: de la contaminación a la acción</div>
+          <div class="causal-chain-step" style="--d:0s"><span class="causal-chain-num">1</span><span class="causal-chain-txt"><strong>Diagnóstico</strong> — Inventario de Emisiones identifica fuentes (Tula: 97% SO₂)</span></div>
+          <div class="causal-chain-arrow" style="--d:.3s">↓</div>
+          <div class="causal-chain-step" style="--d:.6s"><span class="causal-chain-num">2</span><span class="causal-chain-txt"><strong>Diseño</strong> — Estrategias diferenciadas por cuenca (industrial vs. urbana)</span></div>
+          <div class="causal-chain-arrow" style="--d:.9s">↓</div>
+          <div class="causal-chain-step" style="--d:1.2s"><span class="causal-chain-num">3</span><span class="causal-chain-txt"><strong>Implementación</strong> — Verificación vehicular, gas natural, SIMAEH</span></div>
+          <div class="causal-chain-arrow" style="--d:1.5s">↓</div>
+          <div class="causal-chain-step" style="--d:1.8s"><span class="causal-chain-num">4</span><span class="causal-chain-txt"><strong>Monitoreo</strong> — ICA en tiempo real, 4 estaciones, 6 contaminantes</span></div>
+          <div class="causal-chain-arrow" style="--d:2.1s">↓</div>
+          <div class="causal-chain-step" style="--d:2.4s"><span class="causal-chain-num">5</span><span class="causal-chain-txt"><strong>Evaluación</strong> — SO₂ y NO₂ cumplieron meta; PM2.5 y PM10 siguen sin cumplir</span></div>
+          <div class="causal-chain-arrow" style="--d:2.7s">↓</div>
+          <div class="causal-chain-step" style="--d:3.0s"><span class="causal-chain-num">6</span><span class="causal-chain-txt"><strong>Ajuste</strong> — ProAire 2021–2030 incorpora metas numéricas y coordinación CAMe</span></div>
+        </div>
+      </div>
+
+      <!-- EVALUACIÓN Y CONCLUSIONES -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Evaluación · Logros, Rezagos y Pertinencia</div>
+        <div class="detail-sec-sub">¿Funcionaron los programas? Análisis integrado de resultados.</div>
+        <div class="filo-lenses">
+
+          <div class="filo-lens" data-color="#fbbf24" onclick="filoToggle(this)">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">📋</div>
+              <div class="filo-lens-titles">
+                <div class="filo-lens-name">ProAire 2016–2024 · Evaluación</div>
+                <div class="filo-lens-sub">Programa concluido — logros y limitaciones del primer ciclo</div>
+              </div>
+              <div class="filo-lens-chev">▾</div>
+            </div>
+            <div class="filo-lens-body">
+              <p><strong>Logros concretos:</strong></p>
+              <ul style="margin:8px 0 12px 20px;font-size:14px;line-height:1.8;color:var(--muted2)">
+                <li>Instalación del SIMAEH con 4 estaciones en Pachuca (logro permanente).</li>
+                <li>Formalización legal del Programa de Contingencias Atmosféricas.</li>
+                <li>Inventario de Emisiones (base 2011 → 2016) que identificó a Tula como epicentro.</li>
+                <li>2016: Pachuca registró el <strong>único valor de PM2.5 dentro de norma en todo México</strong>.</li>
+              </ul>
+              <p><strong>Limitaciones:</strong></p>
+              <ul style="margin:8px 0 0 20px;font-size:14px;line-height:1.8;color:var(--muted2)">
+                <li>Fuentes fijas de Tula (CFE/PEMEX, jurisdicción federal) limitaron el alcance estatal.</li>
+                <li>No contó con metas cuantitativas medibles.</li>
+                <li>El ICA empeoró a partir de 2020 a pesar de las acciones.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="filo-lens" data-color="#38bdf8" onclick="filoToggle(this)">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">📊</div>
+              <div class="filo-lens-titles">
+                <div class="filo-lens-name">ProAire 2021–2030 · Evaluación</div>
+                <div class="filo-lens-sub">Programa vigente — avances y alertas a mayo 2026</div>
+              </div>
+              <div class="filo-lens-chev">▾</div>
+            </div>
+            <div class="filo-lens-body">
+              <p style="color:#34d399"><strong>✓ LOGRO:</strong> SO₂ y NO₂ ya alcanzan sus metas 2030 en Pachuca — verificación vehicular y mejora de combustibles.</p>
+              <p style="color:#34d399"><strong>✓ LOGRO:</strong> Gas natural en la Termoeléctrica de Tula (2022–2023) redujo temporalmente SO₂ y NOx.</p>
+              <p style="color:#fb7185"><strong>⚠ REZAGO:</strong> PM2.5 y PM10 no cumplen norma, especialmente en CA-Tula (incumplimiento frecuente 2013–2021).</p>
+              <p style="color:#fb7185"><strong>⚠ ALERTA:</strong> ICA global de Pachuca aumentó 31% (45 → 59 AQI), superando el ritmo necesario para la meta de ≤40 al 2030.</p>
+              <p style="color:#fbbf24"><strong>⚡ RIESGO:</strong> Repunte de Refinería Miguel Hidalgo en 2024 revirtió parcialmente los avances de 2022–2023.</p>
+            </div>
+          </div>
+
+          <div class="filo-lens" data-color="#a78bfa" onclick="filoToggle(this)">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">⚖️</div>
+              <div class="filo-lens-titles">
+                <div class="filo-lens-name">Pertinencia Conjunta</div>
+                <div class="filo-lens-sub">¿Por qué son imprescindibles ambos programas?</div>
+              </div>
+              <div class="filo-lens-chev">▾</div>
+            </div>
+            <div class="filo-lens-body">
+              <p>Ambos programas son pertinentes e imprescindibles:</p>
+              <ul style="margin:10px 0 0 20px;font-size:14px;line-height:1.8;color:var(--muted2)">
+                <li><strong>Impacto en salud:</strong> En 2014, el 25.2% de las 13,468 muertes en Hidalgo se relacionaron con contaminantes atmosféricos (enfermedades isquémicas, EPOC, cerebrovasculares).</li>
+                <li><strong>Impacto regional:</strong> El Complejo Industrial de Tula es responsable del 33% de los eventos de contaminación en la ZMVM — Hidalgo es actor clave en la política ambiental de toda la megalópolis.</li>
+                <li><strong>Continuidad:</strong> El ProAire 2021–2030 retoma y amplía lo construido en 2016–2024, garantizando continuidad de instituciones, red de monitoreo y acciones.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RECOMENDACIONES -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Recomendaciones Integradas</div>
+        <div class="detail-sec-sub">6 acciones prioritarias basadas en los datos de ambos programas.</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px">
+          <div style="background:var(--card);border:1px solid rgba(251,113,133,.2);border-radius:12px;padding:20px;border-left:4px solid #fb7185">
+            <div style="font-size:11px;color:#fb7185;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">🔴 Urgente</div>
+            <div style="font-weight:700;margin-bottom:6px;font-size:14px">Acelerar sustitución de combustóleo</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">Gas natural en Termoeléctrica de Tula + cumplimiento permanente en Refinería Miguel Hidalgo. Tula genera 97% SO₂ y 45% PM2.5 estatal.</div>
+          </div>
+          <div style="background:var(--card);border:1px solid rgba(251,113,133,.2);border-radius:12px;padding:20px;border-left:4px solid #fb7185">
+            <div style="font-size:11px;color:#fb7185;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">🔴 Urgente</div>
+            <div style="font-weight:700;margin-bottom:6px;font-size:14px">Monitoreo continuo en CA-Tula</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">Al menos 6 estaciones (actualmente insuficiente vs. 12 municipios). PM10, PM2.5, SO₂ y O₃ incumplen norma frecuentemente.</div>
+          </div>
+          <div style="background:var(--card);border:1px solid rgba(251,191,36,.2);border-radius:12px;padding:20px;border-left:4px solid #fbbf24">
+            <div style="font-size:11px;color:#fbbf24;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">🟡 Alta</div>
+            <div style="font-weight:700;margin-bottom:6px;font-size:14px">Actualizar Inventario de Emisiones</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">Al año 2024 considerando la reactivación de la Refinería. El inventario más reciente disponible es 2018.</div>
+          </div>
+          <div style="background:var(--card);border:1px solid rgba(251,191,36,.2);border-radius:12px;padding:20px;border-left:4px solid #fbbf24">
+            <div style="font-size:11px;color:#fbbf24;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">🟡 Alta</div>
+            <div style="font-weight:700;margin-bottom:6px;font-size:14px">Control de PM2.5 en ZM Pachuca</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">Restricciones estacionales en temporada de secas (mar–may). Abril-mayo es el período más crítico; mayo 2024 registró AQI 88.</div>
+          </div>
+          <div style="background:var(--card);border:1px solid rgba(56,189,248,.2);border-radius:12px;padding:20px;border-left:4px solid #38bdf8">
+            <div style="font-size:11px;color:#38bdf8;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">🔵 Media</div>
+            <div style="font-weight:700;margin-bottom:6px;font-size:14px">Indicadores de mortalidad en ProAire</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">Integrar indicadores de mortalidad y morbilidad respiratoria en el seguimiento anual. En 2014 el 25.2% de muertes estatales se relacionaron con contaminantes.</div>
+          </div>
+          <div style="background:var(--card);border:1px solid rgba(56,189,248,.2);border-radius:12px;padding:20px;border-left:4px solid #38bdf8">
+            <div style="font-size:11px;color:#38bdf8;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">🔵 Media</div>
+            <div style="font-weight:700;margin-bottom:6px;font-size:14px">Coordinación CFE/PEMEX–Estado</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">Fortalecer el Convenio SEMARNAT–Hidalgo. Ambas fuentes son de jurisdicción federal, limitando la acción estatal sin coordinación.</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:18px">
+          <img src="/images/tsocial/image9.png" alt="Tráfico vehicular en Pachuca — fuentes móviles" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+          <img src="/images/tsocial/image10.jpeg" alt="Pachuca vista panorámica — zona metropolitana" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+        </div>
+      </div>
+
+      <!-- BIBLIOGRAFÍA -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Bibliografía</div>
+        <ol style="padding-left:22px;font-size:13px;color:var(--muted2);line-height:1.8">
+          <li>SEMARNAT / SEMARNATH — <em>Programa de Gestión para Mejorar la Calidad del Aire del Estado de Hidalgo 2016–2024,</em> Gobierno del Estado de Hidalgo.</li>
+          <li>SEMARNAT / SEMARNATH — <em>Programa de Gestión para Mejorar la Calidad del Aire del Estado de Hidalgo 2021–2030,</em> Gobierno del Estado de Hidalgo.</li>
+          <li>INECC — <em>Inventario Nacional de Emisiones de México (INEM),</em> año base 2016 y 2018.</li>
+          <li>CAMe — <em>ProAire de la Zona Metropolitana del Valle de México 2021–2030.</em></li>
+          <li>LGEEPA — <em>Ley General del Equilibrio Ecológico y la Protección al Ambiente,</em> última reforma 2024.</li>
+          <li>NOM-SSA1 — Normas Oficiales Mexicanas de calidad del aire para contaminantes criterio.</li>
+        </ol>
       </div>` },
 
   cpolitica: {
@@ -7325,6 +7637,25 @@ function simUniPhase() {
 }
 
 /* ── SIMULADOR CPOL · política pública ── */
+/* ── SCRUBBER: Evolución ICA Pachuca ── */
+function simTsYear() {
+  const v = +document.getElementById('ts-year').value;
+  const data = [
+    {y:'2020',aqi:45,c:'#34d399',t:'<strong style="color:#34d399">2020 — AQI 45 (Base).</strong> Año de referencia. Pachuca tenía calidad del aire "Buena". En 2016 fue la única ciudad de México que cumplía la norma anual de PM2.5 (12 µg/m³).'},
+    {y:'2021',aqi:48,c:'#fbbf24',t:'<strong style="color:#fbbf24">2021 — AQI 48 (+7%).</strong> Primer incremento. El crecimiento vehicular e industrial comienza a superar las medidas de control. Se inicia el ProAire 2021–2030.'},
+    {y:'2022',aqi:51,c:'#fbbf24',t:'<strong style="color:#fbbf24">2022 — AQI 51 (+6%).</strong> Tendencia al alza continúa. Sin embargo, la introducción de gas natural en la Termoeléctrica de Tula reduce temporalmente SO₂ y NOx en esa cuenca.'},
+    {y:'2023',aqi:51,c:'#fbbf24',t:'<strong style="color:#fbbf24">2023 — AQI 51 (0%).</strong> Se estabiliza temporalmente. El Convenio de Coordinación SEMARNAT–Hidalgo se refrenda (diciembre 2023). Los esfuerzos en Tula dan frutos parciales.'},
+    {y:'2024',aqi:56,c:'#fb7185',t:'<strong style="color:#fb7185">2024 — AQI 56 (+10%).</strong> Salto significativo. Mayo 2024 fue el mes más contaminado en 5 años (AQI 88). La reactivación de la Refinería Miguel Hidalgo revierte avances.'},
+    {y:'2025',aqi:59,c:'#fb7185',t:'<strong style="color:#fb7185">2025 — AQI 59 (+5%).</strong> Deterioro persistente. PM2.5 no cumple norma en ninguna ciudad de Hidalgo. El ICA acumula +31% desde 2020.'},
+    {y:'2026',aqi:59,c:'#fb7185',t:'<strong style="color:#fb7185">2026 (may) — AQI ~59 (~0%).</strong> Período de monitoreo actual (15 abr – 15 may). Se estabiliza pero lejos de la meta 2030 de ≤40 AQI. Abril-mayo es temporada crítica por secas y ozono fotoquímico.'}
+  ];
+  const d = data[v];
+  document.getElementById('ts-year-v').textContent = d.y + ' · AQI ' + d.aqi;
+  document.getElementById('ts-year-out').innerHTML = d.t;
+  const s = document.getElementById('ts-year');
+  s.style.setProperty('--pct', (v/6*100)+'%');
+}
+
 function simCpol() {
   const inv = +document.getElementById('cp-inv').value;
   const reg = +document.getElementById('cp-reg').value;
