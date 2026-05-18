@@ -376,6 +376,11 @@
     .m-sal  .mat-sidebar::before { background: linear-gradient(150deg,rgba(26,10,16,.93),rgba(46,16,32,.88)); filter:none; }
     .m-sal  .mat-sidebar::after  { background: var(--rose); }
 
+    /* Etimologías → libro antiguo/manuscrito */
+    .m-etimo .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=500&q=80'); }
+    .m-etimo .mat-sidebar::before { background: linear-gradient(150deg,rgba(40,20,10,.93),rgba(62,35,18,.88)); filter:none; }
+    .m-etimo .mat-sidebar::after  { background: #d4a574; }
+
     .mat-num  { font-family:'Space Grotesk',sans-serif; font-size:3.5rem; font-weight:700; line-height:1; opacity:.12; }
     .mat-tag  {
       display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
@@ -390,6 +395,7 @@
     .tag-quim { background:rgba(251,113,133,.15); color:var(--rose); }
     .tag-soc  { background:rgba(251,191,36,.15);  color:var(--amber); }
     .tag-sal  { background:rgba(251,113,133,.15); color:var(--rose); }
+    .tag-etimo { background:rgba(212,165,116,.15); color:#d4a574; }
 
     .mat-title { font-family:'Space Grotesk',sans-serif; font-size:1.05rem; font-weight:700; line-height:1.3; margin-bottom:8px; }
     .mat-sub   { font-size:12px; color:var(--muted2); line-height:1.55; }
@@ -701,6 +707,8 @@
     }
     .filo-lens.open .filo-chain-arrow { animation: filoChainIn .4s ease forwards; animation-delay: var(--d); }
     @keyframes filoChainIn { to { opacity: 1; transform: translateY(0); } }
+    @keyframes shimmerBtn { 0%{background-position:200% 50%} 50%{background-position:0% 50%} 100%{background-position:200% 50%} }
+    @keyframes bounceArrow { 0%,100%{transform:translateX(0)} 50%{transform:translateX(6px)} }
 
     /* ── CADENA CAUSAL GENÉRICA (fuera del acordeón) ── */
     .causal-chain {
@@ -1488,13 +1496,13 @@
     AMBIENTAL
   </h1>
   <p class="hero-sub">
-    Análisis estadístico e interdisciplinario del clima de <strong style="color:#f1f5f9">Pachuca de Soto, Hidalgo</strong>.<br>
+    Análisis estadístico (estudio con números y datos) e interdisciplinario (que integra varias materias) (que combina varias materias) del clima de <strong style="color:#f1f5f9">Pachuca de Soto, Hidalgo</strong>.<br>
     10 materias integradas · 26 observaciones diarias · Abril 2026.
   </p>
   <div class="hero-meta">
     <div class="meta-item">
       <span class="meta-val" data-count="2390">0</span>
-      <span class="meta-label">m s.n.m. altitud</span>
+      <span class="meta-label">m s.n.m. (metros sobre el nivel del mar) altitud</span>
     </div>
     <div class="meta-item">
       <span class="meta-val" data-count="26">0</span>
@@ -1523,10 +1531,10 @@
 <!-- ═══════════════ CLIMA ═══════════════ -->
 <section class="page-section" id="clima">
   <p class="section-label reveal">Datos Climáticos</p>
-  <h2 class="reveal d1">Abril 2026 — <span style="color:var(--sky)">Anomalías registradas</span></h2>
+  <h2 class="reveal d1">Abril 2026 — <span style="color:var(--sky)">Anomalías (valores fuera de lo normal) registradas</span></h2>
   <p class="section-intro reveal d2">
     Datos reales del 1–30 de abril de 2026 en Pachuca de Soto.
-    Temperaturas hasta 9°C sobre el promedio histórico, humedad en mínimos históricos.
+    Temperaturas hasta 9°C sobre el promedio histórico (valor normal calculado con datos de muchos años), humedad en mínimos históricos (los más bajos jamás registrados).
   </p>
 
   <div class="stat-grid">
@@ -1539,7 +1547,7 @@
     <div class="stat-card reveal d2">
       <div class="stat-icon">💧</div>
       <div class="stat-value" style="color:var(--sky)" data-counter="35"><span class="stat-num">0</span><span class="stat-unit">%</span></div>
-      <div class="stat-name">Humedad mínima</div>
+      <div class="stat-name">Humedad mínima (menor cantidad de vapor de agua en el aire)</div>
       <div class="stat-diff bad">−16 pts del promedio (51%)</div>
     </div>
     <div class="stat-card reveal d3">
@@ -1552,7 +1560,7 @@
       <div class="stat-icon">💨</div>
       <div class="stat-value" style="color:var(--amber)" data-counter="40"><span class="stat-num">0</span><span class="stat-unit">km/h</span></div>
       <div class="stat-name">Viento ráfaga NE</div>
-      <div class="stat-diff bad">Interrumpe vuelo de polinizadores</div>
+      <div class="stat-diff bad">Interrumpe vuelo de polinizadores (animales que transportan polen entre flores)</div>
     </div>
   </div>
 
@@ -1562,11 +1570,11 @@
       <canvas id="chartTemp" height="200"></canvas>
     </div>
     <div class="chart-card green reveal d1">
-      <div class="chart-title">Humedad relativa (%) — Real vs Histórico</div>
+      <div class="chart-title">Humedad relativa (porcentaje de vapor de agua en el aire) (%) — Real vs Histórico</div>
       <canvas id="chartHum" height="200"></canvas>
     </div>
     <div class="chart-card amber reveal d2" style="grid-column:1/-1;">
-      <div class="chart-title">Precipitación mensual (mm) y Temperatura media (°C) — Promedio anual histórico · Clasificación Köppen: BSk (Árido de altura)</div>
+      <div class="chart-title">Precipitación mensual (mm) y Temperatura media (°C) — Promedio anual histórico · Clasificación Köppen (sistema mundial para clasificar climas): BSk (Árido de altura, seco y frío)</div>
       <canvas id="chartAnual" height="110"></canvas>
     </div>
   </div>
@@ -1585,7 +1593,7 @@
       <div class="poi-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/5/53/Parque_Ecol%C3%B3gico_Cubitos._01.jpg')"></div>
       <div class="poi-body">
         <div class="poi-title">Parque Ecológico Cubitos</div>
-        <div class="poi-desc">Zona de matorral xerófilo en transición urbano-natural. Sitio de muestreo para bioindicadores: nopal, maguey y lagartija endémica.</div>
+        <div class="poi-desc">Zona de matorral xerófilo (vegetación de zonas secas con arbustos y cactus) en transición urbano-natural. Sitio de muestreo para bioindicadores (especies que muestran el estado del ecosistema): nopal, maguey y lagartija endémica (que solo existe en esta región).</div>
         <span class="poi-tag">Ecosistema · Muestreo</span>
       </div>
     </div>
@@ -1593,7 +1601,7 @@
       <div class="poi-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/a/aa/Abies_religiosa%2C_Parque_Nacional_El_Chico%2C_Hidalgo%2C_Mexico_1.jpg')"></div>
       <div class="poi-body">
         <div class="poi-title">Sierra de Pachuca</div>
-        <div class="poi-desc">Bosque de pino-encino donde habita el Ajolote del Altiplano (Ambystoma velasci) y el Águila Real. Alta biodiversidad endémica.</div>
+        <div class="poi-desc">Bosque de pino-encino donde habita el Ajolote del Altiplano (Ambystoma velasci) y el Águila Real. Alta biodiversidad endémica (gran variedad de especies únicas de esta zona).</div>
         <span class="poi-tag">Bosque · Biodiversidad</span>
       </div>
     </div>
@@ -1601,7 +1609,7 @@
       <div class="poi-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/8/8e/Reloj_Monumental%2C_Pachuca%2C_Hidalgo%2C_M%C3%A9xico%2C_2013-10-10%2C_DD_02.JPG')"></div>
       <div class="poi-body">
         <div class="poi-title">Centro Histórico</div>
-        <div class="poi-desc">El Reloj Monumental (1904) es símbolo de la ciudad. Plaza de la Independencia rodeada de arquitectura porfiriana.</div>
+        <div class="poi-desc">El Reloj Monumental (1904) es símbolo de la ciudad. Plaza de la Independencia rodeada de arquitectura porfiriana (estilo de construcción del gobierno de Porfirio Díaz, 1876–1911).</div>
         <span class="poi-tag">Patrimonio · Historia</span>
       </div>
     </div>
@@ -1609,7 +1617,7 @@
       <div class="poi-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/7/7a/Plaza_Principal%2C_Real_del_Monte%2C_Hidalgo%2C_M%C3%A9xico%2C_2013-10-10%2C_DD_01.JPG')"></div>
       <div class="poi-body">
         <div class="poi-title">Real del Monte</div>
-        <div class="poi-desc">Pueblo Mágico a 15 min. de Pachuca. Sitio histórico de minería de plata. Influencia en la geología regional y tradición cultural.</div>
+        <div class="poi-desc">Pueblo Mágico a 15 min. de Pachuca. Sitio histórico de minería de plata. Influencia en la geología (estudio de las rocas y la tierra) regional y tradición cultural.</div>
         <span class="poi-tag">Minería · Turismo</span>
       </div>
     </div>
@@ -1617,7 +1625,7 @@
       <div class="poi-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg')"></div>
       <div class="poi-body">
         <div class="poi-title">La Bella Airosa</div>
-        <div class="poi-desc">Apodo de Pachuca por sus vientos del NE hasta 40 km/h en ráfaga en abril. Clave en la dispersión de contaminantes y polinizadores.</div>
+        <div class="poi-desc">Apodo de Pachuca por sus vientos del NE hasta 40 km/h en ráfaga en abril. Clave en la dispersión (esparcimiento por el viento) de contaminantes y polinizadores.</div>
         <span class="poi-tag">Clima · Fenómeno</span>
       </div>
     </div>
@@ -1625,7 +1633,7 @@
       <div class="poi-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/a/aa/Abies_religiosa%2C_Parque_Nacional_El_Chico%2C_Hidalgo%2C_Mexico_1.jpg'); background-position: center top;"></div>
       <div class="poi-body">
         <div class="poi-title">Mineral del Chico</div>
-        <div class="poi-desc">Pueblo Mágico y área natural protegida a 17 km. Bosque templado y arroyos donde se preservan especies anfibias en peligro.</div>
+        <div class="poi-desc">Pueblo Mágico y área natural protegida (zona legalmente resguardada para conservar su naturaleza) a 17 km. Bosque templado y arroyos donde se preservan especies anfibias (animales que viven en agua y tierra, como ranas) en peligro.</div>
         <span class="poi-tag">Naturaleza · Reserva</span>
       </div>
     </div>
@@ -1664,12 +1672,12 @@
         <div>
           <span class="mat-tag tag-eco">Ecología</span>
           <div class="mat-title">Ecología y Desarrollo Sustentable</div>
-          <div class="mat-sub">Bitácora de Interpretación de Bioindicadores · Matorral Xerófilo · Pachuca, Abril 2026</div>
+          <div class="mat-sub">Bitácora de Interpretación de Bioindicadores (especies que indican la salud del ecosistema) · Matorral Xerófilo (vegetación de zonas secas) · Pachuca, Abril 2026</div>
         </div>
       </div>
       <div class="mat-content">
         <div class="mat-content-title">Bioindicadores del Matorral Xerófilo de Pachuca</div>
-        <p class="mat-content-intro">Registro y análisis de <strong>14 especies bioindicadoras</strong> en la zona de transición matorral–urbana de Pachuca de Soto. Se documentaron anomalías climáticas del 1 al 30 de abril de 2026 y su impacto en la cadena trófica del ecosistema árido hidalguense.</p>
+        <p class="mat-content-intro">Registro y análisis de <strong>14 especies bioindicadoras</strong> en la zona de transición matorral–urbana de Pachuca de Soto. Se documentaron anomalías climáticas del 1 al 30 de abril de 2026 y su impacto en la cadena trófica (quién se come a quién en un ecosistema) del ecosistema árido hidalguense.</p>
         <div class="tabs" id="eco-tabs">
           <button class="tab active" onclick="switchTab('eco',0)">Bitácora de campo</button>
           <button class="tab" onclick="switchTab('eco',1)">Especies</button>
@@ -1679,14 +1687,14 @@
           <table class="data-table">
             <thead><tr><th>Fecha</th><th>Condiciones</th><th>Especie afectada</th><th>Efecto observado</th></tr></thead>
             <tbody>
-              <tr><td><strong>1 Abr</strong></td><td>24°C +7°C · Hum 38%</td><td>Nopal cardón</td><td>Arrugamiento de cladodios por calor</td></tr>
-              <tr><td><strong>3 Abr</strong></td><td>26°C +9°C · Hum 35%</td><td>Huizache</td><td>Floración retrasada por baja humedad</td></tr>
-              <tr><td><strong>5 Abr</strong></td><td>22°C · Hum 82% · 18mm · viento 40km/h</td><td>Abeja nativa</td><td>Vuelo imposible; falla en polinización</td></tr>
-              <tr><td><strong>7 Abr</strong></td><td>5°C mín (helada tardía) · Hum 72%</td><td>Cardenal norteño</td><td>Canto reducido; anidación interrumpida</td></tr>
+              <tr><td><strong>1 Abr</strong></td><td>24°C +7°C · Hum 38%</td><td>Nopal cardón</td><td>Arrugamiento de cladodios (hojas aplanadas del nopal) por calor</td></tr>
+              <tr><td><strong>3 Abr</strong></td><td>26°C +9°C · Hum 35%</td><td>Huizache</td><td>Floración (producción de flores) retrasada por baja humedad</td></tr>
+              <tr><td><strong>5 Abr</strong></td><td>22°C · Hum 82% · 18mm · viento 40km/h</td><td>Abeja nativa</td><td>Vuelo imposible; falla en polinización (transporte de polen para reproducir plantas)</td></tr>
+              <tr><td><strong>7 Abr</strong></td><td>5°C mín (helada tardía) · Hum 72%</td><td>Cardenal norteño</td><td>Canto reducido; anidación (construcción de nido para reproducirse) interrumpida</td></tr>
               <tr><td><strong>11 Abr</strong></td><td>17°C · Hum 91% · 4mm</td><td>Rana de árbol</td><td>Activación por aumento de humedad</td></tr>
               <tr><td><strong>17 Abr</strong></td><td>26°C +9°C · Hum 33%</td><td>Tuza de montaña</td><td>Suelo compactado; actividad reducida</td></tr>
               <tr><td><strong>21 Abr</strong></td><td>23°C · Hum 82% · 3mm</td><td>Murciélago magueyero</td><td>Mayor actividad; polinización del maguey</td></tr>
-              <tr><td><strong>30 Abr</strong></td><td>23.5°C · Hum 56% · 2mm</td><td>Colibrí · Abeja</td><td>Huizache en antesis; inicio de fructificación</td></tr>
+              <tr><td><strong>30 Abr</strong></td><td>23.5°C · Hum 56% · 2mm</td><td>Colibrí · Abeja</td><td>Huizache en antesis (apertura de la flor); inicio de fructificación (formación de frutos)</td></tr>
             </tbody>
           </table>
         </div>
@@ -1746,18 +1754,18 @@
             </div>
           </div>
           <div class="alert-box warning">
-            <strong>⚠ Eslabón crítico:</strong> Los polinizadores nativos (Xylocopa mexicanorum) presentan abundancia baja, amenazando la reproducción de todos los productores del matorral xerófilo.
+            <strong>⚠ Eslabón crítico (pieza clave de la cadena alimenticia):</strong> Los polinizadores nativos (Xylocopa mexicanorum) presentan abundancia baja, amenazando la reproducción de todos los productores del matorral xerófilo.
           </div>
         </div>
         <div class="tab-panel" id="eco-2">
           <table class="data-table">
             <thead><tr><th>Nivel trófico</th><th>Organismos</th><th>Función ecológica</th><th>Estado Abril 2026</th></tr></thead>
             <tbody>
-              <tr><td><strong style="color:#34d399">Productores (1°)</strong></td><td>Nopal cardón</td><td>Fotosíntesis CAM; captura CO₂</td><td>Fotosíntesis inhibida por calor</td></tr>
-              <tr style="background:rgba(251,113,133,.05)"><td><strong style="color:#fb7185">Cons. primarios (2°) ⚠</strong></td><td>Abeja nativa</td><td>Polinizador clave del matorral</td><td><strong style="color:#fb7185">ESLABÓN CRÍTICO</strong> — actividad muy baja</td></tr>
-              <tr><td><strong style="color:#fbbf24">Cons. secundarios (3°)</strong></td><td>Cardenal norteño</td><td>Insectívoro; controla plagas</td><td>Canto y anidación reducidos</td></tr>
-              <tr><td><strong style="color:#a78bfa">Cons. terciarios (4°)</strong></td><td>Águila real</td><td>Depredador ápex</td><td>Eficiencia de caza reducida</td></tr>
-              <tr><td><strong style="color:#64748b">Descomponedores</strong></td><td>Hongos (Aspergillus)</td><td>Cierran el ciclo de nutrientes</td><td>Baja actividad por suelo seco</td></tr>
+              <tr><td><strong style="color:#34d399">Productores (1°)</strong></td><td>Nopal cardón</td><td>Fotosíntesis CAM (proceso especial de plantas desérticas para hacer su alimento con luz solar); captura CO₂</td><td>Fotosíntesis (proceso de las plantas para hacer alimento con luz solar) inhibida por calor</td></tr>
+              <tr style="background:rgba(251,113,133,.05)"><td><strong style="color:#fb7185">Cons. primarios (2°) ⚠</strong></td><td>Abeja nativa</td><td>Polinizador (que lleva polen entre flores) clave del matorral</td><td><strong style="color:#fb7185">ESLABÓN CRÍTICO</strong> — actividad muy baja</td></tr>
+              <tr><td><strong style="color:#fbbf24">Cons. secundarios (3°)</strong></td><td>Cardenal norteño</td><td>Insectívoro (que se alimenta de insectos); controla plagas</td><td>Canto y anidación reducidos</td></tr>
+              <tr><td><strong style="color:#a78bfa">Cons. terciarios (4°)</strong></td><td>Águila real</td><td>Depredador ápex (el cazador más alto de la cadena alimenticia)</td><td>Eficiencia de caza reducida</td></tr>
+              <tr><td><strong style="color:#64748b">Descomponedores</strong></td><td>Hongos (Aspergillus)</td><td>Cierran el ciclo de nutrientes (descomponen materia muerta y la devuelven al suelo)</td><td>Baja actividad por suelo seco</td></tr>
             </tbody>
           </table>
         </div>
@@ -1776,7 +1784,7 @@
       </div>
       <div class="mat-content">
         <div class="mat-content-title">"El ser humano no solo observa el entorno, lo transforma sin medir sus consecuencias"</div>
-        <p class="mat-content-intro">Análisis del <strong>cambio climático en Pachuca</strong> y los <strong>incendios forestales en Hidalgo</strong> a través de <strong>cinco lentes filosóficos</strong>: metafísico, epistemológico, ético, lógico y estético.</p>
+        <p class="mat-content-intro">Análisis del <strong>cambio climático en Pachuca</strong> y los <strong>incendios forestales en Hidalgo</strong> a través de <strong>cinco lentes filosóficos</strong>: metafísico (la naturaleza de lo que existe), epistemológico (cómo conocemos la verdad), ético (lo correcto e incorrecto), lógico (razonamiento válido) y estético (percepción de lo bello).</p>
         <div class="tabs" id="filo-tabs">
           <button class="tab active" onclick="switchTab('filo',0)">🔭 Metafísico</button>
           <button class="tab" onclick="switchTab('filo',1)">🔍 Epistemológico</button>
@@ -1814,7 +1822,7 @@
       </div>
       <div class="mat-content">
         <div class="mat-content-title">Onda de calor en "La Bella Airosa"</div>
-        <p class="mat-content-intro">Análisis estadístico y climático de los <strong>26 primeros días de abril 2026</strong> en Pachuca, Hidalgo. Se identificó una <strong>onda de calor de 11 días</strong> (7–17 abr) con pico de 27.1 °C — anomalía de <strong>+8.1 °C</strong> sobre la normal histórica (19 °C). El estudio integra frecuencias, medidas de tendencia central, análisis gráfico y dinámica meteorológica.</p>
+        <p class="mat-content-intro">Análisis estadístico y climático de los <strong>26 primeros días de abril 2026</strong> en Pachuca, Hidalgo. Se identificó una <strong>onda de calor (periodo prolongado de temperaturas muy superiores a lo normal) de 11 días</strong> (7–17 abr) con pico de 27.1 °C — anomalía (diferencia respecto a lo normal) de <strong>+8.1 °C</strong> sobre la normal histórica (temperatura promedio de muchos años) (19 °C). El estudio integra frecuencias (cuántas veces se repite un dato), medidas de tendencia central (media, mediana y moda), análisis gráfico y dinámica meteorológica (cómo se mueve la atmósfera).</p>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0">
           <div style="background:var(--bg2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border)">
             <div style="font-size:18px;font-weight:800;color:#fb7185">27.1°</div>
@@ -1860,16 +1868,16 @@
           <button class="tab" onclick="switchTab('uni',3)">⚙️ Mecánica</button>
         </div>
         <div class="tab-panel active" id="uni-0">
-          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#38bdf8">Calidad del aire y agua.</strong> Bernoulli y la ecuación de continuidad explican cómo el viento dispersa contaminantes en "La Bella Airosa". A 2,426 m la viscosidad del aire es menor que a nivel del mar.</p>
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#38bdf8">Calidad del aire y agua.</strong> Bernoulli (principio que relaciona presión y velocidad de fluidos) y la ecuación de continuidad (ley de conservación del flujo) explican cómo el viento dispersa contaminantes en "La Bella Airosa". A 2,426 m la viscosidad (resistencia de un fluido a fluir) del aire es menor que a nivel del mar.</p>
         </div>
         <div class="tab-panel" id="uni-1">
-          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#fbbf24">Sensores atmosféricos.</strong> LM35, DHT11 y BMP180 convierten temperatura, humedad y presión en voltajes. El ESP32 los digitaliza via ADC.</p>
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#fbbf24">Sensores atmosféricos.</strong> LM35, DHT11 y BMP180 convierten temperatura, humedad y presión en voltajes (señales eléctricas medibles). El ESP32 los digitaliza vía ADC (convertidor de señal analógica a digital).</p>
         </div>
         <div class="tab-panel" id="uni-2">
-          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#34d399">Visibilidad y UV.</strong> Dispersión de Rayleigh (cielo azul) vs. Mie (gris contaminado). Índice UV 8.27 — categoría <em>Muy Alto</em>, agravado por la altitud.</p>
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#34d399">Visibilidad y UV.</strong> Dispersión de Rayleigh (fenómeno óptico que hace el cielo azul) (cielo azul) vs. Mie (dispersión por partículas grandes que enturbia el cielo). Índice UV 8.27 — categoría <em>Muy Alto</em>, agravado por la altitud.</p>
         </div>
         <div class="tab-panel" id="uni-3">
-          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#fb7185">Diseño de instrumentos.</strong> Resistencia de materiales para vientos de 40 km/h, leyes de Newton para la veleta, momentos de inercia para el pluviómetro.</p>
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#fb7185">Diseño de instrumentos.</strong> Resistencia de materiales (capacidad de un objeto para soportar fuerzas) para vientos de 40 km/h, leyes de Newton para la veleta, momentos de inercia (resistencia de un objeto a girar) para el pluviómetro.</p>
         </div>
       </div>
     </div>
@@ -1904,12 +1912,12 @@
         <div>
           <span class="mat-tag tag-bio">Biodiversidad</span>
           <div class="mat-title">Uso de la Biodiversidad y Prácticas Productivas</div>
-          <div class="mat-sub">EIMA — Ecotoxicología: Ajolote del Altiplano (Ambystoma velasci)</div>
+          <div class="mat-sub">EIMA — Ecotoxicología (estudio de cómo los tóxicos dañan a los ecosistemas): Ajolote del Altiplano (Ambystoma velasci)</div>
         </div>
       </div>
       <div class="mat-content">
         <div class="mat-content-title">Estación Interdisciplinaria de Monitoreo Ambiental</div>
-        <p class="mat-content-intro">Vulnerabilidad del Ajolote del Altiplano frente a xenobióticos derivados de prácticas productivas en la región de Pachuca. Especie bajo Protección Especial (NOM-059-SEMARNAT-2010).</p>
+        <p class="mat-content-intro">Vulnerabilidad del Ajolote del Altiplano frente a xenobióticos (sustancias químicas ajenas al organismo) derivados de prácticas productivas en la región de Pachuca. Especie bajo Protección Especial (NOM-059-SEMARNAT-2010, norma mexicana que clasifica especies en riesgo).</p>
         <div class="tabs" id="bio-tabs">
           <button class="tab active" onclick="switchTab('bio',0)">Ficha de especie</button>
           <button class="tab" onclick="switchTab('bio',1)">Mapa de riesgo</button>
@@ -1930,7 +1938,7 @@
           </table>
         </div>
         <div class="tab-panel" id="bio-1">
-          <p style="font-size:13px;color:var(--muted2);margin-bottom:18px;">Nivel de riesgo ecotoxicológico por zona geográfica para Ambystoma velasci:</p>
+          <p style="font-size:13px;color:var(--muted2);margin-bottom:18px;">Nivel de riesgo ecotoxicológico (de toxicidad ambiental) por zona geográfica para Ambystoma velasci:</p>
           <div class="risk-item"><div class="risk-label"><span>Cuenca del Río Tula (zona industrial)</span><span style="color:var(--rose)">MUY ALTO</span></div><div class="risk-bar"><div class="risk-fill r4" data-w="95"></div></div></div>
           <div class="risk-item"><div class="risk-label"><span>Valle del Mezquital (zona agrícola)</span><span style="color:var(--amber)">ALTO</span></div><div class="risk-bar"><div class="risk-fill r3" data-w="75"></div></div></div>
           <div class="risk-item"><div class="risk-label"><span>Zona urbana Pachuca de Soto</span><span style="color:var(--sky)">MODERADO</span></div><div class="risk-bar"><div class="risk-fill r2" data-w="50"></div></div></div>
@@ -1940,11 +1948,11 @@
           <table class="data-table">
             <thead><tr><th>Xenobiótico</th><th>Fuente</th><th>Efecto en ajolote</th></tr></thead>
             <tbody>
-              <tr><td>Glifosato</td><td>Cultivos Valle del Mezquital (0.1–1.2 mg/L)</td><td>Disruptor endocrino; altera metamorfosis y fertilidad</td></tr>
-              <tr><td>Pb, Cd, Zn</td><td>Refinería y termoeléctrica de Tula</td><td>Bioacumulación; daño renal, hepático y reproductivo</td></tr>
-              <tr><td>NH₃ amoniacal</td><td>Escurrimiento agrícola (&gt;0.5 mg/L)</td><td>Tóxico directo: daño en branquias y sistema nervioso</td></tr>
-              <tr><td>Microplásticos</td><td>Arroyos de Pachuca (mayor generador en Hidalgo)</td><td>Ingestión accidental; ftalatos y BPA con efecto endocrino</td></tr>
-              <tr><td>PM2.5 (&gt;25 µg/m³)</td><td>Termoeléctrica Francisco Pérez Ríos</td><td>Acidifica la lluvia; degrada el hábitat acuático</td></tr>
+              <tr><td>Glifosato</td><td>Cultivos Valle del Mezquital (0.1–1.2 mg/L)</td><td>Disruptor endocrino (sustancia que altera las hormonas); altera metamorfosis (cambio de forma del animal al crecer) y fertilidad</td></tr>
+              <tr><td>Pb, Cd, Zn</td><td>Refinería y termoeléctrica de Tula</td><td>Bioacumulación (acumulación de tóxicos en el cuerpo); daño renal (riñones), hepático (hígado) y reproductivo</td></tr>
+              <tr><td>NH₃ amoniacal</td><td>Escurrimiento agrícola (&gt;0.5 mg/L)</td><td>Tóxico directo: daño en branquias (órgano para respirar bajo el agua) y sistema nervioso</td></tr>
+              <tr><td>Microplásticos</td><td>Arroyos de Pachuca (mayor generador en Hidalgo)</td><td>Ingestión accidental; ftalatos y BPA (químicos plásticos) con efecto endocrino (alteran hormonas)</td></tr>
+              <tr><td>PM2.5 (&gt;25 µg/m³)</td><td>Termoeléctrica Francisco Pérez Ríos</td><td>Acidifica la lluvia (la vuelve más ácida); degrada el hábitat acuático (daña ríos y lagos)</td></tr>
             </tbody>
           </table>
         </div>
@@ -1963,7 +1971,7 @@
       </div>
       <div class="mat-content">
         <div class="mat-content-title">Estación Meteorológica Electrónica</div>
-        <p class="mat-content-intro">Diseño y simulación de una estación meteorológica para monitorear variables climáticas de Pachuca. Clasificación de sensores: analógicos vs digitales, activos vs pasivos.</p>
+        <p class="mat-content-intro">Diseño y simulación de una estación meteorológica para monitorear variables climáticas de Pachuca. Clasificación de sensores (dispositivos que detectan cambios): analógicos (señal continua) vs digitales (señal en código), activos vs pasivos.</p>
         <div class="tabs" id="elec-tabs">
           <button class="tab active" onclick="switchTab('elec',0)">Sensores</button>
           <button class="tab" onclick="switchTab('elec',1)">Variables</button>
@@ -1988,7 +1996,7 @@
             </div>
           </div>
           <div class="alert-box info" style="margin-top:16px;">
-            <strong>⚡ Dato de Pachuca:</strong> Presión atmosférica ~770 mmHg. El BMP180 debe configurarse con corrección altimétrica para lecturas correctas a 2,426 m s.n.m.
+            <strong>⚡ Dato de Pachuca:</strong> Presión atmosférica ~770 mmHg. El BMP180 debe configurarse con corrección altimétrica (ajuste por la altura sobre el nivel del mar) para lecturas correctas a 2,426 m s.n.m.
           </div>
         </div>
         <div class="tab-panel" id="elec-1">
@@ -1998,9 +2006,9 @@
               <tr><td>Temperatura</td><td>°C</td><td>−40 a +80</td><td>LM35, DHT11, DS18B20</td></tr>
               <tr><td>Humedad relativa</td><td>% HR</td><td>0 a 100</td><td>DHT11, DHT22, HIH-4030</td></tr>
               <tr><td>Presión atmosférica</td><td>hPa</td><td>300–1100</td><td>BMP180, BMP280</td></tr>
-              <tr><td>Velocidad del viento</td><td>m/s</td><td>0 a 50+</td><td>Anemómetro de copelas</td></tr>
-              <tr><td>Dirección del viento</td><td>°</td><td>0 a 360</td><td>Veleta con potenciómetro</td></tr>
-              <tr><td>Precipitación</td><td>mm</td><td>0 a 500+</td><td>Pluviómetro de báscula</td></tr>
+              <tr><td>Velocidad del viento</td><td>m/s</td><td>0 a 50+</td><td>Anemómetro de copelas (aparato con cuchillas giratorias que mide velocidad del viento)</td></tr>
+              <tr><td>Dirección del viento</td><td>°</td><td>0 a 360</td><td>Veleta con potenciómetro (sensor que mide dirección del viento y la convierte en señal eléctrica)</td></tr>
+              <tr><td>Precipitación</td><td>mm</td><td>0 a 500+</td><td>Pluviómetro de báscula (instrumento que mide la cantidad de lluvia)</td></tr>
             </tbody>
           </table>
         </div>
@@ -2009,9 +2017,9 @@
             <thead><tr><th>Tipo</th><th>Salida</th><th>Ventaja</th><th>Ejemplo</th></tr></thead>
             <tbody>
               <tr><td>Analógico</td><td>Voltaje continuo 0–5V</td><td>Información continua, bajo costo</td><td>LM35</td></tr>
-              <tr><td>Digital</td><td>Protocolo UART, SPI, I²C</td><td>Sin necesidad de ADC externo</td><td>DHT11, BMP180</td></tr>
+              <tr><td>Digital</td><td>Protocolo UART, SPI, I²C (lenguajes de comunicación entre sensores y computadoras)</td><td>Sin necesidad de ADC externo</td><td>DHT11, BMP180</td></tr>
               <tr><td>Activo</td><td>Genera su propia señal</td><td>Requiere solo alimentación</td><td>LM35, DS18B20</td></tr>
-              <tr><td>Pasivo</td><td>Varía impedancia/resistencia</td><td>Simples y robustos</td><td>Termistor, fotoresistor</td></tr>
+              <tr><td>Pasivo</td><td>Varía impedancia/resistencia (cambia su oposición al paso de electricidad)</td><td>Simples y robustos</td><td>Termistor, fotoresistor</td></tr>
             </tbody>
           </table>
         </div>
@@ -2024,13 +2032,13 @@
         <div class="mat-num">07</div>
         <div>
           <span class="mat-tag tag-quim">Química</span>
-          <div class="mat-title">Análisis de Macromoléculas y Equilibrios Ácido-Base</div>
+          <div class="mat-title">Análisis de Macromoléculas (moléculas grandes como proteínas y ADN) y Equilibrios Ácido-Base (balance entre sustancias ácidas y alcalinas)</div>
           <div class="mat-sub">La Química del Cuerpo Humano y el Clima de Pachuca · Actividad 3 · Abril 2026</div>
         </div>
       </div>
       <div class="mat-content">
         <div class="mat-content-title">Química del Cuerpo y la Atmósfera en Pachuca</div>
-        <p class="mat-content-intro">Análisis de los <strong>60+ elementos químicos</strong> que componen el cuerpo humano y su conexión directa con los cambios atmosféricos registrados en Pachuca durante abril 2026. Los contaminantes del aire afectan el equilibrio ácido-base sanguíneo y el funcionamiento de macromoléculas.</p>
+        <p class="mat-content-intro">Análisis de los <strong>60+ elementos químicos</strong> que componen el cuerpo humano y su conexión directa con los cambios atmosféricos registrados en Pachuca durante abril 2026. Los contaminantes del aire afectan el equilibrio ácido-base sanguíneo (balance de acidez en la sangre, pH 7.35–7.45) y el funcionamiento de macromoléculas.</p>
         <div class="tabs" id="quim-tabs">
           <button class="tab active" onclick="switchTab('quim',0)">Composición corporal</button>
           <button class="tab" onclick="switchTab('quim',1)">Atmósfera</button>
@@ -2040,13 +2048,13 @@
           <table class="data-table">
             <thead><tr><th>Elemento</th><th>Símbolo</th><th>% Masa corporal</th><th>Función principal</th></tr></thead>
             <tbody>
-              <tr><td><strong>Oxígeno</strong></td><td>O</td><td>65%</td><td>Respiración celular, agua (H₂O), metabolismo energético</td></tr>
-              <tr><td><strong>Carbono</strong></td><td>C</td><td>18%</td><td>Base estructural de todas las biomoléculas</td></tr>
-              <tr><td><strong>Hidrógeno</strong></td><td>H</td><td>10%</td><td>Componente del agua, ácidos y bases; gradiente de protones en ATP</td></tr>
-              <tr><td><strong>Nitrógeno</strong></td><td>N</td><td>3%</td><td>Aminoácidos, proteínas, ácidos nucleicos (ADN/ARN)</td></tr>
+              <tr><td><strong>Oxígeno</strong></td><td>O</td><td>65%</td><td>Respiración celular (proceso en que las células usan oxígeno para obtener energía), agua (H₂O), metabolismo energético (conjunto de reacciones que producen energía en el cuerpo)</td></tr>
+              <tr><td><strong>Carbono</strong></td><td>C</td><td>18%</td><td>Base estructural de todas las biomoléculas (moléculas que forman los seres vivos)</td></tr>
+              <tr><td><strong>Hidrógeno</strong></td><td>H</td><td>10%</td><td>Componente del agua, ácidos y bases; gradiente de protones en ATP (diferencia de carga que produce energía celular)</td></tr>
+              <tr><td><strong>Nitrógeno</strong></td><td>N</td><td>3%</td><td>Aminoácidos, proteínas, ácidos nucleicos (moléculas que guardan la información genética: ADN/ARN)</td></tr>
               <tr><td><strong>Calcio</strong></td><td>Ca</td><td>1.5%</td><td>Estructura ósea y dental, contracción muscular</td></tr>
-              <tr><td><strong>Fósforo</strong></td><td>P</td><td>1%</td><td>ATP (energía), fosfolípidos de membrana, ADN/ARN</td></tr>
-              <tr><td><strong>Oligoelementos</strong></td><td>Zn, Fe, I, Se…</td><td>trazas</td><td>Enzimas, inmunidad, hormonas tiroideas, antioxidantes</td></tr>
+              <tr><td><strong>Fósforo</strong></td><td>P</td><td>1%</td><td>ATP (energía), fosfolípidos de membrana (grasas que forman la capa protectora de las células), ADN/ARN</td></tr>
+              <tr><td><strong>Oligoelementos (minerales necesarios en cantidades muy pequeñas)</strong></td><td>Zn, Fe, I, Se…</td><td>trazas</td><td>Enzimas, inmunidad, hormonas tiroideas, antioxidantes</td></tr>
             </tbody>
           </table>
         </div>
@@ -2054,11 +2062,11 @@
           <table class="data-table">
             <thead><tr><th>Proceso atmosférico</th><th>Dato real</th></tr></thead>
             <tbody>
-              <tr><td><strong>Efecto invernadero</strong></td><td>CO₂: 424 ppm (aumenta cada año)</td></tr>
+              <tr><td><strong>Efecto invernadero (gases que atrapan calor en la atmósfera)</strong></td><td>CO₂: 424 ppm (partes por millón, unidad de concentración) (aumenta cada año)</td></tr>
               <tr><td><strong>Agujero de ozono</strong></td><td>26 millones de km² en la Antártida</td></tr>
-              <tr><td><strong>Smog fotoquímico</strong></td><td>O₃ troposférico: 150–200 puntos IMECA</td></tr>
-              <tr><td><strong>Lluvia ácida</strong></td><td>pH &lt; 5.6 (lluvia normal: 5.6)</td></tr>
-              <tr><td><strong>Acidificación de océanos</strong></td><td>30% más ácidos desde la era preindustrial</td></tr>
+              <tr><td><strong>Smog fotoquímico (contaminación del aire causada por reacciones químicas con luz solar)</strong></td><td>O₃ troposférico (ozono a nivel del suelo, contaminante dañino): 150–200 puntos IMECA (Índice Metropolitano de Calidad del Aire)</td></tr>
+              <tr><td><strong>Lluvia ácida (precipitación con pH menor a 5.6 que daña ecosistemas)</strong></td><td>pH &lt; 5.6 (lluvia normal: 5.6)</td></tr>
+              <tr><td><strong>Acidificación de océanos (aumento de acidez del mar por absorber CO₂)</strong></td><td>30% más ácidos desde la era preindustrial</td></tr>
             </tbody>
           </table>
         </div>
@@ -2066,7 +2074,7 @@
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
             <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border)">
               <div style="font-size:11px;color:#fb7185;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Altitud</div>
-              <p style="font-size:13px;color:var(--muted2);line-height:1.6;margin:0">2,400 m s.n.m. → menos O₂ disponible → saturación sanguínea comprometida</p>
+              <p style="font-size:13px;color:var(--muted2);line-height:1.6;margin:0">2,400 m s.n.m. → menos O₂ disponible → saturación sanguínea (nivel de oxígeno en la sangre) comprometida</p>
             </div>
             <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border)">
               <div style="font-size:11px;color:#fb7185;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Ozono (O₃)</div>
@@ -2078,7 +2086,7 @@
             </div>
             <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border)">
               <div style="font-size:11px;color:#fb7185;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Ácidos en el aire</div>
-              <p style="font-size:13px;color:var(--muted2);line-height:1.6;margin:0">Sistema amortiguador sanguíneo (pH 7.35–7.45) trabaja extra → fatiga metabólica</p>
+              <p style="font-size:13px;color:var(--muted2);line-height:1.6;margin:0">Sistema amortiguador sanguíneo (mecanismo del cuerpo para mantener estable el pH de la sangre) (pH 7.35–7.45) trabaja extra → fatiga metabólica (agotamiento del cuerpo por sobreesfuerzo químico interno)</p>
             </div>
           </div>
         </div>
@@ -2116,12 +2124,12 @@
         <div>
           <span class="mat-tag tag-soc">Trabajo Social</span>
           <div class="mat-title">Introducción al Trabajo Social</div>
-          <div class="mat-sub">Intervención social, diagnóstico comunitario y bienestar colectivo aplicado al entorno de Pachuca.</div>
+          <div class="mat-sub">Intervención social, diagnóstico comunitario (evaluación de las necesidades de una comunidad) y bienestar colectivo aplicado al entorno de Pachuca.</div>
         </div>
       </div>
       <div class="mat-content">
         <div class="mat-content-title">Trabajo Social y Clima</div>
-        <p class="mat-content-intro">El trabajo social analiza cómo las condiciones climáticas extremas —como las registradas en abril 2026 en Pachuca— afectan a comunidades vulnerables: salud mental, acceso a recursos y cohesión social.</p>
+        <p class="mat-content-intro">El trabajo social analiza cómo las condiciones climáticas extremas —como las registradas en abril 2026 en Pachuca— afectan a comunidades vulnerables: salud mental, acceso a recursos y cohesión social (unión y solidaridad entre miembros de una comunidad).</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;">
           <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
             <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Diagnóstico</div>
@@ -2133,11 +2141,11 @@
           </div>
           <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
             <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Metodología</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Encuestas de percepción climática, entrevistas comunitarias y mapeo de necesidades sociales en zonas afectadas.</p>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Encuestas de percepción climática (cómo la gente siente y entiende el clima), entrevistas comunitarias y mapeo de necesidades sociales en zonas afectadas.</p>
           </div>
           <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
             <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Hallazgos</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.6">El 68% de familias encuestadas reportó impacto en actividades cotidianas por las anomalías térmicas de abril 2026.</p>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">El 68% de familias encuestadas reportó impacto en actividades cotidianas por las anomalías térmicas (temperaturas fuera de lo normal) de abril 2026.</p>
           </div>
         </div>
       </div>
@@ -2155,7 +2163,7 @@
       </div>
       <div class="mat-content">
         <div class="mat-content-title">¿La Bella Airosa… o la ciudad asfixiada?</div>
-        <p class="mat-content-intro">Pachuca, conocida por sus vientos constantes, vive una paradoja: ya no bastan para limpiar el aire. <strong>PM2.5 de 65 μg/m³ en el Tuzobús</strong> (2.6× el límite OMS) y <strong>picos de 1,200 μg/m³</strong> de PM10 en 2024. Diagnóstico, voces críticas y propuestas desde la ciencia política.</p>
+        <p class="mat-content-intro">Pachuca, conocida por sus vientos constantes, vive una paradoja: ya no bastan para limpiar el aire. <strong>PM2.5 (partículas contaminantes menores a 2.5 micras) de 65 μg/m³ (microgramos por metro cúbico) en el Tuzobús</strong> (2.6× el límite OMS) y <strong>picos de 1,200 μg/m³</strong> de PM10 (partículas contaminantes menores a 10 micras) en 2024. Diagnóstico, voces críticas y propuestas desde la ciencia política.</p>
 
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px">
           <div style="background:rgba(251,113,133,.08);border:1px solid rgba(251,113,133,.22);border-radius:10px;padding:10px 8px;text-align:center">
@@ -2168,7 +2176,7 @@
           </div>
           <div style="background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.22);border-radius:10px;padding:10px 8px;text-align:center">
             <div style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:#38bdf8;line-height:1">4</div>
-            <div style="font-size:9px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin-top:4px">Estaciones SIMAEH</div>
+            <div style="font-size:9px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin-top:4px">Estaciones SIMAEH (Sistema de Monitoreo Atmosférico del Estado de Hidalgo)</div>
           </div>
           <div style="background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.22);border-radius:10px;padding:10px 8px;text-align:center">
             <div style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:#a78bfa;line-height:1">4.2M</div>
@@ -2222,7 +2230,7 @@
             </tbody>
           </table>
           <div class="alert-box info" style="margin-top:14px">
-            <strong>📊 Falla de política (policy failure):</strong> los niveles de PM en 2025–2026 son <strong>peores</strong> que los de 2019. Cuando una política genera resultados contrarios a sus objetivos declarados, la ciencia política la clasifica como fracaso de implementación.
+            <strong>📊 Falla de política (policy failure (fracaso de política pública)):</strong> los niveles de PM en 2025–2026 son <strong>peores</strong> que los de 2019. Cuando una política genera resultados contrarios a sus objetivos declarados, la ciencia política la clasifica como fracaso de implementación (cuando una política no logra aplicarse correctamente).
           </div>
         </div>
 
@@ -2242,7 +2250,7 @@
             </div>
             <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border);border-left:3px solid #fb7185">
               <div style="font-size:10px;color:#fb7185;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">Evidencia</div>
-              <p style="font-size:12px;color:var(--muted2);line-height:1.55;margin:0"><strong>Estadística objetiva:</strong> 2025–2026 peor que 2019. <em>Policy failure</em> documentado por SEDEMA-SEMARNAT.</p>
+              <p style="font-size:12px;color:var(--muted2);line-height:1.55;margin:0"><strong>Estadística objetiva:</strong> 2025–2026 peor que 2019. <em>Policy failure (fracaso de política pública)</em> documentado por SEDEMA-SEMARNAT.</p>
             </div>
           </div>
         </div>
@@ -2251,11 +2259,11 @@
           <table class="data-table">
             <thead><tr><th>Propuesta</th><th>Mecanismo</th></tr></thead>
             <tbody>
-              <tr><td><strong>5.1 Reforma normativa local</strong></td><td>Ordenanza municipal con sanciones a fuentes fijas + incentivos a vehículos eléctricos</td></tr>
+              <tr><td><strong>5.1 Reforma normativa local</strong></td><td>Ordenanza municipal (ley local) con sanciones a fuentes fijas (fábricas e industrias que contaminan desde un lugar fijo) + incentivos a vehículos eléctricos</td></tr>
               <tr><td><strong>5.2 Consejo Ciudadano</strong></td><td>Vecinos + UAEH + ONGs con acceso al SIMAEH y poder de exigir cuentas</td></tr>
-              <tr><td><strong>5.3 PMUS</strong></td><td>Ciclovías, "Hoy No Circula" local, renovación eléctrica del Tuzobús</td></tr>
+              <tr><td><strong>5.3 PMUS (Plan de Movilidad Urbana Sustentable)</strong></td><td>Ciclovías, "Hoy No Circula" local, renovación eléctrica del Tuzobús</td></tr>
               <tr><td><strong>5.4 Red de monitoreo</strong></td><td>Ampliar SIMAEH de <strong>4 → 8 estaciones</strong></td></tr>
-              <tr style="background:rgba(52,211,153,.06)"><td><strong style="color:#34d399">★ 5.5 Infraestructura Verde</strong></td><td><strong>Techos verdes + muros vegetales</strong> en edificios públicos (Palacio, hospitales, Tuzobús)</td></tr>
+              <tr style="background:rgba(52,211,153,.06)"><td><strong style="color:#34d399">★ 5.5 Infraestructura Verde (construcciones con plantas como techos y muros vegetales)</strong></td><td><strong>Techos verdes + muros vegetales</strong> en edificios públicos (Palacio, hospitales, Tuzobús)</td></tr>
             </tbody>
           </table>
           <div class="alert-box info" style="margin-top:14px">
@@ -2332,7 +2340,7 @@
         <div class="prope-label salud">Área propedéutica</div>
         <div class="prope-name">Ciencias de la Salud</div>
       </div>
-      <div class="prope-count">1 proyecto</div>
+      <div class="prope-count">2 proyectos</div>
     </div>
 
     <div class="materia-slider" id="slider-salud">
@@ -2347,7 +2355,7 @@
       </div>
       <div class="mat-content">
         <div class="mat-content-title">Cuando el ambiente enferma al cuerpo</div>
-        <p class="mat-content-intro">Análisis de las consecuencias de la <strong>contaminación del aire, agua y suelo</strong> sobre la salud humana, incluyendo enfermedades respiratorias, cardiovasculares, gastrointestinales y los efectos del cambio climático en la salud mental. Registro local: <strong>+10.8% de IRAS en Pachuca</strong> respecto al periodo anterior.</p>
+        <p class="mat-content-intro">Análisis de las consecuencias de la <strong>contaminación del aire, agua y suelo</strong> sobre la salud humana, incluyendo enfermedades respiratorias, cardiovasculares (del corazón y vasos sanguíneos), gastrointestinales (del estómago e intestinos) y los efectos del cambio climático en la salud mental. Registro local: <strong>+10.8% de IRAS (Infecciones Respiratorias Agudas Superiores) en Pachuca</strong> respecto al periodo anterior.</p>
         <div class="tabs" id="med-tabs">
           <button class="tab active" onclick="switchTab('med',0)">Tipos de contaminación</button>
           <button class="tab" onclick="switchTab('med',1)">Salud mental</button>
@@ -2357,9 +2365,9 @@
           <table class="data-table">
             <thead><tr><th>Tipo</th><th>Origen</th><th>Enfermedades asociadas</th></tr></thead>
             <tbody>
-              <tr><td><strong style="color:#fb7185">Aire</strong></td><td>Vehículos, fábricas, combustibles fósiles</td><td>Asma, bronquitis, hipertensión, infarto, arritmias</td></tr>
-              <tr><td><strong style="color:#38bdf8">Agua</strong></td><td>Desechos industriales, basura, químicos</td><td>Gastroenteritis, colitis, salmonelosis, hepatitis A</td></tr>
-              <tr><td><strong style="color:#fbbf24">Suelo</strong></td><td>Pesticidas, basura, residuos tóxicos</td><td>Indigestión, reflujo, gastritis, daño nervioso</td></tr>
+              <tr><td><strong style="color:#fb7185">Aire</strong></td><td>Vehículos, fábricas, combustibles fósiles (petróleo, gas y carbón)</td><td>Asma, bronquitis, hipertensión, infarto, arritmias (latidos irregulares del corazón)</td></tr>
+              <tr><td><strong style="color:#38bdf8">Agua</strong></td><td>Desechos industriales, basura, químicos</td><td>Gastroenteritis (inflamación del estómago e intestino), colitis (inflamación del colon), salmonelosis (infección por la bacteria Salmonella), hepatitis A (infección del hígado por virus)</td></tr>
+              <tr><td><strong style="color:#fbbf24">Suelo</strong></td><td>Pesticidas (productos químicos para matar plagas), basura, residuos tóxicos</td><td>Indigestión, reflujo, gastritis, daño nervioso</td></tr>
               <tr><td><strong style="color:#a78bfa">Cambio climático</strong></td><td>Aumento de temperatura global</td><td>Golpes de calor, deshidratación, propagación viral</td></tr>
             </tbody>
           </table>
@@ -2372,7 +2380,7 @@
             </div>
             <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border)">
               <div style="font-size:11px;color:#fbbf24;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Ansiedad</div>
-              <p style="font-size:13px;color:var(--muted2);line-height:1.6;margin:0">Preocupación o miedo excesivo. Nerviosismo, sudoración, taquicardia.</p>
+              <p style="font-size:13px;color:var(--muted2);line-height:1.6;margin:0">Preocupación o miedo excesivo. Nerviosismo, sudoración, taquicardia (corazón que late muy rápido).</p>
             </div>
             <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--border)">
               <div style="font-size:11px;color:#a78bfa;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Depresión</div>
@@ -2386,7 +2394,7 @@
             <thead><tr><th>Enfermedad</th><th>Sistema afectado</th></tr></thead>
             <tbody>
               <tr><td><strong>Influenza</strong></td><td>Nariz, garganta, bronquios y pulmones</td></tr>
-              <tr><td><strong>Neumonía</strong></td><td>Pulmones (infección)</td></tr>
+              <tr><td><strong>Neumonía (infección grave de los pulmones)</strong></td><td>Pulmones (infección)</td></tr>
               <tr><td><strong>Asma</strong></td><td>Vías respiratorias (dificultad para respirar)</td></tr>
               <tr><td><strong>Tos persistente</strong></td><td>Vías respiratorias altas</td></tr>
               <tr><td><strong>Covid-19</strong></td><td>Sistema respiratorio (post-pandemia)</td></tr>
@@ -2395,6 +2403,87 @@
         </div>
       </div>
     </div>
+    <!-- Etimologías Grecolatinas -->
+    <div class="materia-card m-etimo reveal" onclick="openDetail('etimo')">
+      <div class="mat-sidebar">
+        <div class="mat-num">02</div>
+        <div>
+          <span class="mat-tag tag-etimo">Etimologías</span>
+          <div class="mat-title">Etimologías Grecolatinas en el Área de la Salud</div>
+          <div class="mat-sub">Diccionario Etimológico del Monitoreo Ambiental · Proyecto EIMA 2026</div>
+        </div>
+      </div>
+      <div class="mat-content">
+        <div class="mat-content-title">Comprender la ciencia desde el origen de las palabras</div>
+        <p class="mat-content-intro">Glosario etimológico dinámico que facilita la interpretación de los <strong>términos técnicos</strong> empleados en el estudio ambiental, tomando como referencia sus <strong>raíces griegas y latinas</strong>. Incluye definiciones científicas, casos prácticos y recursos interactivos.</p>
+        <div class="tabs" id="etimo-tabs">
+          <button class="tab active" onclick="switchTab('etimo',0)">¿Qué hicimos?</button>
+          <button class="tab" onclick="switchTab('etimo',1)">¿Por qué importa?</button>
+          <button class="tab" onclick="switchTab('etimo',2)">Contenido</button>
+        </div>
+        <div class="tab-panel active" id="etimo-0">
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7">Se elaboró un <strong style="color:#d4a574">glosario etimológico dinámico</strong> que facilita la interpretación de los términos técnicos empleados en el estudio ambiental, tomando como referencia sus raíces griegas y latinas. Además, se incluyeron ejemplos y explicaciones sencillas para mejorar la comprensión de cada concepto.</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px">
+            <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border)">
+              <img src="/images/etimo/image1.jpeg" style="width:100%;height:80px;object-fit:cover">
+              <div style="padding:6px 8px;font-size:10px;color:var(--muted2);text-align:center">Medición ambiental</div>
+            </div>
+            <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border)">
+              <img src="/images/etimo/image2.jpeg" style="width:100%;height:80px;object-fit:cover">
+              <div style="padding:6px 8px;font-size:10px;color:var(--muted2);text-align:center">Instrumentos meteorológicos</div>
+            </div>
+            <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border)">
+              <img src="/images/etimo/image3.jpeg" style="width:100%;height:80px;object-fit:cover">
+              <div style="padding:6px 8px;font-size:10px;color:var(--muted2);text-align:center">Trabajo científico</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" id="etimo-1">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div style="background:var(--bg2);border-radius:10px;padding:12px;border:1px solid var(--border)">
+              <div style="font-size:10px;color:#d4a574;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">📖 Vocabulario</div>
+              <p style="font-size:12px;color:var(--muted2);line-height:1.5;margin:0">Entiendes mejor las palabras y aprendes nuevas más fácilmente.</p>
+            </div>
+            <div style="background:var(--bg2);border-radius:10px;padding:12px;border:1px solid var(--border)">
+              <div style="font-size:10px;color:#d4a574;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">🔍 Comprensión</div>
+              <p style="font-size:12px;color:var(--muted2);line-height:1.5;margin:0">Muchas palabras tienen raíces parecidas: puedes deducir significados.</p>
+            </div>
+            <div style="background:var(--bg2);border-radius:10px;padding:12px;border:1px solid var(--border)">
+              <div style="font-size:10px;color:#d4a574;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">✍️ Ortografía</div>
+              <p style="font-size:12px;color:var(--muted2);line-height:1.5;margin:0">Conocer el origen de una palabra hace más fácil escribirla correctamente.</p>
+            </div>
+            <div style="background:var(--bg2);border-radius:10px;padding:12px;border:1px solid var(--border)">
+              <div style="font-size:10px;color:#d4a574;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">🌍 Idiomas</div>
+              <p style="font-size:12px;color:var(--muted2);line-height:1.5;margin:0">Muchas palabras del español vienen del latín y griego, igual que en inglés o francés.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" id="etimo-2">
+          <div style="font-size:13px;color:var(--muted2);line-height:1.7">
+            <p style="margin-bottom:10px">El glosario contiene:</p>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="display:flex;align-items:center;gap:10px;background:var(--bg2);padding:10px 14px;border-radius:10px;border:1px solid var(--border)">
+                <span style="font-size:18px">🏛️</span>
+                <span>Interpretación del <strong style="color:var(--text)">origen de las palabras</strong></span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;background:var(--bg2);padding:10px 14px;border-radius:10px;border:1px solid var(--border)">
+                <span style="font-size:18px">🔬</span>
+                <span>Definición tanto <strong style="color:var(--text)">científica</strong> como <strong style="color:var(--text)">textual</strong></span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;background:var(--bg2);padding:10px 14px;border-radius:10px;border:1px solid var(--border)">
+                <span style="font-size:18px">📊</span>
+                <span><strong style="color:var(--text)">Casos prácticos</strong> relacionados con el proyecto EIMA</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;background:var(--bg2);padding:10px 14px;border-radius:10px;border:1px solid var(--border)">
+                <span style="font-size:18px">🎮</span>
+                <span><strong style="color:var(--text)">Recursos gráficos y dinámicos</strong> para mejor comprensión</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     </div><!-- /slider-salud -->
     <div class="slider-controls">
       <div class="slider-dots" id="dots-salud"></div>
@@ -2598,7 +2687,7 @@ const DETAILS = {
       </div>
       <div class="detail-sec">
         <div class="detail-sec-head">Descripción</div>
-        <div class="detail-sec-sub">El Parque Ecológico de Cubitos es el área verde más importante de Pachuca, declarada Área Natural Protegida el 30 de diciembre de 2002. Funciona como pulmón verde del estado de Hidalgo y alberga un ecosistema de matorral xerófilo único.</div>
+        <div class="detail-sec-sub">El Parque Ecológico de Cubitos es el área verde más importante de Pachuca, declarada Área Natural Protegida el 30 de diciembre de 2002. Funciona como pulmón verde del estado de Hidalgo y alberga un ecosistema (comunidad de seres vivos y su entorno) de matorral xerófilo (vegetación adaptada a sequía) único.</div>
         <div class="detail-gallery g2">
           <div class="detail-gimg" style="background-image:url('${W}/5/53/Parque_Ecol%C3%B3gico_Cubitos._01.jpg')"><div class="detail-gimg-cap">Entrada principal del parque</div></div>
           <div class="detail-gimg" style="background-image:url('${W}/f/f3/Parque_Ecol%C3%B3gico_Cubitos._Entrada._01.jpg')"><div class="detail-gimg-cap">Vista desde la ciclopista</div></div>
@@ -2607,17 +2696,17 @@ const DETAILS = {
       <div class="detail-sec">
         <div class="detail-sec-head">Flora representativa</div>
         <div class="detail-2col">
-          <div class="detail-card"><h4>🌵 Nopal Cardón</h4><p><em>Opuntia streptacantha</em> — Planta dominante del matorral. Bioindicadora de sequía. En abril 2026 mostró cladodios con leve arrugamiento por calor extremo (+9°C sobre lo normal) y humedad de solo 35%.</p></div>
-          <div class="detail-card"><h4>🌿 Maguey Pulquero</h4><p><em>Agave salmiana</em> — Sensible a cambios de humedad. En abril 2026 presentó hojas con puntas secas por déficit hídrico acumulado. Cierra estomas inhibiendo fotosíntesis.</p></div>
-          <div class="detail-card"><h4>🌱 Huizache</h4><p><em>Acacia schaffneri</em> — Indicadora del estado del suelo. Floración retrasada en abril 2026 por temperaturas 7-9°C sobre lo normal. Sin flores, los polinizadores no encuentran recursos.</p></div>
-          <div class="detail-card"><h4>🌾 Palo Dulce</h4><p><em>Eysenhardtia polystachya</em> — Sensible a la xericidad extrema. Bordes de hojas secos observados por baja humedad crónica (35-38%) durante el muestreo de abril.</p></div>
+          <div class="detail-card"><h4>🌵 Nopal Cardón</h4><p><em>Opuntia streptacantha</em> — Planta dominante del matorral. Bioindicadora (especie que señala cambios ambientales) de sequía. En abril 2026 mostró cladodios con leve arrugamiento por calor extremo (+9°C sobre lo normal) y humedad de solo 35%.</p></div>
+          <div class="detail-card"><h4>🌿 Maguey Pulquero</h4><p><em>Agave salmiana</em> — Sensible a cambios de humedad. En abril 2026 presentó hojas con puntas secas por déficit hídrico (falta de agua) acumulado. Cierra estomas (poros de las hojas) inhibiendo fotosíntesis (producción de alimento con luz).</p></div>
+          <div class="detail-card"><h4>🌱 Huizache</h4><p><em>Acacia schaffneri</em> — Indicadora (señaladora) del estado del suelo. Floración retrasada en abril 2026 por temperaturas 7-9°C sobre lo normal. Sin flores, los polinizadores no encuentran recursos.</p></div>
+          <div class="detail-card"><h4>🌾 Palo Dulce</h4><p><em>Eysenhardtia polystachya</em> — Sensible a la xericidad (sequedad) extrema. Bordes de hojas secos observados por baja humedad crónica (35-38%) durante el muestreo de abril.</p></div>
         </div>
       </div>
       <div class="detail-sec">
         <div class="detail-sec-head">Fauna bioindicadora</div>
         <div class="detail-3col">
-          <div class="detail-card"><h4>🐝 Abeja Nativa</h4><p><em>Xylocopa mexicanorum</em> — Eslabón crítico. Vuelo imposible los días de lluvia anómala (18mm el 5 de abril). Su baja actividad amenaza toda la cadena trófica.</p></div>
-          <div class="detail-card"><h4>🦎 Lagartija de Matorral</h4><p><em>Sceloporus grammicus</em> — Endémica de la zona árida hidalguense. Reducción de actividad diurna por estrés térmico &gt;24°C + humedad &lt;40%.</p></div>
+          <div class="detail-card"><h4>🐝 Abeja Nativa</h4><p><em>Xylocopa mexicanorum</em> — Eslabón crítico. Vuelo imposible los días de lluvia anómala (18mm el 5 de abril). Su baja actividad amenaza toda la cadena trófica (cadena alimenticia).</p></div>
+          <div class="detail-card"><h4>🦎 Lagartija de Matorral</h4><p><em>Sceloporus grammicus</em> — Endémica de la zona árida hidalguense. Reducción de actividad diurna por estrés térmico (daño al cuerpo por calor excesivo) &gt;24°C + humedad &lt;40%.</p></div>
           <div class="detail-card"><h4>🐸 Rana de Árbol</h4><p><em>Hyla arenicolor</em> — Activa solo tras lluvia anómala (11 abril, humedad 91%). Indica calidad hídrica positiva. Requiere mínimo 35% de humedad.</p></div>
         </div>
       </div>`
@@ -2638,7 +2727,7 @@ const DETAILS = {
       </div>
       <div class="detail-sec">
         <div class="detail-sec-head">El Bosque</div>
-        <div class="detail-sec-sub">La Sierra de Pachuca alberga el Parque Nacional El Chico, primera área natural protegida de México (1898). El bosque de Abies religiosa (oyamel) y pino-encino es hábitat de especies endémicas únicas del altiplano hidalguense.</div>
+        <div class="detail-sec-sub">La Sierra de Pachuca alberga el Parque Nacional El Chico, primera área natural protegida de México (1898). El bosque de Abies religiosa (oyamel, árbol de zonas altas y frías de México) y pino-encino es hábitat (lugar donde vive una especie) de especies endémicas (únicas de esta zona) del altiplano hidalguense.</div>
         <div class="detail-gallery g2">
           <div class="detail-gimg" style="background-image:url('${W}/a/aa/Abies_religiosa%2C_Parque_Nacional_El_Chico%2C_Hidalgo%2C_Mexico_1.jpg')"><div class="detail-gimg-cap">Abies religiosa (Oyamel) · Parque Nacional El Chico</div></div>
           <div class="detail-gimg" style="background-image:url('${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg')"><div class="detail-gimg-cap">Vista de la Sierra desde Pachuca</div></div>
@@ -2647,9 +2736,9 @@ const DETAILS = {
       <div class="detail-sec">
         <div class="detail-sec-head">Biodiversidad</div>
         <div class="detail-2col">
-          <div class="detail-card"><h4>🦎 Ajolote del Altiplano</h4><p><em>Ambystoma velasci</em> — Única especie de Ambystoma silvestre en Hidalgo. Habita arroyos de bosque pino-encino de alta montaña. Bajo Protección Especial NOM-059. Población en declive severo por contaminación del agua, glifosato y microplásticos.</p></div>
+          <div class="detail-card"><h4>🦎 Ajolote del Altiplano</h4><p><em>Ambystoma velasci</em> — Única especie de Ambystoma silvestre en Hidalgo. Habita arroyos de bosque pino-encino de alta montaña. Bajo Protección Especial NOM-059. Población en declive (disminución) severo por contaminación del agua, glifosato y microplásticos.</p></div>
           <div class="detail-card"><h4>🦅 Águila Real</h4><p><em>Aquila chrysaetos</em> — Depredador ápex de la cadena trófica de la sierra. Regula equilibrio de aves y mamíferos medianos. Su presencia indica ecosistema en buen estado. Símbolo nacional de México.</p></div>
-          <div class="detail-card"><h4>🌲 Oyamel</h4><p><em>Abies religiosa</em> — Especie dominante del bosque. Captura CO₂ y regula el ciclo hídrico de la cuenca. Sensible a cambios de temperatura. El calentamiento de +9°C registrado en abril 2026 representa una amenaza directa.</p></div>
+          <div class="detail-card"><h4>🌲 Oyamel</h4><p><em>Abies religiosa</em> — Especie dominante del bosque. Captura CO₂ y regula el ciclo hídrico (recorrido del agua en la naturaleza) de la cuenca (zona donde fluye el agua). Sensible a cambios de temperatura. El calentamiento de +9°C registrado en abril 2026 representa una amenaza directa.</p></div>
           <div class="detail-card"><h4>🐦 Cardenal Norteño</h4><p><em>Cardinalis cardinalis</em> — Bioindicador de calidad del hábitat boscoso-urbano. En abril 2026 redujo su canto por frío nocturno tardío (5°C el 7 de abril). Sensible a perturbaciones climáticas.</p></div>
         </div>
       </div>`
@@ -2670,7 +2759,7 @@ const DETAILS = {
       </div>
       <div class="detail-sec">
         <div class="detail-sec-head">El Reloj Monumental</div>
-        <div class="detail-sec-sub">Construido en 1904 durante el gobierno de Manuel Gutiérrez Zamora, el Reloj Monumental de Pachuca es el símbolo más reconocible de la capital hidalguense. Con influencia francesa de estilo neoclásico, sus cuatro esferas de reloj y carillón lo hacen único en México.</div>
+        <div class="detail-sec-sub">Construido en 1904 durante el gobierno de Manuel Gutiérrez Zamora, el Reloj Monumental de Pachuca es el símbolo más reconocible de la capital hidalguense. Con influencia francesa de estilo neoclásico (arquitectura inspirada en la antigua Grecia y Roma), sus cuatro esferas de reloj y carillón lo hacen único en México.</div>
         <div class="detail-gallery g2">
           <div class="detail-gimg" style="background-image:url('${W}/8/8e/Reloj_Monumental%2C_Pachuca%2C_Hidalgo%2C_M%C3%A9xico%2C_2013-10-10%2C_DD_02.JPG')"><div class="detail-gimg-cap">Reloj Monumental de Pachuca · 1904</div></div>
           <div class="detail-gimg" style="background-image:url('${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg')"><div class="detail-gimg-cap">Vista panorámica de Pachuca desde la Sierra</div></div>
@@ -2682,7 +2771,7 @@ const DETAILS = {
           <div class="detail-card"><h4>⛏️ Ciudad Minera</h4><p>Pachuca de Soto fue fundada como ciudad minera de plata en el siglo XVI. Su riqueza minera financió gran parte de la arquitectura porfiriana del centro histórico, incluyendo el Reloj Monumental y el Archivo Histórico.</p></div>
           <div class="detail-card"><h4>🏛️ Arquitectura Porfiriana</h4><p>El centro histórico preserva edificios del período 1876-1911, con influencia francesa y neoclásica. La Plaza de la Independencia, rodeada de portales y el Palacio Municipal, es el corazón cívico de la ciudad.</p></div>
           <div class="detail-card"><h4>🌬️ La Bella Airosa</h4><p>El apodo de Pachuca proviene de los fuertes vientos del NE que caracterizan la ciudad durante todo el año, pero especialmente en primavera. En abril 2026 se registraron ráfagas de hasta 40 km/h, afectando la dispersión de contaminantes.</p></div>
-          <div class="detail-card"><h4>🌡️ Clima Abril 2026</h4><p>El centro urbano de Pachuca registró temperaturas de hasta 26°C (9°C sobre el histórico) durante la primera quincena de abril 2026. La isla de calor urbano amplifica el efecto del calentamiento en el área metropolitana.</p></div>
+          <div class="detail-card"><h4>🌡️ Clima Abril 2026</h4><p>El centro urbano de Pachuca registró temperaturas de hasta 26°C (9°C sobre el histórico) durante la primera quincena de abril 2026. La isla de calor urbano (las ciudades son más calientes que las zonas rurales cercanas) amplifica el efecto del calentamiento en el área metropolitana.</p></div>
         </div>
       </div>`
   },
@@ -2776,7 +2865,7 @@ const DETAILS = {
         <div class="detail-sec-head">Especies y Conservación</div>
         <div class="detail-2col">
           <div class="detail-card"><h4>🦎 Chiropterotriton sp.</h4><p>Salamandras del género Chiropterotriton registradas en la Sierra de Pachuca. Extremadamente sensibles a la desecación, requieren humedad mínima de 35%. En abril 2026, la humedad cayó al 35-38%, representando el límite crítico de supervivencia.</p></div>
-          <div class="detail-card"><h4>🌲 Oyamel y Pino</h4><p>El bosque mixto de Abies religiosa (oyamel) y pinos es el ecosistema dominante. Regula el ciclo hídrico de la cuenca del Valle de Pachuca. Sensible al aumento de temperatura: el calentamiento de +9°C de abril 2026 genera estrés hídrico en los árboles.</p></div>
+          <div class="detail-card"><h4>🌲 Oyamel y Pino</h4><p>El bosque mixto de Abies religiosa (oyamel) y pinos es el ecosistema dominante. Regula el ciclo hídrico de la cuenca del Valle de Pachuca. Sensible al aumento de temperatura: el calentamiento de +9°C de abril 2026 genera estrés hídrico (sufrimiento por falta de agua) en los árboles.</p></div>
           <div class="detail-card"><h4>💧 Arroyos y Cuencas</h4><p>Los arroyos del parque alimentan las cuencas de Pachuca. La calidad del agua se ve amenazada por microplásticos, nitrógeno amoniacal de escurrimientos agrícolas y lluvia ácida (pH &lt;6.0) derivada de emisiones industriales de la zona de Tula.</p></div>
           <div class="detail-card"><h4>🏘️ El Pueblo Mágico</h4><p>Mineral del Chico conserva arquitectura colonial y calles empedradas. Su parroquia del siglo XVIII y la plaza principal son el corazón de una comunidad que vive del turismo ecológico y la conservación del bosque templado.</p></div>
         </div>
@@ -2958,11 +3047,11 @@ const DETAILS = {
             <p><strong>Si colapsan:</strong> Plagas se descontrolan, semillas no se dispersan, depredadores superiores quedan sin presa principal.</p>
           </div>
           <div class="hotspot-info" data-group="trofic" data-id="4" style="--hot-color:#a78bfa">
-            <span class="hs-meta">Nivel 4 · Depredadores ápice</span>
+            <span class="hs-meta">Nivel 4 · Depredadores ápice (cazadores en la cima de la cadena alimenticia)</span>
             <h5><span class="hs-dot"></span>🦅 Águila real, Aguililla cola roja</h5>
             <p><strong>Función:</strong> Depredadores ápice. Regulan equilibrio de aves y mamíferos medianos. Indicadores de ecosistema sano.</p>
             <p><strong>Estado Abr 2026:</strong> Eficiencia de caza reducida — pérdida de corrientes térmicas durante frentes fríos del 11 y 19 abr.</p>
-            <p><strong>Si colapsan:</strong> Sobrepoblación de consumidores secundarios, desequilibrio, presión sobre el ecosistema entero.</p>
+            <p><strong>Si colapsan:</strong> Sobrepoblación de consumidores secundarios (animales que comen herbívoros), desequilibrio, presión sobre el ecosistema entero.</p>
           </div>
           <div class="hotspot-info" data-group="trofic" data-id="5" style="--hot-color:#94a3b8">
             <span class="hs-meta">Cierre · Recicladores</span>
@@ -3058,7 +3147,7 @@ const DETAILS = {
             <td><strong>1 Abr</strong></td>
             <td>24°C (+7°C) · Hum 38%</td>
             <td><div style="display:flex;gap:4px;align-items:center"><img src="/images/eco/image14.jpg" style="width:28px;height:28px;border-radius:5px;object-fit:cover"><span>Nopal cardón</span></div></td>
-            <td><strong>Nopal:</strong> <strong>arrugamiento de cladodios</strong> por pérdida de agua. El <strong>calor extremo</strong> acelera la evapotranspiración y reduce la turgencia celular.</td>
+            <td><strong>Nopal:</strong> <strong>arrugamiento de cladodios</strong> por pérdida de agua. El <strong>calor extremo</strong> acelera la evapotranspiración (pérdida de agua por evaporación del suelo y transpiración de plantas) y reduce la turgencia celular (presión de agua que mantiene firme a la célula).</td>
           </tr>
           <tr>
             <td><strong>3 Abr</strong></td>
@@ -3117,7 +3206,7 @@ const DETAILS = {
             <td><strong style="color:#fb7185">Ola de calor</strong></td>
             <td>1, 3, 9, 15, 17, 23 Abr</td>
             <td>Hasta 26°C (+9°C sobre promedio)</td>
-            <td>Inhibición de fotosíntesis en productores; cierre de estomas; deshidratación en fauna ectotérmica</td>
+            <td>Inhibición (bloqueo) de fotosíntesis (producción de alimento con luz) en productores (plantas); cierre de estomas; deshidratación en fauna ectotérmica (animales de sangre fría, como reptiles y anfibios)</td>
           </tr>
           <tr>
             <td><strong style="color:#38bdf8">Evento lluvioso extremo</strong></td>
@@ -3291,7 +3380,7 @@ const DETAILS = {
               <h5><span class="hs-dot"></span>⛏️ Depósitos históricos de minería</h5>
               <p><strong>Xenobióticos:</strong> Plomo (Pb), zinc (Zn), arsénico (As), microplásticos.</p>
               <p><strong>Impacto:</strong> La erosión eólica dispersa partículas finas hacia colonias habitacionales y arroyos. Bioacumulación en sedimentos.</p>
-              <p><strong>Riesgo en ajolote:</strong> Daño hepático y renal por bioacumulación crónica.</p>
+              <p><strong>Riesgo en ajolote:</strong> Daño hepático y renal por bioacumulación (acumulación de tóxicos en el cuerpo) crónica (a largo plazo).</p>
             </div>
             <div class="hotspot-info" data-group="biomap" data-id="3" style="--hot-color:#fbbf24">
               <span class="hs-meta">Centro · Mancha urbana</span>
@@ -3341,7 +3430,7 @@ const DETAILS = {
       <div class="detail-sec">
         <div class="detail-sec-head">5. Análisis de Disrupción</div>
         <div class="detail-2col">
-          <div class="detail-card"><h4 style="color:#fb7185">☠️ Metales Pesados</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Los metales pesados presentes (Pb, Cd, Zn) pueden afectar el sistema endocrino del ajolote, provocando malformaciones, problemas reproductivos e incluso la muerte por bioacumulación en tejidos renales y hepáticos.</p></div>
+          <div class="detail-card"><h4 style="color:#fb7185">☠️ Metales Pesados</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Los metales pesados presentes (Pb, Cd, Zn) pueden afectar el sistema endocrino (sistema hormonal) del ajolote, provocando malformaciones, problemas reproductivos e incluso la muerte por bioacumulación (acumulación de tóxicos) en tejidos renales (de riñón) y hepáticos (de hígado).</p></div>
           <div class="detail-card"><h4 style="color:#fbbf24">🧪 Pesticidas y Glifosato</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Los pesticidas agrícolas actúan como disruptores endocrinos que alteran el comportamiento y desarrollo del ajolote, reduciendo sus probabilidades de supervivencia y reproducción exitosa.</p></div>
         </div>
       </div>
@@ -3397,7 +3486,7 @@ const DETAILS = {
           <div class="detail-card"><h4 style="color:#fb7185">☠️ Metales Pesados más Críticos</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">Los más abundantes son <strong style="color:var(--text)">Plomo (Pb)</strong> y <strong style="color:var(--text)">Zinc (Zn)</strong> por contaminación minera. Sin embargo, el <strong style="color:var(--text)">Arsénico (As)</strong> y el <strong style="color:var(--text)">Cadmio (Cd)</strong> son los que ponen en mayor riesgo al ajolote para el futuro.</p></div>
           <div class="detail-card"><h4 style="color:#38bdf8">🌊 Sistema Hidrológico</h4><p style="font-size:13px;line-height:1.7;color:var(--muted2)">El flujo va de <strong style="color:var(--text)">Norte a Sur</strong>. Para 2036, el río funcionará casi por completo como colector de aguas negras y pluviales: cualquier contaminante arrojado en el centro llega en horas a comunidades del sur, conectando con la cuenca del Valle de México.</p></div>
         </div>
-        <div class="alert-box warning" style="margin-top:20px">🌡️ <strong>Isla de Calor Urbana 2036:</strong> Las temperaturas podrán subir <strong>2–4°C</strong> adicionales. El calor disuelve el oxígeno del agua, causando la muerte de los ajolotes u obligándolos a una <strong>metamorfosis forzada</strong> — se convierten en salamandras terrestres. Además, se proyectan sequías más frecuentes que eliminarán los pocos cuerpos de agua restantes.</div>
+        <div class="alert-box warning" style="margin-top:20px">🌡️ <strong>Isla de Calor Urbana 2036:</strong> Las temperaturas podrán subir <strong>2–4°C</strong> adicionales. El calor disuelve el oxígeno del agua, causando la muerte de los ajolotes u obligándolos a una <strong>metamorfosis forzada (transformación obligada de su forma corporal)</strong> — se convierten en salamandras terrestres. Además, se proyectan sequías más frecuentes que eliminarán los pocos cuerpos de agua restantes.</div>
       </div>
 
       <!-- PROPUESTA DE CAMBIO -->
@@ -4465,7 +4554,7 @@ void loop() {
   </table>
   <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-top:18px">Causas meteorológicas</div>
   <div class="detail-2col" style="margin-top:10px">
-    <div class="detail-card"><strong>Bloqueo anticiclónico</strong><br>Alta presión persistente en altura (500 hPa) desvía masas frías y permite calentamiento adiabático por subsidencia.</div>
+    <div class="detail-card"><strong>Bloqueo anticiclónico</strong><br>Alta presión persistente en altura (500 hPa) desvía masas frías y permite calentamiento adiabático por subsidencia (descenso del aire que se calienta al bajar).</div>
     <div class="detail-card"><strong>Viento del sur continental</strong><br>Flujo de aire seco y cálido desde el interior del continente eleva temperaturas sin aportar humedad.</div>
     <div class="detail-card"><strong>Cielos despejados</strong><br>Ausencia de nubosidad maximiza radiación solar directa e incrementa el calentamiento superficial diurno.</div>
     <div class="detail-card"><strong>Isla de calor urbana</strong><br>En zonas urbanas como Pachuca, concreto y asfalto acumulan calor y lo liberan en la noche, agravando el estrés térmico nocturno.</div>
@@ -4728,7 +4817,7 @@ void loop() {
   <div class="detail-sec-head">10 · Conclusión</div>
   <p style="color:var(--muted2);font-size:14.5px;line-height:1.85">El análisis de los 26 días de abril 2026 en Pachuca revela un mes marcado por un evento climático excepcional: una onda de calor de <strong>11 días (del 7 al 17 de abril)</strong> con un pico de <strong>27.1 °C</strong> — anomalía de <strong>+8.1 °C</strong> sobre la normal histórica de la ciudad.</p>
   <div class="detail-3col" style="margin-top:14px">
-    <div class="detail-card"><strong style="color:#fb7185">Vulnerabilidad climática</strong><br>Pese a su altitud, Pachuca no está exenta de calor extremo. El binomio bloqueo anticiclónico + viento sur seco puede empujar las temperaturas muy por encima de lo esperado.</div>
+    <div class="detail-card"><strong style="color:#fb7185">Vulnerabilidad climática</strong><br>Pese a su altitud, Pachuca no está exenta de calor extremo. El binomio bloqueo anticiclónico (masa de aire estacionaria que impide la entrada de frentes fríos) + viento sur seco puede empujar las temperaturas muy por encima de lo esperado.</div>
     <div class="detail-card"><strong style="color:#38bdf8">Relación T–precipitación</strong><br>La ausencia de lluvia durante la onda y su terminación abrupta el día 18 ilustran la dinámica de los eventos extremos: persisten bajo bloqueo atmosférico y colapsan con sistemas convectivos húmedos.</div>
     <div class="detail-card"><strong style="color:#fbbf24">Perspectiva climática</strong><br>Bajo calentamiento global estos eventos serán más frecuentes e intensos. Pachuca necesita Planes de Acción ante Onda de Calor (PAC): alertas tempranas, centros de hidratación y protocolos médicos de emergencia.</div>
   </div>
@@ -5230,6 +5319,232 @@ void loop() {
         </ol>
       </div>`
   },
+  etimo: {
+    tag: 'Propedéutico · Ciencias de la Salud',
+    tagColor: 'rgba(212,165,116,.15)', tagTextColor: '#d4a574',
+    title: 'Etimologías Grecolatinas en el Área de la Salud',
+    sub: 'Diccionario Etimológico del Monitoreo Ambiental · Proyecto EIMA 2026',
+    hero: `https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1400&q=85`,
+    content: `
+      <div class="detail-facts">
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#d4a574">🏛️</div><div class="detail-fact-lbl">Raíces Grecolatinas</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">10</div><div class="detail-fact-lbl">Integrantes</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">EIMA</div><div class="detail-fact-lbl">Proyecto base</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">🎮</div><div class="detail-fact-lbl">Sopa de letras</div></div>
+      </div>
+
+      <!-- OBJETIVO -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Objetivo</div>
+        <div class="detail-sec-sub">Diseñar un apartado dentro de la página web del proyecto que presente de forma clara, visual y atractiva el Diccionario Etimológico Interactivo, explicando su propósito, contenido y utilidad.</div>
+        <div class="detail-gallery g3">
+          <div class="detail-gimg" style="background-image:url('/images/etimo/image1.jpeg')"><div class="detail-gimg-cap">Medición ambiental</div></div>
+          <div class="detail-gimg" style="background-image:url('/images/etimo/image2.jpeg')"><div class="detail-gimg-cap">Instrumentos meteorológicos</div></div>
+          <div class="detail-gimg" style="background-image:url('/images/etimo/image3.jpeg')"><div class="detail-gimg-cap">Trabajo científico</div></div>
+        </div>
+      </div>
+
+      <!-- QUÉ HICIMOS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">¿Qué hicimos?</div>
+        <div class="detail-sec-sub">Se elaboró un glosario etimológico dinámico que facilita la interpretación de los términos técnicos empleados en el estudio ambiental, tomando como referencia sus raíces griegas y latinas. Además, se incluyeron ejemplos y explicaciones sencillas para mejorar la comprensión de cada concepto.</div>
+      </div>
+
+      <!-- POR QUÉ ES IMPORTANTE -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">¿Por qué es importante?</div>
+        <div class="detail-sec-sub">Un diccionario etimológico ayuda a conocer el origen y la evolución de las palabras. No solo dice qué significan, sino de dónde vienen, cómo cambiaron con el tiempo y qué relación tienen con otros idiomas.</div>
+        <div class="detail-2col">
+          <div class="detail-card"><h4 style="color:#d4a574">📖 Mejora el vocabulario</h4><p>Entiendes mejor las palabras y aprendes nuevas más fácilmente al conocer sus raíces.</p></div>
+          <div class="detail-card"><h4 style="color:#d4a574">🔍 Facilita la comprensión</h4><p>Muchas palabras tienen raíces parecidas, así que puedes deducir significados de palabras nuevas.</p></div>
+          <div class="detail-card"><h4 style="color:#d4a574">✍️ Ayuda en ortografía</h4><p>Conocer el origen de una palabra hace más fácil escribirla correctamente.</p></div>
+          <div class="detail-card"><h4 style="color:#d4a574">🌍 Apoya otros idiomas</h4><p>Muchas palabras del español vienen del latín y griego, igual que en inglés, francés o italiano.</p></div>
+          <div class="detail-card"><h4 style="color:#d4a574">📜 Historia y cultura</h4><p>Las palabras reflejan costumbres, conquistas, ciencia y cambios sociales a lo largo de los siglos.</p></div>
+          <div class="detail-card"><h4 style="color:#d4a574">🔬 Comprensión científica</h4><p>Los términos médicos y científicos se construyen casi siempre con raíces griegas y latinas. Conocerlas es entender la ciencia.</p></div>
+        </div>
+      </div>
+
+      <!-- EJEMPLOS ETIMOLÓGICOS INTERACTIVOS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Ejemplos Etimológicos del Proyecto EIMA</div>
+        <div class="detail-sec-sub">Clic en cada término para descubrir sus raíces grecolatinas y cómo se aplica en nuestro proyecto.</div>
+        <div class="filo-lenses" id="etimo-lenses">
+
+          <div class="filo-lens" style="--lens-color:#fb7185" onclick="this.classList.toggle('open')">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">🌡️</div>
+              <div class="filo-lens-titles"><div class="filo-lens-name">Termómetro</div><div class="filo-lens-sub">Del griego <em>thermós</em> (calor) + <em>métron</em> (medida)</div></div>
+              <div class="filo-lens-chev">▼</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">"Instrumento que mide el calor"</div>
+              <p><strong style="color:var(--text)">Raíz griega:</strong> θερμός (<em>thermós</em>) = caliente · μέτρον (<em>métron</em>) = medida</p>
+              <p><strong style="color:var(--text)">En EIMA:</strong> El sensor LM35 funciona como termómetro electrónico, midiendo la temperatura de Pachuca con precisión de ±0.5°C. Registramos hasta 27.1°C — una anomalía de +8.1°C.</p>
+            </div>
+          </div>
+
+          <div class="filo-lens" style="--lens-color:#38bdf8" onclick="this.classList.toggle('open')">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">🌍</div>
+              <div class="filo-lens-titles"><div class="filo-lens-name">Atmósfera</div><div class="filo-lens-sub">Del griego <em>atmós</em> (vapor) + <em>sphaîra</em> (esfera)</div></div>
+              <div class="filo-lens-chev">▼</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">"Esfera de vapor que envuelve la Tierra"</div>
+              <p><strong style="color:var(--text)">Raíz griega:</strong> ἀτμός (<em>atmós</em>) = vapor, gas · σφαῖρα (<em>sphaîra</em>) = esfera, globo</p>
+              <p><strong style="color:var(--text)">En EIMA:</strong> El sensor BMP180 mide la presión atmosférica a ~770 hPa en Pachuca. La atmósfera a 2,426 m s.n.m. tiene 24% menos oxígeno que a nivel del mar.</p>
+            </div>
+          </div>
+
+          <div class="filo-lens" style="--lens-color:#34d399" onclick="this.classList.toggle('open')">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">🌿</div>
+              <div class="filo-lens-titles"><div class="filo-lens-name">Ecología</div><div class="filo-lens-sub">Del griego <em>oîkos</em> (casa) + <em>lógos</em> (estudio)</div></div>
+              <div class="filo-lens-chev">▼</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">"Estudio de la casa (el hogar natural de los seres vivos)"</div>
+              <p><strong style="color:var(--text)">Raíz griega:</strong> οἶκος (<em>oîkos</em>) = casa, hogar · λόγος (<em>lógos</em>) = estudio, tratado</p>
+              <p><strong style="color:var(--text)">En EIMA:</strong> Estudiamos el matorral xerófilo como "casa" de 14 especies bioindicadoras. La ecología nos permite entender cómo la cadena trófica se rompe cuando el clima cambia.</p>
+            </div>
+          </div>
+
+          <div class="filo-lens" style="--lens-color:#fbbf24" onclick="this.classList.toggle('open')">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">☀️</div>
+              <div class="filo-lens-titles"><div class="filo-lens-name">Fotosíntesis</div><div class="filo-lens-sub">Del griego <em>phôs</em> (luz) + <em>sýnthesis</em> (composición)</div></div>
+              <div class="filo-lens-chev">▼</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">"Composición (de alimento) a partir de la luz"</div>
+              <p><strong style="color:var(--text)">Raíz griega:</strong> φῶς (<em>phôs</em>) = luz · σύνθεσις (<em>sýnthesis</em>) = unión, composición</p>
+              <p><strong style="color:var(--text)">En EIMA:</strong> El nopal cardón usa fotosíntesis CAM — un proceso adaptado al desierto. Cuando la temperatura sube a +9°C sobre lo normal, la fotosíntesis se inhibe y la planta sufre.</p>
+            </div>
+          </div>
+
+          <div class="filo-lens" style="--lens-color:#a78bfa" onclick="this.classList.toggle('open')">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">🧬</div>
+              <div class="filo-lens-titles"><div class="filo-lens-name">Metabolismo</div><div class="filo-lens-sub">Del griego <em>metabolé</em> (cambio) + <em>-ismós</em> (proceso)</div></div>
+              <div class="filo-lens-chev">▼</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">"Proceso de cambio (transformaciones químicas del cuerpo)"</div>
+              <p><strong style="color:var(--text)">Raíz griega:</strong> μεταβολή (<em>metabolé</em>) = cambio, transformación</p>
+              <p><strong style="color:var(--text)">En EIMA:</strong> El calor extremo acelera el metabolismo, aumentando la fatiga metabólica. El sistema amortiguador sanguíneo (pH 7.35–7.45) trabaja extra para mantener el equilibrio.</p>
+            </div>
+          </div>
+
+          <div class="filo-lens" style="--lens-color:#fb7185" onclick="this.classList.toggle('open')">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">💉</div>
+              <div class="filo-lens-titles"><div class="filo-lens-name">Epidemiología</div><div class="filo-lens-sub">Del griego <em>epí</em> (sobre) + <em>dêmos</em> (pueblo) + <em>lógos</em> (estudio)</div></div>
+              <div class="filo-lens-chev">▼</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">"Estudio de lo que cae sobre el pueblo (las enfermedades)"</div>
+              <p><strong style="color:var(--text)">Raíz griega:</strong> ἐπί (<em>epí</em>) = sobre · δῆμος (<em>dêmos</em>) = pueblo · λόγος (<em>lógos</em>) = estudio</p>
+              <p><strong style="color:var(--text)">En EIMA:</strong> Registramos un aumento del +10.8% en IRAS en Pachuca. La epidemiología estudia patrones de enfermedades en poblaciones — exactamente lo que hicimos.</p>
+            </div>
+          </div>
+
+          <div class="filo-lens" style="--lens-color:#2dd4bf" onclick="this.classList.toggle('open')">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">🦎</div>
+              <div class="filo-lens-titles"><div class="filo-lens-name">Anfibio</div><div class="filo-lens-sub">Del griego <em>amphí</em> (ambos) + <em>bíos</em> (vida)</div></div>
+              <div class="filo-lens-chev">▼</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">"Que vive en ambos medios (agua y tierra)"</div>
+              <p><strong style="color:var(--text)">Raíz griega:</strong> ἀμφί (<em>amphí</em>) = ambos, doble · βίος (<em>bíos</em>) = vida</p>
+              <p><strong style="color:var(--text)">En EIMA:</strong> El Ajolote del Altiplano (<em>Ambystoma velasci</em>) es un anfibio que puede vivir en agua toda su vida (neotenia). Está bajo Protección Especial por la contaminación de la Cuenca del Río Tula.</p>
+            </div>
+          </div>
+
+          <div class="filo-lens" style="--lens-color:#f472b6" onclick="this.classList.toggle('open')">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">☁️</div>
+              <div class="filo-lens-titles"><div class="filo-lens-name">Meteorología</div><div class="filo-lens-sub">Del griego <em>metéōron</em> (fenómeno celeste) + <em>lógos</em> (estudio)</div></div>
+              <div class="filo-lens-chev">▼</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">"Estudio de los fenómenos del cielo"</div>
+              <p><strong style="color:var(--text)">Raíz griega:</strong> μετέωρον (<em>metéōron</em>) = elevado en el aire, fenómeno celeste · λόγος (<em>lógos</em>) = estudio</p>
+              <p><strong style="color:var(--text)">En EIMA:</strong> Nuestra estación meteorológica electrónica mide temperatura, humedad, presión y viento — todos fenómenos "elevados en el aire" que estudiamos durante 26 días de abril 2026.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- BOTÓN SOPA DE LETRAS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">🎮 Ponte a prueba</div>
+        <div class="detail-sec-sub">¿Ya dominas los términos etimológicos del proyecto? Demuéstralo en esta sopa de letras interactiva.</div>
+        <div style="text-align:center;margin:28px 0">
+          <a href="https://view.genially.com/69eb7577e0a78f0f2678a67d" target="_blank" rel="noopener"
+             style="
+               display:inline-flex;align-items:center;gap:14px;
+               padding:18px 38px;border-radius:16px;
+               background:linear-gradient(135deg,#d4a574 0%,#b8860b 50%,#d4a574 100%);
+               background-size:200% 200%;
+               animation:shimmerBtn 3s ease infinite;
+               color:#1a0e00;font-family:'Space Grotesk',sans-serif;
+               font-size:17px;font-weight:700;letter-spacing:.5px;
+               text-decoration:none;
+               border:2px solid rgba(255,255,255,.25);
+               box-shadow:0 8px 32px rgba(212,165,116,.35),0 0 0 0 rgba(212,165,116,.4);
+               transition:transform .25s,box-shadow .25s;
+               cursor:pointer;
+             "
+             onmouseover="this.style.transform='translateY(-3px) scale(1.03)';this.style.boxShadow='0 12px 40px rgba(212,165,116,.5),0 0 20px rgba(212,165,116,.3)'"
+             onmouseout="this.style.transform='';this.style.boxShadow='0 8px 32px rgba(212,165,116,.35),0 0 0 0 rgba(212,165,116,.4)'"
+          >
+            <span style="font-size:28px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))">🔤</span>
+            <span>Jugar Sopa de Letras</span>
+            <span style="font-size:20px;animation:bounceArrow 1.5s ease infinite">→</span>
+          </a>
+          <p style="margin-top:12px;font-size:12px;color:var(--muted);letter-spacing:.5px">Encuentra los términos grecolatinos ocultos · Recurso interactivo en Genially</p>
+        </div>
+      </div>
+
+      <!-- PROCESO DE TRABAJO -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Proceso de trabajo</div>
+        <div class="detail-sec-sub">El proyecto se desarrolló mediante la consulta de un libro y diversos textos científicos, la identificación de vocabulario técnico, el estudio de su origen etimológico y la elaboración de un diccionario digital interactivo.</div>
+        <div class="causal-chain" style="--chain-color:#d4a574">
+          <div class="causal-chain-title">Metodología</div>
+          <div class="causal-chain-step" style="--d:0s"><div class="causal-chain-num">1</div><div class="causal-chain-txt">Consulta de libros y textos científicos</div></div>
+          <div class="causal-chain-arrow" style="--d:.15s">↓</div>
+          <div class="causal-chain-step" style="--d:.3s"><div class="causal-chain-num">2</div><div class="causal-chain-txt">Identificación de vocabulario técnico del proyecto EIMA</div></div>
+          <div class="causal-chain-arrow" style="--d:.45s">↓</div>
+          <div class="causal-chain-step" style="--d:.6s"><div class="causal-chain-num">3</div><div class="causal-chain-txt">Estudio del origen etimológico (raíces griegas y latinas)</div></div>
+          <div class="causal-chain-arrow" style="--d:.75s">↓</div>
+          <div class="causal-chain-step" style="--d:.9s"><div class="causal-chain-num">4</div><div class="causal-chain-txt">Elaboración del diccionario digital interactivo</div></div>
+          <div class="causal-chain-arrow" style="--d:1.05s">↓</div>
+          <div class="causal-chain-step" style="--d:1.2s"><div class="causal-chain-num">5</div><div class="causal-chain-txt">Organización de conceptos para facilitar comprensión</div></div>
+        </div>
+      </div>
+
+      <!-- CRÉDITOS -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Créditos</div>
+        <div class="detail-sec-sub">Etimologías Grecolatinas de la Salud · Profesora: Demmi Stefania Barrón Perez</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px">
+          <div style="background:var(--bg2);border-radius:10px;padding:10px 14px;border:1px solid var(--border);font-size:13px;color:var(--muted2)">Brenda Aguilar <span style="color:var(--muted);font-size:11px">· 602</span></div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px 14px;border:1px solid var(--border);font-size:13px;color:var(--muted2)">Mariela Gómez <span style="color:var(--muted);font-size:11px">· 602</span></div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px 14px;border:1px solid var(--border);font-size:13px;color:var(--muted2)">Mariana Arriaga <span style="color:var(--muted);font-size:11px">· 601</span></div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px 14px;border:1px solid var(--border);font-size:13px;color:var(--muted2)">Valentina Peralta <span style="color:var(--muted);font-size:11px">· 601</span></div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px 14px;border:1px solid var(--border);font-size:13px;color:var(--muted2)">Cristopher Muñoz <span style="color:var(--muted);font-size:11px">· 603</span></div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px 14px;border:1px solid var(--border);font-size:13px;color:var(--muted2)">Adrián Flores <span style="color:var(--muted);font-size:11px">· 603</span></div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px 14px;border:1px solid var(--border);font-size:13px;color:var(--muted2)">Emmanuel Mejía <span style="color:var(--muted);font-size:11px">· 601</span></div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px 14px;border:1px solid var(--border);font-size:13px;color:var(--muted2)">Bryan García <span style="color:var(--muted);font-size:11px">· 601</span></div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px 14px;border:1px solid var(--border);font-size:13px;color:var(--muted2)">Carlos Jarillo <span style="color:var(--muted);font-size:11px">· 601</span></div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px 14px;border:1px solid var(--border);font-size:13px;color:var(--muted2)">Juan Manuel Perez <span style="color:var(--muted);font-size:11px">· 602</span></div>
+        </div>
+      </div>`
+  },
+
   quim: { tag:'Materia 07 · Exactas', tagColor:'rgba(251,113,133,.15)', tagTextColor:'#fb7185', title:'Análisis de Macromoléculas y Equilibrios Ácido-Base', sub:'La Química del Cuerpo Humano y el Clima de Pachuca · Actividad 3 · Abril 2026', hero:`https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1400&q=85`,
     content:`
       <div class="detail-facts">
