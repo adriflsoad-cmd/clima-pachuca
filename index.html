@@ -1855,29 +1855,35 @@
         <div>
           <span class="mat-tag tag-uni">Física</span>
           <div class="mat-title">El Universo y sus Fenómenos</div>
-          <div class="mat-sub">Análisis de fenómenos atmosféricos y radiación solar en Pachuca, abril 2026</div>
+          <div class="mat-sub">La física en la Estación Meteorológica · Fluidos, Electromagnetismo, Óptica, Mecánica</div>
         </div>
       </div>
       <div class="mat-content">
-        <div class="mat-content-title">4 áreas de física en una sola estación</div>
-        <p class="mat-content-intro">La <strong>Estación Interdisciplinaria de Monitoreo Ambiental (EIMA)</strong> aplica cuatro áreas fundamentales de la física para medir, comprender y predecir el clima de Pachuca a 2,426 m s.n.m.</p>
+        <div class="mat-content-title">¿Cómo se relaciona la física con una estación de monitoreo ambiental?</div>
+        <p class="mat-content-intro">La física proporciona las bases científicas para la medición y análisis de variables meteorológicas. <strong>6 áreas de la física</strong> convergen en la EIMA: Fluidos, Termodinámica, Electromagnetismo, Óptica, Mecánica y Física de Ondas — aplicadas al clima de Pachuca a 2,426 m s.n.m.</p>
         <div class="tabs" id="uni-tabs">
           <button class="tab active" onclick="switchTab('uni',0)">🌊 Fluidos</button>
-          <button class="tab" onclick="switchTab('uni',1)">⚡ Electromagnetismo</button>
-          <button class="tab" onclick="switchTab('uni',2)">🔭 Óptica</button>
-          <button class="tab" onclick="switchTab('uni',3)">⚙️ Mecánica</button>
+          <button class="tab" onclick="switchTab('uni',1)">🔥 Termodinámica</button>
+          <button class="tab" onclick="switchTab('uni',2)">⚡ Electromagnetismo</button>
+          <button class="tab" onclick="switchTab('uni',3)">🔭 Óptica</button>
         </div>
         <div class="tab-panel active" id="uni-0">
-          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#38bdf8">Calidad del aire y agua.</strong> Bernoulli (principio que relaciona presión y velocidad de fluidos) y la ecuación de continuidad (ley de conservación del flujo) explican cómo el viento dispersa contaminantes en "La Bella Airosa". A 2,426 m la viscosidad (resistencia de un fluido a fluir) del aire es menor que a nivel del mar.</p>
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#38bdf8">Física de Fluidos.</strong> Estudia las propiedades y comportamiento de líquidos y gases. La dinámica de fluidos modela el flujo de ríos y la dispersión de contaminantes. En "La Bella Airosa", el principio de Bernoulli explica cómo el viento a 40 km/h dispersa partículas PM2.5.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
+            <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border)"><img src="/images/uni/image1.jpg" style="width:100%;height:75px;object-fit:cover"><div style="padding:4px 8px;font-size:10px;color:var(--muted2);text-align:center">Principio de fluidos</div></div>
+            <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border)"><img src="/images/uni/image3.jpg" style="width:100%;height:75px;object-fit:cover"><div style="padding:4px 8px;font-size:10px;color:var(--muted2);text-align:center">Dinámica de fluidos</div></div>
+          </div>
         </div>
         <div class="tab-panel" id="uni-1">
-          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#fbbf24">Sensores atmosféricos.</strong> LM35, DHT11 y BMP180 convierten temperatura, humedad y presión en voltajes (señales eléctricas medibles). El ESP32 los digitaliza vía ADC (convertidor de señal analógica a digital).</p>
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#fb7185">Termodinámica.</strong> Estudia la energía y su transformación. La Ley Cero (equilibrio térmico) es la base de cómo funcionan los termómetros. Si dos cuerpos están en equilibrio térmico con un tercero, están en equilibrio entre sí — principio que permite medir temperatura con el LM35.</p>
         </div>
         <div class="tab-panel" id="uni-2">
-          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#34d399">Visibilidad y UV.</strong> Dispersión de Rayleigh (fenómeno óptico que hace el cielo azul) (cielo azul) vs. Mie (dispersión por partículas grandes que enturbia el cielo). Índice UV 8.27 — categoría <em>Muy Alto</em>, agravado por la altitud.</p>
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#fbbf24">Electromagnetismo.</strong> Estudia las interacciones entre cargas eléctricas y campos magnéticos. La Ley de Coulomb rige los sensores. Los dispositivos EMGA miden calidad del aire, presión atmosférica y variaciones en el campo magnético terrestre en tiempo real.</p>
+          <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);margin-top:10px"><img src="/images/uni/image7.jpg" style="width:100%;height:80px;object-fit:contain;background:var(--bg2)"><div style="padding:4px 8px;font-size:10px;color:var(--muted2);text-align:center">Fuerzas electrostáticas — Ley de Coulomb</div></div>
         </div>
         <div class="tab-panel" id="uni-3">
-          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#fb7185">Diseño de instrumentos.</strong> Resistencia de materiales (capacidad de un objeto para soportar fuerzas) para vientos de 40 km/h, leyes de Newton para la veleta, momentos de inercia (resistencia de un objeto a girar) para el pluviómetro.</p>
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#34d399">Óptica.</strong> Estudia la luz y sus propiedades. La luz viaja a 300,000 km/s como onda electromagnética. En la estación meteorológica mide visibilidad de nubes, radiación solar e índice UV (8.27 — Muy Alto en Pachuca por la altitud).</p>
+          <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);margin-top:10px"><img src="/images/uni/image9.jpg" style="width:100%;height:80px;object-fit:cover"><div style="padding:4px 8px;font-size:10px;color:var(--muted2);text-align:center">Dispersión de la luz — prisma óptico</div></div>
         </div>
       </div>
     </div>
@@ -4839,24 +4845,24 @@ void loop() {
     <li><a href="https://www.inegi.org.mx/app/areasgeograficas/?ag=13" target="_blank" rel="noopener">INEGI — <em>Información geográfica y climática del estado de Hidalgo,</em> 2025.</a></li>
   </ol>
 </div>` },
-  uni:  { tag:'Materia 04 · Común', tagColor:'rgba(167,139,250,.15)', tagTextColor:'#a78bfa', title:'El Universo y sus Fenómenos', sub:'Cuatro áreas de física aplicada a la Estación Interdisciplinaria de Monitoreo Ambiental · Pachuca, Abril 2026', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
+  uni:  { tag:'Materia 04 · Común', tagColor:'rgba(167,139,250,.15)', tagTextColor:'#a78bfa', title:'El Universo y sus Fenómenos', sub:'Seis áreas de física aplicada a la Estación Interdisciplinaria de Monitoreo Ambiental · Pachuca, Abril 2026', hero:`${W}/5/52/Sierra_Goda%2C_vista_desde_Hidalgo%2C_Pachuca.jpg`,
     content:`
       <!-- INTRO -->
       <div class="detail-sec">
         <div style="background:linear-gradient(135deg,rgba(167,139,250,.12),rgba(56,189,248,.08));border-left:4px solid #a78bfa;border-radius:14px;padding:22px 24px;font-size:16px;line-height:1.6;color:var(--text)">
-          La física es la columna vertebral de la <strong>Estación Interdisciplinaria de Monitoreo Ambiental (EIMA)</strong>. Cada sensor, cada lectura y cada predicción se sostiene en cuatro áreas fundamentales que permiten <strong>medir, comprender y anticipar</strong> el comportamiento del clima en Pachuca.
+          La física es la columna vertebral de la <strong>Estación Interdisciplinaria de Monitoreo Ambiental (EIMA)</strong>. Cada sensor, cada lectura y cada predicción se sostiene en <strong>seis áreas fundamentales</strong> que permiten medir, comprender y anticipar el comportamiento del clima en Pachuca a 2,426 m s.n.m.
         </div>
         <div class="detail-facts" style="margin-top:18px">
-          <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">4</div><div class="detail-fact-lbl">Áreas aplicadas</div></div>
+          <div class="detail-fact"><div class="detail-fact-val" style="color:#38bdf8">6</div><div class="detail-fact-lbl">Áreas de la física</div></div>
           <div class="detail-fact"><div class="detail-fact-val" style="color:#a78bfa">2,426</div><div class="detail-fact-lbl">m s.n.m.</div></div>
-          <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">770</div><div class="detail-fact-lbl">mmHg presión</div></div>
-          <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">26</div><div class="detail-fact-lbl">Observaciones abr 2026</div></div>
+          <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">770</div><div class="detail-fact-lbl">hPa presión</div></div>
+          <div class="detail-fact"><div class="detail-fact-val" style="color:#34d399">22</div><div class="detail-fact-lbl">Imágenes del DOCX</div></div>
         </div>
       </div>
 
-      <!-- DIAGRAMA INTERACTIVO 4 ÁREAS -->
+      <!-- DIAGRAMA INTERACTIVO 6 ÁREAS -->
       <div class="detail-sec">
-        <div class="detail-sec-head">Diagrama Interactivo · 4 Áreas en Torno a la EIMA</div>
+        <div class="detail-sec-head">Diagrama Interactivo · 6 Áreas en Torno a la EIMA</div>
         <div class="detail-sec-sub">Clic en cualquier área para ver cómo se aplica a la estación de monitoreo.</div>
         <div class="hotspot-wrap">
           <div class="hotspot-stage" style="background:radial-gradient(circle at 50% 50%, rgba(167,139,250,.08), transparent 70%)">
@@ -4866,61 +4872,77 @@ void loop() {
                   <stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#38bdf8"/>
                 </linearGradient>
               </defs>
-              <line x1="300" y1="200" x2="150" y2="100" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
-              <line x1="300" y1="200" x2="450" y2="100" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
-              <line x1="300" y1="200" x2="150" y2="300" stroke="#34d399" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
-              <line x1="300" y1="200" x2="450" y2="300" stroke="#fb7185" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+              <line x1="300" y1="200" x2="120" y2="80" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+              <line x1="300" y1="200" x2="300" y2="60" stroke="#fb7185" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+              <line x1="300" y1="200" x2="480" y2="80" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+              <line x1="300" y1="200" x2="120" y2="320" stroke="#34d399" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+              <line x1="300" y1="200" x2="300" y2="340" stroke="#e879f9" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
+              <line x1="300" y1="200" x2="480" y2="320" stroke="#f97316" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
               <circle cx="300" cy="200" r="56" fill="url(#uniCore)" opacity=".18"/>
               <circle cx="300" cy="200" r="44" fill="var(--card)" stroke="url(#uniCore)" stroke-width="2"/>
               <text x="300" y="195" text-anchor="middle" fill="var(--text)" font-size="14" font-weight="800" font-family="Inter,sans-serif">EIMA</text>
               <text x="300" y="212" text-anchor="middle" fill="#94a3b8" font-size="9" letter-spacing="1" font-family="Inter,sans-serif">PACHUCA 2026</text>
             </svg>
-            <button class="hotspot-btn" data-group="uni" style="top:25%;left:25%;--hot-color:#38bdf8" onclick="hotspotShow('uni',1,this)">🌊</button>
-            <button class="hotspot-btn" data-group="uni" style="top:25%;left:75%;--hot-color:#fbbf24" onclick="hotspotShow('uni',2,this)">⚡</button>
-            <button class="hotspot-btn" data-group="uni" style="top:75%;left:25%;--hot-color:#34d399" onclick="hotspotShow('uni',3,this)">🔭</button>
-            <button class="hotspot-btn" data-group="uni" style="top:75%;left:75%;--hot-color:#fb7185" onclick="hotspotShow('uni',4,this)">⚙️</button>
+            <button class="hotspot-btn" data-group="uni" style="top:20%;left:20%;--hot-color:#38bdf8" onclick="hotspotShow('uni',1,this)">🌊</button>
+            <button class="hotspot-btn" data-group="uni" style="top:15%;left:50%;--hot-color:#fb7185" onclick="hotspotShow('uni',2,this)">🔥</button>
+            <button class="hotspot-btn" data-group="uni" style="top:20%;left:80%;--hot-color:#fbbf24" onclick="hotspotShow('uni',3,this)">⚡</button>
+            <button class="hotspot-btn" data-group="uni" style="top:80%;left:20%;--hot-color:#34d399" onclick="hotspotShow('uni',4,this)">🔭</button>
+            <button class="hotspot-btn" data-group="uni" style="top:85%;left:50%;--hot-color:#e879f9" onclick="hotspotShow('uni',5,this)">⚙️</button>
+            <button class="hotspot-btn" data-group="uni" style="top:80%;left:80%;--hot-color:#f97316" onclick="hotspotShow('uni',6,this)">〰️</button>
           </div>
           <div class="hotspot-panel">
             <div class="hotspot-info active" data-group="uni" data-id="1" style="--hot-color:#38bdf8">
-              <span class="hs-meta">NW · Aplicación 1</span>
+              <span class="hs-meta">Área 1 · Fluidos</span>
               <h5><span class="hs-dot"></span>🌊 Física de Fluidos</h5>
-              <p>Estudia gases y líquidos en movimiento. En la EIMA permite analizar la <strong>dispersión de contaminantes</strong> en el aire y el flujo de agua en arroyos de la sierra.</p>
-              <p>Bernoulli y la continuidad explican cómo vientos de 15–40 km/h dispersan partículas. A 2,426 m la <strong>viscosidad del aire es menor</strong> que a nivel del mar.</p>
+              <p>Estudia las propiedades y comportamiento de líquidos y gases. La dinámica de fluidos modela el flujo de ríos y la <strong>dispersión de contaminantes</strong>. En "La Bella Airosa", el principio de Bernoulli explica cómo el viento a 40 km/h dispersa partículas PM2.5.</p>
+              <p>Conceptos clave: <strong>Principio de Arquímedes</strong> (empuje), <strong>Principio de Pascal</strong> (presión en fluidos confinados), <strong>Ecuación de Bernoulli</strong> (relación velocidad-presión), viscosidad y tensión superficial.</p>
             </div>
-            <div class="hotspot-info" data-group="uni" data-id="2" style="--hot-color:#fbbf24">
-              <span class="hs-meta">NE · Aplicación 2</span>
+            <div class="hotspot-info" data-group="uni" data-id="2" style="--hot-color:#fb7185">
+              <span class="hs-meta">Área 2 · Termodinámica</span>
+              <h5><span class="hs-dot"></span>🔥 Termodinámica</h5>
+              <p>Estudia la energía y su transformación. La <strong>Ley Cero</strong> (equilibrio térmico) es la base de cómo funcionan los termómetros. Si dos cuerpos están en equilibrio térmico con un tercero, están en equilibrio entre sí — principio del sensor LM35.</p>
+              <p>Las 4 leyes: <strong>Ley Cero</strong> (equilibrio), <strong>1ª Ley</strong> (conservación de energía), <strong>2ª Ley</strong> (entropía siempre aumenta), <strong>3ª Ley</strong> (cero absoluto inalcanzable). Transferencia por conducción, convección y radiación.</p>
+            </div>
+            <div class="hotspot-info" data-group="uni" data-id="3" style="--hot-color:#fbbf24">
+              <span class="hs-meta">Área 3 · Electromagnetismo</span>
               <h5><span class="hs-dot"></span>⚡ Electromagnetismo</h5>
-              <p>Los sensores <strong>LM35, DHT11 y BMP180</strong> convierten temperatura, humedad y presión en voltajes mediante efectos termoeléctricos, capacitivos y piezorresistivos.</p>
-              <p>El ESP32 digitaliza vía ADC. Sin EM no se podría <strong>cuantificar</strong> el clima.</p>
+              <p>Estudia las interacciones entre cargas eléctricas y campos magnéticos. La <strong>Ley de Coulomb</strong> rige los sensores capacitivos. Los dispositivos EMGA miden calidad del aire, presión atmosférica y variaciones en el campo magnético terrestre en tiempo real.</p>
+              <p>Conceptos: <strong>Fuerzas electrostáticas</strong>, <strong>campo magnético</strong>, <strong>inducción electromagnética</strong> (Ley de Faraday), corriente eléctrica y circuitos del ESP32.</p>
             </div>
-            <div class="hotspot-info" data-group="uni" data-id="3" style="--hot-color:#34d399">
-              <span class="hs-meta">SW · Aplicación 3</span>
+            <div class="hotspot-info" data-group="uni" data-id="4" style="--hot-color:#34d399">
+              <span class="hs-meta">Área 4 · Óptica</span>
               <h5><span class="hs-dot"></span>🔭 Óptica</h5>
-              <p>Dispersión de <strong>Rayleigh</strong> (cielo azul) vs. <strong>Mie</strong> (gris contaminado). 20 de 26 días con visibilidad de 10 km en abril 2026.</p>
-              <p>Índice UV promedio <strong>8.27</strong> (Muy Alto). A más altitud, menor atenuación de UV-B.</p>
+              <p>Estudia la luz y sus propiedades. La luz viaja a 300,000 km/s como onda electromagnética. En la estación meteorológica mide <strong>visibilidad</strong>, radiación solar e <strong>índice UV 8.27</strong> (Muy Alto en Pachuca por la altitud).</p>
+              <p>Fenómenos: <strong>Dispersión</strong> (prisma/arcoíris), <strong>refracción</strong> (Ley de Snell), <strong>Rayleigh</strong> (cielo azul) vs <strong>Mie</strong> (gris contaminado), lentes convergentes y divergentes.</p>
             </div>
-            <div class="hotspot-info" data-group="uni" data-id="4" style="--hot-color:#fb7185">
-              <span class="hs-meta">SE · Aplicación 4</span>
+            <div class="hotspot-info" data-group="uni" data-id="5" style="--hot-color:#e879f9">
+              <span class="hs-meta">Área 5 · Mecánica</span>
               <h5><span class="hs-dot"></span>⚙️ Mecánica</h5>
-              <p>Resistencia de materiales para soportar vientos de 40 km/h, leyes de Newton aplicadas a la veleta, momentos de inercia en el pluviómetro de cubeta basculante.</p>
-              <p>Sin diseño mecánico sólido, los datos son ruido.</p>
+              <p>Estudia el movimiento, las fuerzas y la energía. Las <strong>3 leyes de Newton</strong> gobiernan el diseño de la EIMA: inercia del anemómetro, F=ma en la veleta, acción-reacción en el trípode.</p>
+              <p>Conceptos: <strong>Inercia</strong>, <strong>fuerza neta</strong> (F=ma), <strong>acción y reacción</strong>, torque, momento de inercia, equilibrio estático y dinámico. Máquinas simples: palancas, poleas, engranajes.</p>
+            </div>
+            <div class="hotspot-info" data-group="uni" data-id="6" style="--hot-color:#f97316">
+              <span class="hs-meta">Área 6 · Ondas</span>
+              <h5><span class="hs-dot"></span>〰️ Física de Ondas</h5>
+              <p>Estudia la propagación de energía sin transporte de materia. Las <strong>ondas sonoras</strong> (mecánicas) necesitan medio material; las <strong>ondas electromagnéticas</strong> viajan en el vacío. Los sensores WiFi del ESP32 usan ondas de 2.4 GHz.</p>
+              <p>Tipos: <strong>transversales</strong> (luz, radio) y <strong>longitudinales</strong> (sonido). Propiedades: frecuencia, amplitud, longitud de onda, velocidad. Fenómenos: interferencia, difracción, efecto Doppler en radar meteorológico.</p>
             </div>
           </div>
         </div>
-        <div class="hotspot-hint">Haz clic en cualquiera de los 4 puntos del diagrama</div>
+        <div class="hotspot-hint">Haz clic en cualquiera de los 6 puntos del diagrama</div>
       </div>
 
-      <!-- LAS 4 ÁREAS (acordeón) -->
+      <!-- LAS 6 ÁREAS (acordeón) -->
       <div class="detail-sec">
-        <div class="detail-sec-head">Las 4 Áreas de Física Aplicada · Detalle</div>
-        <div class="detail-sec-sub">Versión extendida con preguntas guía y ejemplos. Clic para expandir.</div>
+        <div class="detail-sec-head">Las 6 Áreas de Física Aplicada · Detalle Extendido</div>
+        <div class="detail-sec-sub">Cada área con galería de imágenes del documento, conceptos clave y aplicación en la EIMA. Clic para expandir.</div>
         <div class="filo-lenses">
 
           <div class="filo-lens" data-color="#38bdf8" onclick="filoToggle(this)">
             <div class="filo-lens-head">
               <div class="filo-lens-ico">🌊</div>
               <div class="filo-lens-titles">
-                <div class="filo-lens-name">Física de Fluidos</div>
+                <div class="filo-lens-name">1. Física de Fluidos</div>
                 <div class="filo-lens-sub">Calidad del aire y del agua — viscosidad, presión y flujo</div>
               </div>
               <div class="filo-lens-chev">▾</div>
@@ -4928,7 +4950,38 @@ void loop() {
             <div class="filo-lens-body">
               <div class="filo-lens-q">¿Cómo se mide la calidad del aire que respiramos y del agua que consumimos?</div>
               <p>La física de fluidos estudia el comportamiento de gases y líquidos en movimiento. En la EIMA, permite analizar la <strong>dispersión de contaminantes</strong> en el aire de Pachuca, la concentración de partículas PM2.5/PM10 y el flujo de agua en los arroyos de la sierra.</p>
-              <p>Los principios de <strong>Bernoulli</strong> y la <strong>ecuación de continuidad</strong> explican cómo los vientos característicos de "La Bella Airosa" (15–40 km/h) dispersan contaminantes y polen. La viscosidad del aire a 2,426 m s.n.m. es <strong>menor</strong> que a nivel del mar, lo que afecta directamente las lecturas de los sensores.</p>
+              <p><strong>Principio de Arquímedes:</strong> Un cuerpo sumergido en un fluido experimenta una fuerza de empuje igual al peso del fluido desalojado. Los globos meteorológicos usan este principio para ascender y medir capas atmosféricas.</p>
+              <p><strong>Principio de Pascal:</strong> La presión aplicada a un fluido confinado se transmite íntegramente en todas direcciones. El barómetro BMP180 de la EIMA aprovecha este principio para medir presión atmosférica (~770 hPa a 2,426 m).</p>
+              <p><strong>Ecuación de Bernoulli:</strong> Relaciona velocidad, presión y altura en un fluido en movimiento. Explica cómo los vientos de "La Bella Airosa" (15–40 km/h) dispersan contaminantes. A mayor velocidad del viento, menor presión estática.</p>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:16px">
+                <img src="/images/uni/image1.jpg" alt="Principio de Arquímedes — empuje en fluidos" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+                <img src="/images/uni/image3.jpg" alt="Flujo de fluidos en tubería" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+                <img src="/images/uni/image4.jpg" alt="Principio de Pascal — jeringa" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+              </div>
+            </div>
+          </div>
+
+          <div class="filo-lens" data-color="#fb7185" onclick="filoToggle(this)">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">🔥</div>
+              <div class="filo-lens-titles">
+                <div class="filo-lens-name">2. Termodinámica</div>
+                <div class="filo-lens-sub">Energía, calor y equilibrio térmico — las 4 leyes fundamentales</div>
+              </div>
+              <div class="filo-lens-chev">▾</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">¿Cómo mide la EIMA la temperatura y cómo se transforma la energía térmica?</div>
+              <p>La termodinámica estudia la energía y su transformación. Es la base de cómo funcionan los termómetros y los sensores de temperatura de la estación meteorológica.</p>
+              <p><strong>Ley Cero:</strong> Si dos cuerpos están en equilibrio térmico con un tercero, están en equilibrio entre sí. Es el principio que permite que el <strong>sensor LM35</strong> mida la temperatura del aire: cuando el sensor alcanza equilibrio con el ambiente, su voltaje refleja la temperatura real.</p>
+              <p><strong>Primera Ley:</strong> La energía no se crea ni se destruye, solo se transforma. El balance energético entre radiación solar absorbida y emitida determina la temperatura de Pachuca.</p>
+              <p><strong>Segunda Ley:</strong> La entropía de un sistema aislado siempre tiende a aumentar. El calor fluye de lo caliente a lo frío — por eso el asfalto urbano irradia calor hacia la atmósfera (isla de calor urbana).</p>
+              <p><strong>Tercera Ley:</strong> Es imposible alcanzar el cero absoluto (−273.15 °C). Define el límite inferior de toda medición de temperatura.</p>
+              <p><strong>Transferencia de calor:</strong> Conducción (contacto directo), convección (movimiento de fluidos — viento), radiación (ondas electromagnéticas — sol). En Pachuca, la convección domina por los vientos constantes.</p>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:16px">
+                <img src="/images/uni/image2.jpg" alt="Termodinámica — equilibrio térmico" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+                <img src="/images/uni/image5.jpg" alt="Transferencia de calor — conducción, convección, radiación" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+              </div>
             </div>
           </div>
 
@@ -4936,15 +4989,22 @@ void loop() {
             <div class="filo-lens-head">
               <div class="filo-lens-ico">⚡</div>
               <div class="filo-lens-titles">
-                <div class="filo-lens-name">Electromagnetismo</div>
-                <div class="filo-lens-sub">Sensores de variables atmosféricas — corriente, voltaje y señal</div>
+                <div class="filo-lens-name">3. Electromagnetismo</div>
+                <div class="filo-lens-sub">Sensores, campos y señales — de Coulomb a la telemetría digital</div>
               </div>
               <div class="filo-lens-chev">▾</div>
             </div>
             <div class="filo-lens-body">
               <div class="filo-lens-q">¿Cómo convertimos temperatura, humedad y presión en datos digitales?</div>
-              <p>Los <strong>sensores LM35, DHT11 y BMP180</strong> de la EIMA funcionan gracias a principios electromagnéticos: el efecto termoeléctrico convierte temperatura en voltaje, los capacitores miden cambios en la humedad y los puentes piezorresistivos detectan presión.</p>
-              <p>El microcontrolador <strong>ESP32</strong> aplica conversión analógica-digital (ADC) usando referencias de voltaje. Sin electromagnetismo, no habría manera de <strong>cuantificar</strong> el clima — solo de observarlo.</p>
+              <p>El electromagnetismo estudia las interacciones entre cargas eléctricas y campos magnéticos. Es la base de <strong>todos los sensores electrónicos</strong> de la EIMA.</p>
+              <p><strong>Fuerzas electrostáticas (Ley de Coulomb):</strong> Cargas iguales se repelen, cargas opuestas se atraen. Los sensores capacitivos del DHT11 miden humedad detectando cambios en la capacitancia entre placas cargadas.</p>
+              <p><strong>Campo magnético:</strong> Los imanes y las corrientes eléctricas generan campos magnéticos. El ESP32 usa inducción electromagnética para la comunicación WiFi. La <strong>Ley de Faraday</strong> explica cómo un campo magnético variable genera corriente en el anemómetro.</p>
+              <p><strong>Circuitos eléctricos:</strong> El microcontrolador ESP32 aplica conversión analógica-digital (ADC de 12 bits) usando referencias de voltaje. Los sensores <strong>LM35</strong> (temperatura), <strong>DHT11</strong> (humedad) y <strong>BMP180</strong> (presión) convierten fenómenos físicos en señales eléctricas.</p>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:16px">
+                <img src="/images/uni/image7.jpg" alt="Fuerzas electrostáticas — Ley de Coulomb" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+                <img src="/images/uni/image6.jpg" alt="Solenoide — campo electromagnético" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+                <img src="/images/uni/image8.jpg" alt="Imanes — campo magnético" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+              </div>
             </div>
           </div>
 
@@ -4952,34 +5012,169 @@ void loop() {
             <div class="filo-lens-head">
               <div class="filo-lens-ico">🔭</div>
               <div class="filo-lens-titles">
-                <div class="filo-lens-name">Óptica</div>
-                <div class="filo-lens-sub">Visibilidad y fenómenos atmosféricos — luz, refracción y dispersión</div>
+                <div class="filo-lens-name">4. Óptica</div>
+                <div class="filo-lens-sub">Luz, refracción y dispersión — visibilidad atmosférica e índice UV</div>
               </div>
               <div class="filo-lens-chev">▾</div>
             </div>
             <div class="filo-lens-body">
               <div class="filo-lens-q">¿Por qué algunos días en Pachuca el cielo se ve azul intenso y otros gris lechoso?</div>
-              <p>La <strong>dispersión de Rayleigh</strong> explica el azul del cielo; la <strong>dispersión de Mie</strong> explica el gris del aire contaminado. En abril 2026 se registraron 20 de 26 días con visibilidad de 10 km (77%), pero las partículas finas dispersaban la luz solar generando halos.</p>
-              <p>El índice UV promedio de <strong>8.27</strong> (categoría <em>Muy Alto</em>) está directamente relacionado con la altitud: a más altura, menor atenuación atmosférica de los rayos UV-B. La óptica permite cuantificar cuánta radiación llega a la piel de los habitantes.</p>
+              <p>La óptica estudia la luz y sus propiedades. La luz viaja a <strong>300,000 km/s</strong> como onda electromagnética y su interacción con la atmósfera determina lo que vemos.</p>
+              <p><strong>Dispersión de la luz:</strong> Un prisma descompone la luz blanca en el espectro visible (rojo a violeta). En la atmósfera, la <strong>dispersión de Rayleigh</strong> (partículas pequeñas) produce el azul del cielo; la <strong>dispersión de Mie</strong> (partículas grandes como PM2.5) produce el gris del aire contaminado.</p>
+              <p><strong>Refracción (Ley de Snell):</strong> La luz cambia de dirección al pasar de un medio a otro. Las lentes convergentes y divergentes usan este principio. En meteorología, la refracción causa espejismos y halos solares.</p>
+              <p><strong>Índice UV:</strong> Promedio de <strong>8.27</strong> (categoría Muy Alto) en Pachuca. A mayor altitud, menor atenuación atmosférica de los rayos UV-B. 20 de 26 días con visibilidad de 10 km en abril 2026.</p>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:16px">
+                <img src="/images/uni/image9.jpg" alt="Dispersión de la luz — prisma" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+                <img src="/images/uni/image10.jpg" alt="Lente convergente — refracción" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+              </div>
             </div>
           </div>
 
-          <div class="filo-lens" data-color="#fb7185" onclick="filoToggle(this)">
+          <div class="filo-lens" data-color="#e879f9" onclick="filoToggle(this)">
             <div class="filo-lens-head">
               <div class="filo-lens-ico">⚙️</div>
               <div class="filo-lens-titles">
-                <div class="filo-lens-name">Mecánica</div>
-                <div class="filo-lens-sub">Diseño y funcionamiento de instrumentos — fuerza, torque y materiales</div>
+                <div class="filo-lens-name">5. Mecánica</div>
+                <div class="filo-lens-sub">Movimiento, fuerzas y máquinas — las 3 leyes de Newton en la EIMA</div>
               </div>
               <div class="filo-lens-chev">▾</div>
             </div>
             <div class="filo-lens-body">
               <div class="filo-lens-q">¿Cómo construir una estación que resista vientos de 40 km/h y temperaturas de –5 °C a 27 °C?</div>
-              <p>La mecánica clásica gobierna el diseño físico de la EIMA: la <strong>resistencia de materiales</strong> determina qué soporte usar para el anemómetro, las <strong>leyes de Newton</strong> explican el torque sobre la veleta, y los <strong>momentos de inercia</strong> definen la respuesta del pluviómetro de cubeta basculante.</p>
-              <p>Sin un diseño mecánicamente sólido, los datos son ruido. La EIMA aplica principios mecánicos desde la selección de tornillos hasta la calibración del soporte trípode.</p>
+              <p>La mecánica clásica estudia el movimiento, las fuerzas y la energía. Gobierna el diseño físico de toda la estructura de la EIMA.</p>
+              <p><strong>1ª Ley de Newton (Inercia):</strong> Un cuerpo permanece en reposo o movimiento rectilíneo uniforme a menos que actúe una fuerza externa. El anemómetro necesita vencer la inercia de sus copas para girar — por eso tiene un umbral mínimo de viento detectable.</p>
+              <p><strong>2ª Ley de Newton (F = ma):</strong> La fuerza neta es igual a masa por aceleración. La veleta gira proporcionalmente a la fuerza del viento. El diseño debe calcular masa y resistencia para que responda con precisión.</p>
+              <p><strong>3ª Ley de Newton (Acción y Reacción):</strong> Toda fuerza tiene una fuerza de reacción igual y opuesta. Cuando el viento empuja la veleta, el soporte trípode recibe la misma fuerza — debe estar anclado para no volcar.</p>
+              <p><strong>Máquinas simples:</strong> Engranajes, palancas y poleas se aplican en los mecanismos del pluviómetro de cubeta basculante y en el sistema de montaje de los paneles solares.</p>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:16px">
+                <img src="/images/uni/image14.jpg" alt="Inercia — 1ª Ley de Newton" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+                <img src="/images/uni/image15.jpg" alt="Péndulo de Newton — conservación de momento" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+                <img src="/images/uni/image16.jpg" alt="Fuerzas — acción y reacción" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+                <img src="/images/uni/image12.jpg" alt="Engranajes — máquinas simples" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+              </div>
             </div>
           </div>
 
+          <div class="filo-lens" data-color="#f97316" onclick="filoToggle(this)">
+            <div class="filo-lens-head">
+              <div class="filo-lens-ico">〰️</div>
+              <div class="filo-lens-titles">
+                <div class="filo-lens-name">6. Física de Ondas</div>
+                <div class="filo-lens-sub">Propagación de energía — sonido, luz, radio y radar meteorológico</div>
+              </div>
+              <div class="filo-lens-chev">▾</div>
+            </div>
+            <div class="filo-lens-body">
+              <div class="filo-lens-q">¿Cómo viaja la información desde los sensores hasta tu pantalla sin cables?</div>
+              <p>La física de ondas estudia la propagación de energía sin transporte de materia. Es fundamental para la <strong>telemetría</strong> (transmisión de datos a distancia) de la EIMA.</p>
+              <p><strong>Ondas mecánicas (sonido):</strong> Necesitan un medio material para propagarse. Las ondas longitudinales del sonido viajan a ~340 m/s en el aire. En meteorología, los sensores ultrasónicos miden velocidad del viento por el cambio en tiempo de vuelo del sonido.</p>
+              <p><strong>Ondas electromagnéticas (luz, radio, WiFi):</strong> Viajan en el vacío a 300,000 km/s. El ESP32 transmite datos vía WiFi a 2.4 GHz (longitud de onda ~12.5 cm). El radar meteorológico Doppler usa microondas para detectar precipitación y viento.</p>
+              <p><strong>Propiedades de ondas:</strong> Frecuencia (Hz), amplitud, longitud de onda (λ) y velocidad. Relación fundamental: v = f × λ. Fenómenos: <strong>interferencia</strong> (constructiva/destructiva), <strong>difracción</strong> (ondas rodeando obstáculos), <strong>efecto Doppler</strong> (cambio de frecuencia por movimiento).</p>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:16px">
+                <img src="/images/uni/image18.jpg" alt="Átomo — modelo de ondas y partículas" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+                <img src="/images/uni/image17.jpg" alt="Máquinas y sistemas — ingeniería aplicada" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TABLA DE PRINCIPIOS FUNDAMENTALES -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Principios Fundamentales · Tabla Comparativa</div>
+        <div class="detail-sec-sub">Los principios físicos que rigen cada área y su aplicación directa en la EIMA.</div>
+        <div style="overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.6">
+            <thead>
+              <tr style="border-bottom:2px solid #a78bfa">
+                <th style="text-align:left;padding:10px 12px;color:#a78bfa;font-weight:700">Área</th>
+                <th style="text-align:left;padding:10px 12px;color:#a78bfa;font-weight:700">Principio Clave</th>
+                <th style="text-align:left;padding:10px 12px;color:#a78bfa;font-weight:700">Fórmula</th>
+                <th style="text-align:left;padding:10px 12px;color:#a78bfa;font-weight:700">Aplicación EIMA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06)">
+                <td style="padding:10px 12px;color:#38bdf8;font-weight:600">🌊 Fluidos</td>
+                <td style="padding:10px 12px">Ecuación de Bernoulli</td>
+                <td style="padding:10px 12px;font-family:monospace;color:#94a3b8">P + ½ρv² + ρgh = cte</td>
+                <td style="padding:10px 12px">Dispersión de contaminantes por viento</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06)">
+                <td style="padding:10px 12px;color:#fb7185;font-weight:600">🔥 Termodinámica</td>
+                <td style="padding:10px 12px">Ley Cero — Equilibrio térmico</td>
+                <td style="padding:10px 12px;font-family:monospace;color:#94a3b8">T_A = T_B = T_C</td>
+                <td style="padding:10px 12px">Sensor LM35 mide por equilibrio</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06)">
+                <td style="padding:10px 12px;color:#fbbf24;font-weight:600">⚡ Electromagnetismo</td>
+                <td style="padding:10px 12px">Ley de Coulomb</td>
+                <td style="padding:10px 12px;font-family:monospace;color:#94a3b8">F = kq₁q₂/r²</td>
+                <td style="padding:10px 12px">Sensores capacitivos de humedad</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06)">
+                <td style="padding:10px 12px;color:#34d399;font-weight:600">🔭 Óptica</td>
+                <td style="padding:10px 12px">Ley de Snell</td>
+                <td style="padding:10px 12px;font-family:monospace;color:#94a3b8">n₁sinθ₁ = n₂sinθ₂</td>
+                <td style="padding:10px 12px">Medición de visibilidad y UV</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06)">
+                <td style="padding:10px 12px;color:#e879f9;font-weight:600">⚙️ Mecánica</td>
+                <td style="padding:10px 12px">2ª Ley de Newton</td>
+                <td style="padding:10px 12px;font-family:monospace;color:#94a3b8">F = ma</td>
+                <td style="padding:10px 12px">Diseño de veleta y anemómetro</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 12px;color:#f97316;font-weight:600">〰️ Ondas</td>
+                <td style="padding:10px 12px">Relación onda</td>
+                <td style="padding:10px 12px;font-family:monospace;color:#94a3b8">v = f × λ</td>
+                <td style="padding:10px 12px">WiFi 2.4 GHz y radar Doppler</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TECNOLOGÍA DE LA EIMA -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Tecnología de la EIMA · Sensores e Instrumentos</div>
+        <div class="detail-sec-sub">Los 6 dispositivos principales que aplican estas áreas de la física.</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px">
+          <div style="background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px">
+            <div style="font-size:1.6rem;margin-bottom:8px">🌡️</div>
+            <div style="font-weight:700;color:#fb7185;margin-bottom:4px">LM35 — Temperatura</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">Sensor analógico. Salida: 10 mV/°C. Rango: −55 a +150 °C. Usa el efecto termoeléctrico (termodinámica + electromagnetismo).</div>
+          </div>
+          <div style="background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px">
+            <div style="font-size:1.6rem;margin-bottom:8px">💧</div>
+            <div style="font-weight:700;color:#38bdf8;margin-bottom:4px">DHT11 — Humedad</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">Sensor capacitivo digital. Mide humedad relativa (20–90%) y temperatura. Usa cambios de capacitancia (electromagnetismo).</div>
+          </div>
+          <div style="background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px">
+            <div style="font-size:1.6rem;margin-bottom:8px">📊</div>
+            <div style="font-weight:700;color:#a78bfa;margin-bottom:4px">BMP180 — Presión</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">Sensor barométrico I²C. Mide presión atmosférica (300–1100 hPa). Usa puentes piezorresistivos (mecánica + electromagnetismo).</div>
+          </div>
+          <div style="background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px">
+            <div style="font-size:1.6rem;margin-bottom:8px">🌬️</div>
+            <div style="font-weight:700;color:#fbbf24;margin-bottom:4px">Anemómetro — Viento</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">Copas giratorias + encoder magnético. La velocidad angular es proporcional a la velocidad del viento (mecánica + fluidos).</div>
+          </div>
+          <div style="background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px">
+            <div style="font-size:1.6rem;margin-bottom:8px">🧭</div>
+            <div style="font-weight:700;color:#34d399;margin-bottom:4px">Veleta — Dirección</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">Aleta aerodinámica + potenciómetro. Torque del viento alinea la veleta; resistencia variable indica ángulo (mecánica + electromagnetismo).</div>
+          </div>
+          <div style="background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:20px">
+            <div style="font-size:1.6rem;margin-bottom:8px">🌧️</div>
+            <div style="font-weight:700;color:#f97316;margin-bottom:4px">Pluviómetro — Precipitación</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">Cubeta basculante + reed switch. Cada basculación = 0.2 mm de lluvia. Combina mecánica (momentos de inercia) y electromagnetismo.</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:18px">
+          <img src="/images/uni/image11.jpg" alt="Estación meteorológica profesional" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+          <img src="/images/uni/image13.jpg" alt="Estación meteorológica en campo" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
         </div>
       </div>
 
@@ -5011,20 +5206,82 @@ void loop() {
         </div>
       </div>
 
+      <!-- SCRUBBER: FASES DE UNA MEDICIÓN -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Fases de una Medición Meteorológica</div>
+        <div class="detail-sec-sub">Desliza para recorrer las 6 fases del proceso — desde el fenómeno físico hasta los datos en pantalla.</div>
+        <div class="sim-panel" style="--sim-color:#a78bfa">
+          <div class="sim-control">
+            <div class="sim-control-head"><span class="sim-control-lbl">Fase</span><span class="sim-control-val" id="uni-phase-v">1 — Fenómeno</span></div>
+            <input type="range" min="1" max="6" step="1" value="1" id="uni-phase" class="sim-slider" oninput="simUniPhase()">
+            <div class="scrubber-axis"><span>Fenómeno</span><span>Sensor</span><span>Señal</span><span>ADC</span><span>WiFi</span><span>Dashboard</span></div>
+          </div>
+          <div id="uni-phase-out" style="margin-top:18px;background:var(--card);border-radius:12px;padding:20px;font-size:14px;line-height:1.7;color:var(--text);border:1px solid rgba(167,139,250,.2);min-height:80px">
+            <strong style="color:#a78bfa">Fase 1 — Fenómeno Físico:</strong> El viento sopla, la temperatura cambia, la lluvia cae. Son fenómenos gobernados por fluidos, termodinámica y mecánica. La naturaleza genera la señal original.
+          </div>
+        </div>
+      </div>
+
+      <!-- APLICACIONES EN EL MUNDO REAL -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">La Física y el Monitoreo Ambiental</div>
+        <div class="detail-sec-sub">Por qué importa entender la física detrás de la EIMA — impacto en salud, medio ambiente y normativa.</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">
+          <div style="background:linear-gradient(135deg,rgba(56,189,248,.08),transparent);border:1px solid rgba(56,189,248,.15);border-radius:12px;padding:20px">
+            <div style="font-size:1.4rem;margin-bottom:8px">🌍</div>
+            <div style="font-weight:700;color:#38bdf8;margin-bottom:6px">Medio Ambiente</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">Monitorear calidad del aire (PM2.5, O₃), medir la contaminación del Río Tula y detectar islas de calor urbano. La física permite cuantificar el daño ambiental con datos reales.</div>
+          </div>
+          <div style="background:linear-gradient(135deg,rgba(251,113,133,.08),transparent);border:1px solid rgba(251,113,133,.15);border-radius:12px;padding:20px">
+            <div style="font-size:1.4rem;margin-bottom:8px">❤️</div>
+            <div style="font-weight:700;color:#fb7185;margin-bottom:6px">Salud Pública</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">Las IRAS aumentaron 10.8% en abril 2026. Los datos de la EIMA alertan sobre índice UV extremo, olas de calor y concentración de contaminantes que afectan directamente la salud.</div>
+          </div>
+          <div style="background:linear-gradient(135deg,rgba(167,139,250,.08),transparent);border:1px solid rgba(167,139,250,.15);border-radius:12px;padding:20px">
+            <div style="font-size:1.4rem;margin-bottom:8px">📋</div>
+            <div style="font-weight:700;color:#a78bfa;margin-bottom:6px">Normativa y Cumplimiento</div>
+            <div style="font-size:13px;color:var(--muted2);line-height:1.6">La LGCC y la NOM-156-SEMARNAT exigen monitoreo ambiental con instrumentos calibrados. Sin física aplicada, no hay datos válidos para cumplir la normativa.</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:18px">
+          <img src="/images/uni/image19.jpg" alt="Medio ambiente y energías renovables" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+          <img src="/images/uni/image20.jpg" alt="Salud pública y monitoreo" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+          <img src="/images/uni/image21.jpg" alt="Normativa y cumplimiento ambiental" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+          <img src="/images/uni/image22.jpg" alt="Naturaleza y sustentabilidad" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+        </div>
+      </div>
+
       <!-- CONEXIÓN ENTRE ÁREAS -->
       <div class="detail-sec">
-        <div class="detail-sec-head">Cómo se Integran las 4 Áreas</div>
-        <div class="detail-sec-sub">Ninguna área funciona sola. Cada medición en la EIMA combina las cuatro físicas en una sola cadena de datos.</div>
+        <div class="detail-sec-head">Cómo se Integran las 6 Áreas</div>
+        <div class="detail-sec-sub">Ninguna área funciona sola. Cada medición en la EIMA combina las seis físicas en una sola cadena de datos.</div>
         <div class="causal-chain" style="--chain-color:#a78bfa">
-          <div class="causal-chain-title">Flujo físico de una medición</div>
+          <div class="causal-chain-title">Flujo físico de una medición completa</div>
           <div class="causal-chain-step" style="--d:0s"><span class="causal-chain-num">1</span><span class="causal-chain-txt"><strong>Mecánica</strong> — el soporte y la veleta resisten viento y vibración</span></div>
-          <div class="causal-chain-arrow" style="--d:.4s">↓</div>
-          <div class="causal-chain-step" style="--d:.8s"><span class="causal-chain-num">2</span><span class="causal-chain-txt"><strong>Fluidos</strong> — el aire y el agua interactúan con los sensores</span></div>
-          <div class="causal-chain-arrow" style="--d:1.2s">↓</div>
-          <div class="causal-chain-step" style="--d:1.6s"><span class="causal-chain-num">3</span><span class="causal-chain-txt"><strong>Óptica</strong> — luz y UV son captadas por fotodiodos calibrados</span></div>
-          <div class="causal-chain-arrow" style="--d:2.0s">↓</div>
-          <div class="causal-chain-step" style="--d:2.4s"><span class="causal-chain-num">4</span><span class="causal-chain-txt"><strong>Electromagnetismo</strong> — las señales se convierten en datos digitales</span></div>
+          <div class="causal-chain-arrow" style="--d:.3s">↓</div>
+          <div class="causal-chain-step" style="--d:.6s"><span class="causal-chain-num">2</span><span class="causal-chain-txt"><strong>Fluidos</strong> — el aire y el agua interactúan con los sensores</span></div>
+          <div class="causal-chain-arrow" style="--d:.9s">↓</div>
+          <div class="causal-chain-step" style="--d:1.2s"><span class="causal-chain-num">3</span><span class="causal-chain-txt"><strong>Termodinámica</strong> — el calor se transfiere al sensor LM35 por equilibrio</span></div>
+          <div class="causal-chain-arrow" style="--d:1.5s">↓</div>
+          <div class="causal-chain-step" style="--d:1.8s"><span class="causal-chain-num">4</span><span class="causal-chain-txt"><strong>Óptica</strong> — luz y UV son captadas por fotodiodos calibrados</span></div>
+          <div class="causal-chain-arrow" style="--d:2.1s">↓</div>
+          <div class="causal-chain-step" style="--d:2.4s"><span class="causal-chain-num">5</span><span class="causal-chain-txt"><strong>Electromagnetismo</strong> — las señales se convierten en voltaje y datos digitales</span></div>
+          <div class="causal-chain-arrow" style="--d:2.7s">↓</div>
+          <div class="causal-chain-step" style="--d:3.0s"><span class="causal-chain-num">6</span><span class="causal-chain-txt"><strong>Ondas</strong> — WiFi 2.4 GHz transmite los datos al servidor</span></div>
         </div>
+      </div>
+
+      <!-- BIBLIOGRAFÍA -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">Bibliografía</div>
+        <ol style="padding-left:22px;font-size:13px;color:var(--muted2);line-height:1.8">
+          <li>Serway, R. A. & Jewett, J. W. — <em>Física para ciencias e ingeniería,</em> 10ª ed., Cengage Learning, 2019.</li>
+          <li>Halliday, D., Resnick, R. & Walker, J. — <em>Fundamentos de Física,</em> 11ª ed., Wiley, 2018.</li>
+          <li>Hewitt, P. G. — <em>Física Conceptual,</em> 12ª ed., Pearson, 2016.</li>
+          <li>WMO — <em>Guide to Meteorological Instruments and Methods of Observation,</em> WMO-No. 8, 2018.</li>
+          <li>CONAGUA — <em>Normales climatológicas 1991–2020: Pachuca de Soto, Hidalgo,</em> SMN, 2021.</li>
+          <li>NOM-156-SEMARNAT-2012 — <em>Establecimiento y operación de sistemas de monitoreo de la calidad del aire.</em></li>
+        </ol>
       </div>` },
 
   med: {
@@ -7047,6 +7304,24 @@ function simPhys() {
   if (alt >= 2400) v.innerHTML = '✈️ <strong>Pachuca (2,426 m).</strong> Aire ' + (rho < 1.0 ? 'menos denso' : 'normal') + ' — menor O₂ disponible.';
   else if (alt < 500) v.innerHTML = '🌊 Casi nivel del mar — presión y O₂ máximos.';
   else v.innerHTML = '⛰️ Altitud intermedia.';
+}
+
+/* ── SCRUBBER: Fases de medición meteorológica ── */
+function simUniPhase() {
+  const p = +document.getElementById('uni-phase').value;
+  const phases = [
+    {l:'1 — Fenómeno', t:'<strong style="color:#a78bfa">Fase 1 — Fenómeno Físico:</strong> El viento sopla, la temperatura cambia, la lluvia cae. Son fenómenos gobernados por fluidos, termodinámica y mecánica. La naturaleza genera la señal original.'},
+    {l:'2 — Sensor', t:'<strong style="color:#38bdf8">Fase 2 — Transducción (Sensor):</strong> El fenómeno interactúa con un sensor. El LM35 convierte calor en voltaje (10 mV/°C). El DHT11 mide cambios de capacitancia. El BMP180 detecta deformación piezorresistiva. Cada sensor aplica un principio físico diferente.'},
+    {l:'3 — Señal', t:'<strong style="color:#fbbf24">Fase 3 — Señal Eléctrica:</strong> El sensor genera un voltaje analógico proporcional al fenómeno. Esta señal viaja por cables a la electrónica de acondicionamiento. Filtros eliminan ruido y amplificadores ajustan el rango.'},
+    {l:'4 — ADC', t:'<strong style="color:#34d399">Fase 4 — Conversión Digital (ADC):</strong> El ESP32 convierte el voltaje analógico en un número digital de 12 bits (0–4095). Resolución: 0.8 mV por paso. Aquí el mundo físico se convierte en datos computables.'},
+    {l:'5 — WiFi', t:'<strong style="color:#e879f9">Fase 5 — Transmisión (Ondas):</strong> El ESP32 empaqueta los datos y los transmite vía WiFi a 2.4 GHz (ondas electromagnéticas, λ ≈ 12.5 cm). La información viaja sin cables hasta el router y de ahí al servidor.'},
+    {l:'6 — Dashboard', t:'<strong style="color:#f97316">Fase 6 — Visualización:</strong> Los datos llegan al servidor, se almacenan en la base de datos y se muestran en el dashboard en tiempo real. De fenómeno físico a gráfica interactiva en menos de 2 segundos.'}
+  ];
+  const ph = phases[p-1];
+  document.getElementById('uni-phase-v').textContent = ph.l;
+  document.getElementById('uni-phase-out').innerHTML = ph.t;
+  const s = document.getElementById('uni-phase');
+  s.style.setProperty('--pct', ((p-1)/5*100)+'%');
 }
 
 /* ── SIMULADOR CPOL · política pública ── */
