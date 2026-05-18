@@ -1519,7 +1519,7 @@
   </div>
   <div style="margin-top:36px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center;animation:fadeUp .7s .45s ease both">
     <div style="background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.25);border-radius:10px;padding:10px 18px;font-size:12px;font-weight:600;color:#fbbf24">☀️ UV Promedio: 8.27 — Muy Alto</div>
-    <div style="background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.25);border-radius:10px;padding:10px 18px;font-size:12px;font-weight:600;color:#34d399">💨 Viento Moda: 14-15 km/h</div>
+    <div style="background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.25);border-radius:10px;padding:10px 18px;font-size:12px;font-weight:600;color:#34d399">💨 Viento Moda: 14-15 km/h <small style="color:#8b949e;font-weight:400;font-size:0.8em">(kilómetros por hora)</small></div>
     <div style="background:rgba(251,113,133,.1);border:1px solid rgba(251,113,133,.25);border-radius:10px;padding:10px 18px;font-size:12px;font-weight:600;color:#fb7185">🤧 Alergias Altas: 57.69% días</div>
     <div style="background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.25);border-radius:10px;padding:10px 18px;font-size:12px;font-weight:600;color:#a78bfa">👁️ Visibilidad: 10 km (76.92%)</div>
   </div>
@@ -1868,7 +1868,7 @@
           <button class="tab" onclick="switchTab('uni',3)">🔭 Óptica</button>
         </div>
         <div class="tab-panel active" id="uni-0">
-          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#38bdf8">Física de Fluidos.</strong> Estudia las propiedades y comportamiento de líquidos y gases. La dinámica de fluidos modela el flujo de ríos y la dispersión de contaminantes. En "La Bella Airosa", el principio de Bernoulli explica cómo el viento a 40 km/h dispersa partículas PM2.5.</p>
+          <p style="font-size:13px;color:var(--muted2);line-height:1.7"><strong style="color:#38bdf8">Física de Fluidos.</strong> Estudia las propiedades y comportamiento de líquidos y gases. La dinámica de fluidos modela el flujo de ríos y la dispersión de contaminantes. En "La Bella Airosa", el principio de Bernoulli explica cómo el viento a 40 km/h dispersa partículas PM2.5 <small style="color:#8b949e;font-weight:400;font-size:0.8em">(partículas ≤2.5 micras)</small>.</p>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
             <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border)"><img src="/images/uni/image1.jpg" style="width:100%;height:75px;object-fit:cover"><div style="padding:4px 8px;font-size:10px;color:var(--muted2);text-align:center">Principio de fluidos</div></div>
             <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border)"><img src="/images/uni/image3.jpg" style="width:100%;height:75px;object-fit:cover"><div style="padding:4px 8px;font-size:10px;color:var(--muted2);text-align:center">Dinámica de fluidos</div></div>
@@ -1958,7 +1958,7 @@
               <tr><td>Pb, Cd, Zn</td><td>Refinería y termoeléctrica de Tula</td><td>Bioacumulación (acumulación de tóxicos en el cuerpo); daño renal (riñones), hepático (hígado) y reproductivo</td></tr>
               <tr><td>NH₃ amoniacal</td><td>Escurrimiento agrícola (&gt;0.5 mg/L)</td><td>Tóxico directo: daño en branquias (órgano para respirar bajo el agua) y sistema nervioso</td></tr>
               <tr><td>Microplásticos</td><td>Arroyos de Pachuca (mayor generador en Hidalgo)</td><td>Ingestión accidental; ftalatos y BPA (químicos plásticos) con efecto endocrino (alteran hormonas)</td></tr>
-              <tr><td>PM2.5 (&gt;25 µg/m³)</td><td>Termoeléctrica Francisco Pérez Ríos</td><td>Acidifica la lluvia (la vuelve más ácida); degrada el hábitat acuático (daña ríos y lagos)</td></tr>
+              <tr><td>PM2.5 (&gt;25 µg/m³ <small style="color:#8b949e;font-weight:400;font-size:0.8em">(microgramos por metro cúbico)</small>)</td><td>Termoeléctrica Francisco Pérez Ríos</td><td>Acidifica la lluvia (la vuelve más ácida); degrada el hábitat acuático (daña ríos y lagos)</td></tr>
             </tbody>
           </table>
         </div>
@@ -1988,7 +1988,7 @@
             <div class="sensor-card">
               <div class="sensor-name">LM35</div>
               <div class="sensor-var">Temperatura</div>
-              <div class="sensor-spec"><strong>Fabricante:</strong> Texas Instruments<br><strong>Rango:</strong> −55°C a +150°C<br><strong>Precisión:</strong> ±0.5°C<br><strong>Salida:</strong> 10 mV/°C (analógico)<br><strong>Costo:</strong> ~$20–30 MXN</div>
+              <div class="sensor-spec"><strong>Fabricante:</strong> Texas Instruments<br><strong>Rango:</strong> −55°C a +150°C<br><strong>Precisión:</strong> ±0.5°C<br><strong>Salida:</strong> 10 mV/°C <small style="color:#8b949e;font-weight:400;font-size:0.8em">(milivoltios por grado)</small> (analógico)<br><strong>Costo:</strong> ~$20–30 MXN</div>
             </div>
             <div class="sensor-card">
               <div class="sensor-name">DHT11</div>
@@ -1998,11 +1998,11 @@
             <div class="sensor-card">
               <div class="sensor-name">BMP180</div>
               <div class="sensor-var">Presión Atmosférica</div>
-              <div class="sensor-spec"><strong>Fabricante:</strong> Bosch Sensortec<br><strong>Rango:</strong> 300–1100 hPa<br><strong>Precisión:</strong> ±1 hPa<br><strong>Protocolo:</strong> I²C digital<br><strong>Altitud:</strong> −500 a +9,000 m</div>
+              <div class="sensor-spec"><strong>Fabricante:</strong> Bosch Sensortec<br><strong>Rango:</strong> 300–1100 hPa <small style="color:#8b949e;font-weight:400;font-size:0.8em">(hectopascales)</small><br><strong>Precisión:</strong> ±1 hPa<br><strong>Protocolo:</strong> I²C digital<br><strong>Altitud:</strong> −500 a +9,000 m</div>
             </div>
           </div>
           <div class="alert-box info" style="margin-top:16px;">
-            <strong>⚡ Dato de Pachuca:</strong> Presión atmosférica ~770 mmHg. El BMP180 debe configurarse con corrección altimétrica (ajuste por la altura sobre el nivel del mar) para lecturas correctas a 2,426 m s.n.m.
+            <strong>⚡ Dato de Pachuca:</strong> Presión atmosférica ~770 mmHg <small style="color:#8b949e;font-weight:400;font-size:0.8em">(milímetros de mercurio)</small>. El BMP180 debe configurarse con corrección altimétrica (ajuste por la altura sobre el nivel del mar) para lecturas correctas a 2,426 m s.n.m.
           </div>
         </div>
         <div class="tab-panel" id="elec-1">
@@ -2023,7 +2023,7 @@
             <thead><tr><th>Tipo</th><th>Salida</th><th>Ventaja</th><th>Ejemplo</th></tr></thead>
             <tbody>
               <tr><td>Analógico</td><td>Voltaje continuo 0–5V</td><td>Información continua, bajo costo</td><td>LM35</td></tr>
-              <tr><td>Digital</td><td>Protocolo UART, SPI, I²C (lenguajes de comunicación entre sensores y computadoras)</td><td>Sin necesidad de ADC externo</td><td>DHT11, BMP180</td></tr>
+              <tr><td>Digital</td><td>Protocolo UART, SPI, I²C (lenguajes de comunicación entre sensores y computadoras)</td><td>Sin necesidad de ADC <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Convertidor Analógico-Digital)</small> externo</td><td>DHT11, BMP180</td></tr>
               <tr><td>Activo</td><td>Genera su propia señal</td><td>Requiere solo alimentación</td><td>LM35, DS18B20</td></tr>
               <tr><td>Pasivo</td><td>Varía impedancia/resistencia (cambia su oposición al paso de electricidad)</td><td>Simples y robustos</td><td>Termistor, fotoresistor</td></tr>
             </tbody>
@@ -2068,7 +2068,7 @@
           <table class="data-table">
             <thead><tr><th>Proceso atmosférico</th><th>Dato real</th></tr></thead>
             <tbody>
-              <tr><td><strong>Efecto invernadero (gases que atrapan calor en la atmósfera)</strong></td><td>CO₂: 424 ppm (partes por millón, unidad de concentración) (aumenta cada año)</td></tr>
+              <tr><td><strong>Efecto invernadero (gases que atrapan calor en la atmósfera)</strong></td><td>CO₂ <small style="color:#8b949e;font-weight:400;font-size:0.8em">(dióxido de carbono)</small>: 424 ppm <small style="color:#8b949e;font-weight:400;font-size:0.8em">(partes por millón)</small> (aumenta cada año)</td></tr>
               <tr><td><strong>Agujero de ozono</strong></td><td>26 millones de km² en la Antártida</td></tr>
               <tr><td><strong>Smog fotoquímico (contaminación del aire causada por reacciones químicas con luz solar)</strong></td><td>O₃ troposférico (ozono a nivel del suelo, contaminante dañino): 150–200 puntos IMECA (Índice Metropolitano de Calidad del Aire)</td></tr>
               <tr><td><strong>Lluvia ácida (precipitación con pH menor a 5.6 que daña ecosistemas)</strong></td><td>pH &lt; 5.6 (lluvia normal: 5.6)</td></tr>
@@ -2139,7 +2139,7 @@
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;">
           <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
             <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">ProAire 2016–2024</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Programa concluido. Estableció el SIMAEH, Inventario de Emisiones y diagnóstico de la Cuenca de Tula (97% del SO₂ estatal).</p>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">Programa concluido. Estableció el SIMAEH <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Sistema de Monitoreo Atmosférico de Hidalgo)</small>, Inventario de Emisiones y diagnóstico de la Cuenca de Tula (97% del SO₂ estatal).</p>
           </div>
           <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
             <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">ProAire 2021–2030</div>
@@ -2147,7 +2147,7 @@
           </div>
           <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
             <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Alerta ICA</div>
-            <p style="font-size:13px;color:var(--muted2);line-height:1.6">El ICA de Pachuca aumentó <strong>+31%</strong> (45 → 59 AQI) entre 2020 y 2025. Mayo 2024 fue el mes más contaminado en 5 años.</p>
+            <p style="font-size:13px;color:var(--muted2);line-height:1.6">El ICA de Pachuca aumentó <strong>+31%</strong> (45 → 59 AQI <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Índice de Calidad del Aire)</small>) entre 2020 y 2025. Mayo 2024 fue el mes más contaminado en 5 años.</p>
           </div>
           <div style="background:var(--bg2);border-radius:12px;padding:16px;border:1px solid var(--border)">
             <div style="font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Logros</div>
@@ -2169,12 +2169,12 @@
       </div>
       <div class="mat-content">
         <div class="mat-content-title">¿La Bella Airosa… o la ciudad asfixiada?</div>
-        <p class="mat-content-intro">Pachuca, conocida por sus vientos constantes, vive una paradoja: ya no bastan para limpiar el aire. <strong>PM2.5 (partículas contaminantes menores a 2.5 micras) de 65 μg/m³ (microgramos por metro cúbico) en el Tuzobús</strong> (2.6× el límite OMS) y <strong>picos de 1,200 μg/m³</strong> de PM10 (partículas contaminantes menores a 10 micras) en 2024. Diagnóstico, voces críticas y propuestas desde la ciencia política.</p>
+        <p class="mat-content-intro">Pachuca, conocida por sus vientos constantes, vive una paradoja: ya no bastan para limpiar el aire. <strong>PM2.5 (partículas contaminantes menores a 2.5 micras) de 65 μg/m³ (microgramos por metro cúbico) en el Tuzobús</strong> (2.6× el límite OMS) y <strong>picos de 1,200 μg/m³ <small style="color:#8b949e;font-weight:400;font-size:0.8em">(microgramos por metro cúbico)</small></strong> de PM10 (partículas contaminantes menores a 10 micras) en 2024. Diagnóstico, voces críticas y propuestas desde la ciencia política.</p>
 
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px">
           <div style="background:rgba(251,113,133,.08);border:1px solid rgba(251,113,133,.22);border-radius:10px;padding:10px 8px;text-align:center">
             <div style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:#fb7185;line-height:1">1,200</div>
-            <div style="font-size:9px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin-top:4px">μg/m³ PM10 pico</div>
+            <div style="font-size:9px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin-top:4px">μg/m³ PM10 <small style="color:#8b949e;font-weight:400;font-size:0.8em">(partículas ≤10 micras)</small> pico</div>
           </div>
           <div style="background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.22);border-radius:10px;padding:10px 8px;text-align:center">
             <div style="font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700;color:#fbbf24;line-height:1">29</div>
@@ -4924,7 +4924,7 @@ void loop() {
             <div class="hotspot-info" data-group="uni" data-id="6" style="--hot-color:#f97316">
               <span class="hs-meta">Área 6 · Ondas</span>
               <h5><span class="hs-dot"></span>〰️ Física de Ondas</h5>
-              <p>Estudia la propagación de energía sin transporte de materia. Las <strong>ondas sonoras</strong> (mecánicas) necesitan medio material; las <strong>ondas electromagnéticas</strong> viajan en el vacío. Los sensores WiFi del ESP32 usan ondas de 2.4 GHz.</p>
+              <p>Estudia la propagación de energía sin transporte de materia. Las <strong>ondas sonoras</strong> (mecánicas) necesitan medio material; las <strong>ondas electromagnéticas</strong> viajan en el vacío. Los sensores WiFi del ESP32 usan ondas de 2.4 GHz <small style="color:#8b949e;font-weight:400;font-size:0.8em">(gigahercios)</small>.</p>
               <p>Tipos: <strong>transversales</strong> (luz, radio) y <strong>longitudinales</strong> (sonido). Propiedades: frecuencia, amplitud, longitud de onda, velocidad. Fenómenos: interferencia, difracción, efecto Doppler en radar meteorológico.</p>
             </div>
           </div>
@@ -5022,7 +5022,7 @@ void loop() {
               <p>La óptica estudia la luz y sus propiedades. La luz viaja a <strong>300,000 km/s</strong> como onda electromagnética y su interacción con la atmósfera determina lo que vemos.</p>
               <p><strong>Dispersión de la luz:</strong> Un prisma descompone la luz blanca en el espectro visible (rojo a violeta). En la atmósfera, la <strong>dispersión de Rayleigh</strong> (partículas pequeñas) produce el azul del cielo; la <strong>dispersión de Mie</strong> (partículas grandes como PM2.5) produce el gris del aire contaminado.</p>
               <p><strong>Refracción (Ley de Snell):</strong> La luz cambia de dirección al pasar de un medio a otro. Las lentes convergentes y divergentes usan este principio. En meteorología, la refracción causa espejismos y halos solares.</p>
-              <p><strong>Índice UV:</strong> Promedio de <strong>8.27</strong> (categoría Muy Alto) en Pachuca. A mayor altitud, menor atenuación atmosférica de los rayos UV-B. 20 de 26 días con visibilidad de 10 km en abril 2026.</p>
+              <p><strong>Índice UV:</strong> Promedio de <strong>8.27</strong> (categoría Muy Alto) en Pachuca. A mayor altitud, menor atenuación atmosférica de los rayos UV-B <small style="color:#8b949e;font-weight:400;font-size:0.8em">(ultravioleta tipo B)</small>. 20 de 26 días con visibilidad de 10 km en abril 2026.</p>
               <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:16px">
                 <img src="/images/uni/image9.jpg" alt="Dispersión de la luz — prisma" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
                 <img src="/images/uni/image10.jpg" alt="Lente convergente — refracción" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
@@ -5415,7 +5415,7 @@ void loop() {
               <div class="hotspot-info" data-group="medbody" data-id="3" style="--hot-color:#38bdf8">
                 <span class="hs-meta">Tórax · Pulmones</span>
                 <h5><span class="hs-dot"></span>🫁 Sistema Respiratorio</h5>
-                <p><strong>Enfermedades:</strong> asma, bronquitis crónica, EPOC, neumonía, cáncer pulmonar.</p>
+                <p><strong>Enfermedades:</strong> asma, bronquitis crónica, EPOC <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Enfermedad Pulmonar Obstructiva Crónica)</small>, neumonía, cáncer pulmonar.</p>
                 <p><strong>Datos Pachuca:</strong> aumento de <strong>+10.8 %</strong> en infecciones respiratorias agudas (IRAS) respecto al periodo anterior.</p>
               </div>
               <div class="hotspot-info" data-group="medbody" data-id="4" style="--hot-color:#fb7185">
@@ -5969,7 +5969,7 @@ void loop() {
               <div class="hotspot-info" data-group="quimbody" data-id="2" style="--hot-color:#38bdf8">
                 <span class="hs-meta">Tórax · Pulmones</span>
                 <h5><span class="hs-dot"></span>🫁 Sistema Respiratorio</h5>
-                <p><strong>Contaminantes:</strong> O₃, NOₓ, PM2.5, COVs.</p>
+                <p><strong>Contaminantes:</strong> O₃, NOₓ, PM2.5, COVs <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Compuestos Orgánicos Volátiles)</small>.</p>
                 <p><strong>Reacción química:</strong> O₃ + lípidos del surfactante pulmonar → peróxidos → daño oxidativo en alvéolos. A 2,400 m hay menos O₂ disponible; el ozono agrava el déficit.</p>
               </div>
               <div class="hotspot-info" data-group="quimbody" data-id="3" style="--hot-color:#fb7185">
@@ -6246,14 +6246,14 @@ void loop() {
           <div class="hotspot-info" data-group="commind" data-id="2" style="--hot-color:#fbbf24">
             <span class="hs-meta">Campo 2</span>
             <h5><span class="hs-dot"></span>📊 Periodismo de datos</h5>
-            <p>Análisis y visualización de bases de datos públicas (SIMAEH, INECC, CONAGUA). Construye historias a partir de números, mapas y tendencias.</p>
+            <p>Análisis y visualización de bases de datos públicas (SIMAEH, INECC, CONAGUA <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Comisión Nacional del Agua)</small>). Construye historias a partir de números, mapas y tendencias.</p>
             <p><strong>Salidas:</strong> redacciones de datos, ONGs ambientales, transparencia.</p>
           </div>
           <div class="hotspot-info" data-group="commind" data-id="3" style="--hot-color:#38bdf8">
             <span class="hs-meta">Campo 3</span>
             <h5><span class="hs-dot"></span>📢 Comunicación de riesgo</h5>
             <p>Diseñar mensajes claros sobre amenazas climáticas para protección civil, escuelas y comunidades vulnerables — especialmente útil en colonias periféricas de Pachuca.</p>
-            <p><strong>Salidas:</strong> Protección Civil, DIF, dependencias estatales y municipales.</p>
+            <p><strong>Salidas:</strong> Protección Civil, DIF <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Sistema para el Desarrollo Integral de la Familia)</small>, dependencias estatales y municipales.</p>
           </div>
           <div class="hotspot-info" data-group="commind" data-id="4" style="--hot-color:#34d399">
             <span class="hs-meta">Campo 4</span>
@@ -6283,7 +6283,7 @@ void loop() {
           <div class="detail-card"><strong>⚡ Electrónica</strong><br>Estación con LM35, DHT11 y BMP180. A 2,426 m s.n.m., presión ~770 mmHg requiere corrección altimétrica.</div>
           <div class="detail-card"><strong>⚗️ Química</strong><br>60+ elementos del cuerpo humano vs. contaminantes de Pachuca: O₂ reducido, ozono troposférico, metales pesados.</div>
           <div class="detail-card"><strong>🏛️ Trabajo Social</strong><br>68% de familias encuestadas reportó impacto en actividades cotidianas. Vulnerables: adultos mayores, infancia, bajos recursos.</div>
-          <div class="detail-card"><strong>🗳️ Ciencia Política</strong><br>LGCC, PROMARNAT y ODS 13 aplicados a Pachuca. Propuesta de política pública local de adaptación climática.</div>
+          <div class="detail-card"><strong>🗳️ Ciencia Política</strong><br>LGCC <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Ley General de Cambio Climático)</small>, PROMARNAT <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Programa Sectorial de Medio Ambiente)</small> y ODS 13 aplicados a Pachuca. Propuesta de política pública local de adaptación climática.</div>
           <div class="detail-card" style="border-color:rgba(245,158,11,.5);background:rgba(245,158,11,.06)"><strong style="color:#f59e0b">📡 Comunicación ★</strong><br>Documental sobre periodismo de datos, comunicación de riesgo y divulgación científica para comunidades vulnerables.</div>
           <div class="detail-card"><strong>🏥 Ciencias de la Salud</strong><br>+10.8% de IRAS en Pachuca. Aire–agua–suelo se vinculan con asma, bronquitis, gastroenteritis y cardiovasculares.</div>
         </div>
@@ -6383,7 +6383,7 @@ void loop() {
         </div>
         <div class="detail-sec-sub" style="margin-top:18px;font-weight:700;color:var(--text)">Campos de aplicación</div>
         <div class="detail-3col" style="margin-top:10px">
-          <div class="detail-card"><strong>Meteorología</strong><br>Predicción del tiempo (CONAGUA, SMN)</div>
+          <div class="detail-card"><strong>Meteorología</strong><br>Predicción del tiempo (CONAGUA, SMN <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Servicio Meteorológico Nacional)</small>)</div>
           <div class="detail-card"><strong>Agricultura</strong><br>Riego óptimo y predicción de plagas (SAGARPA)</div>
           <div class="detail-card"><strong>Energía renovable</strong><br>Radiación solar y velocidad del viento (CFE)</div>
           <div class="detail-card"><strong>Hidrología</strong><br>Precipitación acumulada y escorrentía</div>
@@ -6614,7 +6614,7 @@ void loop() {
             <div style="font-size:13px;color:var(--muted2);line-height:1.8">
               <strong>Status:</strong> CONCLUIDO<br>
               <strong>Responsable:</strong> SEMARNATH + SEMARNAT<br>
-              <strong>Base legal:</strong> LGEEPA, Ley de Protección Ambiental de Hidalgo, NOM-SSA1<br>
+              <strong>Base legal:</strong> LGEEPA <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Ley General del Equilibrio Ecológico)</small>, Ley de Protección Ambiental de Hidalgo, NOM-SSA1 <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Norma Oficial Mexicana)</small><br>
               <strong>Horizonte:</strong> 8 años<br>
               <strong>Enfoque:</strong> Diagnóstico y línea base de emisiones
             </div>
@@ -6623,7 +6623,7 @@ void loop() {
             <div style="font-size:11px;color:#38bdf8;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">📋 ProAire 2021–2030</div>
             <div style="font-size:13px;color:var(--muted2);line-height:1.8">
               <strong>Status:</strong> VIGENTE (10 años)<br>
-              <strong>Responsable:</strong> SEMARNATH + SEMARNAT + CAMe<br>
+              <strong>Responsable:</strong> SEMARNATH <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Sec. Medio Ambiente Hidalgo)</small> + SEMARNAT <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Sec. Medio Ambiente federal)</small> + CAMe <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Comisión Ambiental de la Megalópolis)</small><br>
               <strong>Base legal:</strong> LGEEPA, Acuerdo de Coordinación SEMARNAT–Hidalgo (dic. 2023)<br>
               <strong>Horizonte:</strong> 10 años<br>
               <strong>Enfoque:</strong> Reducción cuantificada y metas de salud pública
@@ -6651,7 +6651,7 @@ void loop() {
               <div class="filo-lens-q">¿Qué buscaba lograr el primer programa?</div>
               <p>Prevenir y revertir el deterioro de la calidad del aire en Hidalgo mediante medidas a corto, mediano y largo plazo:</p>
               <ul style="margin:10px 0 10px 20px;font-size:14px;line-height:1.8;color:var(--muted2)">
-                <li><strong>Reducir emisiones</strong> de contaminantes criterio (PM10, PM2.5, O₃, SO₂, NOx, CO) en las cuencas de Tula y Pachuca.</li>
+                <li><strong>Reducir emisiones</strong> de contaminantes criterio (PM10, PM2.5, O₃ <small style="color:#8b949e;font-weight:400;font-size:0.8em">(ozono)</small>, SO₂ <small style="color:#8b949e;font-weight:400;font-size:0.8em">(dióxido de azufre)</small>, NOx <small style="color:#8b949e;font-weight:400;font-size:0.8em">(óxidos de nitrógeno)</small>, CO <small style="color:#8b949e;font-weight:400;font-size:0.8em">(monóxido de carbono)</small>) en las cuencas de Tula y Pachuca.</li>
                 <li><strong>Proteger la salud</strong> de 509,012 habitantes de Pachuca, Mineral de la Reforma, San Agustín Tlaxiaca y Zempoala.</li>
                 <li><strong>Generar un Inventario de Emisiones</strong> actualizado (año base 2011 → actualización 2016).</li>
                 <li><strong>Establecer el SIMAEH</strong> con 4 estaciones en Pachuca (2 automáticas, 2 manuales).</li>
@@ -6676,7 +6676,7 @@ void loop() {
                 <li><strong>Reducir 25%</strong> las emisiones comparado con el escenario tendencial al 2030.</li>
                 <li><strong>Mejorar 22%</strong> la concentración de PM2.5 y hasta <strong>7%</strong> la de ozono.</li>
                 <li><strong>Evitar ~6,000</strong> muertes prematuras al año 2030.</li>
-                <li><strong>Articular acciones</strong> con la ZMVM (Tizayuca) bajo el ProAire ZMVM 2021–2030.</li>
+                <li><strong>Articular acciones</strong> con la ZMVM <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Zona Metropolitana del Valle de México)</small> (Tizayuca) bajo el ProAire ZMVM 2021–2030.</li>
                 <li><strong>Coordinar</strong> tres órdenes de gobierno, industria, academia y sociedad civil.</li>
               </ul>
             </div>
@@ -6763,7 +6763,7 @@ void loop() {
             <div class="hotspot-info active" data-group="tsocial" data-id="1" style="--hot-color:#fbbf24">
               <span class="hs-meta">Estrategia 1</span>
               <h5><span class="hs-dot"></span>🏭 Fuentes Fijas e Industria</h5>
-              <p><strong>2016–2024:</strong> La Cuenca de Tula concentraba el <strong>97% del SO₂</strong>, 45% del PM2.5 y 43% de los NOx estatales. Fuentes principales: CFE Termoeléctrica (combustóleo con azufre ≥2%) y PEMEX Refinería Miguel Hidalgo (45× más SO₂ que toda la ZMVM).</p>
+              <p><strong>2016–2024:</strong> La Cuenca de Tula concentraba el <strong>97% del SO₂</strong>, 45% del PM2.5 y 43% de los NOx estatales. Fuentes principales: CFE <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Comisión Federal de Electricidad)</small> Termoeléctrica (combustóleo con azufre ≥2%) y PEMEX <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Petróleos Mexicanos)</small> Refinería Miguel Hidalgo (45× más SO₂ que toda la ZMVM).</p>
               <p><strong>2021–2030:</strong> Transición de combustóleo a gas natural en la Termoeléctrica (gasoducto). Actualizar Inventario de Emisiones (base 2018). Continuar control en Cuenca de Tula.</p>
             </div>
             <div class="hotspot-info" data-group="tsocial" data-id="2" style="--hot-color:#fb7185">
@@ -6979,13 +6979,13 @@ void loop() {
               <li>Mayo 2024: mes más contaminado en 5 años (AQI 88)</li>
               <li>PM2.5 no cumple norma en ninguna ciudad de Hidalgo al 2024</li>
               <li>PM10 tendencia al alza en CA-Tula</li>
-              <li>2024: repunte de SO₂ y NO₂ por reactivación de la Refinería</li>
+              <li>2024: repunte de SO₂ y NO₂ <small style="color:#8b949e;font-weight:400;font-size:0.8em">(dióxido de nitrógeno)</small> por reactivación de la Refinería</li>
             </ul>
           </div>
           <div style="background:linear-gradient(135deg,rgba(52,211,153,.08),transparent);border:1px solid rgba(52,211,153,.15);border-radius:12px;padding:20px">
             <div style="font-size:11px;color:#34d399;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">✓ Mejora</div>
             <ul style="margin:0;padding-left:18px;font-size:13px;color:var(--muted2);line-height:1.8">
-              <li>SO₂: logro histórico — de 97% del total estatal a <strong>2 ppb</strong> en Pachuca (meta 2030 cumplida)</li>
+              <li>SO₂: logro histórico — de 97% del total estatal a <strong>2 ppb</strong> <small style="color:#8b949e;font-weight:400;font-size:0.8em">(partes por billón)</small> en Pachuca (meta 2030 cumplida)</li>
               <li>NO₂: reducción ~15% (meta 2030 alcanzada)</li>
               <li>2022–2023: Tula redujo SO₂ y NOx con gas natural</li>
               <li>Red SIMAEH fortalecida (4 estaciones operativas)</li>
@@ -7241,11 +7241,11 @@ void loop() {
               <span class="tl-tag">2012 · Acuerdo histórico</span>
               <h5>🌎 LGCC — Ley General de Cambio Climático</h5>
               <p>México fue de los primeros países en aprobar una ley marco específica de cambio climático. Establece metas de mitigación (<strong>−30 % de emisiones al 2020</strong>) y adaptación.</p>
-              <p><strong>Impacto en Pachuca:</strong> Crea el INECC y el SNCC, pero la implementación local depende de presupuesto estatal que ha sido recortado.</p>
+              <p><strong>Impacto en Pachuca:</strong> Crea el INECC <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Instituto Nacional de Ecología y Cambio Climático)</small> y el SNCC, pero la implementación local depende de presupuesto estatal que ha sido recortado.</p>
             </div>
             <div class="tline-panel-info" data-group="cpolaws" data-id="4">
               <span class="tl-tag">2015 · ODS 13</span>
-              <h5>🌐 ODS 13 — Acción por el Clima (ONU)</h5>
+              <h5>🌐 ODS <small style="color:#8b949e;font-weight:400;font-size:0.8em">(Objetivos de Desarrollo Sostenible)</small> 13 — Acción por el Clima (ONU)</h5>
               <p>México adopta la Agenda 2030. El <strong>ODS 13</strong> exige integrar medidas relativas al cambio climático en políticas, estrategias y planes nacionales.</p>
               <p><strong>Impacto en Pachuca:</strong> Hidalgo lo incorpora en su Plan Estatal de Desarrollo, pero sin presupuesto específico para implementación municipal.</p>
             </div>
