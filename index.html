@@ -307,9 +307,8 @@
     }
     .materia-card:hover .mat-content::after { opacity: 1; transform: translateX(4px); }
     @media (max-width: 720px) {
-      .materia-card { height: auto; }
-      .materia-card .mat-content { -webkit-mask-image: none; mask-image: none; }
-      .materia-card .mat-content::after { display: none; }
+      .materia-card { height: auto; max-height: 620px; }
+      .materia-card .mat-content { overflow: hidden; }
     }
     .mat-sidebar {
       padding: 36px 28px; display: flex; flex-direction: column;
@@ -507,10 +506,45 @@
       .poi-grid   { grid-template-columns:repeat(2,1fr); }
       .materia-card { grid-template-columns:1fr; }
       .sensor-grid { grid-template-columns:1fr; }
+      .mat-content { padding: 24px 20px; }
+      .mat-content-title { font-size: 1.1rem; }
     }
     @media (max-width:560px) {
       .poi-grid { grid-template-columns:1fr; }
-      h1 { letter-spacing:-1px; }
+      h1 { font-size: clamp(2rem, 9vw, 3.8rem); letter-spacing:-1px; }
+      h1 .c1, h1 .c2 { display:inline; }
+      .hero-sub { font-size:14px; }
+      .hero-meta { gap:24px; }
+      .meta-val { font-size:1.6rem; }
+      .stat-grid { grid-template-columns:1fr 1fr; gap:12px; }
+      .stat-card { padding:16px 12px; }
+      .page-section { padding:50px 14px; }
+      .mat-sidebar { padding:24px 20px; min-height:auto; }
+      .mat-content { padding:20px 16px; }
+      .mat-content-title { font-size:1rem; }
+      .mat-content-intro { font-size:13px; margin-bottom:16px; }
+      .data-table { display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+      .sensor-grid { gap:10px; }
+      .sensor-card { padding:14px; }
+      .detail-page { overflow-x:hidden; }
+      .detail-body { padding:24px 14px 60px; overflow-x:hidden; word-break:break-word; }
+      .detail-body p, .detail-body li { overflow-wrap:break-word; }
+      .detail-facts { grid-template-columns:repeat(2,1fr); gap:10px; }
+      .detail-fact { padding:14px 10px; }
+      .detail-fact-val { font-size:1.3rem; }
+      .detail-2col, .detail-3col { grid-template-columns:1fr; }
+      .detail-hero { height:220px; }
+      .detail-hero-overlay { padding:18px 14px; }
+      .detail-hero-title { font-size:1.5rem; letter-spacing:-0.5px; }
+      .detail-sec-head { font-size:1.1rem; gap:8px; }
+      .detail-body .data-table { display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+      .tabs { gap:2px; }
+      .tab { padding:6px 10px; font-size:11px; }
+      .prope-header { flex-direction:column; gap:10px; }
+      .prope-count { font-size:12px; }
+      h2 { font-size:1.6rem; }
+      .section-intro { font-size:14px; }
+      footer { padding:40px 20px; }
     }
 
     /* ══════════════════════════════════════
