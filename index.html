@@ -370,6 +370,11 @@
     .m-soc  .mat-sidebar::before { background: linear-gradient(150deg,rgba(26,18,0,.93),rgba(46,32,0,.88)); filter:none; }
     .m-soc  .mat-sidebar::after  { background: var(--amber); }
 
+    /* Historia → mapa antiguo / pergamino */
+    .m-hist .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1461360370896-922624d12a74?w=500&q=80'); }
+    .m-hist .mat-sidebar::before { background: linear-gradient(150deg,rgba(36,28,22,.93),rgba(60,42,24,.88)); filter:none; }
+    .m-hist .mat-sidebar::after  { background: #c8682a; }
+
     /* Ciencias de la Salud → medicina/salud */
     .m-sal  .mat-sidebar { background-image: url('https://images.unsplash.com/photo-1576671081837-49000212a370?w=500&q=80'); }
     .m-sal  .mat-sidebar::before { background: linear-gradient(150deg,rgba(26,10,16,.93),rgba(46,16,32,.88)); filter:none; }
@@ -395,6 +400,7 @@
     .tag-soc  { background:rgba(251,191,36,.15);  color:var(--amber); }
     .tag-sal  { background:rgba(251,113,133,.15); color:var(--rose); }
     .tag-etimo { background:rgba(212,165,116,.15); color:#d4a574; }
+    .tag-hist  { background:rgba(200,104,42,.15); color:#c8682a; }
 
     .mat-title { font-family:'Space Grotesk',sans-serif; font-size:1.05rem; font-weight:700; line-height:1.3; margin-bottom:8px; }
     .mat-sub   { font-size:12px; color:var(--muted2); line-height:1.55; }
@@ -1531,7 +1537,7 @@
   </h1>
   <p class="hero-sub">
     Análisis estadístico (estudio con números y datos) e interdisciplinario (que integra varias materias) (que combina varias materias) del clima de <strong style="color:#f1f5f9">Pachuca de Soto, Hidalgo</strong>.<br>
-    13 materias integradas · 30 observaciones diarias · Abril 2026.
+    14 materias integradas · 30 observaciones diarias · Abril 2026.
   </p>
   <div class="hero-meta">
     <div class="meta-item">
@@ -1547,7 +1553,7 @@
       <span class="meta-label">temp. media abril</span>
     </div>
     <div class="meta-item">
-      <span class="meta-val" data-count="13">0</span>
+      <span class="meta-val" data-count="14">0</span>
       <span class="meta-label">materias integradas</span>
     </div>
   </div>
@@ -1679,7 +1685,7 @@
 <!-- ═══════════════ MATERIAS ═══════════════ -->
 <section class="page-section" id="comunes" style="padding-bottom:24px;">
   <p class="section-label reveal">Proyectos Escolares</p>
-  <h2 class="reveal d1">Trece proyectos.<br><span style="color:var(--amber)">Un mismo territorio.</span></h2>
+  <h2 class="reveal d1">Catorce proyectos.<br><span style="color:var(--amber)">Un mismo territorio.</span></h2>
   <p class="section-intro reveal d2">
     Ciclo Enero–Junio 2026 · Preparatoria Colegio Pedro de Gante A.C. incorporada a la UAEH.
     Cada proyecto analiza el clima de Pachuca durante abril desde su disciplina.
@@ -2152,7 +2158,7 @@
         <div class="prope-label social">Área propedéutica</div>
         <div class="prope-name">Ciencias Sociales y Humanidades</div>
       </div>
-      <div class="prope-count">3 materias</div>
+      <div class="prope-count">4 materias</div>
     </div>
 
     <div class="materia-slider" id="slider-social">
@@ -2325,7 +2331,7 @@
       </div>
       <div class="mat-content">
         <div class="mat-content-title">"Cuando el ambiente enferma, el territorio habla…"</div>
-        <p class="mat-content-intro">Documental estudiantil sobre la <strong>contaminación del aire en Pachuca</strong> y sus efectos en la salud y el medio ambiente. Producido como entregable de Comunicación dentro del proyecto interdisciplinario <strong>EIMA</strong>, que integra 13 materias y 30 observaciones reales de abril 2026.</p>
+        <p class="mat-content-intro">Documental estudiantil sobre la <strong>contaminación del aire en Pachuca</strong> y sus efectos en la salud y el medio ambiente. Producido como entregable de Comunicación dentro del proyecto interdisciplinario <strong>EIMA</strong>, que integra 14 materias y 30 observaciones reales de abril 2026.</p>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0">
           <div style="background:var(--bg2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border)">
             <div style="font-size:18px;font-weight:800;color:#fbbf24">27°C</div>
@@ -2356,6 +2362,74 @@
             </div>
           </div>
           <div style="position:absolute;bottom:10px;left:12px;font-size:11px;color:#fff;font-weight:600;letter-spacing:.5px;text-shadow:0 1px 4px rgba(0,0,0,.6)">Ver documental + proyecto →</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nuevos Enfoques de Historia -->
+    <div class="materia-card m-hist reveal" onclick="openDetail('historia')">
+      <div class="mat-sidebar">
+        <div class="mat-num">11</div>
+        <div>
+          <span class="mat-tag tag-hist">Historia</span>
+          <div class="mat-title">Nuevos Enfoques de Historia</div>
+          <div class="mat-sub">Línea del Tiempo · Historia del Clima en México · Del colapso maya a la crisis del agua</div>
+        </div>
+      </div>
+      <div class="mat-content">
+        <div class="mat-content-title">Historia del clima en México</div>
+        <p class="mat-content-intro">Línea del tiempo de <strong>18 acontecimientos climáticos clave</strong> que han marcado la historia de México: megasequías mayas, el Año del Hambre (1785), huracanes como Gilberto y Otis, incendios forestales de 1998, olas de calor récord y la crisis del agua en Monterrey y el Valle de México.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0">
+          <div style="background:var(--bg2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border)">
+            <div style="font-size:18px;font-weight:800;color:#c8682a">18</div>
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px">Eventos</div>
+          </div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border)">
+            <div style="font-size:18px;font-weight:800;color:#d23b2b">+45°C</div>
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px">Récord 2024</div>
+          </div>
+          <div style="background:var(--bg2);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--border)">
+            <div style="font-size:18px;font-weight:800;color:#1f5d70">1,100+</div>
+            <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px">Años de historia</div>
+          </div>
+        </div>
+        <div class="tabs" id="historia-tabs">
+          <button class="tab active" onclick="switchTab('historia',0)">Sequías</button>
+          <button class="tab" onclick="switchTab('historia',1)">Huracanes</button>
+          <button class="tab" onclick="switchTab('historia',2)">Olas de calor</button>
+        </div>
+        <div class="tab-panel active" id="historia-0">
+          <table class="data-table">
+            <thead><tr><th>Periodo</th><th>Evento</th><th>Impacto</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Siglos IX–X</strong></td><td>Megasequías mayas</td><td>Colapso de ciudades del Clásico</td></tr>
+              <tr><td><strong>1785–1786</strong></td><td>"El Año del Hambre"</td><td>Cientos de miles de muertes</td></tr>
+              <tr><td><strong>Década 1950</strong></td><td>Gran sequía del norte</td><td>Migración masiva</td></tr>
+              <tr><td><strong>2011</strong></td><td>Peor sequía en 70 años</td><td>Millones de hectáreas perdidas</td></tr>
+              <tr><td><strong>2022</strong></td><td>"Día Cero" en Monterrey</td><td>Racionamiento de agua</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="historia-1">
+          <table class="data-table">
+            <thead><tr><th>Año</th><th>Huracán</th><th>Impacto</th></tr></thead>
+            <tbody>
+              <tr><td><strong>1988</strong></td><td>Gilberto (Cat. 5)</td><td>Monterrey devastado</td></tr>
+              <tr><td><strong>2005</strong></td><td>Wilma</td><td>Cancún destruido</td></tr>
+              <tr><td><strong>2013</strong></td><td>Ingrid + Manuel</td><td>Golpe doble desde dos océanos</td></tr>
+              <tr><td><strong>2023</strong></td><td>Otis (Cat. 5)</td><td>Acapulco devastado</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="historia-2">
+          <table class="data-table">
+            <thead><tr><th>Periodo</th><th>Evento</th><th>Dato clave</th></tr></thead>
+            <tbody>
+              <tr><td><strong>2023–2024</strong></td><td>Olas de calor récord</td><td>>45°C en varias regiones</td></tr>
+              <tr><td><strong>Feb 2021</strong></td><td>Ola de frío extrema</td><td>Apagones masivos en el norte</td></tr>
+              <tr><td><strong>Actualidad</strong></td><td>Deshielo de glaciares</td><td>Iztaccíhuatl y Pico de Orizaba</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -6442,7 +6516,7 @@ void loop() {
           &ldquo;Cuando el ambiente enferma, el territorio habla y nosotros aprendimos a escucharlo.&rdquo;
         </div>
         <p style="color:var(--muted2);font-size:14.5px;line-height:1.8;margin-top:18px">
-          Análisis estadístico e interdisciplinario del clima de Pachuca de Soto, Hidalgo. Durante <strong>abril de 2026</strong> se registraron <strong>30 observaciones diarias</strong> que revelaron anomalías históricas: temperaturas hasta <strong>10 °C sobre el promedio</strong>, humedad en mínimos récord y un evento de lluvia <strong>6× superior</strong> al promedio mensual. El proyecto integra <strong>13 materias</strong> de todas las áreas propedéuticas de la Preparatoria Colegio Pedro de Gante A.C., incorporada a la UAEH.
+          Análisis estadístico e interdisciplinario del clima de Pachuca de Soto, Hidalgo. Durante <strong>abril de 2026</strong> se registraron <strong>30 observaciones diarias</strong> que revelaron anomalías históricas: temperaturas hasta <strong>10 °C sobre el promedio</strong>, humedad en mínimos récord y un evento de lluvia <strong>6× superior</strong> al promedio mensual. El proyecto integra <strong>14 materias</strong> de todas las áreas propedéuticas de la Preparatoria Colegio Pedro de Gante A.C., incorporada a la UAEH.
         </p>
         <div class="detail-facts" style="margin-top:18px">
           <div class="detail-fact"><div class="detail-fact-val" style="color:#fbbf24">30</div><div class="detail-fact-lbl">Observaciones diarias</div></div>
@@ -6485,7 +6559,7 @@ void loop() {
             <div class="tline-panel-info active" data-group="comproc" data-id="1">
               <span class="tl-tag">Etapa 1 · Marzo 2026</span>
               <h5>🧭 Diseño y planificación</h5>
-              <p>Definición del tema central — monitoreo climático de Pachuca durante abril 2026. Asignación de las <strong>13 materias participantes</strong>, una por área propedéutica, con su propio enfoque disciplinar.</p>
+              <p>Definición del tema central — monitoreo climático de Pachuca durante abril 2026. Asignación de las <strong>14 materias participantes</strong>, una por área propedéutica, con su propio enfoque disciplinar.</p>
               <p><strong>Resultado:</strong> matriz de objetivos por materia y calendario común de observaciones.</p>
             </div>
             <div class="tline-panel-info" data-group="comproc" data-id="2">
@@ -6504,7 +6578,7 @@ void loop() {
               <span class="tl-tag">Etapa 4 · 26–28 abril 2026</span>
               <h5>🧪 Análisis e integración</h5>
               <p>Cada materia procesó los datos desde su disciplina: <strong>tablas de frecuencias</strong> en Matemáticas, <strong>ecotoxicología</strong> en Biodiversidad, <strong>diseño de sensores</strong> en Electrónica, <strong>química atmosférica</strong>, gobernanza, intervención social.</p>
-              <p>Integración cruzada entre las 13 materias.</p>
+              <p>Integración cruzada entre las 14 materias.</p>
             </div>
             <div class="tline-panel-info" data-group="comproc" data-id="5">
               <span class="tl-tag">Etapa 5 · 29–30 abril 2026</span>
@@ -6663,7 +6737,7 @@ void loop() {
 
       <!-- 05 Interdisciplinariedad -->
       <div class="detail-sec">
-        <div class="detail-sec-head">05 · Interdisciplinariedad — 13 materias, 4 áreas propedéuticas</div>
+        <div class="detail-sec-head">05 · Interdisciplinariedad — 14 materias, 4 áreas propedéuticas</div>
         <div class="detail-3col">
           <div class="detail-card"><strong>🌿 Ecología</strong><br>Bioindicadores del matorral xerófilo: 14 especies registradas. Eslabón crítico: abeja nativa <em>Xylocopa mexicanorum</em>.</div>
           <div class="detail-card"><strong>📐 Matemáticas</strong><br>Tablas de frecuencias de 9 variables climáticas con 30 observaciones. Temp. media 23.9 °C, viento moda 14–15 km/h.</div>
@@ -6730,7 +6804,7 @@ void loop() {
         </p>
         <div class="detail-sec-sub" style="font-weight:700;color:var(--text);margin-bottom:6px">Importancia del proyecto</div>
         <p style="color:var(--muted2);font-size:14px;line-height:1.8">
-          Pachuca de Soto vivió en abril 2026 uno de sus meses más extremos. Este proyecto documenta ese momento con evidencia real y lo analiza desde 13 perspectivas disciplinares: demuestra que la escuela puede producir conocimiento útil para la comunidad — desde alertas sobre especies como el Ajolote del Altiplano, hasta propuestas de política pública local de adaptación climática.
+          Pachuca de Soto vivió en abril 2026 uno de sus meses más extremos. Este proyecto documenta ese momento con evidencia real y lo analiza desde 14 perspectivas disciplinares: demuestra que la escuela puede producir conocimiento útil para la comunidad — desde alertas sobre especies como el Ajolote del Altiplano, hasta propuestas de política pública local de adaptación climática.
         </p>
         <div class="alert-box info" style="margin-top:16px">
           <strong>📦 Entregables finales:</strong> Documental estudiantil de Comunicación · Página web interactiva <em>climaabr.netlify.app</em> · Guion narrativo del proyecto.
@@ -6744,6 +6818,294 @@ void loop() {
           Pachuca de Soto, Hidalgo · Abril 2026
         </div>
       </div>` },
+
+  historia: {
+    tag: 'Materia 11 · Sociales',
+    tagColor: 'rgba(200,104,42,.15)', tagTextColor: '#c8682a',
+    title: 'Nuevos Enfoques de Historia',
+    sub: 'Historia del Clima en México · Línea del Tiempo · Del colapso maya a la crisis del agua · Preparatoria Colegio Pedro de Gante · UAEH 2026',
+    hero: 'https://images.unsplash.com/photo-1461360370896-922624d12a74?w=1400&q=85',
+    content: `
+      <!-- INTRO -->
+      <div class="detail-sec">
+        <div style="background:linear-gradient(135deg,rgba(200,104,42,.10),rgba(31,93,112,.08));border-left:4px solid #c8682a;border-radius:14px;padding:22px 24px;font-size:16px;line-height:1.7;color:var(--text)">
+          &ldquo;El clima ha moldeado la historia de México: dónde se fundaron las ciudades, qué cosechamos, cómo migramos y a qué desastres nos enfrentamos. Comprender su historia nos permite entender el presente y prepararnos para el futuro.&rdquo;
+        </div>
+      </div>
+
+      <div class="detail-facts">
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#c8682a">18</div><div class="detail-fact-lbl">Eventos climáticos</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#d23b2b">1,100+</div><div class="detail-fact-lbl">Años de historia</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#1f5d70">6</div><div class="detail-fact-lbl">Tipos de fenómeno</div></div>
+        <div class="detail-fact"><div class="detail-fact-val" style="color:#5a7f9c">32</div><div class="detail-fact-lbl">Estados afectados</div></div>
+      </div>
+
+      <!-- 01 ¿Por qué estudiar el clima? -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">01 · ¿Por qué estudiar el clima?</div>
+        <div class="detail-3col">
+          <div class="detail-card">
+            <h4>🌡️ ¿Qué es el clima?</h4>
+            <p>Es el conjunto de condiciones atmosféricas (temperatura, lluvia, viento, humedad) que predominan en una región durante un periodo largo, normalmente <strong>30 años o más</strong>.</p>
+          </div>
+          <div class="detail-card">
+            <h4>⚡ Clima vs. estado del tiempo</h4>
+            <p>El <strong>estado del tiempo</strong> es lo que ocurre hoy. El <strong>clima</strong> es el patrón promedio a lo largo de décadas. El tiempo cambia en horas; el clima, en décadas.</p>
+          </div>
+          <div class="detail-card">
+            <h4>🇲🇽 ¿Por qué México?</h4>
+            <p>México es uno de los países <strong>más vulnerables</strong> a fenómenos extremos por su ubicación entre dos océanos. Conocer su pasado climático ayuda a reducir riesgos.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 LÍNEA DEL TIEMPO -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">02 · Línea del Tiempo — 18 eventos clave</div>
+        <p style="color:var(--muted2);font-size:14px;line-height:1.75;margin-bottom:24px">Recorrido cronológico por los momentos que definieron la relación entre México y su clima.</p>
+
+        <!-- Megasequías mayas -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #c8682a">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#c8682a;letter-spacing:.5px">SIGLOS IX–X</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(200,104,42,.15);color:#c8682a;font-weight:700;letter-spacing:1px">SEQUÍA</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">☀️ Megasequías y declive maya</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">Estudios paleoclimáticos de sedimentos en Yucatán revelan sequías prolongadas que coincidieron con el colapso de las grandes ciudades mayas del periodo Clásico.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #c8682a;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> abandono de ciudades, hambrunas, conflictos y reorganización de la sociedad maya.</p>
+        </div>
+
+        <!-- El Año del Hambre -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #5a7f9c">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#5a7f9c;letter-spacing:.5px">1785–1786</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(90,127,156,.15);color:#5a7f9c;font-weight:700;letter-spacing:1px">HELADA · HAMBRUNA</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">❄️ "El Año del Hambre"</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">Heladas tempranas a finales de 1785 destruyeron las cosechas de maíz en la Nueva España. Fue una de las peores crisis alimentarias del periodo virreinal.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #5a7f9c;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> cientos de miles de muertos por hambre y enfermedades; migración masiva del campo a las ciudades.</p>
+        </div>
+
+        <!-- Sequías siglo XIX -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #c8682a">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#c8682a;letter-spacing:.5px">SIGLO XIX</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(200,104,42,.15);color:#c8682a;font-weight:700;letter-spacing:1px">SEQUÍA</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">☀️ Sequías del México independiente</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">Sequías repetidas en el centro y norte golpearon la agricultura en un México que apenas se consolidaba como nación.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #c8682a;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> pérdida de cosechas, hambrunas regionales, migraciones internas y tensiones sociales.</p>
+        </div>
+
+        <!-- Gran sequía del norte 1950 -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #c8682a">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#c8682a;letter-spacing:.5px">DÉCADA DE 1950</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(200,104,42,.15);color:#c8682a;font-weight:700;letter-spacing:1px">SEQUÍA</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">🏜️ La gran sequía del norte</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">Una de las sequías más severas del siglo XX afectó Chihuahua, Coahuila y Durango durante varios años.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #c8682a;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> muerte de ganado, abandono de tierras, fuerte migración y crisis alimentaria.</p>
+        </div>
+
+        <!-- Gilberto -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #1f5d70">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#1f5d70;letter-spacing:.5px">SEPTIEMBRE 1988</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(31,93,112,.15);color:#1f5d70;font-weight:700;letter-spacing:1px">HURACÁN</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">🌀 Huracán Gilberto</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">Categoría 5 en Yucatán, provocó el desbordamiento del río Santa Catarina en Monterrey. Cambió la forma en que México se prepara ante ciclones.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #1f5d70;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> cientos de muertes, miles de damnificados y enormes daños en infraestructura.</p>
+        </div>
+
+        <!-- Incendios 1998 -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #b8431f">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#b8431f;letter-spacing:.5px">1997–1998</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(184,67,31,.15);color:#b8431f;font-weight:700;letter-spacing:1px">EL NIÑO · INCENDIOS</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">🔥 Incendios forestales históricos</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">El Niño intenso provocó sequía extrema. Temporada récord de incendios en Chiapas y Oaxaca, cuyo humo llegó hasta Estados Unidos.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #b8431f;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> miles de hectáreas perdidas, problemas de salud por mala calidad del aire y daños a la biodiversidad.</p>
+        </div>
+
+        <!-- Inundaciones 1999 -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #27607e">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#27607e;letter-spacing:.5px">OCTUBRE 1999</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(39,96,126,.15);color:#27607e;font-weight:700;letter-spacing:1px">INUNDACIÓN</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">🌊 Inundaciones en Puebla, Veracruz y Tabasco</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">Lluvias torrenciales causaron graves inundaciones y deslaves en la Sierra Norte de Puebla y estados del Golfo.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #27607e;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> cientos de muertes por deslizamientos, pueblos incomunicados y miles de viviendas destruidas.</p>
+        </div>
+
+        <!-- Wilma -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #1f5d70">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#1f5d70;letter-spacing:.5px">OCTUBRE 2005</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(31,93,112,.15);color:#1f5d70;font-weight:700;letter-spacing:1px">HURACÁN</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">🌀 Huracán Wilma</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">El más intenso del Atlántico por presión. Se mantuvo casi un día sobre Quintana Roo, azotando Cancún y Cozumel.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #1f5d70;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> daños millonarios al turismo, hoteles y playas destruidas. Tardó años en recuperarse.</p>
+        </div>
+
+        <!-- Tabasco 2007 -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #27607e">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#27607e;letter-spacing:.5px">NOVIEMBRE 2007</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(39,96,126,.15);color:#27607e;font-weight:700;letter-spacing:1px">INUNDACIÓN</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">🌊 La gran inundación de Tabasco</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">Lluvias extraordinarias dejaron bajo el agua al <strong>80% del estado de Tabasco</strong>. Una de las peores inundaciones de la historia de México.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #27607e;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> un millón de personas afectadas, pérdidas enormes y debate nacional sobre gestión del agua.</p>
+        </div>
+
+        <!-- Sequía 2011 -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #c8682a">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#c8682a;letter-spacing:.5px">2011</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(200,104,42,.15);color:#c8682a;font-weight:700;letter-spacing:1px">SEQUÍA</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">☀️ La peor sequía en 70 años</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">Gran parte del norte sufrió una de las sequías más severas registradas. Presas y cultivos colapsaron.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #c8682a;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> millones de hectáreas perdidas, muerte masiva de ganado, escasez de agua.</p>
+        </div>
+
+        <!-- Ingrid y Manuel -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #1f5d70">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#1f5d70;letter-spacing:.5px">SEPTIEMBRE 2013</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(31,93,112,.15);color:#1f5d70;font-weight:700;letter-spacing:1px">HURACÁN DOBLE</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">🌀 Ingrid y Manuel: golpe desde dos océanos</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">Hecho poco común: tormenta Ingrid (Golfo) y Manuel (Pacífico) impactaron casi al mismo tiempo. Guerrero y Acapulco devastados.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #1f5d70;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> más de un centenar de muertes, carreteras destruidas, turistas atrapados en Acapulco.</p>
+        </div>
+
+        <!-- Ola de frío 2021 -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #5a7f9c">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#5a7f9c;letter-spacing:.5px">FEBRERO 2021</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(90,127,156,.15);color:#5a7f9c;font-weight:700;letter-spacing:1px">OLA DE FRÍO</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">❄️ Ola de frío y nevadas atípicas</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">Frente frío extremo de Norteamérica provocó temperaturas heladas y nevadas inusuales en el norte, congelando infraestructura energética.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #5a7f9c;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> apagones masivos, millones sin electricidad, pérdidas industriales. Demostró la vulnerabilidad ante el frío extremo.</p>
+        </div>
+
+        <!-- Día Cero Monterrey -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #c8682a">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#c8682a;letter-spacing:.5px">2022</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(200,104,42,.15);color:#c8682a;font-weight:700;letter-spacing:1px">CRISIS DE AGUA</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">💧 "Día Cero" en Monterrey</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">Sequía prolongada dejó las presas de Nuevo León casi vacías. Monterrey vivió cortes de agua diarios y racionamiento.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #c8682a;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> conflictos por el reparto del agua, protestas sociales y debate nacional sobre estrés hídrico.</p>
+        </div>
+
+        <!-- Otis -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #1f5d70">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#1f5d70;letter-spacing:.5px">OCTUBRE 2023</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(31,93,112,.15);color:#1f5d70;font-weight:700;letter-spacing:1px">HURACÁN</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">🌀 Huracán Otis</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">De tormenta tropical a categoría 5 en menos de un día — intensificación récord ligada a aguas anormalmente cálidas. Golpeó directamente Acapulco.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #1f5d70;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> decenas de muertos, ciudad turística devastada, daños por miles de millones. Ejemplo claro de cómo el océano más caliente potencia los ciclones.</p>
+        </div>
+
+        <!-- Olas de calor 2023-2024 -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #d23b2b">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#d23b2b;letter-spacing:.5px">2023–2024</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(210,59,43,.15);color:#d23b2b;font-weight:700;letter-spacing:1px">OLA DE CALOR</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">🔥 Olas de calor récord</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">Temperaturas superiores a <strong>45 °C</strong> en varias regiones. En el sureste, murieron monos aulladores por calor y deshidratación.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #d23b2b;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> golpes de calor y muertes humanas, saturación de la red eléctrica, afectaciones a fauna y campo.</p>
+        </div>
+
+        <!-- Crisis del agua CDMX -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #27607e">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#27607e;letter-spacing:.5px">2024</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(39,96,126,.15);color:#27607e;font-weight:700;letter-spacing:1px">ESTRÉS HÍDRICO</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">💧 Crisis del agua en el centro del país</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">El sistema Cutzamala, que abastece al Valle de México, llegó a niveles históricamente bajos, encendiendo alarmas sobre el "día cero" en la capital.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #27607e;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> cortes de agua, baja presión, mayor presión sobre acuíferos del país.</p>
+        </div>
+
+        <!-- Glaciares -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:16px;border-left:4px solid #6f93a6">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#6f93a6;letter-spacing:.5px">ACTUALIDAD</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(111,147,166,.15);color:#6f93a6;font-weight:700;letter-spacing:1px">CAMBIO CLIMÁTICO</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">🏔️ Deshielo de los glaciares mexicanos</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">Los glaciares del Iztaccíhuatl y Pico de Orizaba se han reducido drásticamente y están a punto de desaparecer.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #6f93a6;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> pérdida de reservas de agua, alteración de ecosistemas de alta montaña, señal visible del calentamiento global.</p>
+        </div>
+
+        <!-- El Niño / La Niña -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:4px;border-left:4px solid #6f93a6">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:#6f93a6;letter-spacing:.5px">HOY Y FUTURO</span>
+            <span style="font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(111,147,166,.15);color:#6f93a6;font-weight:700;letter-spacing:1px">EL NIÑO / LA NIÑA</span>
+          </div>
+          <h4 style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px">🌍 El Niño, La Niña y el cambio climático actual</h4>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7;margin-bottom:8px">El Niño (calentamiento del Pacífico) y La Niña (enfriamiento) alteran las lluvias y sequías de México año con año. Sumados al cambio climático, hacen los extremos más frecuentes e intensos.</p>
+          <p style="font-size:13px;color:var(--muted);border-left:3px solid #6f93a6;padding-left:12px"><strong style="color:var(--text)">Consecuencias:</strong> escasez de agua, contaminación, deforestación y fenómenos cada vez más severos. El reto del presente y del futuro del país.</p>
+        </div>
+      </div>
+
+      <!-- 03 CONCLUSIONES -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">03 · Conclusiones</div>
+        <p style="color:var(--muted2);font-size:15px;line-height:1.8;margin-bottom:18px">El recorrido por la historia del clima en México muestra una tendencia clara: los fenómenos extremos son cada vez más frecuentes e intensos, y sus impactos sociales son enormes.</p>
+
+        <div class="detail-3col">
+          <div class="detail-card">
+            <h4>🌡️ ¿Cómo ha cambiado?</h4>
+            <p>Las temperaturas promedio han aumentado, las sequías son más largas, las lluvias más intensas y los huracanes más poderosos.</p>
+          </div>
+          <div class="detail-card">
+            <h4>👥 ¿A quién afecta?</h4>
+            <p>Afecta el agua potable, la agricultura, la salud, la economía y obliga a miles de personas a desplazarse.</p>
+          </div>
+          <div class="detail-card">
+            <h4>🛡️ ¿Qué hacer?</h4>
+            <p>Cuidar el agua, reforestar, reducir combustibles fósiles, mejorar alertas tempranas y exigir políticas públicas que protejan el medio ambiente.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 CONEXIÓN CON PACHUCA -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">04 · Conexión con Pachuca · Abril 2026</div>
+        <div style="background:linear-gradient(135deg,rgba(200,104,42,.08),rgba(210,59,43,.06));border:1px solid rgba(200,104,42,.2);border-radius:14px;padding:22px 24px">
+          <p style="font-size:15px;color:var(--text);line-height:1.8;margin-bottom:12px">Lo que ocurre a nivel nacional se refleja localmente: <strong>abril 2026 fue el mes más cálido registrado en Pachuca</strong>, con temperaturas hasta +10 °C sobre el promedio histórico, 15 días de calor extremo y humedad en mínimos récord.</p>
+          <p style="font-size:14px;color:var(--muted2);line-height:1.7">Las olas de calor, la crisis del agua y los incendios forestales documentados en esta línea del tiempo no son hechos lejanos — son el mismo patrón climático que abril 2026 confirmó en nuestra ciudad. El proyecto <strong>EIMA</strong> registra con datos reales lo que la historia ya advertía.</p>
+        </div>
+      </div>
+
+      <!-- 05 FUENTES -->
+      <div class="detail-sec">
+        <div class="detail-sec-head">05 · Fuentes de consulta</div>
+        <div class="detail-2col">
+          <div class="detail-card"><strong>CONAGUA / SMN</strong><br><span style="color:var(--muted)">Datos de lluvias, sequías y huracanes en México.</span></div>
+          <div class="detail-card"><strong>CENAPRED</strong><br><span style="color:var(--muted)">Informes de desastres naturales en México.</span></div>
+          <div class="detail-card"><strong>IPCC / ONU</strong><br><span style="color:var(--muted)">Informes sobre cambio climático global.</span></div>
+          <div class="detail-card"><strong>NOAA / NASA</strong><br><span style="color:var(--muted)">Datos satelitales de huracanes, El Niño y La Niña.</span></div>
+          <div class="detail-card"><strong>UNAM</strong><br><span style="color:var(--muted)">Investigaciones sobre glaciares mexicanos y clima histórico.</span></div>
+          <div class="detail-card"><strong>INEGI</strong><br><span style="color:var(--muted)">Estadísticas ambientales y de población afectada.</span></div>
+        </div>
+      </div>
+  ` },
 
   estacion: {
     tag: 'Documento técnico · Electrónica',
@@ -8355,7 +8717,7 @@ window.openDetail = function(id) {
   // Build index from DETAILS + landmark/section labels
   const ICONS = {
     eco:'🌿', filo:'💭', mat:'📐', uni:'🔭', bio:'🦎', elec:'⚡', quim:'⚗️',
-    tsocial:'🏛️', cpolitica:'🗳️', comunicacion:'📡', med:'🏥', cerebro:'🧠', estacion:'📊',
+    tsocial:'🏛️', cpolitica:'🗳️', comunicacion:'📡', med:'🏥', cerebro:'🧠', estacion:'📊', historia:'📜',
     cubitos:'⛰️', sierra:'🌲', centro:'🏛️', realdemonte:'⛏️', airosa:'💨', chico:'🏞️'
   };
   const index = Object.entries(DETAILS).map(([id, d]) => ({
